@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI日报 | 2026年6月7日</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: rgba(13, 24, 42, 0.78);
+      --card: rgba(255,255,255,0.08);
+      --card-strong: rgba(255,255,255,0.12);
+      --text: #f5f7fb;
+      --muted: #b8c2d8;
+      --line: rgba(255,255,255,0.12);
+      --accent: #7c9cff;
+      --accent-2: #6ef3d6;
+      --accent-3: #ffb86b;
+      --danger: #ff7d93;
+      --shadow: 0 20px 60px rgba(0,0,0,0.32);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(124,156,255,0.18), transparent 30%),
+        radial-gradient(circle at 90% 0%, rgba(110,243,214,0.14), transparent 28%),
+        radial-gradient(circle at 80% 70%, rgba(255,184,107,0.12), transparent 22%),
+        linear-gradient(180deg, #07111f 0%, #0a1324 46%, #08101c 100%);
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.55), transparent 85%);
+      opacity: 0.45;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      padding: 72px 0 36px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-main, .hero-side, .section, .footer-card, .nav {
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-main::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      right: -80px;
+      top: -90px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,156,255,0.38), rgba(124,156,255,0));
+      filter: blur(10px);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(124,156,255,0.14);
+      border: 1px solid rgba(124,156,255,0.28);
+      color: #d8e2ff;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      margin: 18px 0 14px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.06;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat .label {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .stat .value {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-side {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: space-between;
+    }
+
+    .side-card {
+      padding: 18px 18px 16px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .side-card h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+    }
+
+    .side-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 18px;
+      margin-bottom: 24px;
+      padding: 14px;
+      z-index: 5;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .nav a {
+      color: #dce6ff;
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 14px;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .nav a:hover {
+      transform: translateY(-2px);
+      background: rgba(124,156,255,0.14);
+      border-color: rgba(124,156,255,0.24);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .section {
+      padding: 28px;
+      overflow: hidden;
+    }
+
+    .section h2 {
+      margin: 0 0 20px;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+    }
+
+    .headline {
+      padding: 22px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(124,156,255,0.12), rgba(255,255,255,0.04));
+      border: 1px solid rgba(124,156,255,0.18);
+      margin-bottom: 18px;
+    }
+
+    .headline h3, .story h3 { margin: 0 0 10px; font-size: 22px; }
+    .story h4 { margin: 0 0 10px; font-size: 18px; }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 13px;
+      color: #dbe4f8;
+      text-decoration: none;
+    }
+
+    .story, .insight-card, .bullet-panel {
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 16px;
+    }
+
+    .story:last-child, .insight-card:last-child, .bullet-panel:last-child { margin-bottom: 0; }
+
+    .label-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: #dbe7ff;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    p, li {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    strong { color: #ffffff; }
+    ul { margin: 10px 0 0 18px; padding: 0; }
+    li + li { margin-top: 6px; }
+
+    .translation {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(110,243,214,0.08);
+      border: 1px solid rgba(110,243,214,0.16);
+    }
+
+    .compare {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,184,107,0.08);
+      border: 1px solid rgba(255,184,107,0.18);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 18px;
+      margin-top: 10px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 14px;
+    }
+
+    th {
+      color: #eef3ff;
+      background: rgba(124,156,255,0.14);
+      font-weight: 700;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .world-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .mini-stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .mini-stat .k {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .mini-stat .v {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .quick-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .quick-item {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .quick-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: white;
+      background: linear-gradient(135deg, var(--accent), #9b7cff);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+    }
+
+    .footer-card {
+      margin: 28px 0 48px;
+      padding: 22px 26px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .footer-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    a.inline-link { color: #b8cbff; text-decoration: none; }
+    a.inline-link:hover { text-decoration: underline; }
+
+    @media (max-width: 980px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: 1fr; }
+      .world-grid { grid-template-columns: 1fr; }
+      .nav { position: static; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-main">
+        <span class="tag">📰 AI日报 · 2026/06/07</span>
+        <h1>一天看懂 AI 世界的关键变量</h1>
+        <p class="lead">
+          这份日报聚焦 <strong>政策变动、产业落地、全球竞争与技术成本</strong>。从特朗普 AI 顾问离职，到国内 AI 医疗设备下沉，再到全球 AI 算力与外包产业的结构性变化，帮助你快速抓住今天最值得关注的信号。
+        </p>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="label">头条焦点</div>
+            <div class="value">政策变盘</div>
+          </div>
+          <div class="stat">
+            <div class="label">国内亮点</div>
+            <div class="value">AI 医疗落地</div>
+          </div>
+          <div class="stat">
+            <div class="label">技术关键词</div>
+            <div class="value">算力成本</div>
+          </div>
+        </div>
+      </div>
+      <aside class="hero-side">
+        <div class="side-card">
+          <h3>今日结论</h3>
+          <p>AI 正在同时进入三条主线：政策重构、实体行业渗透、以及全球劳动力再分配。今天的新闻，不是“又有新模型”，而是“AI 正在重写制度与产业边界”。</p>
+        </div>
+        <div class="side-card">
+          <h3>适合谁看</h3>
+          <p>产品、技术、投资、战略和管理者。尤其适合想在 5 分钟内理解“发生了什么、为什么重要、会影响什么”的读者。</p>
+        </div>
+        <div class="side-card">
+          <h3>阅读建议</h3>
+          <p>先看今日头条和数字看世界，再根据关注方向延伸阅读国内动态、国际视野和技术洞察。</p>
+        </div>
+      </aside>
+    </section>
+
+    <nav class="nav">
+      <div class="nav-links">
+        <a href="#headline">🔥 今日头条</a>
+        <a href="#domestic">🏥 国内动态</a>
+        <a href="#global">🌏 国际视野</a>
+        <a href="#numbers">📊 数字看世界</a>
+        <a href="#insights">💡 技术洞察</a>
+        <a href="#digest">🗓️ 要闻速览</a>
+      </div>
+    </nav>
+
+    <div class="grid">
+      <section class="section" id="headline">
+        <h2>🔥 今日头条</h2>
+        <article class="headline">
+          <div class="meta">
+            <a class="pill" href="https://news.google.com" target="_blank" rel="noopener">Bloomberg / Google News</a>
+            <a class="pill" href="https://www.scmp.com" target="_blank" rel="noopener">SCMP</a>
+            <a class="pill" href="https://www.washingtonpost.com" target="_blank" rel="noopener">Washington Post</a>
+          </div>
+          <h3>特朗普 AI 政策顾问即将离职</h3>
+          <p><strong>核心事实：</strong>特朗普前总统的 AI 政策顾问 <strong>Sriram Krishnan</strong> 即将辞去白宫职务。多家媒体已确认消息，这意味着美国 AI 政策协调层面可能出现新的空档与调整。</p>
+          <div class="translation">
+            <p><strong>人话翻译：</strong>美国 AI 政策的关键操盘手要离场了。过去他负责协调政府与 AI 企业之间的关系，尤其与 OpenAI CEO 奥尔特曼保持沟通，甚至讨论过“政府入股 AI 企业”的构想。</p>
+          </div>
+          <ul>
+            <li><strong>短期：</strong>AI 政策连续性可能受到影响</li>
+            <li><strong>中期：</strong>政府入股 AI 企业的计划或被搁置</li>
+            <li><strong>长期：</strong>美国 AI 监管方向可能发生变化</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section" id="numbers">
+        <h2>📊 数字看世界</h2>
+        <div class="bullet-panel">
+          <div class="label-row">关键数据一览</div>
+          <table>
+            <thead>
+              <tr>
+                <th>数据</th>
+                <th>来源</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>中国日均词元调用量：140万亿次（2026年3月）</td>
+                <td>国家数据局</td>
+              </tr>
+              <tr>
+                <td>智能算力总规模：1882 EFLOPS</td>
+                <td>工信部</td>
+              </tr>
+              <tr>
+                <td>词元调用量两年增长：1400 倍</td>
+                <td>国家数据局</td>
+              </tr>
+              <tr>
+                <td>AMD AI 芯片本周承压</td>
+                <td>Yahoo Finance</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="world-grid">
+            <div class="mini-stat">
+              <div class="k">中国日均词元调用量</div>
+              <div class="v">140万亿次</div>
+            </div>
+            <div class="mini-stat">
+              <div class="k">智能算力总规模</div>
+              <div class="v">1882 EFLOPS</div>
+            </div>
+            <div class="mini-stat">
+              <div class="k">两年增速</div>
+              <div class="v">1400×</div>
+            </div>
+            <div class="mini-stat">
+              <div class="k">市场侧信号</div>
+              <div class="v">芯片承压</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="grid">
+      <section class="section" id="domestic">
+        <h2>🏥 国内动态</h2>
+        <article class="story">
+          <div class="meta">
+            <a class="pill" href="http://m.toutiao.com/group/7648314700559565348/" target="_blank" rel="noopener">南方+客户端</a>
+          </div>
+          <h4>中山眼科发布 AI 眼病筛查设备“重明”</h4>
+          <p><strong>核心事实：</strong>该设备可识别 16 种眼病，平均准确率 88% 以上，白内障诊断准确率达到 90%。设备便携、可离线使用，今年计划量产万台，价格与国产智能手机相当。</p>
+          <ul>
+            <li>由中山大学中山眼科中心主任林浩添团队研发</li>
+            <li>广州计划投放百台 5G 智能眼科巡诊车</li>
+            <li>“AI 眼灯塔”将进驻 6 座城市公园</li>
+          </ul>
+          <div class="translation">
+            <p><strong>影响力分析：</strong>AI 医疗正在从三甲医院的前沿实验，走向基层和家庭级场景。对医疗资源不足地区，这是很实际的能力补位；对消费医疗市场，这也是一个有想象力的新入口。</p>
+          </div>
+        </article>
+
+        <article class="story">
+          <div class="meta">
+            <a class="pill" href="http://m.toutiao.com/group/7648416809615426100/" target="_blank" rel="noopener">每日经济新闻</a>
+          </div>
+          <h4>证监会主席吴清：坚决遏制公募“赌押赛道”顽疾</h4>
+          <p><strong>核心事实：</strong>监管层明确要求公募基金行业坚持“客户为本”，从“重规模”向“重回报”转型，并重点遏制赌押赛道、风格漂移、高位发行等问题。</p>
+          <div class="translation">
+            <p><strong>人话翻译：</strong>以后公募基金想靠追热点、博规模、割韭菜的空间会更小。监管在强调：基金不是为了讲故事，而是为了给投资者创造长期回报。</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="global">
+        <h2>🌏 国际视野</h2>
+        <article class="story">
+          <div class="meta">
+            <a class="pill" href="http://m.toutiao.com/group/7648416809615426100/" target="_blank" rel="noopener">央视新闻</a>
+          </div>
+          <h4>美国政府考虑入股 AI 企业</h4>
+          <p><strong>核心事实：</strong>知情人士透露，美国高级官员已与大型 AI 企业初步讨论“政府入股”的可能性，重点在于自愿转让股份、并将回报用于公共用途。</p>
+          <div class="compare">
+            <p><strong>竞品对比：</strong></p>
+            <ul>
+              <li><strong>中国路径：</strong>国家队主导算力基础设施建设</li>
+              <li><strong>美国路径：</strong>政府通过持股分享 AI 企业增长红利</li>
+              <li><strong>共同点：</strong>都在探索“AI 国家队”式能力组织方式，只是制度设计不同</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="story">
+          <div class="meta">
+            <a class="pill" href="http://m.toutiao.com/group/7648430592333365806/" target="_blank" rel="noopener">澎湃新闻</a>
+          </div>
+          <h4>AI 冲击亚洲外包产业：印度 600 万人、菲律宾 200 万人面临转型</h4>
+          <p><strong>核心事实：</strong>AI 已经能够显著压缩部分 BPO/外包岗位的人力需求。印度 BPO 从业者近 600 万，菲律宾约 200 万，行业都在面对结构性转型。</p>
+          <ul>
+            <li>AI 可实现“一人顶 30 人”的工作效率</li>
+            <li>甲骨文印度与塔塔咨询均已出现大规模裁员</li>
+            <li>菲律宾 41% 受访者担心 AI 影响职业发展</li>
+          </ul>
+          <div class="translation">
+            <p><strong>人话翻译：</strong>AI 抢饭碗的速度比很多人预期更快，但也留下一个明确缓冲区——凡是高度依赖共情、沟通与复杂判断的工作，短期仍有较强的人类优势。</p>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <div class="grid">
+      <section class="section" id="insights">
+        <h2>💡 技术洞察</h2>
+        <article class="insight-card">
+          <div class="meta">
+            <a class="pill" href="http://m.toutiao.com/group/7648416809615426100/" target="_blank" rel="noopener">央视财经</a>
+          </div>
+          <h3>AI 算力成本真相</h3>
+          <p><strong>核心发现：</strong>“AI 算力成本 60%-70% 是电费”这类说法，更多指的是运营阶段中的占比，而不是全生命周期成本。对于万卡级智算中心，整体投资中真正的大头仍是芯片、服务器、网络与基础设施。</p>
+          <ul>
+            <li>万卡级智算中心投资约 15 亿元</li>
+            <li>电费 + 运维占总成本通常不超过 20%</li>
+            <li>在运营阶段，电力能效确实是关键变量</li>
+          </ul>
+          <div class="translation">
+            <p><strong>人话翻译：</strong>别把“AI 就是烧电”理解得太简单。电费是运营的大头，但建一个真正可用的智算中心，前期硬件与网络投入才是最重的资本开支。</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="digest">
+        <h2>🗓️ 今日要闻速览</h2>
+        <div class="quick-list">
+          <div class="quick-item">
+            <div class="quick-num">1</div>
+            <p><strong>字节跳动辟谣造车：</strong>“赛豆”不是汽车品牌，暂无造车计划，豆包主要面向车企提供智能座舱技术服务。</p>
+          </div>
+          <div class="quick-item">
+            <div class="quick-num">2</div>
+            <p><strong>比亚迪辟谣人形机器人：</strong>网传“尧舜禹”代号及年内自用 2 万台等消息不实。</p>
+          </div>
+          <div class="quick-item">
+            <div class="quick-num">3</div>
+            <p><strong>无锡加码集成电路 AI 产业：</strong>召开专题推进会，目标打造全国领先的 AI 算力基地。</p>
+          </div>
+          <div class="quick-item">
+            <div class="quick-num">4</div>
+            <p><strong>特朗普 AI 顾问离职：</strong>Sriram Krishnan 将离开白宫，进一步加大美国 AI 政策走向的不确定性。</p>
+          </div>
+          <div class="quick-item">
+            <div class="quick-num">5</div>
+            <p><strong>AMD 芯片股承压：</strong>市场关注本周调整是否会带来新的买入窗口。</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="footer-card">
+      <p>📨 本日报由 AI 自动生成，内容仅供参考。</p>
+      <p>本页面根据提供的 Markdown 日报内容重构为可公开访问的 HTML 页面。</p>
+    </div>
+  </div>
+</body>
+</html>
