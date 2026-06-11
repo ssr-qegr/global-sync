@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日晨报｜20260612</title>
+  <style>
+    :root {
+      --primary: #10B981;
+      --primary-deep: #047857;
+      --bg: #ECFDF5;
+      --card-bg: #FFFFFF;
+      --text-main: #064E3B;
+      --text-sub: #4B5563;
+      --line: #D1FAE5;
+      --pill: #D1FAE5;
+      --shadow: 0 18px 40px rgba(16, 185, 129, 0.10);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: "Nunito", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(16,185,129,0.10), transparent 20%),
+        linear-gradient(180deg, #F0FDF4 0%, var(--bg) 100%);
+      color: var(--text-main);
+      line-height: 1.75;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.86);
+      backdrop-filter: blur(10px);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.75);
+      overflow: hidden;
+    }
+    .hero {
+      padding: 44px 40px 30px;
+      background: linear-gradient(135deg, rgba(16,185,129,0.18), rgba(255,255,255,0.96));
+      border-bottom: 2px dashed #A7F3D0;
+    }
+    .hero-top {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--pill);
+      color: var(--primary-deep);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    h1 {
+      margin: 0;
+      font-size: 40px;
+      line-height: 1.15;
+      color: #022C22;
+    }
+    .subtitle {
+      margin: 14px 0 0;
+      color: var(--text-sub);
+      font-size: 16px;
+      max-width: 860px;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 26px;
+    }
+    .summary-card {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+    }
+    .summary-card .kicker {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--primary-deep);
+      margin-bottom: 6px;
+    }
+    .summary-card strong {
+      display: block;
+      font-size: 18px;
+      color: #022C22;
+      margin-bottom: 6px;
+    }
+    .section { padding: 30px 40px 8px; }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .section-title {
+      margin: 0;
+      font-size: 28px;
+      color: var(--primary-deep);
+    }
+    .section-desc {
+      margin: 4px 0 0;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .news-list { display: grid; gap: 18px; }
+    .news-item {
+      position: relative;
+      background: #F8FAFC;
+      border: 2px solid #ECFDF5;
+      border-radius: 22px;
+      padding: 24px 24px 22px 28px;
+      box-shadow: 0 10px 20px rgba(16,185,129,0.05);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .news-item:hover {
+      transform: translateY(-2px);
+      border-color: #A7F3D0;
+      box-shadow: 0 16px 28px rgba(16,185,129,0.12);
+    }
+    .news-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 10px;
+      background: linear-gradient(180deg, #34D399, #10B981);
+      border-radius: 22px 0 0 22px;
+    }
+    .item-meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--pill);
+      color: var(--primary-deep);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .news-item h3 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: #022C22;
+    }
+    .block {
+      margin-bottom: 12px;
+      color: var(--text-sub);
+      font-size: 15px;
+    }
+    .block strong { color: var(--text-main); }
+    .source-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      background: var(--primary);
+      color: white;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(16,185,129,0.18);
+    }
+    .link.secondary {
+      background: #E8FFF6;
+      color: var(--primary-deep);
+      box-shadow: none;
+      border: 1px solid var(--line);
+    }
+    .footer {
+      padding: 28px 40px 40px;
+      text-align: center;
+      color: #6B7280;
+      font-size: 13px;
+    }
+    .footer strong { color: var(--primary-deep); }
+    @media (max-width: 900px) { .summary-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 680px) {
+      body { padding: 12px; }
+      .hero, .section, .footer { padding-left: 20px; padding-right: 20px; }
+      h1 { font-size: 30px; }
+      .section-title { font-size: 24px; }
+      .news-item h3 { font-size: 19px; }
+      .news-item { padding: 22px 18px 20px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-top">
+        <span class="badge">🌿 style_green</span>
+        <span class="badge">🗓️ 2026年6月12日 星期五</span>
+        <span class="badge">☀️ 今日晨报</span>
+      </div>
+      <h1>今日晨报：峰会预热、通胀未退、AI 电脑开始抢夺下一代入口</h1>
+      <p class="subtitle">
+        今天的主线很清楚：政治上，法国正为 G7 峰会铺陈议程，中美关系则继续沿着“稳定沟通”方向推进；财经上，美国通胀依旧偏热，欧洲央行继续收紧；技术上，微软和英伟达都在押注“Agent + 本地算力”，AI 正从云端模型竞争走向设备入口竞争。
+      </p>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="kicker">时事政治速览</div>
+          <strong>G7 进入倒计时，中美继续释放稳定沟通信号</strong>
+          <span>多边协调和双边降温，正在成为本周国际政治的两条主线。</span>
+        </div>
+        <div class="summary-card">
+          <div class="kicker">财经速览</div>
+          <strong>美国通胀偏热，欧洲央行继续加息</strong>
+          <span>全球主要经济体仍在和“高利率要维持多久”这个问题较劲。</span>
+        </div>
+        <div class="summary-card">
+          <div class="kicker">技术速览</div>
+          <strong>AI Agent 从云走向端，PC 入口战升温</strong>
+          <span>谁先把本地算力、企业上下文和智能体体验接上，谁就更接近下一个平台入口。</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">时事政治</h2>
+          <p class="section-desc">聚焦峰会安排、大国关系与国际议程变化</p>
+        </div>
+      </div>
+      <div class="news-list">
+        <article class="news-item">
+          <div class="item-meta">
+            <span class="tag">🌍 G7</span>
+            <span class="tag">法国</span>
+          </div>
+          <h3>法国确认 2026 G7 埃维昂峰会进入最后预热阶段</h3>
+          <div class="block"><strong>新闻原文：</strong>“23 years after the 2003 Evian G8 Summit and 7 years after the 2019 G7 Summit in Biarritz presided over by the Head of State, Evian will once again be at the heart of international news from June 15 to 17, 2026.”</div>
+          <div class="block"><strong>人话翻译：</strong>法国已经把场子搭好了。下周的 G7 不只是一次例行峰会，而是要在国际局势紧张的背景下，再次把埃维昂变成全球政治焦点。</div>
+          <div class="block"><strong>意义解读：</strong>从法国总统府连续发布劳工、贸易、教育、环境等配套议题来看，这次 G7 想谈的不只是安全危机，还想顺手定义数字治理、就业和国际协作的新议程。谁能主导会议叙事，谁就更有机会塑造下半年国际舆论重心。</div>
+          <div class="source-links">
+            <a class="link" href="https://www.elysee.fr/en/G7evian" target="_blank" rel="noopener noreferrer">法国总统府原文 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <div class="item-meta">
+            <span class="tag">🤝 中美关系</span>
+            <span class="tag">外交</span>
+          </div>
+          <h3>中美元首会晤后，双方继续以“建设性战略稳定关系”作为新定位</h3>
+          <div class="block"><strong>新闻原文：</strong>“此次会晤中，两国元首同意将‘中美建设性战略稳定关系’作为两国关系的新定位，为未来3年乃至更长时间的中美关系作出战略指引。”</div>
+          <div class="block"><strong>人话翻译：</strong>中美现在释放出来的信息不是“立刻变得多么亲密”，而是先把关系稳住，别再大起大落，把沟通渠道和合作清单慢慢接起来。</div>
+          <div class="block"><strong>意义解读：</strong>在大国竞争仍是底色的情况下，“先稳定、再管理分歧、再逐步找合作”本身就是一个重要信号。对市场来说，这会影响贸易、投资、供应链预期；对国际政治来说，这意味着中美都不想让关系继续失控外溢。</div>
+          <div class="source-links">
+            <a class="link" href="https://www.mfa.gov.cn/web/wjbzhd/202605/t20260515_11911513.shtml" target="_blank" rel="noopener noreferrer">外交部原文 ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">财经新闻</h2>
+          <p class="section-desc">聚焦通胀、利率与全球资金定价逻辑</p>
+        </div>
+      </div>
+      <div class="news-list">
+        <article class="news-item">
+          <div class="item-meta">
+            <span class="tag">🇺🇸 美国经济</span>
+            <span class="tag">通胀</span>
+          </div>
+          <h3>美国 5 月 CPI 继续偏热，市场对降息预期很难乐观</h3>
+          <div class="block"><strong>新闻原文：</strong>“The Consumer Price Index for All Urban Consumers (CPI-U) increased 0.5 percent on a seasonally adjusted basis in May... Over the last 12 months, the all items index increased 4.2 percent before seasonal adjustment.”</div>
+          <div class="block"><strong>人话翻译：</strong>美国物价没怎么老实下来。环比、同比都不低，说明“通胀已经彻底搞定”这件事还谈不上。</div>
+          <div class="block"><strong>意义解读：</strong>这会直接影响市场对美联储政策路径的判断。只要通胀还黏着，高利率就更可能待得更久，美元、债券收益率和全球风险资产都会继续被牵着走，企业融资成本也很难快速回落。</div>
+          <div class="source-links">
+            <a class="link" href="https://www.bls.gov/news.release/cpi.htm" target="_blank" rel="noopener noreferrer">美国劳工统计局 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <div class="item-meta">
+            <span class="tag">🇪🇺 欧洲央行</span>
+            <span class="tag">利率</span>
+          </div>
+          <h3>欧洲央行加息 25 个基点，继续把控通胀放在优先位</h3>
+          <div class="block"><strong>新闻原文：</strong>“The Governing Council decided to raise the three key ECB interest rates by 25 basis points. Accordingly, the interest rates on the deposit facility, the main refinancing operations and the marginal lending facility will be increased to 2.25%, 2.40% and 2.65% respectively.”</div>
+          <div class="block"><strong>人话翻译：</strong>欧洲央行的态度很明确：哪怕经济压力还在，也得先把通胀继续按住，不能太早松手。</div>
+          <div class="block"><strong>意义解读：</strong>这意味着欧洲融资环境短期内仍会偏紧，企业借钱、居民贷款、资产估值都会承压。更关键的是，美欧都在高利率区间徘徊，全球资本市场很难重新回到“钱很便宜”的旧环境。</div>
+          <div class="source-links">
+            <a class="link" href="https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp260611~4d41bd5e83.en.html" target="_blank" rel="noopener noreferrer">欧洲央行原文 ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">技术领域</h2>
+          <p class="section-desc">聚焦 Agent、上下文平台与 AI PC 新入口之争</p>
+        </div>
+      </div>
+      <div class="news-list">
+        <article class="news-item">
+          <div class="item-meta">
+            <span class="tag">🧠 Microsoft</span>
+            <span class="tag">Build 2026</span>
+          </div>
+          <h3>微软在 Build 2026 上，把 AI 重点从“模型”推向“上下文 + Agent 平台”</h3>
+          <div class="block"><strong>新闻原文：</strong>“Microsoft IQ, generally available today across GitHub Copilot, Microsoft Foundry and Copilot Studio, is a new context layer that grounds agents in both world knowledge and enterprise knowledge.”</div>
+          <div class="block"><strong>人话翻译：</strong>微软的意思很直白：光有模型不够，真正值钱的是把企业内部数据、工作流和外部世界知识一起接进来，让 Agent 真的能干活。</div>
+          <div class="block"><strong>意义解读：</strong>这说明 AI 竞争正在进入下一阶段——不是谁聊天更像人，而是谁能把组织上下文、权限治理、开发链路和本地/云端部署整合成完整系统。对企业软件和开发者生态来说，这会直接改变未来选型逻辑。</div>
+          <div class="source-links">
+            <a class="link" href="https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/" target="_blank" rel="noopener noreferrer">微软官方博客 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <div class="item-meta">
+            <span class="tag">💻 NVIDIA</span>
+            <span class="tag">AI PC</span>
+          </div>
+          <h3>NVIDIA 发布 RTX Spark，想把 Windows PC 变成“个人 AI 智能体电脑”</h3>
+          <div class="block"><strong>新闻原文：</strong>“NVIDIA today unveiled NVIDIA RTX Spark™, a new superchip that reinvents Windows PCs for the era of personal AI agents — offering a new class of computer that moves from tool to teammate.”</div>
+          <div class="block"><strong>人话翻译：</strong>英伟达不只是想让电脑更能跑模型，而是想把电脑重新定义成一个本地就能带着你干活的 AI 助手平台。</div>
+          <div class="block"><strong>意义解读：</strong>这条线很关键，因为它把 AI 竞争从云端大模型拉回到终端入口。谁掌握本地算力、系统安全、Agent 运行时和开发生态，谁就更接近下一代个人计算平台的话语权。微软和英伟达联手，显然是在提前卡这个位。</div>
+          <div class="source-links">
+            <a class="link" href="https://nvidianews.nvidia.com/news/nvidia-microsoft-windows-pcs-agents-rtx-spark" target="_blank" rel="noopener noreferrer">NVIDIA Newsroom ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="footer">
+      <p><strong>晨报说明：</strong>本页采用“新闻原文 + 人话翻译 + 意义解读”结构整理，方便在几分钟内把握当天方向。</p>
+      <p>🌱 愿你今天先看清风向，再决定把时间投到哪里。</p>
+    </div>
+  </div>
+</body>
+</html>
