@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>项目精选 - 清新活泼风</title>
+<style>
+  :root { --primary: #10B981; --bg: #ECFDF5; --card-bg: #FFFFFF; --text-main: #064E3B; --text-sub: #4B5563; }
+  body { font-family: "Nunito", "PingFang SC", "Comic Sans MS", sans-serif; background-color: var(--bg); color: var(--text-main); margin: 0; padding: 20px; line-height: 1.6; }
+  .container { max-width: 700px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 24px; box-shadow: 0 12px 30px rgba(16,185,129,0.08); }
+  .header { border-bottom: 3px dashed #A7F3D0; padding-bottom: 20px; margin-bottom: 30px; text-align: center; }
+  .header h1 { color: var(--primary); margin: 0 0 8px 0; font-size: 30px; font-weight: 800; }
+  .date { color: #6EE7B7; font-size: 15px; font-weight: 600; }
+  .news-item { position: relative; padding: 24px 24px 24px 44px; margin-bottom: 24px; background: #F8FAFC; border-radius: 20px; border: 2px solid #F1F5F9; transition: transform 0.2s ease; }
+  .news-item:hover { transform: scale(1.02); border-color: #D1FAE5; }
+  .news-item::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 12px; background: var(--primary); border-radius: 20px 0 0 20px; }
+  .news-item h2 { margin: 0 0 10px 0; font-size: 20px; color: #022C22; font-weight: 700; }
+  .news-item p { margin: 0 0 16px 0; font-size: 15px; color: var(--text-sub); }
+  .tag { display: inline-block; background: #D1FAE5; color: #047857; padding: 6px 14px; border-radius: 12px; font-size: 13px; font-weight: bold; margin-bottom: 12px; }
+  .link { display: inline-block; background: var(--primary); color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: bold; box-shadow: 0 4px 10px rgba(16,185,129,0.2); transition: background 0.2s; }
+  .link:hover { background: #059669; }
+  .footer { text-align: center; margin-top: 30px; padding-top: 20px; color: #9CA3AF; font-size: 13px; font-weight: 600; }
+  @media (max-width: 600px) { .container { padding: 24px; } .news-item { padding: 20px 20px 20px 32px; } }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🌿 今日精选早报</h1>
+      <div class="date">✨ 2026年6月11日 星期四 ✨</div>
+    </div>
+    <div class="news-item">
+      <span class="tag">🎯 效率提升</span>
+      <h2>神仙效率工具更新，支持一键生成周报</h2>
+      <p>这款在小红书上爆火的工具今天迎来了大版本更新，现在只要绑定你的日历和待办，就能一键生成图文并茂的精美周报啦！</p>
+      <a href="#" class="link">去看看 👀</a>
+    </div>
+    <div class="news-item">
+      <span class="tag">💡 奇思妙想</span>
+      <h2>用 AI 给宠物做了一套“性格测试”题</h2>
+      <p>一位网友分享了他用提示词工程打造的宠物专属 MBTI 测试，结果出乎意料的准确，快来看看是怎么做到的吧。</p>
+      <a href="#" class="link">去看看 👀</a>
+    </div>
+    <div class="footer">
+      (๑•̀ㅂ•́)و✧ 充满活力的一天开始啦！
+    </div>
+  </div>
+</body>
+</html>
