@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日大厂新闻｜2026-06-11</title>
+  <style>
+    :root {
+      --primary: #B388FF;
+      --primary-strong: #9C5CFF;
+      --accent: #00E5FF;
+      --accent-soft: rgba(0, 229, 255, 0.14);
+      --bg: #0A0A0F;
+      --bg-2: #12121A;
+      --card: rgba(26, 26, 36, 0.92);
+      --card-2: rgba(34, 34, 48, 0.92);
+      --text-main: #F3F4F6;
+      --text-sub: #B8BED0;
+      --text-faint: #7E8598;
+      --line: rgba(179, 136, 255, 0.20);
+      --shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at top left, rgba(179,136,255,0.18), transparent 24%),
+        radial-gradient(circle at top right, rgba(0,229,255,0.12), transparent 22%),
+        linear-gradient(180deg, #09090D 0%, #101019 48%, #0B0B10 100%);
+      line-height: 1.75;
+    }
+
+    a { color: inherit; }
+
+    .shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(17,17,25,0.96), rgba(12,12,18,0.98));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      position: relative;
+      padding: 44px 42px 34px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background:
+        linear-gradient(135deg, rgba(179,136,255,0.14), rgba(0,229,255,0.06)),
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 42px 0 42px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,229,255,0.55), transparent);
+    }
+
+    .hero-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(179,136,255,0.10);
+      border: 1px solid rgba(179,136,255,0.24);
+      color: #E7D8FF;
+      font-size: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 42px;
+      line-height: 1.15;
+      letter-spacing: 0.4px;
+      color: #FFFFFF;
+      text-shadow: 0 0 22px rgba(179,136,255,0.18);
+    }
+
+    .subtitle {
+      max-width: 900px;
+      margin: 16px 0 0;
+      font-size: 16px;
+      color: var(--text-sub);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .hero-panel,
+    .summary-card,
+    .news-card,
+    .footer-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 22px;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-panel {
+      padding: 22px 22px 18px;
+    }
+
+    .panel-title {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .signal-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .signal-item {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--card-2);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .signal-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #FFFFFF;
+      font-size: 16px;
+    }
+
+    .signal-item span {
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+
+    .summary-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .summary-card {
+      padding: 18px;
+      min-height: 104px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .summary-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+      opacity: 0.85;
+    }
+
+    .summary-card .kicker {
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .summary-card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+      color: #FFFFFF;
+    }
+
+    .summary-card span {
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+
+    .section {
+      padding: 30px 42px 10px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 28px;
+      color: #FFFFFF;
+    }
+
+    .section-desc {
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: var(--text-faint);
+    }
+
+    .news-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .news-card {
+      position: relative;
+      padding: 24px 24px 20px 26px;
+      background: linear-gradient(180deg, rgba(27,27,38,0.96), rgba(20,20,29,0.96));
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .news-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 18px;
+      bottom: 18px;
+      width: 4px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+      box-shadow: 0 0 18px rgba(179,136,255,0.4);
+    }
+
+    .news-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0,229,255,0.26);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.28);
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: #DCCBFF;
+      background: rgba(179,136,255,0.10);
+      border: 1px solid rgba(179,136,255,0.18);
+    }
+
+    .news-card h3 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      line-height: 1.35;
+      color: #FFFFFF;
+    }
+
+    .block {
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: var(--text-sub);
+    }
+
+    .block strong {
+      color: var(--text-main);
+    }
+
+    .highlight {
+      color: #E8F9FF;
+    }
+
+    .link-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      color: #07131A;
+      background: linear-gradient(135deg, var(--accent), #7CF5FF);
+      box-shadow: 0 10px 22px rgba(0,229,255,0.20);
+    }
+
+    .link-btn.secondary {
+      color: #E7D8FF;
+      background: rgba(179,136,255,0.10);
+      border: 1px solid rgba(179,136,255,0.18);
+      box-shadow: none;
+    }
+
+    .footer {
+      padding: 28px 42px 42px;
+    }
+
+    .footer-card {
+      padding: 22px 22px 18px;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+
+    .footer-card strong {
+      color: #FFFFFF;
+    }
+
+    .footer-note {
+      margin-top: 10px;
+      color: var(--text-faint);
+      font-size: 13px;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      body { padding: 12px; }
+      .hero, .section, .footer { padding-left: 18px; padding-right: 18px; }
+      h1 { font-size: 31px; }
+      .section-title { font-size: 24px; }
+      .news-card h3 { font-size: 20px; }
+      .news-card { padding: 20px 18px 18px 22px; }
+      .hero::after { inset: auto 18px 0 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <div class="hero-top">
+        <span class="badge">⚡ style_dark</span>
+        <span class="badge">🗓️ 2026年6月11日 星期四</span>
+        <span class="badge">🌐 国内外科技巨头动态</span>
+      </div>
+      <h1>今日大厂新闻：高考 Agent 开打、AI 助手升级、价格战与算力战同步升温</h1>
+      <p class="subtitle">
+        今天的大厂主线很明确：国内互联网公司把高考志愿填报做成了 AI Agent 的实战场；国际科技公司则继续围绕 AI 助手、定价、监管与基础设施展开新一轮竞争。下面按“新闻原文（摘录） + 人话翻译 + 影响分析”整理，方便快速浏览。
+      </p>
+
+      <div class="hero-grid">
+        <div class="hero-panel">
+          <div class="panel-title">Top Signals</div>
+          <div class="signal-list">
+            <div class="signal-item">
+              <strong>国内大厂在抢“高频刚需入口”</strong>
+              <span>阿里、腾讯、百度、字节把高考志愿填报做成 Agent 化产品，争的不是一次性流量，而是家庭决策场景里的信任入口。</span>
+            </div>
+            <div class="signal-item">
+              <strong>国际大厂在打“产品 + 价格 + 基建 + 法规”组合战</strong>
+              <span>OpenAI 传出降价、Apple 强推 Siri AI、Meta 下场投数据中心、Google 则开始正面面对 AI 责任归属问题。</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-grid">
+          <div class="summary-card">
+            <div class="kicker">国内焦点</div>
+            <strong>志愿填报成 Agent 落地样板间</strong>
+            <span>因为任务复杂、决策高价值、用户又真的愿意反复问。</span>
+          </div>
+          <div class="summary-card">
+            <div class="kicker">国际焦点</div>
+            <strong>AI 竞争从模型转向商业化和责任边界</strong>
+            <span>能不能赚钱、怎么定价、谁来背锅，开始比参数更重要。</span>
+          </div>
+          <div class="summary-card">
+            <div class="kicker">今天最值得盯</div>
+            <strong>价格战、监管战、算力战同时开打</strong>
+            <span>未来几个月，产品体验未必是唯一胜负手，资源组织能力会更关键。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">国内大厂</h2>
+          <p class="section-desc">字节跳动、腾讯、阿里、百度、华为、小米等公司今天最值得看的动态</p>
+        </div>
+      </div>
+
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🎓 阿里 / 腾讯 / 百度 / 字节</span>
+            <span class="tag">高考志愿 Agent</span>
+          </div>
+          <h3>高考志愿填报，成了阿里、腾讯、百度、字节今天最热的 AI 落地战场</h3>
+          <div class="block"><strong>新闻原文（摘录）：</strong>多家媒体 6 月 11 日集中报道：阿里旗下千问推出“千问高考志愿填报专家”，腾讯元宝联合 QQ 浏览器上线“元宝高考通”，百度升级高考服务并推出新版 AI 志愿报告，字节豆包也已具备志愿填报能力。媒体普遍将其概括为 <span class="highlight">“大厂围绕 1290 万考生展开 Agent 竞赛”</span>。</div>
+          <div class="block"><strong>人话翻译：</strong>高考志愿不是“陪聊”场景，而是一个会反复提问、强依赖数据、容错率又很低的真实决策场景。谁先把这个场景做顺，谁就更容易拿到用户对 AI 助手的长期信任。</div>
+          <div class="block"><strong>影响分析：</strong>这说明国内大厂的 Agent 竞争，已经从演示型能力转向“能不能解决高价值复杂任务”。接下来教育、求职、金融顾问、医疗导诊这些高决策密度场景，大概率会快速跟进。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://finance.sina.com.cn/tech/roll/2026-06-11/doc-iniazayv4117498.shtml" target="_blank" rel="noopener noreferrer">新浪科技报道 ↗</a>
+            <a class="link-btn secondary" href="https://36kr.com/p/3847954712597767" target="_blank" rel="noopener noreferrer">36Kr 观察 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🧠 阿里</span>
+            <span class="tag">千问</span>
+          </div>
+          <h3>阿里千问上线“全周期高考志愿填报 Agent”，想把 AI 从“会聊天”推进到“会办大事”</h3>
+          <div class="block"><strong>新闻原文（摘录）：</strong>媒体援引千问团队表述称，该产品于 6 月 10 日上线，定位为国内首个全周期高考志愿填报 Agent，提供“志愿报告、志愿日历、志愿问答”三项核心能力，并面向全国考生免费开放。</div>
+          <div class="block"><strong>人话翻译：</strong>阿里这次想传达的不是“我也有一个高考工具”，而是“千问已经从一个对话助手，升级成可以帮你完成复杂流程任务的 Agent”。</div>
+          <div class="block"><strong>影响分析：</strong>如果这类复杂场景跑通，千问后续会更有底气继续往“生活服务 Agent”“个人事务 Agent”延展。对阿里来说，这比单纯刷模型榜单更贴近用户入口。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://finance.sina.com.cn/roll/2026-06-11/doc-iniazayu2379656.shtml" target="_blank" rel="noopener noreferrer">相关报道 ↗</a>
+            <a class="link-btn secondary" href="https://finance.sina.com.cn/roll/2026-06-11/doc-iniazihv0799495.shtml" target="_blank" rel="noopener noreferrer">行业跟进 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">💬 腾讯</span>
+            <span class="tag">元宝高考通</span>
+          </div>
+          <h3>腾讯把“元宝高考通”做成对话式志愿顾问，强调多轮追问与动态调整</h3>
+          <div class="block"><strong>新闻原文（摘录）：</strong>报道显示，腾讯已上线“元宝高考通”，支持分数换算位次、院校专业查询以及“冲稳保”梯度志愿方案生成，并能在多轮对话中根据用户补充信息持续修正推荐。</div>
+          <div class="block"><strong>人话翻译：</strong>腾讯在押的不是一份固定结果，而是“像真人顾问一样边问边改”的交互体验。它要证明：真正好用的 Agent，不是一次答完，而是越聊越准。</div>
+          <div class="block"><strong>影响分析：</strong>这类交互式 Agent 的门槛，不只是模型，还包括数据、产品流程和追问策略。腾讯如果把这种多轮决策体验打磨成熟，会对元宝后续进入更多咨询型场景有帮助。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://36kr.com/p/3847954712597767" target="_blank" rel="noopener noreferrer">36Kr 报道 ↗</a>
+            <a class="link-btn secondary" href="http://m.toutiao.com/group/7649981550620181026/" target="_blank" rel="noopener noreferrer">行业摘要 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🔎 百度</span>
+            <span class="tag">AI 志愿报告</span>
+          </div>
+          <h3>百度升级高考服务，AI 报告之外还加上“真人专家审核”背书</h3>
+          <div class="block"><strong>新闻原文（摘录）：</strong>多篇 6 月 11 日报道提到，百度在今年高考场景中升级了服务体系，推出新版 AI 志愿报告，并首次引入真人专家审核机制，以强化结果可信度。</div>
+          <div class="block"><strong>人话翻译：</strong>百度意识到，这类高风险决策场景，光靠大模型“自信作答”不够，必须把 AI 和人工审核绑在一起，才能让家长真的敢用。</div>
+          <div class="block"><strong>影响分析：</strong>这可能会成为国内高风险 Agent 产品的常见套路：AI 负责提效，人工负责兜底。未来在医疗、法律、金融等领域，这种“AI + 专家签字”模式可能会越来越多。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://finance.sina.com.cn/roll/2026-06-11/doc-iniazihv0799495.shtml" target="_blank" rel="noopener noreferrer">新浪财经报道 ↗</a>
+            <a class="link-btn secondary" href="https://finance.sina.com.cn/tech/roll/2026-06-11/doc-iniazayv4117498.shtml" target="_blank" rel="noopener noreferrer">综合报道 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🛰️ 华为</span>
+            <span class="tag">HDC 2026</span>
+          </div>
+          <h3>华为开发者大会 HDC 2026 明天开幕，预告将发布鸿蒙新版本与鸿蒙 AI 核心能力</h3>
+          <div class="block"><strong>新闻原文（摘录）：</strong>多家媒体 6 月 11 日预热称，华为开发者大会 HDC 2026 将于 6 月 12 日至 14 日在东莞松山湖举行，本届大会将披露 <span class="highlight">HarmonyOS 全新版本、鸿蒙 AI 核心能力以及生态新成果</span>。</div>
+          <div class="block"><strong>人话翻译：</strong>华为这次不是单发一个新系统版本，而是想继续把“操作系统 + AI 能力 + 开发生态”三件事捆在一起讲，强化鸿蒙平台的整体势能。</div>
+          <div class="block"><strong>影响分析：</strong>如果鸿蒙 AI 能力开放得更彻底，接下来会直接影响开发者是否愿意优先做鸿蒙原生接入，也会影响华为在端侧 AI 和生态闭环上的推进速度。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://www.eet-china.com/mp/a501892.html" target="_blank" rel="noopener noreferrer">大会前瞻 ↗</a>
+            <a class="link-btn secondary" href="https://36kr.com/p/3848199507547397" target="_blank" rel="noopener noreferrer">开发者生态观察 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🛠️ 小米</span>
+            <span class="tag">MiMo Code</span>
+          </div>
+          <h3>小米发布并开源 MiMo Code V0.1.0，切入终端侧 AI 编程助手赛道</h3>
+          <div class="block"><strong>新闻原文（摘录）：</strong>6 月 11 日报道显示，小米 MiMo 团队正式发布并开源 MiMo Code V0.1.0，这是一款运行在终端里的探索性 AI 编程助手，支持多模型接入，并内置限时免费的 MiMo-V2.5 模型。</div>
+          <div class="block"><strong>人话翻译：</strong>小米不只是做手机和车，它也在尝试通过开源工具切进开发者生态。说白了，就是想让更多人先用起来，再慢慢形成对自家模型和工具链的习惯。</div>
+          <div class="block"><strong>影响分析：</strong>AI 编程助手赛道越来越卷，开源和本地化能力会变得更重要。对小米来说，这类工具如果能积累开发者口碑，未来会反过来支撑它在 AI OS 和端侧模型上的布局。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://finance.sina.com.cn/tech/roll/2026-06-11/doc-iniazayx0835659.shtml" target="_blank" rel="noopener noreferrer">新浪科技报道 ↗</a>
+            <a class="link-btn secondary" href="http://m.toutiao.com/group/7649861953866842674/" target="_blank" rel="noopener noreferrer">IT 资讯摘要 ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">国际科技公司</h2>
+          <p class="section-desc">Google、Apple、Meta、OpenAI 等国际科技公司今天的关键变化</p>
+        </div>
+      </div>
+
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">💸 OpenAI</span>
+            <span class="tag">价格战</span>
+          </div>
+          <h3>路透：OpenAI 正考虑大幅降价，准备迎接和 Anthropic 的用户争夺战</h3>
+          <div class="block"><strong>新闻原文（摘录）：</strong>Reuters 6 月 11 日报道援引《华尔街日报》消息称，OpenAI 正考虑 <span class="highlight">大幅下调面向用户的收费</span>，以便在与 Anthropic 的竞争中抢到更多客户。</div>
+          <div class="block"><strong>人话翻译：</strong>AI 公司现在不只是比谁模型更强，还要比谁更便宜、更容易留住用户。OpenAI 这波如果真的降价，说明“先扩大用户盘子”已经压过了“先把单价做高”。</div>
+          <div class="block"><strong>影响分析：</strong>一旦头部厂商主动打价格战，整个大模型订阅和 API 市场都会被重新定价。对创业公司来说是压力，对企业客户来说则可能是窗口期。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://www.reuters.com/technology/openai-considers-drastic-price-cuts-anticipating-war-users-with-anthropic-wsj-2026-06-11/" target="_blank" rel="noopener noreferrer">Reuters 原文 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🍎 Apple</span>
+            <span class="tag">Apple Intelligence</span>
+          </div>
+          <h3>苹果发布新一代 Apple Intelligence 与 Siri AI，继续补齐 AI 助手短板</h3>
+          <div class="block"><strong>新闻原文（摘录）：</strong>Apple Newsroom 在本周发布的官方稿件中宣布，苹果推出新一代 Apple Intelligence、全新 Siri AI 及相关系统级 AI 能力，试图把 AI 深度嵌入日常体验中。</div>
+          <div class="block"><strong>人话翻译：</strong>苹果现在的核心目标不是再解释“我们也有 AI”，而是要把 AI 真正塞进系统入口，让用户在消息、办公、搜索、设备协同这些地方直接感受到升级。</div>
+          <div class="block"><strong>影响分析：</strong>只要苹果把 Siri 与系统级 AI 体验做顺，整个手机生态的竞争重点就会变——不再只是硬件参数，而是“谁能接管更多用户的下一步动作”。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/" target="_blank" rel="noopener noreferrer">Apple 官方原文 ↗</a>
+            <a class="link-btn secondary" href="https://www.apple.com/newsroom/2026/06/apple-intelligence-brings-powerful-ai-capabilities-into-everyday-experiences/" target="_blank" rel="noopener noreferrer">功能详情 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🔍 Google</span>
+            <span class="tag">AI Overviews</span>
+          </div>
+          <h3>德国法院裁定 Google 需为 AI Overviews 的错误内容承担责任</h3>
+          <div class="block"><strong>新闻原文（摘录）：</strong>6 月 11 日多家媒体跟进德国慕尼黑地区法院裁决：Google 的 AI Overviews 生成了与原始网页不一致的错误描述，因此 Google 不能再像传统搜索那样完全免责，需对 AI 生成摘要承担责任。</div>
+          <div class="block"><strong>人话翻译：</strong>法院的意思很直接：如果 AI 不是“帮你找链接”，而是在“自己组织语言给结论”，那出了问题就不能只甩锅给网页来源。</div>
+          <div class="block"><strong>影响分析：</strong>这对所有做生成式搜索和 AI 摘要的公司都很关键。以后不仅要比回答得快不快，还要比谁能把可追责、可校验、可申诉的机制做出来。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://www.tbsnews.net/worldbiz/europe/nobody-needs-ai-search-internet-german-court-rules-google-case-1459766" target="_blank" rel="noopener noreferrer">案件报道 ↗</a>
+            <a class="link-btn secondary" href="https://www.gadgets360.com/ai/news/google-responds-after-german-court-rules-on-ai-overviews-errors-11621796" target="_blank" rel="noopener noreferrer">Google 回应 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🏗️ Meta</span>
+            <span class="tag">AI 基建</span>
+          </div>
+          <h3>Meta 与信实合作，在印度推进 AI 数据中心布局</h3>
+          <div class="block"><strong>新闻原文（摘录）：</strong>6 月 11 日多家媒体披露，Meta 将租用 Reliance 在印度贾姆讷格尔建设的 AI 数据中心能力。这将是 Meta 在印度的重要 AI 基建项目，首期规划规模为 168MW，并强调可再生能源与持续扩容能力。</div>
+          <div class="block"><strong>人话翻译：</strong>Meta 不满足于只在印度做流量和广告生意了，它开始把印度当成 AI 算力与基础设施的战略落点。</div>
+          <div class="block"><strong>影响分析：</strong>这说明大厂的 AI 竞争正进一步走向地域化部署。未来谁能更早锁定本地机房、电力、监管关系和供应链，谁就更可能在全球市场里占到先手。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://www.techinasia.com/news/meta-signs-up-for-reliances-ai-data-center-in-india" target="_blank" rel="noopener noreferrer">Tech in Asia 报道 ↗</a>
+            <a class="link-btn secondary" href="https://www.rediff.com/business/report/ril-to-build-metas-firstai-data-centre-in-india/20260611.htm" target="_blank" rel="noopener noreferrer">Rediff 摘要 ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="footer-card">
+        <strong>阅读说明：</strong>本页按“新闻原文（摘录/摘要）—人话翻译—影响分析”结构整理，适合快速扫一遍当天风向。对时间非常敏感或需要全文细节的条目，建议直接点击原始链接查看完整报道。
+        <div class="footer-note">
+          GitHub Pages 路径：/global-sync/dachang-news/dachang-news-20260611.html ｜ 整理时间：2026-06-11
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
