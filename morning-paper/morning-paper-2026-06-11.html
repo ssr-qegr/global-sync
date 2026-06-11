@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日晨报｜2026-06-11</title>
+  <style>
+    :root {
+      --primary: #10B981;
+      --primary-deep: #047857;
+      --bg: #ECFDF5;
+      --card-bg: #FFFFFF;
+      --text-main: #064E3B;
+      --text-sub: #4B5563;
+      --line: #D1FAE5;
+      --pill: #D1FAE5;
+      --shadow: 0 18px 40px rgba(16, 185, 129, 0.10);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: "Nunito", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(16,185,129,0.10), transparent 20%),
+        linear-gradient(180deg, #F0FDF4 0%, var(--bg) 100%);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.84);
+      backdrop-filter: blur(10px);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.75);
+      overflow: hidden;
+    }
+
+    .hero {
+      padding: 44px 40px 30px;
+      background: linear-gradient(135deg, rgba(16,185,129,0.18), rgba(255,255,255,0.96));
+      border-bottom: 2px dashed #A7F3D0;
+    }
+
+    .hero-top {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--pill);
+      color: var(--primary-deep);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 40px;
+      line-height: 1.15;
+      color: #022C22;
+    }
+
+    .subtitle {
+      margin: 14px 0 0;
+      color: var(--text-sub);
+      font-size: 16px;
+      max-width: 820px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .summary-card {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .summary-card .kicker {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--primary-deep);
+      margin-bottom: 6px;
+    }
+
+    .summary-card strong {
+      display: block;
+      font-size: 18px;
+      color: #022C22;
+      margin-bottom: 6px;
+    }
+
+    .section {
+      padding: 30px 40px 8px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 28px;
+      color: var(--primary-deep);
+    }
+
+    .section-desc {
+      margin: 4px 0 0;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+
+    .news-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .news-item {
+      position: relative;
+      background: #F8FAFC;
+      border: 2px solid #ECFDF5;
+      border-radius: 22px;
+      padding: 24px 24px 22px 28px;
+      box-shadow: 0 10px 20px rgba(16,185,129,0.05);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .news-item:hover {
+      transform: translateY(-2px);
+      border-color: #A7F3D0;
+      box-shadow: 0 16px 28px rgba(16,185,129,0.12);
+    }
+
+    .news-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 10px;
+      background: linear-gradient(180deg, #34D399, #10B981);
+      border-radius: 22px 0 0 22px;
+    }
+
+    .item-meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--pill);
+      color: var(--primary-deep);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .news-item h3 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: #022C22;
+    }
+
+    .block {
+      margin-bottom: 12px;
+      color: var(--text-sub);
+      font-size: 15px;
+    }
+
+    .block strong {
+      color: var(--text-main);
+    }
+
+    .source-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      background: var(--primary);
+      color: white;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(16,185,129,0.18);
+    }
+
+    .link.secondary {
+      background: #E8FFF6;
+      color: var(--primary-deep);
+      box-shadow: none;
+      border: 1px solid var(--line);
+    }
+
+    .footer {
+      padding: 28px 40px 40px;
+      text-align: center;
+      color: #6B7280;
+      font-size: 13px;
+    }
+
+    .footer strong { color: var(--primary-deep); }
+
+    @media (max-width: 900px) {
+      .summary-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      body { padding: 12px; }
+      .hero, .section, .footer { padding-left: 20px; padding-right: 20px; }
+      h1 { font-size: 30px; }
+      .section-title { font-size: 24px; }
+      .news-item h3 { font-size: 19px; }
+      .news-item { padding: 22px 18px 20px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-top">
+        <span class="badge">🌿 style_green</span>
+        <span class="badge">🗓️ 2026年6月11日 星期四</span>
+        <span class="badge">☀️ 今日晨报</span>
+      </div>
+      <h1>今日晨报：地缘风险升温，市场重新定价，AI 基建继续狂奔</h1>
+      <p class="subtitle">
+        今天的新闻主线很清晰：政治上，中东与俄乌议题继续外溢；财经上，油价、汇率与风险资产一起承压；技术上，AI 竞争已经越来越像一场围绕算力、资本和基础设施展开的长期战。
+      </p>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="kicker">时事政治速览</div>
+          <strong>中东升级、俄乌打后勤、G7 议程被危机占满</strong>
+          <span>国际政治讨论正在从“如何谈”快速转向“如何止损”。</span>
+        </div>
+        <div class="summary-card">
+          <div class="kicker">财经速览</div>
+          <strong>股票承压、油价走强、美元摇摆</strong>
+          <span>市场开始同时交易通胀、战争与利率，不再只追增长叙事。</span>
+        </div>
+        <div class="summary-card">
+          <div class="kicker">技术速览</div>
+          <strong>大厂继续重仓 AI，重点已从模型卷到基建</strong>
+          <span>机房、电力、融资能力，正在变成新一轮科技竞争的底盘。</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">时事政治</h2>
+          <p class="section-desc">聚焦国际局势、战争演变与主要国家协调动向</p>
+        </div>
+      </div>
+      <div class="news-list">
+        <article class="news-item">
+          <div class="item-meta">
+            <span class="tag">🧭 国际局势</span>
+            <span class="tag">中东</span>
+          </div>
+          <h3>美伊连续第二天互相打击，脆弱停火进一步松动</h3>
+          <div class="block"><strong>新闻原文：</strong>路透社 6 月 11 日报道称，美国与伊朗连续第二天相互发动打击。特朗普表示，若伊朗不立即同意和平协议，美方还会继续出手；伊朗多地传出爆炸，并继续对地区内美军目标作出回应。</div>
+          <div class="block"><strong>人话翻译：</strong>这已经不是“放狠话”阶段，而是双方都在拿军事动作继续抬杠，说明原本就不牢靠的停火安排正在失效。</div>
+          <div class="block"><strong>意义：</strong>中东风险短期很难降下来，油价、航运、避险资产和全球风险偏好都会继续被这条线牵着走。</div>
+          <div class="source-links">
+            <a class="link" href="https://www.reuters.com/world/middle-east/us-iran-trade-attacks-second-day-undermining-shaky-ceasefire-2026-06-11/" target="_blank" rel="noopener noreferrer">查看原文 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <div class="item-meta">
+            <span class="tag">🛰️ 俄乌战事</span>
+            <span class="tag">后勤战</span>
+          </div>
+          <h3>乌克兰加大对俄纵深打击，克里米亚与马里乌波尔物流承压</h3>
+          <div class="block"><strong>新闻原文：</strong>路透社报道显示，俄控克里米亚因乌克兰无人机袭击导致供应受限，居民出现汽油限购；与此同时，乌方称已打击俄控马里乌波尔港，继续压缩俄军南线后勤通道。</div>
+          <div class="block"><strong>人话翻译：</strong>乌军现在不是只盯前线阵地，而是去打“补给线”和“运输线”，目的就是让对方打得越来越贵、越来越难。</div>
+          <div class="block"><strong>意义：</strong>战争正在越来越像一场后勤、工业与消耗能力比拼，谁的运输体系先扛不住，谁就会在后续谈判里更被动。</div>
+          <div class="source-links">
+            <a class="link" href="https://www.reuters.com/world/drones-hit-historic-museum-russia-annexed-crimea-officials-alter-train-schedule-2026-06-10/" target="_blank" rel="noopener noreferrer">克里米亚报道 ↗</a>
+            <a class="link secondary" href="https://www.reuters.com/world/ukraine-strikes-mariupol-port-significantly-limiting-its-use-2026-06-10/" target="_blank" rel="noopener noreferrer">马里乌波尔报道 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <div class="item-meta">
+            <span class="tag">🏛️ 多边政治</span>
+            <span class="tag">G7</span>
+          </div>
+          <h3>下周 G7 峰会将被伊朗与乌克兰议题主导</h3>
+          <div class="block"><strong>新闻原文：</strong>路透社称，法国正在为下周 G7 峰会设计议程，核心目标是在特朗普参与的情况下尽量维持表面团结；中东战争与俄乌冲突预计将成为会议主轴。</div>
+          <div class="block"><strong>人话翻译：</strong>这场会已经很难谈“长期愿景”了，更像是在处理两场正在燃烧的危机，同时还得尽量避免盟友之间现场翻车。</div>
+          <div class="block"><strong>意义：</strong>如果 G7 连对核心危机都无法形成共同表述，西方在能源、安全和对外协调上的影响力会继续打折。</div>
+          <div class="source-links">
+            <a class="link" href="https://www.reuters.com/world/china/iran-ukraine-loom-over-g7-france-accommodates-trump-2026-06-11/" target="_blank" rel="noopener noreferrer">查看原文 ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">财经新闻</h2>
+          <p class="section-desc">聚焦全球市场、货币政策与 AI 投资带来的资本重估</p>
+        </div>
+      </div>
+      <div class="news-list">
+        <article class="news-item">
+          <div class="item-meta">
+            <span class="tag">📉 全球市场</span>
+            <span class="tag">油价</span>
+          </div>
+          <h3>亚洲股市回落，油价因中东局势再度走强</h3>
+          <div class="block"><strong>新闻原文：</strong>路透社报道，亚洲股市 6 月 11 日走低，受到华尔街因美国通胀数据偏热而下跌的拖累；与此同时，美国对伊朗的新一轮打击推动油价进一步上涨。</div>
+          <div class="block"><strong>人话翻译：</strong>市场现在同时在怕两件事：一是通胀又热起来，二是中东局势把原油价格继续往上拱，所以股票先被卖了。</div>
+          <div class="block"><strong>意义：</strong>这说明全球资本市场正在从“只看 AI 增长故事”重新切回“计价通胀、利率和地缘风险”。</div>
+          <div class="source-links">
+            <a class="link" href="https://www.reuters.com/world/china/global-markets-wrapup-1-2026-06-11/" target="_blank" rel="noopener noreferrer">查看原文 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <div class="item-meta">
+            <span class="tag">💵 汇率</span>
+            <span class="tag">美联储</span>
+          </div>
+          <h3>美元震荡，市场重新评估美联储路径</h3>
+          <div class="block"><strong>新闻原文：</strong>路透社称，中东新一轮打击削弱风险情绪，同时美国 5 月消费者通胀升至三年高位，美元在 6 月 11 日维持震荡，投资者对美联储后续政策路径保持谨慎。</div>
+          <div class="block"><strong>人话翻译：</strong>钱现在有点不知道该往哪儿站。高通胀和加息预期本来会撑美元，但战争风险又让整个市场情绪很拧巴。</div>
+          <div class="block"><strong>意义：</strong>汇率、债券和大宗商品后面都会继续被政策预期来回拉扯，企业和资金方做避险决策会更难。</div>
+          <div class="source-links">
+            <a class="link" href="https://www.reuters.com/world/africa/dollar-shaky-investors-weigh-rate-outlook-middle-east-worries-2026-06-11/" target="_blank" rel="noopener noreferrer">查看原文 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <div class="item-meta">
+            <span class="tag">🏗️ AI 投资</span>
+            <span class="tag">企业财报</span>
+          </div>
+          <h3>甲骨文 AI 基建支出大超预期，投资者开始担心债务压力</h3>
+          <div class="block"><strong>新闻原文：</strong>路透社报道，甲骨文预计 2027 财年资本开支最高可达 950 亿美元，其中客户偿付可覆盖最多 250 亿美元；公司 2026 年资本开支约为 556.6 亿美元，高于原定 500 亿美元目标，引发市场对其债务负担的担忧。</div>
+          <div class="block"><strong>人话翻译：</strong>AI 基建太烧钱了，甲骨文现在像是在“先拼命修路，再赌后面会有足够多的车来跑”。</div>
+          <div class="block"><strong>意义：</strong>AI 基础设施竞争已经不只是技术问题，而是现金流、融资能力和资产负债表的硬仗。</div>
+          <div class="source-links">
+            <a class="link" href="https://www.reuters.com/technology/oracle-beats-fourth-quarter-revenue-estimates-2026-06-10/" target="_blank" rel="noopener noreferrer">查看原文 ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">技术领域</h2>
+          <p class="section-desc">聚焦 AI 竞争中的基础设施、资本动作与产品入口</p>
+        </div>
+      </div>
+      <div class="news-list">
+        <article class="news-item">
+          <div class="item-meta">
+            <span class="tag">🏢 AI 基建</span>
+            <span class="tag">Meta</span>
+          </div>
+          <h3>Meta 与信实合作，在印度布局 AI 数据中心</h3>
+          <div class="block"><strong>新闻原文：</strong>路透社报道，Meta 将租用印度信实工业建设的 AI-ready 数据中心，这是 Meta 在印度的重要 AI 基建布局，也意味着双方合作进一步深化。</div>
+          <div class="block"><strong>人话翻译：</strong>Meta 不只是把印度当用户市场了，而是开始把它当 AI 算力和基础设施重镇来押注。</div>
+          <div class="block"><strong>意义：</strong>AI 竞争的焦点正在从模型本身向电力、机房、地域布局和本地化部署能力扩展。</div>
+          <div class="source-links">
+            <a class="link" href="https://www.reuters.com/world/india/meta-ties-up-with-ambanis-reliance-ai-data-center-india-2026-06-10/" target="_blank" rel="noopener noreferrer">查看原文 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <div class="item-meta">
+            <span class="tag">🚀 OpenAI</span>
+            <span class="tag">资本市场</span>
+          </div>
+          <h3>OpenAI 被曝预计在一年内推进上市，并继续押注超级算力园区</h3>
+          <div class="block"><strong>新闻原文：</strong>路透社援引 The Information 报道称，OpenAI CEO Sam Altman 告诉员工，公司预计“在未来一年内”上市；另据路透社另一则报道，OpenAI 还在洽谈租赁位于俄亥俄州联邦土地上的 10 吉瓦数据中心园区，交易可能获得英伟达支持。</div>
+          <div class="block"><strong>人话翻译：</strong>OpenAI 一边准备冲资本市场，一边继续扩自己的算力底座，核心逻辑就是把融资能力和计算资源一起锁住。</div>
+          <div class="block"><strong>意义：</strong>大模型竞争越来越像“资本市场 + 能源电力 + 芯片供应”的综合战，而不只是聊天产品之战。</div>
+          <div class="source-links">
+            <a class="link" href="https://www.reuters.com/business/openai-expects-go-public-within-next-year-information-reports-2026-06-10/" target="_blank" rel="noopener noreferrer">上市进展 ↗</a>
+            <a class="link secondary" href="https://www.reuters.com/technology/openai-weighs-leasing-ohio-data-center-with-nvidia-backing-information-reports-2026-06-10/" target="_blank" rel="noopener noreferrer">算力园区 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <div class="item-meta">
+            <span class="tag">🍎 Apple</span>
+            <span class="tag">AI 入口</span>
+          </div>
+          <h3>苹果推出新版 AI Siri，补自己在 AI 助手赛道的短板</h3>
+          <div class="block"><strong>新闻原文：</strong>路透社报道，苹果在 WWDC 2026 上推出拖延已久的 Siri 升级版，试图通过更智能、更具对话能力的新助手，缩小与其他科技巨头和 AI 创业公司的差距。</div>
+          <div class="block"><strong>人话翻译：</strong>苹果终于开始正面补课 AI 助手，不再只是讲“系统整合”，而是要让 Siri 真正变得更能理解、更能执行。</div>
+          <div class="block"><strong>意义：</strong>如果苹果把 AI 助手做好，被改变的不会只是 Siri，而会是 iPhone、Mac、开发者生态和流量入口分发方式。</div>
+          <div class="source-links">
+            <a class="link" href="https://www.reuters.com/business/apples-wwdc-conference-kicks-off-investors-want-know-if-ai-will-save-siri-2026-06-08/" target="_blank" rel="noopener noreferrer">主报道 ↗</a>
+            <a class="link secondary" href="https://www.reuters.com/business/siri-ai-child-safety-tools-key-takeaways-apples-wwdc-2026-06-08/" target="_blank" rel="noopener noreferrer">要点汇总 ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="footer">
+      <p><strong>晨报说明：</strong>本页基于公开新闻报道整理，采用“新闻原文 + 人话翻译 + 意义”结构，方便快速浏览与判断优先级。</p>
+      <p>🌱 愿你今天打开电脑时，先看清风向，再决定往哪儿发力。</p>
+    </div>
+  </div>
+</body>
+</html>
