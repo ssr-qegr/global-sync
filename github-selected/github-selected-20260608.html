@@ -1,0 +1,331 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>技术项目精选_20260608</title><style>body{margin:0;padding:20px;background:#F3F5F8;color:#1C1F23;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}.wrap{max-width:960px;margin:0 auto;background:#ffffff;border-radius:24px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.12)}.hero{padding:36px 40px;background:linear-gradient(135deg, #0052D9, #ffffff);color:#FFFFFF}.badge{display:inline-block;margin:0 10px 10px 0;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.18);font-size:13px;font-weight:700}.content{padding:28px 40px 36px}.content h1,.content h2{color:#0052D9}.content h2{margin-top:30px;padding-bottom:8px;border-bottom:1px solid rgba(127,127,127,.18)}.content h3{margin-top:22px;color:#1C1F23}.content p,.content li{color:#5C6A82}a{color:#0052D9;text-decoration:none;font-weight:700}code{background:rgba(127,127,127,.12);padding:2px 6px;border-radius:6px}pre{background:rgba(127,127,127,.12);padding:14px;border-radius:14px;overflow:auto}.table-wrap{overflow:auto;border:1px solid rgba(127,127,127,.18);border-radius:14px;margin:16px 0}table{width:100%;border-collapse:collapse;min-width:520px}th,td{padding:10px 12px;border-bottom:1px solid rgba(127,127,127,.12);text-align:left;vertical-align:top}th{background:rgba(127,127,127,.08)}.foot{padding:0 40px 32px;color:#5C6A82;font-size:13px}@media(max-width:720px){body{padding:12px}.hero,.content,.foot{padding-left:20px;padding-right:20px}}</style></head><body><div class="wrap"><section class="hero"><span class="badge">GitHub 精选</span><span class="badge">2026年6月8日</span><h1>技术项目精选_20260608</h1><p>内容来自本地 Markdown，按分类主题自动转换为 HTML 页面。</p></section><main class="content"><h1>技术项目精选_20260608</h1>
+<h2>今日速览</h2>
+<blockquote>
+<p>今日关键词：<strong>Agent工程化元年</strong> | GitHub Copilot SDK | Gemma 4 QAT | Bernini视频编辑</p>
+</blockquote>
+<p>本周 GitHub 呈现三大核心趋势：<br />
+1. <strong>Agent从对话工具进化为数字员工</strong>：技能资产化、代码知识图谱、长期记忆成为基础设施<br />
+2. <strong>Token成本优化成为刚需</strong>：Headroom、Lowfat等工具精准切中"省Token"痛点<br />
+3. <strong>大厂密集布局Agent生态</strong>：微软Build 2026发布Agentic Web、Google Gemma 4 QAT手机端落地</p>
+<hr />
+<h2>一、GitHub Trending 热门项目（本周TOP10）</h2>
+<h3>🥇 1. MarkItDown — 微软文档转Markdown神器</h3>
+<ul>
+<li><strong>星标</strong>：145,078 | 本周 +17,165 ⬆️</li>
+<li><strong>链接</strong>：<a href=\"https://github.com/microsoft/markitdown\" target=\"_blank\" rel=\"noopener noreferrer\">github.com/microsoft/markitdown</a></li>
+<li><strong>语言</strong>：Python</li>
+</ul>
+<p><strong>是什么</strong>：微软开源的Python工具，将各类文件和Office文档快速转换为Markdown格式。</p>
+<p><strong>核心亮点</strong>：<br />
+- 支持PDF、PPT、Word、Excel等主流格式一键转换<br />
+- 打通文档解析与大模型交互的壁垒<br />
+- 与Dify、LangChain等RAG流程无缝集成</p>
+<p><strong>为什么火</strong>：RAG场景中文档解析是第一步也是最容易踩坑的一步，微软出手直接给了标准答案。本周+17K Star，说明开发者对"文档→Markdown"这条路的认可度极高。</p>
+<hr />
+<h3>🥈 2. ECC — Agent性能优化系统</h3>
+<ul>
+<li><strong>星标</strong>：208,066 | 本周 +10,369 ⬆️</li>
+<li><strong>链接</strong>：<a href=\"https://github.com/affaan-m/ECC\" target=\"_blank\" rel=\"noopener noreferrer\">github.com/affaan-m/ECC</a></li>
+<li><strong>语言</strong>：JavaScript</li>
+</ul>
+<p><strong>是什么</strong>：新一代Agent Harness性能优化系统，提供Skills、Instincts、Memory、Security和Research-First五大开发能力模块。</p>
+<p><strong>核心亮点</strong>：<br />
+- 支持Claude Code、Codex、OpenCode、Cursor等主流编码Agent<br />
+- 内置性能调优工具链，显著提升Agent响应速度<br />
+- 安全沙箱机制，保护敏感操作</p>
+<p><strong>为什么火</strong>：Agent赛道从"能跑"进化到"跑得快"，ECC精准切中企业级部署的性能痛点。连续两周登顶GitHub热榜。</p>
+<hr />
+<h3>🥉 3. MoneyPrinterTurbo — AI一键短视频生成</h3>
+<ul>
+<li><strong>星标</strong>：79,858 | 本周 +14,566 ⬆️</li>
+<li><strong>链接</strong>：<a href=\"https://github.com/harry0703/MoneyPrinterTurbo\" target=\"_blank\" rel=\"noopener noreferrer\">github.com/harry0703/MoneyPrinterTurbo</a></li>
+<li><strong>语言</strong>：Python</li>
+</ul>
+<p><strong>是什么</strong>：利用AI大模型一键生成高清短视频的开源工具。</p>
+<p><strong>核心亮点</strong>：<br />
+- 输入主题→自动完成脚本、配音、字幕、素材匹配、视频剪辑<br />
+- 支持多平台发布格式适配<br />
+- 社区近8万Star，AI短视频领域最成熟的开源方案</p>
+<p><strong>为什么火</strong>：内容自动化依然是AI最大落地场景之一。对于运营团队来说，它更像一个自动化内容工厂。</p>
+<hr />
+<h3>4. Headroom — LLM Token压缩神器</h3>
+<ul>
+<li><strong>星标</strong>：14,148 | 本周 +9,421 ⬆️</li>
+<li><strong>链接</strong>：<a href=\"https://github.com/chopratejas/headroom\" target=\"_blank\" rel=\"noopener noreferrer\">github.com/chopratejas/headroom</a></li>
+<li><strong>语言</strong>：Python</li>
+</ul>
+<p><strong>是什么</strong>：在日志、文件及RAG片段输入大模型前进行智能压缩，大幅节省60%-95%的Token且保证回答质量。</p>
+<p><strong>核心亮点</strong>：<br />
+- 提供Library、Proxy、MCP Server三种接入方式<br />
+- 对npm install等冗长输出过滤效果显著<br />
+- 支持Claude Code Hook和OpenCode插件</p>
+<p><strong>为什么火</strong>：用AI Agent做开发，Token成本控制是刚需。91.8%的节省率直击痛点。与同类工具Lowfat（Rust实现，CLI过滤器）形成互补。</p>
+<hr />
+<h3>5. CodeGraph — 代码知识图谱</h3>
+<ul>
+<li><strong>星标</strong>：43,403 | 本周 +697 ⬆️</li>
+<li><strong>链接</strong>：<a href=\"https://github.com/colbymchenry/codegraph\" target=\"_blank\" rel=\"noopener noreferrer\">github.com/colbymchenry/codegraph</a></li>
+<li><strong>语言</strong>：TypeScript</li>
+</ul>
+<p><strong>是什么</strong>：预索引的代码知识图谱，为Claude Code、Codex、Gemini、Cursor等AI编码工具提供结构化代码理解。</p>
+<p><strong>核心亮点</strong>：<br />
+- 提前构建代码仓库的知识图谱，Agent无需反复grep/read file<br />
+- 大幅减少上下文消耗和工具调用次数<br />
+- 对Monorepo场景效果尤为显著</p>
+<p><strong>为什么火</strong>：未来Agent的竞争不只是模型能力竞争，而是"谁能用更少Token获取更多有效上下文"。CodeGraph代表了这个方向。</p>
+<hr />
+<h3>6. SuperMemory — AI时代记忆引擎</h3>
+<ul>
+<li><strong>星标</strong>：25,660 | 本周 +2,740 ⬆️</li>
+<li><strong>链接</strong>：<a href=\"https://github.com/supermemoryai/supermemory\" target=\"_blank\" rel=\"noopener noreferrer\">github.com/supermemoryai/supermemory</a></li>
+<li><strong>语言</strong>：TypeScript</li>
+</ul>
+<p><strong>是什么</strong>：极速可扩展的AI记忆引擎，通过专属API让AI应用告别遗忘。</p>
+<p><strong>核心亮点</strong>：<br />
+- Memory API设计，任何AI应用可接入<br />
+- 持久化跨会话记忆，解决"每次对话都像第一次见面"的痛点<br />
+- 可扩展架构，支持大规模部署</p>
+<hr />
+<h3>7. LiteParse — LlamaIndex极速文档解析器</h3>
+<ul>
+<li><strong>星标</strong>：9,183 | 本周 +2,877 ⬆️</li>
+<li><strong>链接</strong>：<a href=\"https://github.com/run-llama/liteparse\" target=\"_blank\" rel=\"noopener noreferrer\">github.com/run-llama/liteparse</a></li>
+<li><strong>语言</strong>：Rust</li>
+</ul>
+<p><strong>是什么</strong>：由LlamaIndex团队开源的极速文档解析器，基于Rust打造。</p>
+<p><strong>核心亮点</strong>：<br />
+- Rust底层实现，解析速度远超Python方案<br />
+- 精准提取复杂文档数据<br />
+- 为RAG开发者和数据工程师扫清数据清洗障碍</p>
+<hr />
+<h3>8. Harness — 元技能驱动的Agent团队生成器</h3>
+<ul>
+<li><strong>星标</strong>：6,096 | 本周 +2,159 ⬆️</li>
+<li><strong>链接</strong>：<a href=\"https://github.com/revfactory/harness\" target=\"_blank\" rel=\"noopener noreferrer\">github.com/revfactory/harness</a></li>
+<li><strong>语言</strong>：LLM</li>
+</ul>
+<p><strong>是什么</strong>：一个Meta-Skill，自动设计特定领域的智能体团队并生成专属执行技能。</p>
+<p><strong>核心亮点</strong>：<br />
+- 输入领域描述→自动生成多Agent团队和Skill<br />
+- 让AI开发者与业务架构师能轻松构建多智能体协同系统<br />
+- 类似OpenSquilla的MetaSkill理念</p>
+<hr />
+<h3>9. Compound Engineering Plugin — 多IDE统一插件</h3>
+<ul>
+<li><strong>星标</strong>：19,876 | 本周 +2,111 ⬆️</li>
+<li><strong>链接</strong>：<a href=\"https://github.com/EveryInc/compound-engineering-plugin\" target=\"_blank\" rel=\"noopener noreferrer\">github.com/EveryInc/compound-engineering-plugin</a></li>
+<li><strong>语言</strong>：TypeScript</li>
+</ul>
+<p><strong>是什么</strong>：跨平台AI编程插件标准，同时支持Claude Code、Codex、Cursor等工具。</p>
+<hr />
+<h3>10. Open-LLM-VTuber — 本地语音交互虚拟人</h3>
+<ul>
+<li><strong>星标</strong>：9,952 | 本周 +1,604 ⬆️</li>
+<li><strong>链接</strong>：<a href=\"https://github.com/Open-LLM-VTuber/Open-LLM-VTuber\" target=\"_blank\" rel=\"noopener noreferrer\">github.com/Open-LLM-VTuber/Open-LLM-VTuber</a></li>
+<li><strong>语言</strong>：Python</li>
+</ul>
+<p><strong>是什么</strong>：跨平台本地运行的语音交互虚拟人，支持语音打断、Live2D面部驱动。</p>
+<hr />
+<h2>二、大厂重磅动态</h2>
+<h3>🔵 微软Build 2026：Agentic Web全面铺开</h3>
+<p>据《Microsoft Build 2026 and the Agentic Web》（windowsnews.ai）报道，微软在6月2-3日的Build大会上发布了完整的Agentic Web战略：</p>
+<p><strong>GitHub Copilot App</strong>：独立桌面应用，从编辑器助手升级为多Agent编排中心。每个Agent在独立git worktree中运行，支持Interactive/Plan/Autopilot三种模式。</p>
+<p><strong>Copilot SDK</strong>：正式GA，覆盖6种语言（Node.js/TypeScript、Python、Go、.NET、Rust、Java），支持将规划、工具调用、MCP服务器、流式输出嵌入自有应用。</p>
+<p><strong>Agent Mesh</strong>：点对点覆盖网络，让Agent之间发现和协作，无需中心编排器。</p>
+<p><strong>Agent Store</strong>：企业级Agent市场，微软抽成15%，类似VS Code扩展模式。</p>
+<p><strong>Windows Agent Runtime</strong>：系统级服务，在Copilot+ PC的NPU上本地运行轻量Agent，零延迟、零数据外传。</p>
+<p><strong>MCP协议标准化</strong>：微软已将MCP提交IETF，并在Azure、Windows、Edge、Microsoft 365中原生集成。</p>
+<blockquote>
+<p>⚡ 一句话：微软正在把"Agent"变成操作系统的原生能力，而不是一个独立应用。</p>
+</blockquote>
+<hr />
+<h3>🟢 Google Gemma 4 QAT：手机端AI的里程碑</h3>
+<p>据《Gigazine》和《Android Authority》6月8日报道，Google为Gemma 4系列引入了量化感知训练（QAT）技术：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>模型</th>
+<th>原始内存</th>
+<th>QAT版本(Q4_0)</th>
+<th>移动优化版</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gemma 4 E2B</td>
+<td>11.4GB</td>
+<td>2.9GB</td>
+<td>1.1GB</td>
+</tr>
+<tr>
+<td>Gemma 4 E2B (纯文本)</td>
+<td>-</td>
+<td>-</td>
+<td><strong>0.84GB</strong></td>
+</tr>
+<tr>
+<td>Gemma 4 12B</td>
+<td>~28GB</td>
+<td>~6.7GB</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Gemma 4 31B</td>
+<td>~72GB</td>
+<td>~17GB</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>核心突破</strong>：<br />
+- QAT在训练阶段模拟量化，比训练后量化（PTQ）质量损失更小<br />
+- E2B纯文本版仅需0.84GB内存，可在手机端流畅运行<br />
+- 支持llama.cpp、Ollama、LM Studio等主流推理框架<br />
+- Apache 2.0协议，完全开源可商用</p>
+<blockquote>
+<p>⚡ 一句话：0.84GB跑AI大模型，意味着"每部手机都是AI终端"不再是空话。</p>
+</blockquote>
+<hr />
+<h3>🔴 字节Bernini：AI视频编辑的"可控革命"</h3>
+<p>据《AITOP100》和《ai-damn.com》6月5日报道，字节跳动商业化技术团队开源了视频生成与编辑统一框架Bernini：</p>
+<p><strong>架构设计</strong>：MLLM语义规划器（导演）+ DiT渲染器（后期），两阶段解耦。</p>
+<p><strong>核心能力</strong>：<br />
+- 主体替换、背景替换、材质替换——不需要手动遮罩<br />
+- 参考图/视频引导编辑——支持多元素组合、多角度参考<br />
+- 图像/视频植入——海报或视频贴入屏幕/招牌，跟随镜头移动<br />
+- SA-3D RoPE技术防止多参考素材"认混"</p>
+<p><strong>当前状态</strong>：Bernini-R推理代码和权重已开源（Apache 2.0），完整MLLM Planner版本仍在整理中。默认480p/16fps，推荐H100/H800/H200 GPU。</p>
+<blockquote>
+<p>⚡ 一句话：Bernini解决的不是"能不能生成"，而是"能不能按人的想法稳定地生成"。</p>
+</blockquote>
+<hr />
+<h3>🟡 MateClaw v1.5.0：国产Agent框架的工程化升级</h3>
+<p>据《AIBase》6月8日报道，开源AI Agent Runtime框架MateClaw发布v1.5.0：</p>
+<p><strong>三大核心升级</strong>：<br />
+1. <strong>Goal Checklist机制</strong>：将宏观目标拆解为多个独立验收标准，内置评估器逐条验证并记录证据<br />
+2. <strong>自维护知识引擎（LLM Wiki）</strong>：引入Wiki-link、知识分层（事实层+经验层）、PageType权限管控、Pipeline事件处理<br />
+3. <strong>多用户记忆隔离</strong>：通过owner_key和三种可见性scope，确保同一Agent服务多用户时不串记忆</p>
+<p><strong>工程细节</strong>：新增Claude Opus4.8模型支持、MCP工具超时放宽至60秒、微信/企微/飞书渠道统一媒体管线、指数退避重试提升文件交互可靠性。</p>
+<blockquote>
+<p>⚡ 一句话：v1.4.0解决的是"Agent能围绕目标持续工作"，v1.5.0解决的是"这种持续工作如何被验收、被治理、被多人安全使用"。</p>
+</blockquote>
+<hr />
+<h2>三、Agent框架生态更新</h2>
+<h3>OpenSquilla — MetaSkill机制入局</h3>
+<p>据《铠盒智能》6月5日报道，OpenSquilla以"MetaSkill"（元技能）概念强势入局，与OpenClaw、Hermes形成三足鼎立：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>框架</th>
+<th>核心优势</th>
+<th>代表场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenClaw</td>
+<td>5700+预制Skill、最成熟生态</td>
+<td>内容自动化、客服FAQ、社交媒体管理</td>
+</tr>
+<tr>
+<td>Hermes</td>
+<td>深度推理、安全对齐最强</td>
+<td>法律分析、金融建模、战略咨询</td>
+</tr>
+<tr>
+<td>OpenSquilla</td>
+<td>MetaSkill动态组合、50+外部工具</td>
+<td>ERP对接、CRM自动化、跨平台数据整合</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>MetaSkill是什么</strong>：一个可组合的技能单元，包含触发条件、执行逻辑和输出格式。多个MetaSkill可以动态组合形成复合Agent能力，类似乐高积木。</p>
+<hr />
+<h3>AgentDoG — 上海AI实验室的Agent安全框架</h3>
+<p>据《Coze》6月8日报道，上海AI实验室开源AgentDoG框架，专注于AI智能体安全诊断。现有安全工具只能给出"安全/不安全"二元判断，AgentDoG能理解Agent动态交互产生的复杂风险，并解释风险根源。</p>
+<hr />
+<h3>PaperBanana — Google Research的学术图表生成</h3>
+<p>据《mer.vin》6月7日报道，Google Research的PaperBanana（论文代号）开源了社区版（MIT协议）。它用5个Agent（Retriever→Planner→Stylist→Visualizer→Critic）将方法论文本转为出版级图表和统计图，支持CLI、Python API、Gradio Studio和MCP Server。</p>
+<hr />
+<h2>四、开发工具推荐</h2>
+<h3>🛠️ Lowfat — LLM Agent的CLI过滤器</h3>
+<ul>
+<li><strong>链接</strong>：<a href=\"https://github.com/zdk/lowfat\" target=\"_blank\" rel=\"noopener noreferrer\">github.com/zdk/lowfat</a></li>
+<li><strong>语言</strong>：Rust | 单二进制文件</li>
+<li><strong>亮点</strong>：在命令输出到达AI Agent之前过滤无关内容，节省91.8% Token。支持Claude Code Hook、Shell集成、OpenCode插件。UNIX管道风格，极轻量。</li>
+</ul>
+<h3>🛠️ Open Code Review — 阿里开源AI代码审查</h3>
+<ul>
+<li><strong>链接</strong>：<a href=\"https://github.com/alibaba/open-code-review\" target=\"_blank\" rel=\"noopener noreferrer\">github.com/alibaba/open-code-review</a></li>
+<li><strong>亮点</strong>：阿里内部用两年多，服务数万开发者，发现百万级代码缺陷。专门做审查的Agent，能读Git diff、搜索代码库获取上下文，生成行级精度审查意见。</li>
+</ul>
+<h3>🛠️ Agent-Reach — 给Agent装上"眼睛"</h3>
+<ul>
+<li><strong>链接</strong>：<a href=\"https://github.com/Panniantong/Agent-Reach\" target=\"_blank\" rel=\"noopener noreferrer\">github.com/Panniantong/Agent-Reach</a></li>
+<li><strong>亮点</strong>：让AI Agent读取和搜索Twitter、Reddit、YouTube、GitHub、Bilibili、小红书等全平台内容。一行命令，零API费用。</li>
+</ul>
+<h3>🛠️ TinyClaw — 500行代码的生产级Agent引擎</h3>
+<ul>
+<li><strong>链接</strong>：<a href=\"https://github.com/qyhua0/TinyClaw\" target=\"_blank\" rel=\"noopener noreferrer\">github.com/qyhua0/TinyClaw</a></li>
+<li><strong>语言</strong>：Python + Vue 3 | MIT协议</li>
+<li><strong>亮点</strong>：从OpenClaw精简而来，保留多智能体委派、记忆管理、技能热加载等核心能力。单机运行，代码清晰，是学习Agent架构的绝佳实践项目。</li>
+</ul>
+<h3>🛠️ Odysseus — 自托管AI工作空间</h3>
+<ul>
+<li><strong>链接</strong>：<a href=\"https://github.com/pewdiepie-archdaemon/odysseus\" target=\"_blank\" rel=\"noopener noreferrer\">github.com/pewdiepie-archdaemon/odysseus</a></li>
+<li><strong>星标</strong>：59,999 | 本周+3,193</li>
+<li><strong>亮点</strong>：AI Trending今日榜首，自托管AI工作空间，支持完全本地运行。</li>
+</ul>
+<hr />
+<h2>五、行业趋势洞察</h2>
+<h3>趋势1：Skill正在成为Agent时代的"npm"</h3>
+<p>据《6月GitHub十大爆款开源项目》（m.toutiao.com）分析，2026年开发者开始把经验封装成标准化Skill，Skill被视为Agent世界里的"软件包"。社区讨论Skill是否会成为Agent时代的npm——一个Skill就是一种能力，能力可以被安装、Fork、升级和共享。</p>
+<h3>趋势2：参数竞赛已死，Agent生态为王</h3>
+<p>据《6月AI大战》（m.toutiao.com）分析，2026年6月没有哪家公司炫耀参数量。竞争主战场从"谁的模型更强"转向"谁的生态更能让Agent跑起来"。三个关键信号：<br />
+1. 工具调用成为新的核心基准（ToolBench &gt; MMLU）<br />
+2. 推理效率成为差异化竞争力（DeepSeek V4 Pro降价75%）<br />
+3. 开源生态形成正反馈（Llama 4、Qwen3社区贡献爆发）</p>
+<h3>趋势3：MoE架构全面普及</h3>
+<p>几乎所有主流大模型都在向MoE迁移。主流MoE模型的激活参数比普遍在15%-25%之间，同样效果下推理成本可降低4-7倍。DeepSeek V4 Pro是典型代表：235B总参数，推理时只激活约47B参数。</p>
+<h3>趋势4：供应链安全成为焦点</h3>
+<p>据《The Hacker News》6月6日报道，Miasma蠕虫攻击了73个微软GitHub仓库，Claude Code GitHub Action存在漏洞可让恶意Issue劫持仓库，npm生态遭受IronWorm和Miasma变体攻击。开发者需警惕Agent工具链的供应链风险。</p>
+<hr />
+<h2>六、本周精选行动清单</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>行动项</th>
+<th>预期收益</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>⭐⭐⭐⭐⭐</td>
+<td>试用Headroom/Lowfat压缩Token</td>
+<td>直接降低API成本60-95%</td>
+</tr>
+<tr>
+<td>⭐⭐⭐⭐</td>
+<td>接入Open Code Review做代码审查</td>
+<td>深度审查vs通用Agent审查对比</td>
+</tr>
+<tr>
+<td>⭐⭐⭐⭐</td>
+<td>关注Gemma 4 QAT移动端部署</td>
+<td>本地AI能力落地的新机会</td>
+</tr>
+<tr>
+<td>⭐⭐⭐</td>
+<td>体验GitHub Copilot App多Agent模式</td>
+<td>了解微软Agentic Web布局</td>
+</tr>
+<tr>
+<td>⭐⭐⭐</td>
+<td>研读Bernini架构设计</td>
+<td>视频生成与编辑统一框架的思路借鉴</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<p><em>数据来源：GitHub Trending（2026-06-08周榜）、AI Trending Open Source Heat Tracker、Microsoft Build 2026、Google AI Blog、The Hacker News、AIBase、mer.vin、铠盒智能、博客园等</em></p></main><div class="foot">源文件：技术项目精选_20260608.md<br/>输出文件：github-selected-20260608.html</div></div></body></html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>技术项目精选 | 2026年5月30日</title><style>body{margin:0;padding:20px;background:#F3F5F8;color:#1C1F23;font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}.wrap{max-width:960px;margin:0 auto;background:#ffffff;border-radius:24px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.12)}.hero{padding:36px 40px;background:linear-gradient(135deg, #0052D9, #ffffff);color:#FFFFFF}.badge{display:inline-block;margin:0 10px 10px 0;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.18);font-size:13px;font-weight:700}.content{padding:28px 40px 36px}.content h1,.content h2{color:#0052D9}.content h2{margin-top:30px;padding-bottom:8px;border-bottom:1px solid rgba(127,127,127,.18)}.content h3{margin-top:22px;color:#1C1F23}.content p,.content li{color:#5C6A82}a{color:#0052D9;text-decoration:none;font-weight:700}code{background:rgba(127,127,127,.12);padding:2px 6px;border-radius:6px}pre{background:rgba(127,127,127,.12);padding:14px;border-radius:14px;overflow:auto}.table-wrap{overflow:auto;border:1px solid rgba(127,127,127,.18);border-radius:14px;margin:16px 0}table{width:100%;border-collapse:collapse;min-width:520px}th,td{padding:10px 12px;border-bottom:1px solid rgba(127,127,127,.12);text-align:left;vertical-align:top}th{background:rgba(127,127,127,.08)}.foot{padding:0 40px 32px;color:#5C6A82;font-size:13px}@media(max-width:720px){body{padding:12px}.hero,.content,.foot{padding-left:20px;padding-right:20px}}</style></head><body><div class="wrap"><section class="hero"><span class="badge">GitHub 精选</span><span class="badge">2026年5月30日</span><h1>技术项目精选 | 2026年5月30日</h1><p>内容来自本地 Markdown，按分类主题自动转换为 HTML 页面。</p></section><main class="content"><h1>技术项目精选 | 2026年5月30日</h1>
+<blockquote>
+<p>每日12:00 | GitHub Trending · AI开发工具 · 开源项目推荐</p>
+</blockquote>
+<hr />
+<h2>今日核心洞察</h2>
+<h3>三大信号</h3>
+<p><strong>1. OpenClaw突破302K星——开源史上的里程碑</strong><br />
+5月30日最新数据，OpenClaw星标数已达302,000，正式超越React成为GitHub有史以来星标最高的项目。更恐怖的是增速：React用了10年达到230K星，OpenClaw只用了180天，日均新增超2000颗。这意味着本地Agentic AI已经从概念验证进入大规模采用阶段。</p>
+<p><strong>2. MCP协议生态全面爆发</strong><br />
+GitHub正式推出MCP Server Registry，提供中心化的MCP服务器发现平台。微软同步发布Planetary Computer Pro MCP Tools for VS Code，提供35+地理空间数据工具。Anthropic官方的mcp/servers仓库已达85K星，MCP正在成为AI Agent连接外部工具的事实标准。</p>
+<p><strong>3. SKILL.md格式确立行业标准</strong><br />
+Matt Pocock的mattpocock/skills突破75K星，CSDN数据显示其周增6K+星。GitHub官方spec-kit、社区awesome-claude-skills等纷纷跟进，SKILL.md格式正从Claude Code扩展到Codex、Cursor、Gemini CLI等全平台。工程师的方法论正在成为可版本化的代码资产。</p>
+<hr />
+<h2>GitHub Trending Top 项目（2026-05-30）</h2>
+<h3>🥇 OpenClaw | ⭐ 302,000+ | 本周持续霸榜</h3>
+<p><strong>一句话</strong>：180天超越React，本地Agentic AI的里程碑</p>
+<p><strong>核心能力</strong>：<br />
+- 支持50+平台集成：WhatsApp、Signal、iMessage、微信等<br />
+- 自主技能获取：Agent能自己编写和实现新技能<br />
+- defineToolPlugin框架：开发者可构建类型化工具插件<br />
+- 跨平台支持：macOS原生应用优化</p>
+<p><strong>技术亮点</strong>：<br />
+- 作为本地编排层，连接LLM与各类外部环境<br />
+- 支撑"智能密度"理念——在普通硬件上运行复杂推理任务<br />
+- 支持Claude/GPT/Kimi/MiMo等25+模型</p>
+<p><strong>链接</strong>：<code>github.com/openclaw/openclaw</code></p>
+<hr />
+<h3>🥈 mattpocock/skills | ⭐ 75,700+ | 今日持续增长</h3>
+<p><strong>一句话</strong>：把工程师方法论变成可版本化的代码资产</p>
+<p><strong>核心能力</strong>：<br />
+- 17个生产级工程技能：规划(/grill-me)、TDD(/tdd)、原型(/prototype)等<br />
+- SKILL.md开放标准，兼容Claude Code/Codex/Cursor/Gemini CLI<br />
+- 安装命令：<code>npx skills@latest add mattpocock/skills</code></p>
+<p><strong>GitHub官方spec-kit同步跟进</strong>：<br />
+- 提供/speckit.constitution、/speckit.specify、/speckit.plan、/speckit.implement命令<br />
+- 支持Claude Code、Gemini CLI、Cursor、Codex CLI等12+ Agent</p>
+<p><strong>链接</strong>：<code>github.com/mattpocock/skills</code></p>
+<hr />
+<h3>🥉 SoulXFlashTalk | ⭐ 16,200+ | 本周新晋</h3>
+<p><strong>一句话</strong>：国产首个亚秒级实时数字人生成模型</p>
+<p><strong>核心能力</strong>：<br />
+- 14亿参数实时数字人生成模型<br />
+- 亚秒级延迟 + 32 FPS<br />
+- 开源项目页、技术报告、源码、模型权重全量发布</p>
+<p><strong>适用场景</strong>：数字人直播、虚拟主播、实时交互场景</p>
+<p><strong>链接</strong>：<code>github.com/SoulAI-Lab/SoulXFlashTalk</code></p>
+<hr />
+<h3>MCP生态全家桶</h3>
+<h4>MCP Servers官方仓库 | ⭐ 85,722</h4>
+<p><strong>一句话</strong>：MCP协议的"官方教科书"</p>
+<p><strong>链接</strong>：<code>github.com/modelcontextprotocol/servers</code></p>
+<hr />
+<h4>MCPAdapt | ⭐ 新晋</h4>
+<p><strong>一句话</strong>：一键把650+ MCP服务器接入任意Agent框架</p>
+<p><strong>核心能力</strong>：<br />
+- 无缝集成Smithery.ai上的所有MCP服务器<br />
+- 兼容LangGraph、CrewAI、AutoGen等主流框架</p>
+<p><strong>链接</strong>：<code>github.com/mcpadapt/mcpadapt</code></p>
+<hr />
+<h4>Popular MCP Servers | ⭐ 持续增长</h4>
+<p><strong>一句话</strong>：Smithery.ai数据驱动的热门MCP服务器排行</p>
+<p><strong>链接</strong>：<code>github.com/popular-mcp-servers</code></p>
+<hr />
+<h3>Agent框架新势力</h3>
+<h4>cc-switch | ⭐ 持续增长</h4>
+<p><strong>一句话</strong>：跨平台Desktop Agent统一管理工具</p>
+<p><strong>核心能力</strong>：<br />
+- 同时管理Claude Code、Codex CLI、OpenCode、Gemini CLI、Hermes Agent<br />
+- 统一切换层，跨工具配置管理</p>
+<hr />
+<h4>Agent Zero | ⭐ 持续增长</h4>
+<p><strong>一句话</strong>：让AI Agent学会"自我学习+执行任务"</p>
+<p><strong>核心能力</strong>：<br />
+- 三层持久化记忆：工作/情景/程序性<br />
+- 每15次工具调用后自动反思<br />
+- 自动提炼、创建、迭代技能</p>
+<hr />
+<h2>今日新开源项目</h2>
+<h3>🚀 Unity-MCP</h3>
+<p><strong>一句话</strong>：用AI副驾驶开发Unity游戏</p>
+<p><strong>核心能力</strong>：<br />
+- 通过MCP协议连接Unity引擎与AI助手<br />
+- AI辅助开发、自动化测试、运行时调试<br />
+- TypeScript开源</p>
+<p><strong>链接</strong>：<code>github.com/Unity-Technologies/Unity-MCP</code></p>
+<hr />
+<h3>🚀 Toonflow-app</h3>
+<p><strong>一句话</strong>：开源一站式AI短剧创作工具</p>
+<p><strong>核心能力</strong>：<br />
+- 小说/剧本 → 动画短剧全自动转换<br />
+- AI编剧 + 智能分镜 + 角色生成 + 视频生成<br />
+- 跨平台桌面端轻量部署</p>
+<p><strong>链接</strong>：<code>github.com/METAXGTSEOSEM/Toonflow-app</code></p>
+<hr />
+<h3>🚀 AetherWave-MCP</h3>
+<p><strong>一句话</strong>：音视图文+乐队生成MCP服务器</p>
+<p><strong>核心能力</strong>：<br />
+- 支持Claude、Cursor、Continue等AI工具<br />
+- 音乐、图片、视频、乐队生成工具集<br />
+- 支持MCP协议标准接入</p>
+<p><strong>链接</strong>：<code>github.com/AetherWave-Studio/aetherwave-mcp</code></p>
+<hr />
+<h3>🚀 ZeroPath MCP Server</h3>
+<p><strong>一句话</strong>：用自然语言查安全漏洞</p>
+<p><strong>核心能力</strong>：<br />
+- 查询SAST问题、密钥、补丁<br />
+- 直接集成到AI辅助开发工具<br />
+- 支持Claude Code / Cursor</p>
+<p><strong>链接</strong>：<code>github.com/ZeroPath/zeropath-mcp</code></p>
+<hr />
+<h2>AI开发工具全景图</h2>
+<h3>一、本地大模型运行</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>⭐</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ollama</strong></td>
+<td>80k+</td>
+<td>最流行的本地LLM运行工具，支持Mac/Windows/Linux</td>
+</tr>
+<tr>
+<td><strong>llama.cpp</strong></td>
+<td>60k+</td>
+<td>纯C/C++实现，CPU友好，支持量化</td>
+</tr>
+</tbody>
+</table></div>
+<h3>二、AI应用搭建平台</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>⭐</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dify</strong></td>
+<td>68k+</td>
+<td>可视化AI应用编排，支持RAG、Agent、工作流</td>
+</tr>
+<tr>
+<td><strong>n8n</strong></td>
+<td>45k+</td>
+<td>工作流自动化 + AI集成，开源自托管</td>
+</tr>
+<tr>
+<td><strong>Flowise</strong></td>
+<td>32k+</td>
+<td>低代码LangChain前端</td>
+</tr>
+</tbody>
+</table></div>
+<h3>三、Claude Code Skills生态</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>⭐</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>mattpocock/skills</strong></td>
+<td>75k+</td>
+<td>17个生产级工程技能，SKILL.md格式标杆</td>
+</tr>
+<tr>
+<td><strong>obra/superpowers</strong></td>
+<td>40k+</td>
+<td>系统化调试+TDD+多Agent协作</td>
+</tr>
+<tr>
+<td><strong>awesome-claude-skills</strong></td>
+<td>21k+</td>
+<td>社区最全Skills资源合集</td>
+</tr>
+</tbody>
+</table></div>
+<h3>四、MCP生态</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>⭐</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>modelcontextprotocol/servers</strong></td>
+<td>85k+</td>
+<td>官方MCP服务器参考实现</td>
+</tr>
+<tr>
+<td><strong>MCPRepository</strong></td>
+<td>-</td>
+<td>Next.js实现的MCP服务器管理平台</td>
+</tr>
+<tr>
+<td><strong>OpenDataMCP</strong></td>
+<td>-</td>
+<td>公共数据集连接LLM应用</td>
+</tr>
+</tbody>
+</table></div>
+<h3>五、Agent框架</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>⭐</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LangGraph</strong></td>
+<td>30k+</td>
+<td>用有向图建模多步骤Agent流程</td>
+</tr>
+<tr>
+<td><strong>AutoGen</strong></td>
+<td>48k+</td>
+<td>微软多Agent对话框架</td>
+</tr>
+<tr>
+<td><strong>CrewAI</strong></td>
+<td>37k+</td>
+<td>角色驱动的多Agent编排</td>
+</tr>
+</tbody>
+</table></div>
+<h3>六、AI视频与数字人</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>⭐</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Deep Live Cam</strong></td>
+<td>-</td>
+<td>实时视频换脸</td>
+</tr>
+<tr>
+<td><strong>SoulXFlashTalk</strong></td>
+<td>16k+</td>
+<td>亚秒级实时数字人</td>
+</tr>
+<tr>
+<td><strong>Toonflow</strong></td>
+<td>-</td>
+<td>AI短剧一站式创作</td>
+</tr>
+<tr>
+<td><strong>Metahuman Stream</strong></td>
+<td>-</td>
+<td>UE5实时数字人</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>按场景速查</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>你想做什么</th>
+<th>首选项目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>本地跑大模型</td>
+<td>Ollama</td>
+</tr>
+<tr>
+<td>搭 AI 应用 / 工作流</td>
+<td>Dify / n8n</td>
+</tr>
+<tr>
+<td>提升Claude Code能力</td>
+<td>mattpocock/skills</td>
+</tr>
+<tr>
+<td>MCP协议接入</td>
+<td>modelcontextprotocol/servers</td>
+</tr>
+<tr>
+<td>构建多步骤 Agent</td>
+<td>LangGraph</td>
+</tr>
+<tr>
+<td>数字人实时交互</td>
+<td>SoulXFlashTalk</td>
+</tr>
+<tr>
+<td>AI短剧创作</td>
+<td>Toonflow</td>
+</tr>
+<tr>
+<td>AI游戏开发</td>
+<td>Unity-MCP</td>
+</tr>
+<tr>
+<td>安全漏洞查询</td>
+<td>ZeroPath MCP</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>入坑建议</h2>
+<p><strong>如果只看三个</strong>：OpenClaw（本地Agent）、mattpocock/skills（工程技能）、modelcontextprotocol/servers（MCP生态），覆盖80%的AI开发新范式。</p>
+<p><strong>今日重点关注</strong>：OpenClaw突破302K星标志着本地Agentic AI进入主流，建议先体验再判断是否适合自己的工作流。</p>
+<hr />
+<h2>数据来源</h2>
+<ul>
+<li>GitHub Trending（2026-05-30）</li>
+<li>chaindesk.ai 周榜</li>
+<li>各项目官方仓库</li>
+</ul>
+<hr />
+<p><em>本报告由 AI 自动生成，仅供参考</em></p></main><div class="foot">源文件：技术项目精选_20260530.md<br/>输出文件：github-selected-20260530.html</div></div></body></html>
