@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日副业探索报告 · 2026-06-13</title>
+  <style>
+    :root {
+      --primary: #e8892e;
+      --accent: #f4b860;
+      --accent-strong: #d96a17;
+      --bg: #fff7e8;
+      --bg-soft: #fffaf1;
+      --card-bg: rgba(255, 252, 245, 0.96);
+      --text-main: #4a3426;
+      --text-sub: #8a6a55;
+      --line: #f3d6a8;
+      --good: #c96c21;
+      --tag-bg: #fff0d6;
+      --shadow: 0 18px 45px rgba(187, 111, 42, 0.13);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at top left, #ffe8b8 0, transparent 28%),
+        radial-gradient(circle at bottom right, rgba(244, 184, 96, 0.25) 0, transparent 22%),
+        linear-gradient(180deg, #fff7e8 0%, #fbeedb 100%);
+      line-height: 1.72;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid rgba(243, 214, 168, 0.78);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero {
+      position: relative;
+      padding: 40px 40px 28px;
+      background: linear-gradient(135deg, #fff2d8 0%, #ffe2af 100%);
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.34);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 180px;
+      height: 180px;
+      right: -40px;
+      top: -60px;
+    }
+
+    .hero::after {
+      width: 120px;
+      height: 120px;
+      right: 120px;
+      bottom: -60px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(243, 214, 168, 0.95);
+      color: var(--accent-strong);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.25;
+      letter-spacing: 0.02em;
+      color: var(--primary);
+      position: relative;
+      z-index: 1;
+    }
+
+    .subtitle {
+      margin-top: 12px;
+      max-width: 760px;
+      font-size: 16px;
+      color: var(--text-sub);
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta-card {
+      background: rgba(255, 252, 245, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 8px 20px rgba(188, 116, 48, 0.08);
+    }
+
+    .meta-label {
+      font-size: 12px;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+    }
+
+    .meta-value {
+      font-size: 18px;
+      font-weight: 800;
+      color: #3d281c;
+    }
+
+    .section {
+      padding: 30px 40px 10px;
+    }
+
+    .section-title {
+      margin: 0 0 16px;
+      font-size: 24px;
+      color: #3d281c;
+    }
+
+    .intro-panel {
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px 24px;
+      color: var(--text-sub);
+      box-shadow: 0 10px 24px rgba(188, 116, 48, 0.07);
+    }
+
+    .project {
+      margin-top: 24px;
+      padding: 28px;
+      border: 1px solid #f5deba;
+      border-radius: 24px;
+      background: #ffffff;
+      box-shadow: 0 10px 28px rgba(188, 116, 48, 0.08);
+      position: relative;
+    }
+
+    .project::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 26px;
+      width: 52px;
+      height: 4px;
+      border-radius: 0 0 999px 999px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+
+    .project-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .project h2 {
+      margin: 0;
+      font-size: 24px;
+      color: #3d281c;
+    }
+
+    .project-sub {
+      margin: 8px 0 0;
+      color: var(--text-sub);
+      font-size: 15px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--tag-bg);
+      border: 1px solid #f5d8a7;
+      color: #b95f16;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: #4a3426;
+    }
+
+    .card p,
+    .card li {
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+
+    ul {
+      margin: 10px 0 0 18px;
+      padding: 0;
+    }
+
+    .score-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .score-item {
+      background: #fff;
+      border: 1px solid #f3dfbf;
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .score-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 12px;
+    }
+
+    .score-top span {
+      font-size: 14px;
+      font-weight: 700;
+      color: #4a3426;
+    }
+
+    .score-top strong {
+      color: var(--good);
+      font-size: 14px;
+    }
+
+    .bar {
+      width: 100%;
+      height: 10px;
+      background: #f6ead2;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar > i {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      min-width: 680px;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #f6e6c7;
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+      word-break: keep-all;
+    }
+
+    th {
+      background: #fff7e8;
+      color: #7b573a;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    td:nth-child(1), td:nth-child(2) {
+      white-space: nowrap;
+    }
+
+    th:nth-child(1), td:nth-child(1) { width: 120px; }
+    th:nth-child(2), td:nth-child(2) { width: 160px; }
+
+    tr:last-child td { border-bottom: none; }
+
+    .highlight {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #fff6e6 0%, #ffeac7 100%);
+      border: 1px solid #f2d8aa;
+      color: #78563f;
+      font-size: 14px;
+    }
+
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .roadmap-step {
+      background: #fff;
+      border: 1px solid #f3dfbf;
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .roadmap-step b {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: #b95f16;
+    }
+
+    .footer {
+      padding: 26px 40px 34px;
+      color: #a9876a;
+      font-size: 13px;
+      text-align: center;
+      border-top: 1px dashed var(--line);
+    }
+
+    .footer a {
+      color: #c76a1b;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 780px) {
+      body { padding: 12px; }
+      .container { border-radius: 22px; }
+      .hero, .section, .footer { padding-left: 20px; padding-right: 20px; }
+      h1 { font-size: 28px; }
+      .meta-grid, .grid, .roadmap { grid-template-columns: 1fr; }
+      .project { padding: 22px 18px; }
+      .project h2 { font-size: 21px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="eyebrow">☀️ 每日副业探索 · style_warm</div>
+      <h1>今日副业探索报告</h1>
+      <div class="subtitle">
+        今天重点筛选了 2 个更适合个人起步、AI 自动化空间大、启动门槛较低、且具备收入弹性的副业方向。共同特点是：先从轻服务验证需求，再逐步沉淀模板、工作流和自动化系统。
+      </div>
+      <div class="meta-grid">
+        <div class="meta-card">
+          <div class="meta-label">日期</div>
+          <div class="meta-value">2026-06-13</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">推荐方向</div>
+          <div class="meta-value">2 个</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">优先策略</div>
+          <div class="meta-value">先服务后产品</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">核心标准</div>
+          <div class="meta-value">低门槛 + 可自动化</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">今日结论</h2>
+      <div class="intro-panel">
+        如果目标是 <strong>尽快拿到第一笔副业收入</strong>，今天更推荐优先尝试 <strong>“AI 本地商家短视频获客代运营”</strong>；如果目标是 <strong>沉淀标准化交付并做长期复购</strong>，更推荐 <strong>“AI 电商详情页 / 素材包工作室”</strong>。前者更容易快速成交，后者更适合逐步升级到模板化、半自动化交付。
+      </div>
+
+      <article class="project">
+        <div class="project-head">
+          <div>
+            <h2>方向 1：AI 本地商家短视频获客代运营</h2>
+            <p class="project-sub">面向餐饮店、健身房、美业门店、摄影工作室等本地商家，用 AI 帮他们批量生成探店式、优惠活动式、口播式短视频与文案，核心卖点是“持续获客素材供应”。</p>
+            <div class="badge-row">
+              <span class="badge">需求真实</span>
+              <span class="badge">成交路径短</span>
+              <span class="badge">可复购月包</span>
+              <span class="badge">AI 提效明显</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>项目介绍</h3>
+            <p>很多本地商家知道短视频重要，但普遍缺时间、缺内容能力、也缺稳定执行。你可以提供一整套轻量代运营交付：</p>
+            <ul>
+              <li>到店拍少量素材，或直接用商家现有图片/视频二次加工</li>
+              <li>AI 生成活动脚本、标题、口播文案、字幕和封面文案</li>
+              <li>每周交付 5-10 条短视频成片或半成品</li>
+              <li>同步给出小红书 / 抖音 / 视频号发布文案与标签建议</li>
+            </ul>
+            <p>客户真正购买的是“低成本持续获客内容”，而不是单条视频剪辑本身。</p>
+          </div>
+          <div class="card">
+            <h3>适合谁做</h3>
+            <p>适合会基础拍摄、会剪映/CapCut、愿意做线下沟通的人。哪怕不懂复杂后期，只要能把交付流程标准化，也能很快起步。</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>可行性分析</h3>
+            <ul>
+              <li><strong>需求长期存在：</strong>本地商家持续需要曝光，但很少有能力养专职内容团队。</li>
+              <li><strong>获客路径清晰：</strong>可以直接从熟人商圈、同城社群、门店拜访切入，成交链路短。</li>
+              <li><strong>交付结果直观：</strong>视频、封面、文案都是可见成果，更容易促成复购。</li>
+              <li><strong>升级空间大：</strong>可以从“单次活动视频”升级到“月度内容代运营包”。</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>AI 自动化程度</h3>
+            <div class="score-list">
+              <div class="score-item">
+                <div class="score-top"><span>脚本与标题生成</span><strong>90%</strong></div>
+                <div class="bar"><i style="width:90%"></i></div>
+              </div>
+              <div class="score-item">
+                <div class="score-top"><span>字幕、封面文案、标签建议</span><strong>92%</strong></div>
+                <div class="bar"><i style="width:92%"></i></div>
+              </div>
+              <div class="score-item">
+                <div class="score-top"><span>视频粗剪与批量改写</span><strong>75%</strong></div>
+                <div class="bar"><i style="width:75%"></i></div>
+              </div>
+              <div class="score-item">
+                <div class="score-top"><span>到店沟通与最终审美把关</span><strong>35%</strong></div>
+                <div class="bar"><i style="width:35%"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>维度</th>
+                <th>结论</th>
+                <th>说明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>启动成本</td>
+                <td>低到中</td>
+                <td>一台电脑、一部手机、基础剪辑软件和 1-2 个 AI 工具订阅即可；若需要实地拍摄，增加少量交通成本。</td>
+              </tr>
+              <tr>
+                <td>起步方式</td>
+                <td>体验单切入</td>
+                <td>建议先做“1 条活动宣传片 + 3 条发布文案”体验单，价格可压低换首批案例。</td>
+              </tr>
+              <tr>
+                <td>预期收益</td>
+                <td>中高</td>
+                <td>单次体验单可做 199-499 元；月包通常 1500-5000 元；若形成模板化，可同时服务多家门店。</td>
+              </tr>
+              <tr>
+                <td>风险点</td>
+                <td>沟通与执行稳定性</td>
+                <td>如果响应慢、交付节奏不稳，商家很快会流失，因此 SOP 和排期管理很关键。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="highlight">
+          <strong>建议打法：</strong>先选一个垂直行业做样板，比如餐饮或健身。把“活动海报文案 → 短视频脚本 → 成片模板 → 发布文案”做成固定流程，后面绝大部分重复劳动都能交给 AI。
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <div>
+            <h2>方向 2：AI 电商详情页 / 素材包工作室</h2>
+            <p class="project-sub">面向拼多多、淘宝、抖店、小红书店铺的小卖家，提供商品卖点提炼、详情页文案、主图标题、场景图脚本、问答区文案等一站式“出图前策划包”。</p>
+            <div class="badge-row">
+              <span class="badge">标准化强</span>
+              <span class="badge">远程可交付</span>
+              <span class="badge">适合个人工作室</span>
+              <span class="badge">复用模板价值高</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>项目介绍</h3>
+            <p>很多中小卖家不会系统整理商品卖点，导致详情页杂乱、转化弱。这个方向不一定自己做复杂设计，而是交付一套“可直接给设计/运营执行的素材包”：</p>
+            <ul>
+              <li>产品卖点拆解与人群画像</li>
+              <li>主图标题、详情页分屏文案、FAQ 问答文案</li>
+              <li>场景图提示词 / 拍摄脚本 / AIGC 出图建议</li>
+              <li>评价区引导语、活动页短文案、客服快捷回复模板</li>
+            </ul>
+            <p>本质上是把“商品表达”这件事做成一套轻策划服务，交付轻、效率高、客单价可控。</p>
+          </div>
+          <div class="card">
+            <h3>适合谁做</h3>
+            <p>适合具备基础文案能力、对电商转化逻辑有感知的人。哪怕不是设计师，也可以先从“文案素材包”切入，再逐步联动设计或 AIGC 出图能力。</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>可行性分析</h3>
+            <ul>
+              <li><strong>门槛比设计低：</strong>先卖“会转化的文案和结构”，比直接做整套视觉设计更容易起步。</li>
+              <li><strong>可复用模板很多：</strong>不同类目虽然细节不同，但结构高度相似，容易沉淀模板库。</li>
+              <li><strong>适合远程交付：</strong>只需让客户提供产品图、竞品链接和卖点信息即可开工。</li>
+              <li><strong>后续可产品化：</strong>可以逐步做成“标准化表单 + AI 自动生成初稿 + 人工精修”的半自动工作室。</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>AI 自动化程度</h3>
+            <div class="score-list">
+              <div class="score-item">
+                <div class="score-top"><span>卖点提炼与详情页结构</span><strong>88%</strong></div>
+                <div class="bar"><i style="width:88%"></i></div>
+              </div>
+              <div class="score-item">
+                <div class="score-top"><span>标题、FAQ、客服话术生成</span><strong>94%</strong></div>
+                <div class="bar"><i style="width:94%"></i></div>
+              </div>
+              <div class="score-item">
+                <div class="score-top"><span>场景图提示词与出图建议</span><strong>85%</strong></div>
+                <div class="bar"><i style="width:85%"></i></div>
+              </div>
+              <div class="score-item">
+                <div class="score-top"><span>类目判断与最终转化校准</span><strong>45%</strong></div>
+                <div class="bar"><i style="width:45%"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>维度</th>
+                <th>结论</th>
+                <th>说明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>启动成本</td>
+                <td>低</td>
+                <td>主要是 AI 工具订阅和少量图片处理工具成本，月成本通常可控制在 100-300 元。</td>
+              </tr>
+              <tr>
+                <td>起步方式</td>
+                <td>单品试单</td>
+                <td>可以从“单个商品详情页文案包”起步，先做样品，再引导升级为店铺月度素材包。</td>
+              </tr>
+              <tr>
+                <td>预期收益</td>
+                <td>中</td>
+                <td>单品文案素材包可做 99-399 元；店铺套餐可做 800-3000 元；配合设计资源后客单价还能继续提升。</td>
+              </tr>
+              <tr>
+                <td>风险点</td>
+                <td>类目经验不足</td>
+                <td>不同商品的用户关注点差异很大，前期要优先选择熟悉品类，避免交付太泛。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="highlight">
+          <strong>建议打法：</strong>先做 3 个固定模版：食品饮料、家居收纳、日用百货。用问卷收集商品信息，再由 AI 自动生成详情页结构和文案初稿，你只做最后的类目校准与精修。
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">7 天最小启动路线</h2>
+      <div class="roadmap">
+        <div class="roadmap-step">
+          <b>Day 1-2：确定垂直方向</b>
+          <div>不要同时做太多方向，只选一个行业切入，先做样板案例和标准报价。</div>
+        </div>
+        <div class="roadmap-step">
+          <b>Day 3-4：沉淀交付模板</b>
+          <div>把提示词、文案框架、交付清单、客户问卷整理成固定模版，降低每单的脑力消耗。</div>
+        </div>
+        <div class="roadmap-step">
+          <b>Day 5-7：拿首批试单</b>
+          <div>优先从熟人、同城社群、朋友圈案例展示开始，用低风险试单验证需求，再逐步提价。</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      Generated for 孙纾荣 · style_warm 页面已适配 GitHub Pages 发布 · 今日关键词：低门槛、强自动化、可复购
+    </div>
+  </div>
+</body>
+</html>
