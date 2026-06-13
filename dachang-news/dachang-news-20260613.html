@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日大厂新闻｜2026-06-13</title>
+  <style>
+    :root {
+      --primary: #B388FF;
+      --primary-strong: #9C5CFF;
+      --accent: #00E5FF;
+      --accent-soft: rgba(0, 229, 255, 0.14);
+      --bg: #0A0A0F;
+      --bg-2: #12121A;
+      --card: rgba(26, 26, 36, 0.92);
+      --card-2: rgba(34, 34, 48, 0.92);
+      --text-main: #F3F4F6;
+      --text-sub: #B8BED0;
+      --text-faint: #7E8598;
+      --line: rgba(179, 136, 255, 0.20);
+      --shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at top left, rgba(179,136,255,0.18), transparent 24%),
+        radial-gradient(circle at top right, rgba(0,229,255,0.12), transparent 22%),
+        linear-gradient(180deg, #09090D 0%, #101019 48%, #0B0B10 100%);
+      line-height: 1.75;
+    }
+    a { color: inherit; }
+    .shell {
+      max-width: 1220px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(17,17,25,0.96), rgba(12,12,18,0.98));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      position: relative;
+      padding: 44px 42px 34px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background:
+        linear-gradient(135deg, rgba(179,136,255,0.14), rgba(0,229,255,0.06)),
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 42px 0 42px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,229,255,0.55), transparent);
+    }
+    .hero-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(179,136,255,0.10);
+      border: 1px solid rgba(179,136,255,0.24);
+      color: #E7D8FF;
+      font-size: 12px;
+      letter-spacing: 0.3px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 42px;
+      line-height: 1.15;
+      letter-spacing: 0.4px;
+      color: #FFFFFF;
+      text-shadow: 0 0 22px rgba(179,136,255,0.18);
+    }
+    .subtitle {
+      max-width: 940px;
+      margin: 16px 0 0;
+      font-size: 16px;
+      color: var(--text-sub);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .hero-panel,
+    .summary-card,
+    .news-card,
+    .footer-card,
+    .note-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 22px;
+      backdrop-filter: blur(12px);
+    }
+    .hero-panel { padding: 22px 22px 18px; }
+    .panel-title {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .signal-list { display: grid; gap: 12px; }
+    .signal-item {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--card-2);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .signal-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #FFFFFF;
+      font-size: 16px;
+    }
+    .signal-item span {
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .summary-grid { display: grid; gap: 14px; }
+    .summary-card {
+      padding: 18px;
+      min-height: 104px;
+      position: relative;
+      overflow: hidden;
+    }
+    .summary-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+      opacity: 0.85;
+    }
+    .summary-card .kicker {
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .summary-card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+      color: #FFFFFF;
+    }
+    .summary-card span {
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .section { padding: 30px 42px 10px; }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .section-title {
+      margin: 0;
+      font-size: 28px;
+      color: #FFFFFF;
+    }
+    .section-desc {
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: var(--text-faint);
+    }
+    .news-grid { display: grid; gap: 18px; }
+    .news-card {
+      position: relative;
+      padding: 24px 24px 20px 26px;
+      background: linear-gradient(180deg, rgba(27,27,38,0.96), rgba(20,20,29,0.96));
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+    .news-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 18px;
+      bottom: 18px;
+      width: 4px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+      box-shadow: 0 0 18px rgba(179,136,255,0.4);
+    }
+    .news-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0,229,255,0.26);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.28);
+    }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: #DCCBFF;
+      background: rgba(179,136,255,0.10);
+      border: 1px solid rgba(179,136,255,0.18);
+    }
+    .news-card h3 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      line-height: 1.35;
+      color: #FFFFFF;
+    }
+    .block {
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: var(--text-sub);
+    }
+    .block strong { color: var(--text-main); }
+    .highlight { color: #E8F9FF; }
+    .link-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      color: #07131A;
+      background: linear-gradient(135deg, var(--accent), #7CF5FF);
+      box-shadow: 0 10px 22px rgba(0,229,255,0.20);
+    }
+    .link-btn.secondary {
+      color: #E7D8FF;
+      background: rgba(179,136,255,0.10);
+      border: 1px solid rgba(179,136,255,0.18);
+      box-shadow: none;
+    }
+    .note-card {
+      padding: 20px 22px;
+      margin-top: 16px;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .footer { padding: 28px 42px 42px; }
+    .footer-card {
+      padding: 22px 22px 18px;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .footer-card strong { color: #FFFFFF; }
+    .footer-note {
+      margin-top: 10px;
+      color: var(--text-faint);
+      font-size: 13px;
+    }
+    @media (max-width: 960px) {
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      body { padding: 12px; }
+      .hero, .section, .footer { padding-left: 18px; padding-right: 18px; }
+      h1 { font-size: 31px; }
+      .section-title { font-size: 24px; }
+      .news-card h3 { font-size: 20px; }
+      .news-card { padding: 20px 18px 18px 22px; }
+      .hero::after { inset: auto 18px 0 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <div class="hero-top">
+        <span class="badge">⚡ style_dark</span>
+        <span class="badge">🗓️ 2026年6月13日 星期六</span>
+        <span class="badge">🌐 国内外科技巨头动态</span>
+      </div>
+      <h1>今日大厂新闻：国内卷系统级 AI，海外抢浏览器入口、开发者工具和数据中心</h1>
+      <p class="subtitle">
+        今天这版更适合用“截至今日最值得关注的近期动态”来读：国内大厂明显在把 AI 从模型能力推进到系统、云、生态和终端一体化落地；国际科技公司则继续围绕浏览器 Agent、Siri 重构、企业智能体与长任务执行能力加码。下面按“新闻原文 + 人话翻译 + 影响分析”展开。
+      </p>
+
+      <div class="hero-grid">
+        <div class="hero-panel">
+          <div class="panel-title">Top Signals</div>
+          <div class="signal-list">
+            <div class="signal-item">
+              <strong>国内主线：从模型发布转向系统级落地</strong>
+              <span>华为、阿里、腾讯、百度、字节、小米都在把 AI 变成操作系统能力、开发工具、云产品或终端生态，而不是停留在单一模型宣传。</span>
+            </div>
+            <div class="signal-item">
+              <strong>国际主线：入口、工具链、基础设施三线并进</strong>
+              <span>Google 抢浏览器入口，Apple 重构个人助手，Meta 补企业与数据中心，OpenAI 补长期运行智能体底座。</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-grid">
+          <div class="summary-card">
+            <div class="kicker">国内焦点</div>
+            <strong>AI 正在并入“云 + OS + 终端 + 开发者平台”</strong>
+            <span>谁能把模型接进真实工作流和高频设备，谁就更可能拿到下一阶段的使用时长与商业化。</span>
+          </div>
+          <div class="summary-card">
+            <div class="kicker">国际焦点</div>
+            <strong>Agent 竞争开始拼执行环境，不再只拼对话质量</strong>
+            <span>浏览器代操作、Siri 接任务、Codex 跑长任务，本质上都在争“谁能替用户把事做完”。</span>
+          </div>
+          <div class="summary-card">
+            <div class="kicker">今天最值得盯</div>
+            <strong>系统入口与长期工作空间，会成为下一轮 AI 分水岭</strong>
+            <span>模型能力会逐步同质化，真正拉开差距的是入口控制权、生态覆盖与任务执行闭环。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">国内大厂</h2>
+          <p class="section-desc">字节跳动、腾讯、阿里、百度、华为、小米截至今日最值得看的公开动态</p>
+        </div>
+      </div>
+
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🛰️ 华为</span>
+            <span class="tag">HDC 2026 / HarmonyOS 7</span>
+          </div>
+          <h3>华为在 HDC 2026 启动 HarmonyOS 7 开发者 Beta，直接把“Agent 时代的系统升级”摆上台面</h3>
+          <div class="block"><strong>新闻原文：</strong>华为官方新闻稿写道：<span class="highlight">“HarmonyOS 7 开发者 Beta 正式启动。围绕 Agent 时代的智能化创新，华为带来五大核心发布。”</span></div>
+          <div class="block"><strong>人话翻译：</strong>华为不是在讲一个 App 新功能，而是在讲“整套系统如何为智能体时代重做底层能力”。这意味着它想把鸿蒙做成系统级 AI 的承载平台。</div>
+          <div class="block"><strong>影响分析：</strong>一旦系统级接口、调度能力和开发者工具进一步成形，鸿蒙竞争点就不只是设备销量，而是“有没有机会把 AI 深深嵌进操作系统本身”。这对生态黏性和开发者投入意愿都很关键。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://www.huawei.com/cn/news/2026/6/harmonyos7-hdc" target="_blank" rel="noopener noreferrer">华为官方新闻稿 ↗</a>
+            <a class="link-btn secondary" href="https://developer.huawei.com/consumer/cn/hdc/2026" target="_blank" rel="noopener noreferrer">HDC 2026 官网 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">☁️ 腾讯</span>
+            <span class="tag">效率智能体 / AI 工作台</span>
+          </div>
+          <h3>腾讯云发布效率智能体工具集与企业版 AI 工作台，明显在把 AI 从“功能点”做成“生产力入口”</h3>
+          <div class="block"><strong>新闻原文：</strong>腾讯官方文章写道：<span class="highlight">“腾讯云首发效率智能体工具集……面向企业客户，全新发布 WorkBuddy 企业版 AI 工作台，并同步升级 ClawPro、腾讯云智能体开发平台（ADP）等核心产品。”</span></div>
+          <div class="block"><strong>人话翻译：</strong>腾讯现在不只是想证明自己有模型或工具，而是想抢公司内部的“AI 工作台入口”——让员工和企业流程都在它的工具链里完成。</div>
+          <div class="block"><strong>影响分析：</strong>这类产品更接近真实付费场景。谁先把知识库、协同文档、企业流程和智能体调度串起来，谁就更容易把 AI 变成稳定收入，而不是一次性热点。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://www.tencent.com/zh-cn/articles/2202350.html" target="_blank" rel="noopener noreferrer">腾讯官方原文 ↗</a>
+            <a class="link-btn secondary" href="https://www.tencent.com/zh-cn/articles/2202341.html" target="_blank" rel="noopener noreferrer">腾讯全球市场 AI 动态 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🧠 阿里巴巴</span>
+            <span class="tag">全栈 AI / Agent 时代</span>
+          </div>
+          <h3>阿里宣布全面升级全栈 AI，明确把云基础设施、模型服务、AI 芯片和基础模型一起推向 Agent 时代</h3>
+          <div class="block"><strong>新闻原文：</strong>阿里巴巴集团官方公告写道：<span class="highlight">“阿里巴巴宣布全面升级其全栈 AI 能力，涵盖云端基础设施、模型服务、AI 芯片及基础模型，协助客户更有效率、更可靠、更高效能地构建、部署及扩展 AI Agent。”</span></div>
+          <div class="block"><strong>人话翻译：</strong>阿里想传递的是：别把它只看成“发了个千问新版本”，它更想当 AI 时代的一整套底座——算力、模型、平台、开发框架都要占住。</div>
+          <div class="block"><strong>影响分析：</strong>如果这条路线跑顺，阿里的优势会体现在“客户不只买模型，而是直接在阿里云上把 Agent 系统搭起来”。这类平台型能力，往往比单次模型发布更抗周期。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://www.alibabagroup.com/document-1994119844504535040" target="_blank" rel="noopener noreferrer">阿里官方公告 ↗</a>
+            <a class="link-btn secondary" href="https://www.alibabagroup.com/en-US/document-1991364841188622336" target="_blank" rel="noopener noreferrer">阿里云增长数据 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🔎 百度</span>
+            <span class="tag">文心 5.1 / Agent 能力</span>
+          </div>
+          <h3>百度发布文心 5.1，把升级重点放在 Agent、推理和创作能力，试图强化“能理解、能执行、还能写”的统一模型形态</h3>
+          <div class="block"><strong>新闻原文：</strong>ERNIE Blog 写道：<span class="highlight">“文心 5.1 正式上线……通过分离式全异步强化学习与规模化智能体后训练，在 Agent、推理、创作等多维度能力全面升级。”</span></div>
+          <div class="block"><strong>人话翻译：</strong>百度这次强调的不是单一榜单成绩，而是想让文心更适合做“既能思考又能办事”的统一底座，往更完整的智能体模型走。</div>
+          <div class="block"><strong>影响分析：</strong>如果百度后续能把模型能力顺畅接进搜索、企业智能体和自动驾驶/地图等既有业务，文心的价值才会真正放大。否则，单独的模型升级很容易被行业噪音淹没。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://ernie.baidu.com/blog/zh/posts/ernie-5.1-0508-release/" target="_blank" rel="noopener noreferrer">文心官方博客 ↗</a>
+            <a class="link-btn secondary" href="https://ernie.baidu.com/" target="_blank" rel="noopener noreferrer">文心官网 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🎯 字节跳动</span>
+            <span class="tag">Seed 2.0 / 通用 Agent 模型</span>
+          </div>
+          <h3>字节跳动 Seed 2.0 系列继续强化 Agent 路线，重点不是“更大”，而是“更能完成长链路任务”</h3>
+          <div class="block"><strong>新闻原文：</strong>字节跳动 Seed 官网写道：<span class="highlight">“Seed2.0 系列模型正式发布，提供 Pro、Lite、Mini 三款不同尺寸的通用 Agent 模型……在真实长链路任务中能够稳定推进。”</span></div>
+          <div class="block"><strong>人话翻译：</strong>字节对外讲法越来越明确：模型不是摆榜单，而是要真的能把任务一步步做完。这和豆包、内容创作、生产力产品的方向是一致的。</div>
+          <div class="block"><strong>影响分析：</strong>字节如果把模型、产品和内容生态继续打通，优势会在于用户规模与落地速度。它未必要先证明“最强参数”，但很可能先证明“最好用、最容易进产品”。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://seed.bytedance.com/zh/seed2" target="_blank" rel="noopener noreferrer">Seed 2.0 官方页 ↗</a>
+            <a class="link-btn secondary" href="https://seed.bytedance.com/zh" target="_blank" rel="noopener noreferrer">字节 Seed 官网 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">📱 小米</span>
+            <span class="tag">AI 投入 / 人车家全生态</span>
+          </div>
+          <h3>小米披露今年至少投入 160 亿元做 AI，未来三年超 600 亿元，继续押注“人车家”闭环体验</h3>
+          <div class="block"><strong>新闻原文：</strong>小米官方新闻稿写道：<span class="highlight">“the Group announced it will invest at least RMB16 billion in AI this year, with total investment set to exceed RMB60 billion over the next three years to accelerate the creation of a closed-loop AI experience within the ‘Human × Car × Home’ ecosystem.”</span></div>
+          <div class="block"><strong>人话翻译：</strong>小米现在的 AI 逻辑不是做几个功能秀肌肉，而是让手机、汽车、可穿戴、家电都围着一套 AI 体验运转，抢的是长线生态入口。</div>
+          <div class="block"><strong>影响分析：</strong>终端厂商的 AI 战争，最后很可能拼的是“账号体系 + 设备协同 + 系统入口”三件事。小米持续大投入，说明它不打算只当硬件公司，而想把 AI 变成生态层的新操作系统能力。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://www.mi.com/global/discover/article?id=6202" target="_blank" rel="noopener noreferrer">小米官方新闻稿 ↗</a>
+            <a class="link-btn secondary" href="https://www.mi.com/global" target="_blank" rel="noopener noreferrer">Xiaomi Global ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">国际科技公司</h2>
+          <p class="section-desc">Google、Apple、Meta、OpenAI 截至今日最值得看的公开动态</p>
+        </div>
+      </div>
+
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🔍 Google</span>
+            <span class="tag">Gemini in Chrome / Auto Browse</span>
+          </div>
+          <h3>Google 把 Gemini 和 auto browse 推进到 Chrome for Android，浏览器开始从“看网页”变成“替你操作网页”</h3>
+          <div class="block"><strong>新闻原文：</strong>Google 官方博客写道：<span class="highlight">“Chrome for Android will introduce Gemini-powered features… You can use the new auto browse tool to automate errands like booking parking or updating orders.”</span></div>
+          <div class="block"><strong>人话翻译：</strong>Google 的目标不只是做一个浏览器聊天框，而是让浏览器变成能理解页面、代你处理任务的 Agent。以后浏览器可能不只是入口，还是“执行器”。</div>
+          <div class="block"><strong>影响分析：</strong>这会直接影响搜索、表单、购物和内容网站的交互逻辑。未来网页产品不只要服务真人，也要开始适配“帮人办事的浏览器 AI”。谁掌控浏览器层，谁就更接近下一个超级入口。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://blog.google/products-and-platforms/products/chrome/bringing-chrome-ai-to-android/" target="_blank" rel="noopener noreferrer">Google 官方博客 ↗</a>
+            <a class="link-btn secondary" href="https://blog.google/products-and-platforms/products/chrome/gemini-3-auto-browse/" target="_blank" rel="noopener noreferrer">Chrome 新功能详解 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🍎 Apple</span>
+            <span class="tag">Apple Intelligence / Siri AI</span>
+          </div>
+          <h3>Apple 在 WWDC26 发布新一代 Apple Intelligence 与 Siri AI，明显要把个人助手重新做成系统中枢</h3>
+          <div class="block"><strong>新闻原文：</strong>Apple Newsroom 写道：<span class="highlight">“Apple unveils next generation of Apple Intelligence, Siri AI, and more”</span>，并单独发布 <span class="highlight">“a profoundly more capable and personal assistant”</span> 的 Siri AI 介绍。</div>
+          <div class="block"><strong>人话翻译：</strong>苹果的核心意思是：Siri 不该只是接指令，而该变成真正理解你上下文、跨设备协调任务的个人助理。它想把 AI 的主入口重新收回系统层。</div>
+          <div class="block"><strong>影响分析：</strong>如果 Siri 真能完成系统级任务编排，苹果会在端侧 AI 上形成更强封闭优势。对开发者来说，这也意味着未来很多关键交互可能优先在系统层发生，而不在单个 App 里发生。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/" target="_blank" rel="noopener noreferrer">WWDC26 总览 ↗</a>
+            <a class="link-btn secondary" href="https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/" target="_blank" rel="noopener noreferrer">Siri AI 详情 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🧱 Meta</span>
+            <span class="tag">Business Agent / AI 数据中心</span>
+          </div>
+          <h3>Meta 一边推企业侧 Business Agent，一边扩 AI 数据中心布局，开始把“智能体前台”和“算力后台”一起抓</h3>
+          <div class="block"><strong>新闻原文：</strong>Meta Newsroom 先后写道：<span class="highlight">“We’re introducing Meta Business Agent”</span>；以及 <span class="highlight">“Meta has entered an agreement with Reliance Industries to lease our first AI-enabled data center in India.”</span></div>
+          <div class="block"><strong>人话翻译：</strong>Meta 已经不满足于只讲模型故事，而是在同时补两块：一块是企业真正会用的智能体应用，一块是支撑这些应用长期跑下去的数据中心与区域算力。</div>
+          <div class="block"><strong>影响分析：</strong>这说明 AI 竞争正在变成“产品化 + 基建化”双线作战。只会发模型还不够，还得有企业入口、有全球部署能力、有长期供给的算力资产。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://about.fb.com/news/2026/06/meta-business-agent/" target="_blank" rel="noopener noreferrer">Meta Business Agent ↗</a>
+            <a class="link-btn secondary" href="https://about.fb.com/news/2026/06/meta-partners-with-reliance-on-ai-enabled-data-center-in-india/" target="_blank" rel="noopener noreferrer">Meta 数据中心合作 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🤖 OpenAI</span>
+            <span class="tag">GPT-5.5 / Memory / Ona</span>
+          </div>
+          <h3>OpenAI 6 月连续更新 GPT-5.5、ChatGPT 记忆能力，并计划收购 Ona，明显在补“长期运行智能体”的整套底层能力</h3>
+          <div class="block"><strong>新闻原文：</strong>OpenAI Newsroom 列表显示，6 月上旬已连续发布 <span class="highlight">“Introducing GPT-5.5”</span>、<span class="highlight">“Better memory for a more helpful ChatGPT”</span>，以及 <span class="highlight">“OpenAI to acquire Ona”</span>。</div>
+          <div class="block"><strong>人话翻译：</strong>OpenAI 现在补的不是单一炫技功能，而是智能体要真正长期干活所需的三件东西：更强模型、更长记忆、更稳定的云环境与工作空间。</div>
+          <div class="block"><strong>影响分析：</strong>下一阶段企业客户最关心的，往往不是模型会不会写诗，而是能不能安全、持续、可追踪地完成长任务。OpenAI 这组动作，明显是在抢这个更高价值的战场。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://openai.com/news/company-announcements/" target="_blank" rel="noopener noreferrer">OpenAI Newsroom ↗</a>
+            <a class="link-btn secondary" href="https://openai.com/news/" target="_blank" rel="noopener noreferrer">OpenAI 全部新闻 ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">一句话结论</h2>
+          <p class="section-desc">如果今天只记一个判断，可以记这个</p>
+        </div>
+      </div>
+      <div class="note-card">
+        今天真正值得关注的，不是“谁又发了一个新模型”，而是 <strong>谁正在把 AI 接进操作系统、浏览器、企业工作台、终端生态和长期运行环境</strong>。这说明行业竞争已经从“模型发布期”，进入“入口控制 + 执行闭环 + 基础设施”阶段。
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-card">
+        <strong>说明：</strong>本页按“截至 2026-06-13 最值得关注的近期公开动态”整理，优先采用公司官方新闻稿、官网博客或官方活动页面，不强行把缺少新增公开信息的公司写成“今日刚发布”。
+        <div class="footer-note">Generated for global-sync / style_dark · 孙纾荣</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
