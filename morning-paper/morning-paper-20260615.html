@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日晨报 - 2026年6月15日</title>
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-dark: #047857;
+      --bg: #ecfdf5;
+      --card-bg: #ffffff;
+      --soft: #d1fae5;
+      --soft-2: #f0fdf4;
+      --text-main: #064e3b;
+      --text-sub: #4b5563;
+      --line: #bbf7d0;
+      --shadow: 0 18px 40px rgba(16, 185, 129, 0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px;
+      background:
+        radial-gradient(circle at top right, rgba(16,185,129,0.12), transparent 24%),
+        linear-gradient(180deg, #ecfdf5 0%, #f8fffb 100%);
+      color: var(--text-main);
+      font-family: "Nunito", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(187,247,208,0.9);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .hero {
+      padding: 40px 40px 28px;
+      background: linear-gradient(135deg, rgba(16,185,129,0.16), rgba(255,255,255,0.98) 58%);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-top {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    h1 {
+      margin: 0;
+      font-size: 36px;
+      line-height: 1.2;
+      color: #022c22;
+    }
+    .subtitle {
+      margin: 12px 0 0;
+      color: var(--text-sub);
+      font-size: 16px;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      padding: 24px 40px 0;
+    }
+    .summary-card {
+      background: var(--soft-2);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+    }
+    .summary-card h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+    .summary-card p {
+      margin: 0;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .section {
+      padding: 18px 40px 8px;
+    }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 26px 0 18px;
+      font-size: 26px;
+      color: #022c22;
+    }
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--line), transparent);
+    }
+    .news-card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      margin-bottom: 18px;
+      background: linear-gradient(180deg, #ffffff, #fbfffd);
+      box-shadow: 0 10px 26px rgba(16,185,129,0.06);
+    }
+    .news-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .news-title {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.4;
+      color: #022c22;
+    }
+    .news-meta {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pill {
+      display: inline-block;
+      background: var(--soft);
+      color: var(--primary-dark);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .block {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 16px;
+    }
+    .block h4 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      color: #065f46;
+    }
+    .origin {
+      background: #f8fafc;
+      border-left: 4px solid #34d399;
+      color: #334155;
+    }
+    .translation {
+      background: #f0fdf4;
+      color: #14532d;
+    }
+    .meaning {
+      background: #fffbeb;
+      color: #854d0e;
+      border: 1px dashed #fde68a;
+    }
+    .block p { margin: 0; }
+    .source-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      text-decoration: none;
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 8px 16px rgba(16,185,129,0.18);
+    }
+    .source-link:hover { background: var(--primary-dark); }
+    .footer {
+      padding: 8px 40px 36px;
+      color: #6b7280;
+      font-size: 13px;
+      text-align: center;
+    }
+    @media (max-width: 760px) {
+      body { padding: 12px; }
+      .hero, .section, .footer, .summary-grid { padding-left: 18px; padding-right: 18px; }
+      .summary-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+      .news-title { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <div class="hero-top">
+        <span class="badge">🌿 style_green</span>
+        <span class="badge">🗓 2026年6月15日 星期一</span>
+        <span class="badge">☀️ 早间阅读版</span>
+      </div>
+      <h1>今日晨报</h1>
+      <p class="subtitle">聚焦时事政治、财经新闻、技术领域三大板块。每条新闻都配了“新闻原文 + 人话翻译 + 意义解读”，方便你在几分钟内快速抓住重点。</p>
+    </div>
+
+    <div class="summary-grid">
+      <div class="summary-card">
+        <h3>时事政治</h3>
+        <p>核心看点集中在伊美停战框架落地、伊朗官方确认，以及 G7 峰会进入正式议程阶段。</p>
+      </div>
+      <div class="summary-card">
+        <h3>财经新闻</h3>
+        <p>全球增长预期下修、中东局势扰动能源与航运预期、中国金融数据阶段性好于市场预期。</p>
+      </div>
+      <div class="summary-card">
+        <h3>技术领域</h3>
+        <p>大模型出口管制升级、终端 AI 持续加速、国家级 AI 硬件投资进入更重资产阶段。</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">🕊 时事政治</div>
+
+      <article class="news-card">
+        <div class="news-header">
+          <h2 class="news-title">1. 美伊就结束战争达成和平框架</h2>
+          <div class="news-meta">
+            <span class="pill">Reuters</span>
+            <span class="pill">中东局势</span>
+          </div>
+        </div>
+        <div class="block origin">
+          <h4>新闻原文</h4>
+          <p>路透社报道称，美国与伊朗官员表示，双方已就一项和平框架达成一致，目标是结束冲突、停止空袭，并为后续正式签署协议铺路。</p>
+        </div>
+        <div class="block translation">
+          <h4>人话翻译</h4>
+          <p>打了这么久，双方现在至少先把“停火怎么停、后面怎么谈”这件事谈出了一个框架版答案，意味着局势从“继续升级”转向“先稳住再谈条件”。</p>
+        </div>
+        <div class="block meaning">
+          <h4>意义解读</h4>
+          <p>这条消息最重要的影响不是“彻底结束风险”，而是给全球市场一个短期稳定预期。油价、航运、避险资产都会先围绕“战争是否真降温”重新定价。</p>
+        </div>
+        <a class="source-link" href="https://www.reuters.com/world/asia-pacific/us-iran-reach-peace-deal-signing-set-friday-pakistan-says-2026-06-14/" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-card">
+        <div class="news-header">
+          <h2 class="news-title">2. 伊朗最高国家安全委员会正式确认停战谅解备忘录</h2>
+          <div class="news-meta">
+            <span class="pill">人民网/新华社</span>
+            <span class="pill">官方确认</span>
+          </div>
+        </div>
+        <div class="block origin">
+          <h4>新闻原文</h4>
+          <p>新华社德黑兰 6 月 15 日电称，据伊朗媒体报道，伊朗最高国家安全委员会当天凌晨发表声明，正式确认伊美停战谅解备忘录达成。</p>
+        </div>
+        <div class="block translation">
+          <h4>人话翻译</h4>
+          <p>如果说前一条还是“外媒和知情人士在说”，那这条就是伊朗自己站出来盖章：这个备忘录不是传闻，确实已经到了官方确认层面。</p>
+        </div>
+        <div class="block meaning">
+          <h4>意义解读</h4>
+          <p>国际政治里最怕“口头说说”。现在伊朗安全决策核心机构确认后，协议可信度明显提升，也让后续观察重点转向“执行细节”和“美方是否兑现承诺”。</p>
+        </div>
+        <a class="source-link" href="http://world.people.com.cn/n1/2026/0615/c1002-40740156.html" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-card">
+        <div class="news-header">
+          <h2 class="news-title">3. G7 峰会在法国依云开场，贸易与地缘议题成主线</h2>
+          <div class="news-meta">
+            <span class="pill">欧盟理事会 / Reuters</span>
+            <span class="pill">G7</span>
+          </div>
+        </div>
+        <div class="block origin">
+          <h4>新闻原文</h4>
+          <p>欧盟理事会信息显示，2026 年 G7 峰会于 6 月 15 日至 17 日在法国依云举行；路透社进一步称，本届峰会将重点讨论中东局势、乌克兰问题，以及美国与印度间的贸易事项。</p>
+        </div>
+        <div class="block translation">
+          <h4>人话翻译</h4>
+          <p>今年 G7 不是走过场，议题都很硬：战争、能源、贸易、供应链，全是会直接传导到市场和企业经营层面的东西。</p>
+        </div>
+        <div class="block meaning">
+          <h4>意义解读</h4>
+          <p>G7 现在越来越像“政策风向会”。无论是对全球资本市场，还是对跨境业务、出海企业，接下来几天峰会释放的联合口径都值得紧盯。</p>
+        </div>
+        <a class="source-link" href="https://www.consilium.europa.eu/en/meetings/international-summit/2026/06/15-17/" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+    </div>
+
+    <div class="section">
+      <div class="section-title">💹 财经新闻</div>
+
+      <article class="news-card">
+        <div class="news-header">
+          <h2 class="news-title">4. 世界银行下调 2026 年全球增长预期至 2.5%</h2>
+          <div class="news-meta">
+            <span class="pill">World Bank</span>
+            <span class="pill">全球经济</span>
+          </div>
+        </div>
+        <div class="block origin">
+          <h4>新闻原文</h4>
+          <p>世界银行在 6 月发布的《全球经济展望》中表示，中东冲突推高能源价格，预计 2026 年全球增长率将放缓至 2.5%，这将是疫情以来最低水平。</p>
+        </div>
+        <div class="block translation">
+          <h4>人话翻译</h4>
+          <p>世界银行的判断很直接：战争一打、油价一涨，全球经济就更难跑快。明年大概率还是低速增长，不会轻松。</p>
+        </div>
+        <div class="block meaning">
+          <h4>意义解读</h4>
+          <p>这意味着企业做预算时要更保守，尤其是依赖全球需求、能源成本和跨境运输的行业。对投资者来说，“防御性资产”和“现金流确定性”会更受偏爱。</p>
+        </div>
+        <a class="source-link" href="https://www.worldbank.org/en/news/press-release/2026/06/11/global-economic-prospects-june-2026-press-release" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-card">
+        <div class="news-header">
+          <h2 class="news-title">5. 财新：特朗普称美伊协议“完成”，霍尔木兹海峡开放</h2>
+          <div class="news-meta">
+            <span class="pill">财新</span>
+            <span class="pill">能源与航运</span>
+          </div>
+        </div>
+        <div class="block origin">
+          <h4>新闻原文</h4>
+          <p>财新晨报称，特朗普表示“美国与伊朗的协议现已完成”，并授权霍尔木兹海峡“免费开放”；伊朗外交部副部长表示正式签署仪式拟于 6 月 19 日在瑞士举行。</p>
+        </div>
+        <div class="block translation">
+          <h4>人话翻译</h4>
+          <p>市场最担心的并不是谁表态更强硬，而是霍尔木兹海峡能不能恢复正常通行。现在这条线一旦稳定，全球油运和油价的恐慌情绪就会先降一截。</p>
+        </div>
+        <div class="block meaning">
+          <h4>意义解读</h4>
+          <p>霍尔木兹海峡是全球能源运输要道，任何“恢复开放”的信号都会立刻传导到原油、航运和避险品种。短期内，市场会更关注协议能否在 19 日顺利签署。</p>
+        </div>
+        <a class="source-link" href="https://finance.caixin.com/m/2026-06-15/102454091.html" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-card">
+        <div class="news-header">
+          <h2 class="news-title">6. 前 5 个月社融增量 17.48 万亿元，金融数据略超预期</h2>
+          <div class="news-meta">
+            <span class="pill">财新</span>
+            <span class="pill">国内金融</span>
+          </div>
+        </div>
+        <div class="block origin">
+          <h4>新闻原文</h4>
+          <p>财新报道提到，2026 年前 5 个月社融规模增量为 17.48 万亿元，人民币贷款增加 9.11 万亿元，整体金融数据略好于市场预期。</p>
+        </div>
+        <div class="block translation">
+          <h4>人话翻译</h4>
+          <p>简单说就是：钱还在继续往实体经济里流，而且力度比市场原本担心的稍微好一点，说明信用环境没有想象中那么弱。</p>
+        </div>
+        <div class="block meaning">
+          <h4>意义解读</h4>
+          <p>这对稳增长预期是个加分项。虽然还不能直接下结论说需求已经彻底回暖，但至少说明政策托底和融资修复还在起作用，对地产链、制造业和银行板块情绪都有支撑。</p>
+        </div>
+        <a class="source-link" href="https://finance.caixin.com/m/2026-06-15/102454091.html" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+    </div>
+
+    <div class="section">
+      <div class="section-title">🧠 技术领域</div>
+
+      <article class="news-card">
+        <div class="news-header">
+          <h2 class="news-title">7. Anthropic 暂停 Fable 5 / Mythos 5 对外国国民访问</h2>
+          <div class="news-meta">
+            <span class="pill">Anthropic</span>
+            <span class="pill">大模型监管</span>
+          </div>
+        </div>
+        <div class="block origin">
+          <h4>新闻原文</h4>
+          <p>Anthropic 官方声明称，美国政府基于国家安全原因发布出口管制指令，要求暂停 Fable 5 和 Mythos 5 对任何外国国民的访问；公司因此临时关闭这两款模型，其他模型不受影响。</p>
+        </div>
+        <div class="block translation">
+          <h4>人话翻译</h4>
+          <p>这件事说明顶级大模型已经不只是商业产品，而是被当成“敏感技术资产”来管理了。门槛不是你愿不愿意开放，而是监管让不让你开放。</p>
+        </div>
+        <div class="block meaning">
+          <h4>意义解读</h4>
+          <p>对全球 AI 产业链来说，这会加速“模型能力分区”和“算力与模型的地缘化”。做国际化 AI 产品的团队，接下来必须更重视地区合规、访问分层和替代方案设计。</p>
+        </div>
+        <a class="source-link" href="https://www.anthropic.com/news/fable-mythos-access" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-card">
+        <div class="news-header">
+          <h2 class="news-title">8. 苹果发布新一代 Apple Intelligence 与 Siri AI</h2>
+          <div class="news-meta">
+            <span class="pill">Apple</span>
+            <span class="pill">终端 AI</span>
+          </div>
+        </div>
+        <div class="block origin">
+          <h4>新闻原文</h4>
+          <p>苹果在 WWDC26 宣布推出新一代 Apple Intelligence。官方称 Siri AI 可以理解当前屏幕内容、基于个人上下文跨应用搜索，并可访问网页获取最新信息后给出答案。</p>
+        </div>
+        <div class="block translation">
+          <h4>人话翻译</h4>
+          <p>苹果这次不是只做聊天机器人，而是想把 AI 真正嵌进系统层，让 Siri 变成能看懂你当前在干嘛、还能替你跨 App 找信息的“操作型助手”。</p>
+        </div>
+        <div class="block meaning">
+          <h4>意义解读</h4>
+          <p>这代表手机端 AI 竞争正式进入“系统级代理”阶段。对开发者来说，未来重点不只是接不接模型，而是你的 App 能不能被系统级 AI 理解、调用和串联。</p>
+        </div>
+        <a class="source-link" href="https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-card">
+        <div class="news-header">
+          <h2 class="news-title">9. 英国发布 AI Hardware Plan，超 11 亿英镑投向 AI 硬件生态</h2>
+          <div class="news-meta">
+            <span class="pill">GOV.UK</span>
+            <span class="pill">AI 基础设施</span>
+          </div>
+        </div>
+        <div class="block origin">
+          <h4>新闻原文</h4>
+          <p>英国政府发布《UK AI Hardware Plan》，提出通过创新、技能、采购和投资四大支柱建设 AI 硬件生态，总支持规模超过 11 亿英镑。</p>
+        </div>
+        <div class="block translation">
+          <h4>人话翻译</h4>
+          <p>英国现在的思路很明确：AI 不能只买别人的芯片和算力，必须把本国的硬件研发、验证、采购和产业化链条也搭起来。</p>
+        </div>
+        <div class="block meaning">
+          <h4>意义解读</h4>
+          <p>全球 AI 竞争正在从“拼模型”转向“拼全栈能力”。谁能把芯片、系统、供应链和政府采购联动起来，谁就更有机会在下一轮 AI 基建竞争里占到位置。</p>
+        </div>
+        <a class="source-link" href="https://www.gov.uk/government/publications/uk-ai-hardware-plan/uk-ai-hardware-plan" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+    </div>
+
+    <div class="footer">
+      晨报生成时间：2026-06-15 07:35 CST ｜ 页面风格：style_green ｜ 仓库目录：morning-paper/
+    </div>
+  </div>
+</body>
+</html>
