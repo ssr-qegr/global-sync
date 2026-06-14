@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub 精选项目报告 - 2026-06-14</title>
+  <style>
+    :root {
+      --primary: #0052D9;
+      --bg: #F3F5F8;
+      --card-bg: #FFFFFF;
+      --text-main: #1C1F23;
+      --text-sub: #5C6A82;
+      --line: #DCE6F2;
+      --soft: #F8FAFC;
+      --shadow: 0 10px 30px rgba(0, 82, 217, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #EEF4FF 0%, var(--bg) 100%);
+      color: var(--text-main);
+      margin: 0;
+      padding: 24px;
+    }
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .hero {
+      padding: 36px 40px 28px;
+      background: linear-gradient(135deg, #0052D9 0%, #0B78FF 100%);
+      color: #fff;
+    }
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+    .hero h1 { margin: 0; font-size: 32px; line-height: 1.2; font-weight: 700; }
+    .hero p { margin: 12px 0 0; font-size: 15px; line-height: 1.85; color: rgba(255,255,255,0.92); }
+    .date-badge {
+      white-space: nowrap;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.24);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+    .summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+    .summary-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .summary-card .label { font-size: 12px; opacity: 0.85; margin-bottom: 6px; }
+    .summary-card .value { font-size: 22px; font-weight: 700; }
+    .section { padding: 30px 40px; border-bottom: 1px solid #EEF2F7; }
+    .section:last-child { border-bottom: none; }
+    .section-title { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; font-size: 22px; color: var(--primary); }
+    .pick-card {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+    .pick-card:last-child { margin-bottom: 0; }
+    .pick-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+    .pick-head h3 { margin: 0 0 8px; font-size: 26px; line-height: 1.3; }
+    .repo-name { color: var(--text-sub); font-size: 14px; margin-bottom: 10px; }
+    .tag-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag {
+      display: inline-block;
+      background: #E0EBF5;
+      color: var(--primary);
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .rank-badge {
+      background: #EAF2FF;
+      color: var(--primary);
+      border: 1px solid #C9DCFF;
+      border-radius: 12px;
+      padding: 10px 12px;
+      min-width: 132px;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 14px 0 18px; }
+    .metric { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; }
+    .metric .k { font-size: 12px; color: var(--text-sub); margin-bottom: 6px; }
+    .metric .v { font-size: 18px; font-weight: 700; color: var(--text-main); }
+    .content-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; }
+    .panel { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+    .panel h4 { margin: 0 0 12px; font-size: 16px; color: var(--text-main); }
+    .panel p { margin: 0; font-size: 14px; color: var(--text-sub); line-height: 1.9; }
+    .panel ul { margin: 0; padding-left: 18px; color: var(--text-sub); }
+    .panel li { margin-bottom: 8px; line-height: 1.8; font-size: 14px; }
+    .reason-list { display: grid; gap: 12px; }
+    .reason-item {
+      background: #F7FAFF;
+      border-left: 4px solid var(--primary);
+      border-radius: 0 12px 12px 0;
+      padding: 14px 16px;
+      color: var(--text-sub);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+    .source-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .source-item {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.8;
+    }
+    .link-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+    .link {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid #CFE0FF;
+      background: #fff;
+    }
+    .footer {
+      padding: 24px 40px 36px;
+      color: var(--text-sub);
+      font-size: 13px;
+      line-height: 1.8;
+      background: #FBFCFE;
+    }
+    .footer strong { color: var(--text-main); }
+    code { background: #F2F6FC; padding: 2px 6px; border-radius: 6px; }
+    @media (max-width: 768px) {
+      body { padding: 12px; }
+      .hero, .section, .footer { padding-left: 20px; padding-right: 20px; }
+      .hero-top, .pick-head { flex-direction: column; }
+      .summary, .metrics, .content-grid { grid-template-columns: 1fr; }
+      .rank-badge { min-width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-top">
+        <div>
+          <h1>🚀 今日 GitHub 精选项目报告</h1>
+          <p>今天精选 2 个值得关注的项目：一个解决“如何更快获得近 30 天高价值信息”，一个解决“如何量化 AI 编码助手的真实投入与产出”。两者都偏 AI 时代的新型开发基础设施，既有趣，也很适合技术成长。</p>
+        </div>
+        <div class="date-badge">2026年6月14日</div>
+      </div>
+      <div class="summary">
+        <div class="summary-card"><div class="label">今日精选项目</div><div class="value">2 个</div></div>
+        <div class="summary-card"><div class="label">主题焦点</div><div class="value">AI × 开发效率</div></div>
+        <div class="summary-card"><div class="label">适合人群</div><div class="value">开发者 / 技术团队</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">📌 本日精选结论</h2>
+      <div class="reason-list">
+        <div class="reason-item"><strong>如果你经常做技术调研、趋势跟踪或竞品扫描：</strong>优先看 <strong>last30days-skill</strong>。它把 Reddit、X、YouTube、GitHub、Hacker News、Polymarket 等源头信号串起来，不再只依赖传统搜索。</div>
+        <div class="reason-item"><strong>如果你已经把 Claude Code / Codex / 其他 coding agent 用起来了：</strong>优先看 <strong>agentsview</strong>。它能让会话、成本、token 使用、项目分布这些原本模糊的东西变得可量化。</div>
+        <div class="reason-item"><strong>组合价值：</strong>一个帮你更快理解“外部世界最近发生了什么”，一个帮你更清楚掌握“自己和 AI 在项目里到底做了什么”。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">🏆 精选项目详情</h2>
+
+      <article class="pick-card">
+        <div class="pick-head">
+          <div>
+            <div class="repo-name">mvanhorn / last30days-skill</div>
+            <h3>#1 last30days-skill</h3>
+            <div class="tag-row">
+              <span class="tag">AI 研究</span><span class="tag">趋势检索</span><span class="tag">多源聚合</span><span class="tag">Python</span><span class="tag">MIT License</span>
+            </div>
+          </div>
+          <div class="rank-badge"><div><strong>入选理由</strong></div><div>有趣且很实用</div></div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><div class="k">Stars</div><div class="v">41,353</div></div>
+          <div class="metric"><div class="k">Forks</div><div class="v">3,350</div></div>
+          <div class="metric"><div class="k">主要语言</div><div class="v">Python</div></div>
+          <div class="metric"><div class="k">最近推送</div><div class="v">2026-06-10</div></div>
+        </div>
+        <div class="content-grid">
+          <div class="panel"><h4>项目详细介绍</h4><p>这是一个面向 AI Agent 的“近 30 天研究技能”。它不是只搜网页，而是把 Reddit、X、YouTube、TikTok、GitHub、Hacker News、Polymarket、Perplexity 和 Web 等来源并行拉通，再根据互动热度、讨论强度和信息新鲜度做综合整理，最后输出一份 grounded summary。对开发者来说，它更像一个“实时社区情报层”，尤其适合快速补齐某个作者、公司、产品或技术方向最近一个月的真实动态。</p></div>
+          <div class="panel"><h4>技术亮点</h4><ul><li>多源并行检索，不依赖单一搜索入口。</li><li>把 upvotes、likes、评论、赔率、GitHub 活跃度等“真实互动信号”纳入权重。</li><li>支持人物、公司、产品、主题和对比型问题。</li><li>安装路径兼容 Claude Code、Codex、Cursor、Copilot、Gemini CLI 等多种 agent 宿主。</li><li>适合直接产出可分享的研究简报，而不是只返回一堆链接。</li></ul></div>
+          <div class="panel"><h4>使用场景</h4><ul><li>AI / 开源项目竞品调研，快速掌握社区近期真实反馈。</li><li>开会前补课某位作者、创业者或公司最近动态。</li><li>跟踪 coding agent、MCP、RAG 等技术方向最近 30 天热点。</li><li>把研究结果沉淀为团队周报、简报或选题输入。</li></ul></div>
+          <div class="panel"><h4>为什么值得关注</h4><ul><li>它切中的不是“搜索更多”，而是“更快得到最近真正重要的结论”。</li><li>非常适合信息密度高、变化快的 AI 领域。</li><li>对技术预研、内容生产、业务调研都很有帮助。</li><li>仓库 README 明确展示了近期热度和典型场景，说明它不只是概念项目。</li></ul></div>
+        </div>
+        <div class="link-row"><a class="link" href="https://github.com/mvanhorn/last30days-skill" target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a><a class="link" href="https://raw.githubusercontent.com/mvanhorn/last30days-skill/main/README.md" target="_blank" rel="noopener noreferrer">README ↗</a></div>
+      </article>
+
+      <article class="pick-card">
+        <div class="pick-head">
+          <div>
+            <div class="repo-name">kenn-io / agentsview</div>
+            <h3>#2 agentsview</h3>
+            <div class="tag-row">
+              <span class="tag">AI Coding</span><span class="tag">Local-first</span><span class="tag">会话分析</span><span class="tag">Go</span><span class="tag">MIT License</span>
+            </div>
+          </div>
+          <div class="rank-badge"><div><strong>入选理由</strong></div><div>技术成长向很强</div></div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><div class="k">Stars</div><div class="v">2,409</div></div>
+          <div class="metric"><div class="k">Forks</div><div class="v">219</div></div>
+          <div class="metric"><div class="k">主要语言</div><div class="v">Go</div></div>
+          <div class="metric"><div class="k">最近推送</div><div class="v">2026-06-14</div></div>
+        </div>
+        <div class="content-grid">
+          <div class="panel"><h4>项目详细介绍</h4><p>agentsview 是一个 local-first 的 AI coding agent 会话分析工具，核心主张是“一套本地二进制，把多个 AI 编码助手的会话、成本和使用情况统一收拢”。它支持 Claude Code、Codex 以及 20+ 其他 agent，把原本散落在不同目录、不同格式里的 session 数据归档到本地 SQLite，再通过 Web UI 或命令行查看使用情况。</p></div>
+          <div class="panel"><h4>技术亮点</h4><ul><li>启动即扫描本机多种 agent 会话，并做本地索引。</li><li><code>agentsview usage daily</code> 可快速查看最近成本与 token 使用。</li><li>支持 session 级别 usage、模型维度 breakdown 与时间范围过滤。</li><li>默认 loopback 绑定并校验 Host，显式考虑了 DNS rebinding 等安全问题。</li><li>既可用本地 SQLite，也支持 Docker、PostgreSQL、DuckDB mirror 等扩展形态。</li></ul></div>
+          <div class="panel"><h4>使用场景</h4><ul><li>统计团队或个人使用 Claude Code / Codex 的成本趋势。</li><li>排查“最近 AI 花费为什么变高了”。</li><li>分析不同模型、不同项目、不同 agent 的使用差异。</li><li>把 AI 编码活动从“感觉”变成“可观测、可比较的数据”。</li></ul></div>
+          <div class="panel"><h4>为什么值得关注</h4><ul><li>现在很多团队已经在用 coding agent，但很少有人真正看清 usage 结构。</li><li>它把工程管理和 AI 使用行为连接起来，特别适合做习惯优化。</li><li>对希望建立 AI 开发度量体系的技术负责人也很有参考价值。</li><li>相比泛泛的“AI 工具导航”，这是更偏工程落地的一类项目。</li></ul></div>
+        </div>
+        <div class="link-row"><a class="link" href="https://github.com/kenn-io/agentsview" target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a><a class="link" href="https://agentsview.io" target="_blank" rel="noopener noreferrer">项目主页 ↗</a></div>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">🧭 怎么用这份精选</h2>
+      <div class="reason-list">
+        <div class="reason-item"><strong>想提高调研效率：</strong>先试试 last30days-skill，拿一个具体主题做近 30 天聚合研究，例如 <code>/last30days Claude Code vs Codex</code>。</div>
+        <div class="reason-item"><strong>想提升 AI 编码习惯：</strong>先跑起 agentsview，看最近 7~30 天 cost、模型分布和 session 使用情况，再决定要不要调整提示词、任务拆分或模型策略。</div>
+        <div class="reason-item"><strong>想做团队升级：</strong>把二者组合使用，先用 last30days-skill 抓外部趋势，再用 agentsview 反观内部实践，形成“外部洞察 + 内部度量”的闭环。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">🔎 参考来源</h2>
+      <div class="source-list">
+        <div class="source-item"><strong>GitHub Trending / 搜索结果：</strong>GitHub 当日趋势页与相关搜索结果用于辅助筛选候选项目。</div>
+        <div class="source-item"><strong>官方仓库：</strong>https://github.com/mvanhorn/last30days-skill 、https://github.com/kenn-io/agentsview</div>
+        <div class="source-item"><strong>官方 README / 项目主页：</strong>last30days-skill README、agentsview README、agentsview.io</div>
+        <div class="source-item"><strong>实时指标：</strong>Stars / Forks / 最近推送时间基于 GitHub 仓库元数据生成，采集时间为 2026-06-14 中午。</div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <strong>Generated for 孙纾荣</strong><br />
+      style_blue 风格 HTML 页面，已按 GitHub Pages 访问方式组织。页面内容优先强调：项目是什么、为什么值得看、有哪些技术亮点、以及开发者可以怎样真正用起来。
+    </div>
+  </div>
+</body>
+</html>
