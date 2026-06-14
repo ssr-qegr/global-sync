@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日晨报 - 2026年6月13日</title>
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-dark: #047857;
+      --bg: #ecfdf5;
+      --card-bg: #ffffff;
+      --soft: #d1fae5;
+      --text-main: #064e3b;
+      --text-sub: #4b5563;
+      --line: #bbf7d0;
+      --quote-bg: #f0fdf4;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Nunito", "PingFang SC", sans-serif;
+      background: linear-gradient(180deg, #ecfdf5 0%, #f8fffb 100%);
+      color: var(--text-main);
+      margin: 0;
+      padding: 20px;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 40px 32px;
+      border-radius: 28px;
+      box-shadow: 0 16px 40px rgba(16, 185, 129, 0.10);
+    }
+    .header {
+      text-align: center;
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+      border-bottom: 3px dashed var(--line);
+    }
+    .header h1 {
+      margin: 0 0 10px;
+      color: var(--primary);
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+    .date {
+      color: #34d399;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+    .summary {
+      margin: 0 auto;
+      max-width: 700px;
+      background: var(--quote-bg);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 18px;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .section {
+      margin: 34px 0 12px;
+    }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--primary-dark);
+    }
+    .news-item {
+      position: relative;
+      padding: 24px 24px 18px 34px;
+      margin-bottom: 18px;
+      background: #f8fafc;
+      border-radius: 22px;
+      border: 2px solid #eef6f2;
+      transition: transform 0.18s ease, border-color 0.18s ease;
+    }
+    .news-item:hover {
+      transform: translateY(-2px);
+      border-color: var(--soft);
+    }
+    .news-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 10px;
+      background: var(--primary);
+      border-radius: 22px 0 0 22px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      background: var(--soft);
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 21px;
+      line-height: 1.4;
+      color: #022c22;
+    }
+    .block {
+      margin: 10px 0;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: white;
+      border: 1px solid #edf2f7;
+    }
+    .block-title {
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+    .block p {
+      margin: 0;
+      color: var(--text-sub);
+      font-size: 15px;
+    }
+    .source {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      font-size: 13px;
+      color: #6b7280;
+    }
+    .link {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: 0 6px 14px rgba(16,185,129,0.18);
+    }
+    .link:hover { background: #059669; }
+    .footer {
+      text-align: center;
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 2px dashed var(--line);
+      color: #6b7280;
+      font-size: 13px;
+    }
+    @media (max-width: 640px) {
+      body { padding: 12px; }
+      .container { padding: 24px 16px; }
+      .header h1 { font-size: 28px; }
+      .section-title { font-size: 20px; }
+      .news-item { padding: 20px 18px 16px 24px; }
+      h2 { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🌿 今日晨报</h1>
+      <div class="date">✨ 2026年6月13日 星期六 ✨</div>
+      <div class="summary">
+        今天的晨报分为 <strong>时事政治、财经新闻、技术领域</strong> 三大板块。每条内容都按「新闻原文 → 人话翻译 → 意义解读」整理，尽量让你在几分钟内抓到重点。
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="section-title">📰 时事政治</div>
+
+      <article class="news-item">
+        <span class="tag">外交动态</span>
+        <h2>缅甸总统敏昂莱将于 6 月 15 日至 19 日对中国进行国事访问</h2>
+        <div class="block">
+          <div class="block-title">新闻原文</div>
+          <p>“应国家主席习近平邀请，缅甸总统敏昂莱将于6月15日至19日对中国进行国事访问。访问期间，习近平主席将同他会谈，李强总理、赵乐际委员长将分别会见。”</p>
+        </div>
+        <div class="block">
+          <div class="block-title">人话翻译</div>
+          <p>这不是普通礼节性见面，而是高规格正式访问。说明中缅关系正在往更深层的政治互信和务实合作推进，接下来大概率会有一批合作议题被集中讨论和落地。</p>
+        </div>
+        <div class="block">
+          <div class="block-title">意义解读</div>
+          <p>对中国来说，这条新闻重点不只是“谁来访”，而是中国在周边外交中的主动布局仍在加强。中缅在边境安全、经贸通道、区域稳定上的协同，会继续影响西南方向的地缘格局。</p>
+        </div>
+        <div class="source">
+          <span>来源：中国政府网 / 外交部口径</span>
+          <a class="link" href="https://www.gov.cn/lianbo/202606/content_7071940.htm" target="_blank">查看原文</a>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">防汛应急</span>
+        <h2>国家防总针对浙闽赣湘粤桂黔启动防汛四级应急响应</h2>
+        <div class="block">
+          <div class="block-title">新闻原文</div>
+          <p>“国家防总于12日10时针对广东、广西、江西、福建、浙江、贵州、湖南等七省份启动防汛四级应急响应，并派出2个工作组赴地方协助指导防汛工作。”</p>
+        </div>
+        <div class="block">
+          <div class="block-title">人话翻译</div>
+          <p>南方新一轮强降雨要来了，而且不是小打小闹。中央层面已经提前拉起响应，意味着这波雨情、洪水、山洪和城市内涝风险都不低，相关地区要进入“备战状态”。</p>
+        </div>
+        <div class="block">
+          <div class="block-title">意义解读</div>
+          <p>这类消息看起来像常规通报，但实际影响很广：交通、物流、电商履约、文旅出行、建筑工地、农业生产都会受牵动。对企业来说，后面几天涉及华南、华东、中南区域的业务安排，都要留意天气扰动。</p>
+        </div>
+        <div class="source">
+          <span>来源：应急管理部</span>
+          <a class="link" href="https://www.mem.gov.cn/xw/bndt/202606/t20260612_607588.shtml" target="_blank">查看原文</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-title">💹 财经新闻</div>
+
+      <article class="news-item">
+        <span class="tag">宏观金融</span>
+        <h2>5 月金融数据出炉：M2 同比增长 8.6%，社融存量同比增长 7.7%</h2>
+        <div class="block">
+          <div class="block-title">新闻原文</div>
+          <p>“5月末，我国人民币贷款余额281.02万亿元，同比增长5.5%；社会融资规模存量为458.81万亿元，同比增长7.7%；广义货币（M2）余额353.67万亿元，同比增长8.6%。”</p>
+        </div>
+        <div class="block">
+          <div class="block-title">人话翻译</div>
+          <p>简单说就是：市场上的钱还是比较充足，金融系统还在持续给实体经济“输血”。企业融资环境没有明显收紧，政策层面对稳增长的支持力度仍然在线。</p>
+        </div>
+        <div class="block">
+          <div class="block-title">意义解读</div>
+          <p>这组数据释放的是“稳信用、稳预期”的信号。对投资、制造、基建以及中小企业经营来说，资金面没有突然变冷；对市场来说，也意味着后续政策更可能继续维持偏支持的基调，而不是急转弯。</p>
+        </div>
+        <div class="source">
+          <span>来源：新华网（转引中国人民银行数据）</span>
+          <a class="link" href="https://www.news.cn/fortune/20260612/1622efed23e84862b1be3dbdb1577325/c.html" target="_blank">查看原文</a>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">全球市场</span>
+        <h2>隔夜美股收高，市场继续关注伊美谈判与大宗商品波动</h2>
+        <div class="block">
+          <div class="block-title">新闻原文</div>
+          <p>“美股收高道指涨0.7%，市场关注伊美谈判与SpaceX首秀；油价下挫，铜价上涨，金价微升。”</p>
+        </div>
+        <div class="block">
+          <div class="block-title">人话翻译</div>
+          <p>海外市场现在是典型的“风险和机会一起交易”：一边盯着中东局势和谈判进展，一边继续追逐热门科技资产。结果就是股市偏乐观，但大宗商品和避险资产仍然保持敏感。</p>
+        </div>
+        <div class="block">
+          <div class="block-title">意义解读</div>
+          <p>这类组合信号说明全球资金并没有完全进入避险模式，而是在边看局势边做结构性押注。对国内投资者和企业来说，后续需要重点看两条线：能源价格是否重新波动，以及科技资产是否继续吸走全球风险偏好。</p>
+        </div>
+        <div class="source">
+          <span>来源：新浪财经环球市场播报</span>
+          <a class="link" href="http://m.toutiao.com/group/7650647786140025344/" target="_blank">查看原文</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-title">🤖 技术领域</div>
+
+      <article class="news-item">
+        <span class="tag">国产操作系统</span>
+        <h2>HarmonyOS 7 开发者 Beta 启动，鸿蒙明确向 Agent 时代演进</h2>
+        <div class="block">
+          <div class="block-title">新闻原文</div>
+          <p>“在2026年华为开发者大会（HDC 2026）上，华为终端宣布HarmonyOS 7 开发者 Beta 正式启动。围绕Agent时代的智能化创新，华为带来五大核心发布……鸿蒙智能体框架同步升级至2.0，将复杂任务成功率提升至90%以上。”</p>
+        </div>
+        <div class="block">
+          <div class="block-title">人话翻译</div>
+          <p>华为这次不是只发了个系统版本，而是在明确告诉开发者：以后应用不只是“能用”，而是要变成会理解意图、能主动执行任务的智能体。鸿蒙正在把 AI 能力往系统底层和应用框架里压。</p>
+        </div>
+        <div class="block">
+          <div class="block-title">意义解读</div>
+          <p>如果这条路线持续推进，国内移动生态的竞争点会从“装了多少 App”慢慢转到“系统能不能直接帮用户办事”。对开发者来说，后续值得重点关注的不是单个 API，而是智能体框架、GUI 操控开放和端云协同能力。</p>
+        </div>
+        <div class="source">
+          <span>来源：华为官网</span>
+          <a class="link" href="https://www.huawei.com/cn/news/2026/6/harmonyos7-hdc" target="_blank">查看原文</a>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">产业政策</span>
+        <h2>工信部发布《“人工智能+信息通信”创新发展实施意见（2026—2028年）》</h2>
+        <div class="block">
+          <div class="block-title">新闻原文</div>
+          <p>“到2028年，信息通信智能运营和服务能力达到国际先进水平，信息通信网络初步实现高等级自智，形成30个以上高价值典型场景，打造一批典型应用和特色智能体，城域算力1毫秒时延圈覆盖率不低于75%。”</p>
+        </div>
+        <div class="block">
+          <div class="block-title">人话翻译</div>
+          <p>这份文件的核心意思是：AI 不只是做聊天机器人，而是要真正嵌进通信网络、算力设施和产业系统里。国家层面已经把“AI+通信”从概念推进到明确目标、明确时间表、明确场景的阶段。</p>
+        </div>
+        <div class="block">
+          <div class="block-title">意义解读</div>
+          <p>这会直接影响运营商、云计算、边缘计算、网络设备、算力调度和行业智能体相关赛道。对技术人来说，未来几年“AI Infra + 通信网络”的交叉能力会越来越值钱，单纯只懂模型、不懂系统落地的门槛会被拉高。</p>
+        </div>
+        <div class="source">
+          <span>来源：工信部 / 中国政府网</span>
+          <a class="link" href="https://www.miit.gov.cn/jgsj/txs/wjfb/art/2026/art_c1fe635702fc4339bf85289fe605ac21.html" target="_blank">查看原文</a>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">国际 AI 平台</span>
+        <h2>Apple Intelligence 发布新一代能力：系统级集成更深，强调隐私与日常体验</h2>
+        <div class="block">
+          <div class="block-title">新闻原文</div>
+          <p>“Apple today introduced the next generation of Apple Intelligence, powered by a bold new architecture that integrates the latest Apple Foundation Models deep into Apple’s platforms and is uniquely designed to protect users’ privacy.”</p>
+        </div>
+        <div class="block">
+          <div class="block-title">人话翻译</div>
+          <p>苹果这次的重点不是单点炫技，而是把 AI 更深地塞进照片、Safari、Passwords、消息等系统能力里，同时继续把“隐私”当成自己的招牌。也就是说，AI 正在从附加功能变成操作系统的一部分。</p>
+        </div>
+        <div class="block">
+          <div class="block-title">意义解读</div>
+          <p>这代表全球大厂的竞争，已经从“谁家模型参数更大”转向“谁能把 AI 真正做进高频场景”。对整个行业来说，接下来最重要的不是单次发布会，而是谁能在系统层、产品层和开发框架层建立持续优势。</p>
+        </div>
+        <div class="source">
+          <span>来源：Apple Newsroom</span>
+          <a class="link" href="https://www.apple.com/newsroom/2026/06/apple-intelligence-brings-powerful-ai-capabilities-into-everyday-experiences/" target="_blank">查看原文</a>
+        </div>
+      </article>
+    </section>
+
+    <div class="footer">
+      🌱 晨报已按 style_green 风格生成 · 内容时间窗口以 2026-06-12 ~ 2026-06-13 公开信息为主<br />
+      愿你今天获取信息更快、判断更稳、行动更准。
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日晨报 - 2026年6月14日</title>
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-dark: #047857;
+      --bg: #ecfdf5;
+      --card-bg: #ffffff;
+      --soft: #d1fae5;
+      --text-main: #064e3b;
+      --text-sub: #4b5563;
+      --line: #bbf7d0;
+      --quote-bg: #f0fdf4;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Nunito", "PingFang SC", sans-serif;
+      background: linear-gradient(180deg, #ecfdf5 0%, #f8fffb 100%);
+      color: var(--text-main);
+      margin: 0;
+      padding: 20px;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 40px 32px;
+      border-radius: 28px;
+      box-shadow: 0 16px 40px rgba(16, 185, 129, 0.10);
+    }
+    .header {
+      text-align: center;
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+      border-bottom: 3px dashed var(--line);
+    }
+    .header h1 {
+      margin: 0 0 10px;
+      color: var(--primary);
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+    .date {
+      color: #34d399;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+    .summary {
+      margin: 0 auto;
+      max-width: 760px;
+      background: var(--quote-bg);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 18px;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .section { margin: 34px 0 12px; }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--primary-dark);
+    }
+    .news-item {
+      position: relative;
+      padding: 24px 24px 18px 34px;
+      margin-bottom: 18px;
+      background: #f8fafc;
+      border-radius: 22px;
+      border: 2px solid #eef6f2;
+      transition: transform 0.18s ease, border-color 0.18s ease;
+    }
+    .news-item:hover {
+      transform: translateY(-2px);
+      border-color: var(--soft);
+    }
+    .news-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 10px;
+      background: var(--primary);
+      border-radius: 22px 0 0 22px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      background: var(--soft);
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 21px;
+      line-height: 1.4;
+      color: #022c22;
+    }
+    .block {
+      margin: 10px 0;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: white;
+      border: 1px solid #edf2f7;
+    }
+    .block-title {
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+    .block p {
+      margin: 0;
+      color: var(--text-sub);
+      font-size: 15px;
+    }
+    .source {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      font-size: 13px;
+      color: #6b7280;
+    }
+    .link {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: 0 6px 14px rgba(16,185,129,0.18);
+    }
+    .link:hover { background: #059669; }
+    .footer {
+      text-align: center;
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 2px dashed var(--line);
+      color: #6b7280;
+      font-size: 13px;
+    }
+    @media (max-width: 640px) {
+      body { padding: 12px; }
+      .container { padding: 24px 16px; }
+      .header h1 { font-size: 28px; }
+      .section-title { font-size: 20px; }
+      .news-item { padding: 20px 18px 16px 24px; }
+      h2 { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🌿 今日晨报</h1>
+      <div class="date">✨ 2026年6月14日 星期日 ✨</div>
+      <div class="summary">
+        今天继续按 <strong>时事政治、财经新闻、技术领域</strong> 三大板块整理。每条都拆成「新闻原文 → 人话翻译 → 意义解读」，方便你快速抓重点、判断影响范围。
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="section-title">📰 时事政治</div>
+
+      <article class="news-item">
+        <span class="tag">周边外交</span>
+        <h2>中方宣布对菲律宾国防部长特奥多罗及其亲属实施制裁</h2>
+        <div class="block">
+          <div class="block-title">新闻原文</div>
+          <p>“菲律宾国防部长特奥多罗多次发表涉华谬论，损害中方正当利益，破坏中菲两国关系。为维护中国国家主权、安全、发展利益，中方决定，禁止特奥多罗及其配偶、子女入境中国内地和香港、澳门，禁止中国境内的组织、个人与特奥多罗及其配偶、子女进行任何交易、合作等活动。”</p>
+        </div>
+        <div class="block">
+          <div class="block-title">人话翻译</div>
+          <p>这不是普通口头抗议，而是直接上了实质性限制措施。意思很明确：如果菲律宾高层继续在南海等议题上强硬碰撞，中方不会只停留在外交表态层面。</p>
+        </div>
+        <div class="block">
+          <div class="block-title">意义解读</div>
+          <p>这条新闻会让中菲关系继续维持高压状态，也会影响区域安全议题的舆论温度。对企业和市场而言，短期最值得关注的是南海局势、航运安全和后续更多外交反制动作是否继续升级。</p>
+        </div>
+        <div class="source">
+          <span>来源：中华人民共和国外交部</span>
+          <a class="link" href="https://www.mfa.gov.cn/wjdt_674879/zcjd/202606/t20260611_11942746.shtml" target="_blank">查看原文</a>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">中美经贸</span>
+        <h2>商务部就美方将部分中企列入“中国军事企业清单”作出强硬回应</h2>
+        <div class="block">
+          <div class="block-title">新闻原文</div>
+          <p>“中方对此强烈不满、坚决反对。美方罔顾中美两国元首北京会晤共识，无视中美经贸关系大局，不断泛化国家安全概念，滥用国家力量，对中国企业进行无理打压……敦促美方立即停止错误做法，否则必将坚决有力反制。”</p>
+        </div>
+        <div class="block">
+          <div class="block-title">人话翻译</div>
+          <p>简单说，美国又在用‘国家安全’这张牌卡中国企业，中国这边则明确放话：这事不会就这么算了，后面大概率还会有反制动作。</p>
+        </div>
+        <div class="block">
+          <div class="block-title">意义解读</div>
+          <p>这类动作的影响不只在名单上的企业，还会继续外溢到全球供应链、科技合作和资本市场预期。对从事出海、芯片、制造、通信设备相关行业的人来说，这类政策扰动仍是必须持续跟踪的变量。</p>
+        </div>
+        <div class="source">
+          <span>来源：新华网 / 商务部口径</span>
+          <a class="link" href="https://www.news.cn/20260613/42646f8b92c448cab88b78768dce1d76/c.html" target="_blank">查看原文</a>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">多边外交</span>
+        <h2>2026年“文明对话国际日”维也纳活动举行，300余名嘉宾出席</h2>
+        <div class="block">
+          <div class="block-title">新闻原文</div>
+          <p>“6月10日，中国常驻维也纳代表团和联合国维也纳办事处共同举办2026年‘文明对话国际日’主题活动。维也纳各国际组织负责人、各国常驻代表等300余名嘉宾出席。”</p>
+        </div>
+        <div class="block">
+          <div class="block-title">人话翻译</div>
+          <p>这件事表面看是文化交流活动，实质上是在国际舞台继续放大中国在全球治理和文明互鉴议题上的存在感，不只是“办活动”，更是“做叙事”。</p>
+        </div>
+        <div class="block">
+          <div class="block-title">意义解读</div>
+          <p>在全球地缘冲突和价值观分裂持续升温的背景下，这类多边场合代表的是软实力竞争。它对国际舆论、联合国体系中的议题设置能力，以及中国在全球南方国家中的影响力，都会有长期作用。</p>
+        </div>
+        <div class="source">
+          <span>来源：中国常驻维也纳代表团 / 新华社</span>
+          <a class="link" href="https://www.vienna.china-mission.gov.cn/eng/dbthd/202606/t20260612_11943942.htm" target="_blank">查看原文</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-title">💹 财经新闻</div>
+
+      <article class="news-item">
+        <span class="tag">宏观金融</span>
+        <h2>5月末政府债券余额达100.6万亿元，首次站上100万亿元关口</h2>
+        <div class="block">
+          <div class="block-title">新闻原文</div>
+          <p>“2026年5月末社会融资规模存量为458.81万亿元，同比增长7.7%。其中……政府债券余额100.6万亿元，同比增长15.1%。”</p>
+        </div>
+        <div class="block">
+          <div class="block-title">人话翻译</div>
+          <p>这说明近几年稳增长、扩投资、化解地方隐性债务等动作，已经把更多政府融资‘摆到台面上’了。钱还在继续投，但大家也会更关注这笔债怎么用、怎么还、能不能拉动真实增长。</p>
+        </div>
+        <div class="block">
+          <div class="block-title">意义解读</div>
+          <p>这组数据释放出两个信号：一是财政仍在积极发力，二是债务管理能力会成为接下来更关键的话题。对基建、城投、银行和地方财政相关行业来说，这会直接影响后续融资节奏和市场预期。</p>
+        </div>
+        <div class="source">
+          <span>来源：中国人民银行口径 / 中国金融新闻网</span>
+          <a class="link" href="https://www.financialnews.com.cn/m/2026-06/12/content_451032.html" target="_blank">查看原文</a>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">全球增长</span>
+        <h2>世界银行将2026年全球经济增速预期下调至2.5%</h2>
+        <div class="block">
+          <div class="block-title">新闻原文</div>
+          <p>“由于中东冲突推动能源大幅涨价，预计2026年全球经济增速将放缓至2.5%，新兴市场和发展中经济体将面临自疫情以来最疲弱的人均收入增长。风险仍然偏向下行。”</p>
+        </div>
+        <div class="block">
+          <div class="block-title">人话翻译</div>
+          <p>一句话：世界银行在提醒大家，全球经济并没有进入真正安全区。地缘冲突、能源价格、贸易不确定性这些老问题，仍然可能把增长继续往下拖。</p>
+        </div>
+        <div class="block">
+          <div class="block-title">意义解读</div>
+          <p>这对外贸、制造、跨境投资和大宗商品市场都会产生连锁反应。对企业经营者来说，这意味着下半年不能只看需求恢复，还要同时盯住能源成本、汇率波动和海外订单的稳定性。</p>
+        </div>
+        <div class="source">
+          <span>来源：世界银行《全球经济展望》</span>
+          <a class="link" href="https://www.shihang.org/zh/publication/global-economic-prospects" target="_blank">查看原文</a>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">能源市场</span>
+        <h2>美伊谈判释放积极信号，国际油价继续回落</h2>
+        <div class="block">
+          <div class="block-title">新闻原文</div>
+          <p>“据多家美国媒体报道，美方对在未来几天内与伊朗签署谅解备忘录抱有‘80%至85%’的信心……霍尔木兹海峡航运等内容被纳入草案，国际油价因此继续下跌。”</p>
+        </div>
+        <div class="block">
+          <div class="block-title">人话翻译</div>
+          <p>市场现在押注：只要中东局势别再恶化、霍尔木兹海峡运输恢复一些，油价前期那种紧张情绪就会缓下来，所以资金先抢跑做了“油价降温”的交易。</p>
+        </div>
+        <div class="block">
+          <div class="block-title">意义解读</div>
+          <p>油价回落对全球通胀预期是缓和信号，也会减轻航运、化工、制造和航空等行业的成本压力。但问题在于，这类缓和高度依赖谈判能否真正落地，所以市场还会保持高波动，不适合掉以轻心。</p>
+        </div>
+        <div class="source">
+          <span>来源：新华网</span>
+          <a class="link" href="http://www.xinhuanet.com/world/20260613/384ce96f502c4bce890e36e7d69df879/c.html" target="_blank">查看原文</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-title">🤖 技术领域</div>
+
+      <article class="news-item">
+        <span class="tag">AI治理</span>
+        <h2>中央网信办举报中心开设“涉AI应用乱象举报专区”，受理14类问题</h2>
+        <div class="block">
+          <div class="block-title">新闻原文</div>
+          <p>“为配合‘清朗·整治AI应用乱象’专项行动，中央网信办举报中心自2026年6月起开设‘涉AI应用乱象举报专区’，专项受理公众举报。受理范围主要包括生成合成内容标识落实不到位、制作发布虚假不实和暴力低俗信息等14类问题。”</p>
+        </div>
+        <div class="block">
+          <div class="block-title">人话翻译</div>
+          <p>监管开始把AI乱象治理做得更具体了。以后不仅看你有没有模型、有没有产品，还要看你有没有做标识、风控、审核，以及有没有被拿去造谣、仿冒、做灰产。</p>
+        </div>
+        <div class="block">
+          <div class="block-title">意义解读</div>
+          <p>这意味着AI行业已经从“先鼓励发展”进一步走向“边发展边规范”。对做大模型、AI应用、内容平台和开源社区的人来说，合规能力会越来越像产品基本功，而不是可选项。</p>
+        </div>
+        <div class="source">
+          <span>来源：中央网信办</span>
+          <a class="link" href="https://www.cac.gov.cn/2026-06/12/c_1782660002371256.htm" target="_blank">查看原文</a>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">算力平台</span>
+        <h2>NVIDIA持续推进Vera Rubin平台，押注“Agentic AI工厂”</h2>
+        <div class="block">
+          <div class="block-title">新闻原文</div>
+          <p>“NVIDIA Vera Rubin is ramping into full production… fueling AI labs, cloud providers and hyperscalers to build tomorrow’s intelligence.”</p>
+        </div>
+        <div class="block">
+          <div class="block-title">人话翻译</div>
+          <p>英伟达现在卖的已经不只是芯片，而是一整套‘建AI工厂’的方案。重点不是一张卡有多强，而是谁能最快把训练、推理、智能体部署整条链路接起来。</p>
+        </div>
+        <div class="block">
+          <div class="block-title">意义解读</div>
+          <p>这标志着全球AI竞争继续从模型层往基础设施层下沉。对云厂商、GPU服务器、液冷、网络互联、数据中心建设等产业链来说，这种平台化升级会继续带来需求，但也会进一步拉高行业进入门槛。</p>
+        </div>
+        <div class="source">
+          <span>来源：NVIDIA Newsroom</span>
+          <a class="link" href="https://nvidianews.nvidia.com/news/vera-rubin-full-production-agentic-ai-factory" target="_blank">查看原文</a>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">国际政策</span>
+        <h2>英国发布AI Hardware Plan，投入7.5亿英镑建设异构AI超级计算机，并设4亿英镑芯片采购机会</h2>
+        <div class="block">
+          <div class="block-title">新闻原文</div>
+          <p>“A new £750m heterogeneous AI supercomputer for the AI Research Resource (AIRR)… A £400m procurement opportunity for specialised chips within this £750m AIRR heterogeneous supercomputer.”</p>
+        </div>
+        <div class="block">
+          <div class="block-title">人话翻译</div>
+          <p>英国的思路很直接：AI竞争不能只靠买现成云服务，必须把本国算力底座和芯片能力也补起来，不然以后在大模型时代会一直受制于人。</p>
+        </div>
+        <div class="block">
+          <div class="block-title">意义解读</div>
+          <p>这说明各国对AI的争夺已经明显转向“主权算力”和“本土硬件链”。对全球科技产业来说，算力基础设施会继续被当成战略资源；对中国企业来说，也能从中看到未来国际竞争并不会只停留在模型应用层。</p>
+        </div>
+        <div class="source">
+          <span>来源：英国政府官网</span>
+          <a class="link" href="https://www.gov.uk/government/publications/uk-ai-hardware-plan/uk-ai-hardware-plan" target="_blank">查看原文</a>
+        </div>
+      </article>
+    </section>
+
+    <div class="footer">
+      🌱 晨报已按 style_green 风格生成 · 内容时间窗口以 2026-06-12 ~ 2026-06-14 公开信息为主<br />
+      愿你今天获取信息更快、判断更稳、行动更准。
+    </div>
+  </div>
+</body>
+</html>
