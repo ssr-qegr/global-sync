@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日大厂新闻｜2026-06-15</title>
+  <style>
+    :root {
+      --primary: #b388ff;
+      --primary-strong: #9c5cff;
+      --accent: #00e5ff;
+      --accent-soft: rgba(0, 229, 255, 0.14);
+      --bg: #0a0a0f;
+      --bg-2: #12121a;
+      --card: rgba(26, 26, 36, 0.92);
+      --card-2: rgba(34, 34, 48, 0.92);
+      --text-main: #f3f4f6;
+      --text-sub: #b8bed0;
+      --text-faint: #7e8598;
+      --line: rgba(179, 136, 255, 0.2);
+      --shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at top left, rgba(179,136,255,0.18), transparent 24%),
+        radial-gradient(circle at top right, rgba(0,229,255,0.12), transparent 22%),
+        linear-gradient(180deg, #09090d 0%, #101019 48%, #0b0b10 100%);
+      line-height: 1.75;
+    }
+    a { color: inherit; }
+    .shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(17,17,25,0.96), rgba(12,12,18,0.98));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      position: relative;
+      padding: 44px 42px 34px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background:
+        linear-gradient(135deg, rgba(179,136,255,0.14), rgba(0,229,255,0.06)),
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 42px 0 42px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,229,255,0.55), transparent);
+    }
+    .hero-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(179,136,255,0.10);
+      border: 1px solid rgba(179,136,255,0.24);
+      color: #e7d8ff;
+      font-size: 12px;
+      letter-spacing: 0.3px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 42px;
+      line-height: 1.15;
+      letter-spacing: 0.4px;
+      color: #fff;
+      text-shadow: 0 0 22px rgba(179,136,255,0.18);
+    }
+    .subtitle {
+      max-width: 920px;
+      margin: 16px 0 0;
+      font-size: 16px;
+      color: var(--text-sub);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .hero-panel, .summary-card, .news-card, .footer-card, .note-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 22px;
+      backdrop-filter: blur(12px);
+    }
+    .hero-panel { padding: 22px 22px 18px; }
+    .panel-title {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .signal-list { display: grid; gap: 12px; }
+    .signal-item {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--card-2);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .signal-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #fff;
+      font-size: 16px;
+    }
+    .signal-item span {
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .summary-grid { display: grid; gap: 14px; }
+    .summary-card {
+      padding: 18px;
+      min-height: 104px;
+      position: relative;
+      overflow: hidden;
+    }
+    .summary-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+      opacity: 0.85;
+    }
+    .summary-card .kicker {
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .summary-card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+      color: #fff;
+    }
+    .summary-card span {
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .section { padding: 30px 42px 10px; }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .section-title {
+      margin: 0;
+      font-size: 28px;
+      color: #fff;
+    }
+    .section-desc {
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: var(--text-faint);
+    }
+    .news-grid { display: grid; gap: 18px; }
+    .news-card {
+      position: relative;
+      padding: 24px 24px 20px 26px;
+      background: linear-gradient(180deg, rgba(27,27,38,0.96), rgba(20,20,29,0.96));
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+    .news-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 18px;
+      bottom: 18px;
+      width: 4px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+      box-shadow: 0 0 18px rgba(179,136,255,0.4);
+    }
+    .news-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0,229,255,0.26);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.28);
+    }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: #dccbff;
+      background: rgba(179,136,255,0.10);
+      border: 1px solid rgba(179,136,255,0.18);
+    }
+    .news-card h3 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      line-height: 1.35;
+      color: #fff;
+    }
+    .block {
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: var(--text-sub);
+    }
+    .block strong { color: var(--text-main); }
+    .highlight { color: #e8f9ff; }
+    .link-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      color: #07131a;
+      background: linear-gradient(135deg, var(--accent), #7cf5ff);
+      box-shadow: 0 10px 22px rgba(0,229,255,0.20);
+    }
+    .link-btn.secondary {
+      color: #e7d8ff;
+      background: rgba(179,136,255,0.10);
+      border: 1px solid rgba(179,136,255,0.18);
+      box-shadow: none;
+    }
+    .note-card {
+      padding: 20px 22px;
+      margin-top: 16px;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .footer { padding: 28px 42px 42px; }
+    .footer-card {
+      padding: 22px 22px 18px;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .footer-card strong { color: #fff; }
+    .footer-note {
+      margin-top: 10px;
+      color: var(--text-faint);
+      font-size: 13px;
+    }
+    @media (max-width: 960px) {
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      body { padding: 12px; }
+      .hero, .section, .footer { padding-left: 18px; padding-right: 18px; }
+      h1 { font-size: 31px; }
+      .section-title { font-size: 24px; }
+      .news-card h3 { font-size: 20px; }
+      .news-card { padding: 20px 18px 18px 22px; }
+      .hero::after { inset: auto 18px 0 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <div class="hero-top">
+        <span class="badge">⚡ style_dark</span>
+        <span class="badge">🗓️ 2026年6月15日 星期一</span>
+        <span class="badge">🌐 国内外科技巨头动态</span>
+      </div>
+      <h1>今日大厂新闻：算力国产替代继续提速，AI 入口与生态竞赛同步升温</h1>
+      <p class="subtitle">
+        6 月 15 日最值得关注的信号，不是单点产品发布，而是几条主线同时变清晰：国内大厂把注意力继续压到算力替代、系统生态和业务化落地；国际大厂则围绕 AI 默认入口、企业交付网络和组织重构继续加码。下面按“新闻原文 + 人话翻译 + 影响分析”整理今天最重要的 8 条动态。
+      </p>
+
+      <div class="hero-grid">
+        <div class="hero-panel">
+          <div class="panel-title">Top Signals</div>
+          <div class="signal-list">
+            <div class="signal-item">
+              <strong>国内主线：从买卡到造生态，AI 竞争正在变成资源调度战</strong>
+              <span>字节、百度、腾讯之间围绕国产 AI 芯片的供给关系被进一步曝光，腾讯系资本对 AI 芯片公司的支持也在加深，说明算力层竞争已进入更现实阶段。</span>
+            </div>
+            <div class="signal-item">
+              <strong>国际主线：入口、渠道、组织能力，正在比单纯模型更重要</strong>
+              <span>Google 把搜索做成持续运行的智能体，OpenAI 补企业交付伙伴网络，Apple 继续强化系统级 AI 入口，Meta 则被迫回答“巨额投入如何兑现商业化”。</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-grid">
+          <div class="summary-card">
+            <div class="kicker">国内焦点</div>
+            <strong>国产算力替代不再是口号，已经进入真实采购与资本化阶段</strong>
+            <span>今天最强信号来自芯片采购、芯片客户关系和 AI 芯片 IPO 进展。</span>
+          </div>
+          <div class="summary-card">
+            <div class="kicker">国际焦点</div>
+            <strong>大厂争夺的核心，正在从“谁模型更强”转向“谁更像默认操作系统”</strong>
+            <span>搜索、助手、企业实施与组织整合，成为更能体现护城河的赛道。</span>
+          </div>
+          <div class="summary-card">
+            <div class="kicker">一句话判断</div>
+            <strong>AI 第二阶段已经开始：算力、入口、渠道三条线同步开打</strong>
+            <span>能把模型、分发和交付能力串成闭环的公司，优势会越来越明显。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">国内大厂</h2>
+          <p class="section-desc">聚焦字节跳动、腾讯、阿里、百度、华为、小米等公司今天最值得看的信号</p>
+        </div>
+      </div>
+
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🎯 字节跳动 / 百度 / 腾讯</span>
+            <span class="tag">路透独家 / 国产 AI 芯片</span>
+          </div>
+          <h3>路透：字节跳动正与沐曦洽谈采购 AI 推理芯片，也在评估百度昆仑芯；腾讯已是昆仑芯客户</h3>
+          <div class="block"><strong>新闻原文：</strong><span class="highlight">路透称，ByteDance 正与上海沐曦洽谈购买用于推理的 AI 芯片，同时也在考虑百度昆仑芯方案；报道还提到，腾讯已经是昆仑芯客户。</span></div>
+          <div class="block"><strong>人话翻译：</strong>字节正在认真找英伟达之外的替代方案，而且不是停留在“技术预研”，而是已经进入真实采购谈判。百度不只是做模型，也想把自家芯片打进大客户；腾讯则已经先走了一步。</div>
+          <div class="block"><strong>影响分析：</strong>这意味着国内 AI 竞争开始从“谁有模型”延伸到“谁能拿到稳定算力、谁能把芯片卖进头部场景”。对百度是芯片商业化机会，对字节是供应链韧性补强，对腾讯则说明其算力布局更务实。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://www.reuters.com/world/china/bytedance-talks-with-chinas-iluvatar-corex-purchase-ai-chips-sources-say-2026-06-15/" target="_blank" rel="noopener noreferrer">Reuters ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">💬 腾讯</span>
+            <span class="tag">Bloomberg / AI 芯片投资</span>
+          </div>
+          <h3>Bloomberg：腾讯参投的燧原科技获批推进 IPO，中国 AI 芯片“四小龙”最后一员冲刺资本市场</h3>
+          <div class="block"><strong>新闻原文：</strong><span class="highlight">Bloomberg 报道称，腾讯支持的上海燧原科技已获得首次公开募股审批，这是中国 AI 芯片热潮中的一个关键节点。</span></div>
+          <div class="block"><strong>人话翻译：</strong>腾讯不只是买模型、买算力，它也在通过投资卡位上游 AI 芯片公司。燧原如果顺利上市，说明国产 AI 芯片已经不再只是技术故事，而开始进入资本兑现阶段。</div>
+          <div class="block"><strong>影响分析：</strong>这会进一步强化“云厂商 / 平台厂商 + 芯片公司”的绑定关系。对腾讯来说，上游芯片生态更成熟，就能为云和大模型业务争取更多主动权。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://www.bloomberg.com/news/articles/2026-06-15/tencent-backed-enflame-heads-to-ipo-as-china-ai-chip-wave-grows" target="_blank" rel="noopener noreferrer">Bloomberg ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🧠 阿里 / 支付宝</span>
+            <span class="tag">市场动态 / AI 超级入口</span>
+          </div>
+          <h3>蚂蚁被曝升级支付宝 AI 界面，把打车、点餐、配送与支付整合进统一助手入口</h3>
+          <div class="block"><strong>新闻原文：</strong><span class="highlight">6 月 15 日的市场消息显示，蚂蚁正在重构支付宝超级 App 的 AI 界面，希望让用户通过文本或语音完成出行、点餐、配送和金融交易等任务。</span></div>
+          <div class="block"><strong>人话翻译：</strong>阿里系想把“支付 App”往“生活服务 AI 入口”改造。重点不是多一个聊天框，而是让 AI 直接串起交易链路。</div>
+          <div class="block"><strong>影响分析：</strong>如果这条线做成，支付宝会从支付工具进一步升级为任务型助手。它对微信生态、生活服务平台和本地生活入口都会构成更直接的竞争。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://www.gurufocus.com/news/8915766/ant-group-enhances-alipay-baba-with-ai-features-to-compete-with-tencent" target="_blank" rel="noopener noreferrer">市场消息 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🛰️ 华为</span>
+            <span class="tag">官方发布 / HarmonyOS 7</span>
+          </div>
+          <h3>华为近期启动 HarmonyOS 7 开发者 Beta，继续把“系统级 AI”作为核心叙事</h3>
+          <div class="block"><strong>新闻原文：</strong><span class="highlight">华为官方表示，HarmonyOS 7 开发者 Beta 正式启动，围绕 Agent 时代的智能化创新带来多项核心发布。</span></div>
+          <div class="block"><strong>人话翻译：</strong>华为想讲的不是“又发了一个系统版本”，而是“鸿蒙正在升级为一个能承载 Agent 的系统级平台”。</div>
+          <div class="block"><strong>影响分析：</strong>一旦系统层的智能体能力、开发框架和端云协同进一步打通，华为在手机、车机和 IoT 生态里的整体黏性会更强。这会把 AI 竞争拉到更底层的操作系统层面。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://www.huawei.com/cn/news/2026/6/harmonyos7-hdc" target="_blank" rel="noopener noreferrer">华为官方 ↗</a>
+            <a class="link-btn secondary" href="https://developer.huawei.com/consumer/cn/hdc/2026" target="_blank" rel="noopener noreferrer">HDC 2026 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🚗 小米</span>
+            <span class="tag">雷军发声 / 汽车研发</span>
+          </div>
+          <h3>雷军披露小米汽车测试团队已超 800 人、累计测试超 3500 万公里</h3>
+          <div class="block"><strong>新闻原文：</strong><span class="highlight">6 月 15 日消息显示，雷军表示小米汽车非常重视测试，当前整体测试团队已超过 800 人，累计测试里程超过 3500 万公里。</span></div>
+          <div class="block"><strong>人话翻译：</strong>小米在强调“造车不是只会营销”，而是在用大规模测试投入证明它在补齐制造和工程能力。</div>
+          <div class="block"><strong>影响分析：</strong>这类信息本身不等于销量，但会影响市场对小米汽车研发成熟度和交付稳定性的判断。对雷军来说，这是继续把资本市场预期从“流量故事”拉向“工业化能力”的动作。</div>
+          <div class="link-row">
+            <a class="link-btn" href="http://www.aastocks.com/en/stocks/analysis/stock-aafn/01810/0/hk-stock-news/1" target="_blank" rel="noopener noreferrer">AASTOCKS ↗</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="note-card">
+        <strong>说明：</strong>今天围绕阿里/百度/腾讯的许多信号，本质都指向同一件事：AI 正在从“发模型”转向“争入口、争芯片、争交付闭环”。部分国内条目为当日市场与媒体披露，后续若出现更完整官方口径，建议继续跟进。
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">国际科技公司</h2>
+          <p class="section-desc">聚焦 Google、Apple、Meta、OpenAI 今天最值得跟的公开动态与强信号</p>
+        </div>
+      </div>
+
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🔍 Google</span>
+            <span class="tag">官方博客 / Search Agents</span>
+          </div>
+          <h3>Google 宣布进入 Search agents 时代，首批 Information Agents 可在后台持续盯住全网信息</h3>
+          <div class="block"><strong>新闻原文：</strong><span class="highlight">Google I/O 2026 官方博客写到，Google 正进入 Search agents 时代，首先推出 Information agents，可在后台 24/7 持续运行，帮用户跟踪特定主题、任务或项目。</span></div>
+          <div class="block"><strong>人话翻译：</strong>Google 想把搜索从“你来搜”改成“我替你盯着”。这已经不是传统搜索框升级，而是让搜索逐步变成持续运行的个人助理。</div>
+          <div class="block"><strong>影响分析：</strong>如果这个方向跑通，Google 会把搜索入口升级成更高频、更难替代的 Agent 平台。对内容平台和信息服务网站来说，也意味着流量分发规则会继续变化。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/" target="_blank" rel="noopener noreferrer">Google 官方博客 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🍎 Apple</span>
+            <span class="tag">官方发布 / Siri AI</span>
+          </div>
+          <h3>Apple 继续推进新一代 Apple Intelligence 与 Siri AI，把系统默认入口重新做厚</h3>
+          <div class="block"><strong>新闻原文：</strong><span class="highlight">Apple Newsroom 表示，WWDC26 发布了 next generation of Apple Intelligence 与全新 Siri AI，强调其更智能、更懂上下文、可深度融入系统体验。</span></div>
+          <div class="block"><strong>人话翻译：</strong>苹果并不急着卷“谁家聊天机器人最强”，它更想把 AI 变成系统级默认能力，让 Siri 成为 iPhone、iPad 和 Mac 上新的总入口。</div>
+          <div class="block"><strong>影响分析：</strong>一旦 Siri 真能承担跨应用任务编排，苹果的护城河会被进一步拉高，因为很多第三方 AI App 的第一入口可能会被系统层直接截走。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/" target="_blank" rel="noopener noreferrer">Apple Newsroom ↗</a>
+            <a class="link-btn secondary" href="https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/" target="_blank" rel="noopener noreferrer">Siri AI 详情 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🤖 OpenAI</span>
+            <span class="tag">官方发布 / 企业生态</span>
+          </div>
+          <h3>OpenAI 推出官方 Partner Network，并宣布投入 1.5 亿美元补齐企业交付能力</h3>
+          <div class="block"><strong>新闻原文：</strong><span class="highlight">OpenAI 官方称，将投资 1.5 亿美元支持合作伙伴生态，目标是在 2026 年底前培训并认证 30 万名顾问，帮助企业更快把 AI 落地。</span></div>
+          <div class="block"><strong>人话翻译：</strong>OpenAI 发现企业买不买单，瓶颈不再只是模型强不强，而是有没有足够的实施伙伴帮客户真正把系统接进去、流程改起来。</div>
+          <div class="block"><strong>影响分析：</strong>这说明 OpenAI 正从“模型公司”进一步往“平台 + 渠道 + 服务网络”转型。谁能控制企业实施链路，谁就更容易拿到长期预算和更深集成。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://openai.com/index/introducing-openai-partner-network/" target="_blank" rel="noopener noreferrer">OpenAI 官方 ↗</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="meta-row">
+            <span class="tag">🧩 Meta</span>
+            <span class="tag">CNBC / AI 组织重构</span>
+          </div>
+          <h3>CNBC：Meta 重金引入 Alexandr Wang 一年后，扎克伯格仍要回答“这笔 AI 投入如何变现”</h3>
+          <div class="block"><strong>新闻原文：</strong><span class="highlight">CNBC 报道称，Meta 在重金引入 Alexandr Wang 及其团队、重整 AI 路线一年后，虽然重新回到 AI 牌桌，但距离 OpenAI、Anthropic、Google 仍有差距，商业化叙事压力仍在。</span></div>
+          <div class="block"><strong>人话翻译：</strong>Meta 现在的问题不是“有没有投入”，而是“砸了这么多钱之后，到底要靠什么把技术优势变成市场结果”。</div>
+          <div class="block"><strong>影响分析：</strong>这会迫使 Meta 在开源、闭源、自研模型、产品整合和收入兑现之间做更明确取舍。对整个行业来说，这也是 AI 巨额资本开支进入问责阶段的一个缩影。</div>
+          <div class="link-row">
+            <a class="link-btn" href="https://www.cnbc.com/2026/06/14/meta-hired-alexandr-wang-to-build-ai-its-zuckerbergs-job-to-sell-it.html" target="_blank" rel="noopener noreferrer">CNBC ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="footer-card">
+        <strong>今日结论：</strong>6 月 15 日的大厂新闻，最强主线可以概括成一句话：<strong>国内卷算力与生态，国际卷入口与交付</strong>。谁能同时掌握芯片/算力、默认入口和企业实施能力，谁就更有机会在 AI 第二阶段持续领先。
+        <div class="footer-note">本页基于 2026-06-15 当日公开可见的重要动态整理，链接均指向对应原始来源或主流媒体报道。</div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
