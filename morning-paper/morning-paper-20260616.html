@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日晨报 - 2026年6月16日</title>
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-dark: #047857;
+      --bg: #ecfdf5;
+      --card-bg: #ffffff;
+      --soft: #d1fae5;
+      --soft-2: #f0fdf4;
+      --text-main: #064e3b;
+      --text-sub: #4b5563;
+      --line: #bbf7d0;
+      --shadow: 0 18px 40px rgba(16, 185, 129, 0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px;
+      background:
+        radial-gradient(circle at top right, rgba(16,185,129,0.12), transparent 24%),
+        linear-gradient(180deg, #ecfdf5 0%, #f8fffb 100%);
+      color: var(--text-main);
+      font-family: "Nunito", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+    }
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(187,247,208,0.9);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .hero {
+      padding: 40px 40px 28px;
+      background: linear-gradient(135deg, rgba(16,185,129,0.16), rgba(255,255,255,0.98) 58%);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-top {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: var(--soft);
+      color: var(--primary-dark);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    h1 {
+      margin: 0;
+      font-size: 36px;
+      line-height: 1.2;
+      color: #022c22;
+    }
+    .subtitle {
+      margin: 12px 0 0;
+      color: var(--text-sub);
+      font-size: 16px;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      padding: 24px 40px 0;
+    }
+    .summary-card {
+      background: var(--soft-2);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+    }
+    .summary-card h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+    .summary-card p {
+      margin: 0;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .section {
+      padding: 18px 40px 8px;
+    }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 26px 0 18px;
+      font-size: 26px;
+      color: #022c22;
+    }
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--line), transparent);
+    }
+    .news-card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      margin-bottom: 18px;
+      background: linear-gradient(180deg, #ffffff, #fbfffd);
+      box-shadow: 0 10px 26px rgba(16,185,129,0.06);
+    }
+    .news-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .news-title {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.4;
+      color: #022c22;
+    }
+    .news-meta {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pill {
+      display: inline-block;
+      background: var(--soft);
+      color: var(--primary-dark);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .block {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 16px;
+    }
+    .block h4 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      color: #065f46;
+    }
+    .origin {
+      background: #f8fafc;
+      border-left: 4px solid #34d399;
+      color: #334155;
+    }
+    .translation {
+      background: #f0fdf4;
+      color: #14532d;
+    }
+    .meaning {
+      background: #fffbeb;
+      color: #854d0e;
+      border: 1px dashed #fde68a;
+    }
+    .block p { margin: 0; }
+    .source-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      text-decoration: none;
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 8px 16px rgba(16,185,129,0.18);
+    }
+    .source-link:hover { background: var(--primary-dark); }
+    .footer {
+      padding: 8px 40px 36px;
+      color: #6b7280;
+      font-size: 13px;
+      text-align: center;
+    }
+    @media (max-width: 760px) {
+      body { padding: 12px; }
+      .hero, .section, .footer, .summary-grid { padding-left: 18px; padding-right: 18px; }
+      .summary-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+      .news-title { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <div class="hero-top">
+        <span class="badge">🌿 style_green</span>
+        <span class="badge">🗓 2026年6月16日 星期二</span>
+        <span class="badge">☀️ 早间阅读版</span>
+      </div>
+      <h1>今日晨报</h1>
+      <p class="subtitle">聚焦时事政治、财经新闻、技术领域三大板块。每条新闻都配了“新闻原文 + 人话翻译 + 意义解读”，方便你在几分钟内快速抓住重点。</p>
+    </div>
+
+    <div class="summary-grid">
+      <div class="summary-card">
+        <h3>时事政治</h3>
+        <p>英国未成年人上网监管加码，欧盟推进乌克兰入盟程序，G7 议程继续被中东与乌克兰局势牵引。</p>
+      </div>
+      <div class="summary-card">
+        <h3>财经新闻</h3>
+        <p>中东局势缓和先压低油价、推高股市，日本央行或继续加息，全球资金继续围绕通胀与利率重新定价。</p>
+      </div>
+      <div class="summary-card">
+        <h3>技术领域</h3>
+        <p>AI 产业继续围绕算力、资金和法律边界扩张：字节继续找替代芯片，xAI 与 OpenAI 的诉讼战升温，资本市场继续给 Nvidia 输血。</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">🕊 时事政治</div>
+
+      <article class="news-card">
+        <div class="news-header">
+          <h2 class="news-title">1. 英国宣布将禁止 16 岁以下未成年人使用社交媒体</h2>
+          <div class="news-meta">
+            <span class="pill">Reuters</span>
+            <span class="pill">未成年人保护</span>
+          </div>
+        </div>
+        <div class="block origin">
+          <h4>新闻原文</h4>
+          <p>Britain's Prime Minister Keir Starmer said on Monday he would ban social media sites for under-16s and impose restrictions on gaming and live-streaming platforms, in a fightback against big tech that goes further than any other country.</p>
+        </div>
+        <div class="block translation">
+          <h4>人话翻译</h4>
+          <p>英国这次不是小修小补，而是直接把 16 岁以下用户挡在主流社交平台门外，连游戏和直播里的陌生人接触功能也要一起收紧。</p>
+        </div>
+        <div class="block meaning">
+          <h4>意义解读</h4>
+          <p>这代表欧美对平台监管正在从“提醒平台自律”走向“直接设年龄硬门槛”。如果落地，社交平台的增长逻辑、青少年产品设计和年龄验证技术都会被迫重做。</p>
+        </div>
+        <a class="source-link" href="https://www.reuters.com/business/media-telecom/britain-expected-set-out-under-16s-social-media-restrictions-2026-06-14/" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-card">
+        <div class="news-header">
+          <h2 class="news-title">2. 欧盟正式开启乌克兰和摩尔多瓦首个入盟谈判集群</h2>
+          <div class="news-meta">
+            <span class="pill">EU</span>
+            <span class="pill">欧洲政治</span>
+          </div>
+        </div>
+        <div class="block origin">
+          <h4>新闻原文</h4>
+          <p>Today, at the first Intergovernmental Conference, the European Union will open the first accession negotiation with Ukraine and Moldova with the cluster on fundamentals. EU leaders called it “the backbone of the accession process” covering rule of law and democratic institutions.</p>
+        </div>
+        <div class="block translation">
+          <h4>人话翻译</h4>
+          <p>欧盟相当于把乌克兰和摩尔多瓦的入盟谈判从“口头支持”推进到了“正式开题”阶段，而且一上来就先谈法治、民主制度这些最硬的基础科目。</p>
+        </div>
+        <div class="block meaning">
+          <h4>意义解读</h4>
+          <p>这一步不等于马上入盟，但政治信号很强：欧盟仍在把乌克兰牢牢绑定进欧洲体系。后续真正难点会落在改革兑现、成员国内部博弈和战争状态下的制度对齐。</p>
+        </div>
+        <a class="source-link" href="https://euneighbourseast.eu/news/latest-news/eu-opens-first-accession-negotiation-cluster-with-ukraine-and-moldova/" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-card">
+        <div class="news-header">
+          <h2 class="news-title">3. G7 峰会在法国开场，议题被伊朗协议与乌克兰战事重新改写</h2>
+          <div class="news-meta">
+            <span class="pill">Reuters</span>
+            <span class="pill">G7 峰会</span>
+          </div>
+        </div>
+        <div class="block origin">
+          <h4>新闻原文</h4>
+          <p>U.S. President Donald Trump joined global leaders on Monday at the Group of Seven summit in France, where he touted his preliminary deal to end the Iran war and said he would now seek to end the fighting in Ukraine and Lebanon.</p>
+        </div>
+        <div class="block translation">
+          <h4>人话翻译</h4>
+          <p>原本 G7 就够复杂了，现在又叠加了美伊停战框架，特朗普还顺手把乌克兰、黎巴嫩也拉进议程，等于把峰会变成一场多线危机协调会。</p>
+        </div>
+        <div class="block meaning">
+          <h4>意义解读</h4>
+          <p>对全球政治来说，G7 的重点已经不只是经济协调，而是如何处理多地冲突外溢。后面各国能不能在制裁、能源、安全承诺上形成一致，会直接影响市场风险偏好。</p>
+        </div>
+        <a class="source-link" href="https://www.reuters.com/world/china/g7-leaders-meet-france-after-us-iran-declare-agreement-end-war-2026-06-15/" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+    </div>
+
+    <div class="section">
+      <div class="section-title">💹 财经新闻</div>
+
+      <article class="news-card">
+        <div class="news-header">
+          <h2 class="news-title">1. 美伊和平框架推动全球股债走强、油价回落</h2>
+          <div class="news-meta">
+            <span class="pill">Reuters</span>
+            <span class="pill">全球市场</span>
+          </div>
+        </div>
+        <div class="block origin">
+          <h4>新闻原文</h4>
+          <p>Major stock indexes and bond prices rallied while oil futures tumbled on Monday as a preliminary peace agreement between the United States and Iran was expected to ease inflationary pressures globally and lessen the need for higher interest rates.</p>
+        </div>
+        <div class="block translation">
+          <h4>人话翻译</h4>
+          <p>市场最直接的理解很简单：如果中东风险降温，油就没必要继续那么贵，通胀压力也能缓一口气，所以股票、债券先一起涨。</p>
+        </div>
+        <div class="block meaning">
+          <h4>意义解读</h4>
+          <p>这说明当前市场主线仍然是“地缘政治 → 能源价格 → 通胀预期 → 利率路径”。只要霍尔木兹海峡风险继续下降，风险资产短线就更容易获得支撑。</p>
+        </div>
+        <a class="source-link" href="https://www.reuters.com/world/china/global-markets-global-markets-2026-06-14/" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-card">
+        <div class="news-header">
+          <h2 class="news-title">2. 日本央行被预期将把利率上调至 31 年高位</h2>
+          <div class="news-meta">
+            <span class="pill">Reuters</span>
+            <span class="pill">央行政策</span>
+          </div>
+        </div>
+        <div class="block origin">
+          <h4>新闻原文</h4>
+          <p>The Bank of Japan is set to raise interest rates to a 31-year high on Tuesday, marking another landmark step in normalising monetary policy as it focuses on taming price pressures from the energy shock caused by the Iran war.</p>
+        </div>
+        <div class="block translation">
+          <h4>人话翻译</h4>
+          <p>日本这个全球“低利率大本营”，现在也准备继续加息了，而且加到 31 年来的高位，说明它不想再无限扛着通胀走。</p>
+        </div>
+        <div class="block meaning">
+          <h4>意义解读</h4>
+          <p>一旦日本继续退出超宽松，全球套息交易、日元汇率和亚洲资产配置都会被连带影响。对资金市场来说，这比一次普通加息更像是流动性风向标变化。</p>
+        </div>
+        <a class="source-link" href="https://www.reuters.com/world/asia-pacific/bank-japan-set-raise-rates-31-year-high-vow-further-increases-2026-06-15/" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+    </div>
+
+    <div class="section">
+      <div class="section-title">🧠 技术领域</div>
+
+      <article class="news-card">
+        <div class="news-header">
+          <h2 class="news-title">1. 字节跳动正与天数智芯洽谈采购 AI 推理芯片</h2>
+          <div class="news-meta">
+            <span class="pill">Reuters</span>
+            <span class="pill">AI 算力</span>
+          </div>
+        </div>
+        <div class="block origin">
+          <h4>新闻原文</h4>
+          <p>ByteDance is in talks with Shanghai-based Iluvatar CoreX to purchase AI chips for inference work and is also considering a similar deal with Baidu, according to two sources familiar with the matter.</p>
+        </div>
+        <div class="block translation">
+          <h4>人话翻译</h4>
+          <p>字节还在持续找 AI 芯片的新供应来源，而且重点是推理而不是训练，说明大模型真正烧钱的地方，已经越来越偏向大规模在线服务。</p>
+        </div>
+        <div class="block meaning">
+          <h4>意义解读</h4>
+          <p>这背后反映的是国内大厂的共同方向：一边追求算力自主可控，一边按业务场景做芯片多元化采购。谁能拿到稳定、可扩展、性价比高的推理算力，谁就更容易把 AI 服务真正铺开。</p>
+        </div>
+        <a class="source-link" href="https://www.reuters.com/world/china/bytedance-talks-with-chinas-iluvatar-corex-purchase-ai-chips-sources-say-2026-06-15/" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-card">
+        <div class="news-header">
+          <h2 class="news-title">2. 美国法官驳回 xAI 对 OpenAI 的商业机密诉讼</h2>
+          <div class="news-meta">
+            <span class="pill">Reuters</span>
+            <span class="pill">AI 法律战</span>
+          </div>
+        </div>
+        <div class="block origin">
+          <h4>新闻原文</h4>
+          <p>A federal judge dismissed a lawsuit on Monday by Elon Musk's artificial intelligence company xAI that accused rival Sam Altman's OpenAI of stealing trade secrets for chatbots.</p>
+        </div>
+        <div class="block translation">
+          <h4>人话翻译</h4>
+          <p>马斯克这次想用“商业机密被偷”这条线压 OpenAI，但法院没买账，等于 OpenAI 在法律战里又赢下一局。</p>
+        </div>
+        <div class="block meaning">
+          <h4>意义解读</h4>
+          <p>AI 竞争已经不只是拼模型效果，也在拼法律边界、人才流动和知识产权定义。对创业公司来说，这类判决会影响以后怎么写雇佣协议、怎么管源码和训练资产。</p>
+        </div>
+        <a class="source-link" href="https://www.reuters.com/legal/litigation/openai-wins-dismissal-trade-secret-lawsuit-by-musks-xai-2026-06-15/" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-card">
+        <div class="news-header">
+          <h2 class="news-title">3. Nvidia 启动五年来首次大额发债，为 AI 芯片扩产补充弹药</h2>
+          <div class="news-meta">
+            <span class="pill">Reuters</span>
+            <span class="pill">科技资本</span>
+          </div>
+        </div>
+        <div class="block origin">
+          <h4>新闻原文</h4>
+          <p>Nvidia said on Monday it would raise $25 billion through a U.S. bond issuance, tapping the debt market to increase liquidity as it invests heavily to keep pace with the fast-evolving AI sector.</p>
+        </div>
+        <div class="block translation">
+          <h4>人话翻译</h4>
+          <p>英伟达现在不是缺故事，而是缺更多能立刻砸进去的钱，所以直接重返债市融资，把资本市场的子弹继续转成芯片产能和供应链能力。</p>
+        </div>
+        <div class="block meaning">
+          <h4>意义解读</h4>
+          <p>这说明 AI 硬件竞赛已经进入重资产阶段。头部公司比的不是谁先做出芯片，而是谁能持续把先进制程、封装、服务器和生态一起烧出来。</p>
+        </div>
+        <a class="source-link" href="https://www.reuters.com/business/finance/nvidia-raise-20-billion-source-says-first-corporate-bond-issuance-five-years-2026-06-15/" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+    </div>
+
+    <div class="footer">内容来源以公开报道与官方发布为准；本页用于晨间速读与要点提炼。</div>
+  </div>
+</body>
+</html>
