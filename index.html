@@ -1,13 +1,280 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=./ai_daily_20260607/" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>global-sync</title>
-  <script>window.location.replace('./ai_daily_20260607/');</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>global-sync 全球同步</title>
+  <style>
+
+    :root { color-scheme: light; --text:#111827; --muted:#6b7280; --line:#e5e7eb; --card:#ffffff; --bg1:#f8fafc; --bg2:#eef2f7; --shadow:0 18px 45px rgba(15,23,42,.08); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,"PingFang SC","Microsoft YaHei",sans-serif; color:var(--text); background:linear-gradient(135deg,var(--bg1) 0%,#fff 42%,var(--bg2) 100%); min-height:100vh; }
+    a { color:inherit; text-decoration:none; }
+    .page { width:min(1180px, calc(100% - 40px)); margin:0 auto; padding:44px 0 28px; }
+    header { background:rgba(255,255,255,.78); border:1px solid rgba(229,231,235,.9); border-radius:28px; padding:34px; box-shadow:var(--shadow); backdrop-filter:blur(16px); }
+    .eyebrow { display:inline-flex; gap:8px; align-items:center; color:#475569; background:#f1f5f9; border:1px solid #e2e8f0; border-radius:999px; padding:7px 12px; font-size:13px; }
+    h1 { margin:18px 0 10px; font-size:clamp(34px,5vw,58px); line-height:1.04; letter-spacing:-.04em; }
+    .subtitle { max-width:760px; color:var(--muted); font-size:17px; line-height:1.8; margin:0; }
+    .stats { display:flex; flex-wrap:wrap; gap:12px; margin-top:26px; }
+    .stat { background:#fff; border:1px solid var(--line); border-radius:18px; padding:13px 16px; min-width:170px; }
+    .stat b { display:block; font-size:24px; letter-spacing:-.02em; }
+    .stat span { color:var(--muted); font-size:13px; }
+    .quick-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:24px 0; }
+    .quick-card,.content-card { background:var(--card); border:1px solid rgba(229,231,235,.95); border-radius:24px; box-shadow:0 12px 34px rgba(15,23,42,.07); }
+    .quick-card { padding:22px; cursor:pointer; transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease; position:relative; overflow:hidden; }
+    .quick-card:before { content:""; position:absolute; inset:0 0 auto; height:4px; background:var(--accent); }
+    .quick-card:hover { transform:translateY(-4px); box-shadow:0 20px 46px rgba(15,23,42,.11); border-color:color-mix(in srgb, var(--accent) 34%, #e5e7eb); }
+    .quick-top { display:flex; justify-content:space-between; align-items:center; color:var(--muted); font-size:13px; }
+    .dot { width:11px; height:11px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 5px color-mix(in srgb, var(--accent) 14%, transparent); }
+    .quick-card h3 { margin:18px 0 8px; font-size:22px; }
+    .quick-card p { margin:0; min-height:48px; color:var(--muted); line-height:1.55; }
+    .update-time { margin:14px 0 0; color:var(--accent); font-size:13px; font-weight:700; }
+    .latest { margin:10px 0 14px; color:#4b5563; font-size:14px; }
+    .latest-link,.toggle-btn { display:inline-flex; align-items:center; justify-content:center; border:0; border-radius:999px; color:#fff; background:var(--accent); padding:9px 14px; font-weight:650; cursor:pointer; box-shadow:0 8px 18px color-mix(in srgb, var(--accent) 22%, transparent); }
+    .latest-link[aria-disabled="true"] { opacity:.45; pointer-events:none; }
+    .content-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; align-items:start; }
+    .content-card { padding:24px; scroll-margin-top:24px; }
+    .section-head { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; padding-bottom:16px; border-bottom:1px solid var(--line); }
+    .section-kicker { color:var(--accent); font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
+    .section-head h2 { margin:6px 0 0; font-size:26px; letter-spacing:-.02em; }
+    .section-meta { display:flex; flex-direction:column; align-items:flex-end; gap:6px; color:var(--muted); font-size:13px; white-space:nowrap; }
+    .link-list { list-style:none; padding:0; margin:16px 0 0; display:grid; gap:10px; }
+    .link-list li { border:1px solid #eef2f7; border-radius:16px; background:#fbfdff; transition:background .18s ease, border-color .18s ease, transform .18s ease; }
+    .link-list li:hover { background:#fff; border-color:color-mix(in srgb, var(--accent) 28%, #e5e7eb); transform:translateX(2px); }
+    .link-list a { display:flex; gap:14px; align-items:center; padding:13px 14px; }
+    .item-date { flex:0 0 auto; color:var(--accent); font-weight:750; font-variant-numeric:tabular-nums; white-space:nowrap; }
+    .item-summary { min-width:0; color:#374151; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .extra-item.is-hidden { display:none; }
+    .toggle-btn { margin-top:14px; font-size:14px; }
+    .empty { color:var(--muted); padding:14px; }
+    .back-top { position:fixed; right:24px; bottom:24px; width:48px; height:48px; border-radius:50%; border:1px solid var(--line); background:#fff; box-shadow:0 14px 34px rgba(15,23,42,.16); cursor:pointer; font-size:20px; }
+    footer { margin-top:28px; padding:24px 4px 6px; color:var(--muted); text-align:center; line-height:1.8; }
+    footer a { color:#2563eb; font-weight:650; }
+    @media (max-width:960px) { .quick-grid,.content-grid { grid-template-columns:1fr 1fr; } }
+    @media (max-width:640px) { .page { width:min(100% - 24px,1180px); padding-top:18px; } header { padding:24px; border-radius:22px; } .quick-grid,.content-grid { grid-template-columns:1fr; } .section-head { flex-direction:column; } .section-meta { align-items:flex-start; } .link-list a { align-items:flex-start; flex-direction:column; gap:4px; } .item-date { flex:auto; } .item-summary { white-space:normal; } .back-top { right:16px; bottom:16px; } }
+
+  </style>
 </head>
 <body>
-  <p>正在跳转到 AI 日报页面：<a href="./ai_daily_20260607/">./ai_daily_20260607/</a></p>
+  <main class="page" id="top">
+    <header>
+      <span class="eyebrow">📚 静态归档导航</span>
+      <h1>global-sync 全球同步</h1>
+      <p class="subtitle">聚合晨报、GitHub 精选、副业探索和大厂新闻，按日期归档，快速访问历史内容</p>
+      <div class="stats">
+        <div class="stat"><b>109</b><span>总文件数</span></div>
+        <div class="stat"><b>2026-06-15 16:21</b><span>最近更新时间</span></div>
+        <div class="stat"><b>2026-06-15</b><span>最新内容日期</span></div>
+      </div>
+    </header>
+
+    <nav class="quick-grid" aria-label="Quick Access">
+
+      <article class="quick-card" style="--accent:#16a34a" onclick="scrollToSection('morning-paper')" tabindex="0" onkeydown="cardKeydown(event, 'morning-paper')">
+        <div class="quick-top"><span class="dot"></span><span class="count">32 个文件</span></div>
+        <h3>晨报</h3>
+        <p>每日资讯聚合与重点摘要</p>
+        <div class="update-time">每天 07:30 更新</div>
+        <div class="latest">最新一期：<strong>2026-06-15</strong></div>
+        <a class="latest-link" href="./morning-paper/morning-paper-20260615.html" onclick="event.stopPropagation()">查看最新</a>
+      </article>
+
+      <article class="quick-card" style="--accent:#2563eb" onclick="scrollToSection('github-selected')" tabindex="0" onkeydown="cardKeydown(event, 'github-selected')">
+        <div class="quick-top"><span class="dot"></span><span class="count">32 个文件</span></div>
+        <h3>GitHub 精选</h3>
+        <p>开源项目趋势与优质仓库精选</p>
+        <div class="update-time">每天 12:30 更新</div>
+        <div class="latest">最新一期：<strong>2026-06-15</strong></div>
+        <a class="latest-link" href="./github-selected/github-selected-20260615.html" onclick="event.stopPropagation()">查看最新</a>
+      </article>
+
+      <article class="quick-card" style="--accent:#f59e0b" onclick="scrollToSection('bywork')" tabindex="0" onkeydown="cardKeydown(event, 'bywork')">
+        <div class="quick-top"><span class="dot"></span><span class="count">31 个文件</span></div>
+        <h3>副业探索</h3>
+        <p>副业机会、工具方法和增长案例</p>
+        <div class="update-time">每天 12:40 更新</div>
+        <div class="latest">最新一期：<strong>2026-06-15</strong></div>
+        <a class="latest-link" href="./bywork/bywork-20260615.html" onclick="event.stopPropagation()">查看最新</a>
+      </article>
+
+      <article class="quick-card" style="--accent:#111827" onclick="scrollToSection('dachang-news')" tabindex="0" onkeydown="cardKeydown(event, 'dachang-news')">
+        <div class="quick-top"><span class="dot"></span><span class="count">14 个文件</span></div>
+        <h3>大厂新闻</h3>
+        <p>互联网大厂动态与行业观察</p>
+        <div class="update-time">每天 19:00 更新</div>
+        <div class="latest">最新一期：<strong>2026-06-14</strong></div>
+        <a class="latest-link" href="./dachang-news/dachang-news-20260614.html" onclick="event.stopPropagation()">查看最新</a>
+      </article>
+    </nav>
+
+    <div class="content-grid">
+
+      <section class="content-card" id="morning-paper" style="--accent:#16a34a">
+        <div class="section-head">
+          <div><span class="section-kicker">morning-paper</span><h2>晨报</h2></div>
+          <div class="section-meta"><span>32 个文件</span><span>最新 2026-06-15</span></div>
+        </div>
+        <ul class="link-list"><li><a href="./morning-paper/morning-paper-20260615.html"><span class="item-date">2026-06-15</span><span class="item-summary">1. 美伊就结束战争达成和平框架</span></a></li>
+<li><a href="./morning-paper/morning-paper-20260614.html"><span class="item-date">2026-06-14</span><span class="item-summary">中方宣布对菲律宾国防部长特奥多罗及其亲属实施制裁</span></a></li>
+<li><a href="./morning-paper/morning-paper-20260613.html"><span class="item-date">2026-06-13</span><span class="item-summary">缅甸总统敏昂莱将于 6 月 15 日至 19 日对中国进行国事访问</span></a></li>
+<li><a href="./morning-paper/morning-paper-20260612.html"><span class="item-date">2026-06-12</span><span class="item-summary">峰会预热、通胀未退、AI 电脑开始抢夺下一代入口</span></a></li>
+<li><a href="./morning-paper/morning-paper-20260608.html"><span class="item-date">2026-06-08</span><span class="item-summary">1. ChatGPT迎史上最大改版，&quot;聊天已死&quot;转向超级应用</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260607.html"><span class="item-date">2026-06-07</span><span class="item-summary">今日头条</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260606.html"><span class="item-date">2026-06-06</span><span class="item-summary">1. Anthropic发布重磅报告：AI正在加速构建自身，呼吁建立&quot;可核验暂停&quot;机制</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260605.html"><span class="item-date">2026-06-05</span><span class="item-summary">时事政治 · 财经要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260604.html"><span class="item-date">2026-06-04</span><span class="item-summary">时事政治 · 财经要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260603.html"><span class="item-date">2026-06-03</span><span class="item-summary">时事政治 · 财经要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260531.html"><span class="item-date">2026-05-31</span><span class="item-summary">一、政策：四部门联手提升全民AI素养</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260528.html"><span class="item-date">2026-05-28</span><span class="item-summary">时事政治 · 财经要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260527.html"><span class="item-date">2026-05-27</span><span class="item-summary">时事政治 · 财经要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260525.html"><span class="item-date">2026-05-25</span><span class="item-summary">时事政治 · 财经要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260524.html"><span class="item-date">2026-05-24</span><span class="item-summary">时事政治 · 财经要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260523.html"><span class="item-date">2026-05-23</span><span class="item-summary">时事政治 · 财经要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260522.html"><span class="item-date">2026-05-22</span><span class="item-summary">时事政治 · 财经要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260521.html"><span class="item-date">2026-05-21</span><span class="item-summary">时事政治 · 财经要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260520.html"><span class="item-date">2026-05-20</span><span class="item-summary">时事政治 · 财经要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260519.html"><span class="item-date">2026-05-19</span><span class="item-summary">时事政治 · 财经要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260518.html"><span class="item-date">2026-05-18</span><span class="item-summary">时事政治 + 财经</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260517.html"><span class="item-date">2026-05-17</span><span class="item-summary">时事政治 + 财经</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260516.html"><span class="item-date">2026-05-16</span><span class="item-summary">时事政治 + 财经</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260515.html"><span class="item-date">2026-05-15</span><span class="item-summary">时事政治 · 财经要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260514.html"><span class="item-date">2026-05-14</span><span class="item-summary">时事政治 &amp;amp; 财经要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260513.html"><span class="item-date">2026-05-13</span><span class="item-summary">一、时事政治与财经要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260512.html"><span class="item-date">2026-05-12</span><span class="item-summary">时事政治 &amp;amp; 财经要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260511.html"><span class="item-date">2026-05-11</span><span class="item-summary">财经 &amp;amp; 时政要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260510.html"><span class="item-date">2026-05-10</span><span class="item-summary">时事政治 · 财经要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260509.html"><span class="item-date">2026-05-09</span><span class="item-summary">时事政治 · 财经要闻</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260508.html"><span class="item-date">2026-05-08</span><span class="item-summary">一、时事政治+财经</span></a></li>
+<li class="extra-item is-hidden"><a href="./morning-paper/morning-paper-20260507.html"><span class="item-date">2026-05-07</span><span class="item-summary">时事政治 + 财经</span></a></li></ul>
+        <button class="toggle-btn" type="button" onclick="toggleAll(this)">展开全部</button>
+      </section>
+
+      <section class="content-card" id="github-selected" style="--accent:#2563eb">
+        <div class="section-head">
+          <div><span class="section-kicker">github-selected</span><h2>GitHub 精选</h2></div>
+          <div class="section-meta"><span>32 个文件</span><span>最新 2026-06-15</span></div>
+        </div>
+        <ul class="link-list"><li><a href="./github-selected/github-selected-20260615.html"><span class="item-date">2026-06-15</span><span class="item-summary">1. browser-use</span></a></li>
+<li><a href="./github-selected/github-selected-20260614.html"><span class="item-date">2026-06-14</span><span class="item-summary">本日精选结论</span></a></li>
+<li><a href="./github-selected/github-selected-20260613.html"><span class="item-date">2026-06-13</span><span class="item-summary">本日精选结论</span></a></li>
+<li><a href="./github-selected/github-selected-20260612.html"><span class="item-date">2026-06-12</span><span class="item-summary">本日精选结论</span></a></li>
+<li><a href="./github-selected/github-selected-20260609.html"><span class="item-date">2026-06-09</span><span class="item-summary">一、GitHub Trending 热门项目（本周TOP10）</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260608.html"><span class="item-date">2026-06-08</span><span class="item-summary">一、GitHub Trending 热门项目（本周TOP10）</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260606.html"><span class="item-date">2026-06-06</span><span class="item-summary">一、GitHub Trending 热门项目（本周TOP10）</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260605.html"><span class="item-date">2026-06-05</span><span class="item-summary">产物信息</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260604.html"><span class="item-date">2026-06-04</span><span class="item-summary">GitHub 热门项目 TOP 5</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260603.html"><span class="item-date">2026-06-03</span><span class="item-summary">本期内容亮点</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260602.html"><span class="item-date">2026-06-02</span><span class="item-summary">今日概览</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260601.html"><span class="item-date">2026-06-01</span><span class="item-summary">一、AI Agent 工程化：工具链全景</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260531.html"><span class="item-date">2026-05-31</span><span class="item-summary">一、GitHub Trending 热门项目</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260530.html"><span class="item-date">2026-05-30</span><span class="item-summary">今日核心洞察</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260529.html"><span class="item-date">2026-05-29</span><span class="item-summary">今日核心洞察</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260528.html"><span class="item-date">2026-05-28</span><span class="item-summary">今日概览</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260527.html"><span class="item-date">2026-05-27</span><span class="item-summary">今日概览</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260526.html"><span class="item-date">2026-05-26</span><span class="item-summary">今日概览</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260525.html"><span class="item-date">2026-05-25</span><span class="item-summary">本周洞见</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260524.html"><span class="item-date">2026-05-24</span><span class="item-summary">本周洞见</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260523.html"><span class="item-date">2026-05-23</span><span class="item-summary">GitHub Trending · 本月最火项目</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260522.html"><span class="item-date">2026-05-22</span><span class="item-summary">本周洞见</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260521.html"><span class="item-date">2026-05-21</span><span class="item-summary">GitHub Trending · 本月最火项目</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260520.html"><span class="item-date">2026-05-20</span><span class="item-summary">头条重磅：Meta Llama 4 深夜开源</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260519.html"><span class="item-date">2026-05-19</span><span class="item-summary">GitHub Trending · 本周最火项目</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260518.html"><span class="item-date">2026-05-18</span><span class="item-summary">每日</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260517.html"><span class="item-date">2026-05-17</span><span class="item-summary">每日</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260516.html"><span class="item-date">2026-05-16</span><span class="item-summary">每日</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260515.html"><span class="item-date">2026-05-15</span><span class="item-summary">每日</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260514.html"><span class="item-date">2026-05-14</span><span class="item-summary">每日</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260513.html"><span class="item-date">2026-05-13</span><span class="item-summary">项目一：Warp Terminal - 开源的AI Agent开发环境</span></a></li>
+<li class="extra-item is-hidden"><a href="./github-selected/github-selected-20260512.html"><span class="item-date">2026-05-12</span><span class="item-summary">今日精选项目</span></a></li></ul>
+        <button class="toggle-btn" type="button" onclick="toggleAll(this)">展开全部</button>
+      </section>
+
+      <section class="content-card" id="bywork" style="--accent:#f59e0b">
+        <div class="section-head">
+          <div><span class="section-kicker">bywork</span><h2>副业探索</h2></div>
+          <div class="section-meta"><span>31 个文件</span><span>最新 2026-06-15</span></div>
+        </div>
+        <ul class="link-list"><li><a href="./bywork/bywork-20260615.html"><span class="item-date">2026-06-15</span><span class="item-summary">方向一：AI 自动化代运营 / 工作流搭建服务</span></a></li>
+<li><a href="./bywork/bywork-20260614.html"><span class="item-date">2026-06-14</span><span class="item-summary">方向一：本地商家 AI 内容代运营</span></a></li>
+<li><a href="./bywork/bywork-20260613.html"><span class="item-date">2026-06-13</span><span class="item-summary">方向 1：AI 本地商家短视频获客代运营</span></a></li>
+<li><a href="./bywork/bywork-20260612.html"><span class="item-date">2026-06-12</span><span class="item-summary">方向 1：AI 短内容切片代运营</span></a></li>
+<li><a href="./bywork/bywork-20260609.html"><span class="item-date">2026-06-09</span><span class="item-summary">产物信息</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260608.html"><span class="item-date">2026-06-08</span><span class="item-summary">产物信息</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260606.html"><span class="item-date">2026-06-06</span><span class="item-summary">产物信息</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260604.html"><span class="item-date">2026-06-04</span><span class="item-summary">核心发现</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260603.html"><span class="item-date">2026-06-03</span><span class="item-summary">今日聚焦：AI数字产品与技能开发变现——被低估的长期收入金矿</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260531.html"><span class="item-date">2026-05-31</span><span class="item-summary">今日核心洞察</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260530.html"><span class="item-date">2026-05-30</span><span class="item-summary">垂直领域研究报告订阅服务深度拆解</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260529.html"><span class="item-date">2026-05-29</span><span class="item-summary">研究方向</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260528.html"><span class="item-date">2026-05-28</span><span class="item-summary">AI API聚合平台：独立开发者的合法变现路径深度研究</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260527.html"><span class="item-date">2026-05-27</span><span class="item-summary">AI开发套利与数字产品：被动收入的两种底层逻辑</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260526.html"><span class="item-date">2026-05-26</span><span class="item-summary">2026年AI副业新风向：内容创作×工具变现×实体赋能 三大赛道实战指南</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260524.html"><span class="item-date">2026-05-24</span><span class="item-summary">工作流 - 任务执行状态报告</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260523.html"><span class="item-date">2026-05-23</span><span class="item-summary">AI副业可行性研究</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260522.html"><span class="item-date">2026-05-22</span><span class="item-summary">3个方向概览：大模型API变现 · 自动化工具服务 · 订阅制内容平台</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260521.html"><span class="item-date">2026-05-21</span><span class="item-summary">大模型API套利与智能体变现</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260520.html"><span class="item-date">2026-05-20</span><span class="item-summary">大模型API自动化工具与订阅制变现深度分析</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260519.html"><span class="item-date">2026-05-19</span><span class="item-summary">AI副业可行性研究</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260518.html"><span class="item-date">2026-05-18</span><span class="item-summary">基于AI API的自动化工具开发</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260517.html"><span class="item-date">2026-05-17</span><span class="item-summary">基于大模型API的自动化工具开发与变现</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260516.html"><span class="item-date">2026-05-16</span><span class="item-summary">本地商家AI智能体定制服务</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260515.html"><span class="item-date">2026-05-15</span><span class="item-summary">方向：基于DeepSeek API的AI自动化工具/服务开发</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260514.html"><span class="item-date">2026-05-14</span><span class="item-summary">方向：Vibe Coding/AI辅助独立开发（氛围编程）</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260513.html"><span class="item-date">2026-05-13</span><span class="item-summary">报告日期</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260512.html"><span class="item-date">2026-05-12</span><span class="item-summary">方向一：垂直行业AI智能体客服系统出租（技术实现类）</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260511.html"><span class="item-date">2026-05-11</span><span class="item-summary">技术类方向1：AI智能客服系统定制开发</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260510.html"><span class="item-date">2026-05-10</span><span class="item-summary">方向1：企业知识库Agent SaaS（技术类·被动收入模式）</span></a></li>
+<li class="extra-item is-hidden"><a href="./bywork/bywork-20260509.html"><span class="item-date">2026-05-09</span><span class="item-summary">方向一：AI智能体驯兽师（&quot;小龙虾&quot;智能体配置服务）</span></a></li></ul>
+        <button class="toggle-btn" type="button" onclick="toggleAll(this)">展开全部</button>
+      </section>
+
+      <section class="content-card" id="dachang-news" style="--accent:#111827">
+        <div class="section-head">
+          <div><span class="section-kicker">dachang-news</span><h2>大厂新闻</h2></div>
+          <div class="section-meta"><span>14 个文件</span><span>最新 2026-06-14</span></div>
+        </div>
+        <ul class="link-list"><li><a href="./dachang-news/dachang-news-20260614.html"><span class="item-date">2026-06-14</span><span class="item-summary">价格战、系统入口、Agent 平台三线并进，AI 竞争进入“真落地”阶段</span></a></li>
+<li><a href="./dachang-news/dachang-news-20260613.html"><span class="item-date">2026-06-13</span><span class="item-summary">国内卷系统级 AI，海外抢浏览器入口、开发者工具和数据中心</span></a></li>
+<li><a href="./dachang-news/dachang-news-20260612.html"><span class="item-date">2026-06-12</span><span class="item-summary">Agent 商业化开始收钱，手机与浏览器继续 AI 化，算力和生态竞争同步加码</span></a></li>
+<li><a href="./dachang-news/dachang-news-20260611.html"><span class="item-date">2026-06-11</span><span class="item-summary">高考 Agent 开打、AI 助手升级、价格战与算力战同步升温</span></a></li>
+<li><a href="./dachang-news/dachang-news-20260519.html"><span class="item-date">2026-05-19</span><span class="item-summary">（）</span></a></li>
+<li class="extra-item is-hidden"><a href="./dachang-news/dachang-news-20260518.html"><span class="item-date">2026-05-18</span><span class="item-summary">一、字节跳动：豆包开启付费新纪元，三档定价68-500元/月</span></a></li>
+<li class="extra-item is-hidden"><a href="./dachang-news/dachang-news-20260517.html"><span class="item-date">2026-05-17</span><span class="item-summary">一、字节跳动：2000亿All in AI，豆包3.45亿月活开启商业化</span></a></li>
+<li class="extra-item is-hidden"><a href="./dachang-news/dachang-news-20260516.html"><span class="item-date">2026-05-16</span><span class="item-summary">（）</span></a></li>
+<li class="extra-item is-hidden"><a href="./dachang-news/dachang-news-20260515.html"><span class="item-date">2026-05-15</span><span class="item-summary">（）</span></a></li>
+<li class="extra-item is-hidden"><a href="./dachang-news/dachang-news-20260514.html"><span class="item-date">2026-05-14</span><span class="item-summary">特朗普访华今日动态</span></a></li>
+<li class="extra-item is-hidden"><a href="./dachang-news/dachang-news-20260513.html"><span class="item-date">2026-05-13</span><span class="item-summary">国内大厂动态</span></a></li>
+<li class="extra-item is-hidden"><a href="./dachang-news/dachang-news-20260512.html"><span class="item-date">2026-05-12</span><span class="item-summary">（）</span></a></li>
+<li class="extra-item is-hidden"><a href="./dachang-news/dachang-news-20260510.html"><span class="item-date">2026-05-10</span><span class="item-summary">国内大厂动态</span></a></li>
+<li class="extra-item is-hidden"><a href="./dachang-news/dachang-news-20260509.html"><span class="item-date">2026-05-09</span><span class="item-summary">🇨🇳 国内大厂动态</span></a></li></ul>
+        <button class="toggle-btn" type="button" onclick="toggleAll(this)">展开全部</button>
+      </section>
+    </div>
+
+    <footer>
+      <div>GitHub 仓库：<a href="https://github.com/ssr-qegr/global-sync">https://github.com/ssr-qegr/global-sync</a></div>
+      <div>最近更新时间：2026-06-15 16:21</div>
+    </footer>
+  </main>
+  <button class="back-top" type="button" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="返回顶部">↑</button>
+  <script>
+
+    function scrollToSection(id) {
+      var target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    function cardKeydown(event, id) {
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); scrollToSection(id); }
+    }
+    function toggleAll(btn) {
+      var card = btn.closest('.content-card');
+      var hidden = card.querySelectorAll('.extra-item');
+      var expanding = Array.prototype.some.call(hidden, function(el) { return el.classList.contains('is-hidden'); });
+      hidden.forEach(function(el) { el.classList.toggle('is-hidden', !expanding); });
+      btn.textContent = expanding ? '收起' : '展开全部';
+    }
+
+  </script>
 </body>
 </html>
