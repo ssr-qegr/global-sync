@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub 精选项目报告 | 2026年6月15日</title>
+  <style>
+    :root {
+      --primary: #0052D9;
+      --primary-soft: #EAF2FF;
+      --bg: #F3F5F8;
+      --card-bg: #FFFFFF;
+      --text-main: #1C1F23;
+      --text-sub: #5C6A82;
+      --border: rgba(0, 82, 217, 0.12);
+      --success: #0F9D58;
+      --shadow: 0 18px 48px rgba(8, 32, 71, 0.10);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: linear-gradient(180deg, #EEF4FF 0%, var(--bg) 260px);
+      color: var(--text-main);
+      font: 16px/1.75 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      padding: 42px 44px 34px;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.95), rgba(255,255,255,0.18) 34%),
+        linear-gradient(135deg, #0052D9 0%, #2F80ED 55%, #7CB8FF 100%);
+      color: #fff;
+    }
+    .badge-group { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.18);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    h1 { margin: 0 0 14px; font-size: 34px; line-height: 1.25; }
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255,255,255,0.92);
+      font-size: 16px;
+    }
+    .content { padding: 34px 44px 40px; }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      font-size: 24px;
+      color: var(--primary);
+    }
+    .lead-card,
+    .project-card,
+    .tips-card,
+    .source-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 22px;
+      box-shadow: 0 10px 28px rgba(0, 82, 217, 0.06);
+    }
+    .lead-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .metric {
+      background: linear-gradient(180deg, #F8FBFF, #FFFFFF);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .metric .label { display: block; font-size: 13px; color: var(--text-sub); margin-bottom: 8px; }
+    .metric .value { display: block; font-size: 22px; font-weight: 700; color: var(--primary); }
+    .project-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+    .project-title { margin: 0; font-size: 28px; line-height: 1.3; }
+    .project-subtitle { margin: 8px 0 0; color: var(--text-sub); }
+    .rank {
+      min-width: 86px;
+      text-align: center;
+      background: linear-gradient(180deg, #F6FAFF, #EAF2FF);
+      color: var(--primary);
+      border-radius: 16px;
+      padding: 14px 12px;
+      border: 1px solid var(--border);
+      font-weight: 700;
+    }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 0 18px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--text-sub);
+      background: #F7FAFE;
+      border: 1px solid rgba(92, 106, 130, 0.14);
+    }
+    .summary {
+      margin: 0 0 18px;
+      font-size: 16px;
+      color: var(--text-main);
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 12px;
+    }
+    .panel {
+      background: #FAFCFF;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .panel h3 {
+      margin: 0 0 12px;
+      font-size: 17px;
+      color: var(--primary);
+    }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; color: var(--text-sub); }
+    li strong { color: var(--text-main); }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-weight: 600;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .link-btn.primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 8px 18px rgba(0, 82, 217, 0.22);
+    }
+    .link-btn.secondary {
+      background: var(--primary-soft);
+      color: var(--primary);
+    }
+    .link-btn:hover { transform: translateY(-1px); }
+    .tips-card h3,
+    .source-card h3 { margin: 0 0 12px; color: var(--primary); }
+    .tips-card p,
+    .source-card p,
+    .source-card li { margin: 0; color: var(--text-sub); }
+    .foot {
+      padding: 0 44px 34px;
+      color: var(--text-sub);
+      font-size: 13px;
+    }
+    .foot strong { color: var(--text-main); }
+    a { color: var(--primary); }
+    @media (max-width: 820px) {
+      body { padding: 14px; }
+      .hero, .content, .foot { padding-left: 22px; padding-right: 22px; }
+      .lead-grid, .grid-2 { grid-template-columns: 1fr; }
+      .project-head { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="badge-group">
+        <span class="badge">GitHub 精选</span>
+        <span class="badge">2026-06-15</span>
+        <span class="badge">style_blue</span>
+      </div>
+      <h1>今日 GitHub 精选项目报告</h1>
+      <p>今天挑了 2 个值得花时间看的项目：一个偏“AI 直接干活”的浏览器智能体基础设施，一个偏“系统提升”的 AI 工程学习体系。前者适合你把 Agent 落到真实网页任务里，后者适合你搭建完整的 AI 工程知识框架。</p>
+    </section>
+
+    <main class="content">
+      <section class="lead-card">
+        <h2 class="section-title">📌 今日结论</h2>
+        <p class="summary">如果你更想马上动手做自动化和 Agent 场景，优先看 <strong>browser-use</strong>；如果你更想系统补齐 AI 工程的底层能力、课程路径和练习项目，优先看 <strong>ai-engineering-from-scratch</strong>。</p>
+        <div class="lead-grid">
+          <div class="metric">
+            <span class="label">今日精选数量</span>
+            <span class="value">2 个</span>
+          </div>
+          <div class="metric">
+            <span class="label">核心主题</span>
+            <span class="value">Agent × 学习成长</span>
+          </div>
+          <div class="metric">
+            <span class="label">推荐阅读顺序</span>
+            <span class="value">实战 → 体系</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-card">
+        <div class="project-head">
+          <div>
+            <h2 class="project-title">1. browser-use</h2>
+            <p class="project-subtitle">让 AI Agent 真正“看网页、点按钮、跑流程”的浏览器自动化基础设施</p>
+          </div>
+          <div class="rank">TOP 1</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip">⭐ 98,853 Stars</span>
+          <span class="chip">🍴 11,034 Forks</span>
+          <span class="chip">🐍 Python</span>
+          <span class="chip">📄 MIT License</span>
+          <span class="chip">🏷️ browser automation / llm / playright-like agent</span>
+        </div>
+        <p class="summary"><strong>项目介绍：</strong>browser-use 的定位很明确——把网站变成 AI Agent 可操作的真实环境。它不只是“开个浏览器脚本”，而是把自然语言任务、模型推理、浏览器动作空间和恢复机制串成一套完整运行链路，适合做网页检索、表单填写、流程执行、自动化测试和多站点信息采集。</p>
+        <div class="grid-2">
+          <div class="panel">
+            <h3>技术亮点</h3>
+            <ul>
+              <li><strong>Rust Core + Browser Harness：</strong>README 中明确提到新 beta agent 由 Rust 内核驱动，外层接浏览器执行环境，强调真实浏览器动作空间与恢复循环。</li>
+              <li><strong>对主流模型友好：</strong>支持通过 <code>ChatBrowserUse</code> 接入多种 provider，也支持和 Cursor、Claude Code 等编码 Agent 配合。</li>
+              <li><strong>CLI / Python 双入口：</strong>既能直接写 Python Agent，也能通过 CLI 维持持久浏览器会话，适合快速试验和工程落地。</li>
+              <li><strong>生产化要素更完整：</strong>文档里强调云端浏览器、代理轮转、Captcha 处理、并发执行和持久化能力，说明它不是单纯 Demo 型项目。</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>使用场景</h3>
+            <ul>
+              <li><strong>Agent 执行网页任务：</strong>登录站点、跨页面点击、下载文件、执行完整业务流程。</li>
+              <li><strong>信息采集与研究：</strong>从多个网站抓取结果后自动整理和总结，适合做监控、调研与日报。</li>
+              <li><strong>网页测试与回归：</strong>用自然语言描述测试步骤，驱动真实浏览器完成验证。</li>
+              <li><strong>个人效率助手：</strong>自动填表、投递申请、购物比价、帮你完成重复线上操作。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel" style="margin-top:16px;">
+          <h3>为什么今天推荐它</h3>
+          <ul>
+            <li>Agent 从“会聊天”走向“会干活”，浏览器是最直接也最通用的执行环境。</li>
+            <li>它同时覆盖开源库、CLI、文档和云能力，说明生态已经比较成熟。</li>
+            <li>如果你想把 AI 和真实业务网页流程结合，这是非常值得跟进的一类基础设施项目。</li>
+          </ul>
+        </div>
+        <div class="cta-row">
+          <a class="link-btn primary" href="https://github.com/browser-use/browser-use" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库</a>
+          <a class="link-btn secondary" href="https://docs.browser-use.com/open-source/introduction" target="_blank" rel="noopener noreferrer">查看官方文档</a>
+        </div>
+      </section>
+
+      <section class="project-card">
+        <div class="project-head">
+          <div>
+            <h2 class="project-title">2. ai-engineering-from-scratch</h2>
+            <p class="project-subtitle">从数学、训练、RAG、Agent 到安全评估的超大规模 AI 工程实战课程仓库</p>
+          </div>
+          <div class="rank">TOP 2</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip">⭐ 32,521 Stars</span>
+          <span class="chip">🍴 5,341 Forks</span>
+          <span class="chip">🐍 Python 为主</span>
+          <span class="chip">📄 MIT License</span>
+          <span class="chip">🏷️ ai-engineering / agents / mcp / tutorial</span>
+        </div>
+        <p class="summary"><strong>项目介绍：</strong>这是一个把“AI 工程”当成完整学科来组织的仓库，而不是零散教程集合。项目官网和 README 给出的信息都很强：覆盖 <strong>20 个阶段、503 节课程</strong>，强调“自己写出反向传播、Tokenizer、Attention、Agent Loop”，让你真正理解模型与工程系统是怎么搭起来的。</p>
+        <div class="grid-2">
+          <div class="panel">
+            <h3>技术亮点</h3>
+            <ul>
+              <li><strong>覆盖范围广：</strong>从数学基础、深度学习、LLM、RAG 到 Agent Engineering、Safety Harness、分布式训练，路径非常完整。</li>
+              <li><strong>不是只讲概念：</strong>README 强调每课都会产出可复用 artifact，最终沉淀 prompts、skills、agent workbench 等工程资产。</li>
+              <li><strong>工程化组织清晰：</strong>支持按 phase 安装技能、生成 catalog、运行 lesson audit、做脚手架，适合边学边建设自己的 AI 工程工具箱。</li>
+              <li><strong>面向 AI Coding Agent 生态：</strong>项目内有大量 SKILL、prompt、AGENTS 相关产物，对现在的 Agent 开发方式很贴近。</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>使用场景</h3>
+            <ul>
+              <li><strong>系统补课：</strong>适合想从“会调 API”升级到“懂训练、懂推理、懂 Agent 工程”的开发者。</li>
+              <li><strong>搭建团队学习路线：</strong>阶段化组织天然适合做内部训练营或个人长期学习计划。</li>
+              <li><strong>做 AI 项目脚手架参考：</strong>可以借鉴它对技能、课程、脚本和工程资产的组织方式。</li>
+              <li><strong>打造作品集：</strong>里面大量 capstone 和 end-to-end 项目，适合做实战输出和积累 demo。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel" style="margin-top:16px;">
+          <h3>为什么今天推荐它</h3>
+          <ul>
+            <li>现在很多人学 AI 工程只停留在框架调用，这个项目更强调“把底层机制自己做一遍”。</li>
+            <li>它既有课程感，也有仓库工程感，适合想系统建立知识树的工程师。</li>
+            <li>如果你计划长期做 Agent、RAG 或模型应用，这类体系化仓库会比短平快教程更值钱。</li>
+          </ul>
+        </div>
+        <div class="cta-row">
+          <a class="link-btn primary" href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库</a>
+          <a class="link-btn secondary" href="https://aiengineeringfromscratch.com/" target="_blank" rel="noopener noreferrer">查看项目官网</a>
+        </div>
+      </section>
+
+      <section class="tips-card">
+        <h3>🧭 今日阅读建议</h3>
+        <ul>
+          <li><strong>想做自动化能力验证：</strong>先跑 browser-use 的 quickstart，验证 1 个真实网页流程能否跑通。</li>
+          <li><strong>想系统提升：</strong>把 ai-engineering-from-scratch 按阶段拆成每周学习计划，先从 LLM / Agent 相关 phase 开始。</li>
+          <li><strong>想结合业务落地：</strong>前者解决“怎么让 Agent 动起来”，后者解决“怎么把能力树真正补齐”。</li>
+        </ul>
+      </section>
+
+      <section class="source-card">
+        <h3>🔎 信息来源</h3>
+        <ul>
+          <li>browser-use GitHub 仓库与官方文档</li>
+          <li>ai-engineering-from-scratch GitHub 仓库与项目官网</li>
+          <li>GitHub 仓库元数据抓取时间：2026-06-15 12:34 CST 后</li>
+        </ul>
+      </section>
+    </main>
+
+    <div class="foot">
+      <strong>输出文件：</strong>github-selected-20260615.html<br />
+      <strong>生成说明：</strong>采用 style_blue 风格扩展生成，适配 GitHub Pages 发布。
+    </div>
+  </div>
+</body>
+</html>
