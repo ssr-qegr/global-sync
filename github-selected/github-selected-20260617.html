@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub 精选项目报告 | 2026年6月17日</title>
+  <style>
+    :root {
+      --primary: #0052D9;
+      --primary-soft: #EAF2FF;
+      --bg: #F3F5F8;
+      --card-bg: #FFFFFF;
+      --text-main: #1C1F23;
+      --text-sub: #5C6A82;
+      --border: rgba(0, 82, 217, 0.12);
+      --shadow: 0 18px 48px rgba(8, 32, 71, 0.10);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: linear-gradient(180deg, #EEF4FF 0%, var(--bg) 260px);
+      color: var(--text-main);
+      font: 16px/1.75 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      padding: 42px 44px 34px;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.95), rgba(255,255,255,0.18) 34%),
+        linear-gradient(135deg, #0052D9 0%, #2F80ED 55%, #7CB8FF 100%);
+      color: #fff;
+    }
+    .badge-group { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.18);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    h1 { margin: 0 0 14px; font-size: 34px; line-height: 1.25; }
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255,255,255,0.92);
+      font-size: 16px;
+    }
+    .content { padding: 34px 44px 40px; }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      font-size: 24px;
+      color: var(--primary);
+    }
+    .lead-card,
+    .project-card,
+    .tips-card,
+    .source-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 22px;
+      box-shadow: 0 10px 28px rgba(0, 82, 217, 0.06);
+    }
+    .lead-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .metric {
+      background: linear-gradient(180deg, #F8FBFF, #FFFFFF);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .metric .label { display: block; font-size: 13px; color: var(--text-sub); margin-bottom: 8px; }
+    .metric .value { display: block; font-size: 22px; font-weight: 700; color: var(--primary); }
+    .project-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+    .project-title { margin: 0; font-size: 28px; line-height: 1.3; }
+    .project-subtitle { margin: 8px 0 0; color: var(--text-sub); }
+    .rank {
+      min-width: 86px;
+      text-align: center;
+      background: linear-gradient(180deg, #F6FAFF, #EAF2FF);
+      color: var(--primary);
+      border-radius: 16px;
+      padding: 14px 12px;
+      border: 1px solid var(--border);
+      font-weight: 700;
+    }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 0 18px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--text-sub);
+      background: #F7FAFE;
+      border: 1px solid rgba(92, 106, 130, 0.14);
+    }
+    .summary {
+      margin: 0 0 18px;
+      font-size: 16px;
+      color: var(--text-main);
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 12px;
+    }
+    .panel {
+      background: #FAFCFF;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .panel h3 {
+      margin: 0 0 12px;
+      font-size: 17px;
+      color: var(--primary);
+    }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; color: var(--text-sub); }
+    li strong { color: var(--text-main); }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-weight: 600;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .link-btn.primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 8px 18px rgba(0, 82, 217, 0.22);
+    }
+    .link-btn.secondary {
+      background: var(--primary-soft);
+      color: var(--primary);
+    }
+    .link-btn:hover { transform: translateY(-1px); }
+    .tips-card h3,
+    .source-card h3 { margin: 0 0 12px; color: var(--primary); }
+    .tips-card p,
+    .source-card p,
+    .source-card li { margin: 0; color: var(--text-sub); }
+    .foot {
+      padding: 0 44px 34px;
+      color: var(--text-sub);
+      font-size: 13px;
+    }
+    .foot strong { color: var(--text-main); }
+    a { color: var(--primary); }
+    @media (max-width: 820px) {
+      body { padding: 14px; }
+      .hero, .content, .foot { padding-left: 22px; padding-right: 22px; }
+      .lead-grid, .grid-2 { grid-template-columns: 1fr; }
+      .project-head { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="badge-group">
+        <span class="badge">GitHub 精选</span>
+        <span class="badge">2026-06-17</span>
+        <span class="badge">style_blue</span>
+      </div>
+      <h1>今日 GitHub 精选项目报告</h1>
+      <p>今天这 2 个项目分别代表了 AI 时代里两条很值得投入的路线：一条是把 AI 编码从“单次对话”升级为“可持续自动化工作流”，另一条是把大模型原理真正学透、能自己从零写出来。一个偏生产力，一个偏技术成长，组合起来很有价值。</p>
+    </section>
+
+    <main class="content">
+      <section class="lead-card">
+        <h2 class="section-title">📌 今日结论</h2>
+        <p class="summary">如果你想提升团队级 AI 开发协作能力，优先看 <strong>OpenHands/OpenHands</strong>；如果你想补齐大模型底层理解与实战能力，优先看 <strong>rasbt/LLMs-from-scratch</strong>。</p>
+        <div class="lead-grid">
+          <div class="metric">
+            <span class="label">今日精选数量</span>
+            <span class="value">2 个</span>
+          </div>
+          <div class="metric">
+            <span class="label">核心主题</span>
+            <span class="value">AI 工程化 × LLM 学习</span>
+          </div>
+          <div class="metric">
+            <span class="label">推荐阅读顺序</span>
+            <span class="value">平台 → 原理</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-card">
+        <div class="project-head">
+          <div>
+            <h2 class="project-title">1. OpenHands/OpenHands</h2>
+            <p class="project-subtitle">把编码 Agent、自动化任务和多种运行后端统一到一个可自托管的开发控制中心</p>
+          </div>
+          <div class="rank">TOP 1</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip">⭐ 77,370 Stars</span>
+          <span class="chip">🍴 9,832 Forks</span>
+          <span class="chip">🐍 Python</span>
+          <span class="chip">📄 MIT</span>
+          <span class="chip">🏷️ coding agents / automation / self-hosting</span>
+        </div>
+        <p class="summary"><strong>项目介绍：</strong>OpenHands 已经不只是“一个 AI 写代码工具”，而更像是面向开发团队的 Agent 控制台。根据其 README，它主打 self-hosted developer control center，支持把 OpenHands、Claude Code、Codex、Gemini 等兼容 Agent 接到同一个前端，并在本地、Docker、VM、云端等多种后端环境之间切换。对想把 AI 开发能力真正接进日常工程体系的人来说，它很有代表性。</p>
+        <div class="grid-2">
+          <div class="panel">
+            <h3>技术亮点</h3>
+            <ul>
+              <li><strong>统一 Agent 入口：</strong>不是只绑定单一模型或单一产品，而是把多类 coding agent 纳入同一个操作面，便于团队统一治理。</li>
+              <li><strong>多后端运行：</strong>既能在开发者本机跑，也能接 Docker、虚拟机或云端后端，更适合把个人实验延展到团队协作和持续任务。</li>
+              <li><strong>自动化工作流能力：</strong>支持和 Slack、GitHub、Linear 等工具集成，适合把日报、任务拆分、例行检查等动作做成自动化。</li>
+              <li><strong>自托管友好：</strong>项目明确支持 self-hosting，这对关注数据边界、权限控制和企业内落地的团队特别重要。</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>使用场景</h3>
+            <ul>
+              <li><strong>团队 AI 开发平台：</strong>统一接入多种 coding agent，降低“每个人各玩各的工具”带来的管理成本。</li>
+              <li><strong>自动化研发运营：</strong>把 issue 拆解、日报汇总、定时检查、代码协作等高频动作交给 Agent 持续执行。</li>
+              <li><strong>私有环境部署：</strong>适用于对代码、数据或研发流程有内网隔离要求的团队。</li>
+              <li><strong>Agent 实验台：</strong>适合技术团队横向比较不同模型或不同 agent 的工作效果，而不是被某一家产品形态锁死。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel" style="margin-top:16px;">
+          <h3>为什么今天推荐它</h3>
+          <ul>
+            <li>它代表了 AI 编码工具的下一阶段：不再只是“帮你写一段代码”，而是开始管理持续任务与团队协作流程。</li>
+            <li>如果你已经在使用 Codex、Claude Code 或其他 Agent，这类平台型项目会决定你的长期工程效率上限。</li>
+            <li>对有自托管、自动化、可审计需求的开发团队来说，它比单点插件更值得持续关注。</li>
+          </ul>
+        </div>
+        <div class="cta-row">
+          <a class="link-btn primary" href="https://github.com/OpenHands/OpenHands" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库</a>
+          <a class="link-btn secondary" href="https://www.openhands.dev/" target="_blank" rel="noopener noreferrer">查看项目主页</a>
+        </div>
+      </section>
+
+      <section class="project-card">
+        <div class="project-head">
+          <div>
+            <h2 class="project-title">2. rasbt/LLMs-from-scratch</h2>
+            <p class="project-subtitle">从文本数据、注意力机制到预训练与微调，手把手实现一个 GPT 风格大模型</p>
+          </div>
+          <div class="rank">TOP 2</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip">⭐ 97,264 Stars</span>
+          <span class="chip">🍴 14,878 Forks</span>
+          <span class="chip">📓 Jupyter Notebook</span>
+          <span class="chip">📄 MIT</span>
+          <span class="chip">🏷️ llm learning / pytorch / from scratch</span>
+        </div>
+        <p class="summary"><strong>项目介绍：</strong>这个仓库是 Sebastian Raschka《Build a Large Language Model (From Scratch)》一书的官方代码仓库，但它本身也可以单独作为一套极强的学习材料。README 很明确：项目会一步一步带你实现 GPT-like LLM，覆盖数据处理、注意力机制、GPT 结构、预训练、分类微调、指令微调等完整链路。和“会调库”不同，它更适合建立真正的大模型底层心智。</p>
+        <div class="grid-2">
+          <div class="panel">
+            <h3>技术亮点</h3>
+            <ul>
+              <li><strong>从零实现完整链路：</strong>不是只讲概念，而是让你亲手把 tokenizer、attention、GPT 模块、训练与微调代码真正写出来。</li>
+              <li><strong>章节化结构清晰：</strong>仓库按章节拆分，覆盖文本处理、注意力机制、预训练、分类微调、指令跟随微调等关键阶段。</li>
+              <li><strong>PyTorch 友好：</strong>以 PyTorch 为主线，不依赖大而黑盒的 LLM 框架，适合理解模型内部运行机制。</li>
+              <li><strong>学习门槛可控：</strong>README 提到主线代码可在普通笔记本上运行，既适合入门，也适合做教学与课程配套。</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>使用场景</h3>
+            <ul>
+              <li><strong>系统学习 LLM：</strong>适合想摆脱“只会调 API”状态，真正理解大模型原理的工程师和学生。</li>
+              <li><strong>课程与训练营教材：</strong>很适合做公司内部分享、读书会、训练营或高校实验课的实战材料。</li>
+              <li><strong>研究前置准备：</strong>在做 LoRA、蒸馏、推理优化等进阶主题前，先建立扎实的基础实现能力。</li>
+              <li><strong>面试与技术成长：</strong>对想冲击算法、模型工程、AI Infra 方向的人，这类仓库是非常高性价比的成长路径。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel" style="margin-top:16px;">
+          <h3>为什么今天推荐它</h3>
+          <ul>
+            <li>现在很多人会用大模型，但真正能讲清楚注意力、预训练和微调细节的人仍然不多，这个仓库正好补这个短板。</li>
+            <li>它不是纯论文路线，而是把原理和代码结合得很紧，适合工程背景的人快速建立可落地理解。</li>
+            <li>如果你想从“AI 使用者”进阶成“AI 构建者”，这是很值得长期投入的一套开源学习资产。</li>
+          </ul>
+        </div>
+        <div class="cta-row">
+          <a class="link-btn primary" href="https://github.com/rasbt/LLMs-from-scratch" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库</a>
+          <a class="link-btn secondary" href="https://www.manning.com/books/build-a-large-language-model-from-scratch" target="_blank" rel="noopener noreferrer">查看图书主页</a>
+        </div>
+      </section>
+
+      <section class="tips-card">
+        <h3>🧭 今日阅读建议</h3>
+        <ul>
+          <li><strong>想把 AI 真正接入工作流：</strong>先看 OpenHands，重点关注它如何统一不同 Agent 和不同运行后端。</li>
+          <li><strong>想补底层认知：</strong>再看 LLMs-from-scratch，从 attention 和 GPT 实现开始跟着敲一遍。</li>
+          <li><strong>想兼顾生产力与成长：</strong>一个项目解决“AI 怎么稳定干活”，一个项目解决“你为什么知道它这样干”。</li>
+        </ul>
+      </section>
+
+      <section class="source-card">
+        <h3>🔎 信息来源</h3>
+        <ul>
+          <li>OpenHands/OpenHands GitHub 仓库 README 与 OpenHands 官方主页</li>
+          <li>rasbt/LLMs-from-scratch GitHub 仓库 README 与图书官方页面</li>
+          <li>GitHub 公开元数据抓取时间：2026-06-17 04:46 CST</li>
+        </ul>
+      </section>
+    </main>
+
+    <div class="foot">
+      <strong>输出文件：</strong>github-selected-20260617.html<br />
+      <strong>生成说明：</strong>采用 style_blue 风格扩展生成，适配 GitHub Pages 发布。
+    </div>
+  </div>
+</body>
+</html>
