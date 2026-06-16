@@ -5,200 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>今日晨报 - 2026年6月16日</title>
   <style>
-    :root {
-      --primary: #10b981;
-      --primary-dark: #047857;
-      --bg: #ecfdf5;
-      --card-bg: #ffffff;
-      --soft: #d1fae5;
-      --soft-2: #f0fdf4;
-      --text-main: #064e3b;
-      --text-sub: #4b5563;
-      --line: #bbf7d0;
-      --shadow: 0 18px 40px rgba(16, 185, 129, 0.12);
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      padding: 20px;
-      background:
-        radial-gradient(circle at top right, rgba(16,185,129,0.12), transparent 24%),
-        linear-gradient(180deg, #ecfdf5 0%, #f8fffb 100%);
-      color: var(--text-main);
-      font-family: "Nunito", "PingFang SC", "Microsoft YaHei", sans-serif;
-      line-height: 1.75;
-    }
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(187,247,208,0.9);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .hero {
-      padding: 40px 40px 28px;
-      background: linear-gradient(135deg, rgba(16,185,129,0.16), rgba(255,255,255,0.98) 58%);
-      border-bottom: 1px solid var(--line);
-    }
-    .hero-top {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 12px;
-      background: var(--soft);
-      color: var(--primary-dark);
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 800;
-    }
-    h1 {
-      margin: 0;
-      font-size: 36px;
-      line-height: 1.2;
-      color: #022c22;
-    }
-    .subtitle {
-      margin: 12px 0 0;
-      color: var(--text-sub);
-      font-size: 16px;
-    }
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      padding: 24px 40px 0;
-    }
-    .summary-card {
-      background: var(--soft-2);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px 18px 16px;
-    }
-    .summary-card h3 {
-      margin: 0 0 8px;
-      font-size: 16px;
-    }
-    .summary-card p {
-      margin: 0;
-      color: var(--text-sub);
-      font-size: 14px;
-    }
-    .section {
-      padding: 18px 40px 8px;
-    }
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 26px 0 18px;
-      font-size: 26px;
-      color: #022c22;
-    }
-    .section-title::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, var(--line), transparent);
-    }
-    .news-card {
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 24px;
-      margin-bottom: 18px;
-      background: linear-gradient(180deg, #ffffff, #fbfffd);
-      box-shadow: 0 10px 26px rgba(16,185,129,0.06);
-    }
-    .news-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: flex-start;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
-    }
-    .news-title {
-      margin: 0;
-      font-size: 22px;
-      line-height: 1.4;
-      color: #022c22;
-    }
-    .news-meta {
-      display: inline-flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .pill {
-      display: inline-block;
-      background: var(--soft);
-      color: var(--primary-dark);
-      border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 12px;
-      font-weight: 800;
-    }
-    .block {
-      margin-top: 14px;
-      padding: 14px 16px;
-      border-radius: 16px;
-    }
-    .block h4 {
-      margin: 0 0 8px;
-      font-size: 15px;
-      color: #065f46;
-    }
-    .origin {
-      background: #f8fafc;
-      border-left: 4px solid #34d399;
-      color: #334155;
-    }
-    .translation {
-      background: #f0fdf4;
-      color: #14532d;
-    }
-    .meaning {
-      background: #fffbeb;
-      color: #854d0e;
-      border: 1px dashed #fde68a;
-    }
-    .block p { margin: 0; }
-    .source-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 14px;
-      text-decoration: none;
-      background: var(--primary);
-      color: #fff;
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 800;
-      box-shadow: 0 8px 16px rgba(16,185,129,0.18);
-    }
-    .source-link:hover { background: var(--primary-dark); }
-    .footer {
-      padding: 8px 40px 36px;
-      color: #6b7280;
-      font-size: 13px;
-      text-align: center;
-    }
-    @media (max-width: 760px) {
-      body { padding: 12px; }
-      .hero, .section, .footer, .summary-grid { padding-left: 18px; padding-right: 18px; }
-      .summary-grid { grid-template-columns: 1fr; }
-      h1 { font-size: 28px; }
-      .news-title { font-size: 19px; }
-    }
+    :root { --primary:#10b981; --primary-dark:#047857; --soft:#d1fae5; --soft-2:#f0fdf4; --text-main:#064e3b; --text-sub:#4b5563; --line:#bbf7d0; --shadow:0 18px 40px rgba(16,185,129,0.12); }
+    *{box-sizing:border-box}
+    body{margin:0;padding:20px;background:radial-gradient(circle at top right, rgba(16,185,129,.12), transparent 24%),linear-gradient(180deg,#ecfdf5 0%,#f8fffb 100%);color:var(--text-main);font-family:"Nunito","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.75}
+    .container{max-width:1020px;margin:0 auto;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border:1px solid rgba(187,247,208,.9);border-radius:28px;box-shadow:var(--shadow);overflow:hidden}
+    .hero{padding:40px 40px 28px;background:linear-gradient(135deg, rgba(16,185,129,.16), rgba(255,255,255,.98) 58%);border-bottom:1px solid var(--line)}
+    .hero-top{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:12px}.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:var(--soft);color:var(--primary-dark);border-radius:999px;font-size:13px;font-weight:800}
+    h1{margin:0;font-size:36px;line-height:1.2;color:#022c22}.subtitle{margin:12px 0 0;color:var(--text-sub);font-size:16px}
+    .summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding:24px 40px 0}.summary-card{background:var(--soft-2);border:1px solid var(--line);border-radius:18px;padding:18px}.summary-card h3{margin:0 0 8px;font-size:16px}.summary-card p{margin:0;color:var(--text-sub);font-size:14px}
+    .section{padding:18px 40px 8px}.section-title{display:flex;align-items:center;gap:10px;margin:26px 0 18px;font-size:26px;color:#022c22}.section-title:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+    .market-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.market-card,.news-card{border:1px solid var(--line);border-radius:24px;padding:22px;background:linear-gradient(180deg,#fff,#fbfffd);box-shadow:0 10px 26px rgba(16,185,129,.06);margin-bottom:18px}
+    .market-card h3,.news-title{margin:0;color:#022c22}.market-card h3{font-size:20px}.market-meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.pill{display:inline-block;background:var(--soft);color:var(--primary-dark);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800}
+    .market-card p{margin:8px 0 0;color:var(--text-sub)} .news-header{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:14px;flex-wrap:wrap}.news-title{font-size:22px;line-height:1.4}
+    .block{margin-top:14px;padding:14px 16px;border-radius:16px}.block h4{margin:0 0 8px;font-size:15px;color:#065f46}.origin{background:#f8fafc;border-left:4px solid #34d399;color:#334155}.translation{background:#f0fdf4;color:#14532d}.meaning{background:#fffbeb;color:#854d0e;border:1px dashed #fde68a}.block p{margin:0}.source-link{display:inline-flex;align-items:center;gap:8px;margin-top:14px;text-decoration:none;background:var(--primary);color:#fff;padding:10px 16px;border-radius:999px;font-size:14px;font-weight:800;box-shadow:0 8px 16px rgba(16,185,129,.18)}
+    .footer{padding:8px 40px 36px;color:#6b7280;font-size:13px;text-align:center}
+    @media (max-width:800px){body{padding:12px}.hero,.section,.footer,.summary-grid{padding-left:18px;padding-right:18px}.summary-grid,.market-grid{grid-template-columns:1fr}h1{font-size:28px}.news-title{font-size:19px}}
   </style>
 </head>
 <body>
@@ -210,33 +31,122 @@
         <span class="badge">☀️ 早间阅读版</span>
       </div>
       <h1>今日晨报</h1>
-      <p class="subtitle">聚焦时事政治、财经新闻、技术领域三大板块。每条新闻都配了“原文摘要 + 人话翻译 + 意义解读”，方便你在几分钟内快速抓住重点。</p>
+      <p class="subtitle">按新格式重排：先看股市总览，再看时事政治、金融财经、技术领域。时政与财经均按国内、国际均衡编排，每条都包含原文摘要、人话翻译、意义解读。</p>
     </div>
 
     <div class="summary-grid">
-      <div class="summary-card"><h3>时事政治</h3><p>英国未成年人上网监管加码，欧盟推进乌克兰入盟程序，G7 议程继续被中东与乌克兰局势牵引。</p></div>
-      <div class="summary-card"><h3>财经新闻</h3><p>中东局势缓和先压低油价、推高股市，日本央行或继续加息，全球资金继续围绕通胀与利率重新定价。</p></div>
-      <div class="summary-card"><h3>技术领域</h3><p>AI 产业继续围绕算力、资金和法律边界扩张：字节继续找替代芯片，xAI 与 OpenAI 的诉讼战升温，资本市场继续给 Nvidia 输血。</p></div>
+      <div class="summary-card"><h3>股市总览</h3><p>覆盖 A股、港股、美股三大市场，先看指数和情绪，再进入新闻解读。</p></div>
+      <div class="summary-card"><h3>时事政治</h3><p>国内、国际各占一半，避免只看海外热点。</p></div>
+      <div class="summary-card"><h3>金融财经</h3><p>兼顾中国宏观金融动向与全球市场定价变化。</p></div>
+      <div class="summary-card"><h3>技术领域</h3><p>继续追踪 AI 算力、诉讼与资本开支三条主线。</p></div>
     </div>
 
-    <div class="section"><div class="section-title">🕊 时事政治</div>
-      <article class="news-card"><div class="news-header"><h2 class="news-title">1. 英国宣布将禁止 16 岁以下未成年人使用社交媒体</h2><div class="news-meta"><span class="pill">Reuters</span><span class="pill">未成年人保护</span></div></div><div class="block origin"><h4>原文摘要</h4><p>路透社报道，英国首相斯塔默表示，将禁止 16 岁以下未成年人使用社交媒体，同时对游戏平台和直播平台施加更严格的限制。这一监管力度被认为比多数国家都更强。</p></div><div class="block translation"><h4>人话翻译</h4><p>英国这次不是提醒平台注意一点，而是准备直接把 16 岁以下用户挡在主流社交平台门外，连游戏和直播里的陌生人接触场景也一起管起来。</p></div><div class="block meaning"><h4>意义解读</h4><p>这意味着欧美对互联网平台的监管，正在从“要求企业自律”走向“直接设年龄硬门槛”。如果正式落地，社交平台的增长模式、青少年产品设计以及年龄验证技术都会被迫重做。</p></div><a class="source-link" href="https://www.reuters.com/business/media-telecom/britain-expected-set-out-under-16s-social-media-restrictions-2026-06-14/" target="_blank" rel="noreferrer">查看原文</a></article>
-      <article class="news-card"><div class="news-header"><h2 class="news-title">2. 欧盟正式开启乌克兰和摩尔多瓦首个入盟谈判集群</h2><div class="news-meta"><span class="pill">EU</span><span class="pill">欧洲政治</span></div></div><div class="block origin"><h4>原文摘要</h4><p>欧盟官方发布称，在首轮政府间会议上，欧盟将为乌克兰和摩尔多瓦开启首个入盟谈判集群，优先讨论法治、民主制度等基础议题，并将其定义为整个入盟进程的核心骨架。</p></div><div class="block translation"><h4>人话翻译</h4><p>这相当于把乌克兰和摩尔多瓦的入盟流程，从“政治上支持”正式推进到了“开始做题”。而且第一批题目就是法治、制度这些最难绕过去的硬指标。</p></div><div class="block meaning"><h4>意义解读</h4><p>这一步并不等于马上入盟，但政治信号非常强：欧盟仍在持续把乌克兰绑定进欧洲体系。后续真正难的部分，会落在改革兑现、成员国内部博弈，以及战争状态下的制度对齐上。</p></div><a class="source-link" href="https://euneighbourseast.eu/news/latest-news/eu-opens-first-accession-negotiation-cluster-with-ukraine-and-moldova/" target="_blank" rel="noreferrer">查看原文</a></article>
-      <article class="news-card"><div class="news-header"><h2 class="news-title">3. G7 峰会在法国开场，议题被伊朗协议与乌克兰战事重新改写</h2><div class="news-meta"><span class="pill">Reuters</span><span class="pill">G7 峰会</span></div></div><div class="block origin"><h4>原文摘要</h4><p>路透社报道，美国总统特朗普在法国出席 G7 峰会时，重点强调了美伊结束战争的初步协议，并表示接下来还将推动乌克兰和黎巴嫩冲突降温，使峰会议题明显转向多地区安全协调。</p></div><div class="block translation"><h4>人话翻译</h4><p>原本 G7 就够复杂了，现在又叠加了美伊停战框架，特朗普还顺手把乌克兰、黎巴嫩一起拉进议程，峰会一下子变成了多线危机协调会。</p></div><div class="block meaning"><h4>意义解读</h4><p>这说明 G7 现在不只是讨论经济合作，而是在处理多地冲突外溢带来的全球连锁反应。后面各国能否在制裁、能源和安全承诺上形成一致，会直接影响市场风险偏好。</p></div><a class="source-link" href="https://www.reuters.com/world/china/g7-leaders-meet-france-after-us-iran-declare-agreement-end-war-2026-06-15/" target="_blank" rel="noreferrer">查看原文</a></article>
+    <div class="section">
+      <div class="section-title">📈 股市总览</div>
+      <div class="market-grid">
+        <div class="market-card">
+          <h3>A股</h3>
+          <div class="market-meta"><span class="pill">上证综指 4096.47</span><span class="pill">+1.61%</span><span class="pill">深证成指走强</span></div>
+          <p>从公开市场快讯看，A股上一交易日整体偏强，风险偏好明显修复，非科技板块也开始跟涨，市场风格出现再平衡迹象。</p>
+        </div>
+        <div class="market-card">
+          <h3>港股</h3>
+          <div class="market-meta"><span class="pill">恒生指数 24826.19</span><span class="pill">开盘 -0.07%</span><span class="pill">恒科指数平开附近</span></div>
+          <p>港股今早小幅低开，盘面上半导体、医药和 AI 应用相对活跃，石油、有色与地产承压，属于情绪偏谨慎但结构性轮动仍在继续。</p>
+        </div>
+        <div class="market-card">
+          <h3>纳斯达克</h3>
+          <div class="market-meta"><span class="pill">26683.94</span><span class="pill">+3.07%</span><span class="pill">科技股领涨</span></div>
+          <p>隔夜美股里，纳指继续承担最强贝塔，芯片与 AI 基建链普遍大涨，市场把中东局势缓和和降息预期改善一起计入了科技股估值。</p>
+        </div>
+        <div class="market-card">
+          <h3>道指 / 标普500</h3>
+          <div class="market-meta"><span class="pill">道指 51671.03</span><span class="pill">+0.92%</span><span class="pill">标普500 7554.29 / +1.65%</span></div>
+          <p>美股主板同样回暖，但涨幅弱于纳指，说明这波更多是“风险资产普涨 + 科技成长更强”的组合，而不是传统防御板块主导的反弹。</p>
+        </div>
+      </div>
     </div>
 
-    <div class="section"><div class="section-title">💹 财经新闻</div>
-      <article class="news-card"><div class="news-header"><h2 class="news-title">1. 美伊和平框架推动全球股债走强、油价回落</h2><div class="news-meta"><span class="pill">Reuters</span><span class="pill">全球市场</span></div></div><div class="block origin"><h4>原文摘要</h4><p>路透社称，由于市场预期美国与伊朗达成的初步和平协议有助于缓解全球通胀压力，并减少继续高利率的必要性，周一全球主要股指和债券价格上涨，而油价明显下跌。</p></div><div class="block translation"><h4>人话翻译</h4><p>市场的直觉很直接：只要中东风险降下来，油价就不需要一直高位顶着，通胀也能松一口气，所以股票和债券先一起反弹。</p></div><div class="block meaning"><h4>意义解读</h4><p>这说明当前市场主线依然是“地缘政治 → 能源价格 → 通胀预期 → 利率路径”。只要霍尔木兹海峡风险继续下降，风险资产短线就更容易获得支撑。</p></div><a class="source-link" href="https://www.reuters.com/world/china/global-markets-global-markets-2026-06-14/" target="_blank" rel="noreferrer">查看原文</a></article>
-      <article class="news-card"><div class="news-header"><h2 class="news-title">2. 日本央行被预期将把利率上调至 31 年高位</h2><div class="news-meta"><span class="pill">Reuters</span><span class="pill">央行政策</span></div></div><div class="block origin"><h4>原文摘要</h4><p>路透社报道，日本央行预计将在周二把利率上调至 31 年来的高位，继续推进货币政策正常化。其核心考虑之一，是应对伊朗战争带来的能源冲击和物价压力。</p></div><div class="block translation"><h4>人话翻译</h4><p>日本这个长期低利率的大本营，现在也准备继续加息了，而且加到 31 年来的高位，说明它已经不想再无限期硬扛通胀。</p></div><div class="block meaning"><h4>意义解读</h4><p>一旦日本继续退出超宽松，全球套息交易、日元汇率和亚洲资产配置都会被连带影响。对资金市场来说，这不只是一次普通加息，更像是流动性风向标在变化。</p></div><a class="source-link" href="https://www.reuters.com/world/asia-pacific/bank-japan-set-raise-rates-31-year-high-vow-further-increases-2026-06-15/" target="_blank" rel="noreferrer">查看原文</a></article>
+    <div class="section">
+      <div class="section-title">🕊 时事政治</div>
+
+      <article class="news-card">
+        <div class="news-header"><h2 class="news-title">1. 李强强调优化主体功能区布局，继续推动区域协调发展</h2><div><span class="pill">国内</span><span class="pill">区域发展</span></div></div>
+        <div class="block origin"><h4>原文摘要</h4><p>公开报道显示，李强在国务院专题学习中提出，要统筹优化农业、生态、城镇等各类空间布局，进一步健全主体功能区制度，为区域协调发展和重大生产力布局提供支撑。</p></div>
+        <div class="block translation"><h4>人话翻译</h4><p>这件事本质上是在重新梳理全国各地“该干什么、适合干什么”。不是每个地方都去拼同一种产业，而是按资源禀赋和功能定位重新分工。</p></div>
+        <div class="block meaning"><h4>意义解读</h4><p>这类表态往往会影响后续基建、产业转移、城市群协同和土地空间规划。对于地方发展来说，重点不是简单拼增量，而是看自己能否卡住新的功能定位。</p></div>
+        <a class="source-link" href="http://www.china.org.cn/2026-06/16/content_118550641.shtml" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-card">
+        <div class="news-header"><h2 class="news-title">2. 五部门启动重点行业节能降碳改造三年行动</h2><div><span class="pill">国内</span><span class="pill">双碳政策</span></div></div>
+        <div class="block origin"><h4>原文摘要</h4><p>多家官方和权威媒体消息显示，国家发展改革委等五部门已启动重点行业节能降碳改造攻坚三年行动，覆盖钢铁、电解铝、水泥、炼油、煤电等多个高耗能行业。</p></div>
+        <div class="block translation"><h4>人话翻译</h4><p>国家这次不是泛泛提绿色发展，而是直接点名几个最耗能的行业，要求接下来三年把设备和流程改得更省电、更低碳。</p></div>
+        <div class="block meaning"><h4>意义解读</h4><p>这既是环保政策，也是产业升级政策。短期会带来设备改造投资，中长期会改变高耗能行业的成本线和竞争格局，对节能设备、工业软件和绿色金融都是利好。</p></div>
+        <a class="source-link" href="http://m.toutiao.com/group/7651759970703016448/" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-card">
+        <div class="news-header"><h2 class="news-title">3. G7 峰会在法国举行，伊朗与乌克兰问题成为核心议题</h2><div><span class="pill">国际</span><span class="pill">G7 峰会</span></div></div>
+        <div class="block origin"><h4>原文摘要</h4><p>路透社称，G7 领导人在法国埃维昂召开峰会，重点讨论伊朗战争结束框架、乌克兰局势、全球经济失衡以及关键矿产和 AI 等问题。</p></div>
+        <div class="block translation"><h4>人话翻译</h4><p>这届 G7 已经不只是发联合声明那么简单了，而是在同时处理战争、能源、产业链和科技竞争，议程非常“满”。</p></div>
+        <div class="block meaning"><h4>意义解读</h4><p>G7 的讨论方向会直接影响制裁、能源运输和全球供应链预期，所以它不仅是政治新闻，也会很快传导到市场定价上。</p></div>
+        <a class="source-link" href="https://www.reuters.com/world/what-is-g7-whats-agenda-evian-les-bains-summit-2026-06-15/" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-card">
+        <div class="news-header"><h2 class="news-title">4. 特朗普携伊朗协议赴 G7，表示下一步将推动乌克兰冲突降温</h2><div><span class="pill">国际</span><span class="pill">中东与俄乌</span></div></div>
+        <div class="block origin"><h4>原文摘要</h4><p>路透社报道，美国总统特朗普在参加 G7 峰会时重点宣传美伊初步协议，并表示将尝试把这一外交突破延伸到乌克兰和黎巴嫩冲突处理上。</p></div>
+        <div class="block translation"><h4>人话翻译</h4><p>简单说，就是美国想把“伊朗停战”包装成一个可复制的外交样板，然后继续拿去处理别的热点冲突。</p></div>
+        <div class="block meaning"><h4>意义解读</h4><p>如果这一叙事继续成立，全球风险资产会更愿意押注“地缘风险缓和”。但只要后续执行细节不稳，市场又会迅速回到谨慎模式。</p></div>
+        <a class="source-link" href="https://www.reuters.com/world/china/g7-leaders-meet-france-after-us-iran-declare-agreement-end-war-2026-06-15/" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
     </div>
 
-    <div class="section"><div class="section-title">🧠 技术领域</div>
-      <article class="news-card"><div class="news-header"><h2 class="news-title">1. 字节跳动正与天数智芯洽谈采购 AI 推理芯片</h2><div class="news-meta"><span class="pill">Reuters</span><span class="pill">AI 算力</span></div></div><div class="block origin"><h4>原文摘要</h4><p>路透社援引知情人士称，字节跳动正在与上海 AI 芯片公司天数智芯洽谈采购推理芯片，同时也在考虑与百度达成类似合作，以满足在线推理计算需求。</p></div><div class="block translation"><h4>人话翻译</h4><p>字节还在持续找 AI 芯片的新供应来源，而且重点放在推理而不是训练，说明大模型真正持续烧钱的地方，已经越来越偏向大规模线上服务。</p></div><div class="block meaning"><h4>意义解读</h4><p>这反映出国内大厂的共同方向：一边追求算力自主可控，一边按不同业务场景做芯片多元化采购。谁能拿到稳定、可扩展、性价比高的推理算力，谁就更容易把 AI 服务真正铺开。</p></div><a class="source-link" href="https://www.reuters.com/world/china/bytedance-talks-with-chinas-iluvatar-corex-purchase-ai-chips-sources-say-2026-06-15/" target="_blank" rel="noreferrer">查看原文</a></article>
-      <article class="news-card"><div class="news-header"><h2 class="news-title">2. 美国法官驳回 xAI 对 OpenAI 的商业机密诉讼</h2><div class="news-meta"><span class="pill">Reuters</span><span class="pill">AI 法律战</span></div></div><div class="block origin"><h4>原文摘要</h4><p>路透社报道，美国联邦法官周一驳回了马斯克旗下 xAI 对 OpenAI 提起的诉讼。xAI 指控 OpenAI 盗用了聊天机器人相关商业机密，但法院没有支持这一主张。</p></div><div class="block translation"><h4>人话翻译</h4><p>马斯克这次想用“商业机密被偷”这条线去压 OpenAI，但法院并不买账，等于 OpenAI 在法律战里又赢下一局。</p></div><div class="block meaning"><h4>意义解读</h4><p>AI 竞争已经不只是拼模型效果，也在拼法律边界、人才流动和知识产权定义。对创业公司来说，这类判决会影响以后怎么写雇佣协议、怎么管理源码和训练资产。</p></div><a class="source-link" href="https://www.reuters.com/legal/litigation/openai-wins-dismissal-trade-secret-lawsuit-by-musks-xai-2026-06-15/" target="_blank" rel="noreferrer">查看原文</a></article>
-      <article class="news-card"><div class="news-header"><h2 class="news-title">3. Nvidia 启动五年来首次大额发债，为 AI 芯片扩产补充弹药</h2><div class="news-meta"><span class="pill">Reuters</span><span class="pill">科技资本</span></div></div><div class="block origin"><h4>原文摘要</h4><p>路透社报道，英伟达周一表示将通过美国债券发行融资 250 亿美元，以补充流动性，支持其在 AI 产业快速演进背景下继续加大投入。</p></div><div class="block translation"><h4>人话翻译</h4><p>英伟达现在不是缺故事，而是缺更多能立刻砸进去的钱，所以直接重返债市融资，把资本市场的子弹继续转成芯片产能和供应链能力。</p></div><div class="block meaning"><h4>意义解读</h4><p>这说明 AI 硬件竞赛已经进入重资产阶段。头部公司比的不是谁先做出芯片，而是谁能持续把先进制程、封装、服务器和生态一起烧出来。</p></div><a class="source-link" href="https://www.reuters.com/business/finance/nvidia-raise-20-billion-source-says-first-corporate-bond-issuance-five-years-2026-06-15/" target="_blank" rel="noreferrer">查看原文</a></article>
+    <div class="section">
+      <div class="section-title">💹 金融财经</div>
+
+      <article class="news-card">
+        <div class="news-header"><h2 class="news-title">1. 5月国民经济运行情况即将发布，市场关注内需修复力度</h2><div><span class="pill">国内</span><span class="pill">宏观数据</span></div></div>
+        <div class="block origin"><h4>原文摘要</h4><p>上海证券报等财经早报提到，国新办于6月16日上午举行发布会，由国家统计局介绍 2026 年 5 月份国民经济运行情况，市场聚焦消费、工业和投资修复节奏。</p></div>
+        <div class="block translation"><h4>人话翻译</h4><p>今天国内宏观最重要的看点，就是 5 月经济数据到底修复得怎么样，尤其是消费和投资有没有接上力。</p></div>
+        <div class="block meaning"><h4>意义解读</h4><p>这类数据会直接影响市场对政策节奏、企业盈利和下半年增长目标的判断，所以无论股市还是债市都会盯得很紧。</p></div>
+        <a class="source-link" href="http://m.toutiao.com/group/7651780997280743999/" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-card">
+        <div class="news-header"><h2 class="news-title">2. 外资继续净买入中国股票和债券，国内市场吸引力被再次确认</h2><div><span class="pill">国内</span><span class="pill">跨境资金</span></div></div>
+        <div class="block origin"><h4>原文摘要</h4><p>国家外汇管理相关表态显示，5月以来我国外汇市场运行总体平稳，外资总体净买入境内股票和债券，释放出国际资本对中国金融市场信心仍在增强的信号。</p></div>
+        <div class="block translation"><h4>人话翻译</h4><p>外资并没有因为外部波动就大幅撤退，反而还在继续往中国股债里加仓，说明人民币资产的吸引力还在。</p></div>
+        <div class="block meaning"><h4>意义解读</h4><p>这对市场情绪很重要。外资持续回流不只是资金面支持，也意味着国际投资者对中国政策稳定性和估值水平的认可度在提升。</p></div>
+        <a class="source-link" href="http://m.toutiao.com/group/7651795752520024603/" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-card">
+        <div class="news-header"><h2 class="news-title">3. 美伊和平框架带动全球股债走强、油价显著回落</h2><div><span class="pill">国际</span><span class="pill">全球市场</span></div></div>
+        <div class="block origin"><h4>原文摘要</h4><p>路透社指出，随着美伊初步和平协议落地，市场预计全球通胀压力会缓和、继续高利率的必要性下降，于是主要股指和债券价格上涨，而原油价格大跌。</p></div>
+        <div class="block translation"><h4>人话翻译</h4><p>市场的逻辑非常直白：中东没那么危险了，油价就能下去，通胀压力就能松，风险资产自然先涨一波。</p></div>
+        <div class="block meaning"><h4>意义解读</h4><p>这件事再次说明，如今全球定价链条非常短：地缘政治一动，能源、利率、股债就会一起动。后面是否持续，要看协议执行到底稳不稳。</p></div>
+        <a class="source-link" href="https://www.reuters.com/world/china/global-markets-global-markets-2026-06-14/" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-card">
+        <div class="news-header"><h2 class="news-title">4. 日本央行或把利率上调至 31 年高位，全球流动性风向再受关注</h2><div><span class="pill">国际</span><span class="pill">央行政策</span></div></div>
+        <div class="block origin"><h4>原文摘要</h4><p>路透社报道称，日本央行预计将把利率上调到 31 年高位，继续推进货币政策正常化，重点回应能源冲击和价格压力问题。</p></div>
+        <div class="block translation"><h4>人话翻译</h4><p>连日本这个长期低利率代表都在继续往上加息，说明全球资金环境真的在变，不再是过去那种无限宽松的状态了。</p></div>
+        <div class="block meaning"><h4>意义解读</h4><p>日本利率变化会牵动套息交易、日元汇率和亚洲市场资金流向，所以它对全球市场的影响，经常比表面上的那 25 个基点更大。</p></div>
+        <a class="source-link" href="https://www.reuters.com/world/asia-pacific/bank-japan-set-raise-rates-31-year-high-vow-further-increases-2026-06-15/" target="_blank" rel="noreferrer">查看原文</a>
+      </article>
     </div>
 
-    <div class="footer">内容来源以公开报道与官方发布为准；本页用于晨间速读与要点提炼。</div>
+    <div class="section">
+      <div class="section-title">🧠 技术领域</div>
+      <article class="news-card"><div class="news-header"><h2 class="news-title">1. 字节跳动正与天数智芯洽谈采购 AI 推理芯片</h2><div><span class="pill">Reuters</span><span class="pill">AI 算力</span></div></div><div class="block origin"><h4>原文摘要</h4><p>路透社援引知情人士称，字节跳动正在与上海 AI 芯片公司天数智芯洽谈采购推理芯片，也在考虑与其他厂商达成类似合作，以满足在线推理计算需求。</p></div><div class="block translation"><h4>人话翻译</h4><p>字节还在持续找 AI 芯片的新供应来源，而且重点放在推理而不是训练，说明真正持续烧钱的地方，已经越来越偏向大规模线上服务。</p></div><div class="block meaning"><h4>意义解读</h4><p>谁能拿到稳定、可扩展、性价比高的推理算力，谁就更容易把 AI 服务真正铺开。这已经不只是技术问题，也是在拼供应链能力。</p></div><a class="source-link" href="https://www.reuters.com/world/china/bytedance-talks-with-chinas-iluvatar-corex-purchase-ai-chips-sources-say-2026-06-15/" target="_blank" rel="noreferrer">查看原文</a></article>
+      <article class="news-card"><div class="news-header"><h2 class="news-title">2. 美国法官驳回 xAI 对 OpenAI 的商业机密诉讼</h2><div><span class="pill">Reuters</span><span class="pill">AI 法律战</span></div></div><div class="block origin"><h4>原文摘要</h4><p>路透社报道，美国联邦法官周一驳回了马斯克旗下 xAI 对 OpenAI 提起的诉讼，xAI 试图以商业机密为由追责，但法院没有支持这一主张。</p></div><div class="block translation"><h4>人话翻译</h4><p>马斯克这次想用“商业机密被偷”去压 OpenAI，但法院并不买账，等于 OpenAI 在法律战里又赢了一回合。</p></div><div class="block meaning"><h4>意义解读</h4><p>AI 行业的竞争已经不只是拼模型能力，也在拼法律边界、人才流动和知识产权定义。谁能守住法律口径，谁就更有战略主动权。</p></div><a class="source-link" href="https://www.reuters.com/legal/litigation/openai-wins-dismissal-trade-secret-lawsuit-by-musks-xai-2026-06-15/" target="_blank" rel="noreferrer">查看原文</a></article>
+      <article class="news-card"><div class="news-header"><h2 class="news-title">3. 英伟达重返债市，为 AI 基建继续筹集大额资金</h2><div><span class="pill">Reuters</span><span class="pill">科技资本</span></div></div><div class="block origin"><h4>原文摘要</h4><p>路透社称，英伟达周一表示将通过美国债券发行融资 250 亿美元，以补充流动性，支持其在 AI 产业快速演进背景下继续加大投入。</p></div><div class="block translation"><h4>人话翻译</h4><p>英伟达现在不是缺故事，而是缺更多能立刻砸进去的钱，所以直接去债市拿弹药，继续把优势转成产能和生态壁垒。</p></div><div class="block meaning"><h4>意义解读</h4><p>这说明 AI 硬件竞赛已经进入重资产阶段。以后比的不是谁先讲概念，而是谁能长期撑住资本开支和供应链投入。</p></div><a class="source-link" href="https://www.reuters.com/business/finance/nvidia-raise-20-billion-source-says-first-corporate-bond-issuance-five-years-2026-06-15/" target="_blank" rel="noreferrer">查看原文</a></article>
+    </div>
+
+    <div class="footer">本版已按新要求调整：新增股市总览，时事政治与金融财经均按国内、国际均衡编排。后续晨报将沿用该格式。</div>
   </div>
 </body>
 </html>
