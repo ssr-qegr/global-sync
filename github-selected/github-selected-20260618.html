@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub 精选项目报告 | 2026年6月18日</title>
+  <style>
+    :root { --primary:#0052D9; --primary-2:#2F80ED; --primary-soft:#EAF2FF; --bg:#F3F5F8; --card-bg:#FFFFFF; --text-main:#1C1F23; --text-sub:#5C6A82; --border:rgba(0,82,217,.13); --shadow:0 18px 48px rgba(8,32,71,.10); }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:24px; background:linear-gradient(180deg,#EEF4FF 0%,var(--bg) 280px); color:var(--text-main); font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; }
+    .wrap { max-width:980px; margin:0 auto; background:var(--card-bg); border-radius:28px; overflow:hidden; box-shadow:var(--shadow); }
+    .hero { position:relative; padding:44px 44px 36px; color:#fff; background:radial-gradient(circle at 86% 8%,rgba(255,255,255,.92),rgba(255,255,255,.12) 30%,transparent 48%),linear-gradient(135deg,#003EA8 0%,#0052D9 46%,#4FA3FF 100%); }
+    .hero:after { content:""; position:absolute; right:34px; bottom:-46px; width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,.12); filter:blur(1px); }
+    .badge-group { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px; }
+    .badge { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.22); font-size:13px; font-weight:700; }
+    h1 { margin:0 0 14px; font-size:34px; line-height:1.25; letter-spacing:-.02em; }
+    .hero p { margin:0; max-width:780px; color:rgba(255,255,255,.94); font-size:16px; position:relative; z-index:1; }
+    .content { padding:34px 44px 40px; }
+    .section-title { display:flex; align-items:center; gap:10px; margin:0 0 18px; font-size:24px; color:var(--primary); }
+    .lead-card,.project-card,.tips-card,.source-card { background:#fff; border:1px solid var(--border); border-radius:20px; padding:24px; margin-bottom:22px; box-shadow:0 10px 28px rgba(0,82,217,.06); }
+    .lead-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .metric { background:linear-gradient(180deg,#F8FBFF,#FFFFFF); border:1px solid var(--border); border-radius:16px; padding:16px; }
+    .metric .label { display:block; font-size:13px; color:var(--text-sub); margin-bottom:8px; }
+    .metric .value { display:block; font-size:22px; font-weight:800; color:var(--primary); }
+    .project-head { display:flex; justify-content:space-between; gap:18px; align-items:flex-start; margin-bottom:14px; }
+    .project-title { margin:0; font-size:28px; line-height:1.3; }
+    .project-subtitle { margin:8px 0 0; color:var(--text-sub); }
+    .rank { min-width:86px; text-align:center; background:linear-gradient(180deg,#F6FAFF,#EAF2FF); color:var(--primary); border-radius:16px; padding:14px 12px; border:1px solid var(--border); font-weight:800; }
+    .meta-row { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 18px; }
+    .chip { display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border-radius:999px; font-size:13px; color:var(--text-sub); background:#F7FAFE; border:1px solid rgba(92,106,130,.14); }
+    .summary { margin:0 0 18px; font-size:16px; color:var(--text-main); }
+    .grid-2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:12px; }
+    .panel { background:#FAFCFF; border:1px solid var(--border); border-radius:16px; padding:18px; }
+    .panel h3 { margin:0 0 12px; font-size:17px; color:var(--primary); }
+    ul { margin:0; padding-left:20px; }
+    li { margin-bottom:10px; color:var(--text-sub); }
+    li strong { color:var(--text-main); }
+    .cta-row { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+    .link-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; border-radius:12px; padding:10px 16px; font-weight:700; transition:transform .18s ease,box-shadow .18s ease; }
+    .link-btn.primary { background:var(--primary); color:#fff; box-shadow:0 8px 18px rgba(0,82,217,.22); }
+    .link-btn.secondary { background:var(--primary-soft); color:var(--primary); }
+    .link-btn:hover { transform:translateY(-1px); }
+    .tips-card h3,.source-card h3 { margin:0 0 12px; color:var(--primary); }
+    .foot { padding:0 44px 34px; color:var(--text-sub); font-size:13px; }
+    .foot strong { color:var(--text-main); }
+    a { color:var(--primary); }
+    @media (max-width:820px) { body{padding:14px;} .hero,.content,.foot{padding-left:22px;padding-right:22px;} .lead-grid,.grid-2{grid-template-columns:1fr;} .project-head{flex-direction:column;} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="badge-group"><span class="badge">GitHub 精选</span><span class="badge">2026-06-18</span><span class="badge">style_blue</span></div>
+      <h1>今日 GitHub 精选项目报告</h1>
+      <p>今天精选 2 个兼具热度与长期价值的 AI 项目：一个是 OpenAI 官方开源的终端编码 Agent，把自然语言开发任务落到真实代码仓库；另一个是系统提示词与模型配置资料库，适合拆解主流 AI 工具的产品机制与 Agent 设计模式。</p>
+    </section>
+    <main class="content">
+      <section class="lead-card">
+        <h2 class="section-title">📌 今日结论</h2>
+        <p class="summary">如果你想提升个人与团队的 AI 编码执行力，优先看 <strong>openai/codex</strong>；如果你想研究 AI 工具如何设计系统提示词、工具调用和行为边界，优先看 <strong>x1xhlol/system-prompts-and-models-of-ai-tools</strong>。</p>
+        <div class="lead-grid"><div class="metric"><span class="label">今日精选数量</span><span class="value">2 个</span></div><div class="metric"><span class="label">核心主题</span><span class="value">AI 编码 × Prompt 工程</span></div><div class="metric"><span class="label">推荐阅读顺序</span><span class="value">实践 → 拆解</span></div></div>
+      </section>
+      <section class="project-card">
+        <div class="project-head"><div><h2 class="project-title">1. openai/codex</h2><p class="project-subtitle">运行在终端里的轻量级 AI 编码 Agent，将自然语言需求转化为可执行的工程变更</p></div><div class="rank">TOP 1</div></div>
+        <div class="meta-row"><span class="chip">🤖 Coding Agent</span><span class="chip">🦀 Rust / TypeScript</span><span class="chip">🧰 CLI / SDK</span><span class="chip">🏷️ terminal / code review / automation</span></div>
+        <p class="summary"><strong>项目简介：</strong>Codex 是 OpenAI 官方开源的轻量级编码 Agent，定位是“runs in your terminal”。它面向真实代码仓库工作，可以通过命令行安装和使用，并提供 CLI、IDE、桌面体验以及 SDK 等不同入口。相比只在编辑器里补全代码，Codex 更像一个可以接收任务、阅读上下文、修改文件并协助检查代码的工程执行助手。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>终端优先：</strong>直接在开发者熟悉的 shell 环境中运行，适合和现有 git、测试、构建流程串联。</li><li><strong>多入口形态：</strong>除了 CLI，还能接入 IDE、桌面应用和 SDK，覆盖个人使用、插件化集成与自动化调用。</li><li><strong>工程任务闭环：</strong>面向代码生成、编辑、审查与迭代，不只是问答，而是围绕仓库执行连续任务。</li><li><strong>可编程能力：</strong>TypeScript / Python SDK 让团队可以把 Codex 接入内部研发工具、质量门禁或自动化流程。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>日常开发提效：</strong>让 Agent 处理小型重构、测试补齐、脚手架生成和问题定位。</li><li><strong>提交前自检：</strong>借助独立 Agent 做代码审查，提前发现遗漏、边界条件或风格问题。</li><li><strong>自动化研发助手：</strong>把重复性工程任务包装成命令或脚本，让 Codex 在标准流程中执行。</li><li><strong>AI 编码工具评估：</strong>适合团队验证终端 Agent 与现有 IDE 插件、Web Agent 的效率差异。</li></ul></div></div>
+        <div class="panel" style="margin-top:16px;"><h3>为什么今天推荐它</h3><ul><li>AI 编码工具正在从“聊天式辅助”转向“任务式执行”，Codex 是观察这条路线的核心项目之一。</li><li>它由 OpenAI 官方维护，文档与生态入口相对完整，适合作为团队评估 AI 编码工作流的基准样本。</li><li>对开发者个人而言，它能直接进入日常终端工作流，学习成本和落地成本都比较低。</li></ul></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库</a><a class="link-btn secondary" href="https://developers.openai.com/codex/cli" target="_blank" rel="noopener noreferrer">查看 CLI 文档</a></div>
+      </section>
+      <section class="project-card">
+        <div class="project-head"><div><h2 class="project-title">2. x1xhlol/system-prompts-and-models-of-ai-tools</h2><p class="project-subtitle">收集主流 AI 工具系统提示词、内部工具描述与模型配置的逆向学习资料库</p></div><div class="rank">TOP 2</div></div>
+        <div class="meta-row"><span class="chip">🧠 Prompt Engineering</span><span class="chip">📚 AI Tools</span><span class="chip">📄 GPL-3.0</span><span class="chip">🏷️ Cursor / Claude Code / Devin / Replit / v0</span></div>
+        <p class="summary"><strong>项目简介：</strong>这个仓库汇集了作者整理的多种主流 AI 工具系统提示词、内部工具说明和模型相关信息，覆盖 Cursor、Claude Code、Devin、Replit、Windsurf、VSCode Agent、v0 等一批开发者熟悉的产品。它的价值不在于“复制提示词”，而在于帮助开发者观察成熟 AI 产品如何定义角色、约束行为、暴露工具、处理上下文与规划任务。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>横向样本丰富：</strong>同一仓库里能对比多类 AI 编程工具、Agent 产品和生成式应用的系统设计差异。</li><li><strong>关注工具调用：</strong>不仅有提示词文本，还包含内部工具描述，适合研究 Agent 如何把语言模型连接到外部能力。</li><li><strong>产品机制拆解：</strong>可观察不同产品如何设置安全边界、任务规划、上下文管理和输出规范。</li><li><strong>Prompt 工程素材库：</strong>适合提炼通用模式，再改造为企业内部助手、研发 Agent 或自动化工作流。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>学习 Agent 设计：</strong>分析成熟工具的角色定义、工具 schema、任务分解和错误处理策略。</li><li><strong>内部工具建设：</strong>为企业知识库助手、代码助手、运营助手设计系统提示词提供参考。</li><li><strong>竞品研究：</strong>对比 Cursor、Claude Code、Windsurf 等产品的交互边界和能力暴露方式。</li><li><strong>提示词审计：</strong>帮助团队建立对 prompt 泄露风险、权限边界和安全策略的敏感度。</li></ul></div></div>
+        <div class="panel" style="margin-top:16px;"><h3>为什么今天推荐它</h3><ul><li>当 AI 工具越来越像“可执行系统”而不是“聊天框”，系统提示词和工具协议就成为核心工程资产。</li><li>这个项目能帮助开发者从产品表象深入到底层设计，理解好用的 Agent 为什么好用。</li><li>对想做 AI 工具、内部 Agent 或 prompt governance 的团队，它是一个很适合拆解的参考样本。</li></ul></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库</a><a class="link-btn secondary" href="https://hellogithub.com/en/repository/x1xhlol/system-prompts-and-models-of-ai-tools" target="_blank" rel="noopener noreferrer">查看项目介绍</a></div>
+      </section>
+      <section class="tips-card"><h3>🧭 今日阅读建议</h3><ul><li><strong>先动手：</strong>从 Codex CLI 开始，观察它如何读取仓库、拆解需求、修改文件和形成反馈闭环。</li><li><strong>再拆解：</strong>阅读 system-prompts 项目，对比不同 AI 工具如何定义 Agent 行为、工具权限和输出风格。</li><li><strong>最后沉淀：</strong>把两者结合起来，形成自己的 AI 编码工作流模板与内部 Agent 设计规范。</li></ul></section>
+      <section class="source-card"><h3>🔎 信息来源</h3><ul><li>openai/codex GitHub 仓库 README、OpenAI Codex CLI / SDK 官方文档</li><li>x1xhlol/system-prompts-and-models-of-ai-tools GitHub 仓库 README 与 HelloGitHub 项目页</li><li>公开趋势线索参考：OSSInsight Trending AI、HelloGitHub 热点速览与 GitHub 搜索结果</li><li>内容生成时间：2026-06-18 CST</li></ul></section>
+    </main>
+    <div class="foot"><strong>输出文件：</strong>github-selected-20260618.html<br /><strong>生成说明：</strong>采用 style_blue 风格扩展生成，适配 GitHub Pages 发布。</div>
+  </div>
+</body>
+</html>
