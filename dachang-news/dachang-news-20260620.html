@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大厂新闻 · 2026-06-20</title>
+<style>
+  :root { --primary: #B388FF; --bg: #0D0D0D; --card-bg: #1A1A1A; --text-main: #E0E0E0; --text-sub: #9E9E9E; --accent: #00E5FF; --hot:#FF5C8A; --ok:#48F2A6; }
+  * { box-sizing: border-box; }
+  body { font-family: "Inter", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: radial-gradient(circle at top left, rgba(179,136,255,.18), transparent 34%), radial-gradient(circle at 85% 8%, rgba(0,229,255,.14), transparent 32%), var(--bg); color: var(--text-main); margin: 0; padding: 22px; }
+  .container { max-width: 920px; margin: 0 auto; background: linear-gradient(180deg, rgba(26,26,26,.96), rgba(14,14,16,.98)); padding: 38px; border-radius: 22px; border: 1px solid #333; box-shadow: 0 22px 70px rgba(0,0,0,.58); }
+  .header { text-align: center; margin-bottom: 34px; padding: 28px 18px; border: 1px solid rgba(179,136,255,.22); border-radius: 18px; background: rgba(255,255,255,.025); }
+  .header h1 { color: var(--primary); margin: 0 0 12px 0; font-size: clamp(30px, 5vw, 46px); letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 24px rgba(179,136,255,0.35); }
+  .date { color: var(--text-sub); font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .lead { margin: 18px auto 0; max-width: 760px; color: #c9c9d1; line-height: 1.75; font-size: 15px; }
+  .signal { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:22px 0 4px; }
+  .signal div { border:1px solid #333; background:rgba(255,255,255,.03); border-radius:14px; padding:14px; color:#cfcfd6; font-size:13px; line-height:1.55; }
+  .signal b { display:block; color:var(--accent); margin-bottom:4px; }
+  .section-title { margin: 34px 0 16px; display:flex; align-items:center; gap:10px; color:#fff; font-size:22px; }
+  .section-title::before { content:""; width:10px; height:10px; border-radius:50%; background: var(--accent); box-shadow: 0 0 18px var(--accent); }
+  .news-item { background: rgba(36,36,36,.92); padding: 24px; margin-bottom: 18px; border-radius: 16px; border: 1px solid #333; transition: all 0.3s ease; position: relative; overflow: hidden; }
+  .news-item::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(to bottom, var(--primary), var(--accent)); opacity: .9; }
+  .news-item:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(179,136,255,0.16); border-color: rgba(179,136,255,.35); }
+  .news-item h2 { margin: 2px 0 14px 0; font-size: 20px; color: #FFF; font-weight: 650; line-height:1.35; }
+  .news-item p { margin: 0 0 12px 0; font-size: 15px; color: var(--text-sub); line-height: 1.75; }
+  .news-item strong { color:#f5f5f7; }
+  .tag { display: inline-block; background: rgba(179,136,255,0.1); color: var(--primary); border: 1px solid rgba(179,136,255,0.3); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-bottom: 14px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .source { display:inline-flex; margin-top:6px; color: var(--accent); text-decoration: none; font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; letter-spacing: .6px; }
+  .source:hover { text-shadow: 0 0 8px rgba(0,229,255,0.6); }
+  .note { margin: 26px 0 0; padding: 16px 18px; border:1px dashed #3a3a3a; border-radius:14px; color:#aaa; line-height:1.7; background:rgba(255,255,255,.025); }
+  .footer { text-align: center; margin-top: 36px; padding-top: 20px; border-top: 1px dashed #333; color: #666; font-size: 12px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  @media (max-width: 680px) { body { padding: 14px; } .container { padding: 22px; } .news-item { padding: 20px; } .signal { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>⚡ Big Tech Signal</h1>
+      <div class="date">SYS.DATE: 2026-06-20 // CHANNEL: DACHANG-NEWS // STATUS: ONLINE</div>
+      <p class="lead">今日大厂动态的主线很清晰：国内继续围绕 AI 基建、模型迁移和具身智能争夺开发者入口；海外则围绕 AI 医疗、企业服务、人才流动和法律边界继续加码。整体看，AI 竞争正在从“模型发布会”进入“算力、生态、合规和应用落地”的综合战。</p>
+      <div class="signal">
+        <div><b>国内关键词</b>算力基建、模型迁移、具身智能</div>
+        <div><b>国际关键词</b>医疗 AI、企业控费、AI 人才战</div>
+        <div><b>影响判断</b>开发者红利增加，但平台锁定也会变强</div>
+      </div>
+    </div>
+
+    <h3 class="section-title">国内大厂</h3>
+    <div class="news-item">
+      <span class="tag">#AI_INFRA #阿里 #字节 #腾讯 #数据中心</span>
+      <h2>AI 基建预算继续落地，头部大厂把竞争推进到数据中心与能源侧</h2>
+      <p><strong>新闻原文：</strong>财联社报道称，年内阿里、字节、腾讯等头部大厂千亿级基建预算持续落地；同时，第三方 IDC 厂商也在抢占 AI 红利，例如万国数据计划未来五年在乌兰察布总投资逾 300 亿元，打造 GW 级绿电直连数据中心集群。</p>
+      <p><strong>人话翻译：</strong>大模型不是只靠算法论文赢，后面还要有机房、电力、网络、芯片和调度系统。谁能提前锁住便宜稳定的算力，谁就能更从容地训练模型、压低推理成本。</p>
+      <p><strong>影响分析：</strong>国内大厂的 AI 竞争会越来越像云计算战争：表面是模型和应用，底层是资本开支、能源价格和数据中心效率。对开发者和企业客户来说，长期利好是模型服务会更便宜、更稳定；风险是平台绑定会增强，迁移成本也会变高。</p>
+      <a class="source" href="http://m.toutiao.com/group/7653413137005150720/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#TENCENT_CLOUD #DEEPSEEK #MODEL_MIGRATION</span>
+      <h2>腾讯云 DeepSeek-V3.2 即将下线，模型服务进入“版本迁移常态化”阶段</h2>
+      <p><strong>新闻原文：</strong>腾讯云公告显示，原知识引擎原子能力平台和大模型服务平台 TokenHub 的 DeepSeek-V3.2 模型（model 参数值：deepseek-v3.2）将于北京时间 2026 年 7 月 16 日 00:00 起正式下线，官方建议用户迁移至 DeepSeek-V4 系列模型。</p>
+      <p><strong>人话翻译：</strong>如果业务里还在调用这个旧模型，要尽快改配置、做回归测试。大模型 API 不是“一接永逸”的基础设施，后续版本升级和废弃会成为常态。</p>
+      <p><strong>影响分析：</strong>这提醒企业做 AI 接入时必须建立模型抽象层、灰度切换和评测回归机制。只把模型名硬编码在业务里，会在供应商升级或下线时非常被动；云厂商也会借迁移推动用户使用能力更强、商业价值更高的新模型。</p>
+      <a class="source" href="https://cloud.tencent.com/announce/detail/2327" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#ALIBABA #QWEN_ROBOT #具身智能</span>
+      <h2>阿里 Qwen-Robot 系列被持续关注，具身智能从实验室走向平台化</h2>
+      <p><strong>新闻原文：</strong>多家科技快讯提到，阿里巴巴发布千问具身智能大模型 Qwen-Robot 系列，包含 VLA 操作模型、VLN 移动模型和世界模型三类能力，用于机器人操作、导航和环境理解等方向。</p>
+      <p><strong>人话翻译：</strong>阿里不只是做聊天模型，而是在给机器人“装手、装脚、装世界观”。模型能力正在从屏幕里的文字问答，向真实空间里的动作执行扩展。</p>
+      <p><strong>影响分析：</strong>具身智能会成为云厂商和模型厂商的新战场：既需要大模型能力，也需要传感器、机器人本体、仿真数据和行业场景。短期更可能先落在仓储、制造、服务机器人等 B 端场景，长期才会进入更广泛的消费级硬件。</p>
+      <a class="source" href="http://m.toutiao.com/group/7652186381258703402/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#AI_APP #字节 #阿里 #DeepSeek</span>
+      <h2>AI 应用侧继续升温：识图、输入法、模型产品动态成为手机端入口争夺焦点</h2>
+      <p><strong>新闻原文：</strong>今日科技快讯提到，DeepSeek 识图模式已在 App 和网页端开放；同时有消息称阿里千问团队将推出独立输入法 App，AI 功能更贴合手机端操作；火山引擎开发者社区也发布了 2026 年 6 月版产品动态。</p>
+      <p><strong>人话翻译：</strong>AI 不再只在聊天框里等你输入文字，而是开始进入图片理解、输入法、开发者平台等高频入口。谁掌握用户每天最常用的入口，谁就更可能成为默认 AI 助手。</p>
+      <p><strong>影响分析：</strong>手机端 AI 的竞争重点会从“模型谁更强”转向“入口谁更近”。输入法、浏览器、相册、办公和搜索都会变成 AI 分发位；对国内大厂来说，生态入口和账号体系的重要性会继续上升。</p>
+      <a class="source" href="https://m.weibo.cn/detail/5311790550614080" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <h3 class="section-title">国际科技公司</h3>
+    <div class="news-item">
+      <span class="tag">#OPENAI #HEALTH_AI #ENTERPRISE</span>
+      <h2>OpenAI 连续更新企业分析、健康智能与医疗科研内容，商业化更偏专业场景</h2>
+      <p><strong>新闻原文：</strong>OpenAI News 页面显示，6 月 18 日发布了企业使用分析和支出控制更新，同时发布与 ChatGPT 健康智能、医生诊断儿童罕见遗传病辅助等相关内容。</p>
+      <p><strong>人话翻译：</strong>OpenAI 一边让企业更好管成本、看用量，一边把 AI 往医疗和科研这种高价值场景推进。它不只想做消费者聊天工具，也在抢企业和专业机构的钱包。</p>
+      <p><strong>影响分析：</strong>企业控费和专业场景是 AI 商业化的关键拼图。医疗方向价值高，但合规、可靠性和责任边界更复杂；企业分析能力则会帮助 CIO/CTO 更精细地管理 AI 成本，推动 AI 从试点走向规模化采购。</p>
+      <a class="source" href="https://openai.com/news/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#OPENAI #xAI #LEGAL</span>
+      <h2>OpenAI 赢得 xAI 商业秘密诉讼驳回，AI 人才流动的法律边界受到关注</h2>
+      <p><strong>新闻原文：</strong>Reuters 报道称，美国联邦法官驳回了马斯克旗下 xAI 对 OpenAI 的商业秘密诉讼；法院认为 xAI 未能证明 OpenAI 诱导前 xAI 工程师泄露与 Grok 聊天机器人相关的机密信息。</p>
+      <p><strong>人话翻译：</strong>xAI 指控 OpenAI 借挖人拿走商业秘密，但法院认为证据不够。这场官司暂时让 OpenAI 松了一口气，也说明 AI 顶尖人才争夺已经进入法律攻防阶段。</p>
+      <p><strong>影响分析：</strong>AI 公司会更重视员工竞业、保密协议和入职合规流程。未来大厂之间的竞争不只发生在模型榜单和产品发布会上，也会发生在人才流动、知识产权和商业秘密保护上。</p>
+      <a class="source" href="https://www.reuters.com/legal/litigation/openai-wins-dismissal-trade-secret-lawsuit-by-musks-xai-2026-06-15/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#GOOGLE_DEEPMIND #ANTHROPIC #AI_TALENT</span>
+      <h2>Google DeepMind 人才流向 Anthropic，顶级 AI 研究员争夺继续白热化</h2>
+      <p><strong>新闻原文：</strong>Times Now 报道称，诺奖得主、Google DeepMind 工程 Fellow John Jumper 将转向 Anthropic；报道同时指出，Google、Meta、Anthropic、OpenAI 等前沿 AI 实验室之间的人才竞争仍然激烈。</p>
+      <p><strong>人话翻译：</strong>AI 公司抢的不只是 GPU，也在抢少数能真正推动基础模型突破的人。顶级科学家和工程负责人去哪家公司，可能直接影响下一代模型方向。</p>
+      <p><strong>影响分析：</strong>人才迁移会改变实验室的研究路线和组织士气，也可能引发薪酬、期权和保密协议的连锁反应。对行业来说，前沿 AI 的稀缺资源正在集中到少数资本雄厚的公司。</p>
+      <a class="source" href="https://www.timesnownews.com/technology-science/nobel-winning-john-jumper-exits-google-deepmind-heads-to-anthropic-in-surprise-move-article-154694841" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#APPLE #GOOGLE #CONSUMER_AI</span>
+      <h2>Apple 与 Google 继续押注消费者 AI，和 OpenAI 的企业化路径形成分工</h2>
+      <p><strong>新闻原文：</strong>CNBC 分析称，OpenAI 正更明显地向企业场景推进，而 Apple 和 Google 更聚焦消费者 AI；分析师认为，尽管 Google 等公司追赶明显，ChatGPT 仍因病毒式增长在消费者心智中保持领先。</p>
+      <p><strong>人话翻译：</strong>OpenAI 更想把 AI 卖给公司，苹果和谷歌更想把 AI 融进手机、搜索、办公和系统体验。大家不一定在同一条赛道上硬碰硬，而是在抢不同入口。</p>
+      <p><strong>影响分析：</strong>消费者 AI 的关键是默认入口和使用频率，企业 AI 的关键是可控成本、权限、安全和工作流集成。未来两类能力会交叉，但短期内商业模式会继续分化：一个拼订阅和企业采购，一个拼生态黏性和系统级分发。</p>
+      <a class="source" href="https://www.cnbc.com/amp/2026/06/11/as-openai-leans-into-enterprise-apple-and-google-target-consumer-ai.html" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="note">说明：今日检索中，部分国内资讯来自媒体快讯或聚合平台；涉及“传闻”“消息称”的内容已按非官方口径处理。产品下线、公司公告等外部可验证信息优先采用官方来源。</div>
+
+    <div class="footer">
+      TRANSMISSION END · DARK MODE UI · GENERATED FOR SSR-QEGR/GLOBAL-SYNC
+    </div>
+  </div>
+</body>
+</html>
