@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub 精选项目报告 | 2026年6月20日</title>
+  <style>
+    :root { --primary:#0052D9; --primary-2:#2F80ED; --primary-soft:#EAF2FF; --bg:#F3F5F8; --card-bg:#FFFFFF; --text-main:#1C1F23; --text-sub:#5C6A82; --border:rgba(0,82,217,.13); --shadow:0 18px 48px rgba(8,32,71,.10); }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:24px; background:linear-gradient(180deg,#EEF4FF 0%,var(--bg) 280px); color:var(--text-main); font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; }
+    .wrap { max-width:980px; margin:0 auto; background:var(--card-bg); border-radius:28px; overflow:hidden; box-shadow:var(--shadow); }
+    .hero { position:relative; padding:44px 44px 36px; color:#fff; background:radial-gradient(circle at 86% 8%,rgba(255,255,255,.92),rgba(255,255,255,.12) 30%,transparent 48%),linear-gradient(135deg,#003EA8 0%,#0052D9 46%,#4FA3FF 100%); }
+    .hero:after { content:""; position:absolute; right:34px; bottom:-46px; width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,.12); filter:blur(1px); }
+    .badge-group { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px; }
+    .badge { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.22); font-size:13px; font-weight:700; }
+    h1 { margin:0 0 14px; font-size:34px; line-height:1.25; letter-spacing:-.02em; }
+    .hero p { margin:0; max-width:780px; color:rgba(255,255,255,.94); font-size:16px; position:relative; z-index:1; }
+    .content { padding:34px 44px 40px; }
+    .section-title { display:flex; align-items:center; gap:10px; margin:0 0 18px; font-size:24px; color:var(--primary); }
+    .lead-card,.project-card,.tips-card,.source-card { background:#fff; border:1px solid var(--border); border-radius:20px; padding:24px; margin-bottom:22px; box-shadow:0 10px 28px rgba(0,82,217,.06); }
+    .lead-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .metric { background:linear-gradient(180deg,#F8FBFF,#FFFFFF); border:1px solid var(--border); border-radius:16px; padding:16px; }
+    .metric .label { display:block; font-size:13px; color:var(--text-sub); margin-bottom:8px; }
+    .metric .value { display:block; font-size:22px; font-weight:800; color:var(--primary); }
+    .project-head { display:flex; justify-content:space-between; gap:18px; align-items:flex-start; margin-bottom:14px; }
+    .project-title { margin:0; font-size:28px; line-height:1.3; }
+    .project-subtitle { margin:8px 0 0; color:var(--text-sub); }
+    .rank { min-width:86px; text-align:center; background:linear-gradient(180deg,#F6FAFF,#EAF2FF); color:var(--primary); border-radius:16px; padding:14px 12px; border:1px solid var(--border); font-weight:800; }
+    .meta-row { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 18px; }
+    .chip { display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border-radius:999px; font-size:13px; color:var(--text-sub); background:#F7FAFE; border:1px solid rgba(92,106,130,.14); }
+    .summary { margin:0 0 18px; font-size:16px; color:var(--text-main); }
+    .grid-2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:12px; }
+    .panel { background:#FAFCFF; border:1px solid var(--border); border-radius:16px; padding:18px; }
+    .panel h3 { margin:0 0 12px; font-size:17px; color:var(--primary); }
+    ul { margin:0; padding-left:20px; }
+    li { margin-bottom:10px; color:var(--text-sub); }
+    li strong { color:var(--text-main); }
+    .cta-row { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+    .link-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; border-radius:12px; padding:10px 16px; font-weight:700; transition:transform .18s ease, box-shadow .18s ease; }
+    .link-btn.primary { color:#fff; background:linear-gradient(135deg,var(--primary),var(--primary-2)); box-shadow:0 8px 18px rgba(0,82,217,.18); }
+    .link-btn.secondary { color:var(--primary); background:var(--primary-soft); border:1px solid var(--border); }
+    .link-btn:hover { transform:translateY(-2px); }
+    .source-card a { color:var(--primary); font-weight:700; word-break:break-all; }
+    footer { padding:22px 44px 34px; color:var(--text-sub); border-top:1px solid var(--border); background:#FAFCFF; }
+    @media (max-width:760px) { body{padding:12px;} .hero,.content,footer{padding-left:22px;padding-right:22px;} .lead-grid,.grid-2{grid-template-columns:1fr;} .project-head{flex-direction:column;} h1{font-size:28px;} }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="badge-group"><span class="badge">GitHub Trending</span><span class="badge">AI 工具链</span><span class="badge">2026-06-20</span></div>
+      <h1>GitHub 精选项目报告：把 AI Agent 从“会写代码”推向“会完成工作”</h1>
+      <p>今天精选 2 个与 AI Agent 能力扩展强相关的项目：一个让编码助手进入视频生产流水线，另一个让 Agent 获得跨平台互联网检索与读取能力。两者都不是单点模型能力，而是在“工具编排、上下文获取、工作流落地”层面提升 AI 的可用性。</p>
+    </section>
+    <section class="content">
+      <h2 class="section-title">📌 今日结论</h2>
+      <div class="lead-card">
+        <p class="summary">如果你关注 AI 生产力工具，今天最值得跟踪的是 <strong>OpenMontage</strong> 与 <strong>Agent-Reach</strong>。前者把视频脚本、素材、剪辑、旁白等环节拆成可被 Agent 调用的生产系统；后者将 Twitter/X、Reddit、YouTube、GitHub、Bilibili、小红书等平台封装成可搜索、可读取的 CLI，让 Agent 更容易获取外部信息。</p>
+        <div class="lead-grid">
+          <div class="metric"><span class="label">精选项目</span><span class="value">2 个</span></div>
+          <div class="metric"><span class="label">主题方向</span><span class="value">Agent 工具化</span></div>
+          <div class="metric"><span class="label">适合人群</span><span class="value">开发者 / 创作者</span></div>
+        </div>
+      </div>
+      <article class="project-card">
+        <div class="project-head"><div><h2 class="project-title">OpenMontage</h2><p class="project-subtitle">面向 AI Coding Assistant 的开源 Agentic 视频生产系统</p></div><div class="rank">TOP 1<br/>内容生产</div></div>
+        <div class="meta-row"><span class="chip">Repository: calesthio/OpenMontage</span><span class="chip">方向：AI 视频工作流</span><span class="chip">形态：Python + Agent Skills</span></div>
+        <p class="summary">OpenMontage 的核心价值，是把“让 AI 帮我做视频”从一句自然语言请求，拆解为可执行、可复用、可协作的生产流水线。项目官方介绍其包含 12 条 pipelines、52 个工具和 500+ agent skills，可让具备文件读取和 Python 执行能力的 AI coding assistant 参与视频生产；同时提供 AGENT_GUIDE.md 和 PROJECT_CONTEXT.md 等说明文件，用来约束 Agent 的操作边界与理解系统架构。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>流水线思路：</strong>将创意、脚本、素材处理、生成、剪辑、发布准备等环节拆成 pipeline，降低一次性大任务的失败率。</li><li><strong>技能化组织：</strong>用大量 agent skills 承载具体操作步骤，让不同 AI coding assistant 可以按统一工作契约执行任务。</li><li><strong>上下文文件治理：</strong>通过操作指南与架构参考文件，帮助 Agent 在复杂项目中保持一致的执行标准。</li><li><strong>本地化潜力：</strong>项目说明提到未来支持 Ollama、LM Studio 等本地 LLM 路线，适合对成本和数据边界敏感的团队继续观察。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>短视频批量生产：</strong>将固定栏目、产品介绍、课程切片做成可重复执行的 Agent 工作流。</li><li><strong>开发者内容运营：</strong>用 AI 辅助生成项目演示、Release 说明视频、教程视频初稿。</li><li><strong>创意验证：</strong>快速验证脚本、分镜、素材组合是否可行，再交由人工精修。</li><li><strong>Agent 工程研究：</strong>学习如何把多步骤创意任务拆成工具、技能与上下文约束。</li></ul></div></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/calesthio/OpenMontage" target="_blank" rel="noopener">查看项目</a><a class="link-btn secondary" href="https://github.com/hanzoai/video" target="_blank" rel="noopener">相关镜像/分支</a></div>
+      </article>
+      <article class="project-card">
+        <div class="project-head"><div><h2 class="project-title">Agent-Reach</h2><p class="project-subtitle">让 AI Agent 读取与搜索多平台互联网内容的 CLI 工具</p></div><div class="rank">TOP 2<br/>信息获取</div></div>
+        <div class="meta-row"><span class="chip">Repository: Panniantong/Agent-Reach</span><span class="chip">方向：Agent Internet Access</span><span class="chip">语言：Python</span></div>
+        <p class="summary">Agent-Reach 关注的是 Agent 的“外部信息获取”问题：它把 Twitter/X、Reddit、YouTube、GitHub、Bilibili、小红书等平台的读取与搜索能力整理成一个 CLI，并强调无需额外平台 API 费用。对需要调研、舆情收集、竞品观察、资料汇总的 Agent 来说，这类工具能显著减少手工复制链接和切换平台的成本。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>多平台聚合：</strong>把社媒、视频、代码社区等信息源封装到统一入口，适合接入 Agent 工作流。</li><li><strong>CLI 优先：</strong>命令行形态天然适合被 coding agent、自动化脚本和 MCP-like 工具链调用。</li><li><strong>低 API 依赖：</strong>项目说明中以 cookie auth、现有开源后端等方式降低官方 API 费用与接入门槛。</li><li><strong>面向上下文扩展：</strong>可作为 RAG、竞品监控、内容摘要、趋势发现等任务的数据入口。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>技术趋势雷达：</strong>自动抓取 GitHub、Reddit、YouTube 等渠道的新项目与讨论。</li><li><strong>内容创作助手：</strong>围绕一个主题收集多平台素材，再交给 LLM 做摘要、提纲和脚本。</li><li><strong>竞品与社区观察：</strong>跟踪社媒反馈、视频评论和开源社区 Issue/Repo 变化。</li><li><strong>Agent 工具接入：</strong>把 CLI 包装为本地工具，让 Agent 在需要时主动检索外部资料。</li></ul></div></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/Panniantong/Agent-Reach" target="_blank" rel="noopener">查看项目</a><a class="link-btn secondary" href="https://github.com/Panniantong/Agent-Reach/blob/main/docs/README_en.md" target="_blank" rel="noopener">阅读英文文档</a></div>
+      </article>
+      <div class="tips-card"><h2 class="section-title">🧭 今日学习建议</h2><ul><li><strong>从“工具调用”看 Agent：</strong>不要只看模型本身，重点观察项目如何定义任务边界、上下文文件、技能拆分和失败恢复。</li><li><strong>从“输入质量”看生产力：</strong>OpenMontage 解决多步骤产出，Agent-Reach 解决信息输入，两者组合起来正好覆盖 Agent 工作流的两端。</li><li><strong>落地时先小范围试点：</strong>建议先选择一个固定栏目或固定调研主题，把流程跑稳定，再逐步扩展到更复杂任务。</li></ul></div>
+      <div class="source-card"><h2 class="section-title">🔗 信息来源</h2><ul><li>GitHub Trending 今日结果与项目页：<a href="https://github.com/trending" target="_blank" rel="noopener">https://github.com/trending</a></li><li>OpenMontage 项目页：<a href="https://github.com/calesthio/OpenMontage" target="_blank" rel="noopener">https://github.com/calesthio/OpenMontage</a></li><li>Agent-Reach 项目页：<a href="https://github.com/Panniantong/Agent-Reach" target="_blank" rel="noopener">https://github.com/Panniantong/Agent-Reach</a></li></ul></div>
+    </section>
+    <footer>Generated for 孙纾荣 · GitHub 精选项目推送 · 2026-06-20</footer>
+  </main>
+</body>
+</html>
