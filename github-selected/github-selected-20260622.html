@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub 精选项目报告 | 2026年6月22日</title>
+  <style>
+    :root { --primary:#0052D9; --primary-2:#2F80ED; --primary-soft:#EAF2FF; --bg:#F3F5F8; --card-bg:#FFFFFF; --text-main:#1C1F23; --text-sub:#5C6A82; --border:rgba(0,82,217,.13); --shadow:0 18px 48px rgba(8,32,71,.10); }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:24px; background:linear-gradient(180deg,#EEF4FF 0%,var(--bg) 280px); color:var(--text-main); font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; }
+    .wrap { max-width:980px; margin:0 auto; background:var(--card-bg); border-radius:28px; overflow:hidden; box-shadow:var(--shadow); }
+    .hero { position:relative; padding:44px 44px 36px; color:#fff; background:radial-gradient(circle at 86% 8%,rgba(255,255,255,.92),rgba(255,255,255,.12) 30%,transparent 48%),linear-gradient(135deg,#003EA8 0%,#0052D9 46%,#4FA3FF 100%); }
+    .hero:after { content:""; position:absolute; right:34px; bottom:-46px; width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,.12); filter:blur(1px); }
+    .badge-group { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px; }
+    .badge { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.22); font-size:13px; font-weight:700; }
+    h1 { margin:0 0 14px; font-size:34px; line-height:1.25; letter-spacing:-.02em; }
+    .hero p { margin:0; max-width:780px; color:rgba(255,255,255,.94); font-size:16px; position:relative; z-index:1; }
+    .content { padding:34px 44px 40px; }
+    .section-title { display:flex; align-items:center; gap:10px; margin:0 0 18px; font-size:24px; color:var(--primary); }
+    .lead-card,.project-card,.tips-card,.source-card { background:#fff; border:1px solid var(--border); border-radius:20px; padding:24px; margin-bottom:22px; box-shadow:0 10px 28px rgba(0,82,217,.06); }
+    .lead-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .metric { background:linear-gradient(180deg,#F8FBFF,#FFFFFF); border:1px solid var(--border); border-radius:16px; padding:16px; }
+    .metric .label { display:block; font-size:13px; color:var(--text-sub); margin-bottom:8px; }
+    .metric .value { display:block; font-size:22px; font-weight:800; color:var(--primary); }
+    .project-head { display:flex; justify-content:space-between; gap:18px; align-items:flex-start; margin-bottom:14px; }
+    .project-title { margin:0; font-size:28px; line-height:1.3; }
+    .project-subtitle { margin:8px 0 0; color:var(--text-sub); }
+    .rank { min-width:90px; text-align:center; background:linear-gradient(180deg,#F6FAFF,#EAF2FF); color:var(--primary); border-radius:16px; padding:14px 12px; border:1px solid var(--border); font-weight:800; }
+    .meta-row { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 18px; }
+    .chip { display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border-radius:999px; font-size:13px; color:var(--text-sub); background:#F7FAFE; border:1px solid rgba(92,106,130,.14); }
+    .summary { margin:0 0 18px; font-size:16px; color:var(--text-main); }
+    .grid-2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:12px; }
+    .panel { background:#FAFCFF; border:1px solid var(--border); border-radius:16px; padding:18px; }
+    .panel h3 { margin:0 0 12px; font-size:17px; color:var(--primary); }
+    ul { margin:0; padding-left:20px; }
+    li { margin-bottom:10px; color:var(--text-sub); }
+    li strong { color:var(--text-main); }
+    .cta-row { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+    .link-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; border-radius:12px; padding:10px 16px; font-weight:700; transition:transform .18s ease, box-shadow .18s ease; }
+    .link-btn.primary { color:#fff; background:linear-gradient(135deg,var(--primary),var(--primary-2)); box-shadow:0 8px 18px rgba(0,82,217,.18); }
+    .link-btn.secondary { color:var(--primary); background:var(--primary-soft); border:1px solid var(--border); }
+    .link-btn:hover { transform:translateY(-2px); }
+    .source-card a { color:var(--primary); font-weight:700; word-break:break-all; }
+    footer { padding:22px 44px 34px; color:var(--text-sub); border-top:1px solid var(--border); background:#FAFCFF; }
+    @media (max-width:760px) { body{padding:12px;} .hero,.content,footer{padding-left:22px;padding-right:22px;} .lead-grid,.grid-2{grid-template-columns:1fr;} .project-head{flex-direction:column;} h1{font-size:28px;} }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="badge-group"><span class="badge">GitHub 精选</span><span class="badge">AI Agent</span><span class="badge">2026-06-22</span></div>
+      <h1>GitHub 精选项目报告：AI Agent 从“会聊天”走向“会执行、会沉淀”</h1>
+      <p>今天精选 2 个值得技术人关注的 AI 项目：OpenClaw 代表面向个人电脑的通用 AI 执行助手，Superpowers 则把软件开发中的 Agent 技能、方法论和可复用上下文系统化。两者共同指向一个趋势：AI 工具正在从提示词工具变成可长期维护的工作系统。</p>
+    </section>
+    <section class="content">
+      <h2 class="section-title">📌 今日结论</h2>
+      <div class="lead-card">
+        <p class="summary">如果你关注 AI 落地，今天可以重点看两个方向：<strong>OpenClaw</strong> 适合观察“本地个人 AI 助手如何接管跨应用任务”，<strong>Superpowers</strong> 适合学习“如何把开发经验沉淀成 Agent 可复用技能”。前者偏产品形态与自动化执行，后者偏工程方法论与团队能力复用。</p>
+        <div class="lead-grid">
+          <div class="metric"><span class="label">精选项目</span><span class="value">2 个</span></div>
+          <div class="metric"><span class="label">主题方向</span><span class="value">Agent 工作系统</span></div>
+          <div class="metric"><span class="label">数据时间</span><span class="value">2026-06-22</span></div>
+        </div>
+      </div>
+      <article class="project-card">
+        <div class="project-head"><div><h2 class="project-title">openclaw / openclaw</h2><p class="project-subtitle">跨操作系统、跨平台的个人 AI 助手</p></div><div class="rank">TOP 1<br/>个人助理</div></div>
+        <div class="meta-row"><span class="chip">Repository: openclaw/openclaw</span><span class="chip">语言：TypeScript</span><span class="chip">Stars：379,844</span></div>
+        <p class="summary">OpenClaw 的定位是“你的个人 AI 助手，任意 OS、任意平台”。它的看点不只是聊天或问答，而是把本地桌面、浏览器、文件和日常工作流连接起来，让 AI 更接近一个能执行任务的个人管家。对于技术人来说，它是观察 AI Agent 产品化、跨平台客户端架构和本地自动化交互的好样本。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>跨平台客户端：</strong>TypeScript 技术栈利于构建统一体验，适合研究桌面端与 Web 能力整合。</li><li><strong>任务执行导向：</strong>强调“personal AI assistant”，核心价值在于把自然语言意图转成可执行动作。</li><li><strong>本地工作流入口：</strong>适合连接文件、应用、浏览器和日常自动化任务，降低 AI 使用的上下文切换成本。</li><li><strong>高社区热度：</strong>截至本次检索约 37.98 万 Star，说明个人 Agent 形态仍是开源社区关注焦点。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>个人效率中枢：</strong>统一处理资料整理、日程梳理、网页检索和跨应用操作。</li><li><strong>桌面 Agent 学习：</strong>研究 AI 助手如何处理权限、上下文、工具调用和用户确认。</li><li><strong>跨平台产品参考：</strong>为 Electron / Web 技术栈构建 AI 客户端提供产品与工程样本。</li><li><strong>自动化原型验证：</strong>快速验证“自然语言控制本地任务”的可行性和边界。</li></ul></div></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener">查看项目</a><a class="link-btn secondary" href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener">项目主页</a></div>
+      </article>
+      <article class="project-card">
+        <div class="project-head"><div><h2 class="project-title">obra / superpowers</h2><p class="project-subtitle">Agentic Skills 框架与软件开发方法论</p></div><div class="rank">TOP 2<br/>开发技能</div></div>
+        <div class="meta-row"><span class="chip">Repository: obra/superpowers</span><span class="chip">语言：Shell</span><span class="chip">Stars：235,205</span></div>
+        <p class="summary">Superpowers 的价值在于把“如何更好地使用 AI 写软件”做成可迁移的技能框架。它不把 Agent 看作一次性对话工具，而是强调通过 Skills、约定和方法论，让开发过程中的上下文、规范、调试流程、交付检查可以被复用。对于团队工程效能来说，这类项目的启发是：AI 能力的上限不只取决于模型，也取决于你如何组织技能和工作流。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>技能框架：</strong>把常用开发行为抽象成 Agentic Skills，便于长期复用和演化。</li><li><strong>方法论优先：</strong>关注软件开发流程本身，包括需求澄清、实现、验证和复盘。</li><li><strong>轻量集成：</strong>Shell 形态降低接入门槛，方便与现有命令行、编辑器和仓库约定组合。</li><li><strong>工程治理视角：</strong>适合把团队经验固化为可执行规范，而不只是写提示词模板。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>个人 AI 开发环境：</strong>沉淀自己的代码阅读、测试生成、发布检查和排障流程。</li><li><strong>团队最佳实践：</strong>把 Code Review、Bug 修复、架构设计等经验变成可复用技能。</li><li><strong>新人训练：</strong>通过可执行的技能流程帮助新人理解团队工程习惯。</li><li><strong>Agent 平台设计参考：</strong>学习如何组织技能目录、触发规则和上下文边界。</li></ul></div></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/obra/superpowers" target="_blank" rel="noopener">查看项目</a><a class="link-btn secondary" href="https://github.com/obra/superpowers" target="_blank" rel="noopener">项目主页</a></div>
+      </article>
+      <div class="tips-card"><h2 class="section-title">🧭 今日学习建议</h2><ul><li><strong>看产品化：</strong>研究 OpenClaw 如何把“对话”变成“跨应用任务执行”。</li><li><strong>看方法论：</strong>研究 Superpowers 如何把开发经验沉淀成可复用 Agent 技能。</li><li><strong>做小实验：</strong>选一个固定任务，例如每日代码巡检或资料整理，尝试把它拆成技能、工具和校验步骤。</li></ul></div>
+      <div class="source-card"><h2 class="section-title">🔗 信息来源</h2><ul><li>OpenClaw 项目页：<a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener">https://github.com/openclaw/openclaw</a></li><li>Superpowers 项目页：<a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">https://github.com/obra/superpowers</a></li><li>GitHub Search API：按 topic:ai、stars、pushed 时间检索，并以本次返回的项目元信息作为 Star 与语言数据来源。</li></ul></div>
+    </section>
+    <footer>Generated for 孙纾荣 · GitHub 精选项目推送 · 2026-06-22</footer>
+  </main>
+</body>
+</html>
