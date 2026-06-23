@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub 精选项目报告 | 2026年6月23日</title>
+  <style>
+    :root { --primary:#0052D9; --primary-2:#2F80ED; --primary-soft:#EAF2FF; --bg:#F3F5F8; --card-bg:#FFFFFF; --text-main:#1C1F23; --text-sub:#5C6A82; --border:rgba(0,82,217,.13); --shadow:0 18px 48px rgba(8,32,71,.10); }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:24px; background:linear-gradient(180deg,#EEF4FF 0%,var(--bg) 280px); color:var(--text-main); font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; }
+    .wrap { max-width:980px; margin:0 auto; background:var(--card-bg); border-radius:28px; overflow:hidden; box-shadow:var(--shadow); }
+    .hero { position:relative; padding:44px 44px 36px; color:#fff; background:radial-gradient(circle at 86% 8%,rgba(255,255,255,.92),rgba(255,255,255,.12) 30%,transparent 48%),linear-gradient(135deg,#003EA8 0%,#0052D9 46%,#4FA3FF 100%); }
+    .hero:after { content:""; position:absolute; right:34px; bottom:-46px; width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,.12); filter:blur(1px); }
+    .badge-group { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px; }
+    .badge { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.22); font-size:13px; font-weight:700; }
+    h1 { margin:0 0 14px; font-size:34px; line-height:1.25; letter-spacing:-.02em; }
+    .hero p { margin:0; max-width:780px; color:rgba(255,255,255,.94); font-size:16px; position:relative; z-index:1; }
+    .content { padding:34px 44px 40px; }
+    .section-title { display:flex; align-items:center; gap:10px; margin:0 0 18px; font-size:24px; color:var(--primary); }
+    .lead-card,.project-card,.tips-card,.source-card { background:#fff; border:1px solid var(--border); border-radius:20px; padding:24px; margin-bottom:22px; box-shadow:0 10px 28px rgba(0,82,217,.06); }
+    .lead-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .metric { background:linear-gradient(180deg,#F8FBFF,#FFFFFF); border:1px solid var(--border); border-radius:16px; padding:16px; }
+    .metric .label { display:block; font-size:13px; color:var(--text-sub); margin-bottom:8px; }
+    .metric .value { display:block; font-size:22px; font-weight:800; color:var(--primary); }
+    .project-head { display:flex; justify-content:space-between; gap:18px; align-items:flex-start; margin-bottom:14px; }
+    .project-title { margin:0; font-size:28px; line-height:1.3; }
+    .project-subtitle { margin:8px 0 0; color:var(--text-sub); }
+    .rank { min-width:90px; text-align:center; background:linear-gradient(180deg,#F6FAFF,#EAF2FF); color:var(--primary); border-radius:16px; padding:14px 12px; border:1px solid var(--border); font-weight:800; }
+    .meta-row { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 18px; }
+    .chip { display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border-radius:999px; font-size:13px; color:var(--text-sub); background:#F7FAFE; border:1px solid rgba(92,106,130,.14); }
+    .summary { margin:0 0 18px; font-size:16px; color:var(--text-main); }
+    .grid-2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:12px; }
+    .panel { background:#FAFCFF; border:1px solid var(--border); border-radius:16px; padding:18px; }
+    .panel h3 { margin:0 0 12px; font-size:17px; color:var(--primary); }
+    ul { margin:0; padding-left:20px; }
+    li { margin-bottom:10px; color:var(--text-sub); }
+    li strong { color:var(--text-main); }
+    .cta-row { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+    .link-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; border-radius:12px; padding:10px 16px; font-weight:700; transition:transform .18s ease, box-shadow .18s ease; }
+    .link-btn.primary { color:#fff; background:linear-gradient(135deg,var(--primary),var(--primary-2)); box-shadow:0 8px 18px rgba(0,82,217,.18); }
+    .link-btn.secondary { color:var(--primary); background:var(--primary-soft); border:1px solid var(--border); }
+    .link-btn:hover { transform:translateY(-2px); }
+    .source-card a { color:var(--primary); font-weight:700; word-break:break-all; }
+    footer { padding:22px 44px 34px; color:var(--text-sub); border-top:1px solid var(--border); background:#FAFCFF; }
+    @media (max-width:760px) { body{padding:12px;} .hero,.content,footer{padding-left:22px;padding-right:22px;} .lead-grid,.grid-2{grid-template-columns:1fr;} .project-head{flex-direction:column;} h1{font-size:28px;} }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="badge-group"><span class="badge">GitHub 精选</span><span class="badge">AI 工程化</span><span class="badge">2026-06-23</span></div>
+      <h1>GitHub 精选项目报告：AI Agent 从“工具调用”走向“可治理的工程系统”</h1>
+      <p>今天精选 2 个值得技术人关注的项目：ECC 关注 Agent Harness 的性能、记忆与安全体系，Hermes Agent 则探索“会随使用者成长”的自适应智能体。它们共同说明，AI Agent 的竞争点正在从单次回答质量，转向长期上下文、执行可靠性与工程治理。</p>
+    </section>
+    <section class="content">
+      <h2 class="section-title">📌 今日结论</h2>
+      <div class="lead-card">
+        <p class="summary">如果你正在构建或使用 AI 编程助手，今天的重点是两类能力：<strong>ECC</strong> 代表“把 Agent 运行环境做成可优化、可加固、可复用的系统”，<strong>Hermes Agent</strong> 代表“让 Agent 在持续交互中积累偏好、技能与上下文”。前者偏底层工程框架，后者偏长期个人/团队助手形态。</p>
+        <div class="lead-grid">
+          <div class="metric"><span class="label">精选项目</span><span class="value">2 个</span></div>
+          <div class="metric"><span class="label">主题方向</span><span class="value">Agent 工程化</span></div>
+          <div class="metric"><span class="label">数据时间</span><span class="value">2026-06-23</span></div>
+        </div>
+      </div>
+      <article class="project-card">
+        <div class="project-head"><div><h2 class="project-title">affaan-m / ECC</h2><p class="project-subtitle">面向 Claude Code、Codex、Cursor 等工具的 Agent Harness 性能优化系统</p></div><div class="rank">TOP 1<br/>Agent Harness</div></div>
+        <div class="meta-row"><span class="chip">Repository: affaan-m/ECC</span><span class="chip">语言：JavaScript</span><span class="chip">Stars：220,012</span></div>
+        <p class="summary">ECC 的定位是 Agent Harness 性能优化系统，围绕 Skills、Instincts、Memory、Security 和 Research-first Development 等能力，帮助 Claude Code、Codex、OpenCode、Cursor 等 AI 编程助手形成更稳定的执行环境。它值得关注的原因不只是“又一个提示词集合”，而是把 AI 编程助手常见的上下文丢失、执行漂移、安全边界和研究不足问题，放到工程化框架中统一处理。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>Harness 思路：</strong>把不同 AI 编程工具抽象到统一工作外壳中，方便沉淀流程和约束。</li><li><strong>记忆与技能：</strong>通过 Memory 与 Skills 管理长期上下文，减少重复解释和一次性提示词依赖。</li><li><strong>安全优先：</strong>将 Security 放入核心能力，适合研究 Agent 执行命令、读写文件和调用工具时的边界控制。</li><li><strong>研究驱动开发：</strong>强调 Research-first，适合在复杂任务前先建立事实依据，再进入实现阶段。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>个人 AI 开发工作台：</strong>把常用调试、代码阅读、测试生成和发布检查流程固化下来。</li><li><strong>团队 Agent 规范：</strong>为团队统一 AI 编程助手的上下文、权限和交付检查口径。</li><li><strong>复杂任务拆解：</strong>用于需要先调研、再编码、再验证的多步骤研发任务。</li><li><strong>安全实验：</strong>观察 Agent 工具调用如何设置权限、确认机制和风险控制。</li></ul></div></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">查看项目</a><a class="link-btn secondary" href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">项目主页</a></div>
+      </article>
+      <article class="project-card">
+        <div class="project-head"><div><h2 class="project-title">NousResearch / hermes-agent</h2><p class="project-subtitle">会随使用者成长的 AI Agent</p></div><div class="rank">TOP 2<br/>成长型 Agent</div></div>
+        <div class="meta-row"><span class="chip">Repository: NousResearch/hermes-agent</span><span class="chip">语言：Python</span><span class="chip">Stars：200,109</span></div>
+        <p class="summary">Hermes Agent 的简介是“The agent that grows with you”。它的核心看点在于长期演化：相比一次性问答，成长型 Agent 更关注持续交互中的偏好学习、任务习惯、上下文积累和工具使用能力。对于开发者来说，这类项目可以作为研究个人 AI 助手、持续记忆系统和自适应工作流的样本。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>成长型定位：</strong>强调 Agent 随用户成长，适合研究长期记忆与个性化策略。</li><li><strong>Python 生态：</strong>更方便与现有 LLM、RAG、工具调用和自动化脚本生态连接。</li><li><strong>个人化工作流：</strong>关注持续任务，而不是单轮对话，适合沉淀用户偏好和任务上下文。</li><li><strong>研究社区背景：</strong>NousResearch 的项目常面向开放模型和 Agent 实验，适合作为技术探索入口。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>个人研究助手：</strong>长期跟踪论文、代码仓库、技术主题和阅读偏好。</li><li><strong>团队知识助理：</strong>积累项目背景、常见问题、排障流程和成员协作习惯。</li><li><strong>Agent 记忆实验：</strong>验证短期上下文、长期记忆和任务画像如何协同。</li><li><strong>产品原型：</strong>为“越用越懂你”的 AI 助手构建产品与技术样板。</li></ul></div></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">查看项目</a><a class="link-btn secondary" href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">项目主页</a></div>
+      </article>
+      <div class="tips-card"><h2 class="section-title">🧭 今日学习建议</h2><ul><li><strong>看工程化：</strong>研究 ECC 如何把技能、记忆、安全和研究流程组织成可复用 Harness。</li><li><strong>看长期记忆：</strong>研究 Hermes Agent 如何围绕“随用户成长”设计上下文和个性化能力。</li><li><strong>做小实验：</strong>选一个固定开发任务，例如 Bug 排查或代码巡检，把它拆成 Research → Plan → Execute → Verify 四个阶段，并尝试沉淀成可复用流程。</li></ul></div>
+      <div class="source-card"><h2 class="section-title">🔗 信息来源</h2><ul><li>ECC 项目页：<a href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">https://github.com/affaan-m/ECC</a></li><li>Hermes Agent 项目页：<a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">https://github.com/NousResearch/hermes-agent</a></li><li>GitHub Search API：按 topic:llm / topic:mcp、stars、pushed 时间检索，并以本次返回的项目元信息作为 Star 与语言数据来源。</li></ul></div>
+    </section>
+    <footer>Generated for 孙纾荣 · GitHub 精选项目推送 · 2026-06-23</footer>
+  </main>
+</body>
+</html>
