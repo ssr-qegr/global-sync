@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub 精选项目报告 - 2026-06-26</title>
+  <style>
+    :root {
+      --primary: #0052D9;
+      --bg: #F3F5F8;
+      --card-bg: #FFFFFF;
+      --text-main: #1C1F23;
+      --text-sub: #5C6A82;
+      --line: #DCE6F2;
+      --soft: #F8FAFC;
+      --shadow: 0 10px 30px rgba(0, 82, 217, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #EEF4FF 0%, var(--bg) 100%);
+      color: var(--text-main);
+      margin: 0;
+      padding: 24px;
+    }
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .hero {
+      padding: 36px 40px 28px;
+      background: linear-gradient(135deg, #0052D9 0%, #0B78FF 100%);
+      color: #fff;
+    }
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+    .hero h1 { margin: 0; font-size: 32px; line-height: 1.2; font-weight: 700; }
+    .hero p { margin: 12px 0 0; font-size: 15px; line-height: 1.85; color: rgba(255,255,255,0.92); }
+    .date-badge {
+      white-space: nowrap;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.24);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+    .summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+    .summary-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .summary-card .label { font-size: 12px; opacity: 0.85; margin-bottom: 6px; }
+    .summary-card .value { font-size: 22px; font-weight: 700; }
+    .section { padding: 30px 40px; border-bottom: 1px solid #EEF2F7; }
+    .section:last-child { border-bottom: none; }
+    .section-title { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; font-size: 22px; color: var(--primary); }
+    .pick-card {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+    .pick-card:last-child { margin-bottom: 0; }
+    .pick-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+    .pick-head h3 { margin: 0 0 8px; font-size: 26px; line-height: 1.3; }
+    .repo-name { color: var(--text-sub); font-size: 14px; margin-bottom: 10px; }
+    .tag-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag {
+      display: inline-block;
+      background: #E0EBF5;
+      color: var(--primary);
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .rank-badge {
+      background: #EAF2FF;
+      color: var(--primary);
+      border: 1px solid #C9DCFF;
+      border-radius: 12px;
+      padding: 10px 12px;
+      min-width: 132px;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 14px 0 18px; }
+    .metric { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; }
+    .metric .k { font-size: 12px; color: var(--text-sub); margin-bottom: 6px; }
+    .metric .v { font-size: 18px; font-weight: 700; color: var(--text-main); }
+    .content-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; }
+    .panel { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+    .panel h4 { margin: 0 0 12px; font-size: 16px; color: var(--text-main); }
+    .panel p { margin: 0; font-size: 14px; color: var(--text-sub); line-height: 1.9; }
+    .panel ul { margin: 0; padding-left: 18px; color: var(--text-sub); }
+    .panel li { margin-bottom: 8px; line-height: 1.8; font-size: 14px; }
+    .reason-list { display: grid; gap: 12px; }
+    .reason-item {
+      background: #F7FAFF;
+      border-left: 4px solid var(--primary);
+      border-radius: 0 12px 12px 0;
+      padding: 14px 16px;
+      color: var(--text-sub);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+    .source-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .source-item {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.8;
+    }
+    .link-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+    .link {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid #CFE0FF;
+      background: #fff;
+    }
+    .footer {
+      padding: 24px 40px 36px;
+      color: var(--text-sub);
+      font-size: 13px;
+      line-height: 1.8;
+      background: #FBFCFE;
+    }
+    .footer strong { color: var(--text-main); }
+    code { background: #F2F6FC; padding: 2px 6px; border-radius: 6px; }
+    @media (max-width: 768px) {
+      body { padding: 12px; }
+      .hero, .section, .footer { padding-left: 20px; padding-right: 20px; }
+      .hero-top, .pick-head { flex-direction: column; }
+      .summary, .metrics, .content-grid { grid-template-columns: 1fr; }
+      .rank-badge { min-width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-top">
+        <div>
+          <h1>🚀 今日 GitHub 精选项目报告</h1>
+          <p>今天精选 2 个非常适合开发者持续关注的 AI 项目：一个解决“让模型真正去网页里做事”，一个解决“把大模型训练与实验过程讲清楚、做得起、改得动”。前者更偏 AI Agent 落地，后者更偏底层认知与工程成长。</p>
+        </div>
+        <div class="date-badge">2026年6月26日</div>
+      </div>
+      <div class="summary">
+        <div class="summary-card"><div class="label">今日精选项目</div><div class="value">2 个</div></div>
+        <div class="summary-card"><div class="label">主题焦点</div><div class="value">AI Agent × LLM 工程</div></div>
+        <div class="summary-card"><div class="label">推荐人群</div><div class="value">开发者 / AI 应用实践者</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">📌 本日精选结论</h2>
+      <div class="reason-list">
+        <div class="reason-item"><strong>如果你正在关注 AI Agent 如何真正执行网页任务：</strong><strong>browser-use</strong> 很值得优先看。它把“让模型看懂页面”进一步推进到“让模型可靠地操作网站”，非常适合自动化、智能助手和浏览器代理方向。</div>
+        <div class="reason-item"><strong>如果你想补齐大模型训练与实验能力：</strong><strong>nanochat</strong> 是很好的成长型项目。它把 tokenization、pretraining、finetuning、evaluation、inference 到 chat UI 串成一条完整链路，而且代码强调 minimal、hackable、strong baseline。</div>
+        <div class="reason-item"><strong>组合价值：</strong>一个帮你理解 AI Agent 的“执行层”，一个帮你理解 LLM 的“训练层”。前者偏应用落地，后者偏底层原理和工程能力，放在一起看很适合技术成长。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">🏆 精选项目详情</h2>
+
+      <article class="pick-card">
+        <div class="pick-head">
+          <div>
+            <div class="repo-name">browser-use / browser-use</div>
+            <h3>#1 browser-use</h3>
+            <div class="tag-row">
+              <span class="tag">AI Agent</span><span class="tag">Browser Automation</span><span class="tag">Python</span><span class="tag">Playwright</span><span class="tag">MIT License</span>
+            </div>
+          </div>
+          <div class="rank-badge"><div><strong>入选理由</strong></div><div>有趣且落地感强</div></div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><div class="k">Stars</div><div class="v">100,719</div></div>
+          <div class="metric"><div class="k">Forks</div><div class="v">11,201</div></div>
+          <div class="metric"><div class="k">主要语言</div><div class="v">Python</div></div>
+          <div class="metric"><div class="k">最近推送</div><div class="v">2026-06-26</div></div>
+        </div>
+        <div class="content-grid">
+          <div class="panel"><h4>项目详细介绍</h4><p>browser-use 的核心目标非常直接：让网站对 AI agents 真正“可操作”。它不是只给一个简单的网页抓取脚本，而是把浏览器操作、页面理解、任务执行和恢复机制整合成面向智能代理的工作流。README 里已经把它定位成可以配合 Claude Code、Cursor 等 coding agent 使用的基础能力，也提供了 Python API、文档和云端服务入口。</p></div>
+          <div class="panel"><h4>技术亮点</h4><ul><li>项目定位非常清晰：Make websites accessible for AI agents，强调的是“可执行”而不是单纯爬取。</li><li>README 展示了新的 Rust core + browser harness 方向，说明它正在往更强执行稳定性与性能演进。</li><li>兼容现代 LLM 工作流，可与 OpenAI、Anthropic 以及自家 Browser Use Cloud 模型接入。</li><li>支持真实浏览器动作空间、持久化工具和恢复循环，适合长任务与复杂网页流程。</li><li>生态成熟度高，Star 与 Fork 规模都很大，说明社区采用度已经不低。</li></ul></div>
+          <div class="panel"><h4>使用场景</h4><ul><li>做网页 AI 助手，让模型自动完成检索、点击、表单填写、信息采集。</li><li>构建 RPA / Web Operator / 浏览器代理类产品原型。</li><li>对在线流程进行自动化回归与任务执行验证。</li><li>给智能客服、研究助手、运营自动化系统补上“真实网页执行能力”。</li></ul></div>
+          <div class="panel"><h4>为什么值得关注</h4><ul><li>AI Agent 今年一个明显趋势，就是从“会回答”走向“会操作”。browser-use 正好踩在这个趋势核心位置。</li><li>它既能给应用开发者直接带来生产力，也很适合工程师研究 agent 执行层该怎么设计。</li><li>对做自动化测试、信息抓取、企业流程助手的人来说，参考价值很高。</li><li>如果你想理解“AI 怎么接入真实世界的界面系统”，这是很有代表性的仓库。</li></ul></div>
+        </div>
+        <div class="link-row"><a class="link" href="https://github.com/browser-use/browser-use" target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a><a class="link" href="https://browser-use.com" target="_blank" rel="noopener noreferrer">项目主页 ↗</a><a class="link" href="https://raw.githubusercontent.com/browser-use/browser-use/main/README.md" target="_blank" rel="noopener noreferrer">README ↗</a></div>
+      </article>
+
+      <article class="pick-card">
+        <div class="pick-head">
+          <div>
+            <div class="repo-name">karpathy / nanochat</div>
+            <h3>#2 nanochat</h3>
+            <div class="tag-row">
+              <span class="tag">LLM Training</span><span class="tag">教育价值高</span><span class="tag">Python</span><span class="tag">Chat UI</span><span class="tag">MIT License</span>
+            </div>
+          </div>
+          <div class="rank-badge"><div><strong>入选理由</strong></div><div>技术成长向很强</div></div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><div class="k">Stars</div><div class="v">55,443</div></div>
+          <div class="metric"><div class="k">Forks</div><div class="v">7,624</div></div>
+          <div class="metric"><div class="k">主要语言</div><div class="v">Python</div></div>
+          <div class="metric"><div class="k">最近推送</div><div class="v">2026-05-05</div></div>
+        </div>
+        <div class="content-grid">
+          <div class="panel"><h4>项目详细介绍</h4><p>nanochat 是 Andrej Karpathy 推出的一个 LLM 训练实验底座，主打“最简单但完整”的训练链路。README 里明确写到，它覆盖 tokenization、pretraining、finetuning、evaluation、inference 以及 chat UI，而且希望代码保持 minimal、readable、hackable。对开发者来说，它不是一个黑盒框架，更像一份能真正读懂、改动并复现实验的高质量样例。</p></div>
+          <div class="panel"><h4>技术亮点</h4><ul><li>聚焦单 GPU node 到 8×H100 训练实验，目标是让训练流程尽量可理解、可复现。</li><li>把一个关键复杂度旋钮浓缩成 <code>--depth</code>，其余超参数按计算最优方式自动推导，设计思路很有启发。</li><li>README 给出了 GPT-2 级能力模型的时间与成本对比，强调“以前很贵的能力，现在可以在更低成本下复现”。</li><li>既能跑训练，也能直接挂出 ChatGPT 风格 Web UI，方便把训练结果快速体验化。</li><li>适合作为阅读源码、做实验、理解 scaling law 与训练工程的切入口。</li></ul></div>
+          <div class="panel"><h4>使用场景</h4><ul><li>系统理解 LLM 训练流水线，而不是只停留在调用 API。</li><li>做模型训练实验、参数尝试与小规模研究验证。</li><li>学习如何把训练、评估、推理和聊天界面串成一条完整链路。</li><li>给团队内部做“从零到可对话模型”的技术分享或训练营素材。</li></ul></div>
+          <div class="panel"><h4>为什么值得关注</h4><ul><li>它特别适合“想更懂大模型工程，但又不想一上来就陷入超重框架”的开发者。</li><li>Karpathy 的项目一贯有很强的教育价值，适合边读边改边实验。</li><li>如果你已经会用模型，但还不太理解模型是怎么训练和演进出来的，这个仓库很适合作为补课入口。</li><li>它既有理论上的启发，也有工程上的可操作性，成长收益非常高。</li></ul></div>
+        </div>
+        <div class="link-row"><a class="link" href="https://github.com/karpathy/nanochat" target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a><a class="link" href="https://raw.githubusercontent.com/karpathy/nanochat/master/README.md" target="_blank" rel="noopener noreferrer">README ↗</a><a class="link" href="https://github.com/karpathy/nanochat/discussions/1" target="_blank" rel="noopener noreferrer">项目说明 ↗</a></div>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">🧭 怎么使用这份精选</h2>
+      <div class="reason-list">
+        <div class="reason-item"><strong>想做 AI Agent 落地：</strong>先看 browser-use，把一个具体场景跑通，比如自动打开站点、检索信息、执行表单操作，再思考如何接入你自己的业务流。</div>
+        <div class="reason-item"><strong>想补强底层理解：</strong>先看 nanochat README 和脚本组织方式，重点理解它如何用较少抽象把训练、评估、推理串起来。</div>
+        <div class="reason-item"><strong>想形成成长闭环：</strong>browser-use 帮你做应用，nanochat 帮你补原理。一个偏“用起来”，一个偏“看懂并能改”，搭配起来非常适合 2026 年的 AI 开发者学习路径。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">🔎 参考来源</h2>
+      <div class="source-list">
+        <div class="source-item"><strong>官方仓库：</strong>https://github.com/browser-use/browser-use 、https://github.com/karpathy/nanochat</div>
+        <div class="source-item"><strong>官方 README：</strong>browser-use README、nanochat README</div>
+        <div class="source-item"><strong>补充说明：</strong>nanochat 项目 Discussion #1 用于补充项目定位说明；browser-use 项目主页用于补充产品入口信息。</div>
+        <div class="source-item"><strong>实时指标：</strong>Stars / Forks / 主要语言 / 最近推送时间基于 GitHub 仓库元数据整理，采集时间为 2026-06-26 中午。</div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <strong>Generated for 孙纾荣</strong><br />
+      style_blue 风格 HTML 页面，已发布到 <code>github-selected/</code> 目录。页面内容重点覆盖：项目是什么、为什么值得看、技术亮点、适用场景，以及开发者怎么用这两个项目建立自己的学习和落地路径。
+    </div>
+  </div>
+</body>
+</html>
