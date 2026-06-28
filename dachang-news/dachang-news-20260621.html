@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大厂新闻 · 2026-06-21</title>
+<style>
+  :root { --primary: #B388FF; --bg: #0D0D0D; --card-bg: #1A1A1A; --text-main: #E0E0E0; --text-sub: #9E9E9E; --accent: #00E5FF; --hot:#FF5C8A; --ok:#48F2A6; }
+  * { box-sizing: border-box; }
+  body { font-family: "Inter", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: radial-gradient(circle at top left, rgba(179,136,255,.18), transparent 34%), radial-gradient(circle at 85% 8%, rgba(0,229,255,.14), transparent 32%), var(--bg); color: var(--text-main); margin: 0; padding: 22px; }
+  .container { max-width: 920px; margin: 0 auto; background: linear-gradient(180deg, rgba(26,26,26,.96), rgba(14,14,16,.98)); padding: 38px; border-radius: 22px; border: 1px solid #333; box-shadow: 0 22px 70px rgba(0,0,0,.58); }
+  .header { text-align: center; margin-bottom: 34px; padding: 28px 18px; border: 1px solid rgba(179,136,255,.22); border-radius: 18px; background: rgba(255,255,255,.025); }
+  .header h1 { color: var(--primary); margin: 0 0 12px 0; font-size: clamp(30px, 5vw, 46px); letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 24px rgba(179,136,255,0.35); }
+  .date { color: var(--text-sub); font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .lead { margin: 18px auto 0; max-width: 760px; color: #c9c9d1; line-height: 1.75; font-size: 15px; }
+  .signal { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:22px 0 4px; }
+  .signal div { border:1px solid #333; background:rgba(255,255,255,.03); border-radius:14px; padding:14px; color:#cfcfd6; font-size:13px; line-height:1.55; }
+  .signal b { display:block; color:var(--accent); margin-bottom:4px; }
+  .section-title { margin: 34px 0 16px; display:flex; align-items:center; gap:10px; color:#fff; font-size:22px; }
+  .section-title::before { content:""; width:10px; height:10px; border-radius:50%; background: var(--accent); box-shadow: 0 0 18px var(--accent); }
+  .news-item { background: rgba(36,36,36,.92); padding: 24px; margin-bottom: 18px; border-radius: 16px; border: 1px solid #333; transition: all 0.3s ease; position: relative; overflow: hidden; }
+  .news-item::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(to bottom, var(--primary), var(--accent)); opacity: .9; }
+  .news-item:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(179,136,255,0.16); border-color: rgba(179,136,255,.35); }
+  .news-item h2 { margin: 2px 0 14px 0; font-size: 20px; color: #FFF; font-weight: 650; line-height:1.35; }
+  .news-item p { margin: 0 0 12px 0; font-size: 15px; color: var(--text-sub); line-height: 1.75; }
+  .news-item strong { color:#f5f5f7; }
+  .tag { display: inline-block; background: rgba(179,136,255,0.1); color: var(--primary); border: 1px solid rgba(179,136,255,0.3); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-bottom: 14px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .source { display:inline-flex; margin-top:6px; color: var(--accent); text-decoration: none; font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; letter-spacing: .6px; }
+  .source:hover { text-shadow: 0 0 8px rgba(0,229,255,0.6); }
+  .note { margin: 26px 0 0; padding: 16px 18px; border:1px dashed #3a3a3a; border-radius:14px; color:#aaa; line-height:1.7; background:rgba(255,255,255,.025); }
+  .footer { text-align: center; margin-top: 36px; padding-top: 20px; border-top: 1px dashed #333; color: #666; font-size: 12px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  @media (max-width: 680px) { body { padding: 14px; } .container { padding: 22px; } .news-item { padding: 20px; } .signal { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>⚡ Big Tech Signal</h1>
+      <div class="date">SYS.DATE: 2026-06-21 // CHANNEL: DACHANG-NEWS // STATUS: ONLINE</div>
+      <p class="lead">今日大厂动态的主线是“AI 入口争夺继续前移”：国内围绕微信、手机入口、国产算力和阿里 AI 组织升级展开；国际侧则围绕 OpenAI 专业场景、Apple/Google 消费者 AI、Meta 商业化订阅继续分化。整体看，AI 竞争已经从模型参数转向入口、算力、组织和商业闭环。</p>
+      <div class="signal">
+        <div><b>国内关键词</b>微信 AI、国产推理芯片、AI 组织升级</div>
+        <div><b>国际关键词</b>企业 AI、消费者 AI、订阅商业化</div>
+        <div><b>影响判断</b>默认入口价值上升，模型服务进入精细化运营</div>
+      </div>
+    </div>
+
+    <h3 class="section-title">国内大厂</h3>
+    <div class="news-item">
+      <span class="tag">#TENCENT #WECHAT_AI #AI入口</span>
+      <h2>微信灰度测试 AI 助手“小微”，腾讯把 AI 入口推进到超级 App 内部</h2>
+      <p><strong>新闻原文：</strong>今日多家科技媒体和聚合资讯提到，微信正在灰度测试内置 AI 助手“小微”，用户可在聊天界面内调用信息查询、内容生成、文档处理等能力；此前也有报道提到微信 AI Agent 正在推进上线前流程。</p>
+      <p><strong>人话翻译：</strong>腾讯不是单独做一个 AI App 让用户重新下载，而是想把 AI 直接塞进微信。对普通用户来说，以后可能不是“打开某个 AI 软件”，而是在微信里顺手问、顺手写、顺手处理。</p>
+      <p><strong>影响分析：</strong>如果微信级入口真正开放，腾讯会拥有国内最强的 AI 分发场景之一。它对搜索、办公、内容生成、小程序服务都会形成二次入口；但同时也会带来合规、隐私、内容安全和生态公平问题，微信必须非常谨慎地灰度推进。</p>
+      <a class="source" href="http://m.toutiao.com/group/7653626146894807590/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#BYTEDANCE #AI_CHIP #INFERENCE</span>
+      <h2>字节跳动被曝加量采购国产 AI 芯片，推理算力成为下一阶段成本焦点</h2>
+      <p><strong>新闻原文：</strong>钛媒体数智周报援引行业消息称，字节跳动正与天数智芯讨论采购至少 5 万颗 AI 芯片，主要用于大模型推理负载；若交易达成，天数智芯将成为华为、寒武纪之后字节跳动的重要国产芯片供应方之一。</p>
+      <p><strong>人话翻译：</strong>大模型训练很贵，但真正每天烧钱的是用户不断调用模型时的“推理”。字节要支撑豆包、搜索、广告、内容理解等大量 AI 场景，就必须提前锁定更可控、更便宜的算力。</p>
+      <p><strong>影响分析：</strong>这说明国内大厂正在把 AI 基建从“能不能训练”推进到“能不能长期低成本服务海量用户”。国产推理芯片如果能在真实业务中稳定跑起来，会加速供应链替代，也会让模型应用价格继续下降。</p>
+      <a class="source" href="http://m.toutiao.com/group/7653789317801738786/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#ALIBABA #TOKEN_FOUNDRY #QWEN</span>
+      <h2>阿里合伙人名单调整，AI 科学家周靖人入局，Token Foundry 被推到前台</h2>
+      <p><strong>新闻原文：</strong>6 月 21 日相关报道提到，阿里巴巴发布 2026 财务年度报告，合伙人名单出现变化：CFO 徐宏和 AI 科学家周靖人加入，邵晓锋退出；报道同时称 CEO 吴泳铭直管 Token Foundry 事业部。</p>
+      <p><strong>人话翻译：</strong>阿里不是只在产品上讲 AI，而是在组织权力结构里给 AI 更高位置。让模型核心科学家进入合伙人体系，意味着 AI 已经从“一个业务方向”变成集团级战略底盘。</p>
+      <p><strong>影响分析：</strong>组织调整会影响资源分配速度。Token Foundry 如果承担模型生产、运营和商业化任务，阿里云、通义、钉钉、淘宝等业务之间的模型协同可能更强；但挑战也在于，集团级 AI 平台需要同时服务云客户、内部业务和消费者产品，取舍会更复杂。</p>
+      <a class="source" href="http://m.toutiao.com/group/7653666295140975167/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#SMARTPHONE_AI #TENCENT #XIAOMI #HUAWEI</span>
+      <h2>手机语音助手调用微信能力引发讨论，手机厂商与互联网平台争夺“入口定义权”</h2>
+      <p><strong>新闻原文：</strong>证券时报报道称，围绕手机厂商语音助手能否直接调动微信能力，腾讯客服作出回应；报道同时指出，微信开放 A2A 能力，以及字节跳动、阿里巴巴等互联网公司布局手机 AI 入口，使 2026 年手机操作系统与互联网服务之间的生态博弈更复杂。</p>
+      <p><strong>人话翻译：</strong>小米、华为等手机厂商想让系统级助手帮用户直接操作微信等 App；互联网平台则不希望自己的核心入口完全被操作系统“代劳”。这本质上是在抢“用户先问谁、先点谁”。</p>
+      <p><strong>影响分析：</strong>未来手机 AI 助手的价值不只取决于模型能力，还取决于能调哪些 App、能执行哪些动作、数据权限如何分配。系统厂商和 App 平台之间会出现更多合作，也会出现更多边界谈判。</p>
+      <a class="source" href="https://www.stcn.com/article/detail/3943490.html" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <h3 class="section-title">国际科技公司</h3>
+    <div class="news-item">
+      <span class="tag">#OPENAI #HEALTH_AI #LIFESCI</span>
+      <h2>OpenAI 近期连续发布医疗与生命科学内容，专业场景成为商业化重点</h2>
+      <p><strong>新闻原文：</strong>OpenAI News 页面显示，6 月 17 日发布 LifeSciBench，6 月 18 日发布“用 AI 帮助医生诊断儿童罕见遗传病”和“近自主 AI 化学家改进药物化学反应”等内容。</p>
+      <p><strong>人话翻译：</strong>OpenAI 不只是在做通用聊天机器人，而是把模型能力往医疗诊断、药物研发、科研工作流这些高价值领域推。越专业的场景，越可能愿意为可靠性和效率付费。</p>
+      <p><strong>影响分析：</strong>生命科学和医疗会成为 AI 落地的重要战场，但也是最难的战场之一：数据质量、责任归属、临床验证和监管要求都很高。对 OpenAI 来说，这类场景能证明模型的专业价值；对行业来说，也会推动 AI 评测从“答题能力”走向“真实工作产出”。</p>
+      <a class="source" href="https://openai.com/news/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#APPLE #GOOGLE #CONSUMER_AI</span>
+      <h2>Apple 与 Google 瞄准大众消费者 AI，和 OpenAI 的企业化路径形成对照</h2>
+      <p><strong>新闻原文：</strong>CNBC 分析称，OpenAI 正更明显地向企业业务倾斜，而 Apple 和 Google 则把目标放在海量消费者 AI 体验上；Apple 在年度开发者大会上介绍了新的 Siri AI，Google 也继续围绕 Gemini 扩展消费者入口。</p>
+      <p><strong>人话翻译：</strong>OpenAI 更像是在卖“企业生产力工具”，苹果和谷歌更像是在把 AI 做进手机、搜索、浏览器和系统。用户不一定主动购买 AI，但会在每天使用设备时自然接触 AI。</p>
+      <p><strong>影响分析：</strong>消费者 AI 的胜负关键是默认入口和体验连续性。Apple 有硬件和系统，Google 有搜索和安卓生态；它们未必需要单点模型最强，但必须做到足够稳定、隐私可解释、能融入日常任务。</p>
+      <a class="source" href="https://www.cnbc.com/amp/2026/06/11/as-openai-leans-into-enterprise-apple-and-google-target-consumer-ai.html" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#META #AI_SUBSCRIPTION #BUSINESS_MODEL</span>
+      <h2>Meta 继续测试 AI 订阅商业化，广告巨头尝试寻找第二增长曲线</h2>
+      <p><strong>新闻原文：</strong>TechFastForward 报道称，Meta 于 5 月 27 日推出 Meta One，包含 7.99 美元和 19.99 美元两个 AI 订阅档位，优先在新加坡、危地马拉和玻利维亚三个市场测试。</p>
+      <p><strong>人话翻译：</strong>Meta 过去主要靠广告赚钱，但 AI 算力投入太大，不能只靠免费功能吸引用户。它开始测试用户是否愿意为更多推理次数、图像/视频生成和高级能力付费。</p>
+      <p><strong>影响分析：</strong>AI 订阅是平台补贴成本的一种方式，也是在验证消费者愿不愿意为 AI 直接付钱。Meta 的优势是用户规模和社交分发，难点是把 AI 能力变成高频刚需，而不是“尝鲜功能”。</p>
+      <a class="source" href="https://techfastforward.com/articles/meta-one-launches-799-ai-plans-to-escape-ad-model" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#GOOGLE #GEMINI #MODEL_DEFAULT</span>
+      <h2>Google Gemini 默认模型调整受到关注，模型能力迭代正在变成“无感升级”</h2>
+      <p><strong>新闻原文：</strong>今日 AI 速读类资讯提到，Google 将 Gemini 2.5 Flash 设为 Gemini 产品默认模型的消息受到开发者关注；相关聚合信息称该模型强调速度和成本优势。</p>
+      <p><strong>人话翻译：</strong>用户可能不会关心背后是哪一个模型版本，只会感知“回答更快、更便宜、更稳”。Google 正在把模型升级藏到产品体验里，而不是每次都靠发布会宣传。</p>
+      <p><strong>影响分析：</strong>对开发者和企业来说，默认模型变化会影响成本、延迟和效果，需要建立基础评测和回归机制。对平台来说，谁能把模型能力稳定地沉到全产品线，谁就能把 AI 变成基础设施，而不是单独功能。</p>
+      <a class="source" href="http://m.toutiao.com/group/7653618495665603081/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="note">说明：今日检索中，部分国内和 AI 快讯来自媒体聚合或行业消息，已按“消息称/报道称”口径处理；公司官方页面、产品公告和主流媒体分析优先作为确定性来源。涉及未正式官宣的模型发布时间、融资估值等高不确定信息未作为核心结论采用。</div>
+
+    <div class="footer">
+      TRANSMISSION END · DARK MODE UI · GENERATED FOR SSR-QEGR/GLOBAL-SYNC
+    </div>
+  </div>
+</body>
+</html>

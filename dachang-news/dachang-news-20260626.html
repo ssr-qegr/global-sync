@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大厂新闻 · 2026-06-26</title>
+<style>
+  :root { --primary: #B388FF; --bg: #0D0D0D; --card-bg: #1A1A1A; --text-main: #E0E0E0; --text-sub: #9E9E9E; --accent: #00E5FF; --hot:#FF5C8A; --ok:#48F2A6; --warn:#FFD166; }
+  * { box-sizing: border-box; }
+  body { font-family: "Inter", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: radial-gradient(circle at top left, rgba(179,136,255,.18), transparent 34%), radial-gradient(circle at 85% 8%, rgba(0,229,255,.14), transparent 32%), radial-gradient(circle at 20% 95%, rgba(255,92,138,.10), transparent 30%), var(--bg); color: var(--text-main); margin: 0; padding: 22px; }
+  .container { max-width: 960px; margin: 0 auto; background: linear-gradient(180deg, rgba(26,26,26,.96), rgba(14,14,16,.98)); padding: 38px; border-radius: 22px; border: 1px solid #333; box-shadow: 0 22px 70px rgba(0,0,0,.58); }
+  .header { text-align: center; margin-bottom: 34px; padding: 30px 18px; border: 1px solid rgba(179,136,255,.22); border-radius: 18px; background: rgba(255,255,255,.025); }
+  .header h1 { color: var(--primary); margin: 0 0 12px 0; font-size: clamp(30px, 5vw, 46px); letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 24px rgba(179,136,255,0.35); }
+  .date { color: var(--text-sub); font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .lead { margin: 18px auto 0; max-width: 780px; color: #c9c9d1; line-height: 1.78; font-size: 15px; }
+  .signal { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:22px 0 4px; }
+  .signal div { border:1px solid #333; background:rgba(255,255,255,.03); border-radius:14px; padding:14px; color:#cfcfd6; font-size:13px; line-height:1.55; }
+  .signal b { display:block; color:var(--accent); margin-bottom:4px; }
+  .section-title { margin: 34px 0 16px; display:flex; align-items:center; gap:10px; color:#fff; font-size:22px; }
+  .section-title::before { content:""; width:10px; height:10px; border-radius:50%; background: var(--accent); box-shadow: 0 0 18px var(--accent); }
+  .news-item { background: rgba(36,36,36,.92); padding: 24px; margin-bottom: 18px; border-radius: 16px; border: 1px solid #333; transition: all 0.3s ease; position: relative; overflow: hidden; }
+  .news-item::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(to bottom, var(--primary), var(--accent)); opacity: .9; }
+  .news-item:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(179,136,255,0.16); border-color: rgba(179,136,255,.35); }
+  .news-item h2 { margin: 2px 0 14px 0; font-size: 20px; color: #FFF; font-weight: 650; line-height:1.35; }
+  .news-item p { margin: 0 0 12px 0; font-size: 15px; color: var(--text-sub); line-height: 1.75; }
+  .news-item strong { color:#f5f5f7; }
+  .tag { display: inline-block; background: rgba(179,136,255,0.1); color: var(--primary); border: 1px solid rgba(179,136,255,0.3); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-bottom: 14px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .source { display:inline-flex; margin-top:6px; color: var(--accent); text-decoration: none; font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; letter-spacing: .6px; }
+  .source:hover { text-shadow: 0 0 8px rgba(0,229,255,0.6); }
+  .note { margin: 26px 0 0; padding: 16px 18px; border:1px dashed #3a3a3a; border-radius:14px; color:#aaa; line-height:1.7; background:rgba(255,255,255,.025); }
+  .footer { text-align: center; margin-top: 36px; padding-top: 20px; border-top: 1px dashed #333; color: #666; font-size: 12px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  @media (max-width: 680px) { body { padding: 14px; } .container { padding: 22px; } .news-item { padding: 20px; } .signal { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>⚡ Big Tech Signal</h1>
+      <div class="date">SYS.DATE: 2026-06-26 // CHANNEL: DACHANG-NEWS // STATUS: ONLINE</div>
+      <p class="lead">今日大厂主线是"AI 战略全面收敛 + 算力军备从概念走向量产"。国内侧，字节 CEO 梁汝波罕见露面把 2026 年关键词定为"勇攀高峰"全面押注 AI，同时字节确认暂不上市并寻求 200 亿美元离岸贷款；腾讯系统级 AI 助手 Marvis 上线 iOS；华为发布 138.8 万元起的尊界 S800 Grand Design 旗舰，并联合中国移动推出业内首个"企安宝"安全资源池；小米卢伟冰预警内存涨价或把安卓旗舰推入万元区间。国际侧，AWS 把英伟达 Blackwell 推向生产环境、规划 100 万颗 GPU 与 2000 亿美元 AI 投入；OpenAI 把 GPT-5.5 Instant 向全球免费用户开放，但 GPT-5.6 被美国政府要求"一客一审"；谷歌 7 天痛失 4 位核心 AI 元老；苹果 iPad/Mac 因内存短缺普涨约 20%。</p>
+      <div class="signal">
+        <div><b>国内关键词</b>字节聚焦AI、暂不IPO、腾讯Marvis上线、华为尊界S800、小米万元旗舰预警</div>
+        <div><b>国际关键词</b>AWS Blackwell量产、GPT-5.5全员开放、GPT-5.6限量发布、Google人才流失、苹果涨价20%</div>
+        <div><b>影响判断</b>云厂 + 芯片厂直接受益 AI 资本开支；AI 平台公司进入"模型 + 监管"双重博弈期</div>
+      </div>
+    </div>
+
+    <h3 class="section-title">国内大厂</h3>
+
+    <div class="news-item">
+      <span class="tag">#BYTEDANCE #AI #STRATEGY</span>
+      <h2>字节跳动 CEO 梁汝波罕见露面：2026 全面押注 AI，关键词改为"勇攀高峰"</h2>
+      <p><strong>新闻原文：</strong>6 月 23-24 日的"2026 火山引擎 FORCE 大会"上，字节跳动 CEO 梁汝波通过视频发表演讲，正式明确字节全面聚焦 AI 的战略方向。他将 AI 定义为"与 PC、Web、Mobile 同级别的 IT 产业级变革"，并把 2026 年公司关键词定为"勇攀高峰"，核心动作就是"攀登 AI 高峰"，过去几年公司一直在收缩业务宽度，把精力聚焦到模型与基础设施。</p>
+      <p><strong>人话翻译：</strong>字节一号位极少公开露面，这次直接定调："2026 年只有一件事——把 AI 做到顶"。其他不赚钱、不能服务 AI 主线的业务，都要让路。</p>
+      <p><strong>影响分析：</strong>这意味着字节内部资源会进一步向豆包大模型、火山引擎、AI 硬件等核心方向倾斜，边缘业务面临收缩或裁撤；对外则会加大与阿里通义、腾讯元宝、百度文心的直接竞争。对整个国内 AI 行业而言，"大厂只有 AI 一条主线"的共识进一步固化。</p>
+      <a class="source" href="https://www.cls.cn/detail/2406762" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#BYTEDANCE #IPO #FINANCING</span>
+      <h2>字节跳动暂不上市，估值 6000 亿美元，磋商 200 亿美元离岸贷款</h2>
+      <p><strong>新闻原文：</strong>据日经亚洲及彭博社披露，字节跳动董事会于 2026 年 5 月会议确认短期内不会推进 IPO，公司估值已达约 6000 亿美元。同时，字节正与多家银行初步磋商筹措约 200 亿美元的离岸贷款，用于支撑海外业务与 AI 算力扩张。</p>
+      <p><strong>人话翻译：</strong>字节明确说"现在还不上市"，但又跑去借了一笔约 1400 亿元人民币的海外贷款——理由很直接：要烧钱做 AI 和海外，不靠 IPO 拿钱。</p>
+      <p><strong>影响分析：</strong>暂缓 IPO 让字节避开当前地缘政治和监管复杂期，6000 亿美元估值进一步把它推到全球非上市公司天花板；200 亿美元离岸贷款则反映其海外算力扩张和 TikTok 全球化的资金压力。对员工而言，期权变现窗口继续延后；对竞争对手而言，字节"非上市状态下还能拿到 IPO 级资金"的能力是新的护城河。</p>
+      <a class="source" href="https://www.donews.com/news/detail/4/6611168.html" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#TENCENT #AI_ASSISTANT #IOS</span>
+      <h2>腾讯系统级 AI 助手 Marvis 马维斯 iOS 版正式上线 App Store</h2>
+      <p><strong>新闻原文：</strong>6 月 25 日，腾讯旗下"操作系统层级 AI 助手"Marvis 马维斯移动端 iOS 版本正式登陆苹果 App Store。继 5 月 20 日 Android 端发布之后，Marvis 完成 iOS/Android 双端覆盖，定位为可贯穿操作系统、跨应用调用与执行任务的 AI 助手。</p>
+      <p><strong>人话翻译：</strong>腾讯的"全屏幕能用的 AI 助手"Marvis 现在 iPhone 也能装了，目标是替你跨 App 干活，而不是只在一个窗口里聊天。</p>
+      <p><strong>影响分析：</strong>Marvis 是腾讯继元宝（C 端对话）之后的第二条 AI 战线，剑指"系统级 Agent"赛道，正面对标字节豆包、阿里通义在端侧助手的尝试。iOS 版本受 Apple 沙箱限制，跨应用能力会被削弱，因此其真正战场仍在 Android，并可能成为未来腾讯自研系统/穿戴生态的关键入口。</p>
+      <a class="source" href="http://m.toutiao.com/group/7655526705158832680/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#ALI #TENCENT #BAIDU #HK_STOCK</span>
+      <h2>港股科网股集体下挫：阿里跌超 3%，腾讯、百度、美团、小米全线走低</h2>
+      <p><strong>新闻原文：</strong>6 月 26 日，港股低开，恒生指数跌 0.54%，恒生科技指数跌 0.78%。阿里巴巴跌逾 3%，舜宇光学科技、MiniMax 跌逾 2%，联想集团跌 2%，携程、小米集团、快手、哔哩哔哩、腾讯控股、智谱、百度集团、美团集体下跌；半导体股表现低迷，兆易创新、澜起科技领跌。</p>
+      <p><strong>人话翻译：</strong>今天港股的大厂股集体绿了一大片，没有谁是"避风港"，AI 和半导体板块跌得尤其难看。</p>
+      <p><strong>影响分析：</strong>近期"中美 AI 摩擦 + 美方对 OpenAI/Meta 收紧管控"已传导到港股 AI 板块的估值预期，叠加 6 月以来全球 AI 板块"2.7 万亿美元抛售潮"的尾声效应，资金对中概 AI 公司更趋谨慎。对国内大厂而言，AI 投入是必选项但短期 ROI 仍不明朗，估值承压会持续到下一份财报季。</p>
+      <a class="source" href="https://finance.ifeng.com/c/8uGZ0TJ7gtd?ch=ttsearch" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#HUAWEI #LUXURY_EV #5G_SECURITY</span>
+      <h2>华为双线作战：尊界 S800 Grand Design 138.8 万元起，"企安宝"安全资源池首发</h2>
+      <p><strong>新闻原文：</strong>6 月 25 日晚，华为常务董事、终端 BG 董事长余承东发布尊界 S800 Grand Design 典藏大观车型，官方指导价 138.8 万元起。同日在 MWC 上海 2026 期间，华为联合中国移动通信集团苏州分公司发布业内首个"企安宝"安全资源池解决方案，深度融合运营商宽带网络资源与 AI 安全技术，为中小企业提供轻量化、订阅式的一站式安全服务。</p>
+      <p><strong>人话翻译：</strong>华为今天同时秀了两块肌肉：一块是把超豪华车开到 138 万的价位，对标百万级 BBA；另一块是和运营商合作，把"企业安全"做成像云服务一样按月订阅的产品。</p>
+      <p><strong>影响分析：</strong>尊界 S800 进一步坐实华为在高端车市场的话语权，配合鸿蒙智行体系，对 BBA、保时捷形成实质冲击。"企安宝"则是华为政企业务和运营商生态的关键拼图，把"网络 + AI 安全"打包成 SaaS，瞄准中小企业过去用不起的高端安全服务，潜在市场空间巨大。</p>
+      <a class="source" href="http://m.toutiao.com/group/7655482920047591976/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#XIAOMI #MEMORY #PRICE_HIKE</span>
+      <h2>小米卢伟冰预警：内存价格暴涨，下半年安卓旗舰或集体迈入万元时代</h2>
+      <p><strong>新闻原文：</strong>6 月 26 日，小米集团总裁卢伟冰在近期直播中指出，受内存芯片成本大幅攀升影响，2026 年下半年国内主流直板旗舰机型的终端售价或将首次迈入万元区间。该判断与近期苹果以"内存短缺"为由对 iPad、Mac 多款产品涨价约 20% 形成呼应。</p>
+      <p><strong>人话翻译：</strong>小米总裁直接说："今年下半年安卓旗舰可能要破万了，不是我们想涨，是内存太贵。"苹果那边也已经先涨了一波。</p>
+      <p><strong>影响分析：</strong>HBM/LPDDR 等内存芯片产能被 AI 服务器抢走，是这波涨价的根本原因，意味着 "AI 算力军备竞赛" 的成本正在传导到消费电子终端。对小米、OPPO、vivo、荣耀来说，要么涨价保毛利，要么压缩配置保价格带，主线品牌中端机也会被波及。消费者侧购机预算需要重新评估，"等等党"反而可能等到更贵的产品。</p>
+      <a class="source" href="https://mobile.zol.com.cn/1205/12053335.html" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <h3 class="section-title">国际大厂</h3>
+
+    <div class="news-item">
+      <span class="tag">#AWS #NVIDIA #BLACKWELL #CAPEX</span>
+      <h2>AWS 把 Blackwell 推入生产：新增超 100 万颗 GPU，2026 年 AI 投入 2000 亿美元</h2>
+      <p><strong>新闻原文：</strong>6 月 26 日，亚马逊云科技（AWS）宣布将英伟达 Blackwell 架构从演示环境推进到生产级全面部署。核心规划包括：2026 年起在全球所有 AWS 区域部署总计超 100 万块英伟达 GPU；P6-B200 实例可将 AI 训练与推理性能最高提升 2 倍，G7 实例 AI 推理性能最高提升 4.6 倍；同时敲定 2026 年总额约 2000 亿美元的人工智能领域整体投入规划。</p>
+      <p><strong>人话翻译：</strong>AWS 今天宣布："Blackwell 不再是 PPT，全球数据中心要装超过 100 万块；今年我光是砸 AI 就准备花 2000 亿美元。"</p>
+      <p><strong>影响分析：</strong>对英伟达：直接确认超大客户的"百万级 GPU 订单"，进一步稳固 AI 基建龙头地位；对 AWS：终于在算力赛道上把和 Azure、Google Cloud 的差距压回到"同一量级"，并把 Blackwell 全栈方案商业化；对客户：模型训练/推理成本下行有望加快；对竞争对手：微软、Google Cloud 接下来的 capex 指引被动抬高，资本市场对"AI 资本开支是否过度"的争论将持续。</p>
+      <a class="source" href="https://finance.sina.com.cn/stock/usstock/summary/2026-06-26/doc-inietspp7253750.shtml" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#OPENAI #GPT_5_5 #GA</span>
+      <h2>OpenAI 把 GPT-5.5 Instant 推送给全球所有免费用户，取代 GPT-5.3</h2>
+      <p><strong>新闻原文：</strong>2026 年 6 月 25 日下午，OpenAI 宣布 GPT-5.5 Instant 于 6 月 26 日向 ChatGPT 全球所有免费用户全面推送，直接取代原有的 GPT-5.3 Instant，成为 ChatGPT 全量用户的默认基础模型。</p>
+      <p><strong>人话翻译：</strong>原本要订阅才能用的模型能力，现在免费版直接拿到手；过去那个老 5.3 默认模型从今天起就"退休"。</p>
+      <p><strong>影响分析：</strong>短期内大幅拉升 ChatGPT 免费用户的体验上限，强化 OpenAI 在 C 端 AI 助手的市场份额，对国内的豆包、元宝、文心一言形成体验对标压力；中期看，OpenAI 把更强模型变成基础设施，意味着"模型能力 + 端到端产品"双线竞争更激烈，Claude、Gemini 必须用更新代际模型反制。</p>
+      <a class="source" href="http://m.toutiao.com/group/7655499126284501539/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#OPENAI #GPT_5_6 #US_GOV</span>
+      <h2>美国政府罕见出手：GPT-5.6 被要求"一客一审"分阶段限量发布</h2>
+      <p><strong>新闻原文：</strong>据 Axios、The Information 报道（澎湃新闻 6 月 26 日整理），白宫已要求 OpenAI 分阶段发布下一代模型 GPT-5.6，在广泛推出新模型之前，仅能在少数得到政府批准的合作伙伴范围内发布。消息人士透露，美国政府认为 OpenAI 最新模型的性能已与 Anthropic 的 Mythos 模型相当，存在网络安全风险，因此首次对前沿模型的发布节奏直接介入。</p>
+      <p><strong>人话翻译：</strong>OpenAI 想直接把 GPT-5.6 推给大家，但白宫拦了一道："你先一家一家审，谁过审谁先用，不许直接全员上线。"</p>
+      <p><strong>影响分析：</strong>这是美国首次对前沿 AI 模型实施"出口管制式"分阶段发布，意味着 AI 模型正在被实质纳入国家安全审查框架。短期内 OpenAI 商业化节奏被压制，企业客户会被迫排队；长期看，这一模式可能被复制到 Anthropic、xAI 等其他厂商。对中国 AI 公司而言，是"反向窗口期"——海外封顶意味着国产模型有更多时间在企业市场补位。</p>
+      <a class="source" href="https://m.thepaper.cn/newsDetail_forward_33460344" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#GOOGLE #DEEPMIND #TALENT_DRAIN</span>
+      <h2>谷歌 7 天痛失 4 位 AI 元老：Gemini 共同负责人投奔 OpenAI，AlphaFold 之父转投 Anthropic</h2>
+      <p><strong>新闻原文：</strong>据 Axios、路透社等媒体报道，过去一周谷歌 DeepMind 出现密集高层流失：Gemini 共同负责人 Noam Shazeer 离开谷歌加入 OpenAI；DeepMind 高级研究科学家、AlphaFold 共同创造者 John Jumper 转投 Anthropic；另两位资深研究科学家也相继出走，7 天内累计损失 4 位技术元老。</p>
+      <p><strong>人话翻译：</strong>谷歌内部的"AI 顶级大脑"被 OpenAI 和 Anthropic 一周内连挖 4 个，其中包括"造出 Transformer"和"造出 AlphaFold"的两位标杆人物。</p>
+      <p><strong>影响分析：</strong>对谷歌而言，这是 Gemini 系列模型路线连续性、长期研究项目（蛋白质、基础科学 AI）稳定性的重大冲击，可能影响其下一代多模态模型的研发节奏；对 OpenAI/Anthropic，则是用资金 + 股权 + 自由度组合拳，在"模型架构原创力"上完成补强；对整个行业，AI 顶级人才的市场价格再次跃升，国内大厂的人才挖角难度同步上升。</p>
+      <a class="source" href="https://36kr.com/p/3869734872634632" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#META #AI_SAFETY #US_GOV</span>
+      <h2>美国政府施压 Meta：接受 AI 模型政府审查，否则成为唯一"局外人"</h2>
+      <p><strong>新闻原文：</strong>据《纽约时报》报道，美国政府正在向 Meta 施压，要求其同意将前沿 AI 模型自愿提交给联邦政府进行安全评审。OpenAI、Anthropic、Google、xAI、Microsoft 此前已全部签署同类协议，Meta 是美国主要 AI 大厂中唯一尚未达成相关协议的公司。</p>
+      <p><strong>人话翻译：</strong>美国大厂里，OpenAI、谷歌、xAI 等都已经"开门让政府查模型"了，只剩 Meta 还在抗——白宫现在亲自上门施压。</p>
+      <p><strong>影响分析：</strong>结合同日 GPT-5.6 被要求限量发布的新闻看，美国正在系统性建立"前沿模型 + 政府审查"的双重门槛。如果 Meta 最终妥协，意味着 LLaMA 系列后续模型的开源策略可能进一步收紧，对全球开源生态尤其是中国基于 LLaMA 衍生的开源模型链条会产生连锁影响；如果 Meta 顶住，则可能面临监管层面的隐性惩罚，开源策略将成为 Meta 与监管博弈的关键筹码。</p>
+      <a class="source" href="https://www.nytimes.com/2026/06/23/business/meta-ai-government-reviews-security.html" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#APPLE #IPAD #MAC #PRICING</span>
+      <h2>苹果 iPad、Mac 多款产品涨价约 20%，理由：内存短缺</h2>
+      <p><strong>新闻原文：</strong>据彭博社及多家媒体报道，6 月 25-26 日苹果上调 iPad 与 Mac 多款产品的价格，部分型号涨幅达到约 20%，官方将主要原因归结为内存（DRAM/HBM）等关键芯片成本上涨与供应紧张。这是苹果近年来罕见的"硬件普涨"动作。</p>
+      <p><strong>人话翻译：</strong>苹果一口气把 iPad 和 Mac 的多款产品涨价了约两成，理由就一个：内存太贵、太紧张。</p>
+      <p><strong>影响分析：</strong>这是 AI 服务器抢内存产能、PC/平板/手机端被动让位的最直观案例。对苹果：短期毛利提升但需求侧承压，秋季新品发布定价更难；对全行业：进一步印证小米卢伟冰"安卓旗舰将破万"的判断，PC、平板赛道毛利将被重塑；对中国厂商：国产存储（长江存储、长鑫）的国产替代窗口期被进一步拉长。</p>
+      <a class="source" href="https://m.sohu.com/a/1041749700_602994/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="note">
+      <strong>编辑视角：</strong>今天的 12 条新闻，可以拼成一张完整的拼图——AI 算力军备竞赛（AWS 100 万 GPU、字节 AI 战略、2000 亿美元 capex）正在把 <strong>内存价格</strong> 推上去、把 <strong>顶级人才价格</strong> 推上去、把 <strong>消费电子终端价格</strong> 推上去、再把 <strong>监管门槛</strong> 推上去。国内外大厂都在做同一件事：把 AI 从"概念"变成"必须烧钱守住的主战场"。
+    </div>
+
+    <div class="footer">⚡ Big Tech Signal · Generated 2026-06-26 19:00 CST · 数据来源：新浪财经 / 财联社 / 36kr / 凤凰网 / NYTimes / Bloomberg 等</div>
+  </div>
+</body>
+</html>

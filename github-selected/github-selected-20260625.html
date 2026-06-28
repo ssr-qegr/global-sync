@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub 精选项目报告 | 2026年6月25日</title>
+  <style>
+    :root { --primary:#0052D9; --primary-2:#2F80ED; --primary-soft:#EAF2FF; --bg:#F3F5F8; --card-bg:#FFFFFF; --text-main:#1C1F23; --text-sub:#5C6A82; --border:rgba(0,82,217,.13); --shadow:0 18px 48px rgba(8,32,71,.10); }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:24px; background:linear-gradient(180deg,#EEF4FF 0%,var(--bg) 280px); color:var(--text-main); font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; }
+    .wrap { max-width:980px; margin:0 auto; background:var(--card-bg); border-radius:28px; overflow:hidden; box-shadow:var(--shadow); }
+    .hero { position:relative; padding:44px 44px 36px; color:#fff; background:radial-gradient(circle at 86% 8%,rgba(255,255,255,.92),rgba(255,255,255,.12) 30%,transparent 48%),linear-gradient(135deg,#003EA8 0%,#0052D9 46%,#4FA3FF 100%); }
+    .hero:after { content:""; position:absolute; right:34px; bottom:-46px; width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,.12); filter:blur(1px); }
+    .badge-group { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px; }
+    .badge { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.22); font-size:13px; font-weight:700; }
+    h1 { margin:0 0 14px; font-size:34px; line-height:1.25; letter-spacing:-.02em; }
+    .hero p { margin:0; max-width:780px; color:rgba(255,255,255,.94); font-size:16px; position:relative; z-index:1; }
+    .content { padding:34px 44px 40px; }
+    .section-title { display:flex; align-items:center; gap:10px; margin:0 0 18px; font-size:24px; color:var(--primary); }
+    .lead-card,.project-card,.tips-card,.source-card { background:#fff; border:1px solid var(--border); border-radius:20px; padding:24px; margin-bottom:22px; box-shadow:0 10px 28px rgba(0,82,217,.06); }
+    .lead-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .metric { background:linear-gradient(180deg,#F8FBFF,#FFFFFF); border:1px solid var(--border); border-radius:16px; padding:16px; }
+    .metric .label { display:block; font-size:13px; color:var(--text-sub); margin-bottom:8px; }
+    .metric .value { display:block; font-size:22px; font-weight:800; color:var(--primary); }
+    .project-head { display:flex; justify-content:space-between; gap:18px; align-items:flex-start; margin-bottom:14px; }
+    .project-title { margin:0; font-size:28px; line-height:1.3; }
+    .project-subtitle { margin:8px 0 0; color:var(--text-sub); }
+    .rank { min-width:90px; text-align:center; background:linear-gradient(180deg,#F6FAFF,#EAF2FF); color:var(--primary); border-radius:16px; padding:14px 12px; border:1px solid var(--border); font-weight:800; }
+    .meta-row { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 18px; }
+    .chip { display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border-radius:999px; font-size:13px; color:var(--text-sub); background:#F7FAFE; border:1px solid rgba(92,106,130,.14); }
+    .summary { margin:0 0 18px; font-size:16px; color:var(--text-main); }
+    .grid-2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:12px; }
+    .panel { background:#FAFCFF; border:1px solid var(--border); border-radius:16px; padding:18px; }
+    .panel h3 { margin:0 0 12px; font-size:17px; color:var(--primary); }
+    ul { margin:0; padding-left:20px; }
+    li { margin-bottom:10px; color:var(--text-sub); }
+    li strong { color:var(--text-main); }
+    .cta-row { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+    .link-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; border-radius:12px; padding:10px 16px; font-weight:700; transition:transform .18s ease, box-shadow .18s ease; }
+    .link-btn.primary { color:#fff; background:linear-gradient(135deg,var(--primary),var(--primary-2)); box-shadow:0 8px 18px rgba(0,82,217,.18); }
+    .link-btn.secondary { color:var(--primary); background:var(--primary-soft); border:1px solid var(--border); }
+    .link-btn:hover { transform:translateY(-2px); }
+    .source-card a { color:var(--primary); font-weight:700; word-break:break-all; }
+    footer { padding:22px 44px 34px; color:var(--text-sub); border-top:1px solid var(--border); background:#FAFCFF; }
+    @media (max-width:760px) { body{padding:12px;} .hero,.content,footer{padding-left:22px;padding-right:22px;} .lead-grid,.grid-2{grid-template-columns:1fr;} .project-head{flex-direction:column;} h1{font-size:28px;} }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="badge-group"><span class="badge">GitHub 精选</span><span class="badge">AI Agent</span><span class="badge">2026-06-25</span></div>
+      <h1>GitHub 精选项目报告：AI 智能体从「会写代码」走向「会做视频、会记代码、会跑前端」</h1>
+      <p>今天精选 3 个本周仍在 Trending 榜单活跃的项目：OpenMontage 把视频剪辑做成一条多智能体流水线；codebase-memory-mcp 把整个代码库压缩进 MCP 长期记忆，让 AI 编辑器真正「记得住」你的项目；ponytail 则是一款轻量级的前端体验工具，最近以惊人的速度冲进新晋 Top 榜。三个项目分别对应内容生产、研发效率和前端工程。</p>
+    </section>
+    <section class="content">
+      <h2 class="section-title">📌 今日结论</h2>
+      <div class="lead-card">
+        <p class="summary">本周 GitHub Trending 的主旋律仍是 <strong>AI Agent 工程化</strong>，但落地场景明显在向「具体行业 + 具体岗位」收敛：<strong>OpenMontage</strong> 把视频制作整条流水线 Agent 化，是「AI 取代后期工位」的代表；<strong>codebase-memory-mcp</strong> 用 MCP 协议给所有 AI 编辑器装了一个统一的「代码大脑」，是「让 Agent 记得住你的工程」的关键基础设施；<strong>ponytail</strong> 则代表前端开发者对「快、轻、能直接用」的工具的偏好——本周新进 Trending Top 20。</p>
+        <div class="lead-grid">
+          <div class="metric"><span class="label">精选项目</span><span class="value">3 个</span></div>
+          <div class="metric"><span class="label">主题方向</span><span class="value">内容 · 记忆 · 前端</span></div>
+          <div class="metric"><span class="label">数据时间</span><span class="value">2026-06-25</span></div>
+        </div>
+      </div>
+
+      <article class="project-card">
+        <div class="project-head">
+          <div><h2 class="project-title">calesthio / OpenMontage</h2><p class="project-subtitle">全球首个开源智能体视频制作系统：12 条流水线 + 52 种工具 + 500+ 技能</p></div>
+          <div class="rank">TOP 1<br/>AI 视频</div>
+        </div>
+        <div class="meta-row"><span class="chip">语言：Python</span><span class="chip">主题：AI Agent · 视频生成 · 多模态</span><span class="chip">近 7 天新增 Star：≈2.9k</span></div>
+        <p class="summary">OpenMontage 自称是「全球首个开源的智能体视频制作系统」，把传统视频后期工作流（素材分镜 → 剪辑 → 配乐 → 字幕 → 调色 → 输出）拆解成 12 条可独立调度的 Agent 流水线，配套 52 种工具和 500+ 智能体技能。它不是又一个「文生视频」模型，而是把已经成熟的视频处理工具（剪辑、ASR、TTS、字幕、变速、配乐库）串成一个由 Agent 编排的完整制作链路，让一个想法可以从 prompt 直达成片。</p>
+        <div class="grid-2">
+          <div class="panel"><h3>技术亮点</h3><ul>
+            <li><strong>流水线式编排：</strong>每条流水线对应一种成片风格（口播、Vlog、信息流、短剧等），可单独复用。</li>
+            <li><strong>工具即技能：</strong>500+ 技能颗粒度细到「找空镜」「自动卡点」「批量打字幕」，方便定制。</li>
+            <li><strong>多智能体协作：</strong>编剧、剪辑、运营 Agent 各司其职，类似一个虚拟后期团队。</li>
+          </ul></div>
+          <div class="panel"><h3>典型使用场景</h3><ul>
+            <li><strong>自媒体批量产出：</strong>一份选题文档批量产出多平台短视频。</li>
+            <li><strong>电商素材工厂：</strong>同一商品自动生成数十条带货脚本+成片。</li>
+            <li><strong>培训/知识 IP：</strong>把长直播切成多个有字幕、有封面的知识短片。</li>
+          </ul></div>
+        </div>
+        <div class="cta-row">
+          <a class="link-btn primary" href="https://github.com/calesthio/OpenMontage" target="_blank">查看 GitHub 仓库 →</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <div><h2 class="project-title">DeusData / codebase-memory-mcp</h2><p class="project-subtitle">高性能代码智能 MCP 服务器：把整个代码库装进 AI 编辑器的长期记忆</p></div>
+          <div class="rank">TOP 2<br/>开发效率</div>
+        </div>
+        <div class="meta-row"><span class="chip">语言：C</span><span class="chip">主题：MCP · 代码索引 · Agent Memory</span><span class="chip">近 7 天新增 Star：≈1k+</span></div>
+        <p class="summary">codebase-memory-mcp 是一个用 C 写的 MCP（Model Context Protocol）服务器，专注于把任意规模的代码库索引成可供 AI 编辑器实时调用的「长期记忆」。它解决的痛点是：Cursor / Claude Code / Codex 这类 AI 编辑器虽然能写代码，但每次都要重新喂上下文；它把代码符号、依赖关系、文件结构持久化下来，对接 MCP 标准后任何支持 MCP 的客户端都能复用同一份「代码记忆」。性能上用 C 实现意味着对大仓也能保持低延迟检索。</p>
+        <div class="grid-2">
+          <div class="panel"><h3>技术亮点</h3><ul>
+            <li><strong>MCP 原生：</strong>遵循 Anthropic 推动的 MCP 协议，编辑器无需做定制集成。</li>
+            <li><strong>高性能内核：</strong>C 实现的索引引擎，支持大仓增量索引与毫秒级查询。</li>
+            <li><strong>跨编辑器复用：</strong>Cursor / Codex / Claude Code / Gemini CLI 共享同一份「代码大脑」。</li>
+          </ul></div>
+          <div class="panel"><h3>典型使用场景</h3><ul>
+            <li><strong>多仓微服务：</strong>跨多个 git 仓库快速定位「这个接口在哪一层调用过」。</li>
+            <li><strong>长期项目记忆：</strong>切换分支或停工再回来，AI 仍记得你的设计决策。</li>
+            <li><strong>Code Review 辅助：</strong>检索相关历史改动作为 Review 上下文。</li>
+          </ul></div>
+        </div>
+        <div class="cta-row">
+          <a class="link-btn primary" href="https://github.com/DeusData/codebase-memory-mcp" target="_blank">查看 GitHub 仓库 →</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <div><h2 class="project-title">DietrichGebert / ponytail</h2><p class="project-subtitle">本周新进 Trending：轻量级前端体验工具，主打「快、薄、即用」</p></div>
+          <div class="rank">TOP 3<br/>前端工具</div>
+        </div>
+        <div class="meta-row"><span class="chip">语言：JavaScript</span><span class="chip">主题：前端 · 工程化</span><span class="chip">状态：新进 Trending</span></div>
+        <p class="summary">ponytail 是本周新进 GitHub Trending Top 20 的一个 JavaScript 项目，最近以非常陡的星标曲线进入视野。它定位是一款轻量级的前端工程小工具，强调「单文件能跑、没有重型依赖、即装即用」。结合本周整体趋势看，前端社区一直在寻找「比 Vite 更轻、比手写脚本更体面」的中间地带，ponytail 就是这一类工具的代表之一。具体场景以小型项目、文档站、Demo 验证为主。</p>
+        <div class="grid-2">
+          <div class="panel"><h3>技术亮点</h3><ul>
+            <li><strong>体积极小：</strong>核心实现几乎没有第三方依赖，适合塞进任意项目。</li>
+            <li><strong>零配置：</strong>开箱即用，不强迫使用者背一套 DSL。</li>
+            <li><strong>关注社区反馈：</strong>本周 Issue / PR 活跃度高，作者响应快。</li>
+          </ul></div>
+          <div class="panel"><h3>典型使用场景</h3><ul>
+            <li><strong>原型/Demo：</strong>给一个想法快速搭一个能跑的前端壳子。</li>
+            <li><strong>内部小工具：</strong>给团队搭一个一次性运营页面或表单。</li>
+            <li><strong>教学示例：</strong>讲解前端原理时不被脚手架噪音淹没。</li>
+          </ul></div>
+        </div>
+        <div class="cta-row">
+          <a class="link-btn primary" href="https://github.com/DietrichGebert/ponytail" target="_blank">查看 GitHub 仓库 →</a>
+        </div>
+      </article>
+
+      <h2 class="section-title">💡 工程师视角</h2>
+      <div class="tips-card">
+        <ul>
+          <li><strong>AI Agent 走向「行业切片」：</strong>OpenMontage 不再做通用 Agent，而是把全部精力压在「视频后期」一个垂类，可执行性反而比通用框架强。</li>
+          <li><strong>MCP 正在成为事实标准：</strong>codebase-memory-mcp 这类项目说明，社区开始把「记忆/上下文」当成基础设施去建设，而不是每个 IDE 各自实现。</li>
+          <li><strong>前端仍然在「减负」赛道：</strong>ponytail 这类轻量工具持续受欢迎，反映开发者对「大而全脚手架」的疲劳。</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">🔗 数据来源</h2>
+      <div class="source-card">
+        <ul>
+          <li>GitHub Trending（每日/每周榜）：<a href="https://github.com/trending" target="_blank">https://github.com/trending</a></li>
+          <li>GitHub 月度榜单镜像：<a href="https://wangchujiang.com/github-rank/trending-monthly.html" target="_blank">wangchujiang.com/github-rank</a></li>
+          <li>NGJOO 恩筑 AI 开源热度榜：<a href="https://www.ngjoo.com/trending/" target="_blank">www.ngjoo.com/trending</a></li>
+        </ul>
+      </div>
+    </section>
+    <footer>本日报由「孙纾荣 / global-sync」自动整理，仅做技术观察用途，不构成任何投资或商业建议。所有项目数据来源于公开 GitHub Trending 榜单。</footer>
+  </main>
+</body>
+</html>
