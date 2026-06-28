@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大厂新闻 · 2026-06-28</title>
+<style>
+  :root { --primary: #B388FF; --bg: #0D0D0D; --card-bg: #1A1A1A; --text-main: #E0E0E0; --text-sub: #9E9E9E; --accent: #00E5FF; --hot:#FF5C8A; --ok:#48F2A6; --warn:#FFD166; }
+  * { box-sizing: border-box; }
+  body { font-family: "Inter", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: radial-gradient(circle at top left, rgba(179,136,255,.18), transparent 34%), radial-gradient(circle at 85% 8%, rgba(0,229,255,.14), transparent 32%), radial-gradient(circle at 20% 95%, rgba(255,92,138,.10), transparent 30%), var(--bg); color: var(--text-main); margin: 0; padding: 22px; }
+  .container { max-width: 980px; margin: 0 auto; background: linear-gradient(180deg, rgba(26,26,26,.96), rgba(14,14,16,.98)); padding: 38px; border-radius: 22px; border: 1px solid #333; box-shadow: 0 22px 70px rgba(0,0,0,.58); }
+  .header { text-align: center; margin-bottom: 34px; padding: 30px 18px; border: 1px solid rgba(179,136,255,.22); border-radius: 18px; background: rgba(255,255,255,.025); }
+  .header h1 { color: var(--primary); margin: 0 0 12px 0; font-size: clamp(30px, 5vw, 46px); letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 24px rgba(179,136,255,0.35); }
+  .date { color: var(--text-sub); font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .lead { margin: 18px auto 0; max-width: 840px; color: #c9c9d1; line-height: 1.82; font-size: 15px; }
+  .signal { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:22px 0 4px; }
+  .signal div { border:1px solid #333; background:rgba(255,255,255,.03); border-radius:14px; padding:14px; color:#cfcfd6; font-size:13px; line-height:1.6; }
+  .signal b { display:block; color:var(--accent); margin-bottom:4px; }
+  .section-title { margin: 34px 0 16px; display:flex; align-items:center; gap:10px; color:#fff; font-size:22px; }
+  .section-title::before { content:""; width:10px; height:10px; border-radius:50%; background: var(--accent); box-shadow: 0 0 18px var(--accent); }
+  .news-item { background: rgba(36,36,36,.92); padding: 24px; margin-bottom: 18px; border-radius: 16px; border: 1px solid #333; transition: all 0.3s ease; position: relative; overflow: hidden; }
+  .news-item::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(to bottom, var(--primary), var(--accent)); opacity: .9; }
+  .news-item:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(179,136,255,0.16); border-color: rgba(179,136,255,.35); }
+  .news-item h2 { margin: 2px 0 14px 0; font-size: 20px; color: #FFF; font-weight: 650; line-height:1.35; }
+  .news-item p { margin: 0 0 12px 0; font-size: 15px; color: var(--text-sub); line-height: 1.75; }
+  .news-item strong { color:#f5f5f7; }
+  .tag { display: inline-block; background: rgba(179,136,255,0.1); color: var(--primary); border: 1px solid rgba(179,136,255,0.3); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-bottom: 14px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .source { display:inline-flex; margin-top:6px; color: var(--accent); text-decoration: none; font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; letter-spacing: .6px; }
+  .source:hover { text-shadow: 0 0 8px rgba(0,229,255,0.6); }
+  .note { margin: 26px 0 0; padding: 16px 18px; border:1px dashed #3a3a3a; border-radius:14px; color:#aaa; line-height:1.7; background:rgba(255,255,255,.025); }
+  .footer { text-align: center; margin-top: 36px; padding-top: 20px; border-top: 1px dashed #333; color: #666; font-size: 12px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  @media (max-width: 680px) { body { padding: 14px; } .container { padding: 22px; } .news-item { padding: 20px; } .signal { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>⚡ Big Tech Signal</h1>
+      <div class="date">SYS.DATE: 2026-06-28 // CHANNEL: DACHANG-NEWS // STATUS: ONLINE</div>
+      <p class="lead">今天的大厂新闻主线已经很清楚：国内大厂在抢“算力、入口、生态闭环”，国际大厂在抢“平台落地、企业客户、发布节奏和成本控制”。因此这份日报不只看谁又发了新功能，而是看谁正在把 AI 真的塞进业务执行链、供应链和系统级平台里。考虑到周末官方消息节奏较慢，本文优先整理 6 月下旬截至今日仍在持续发酵、且对行业判断有价值的公开动态。</p>
+      <div class="signal">
+        <div><b>国内关键词</b>字节找国产芯片、腾讯 Agent 邮箱、阿里全球化承压、百度分拆昆仑芯、华为鸿蒙 Agent 化、小米汽车下沉</div>
+        <div><b>国际关键词</b>Google 扩 AI 区域落地、Apple 成本外溢、Meta 企业 Agent、OpenAI GPT-5.6 限量预览</div>
+        <div><b>影响判断</b>AI 竞争已经从“模型发布战”进入“产品化 + 供给链 + 商业化 + 生态控制”综合战</div>
+      </div>
+    </div>
+
+    <h3 class="section-title">国内大厂</h3>
+
+    <div class="news-item">
+      <span class="tag">#BYTEDANCE #AI_CHIP #INFERENCE</span>
+      <h2>字节跳动继续补国产算力：同时评估天数智芯与百度昆仑芯方案</h2>
+      <p><strong>新闻原文摘要：</strong>路透 6 月 15 日报道称，字节跳动正与中国 AI 芯片公司天数智芯接触采购推理芯片，同时也在考虑采用百度旗下昆仑芯方案；报道还提到，腾讯已经是昆仑芯客户之一。</p>
+      <p><strong>人话翻译：</strong>字节现在的重点不是“有没有芯片”，而是要尽快把大模型推理算力来源多元化，降低单一路线依赖，给豆包这类高频业务多备几条后路。</p>
+      <p><strong>影响分析：</strong>这说明国内大厂已经不再只盯着训练侧的高端 GPU，而是更务实地围绕推理成本、供给稳定性和国产替代做组合配置。谁先把推理成本打下来，谁后续在 C 端大规模放量时就更有优势。</p>
+      <a class="source" href="https://www.reuters.com/world/china/bytedance-talks-with-chinas-iluvatar-corex-purchase-ai-chips-sources-say-2026-06-15/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#TENCENT #AGENT #EMAIL</span>
+      <h2>腾讯 QQ 邮箱上线 Agently Mail 内测：让 Agent 拥有独立邮箱身份</h2>
+      <p><strong>新闻原文摘要：</strong>公开报道显示，腾讯 QQ 邮箱于 6 月 23 日开启 Agently Mail 内测。该服务独立于用户个人邮箱运行，强调为 AI Agent 提供安全、隔离、可追溯的数字通信空间，并支持其以独立身份收发邮件。</p>
+      <p><strong>人话翻译：</strong>腾讯不是只想让 AI 帮你写邮件，而是想让 AI 真的“持证上岗”，能作为数字员工去接外部沟通、跑商务流程、留操作痕迹。</p>
+      <p><strong>影响分析：</strong>一旦邮箱、日历、文档、客服这些系统都被 Agent 接上，AI 就会从“助手”变成“执行者”。腾讯这一步的价值，在于它切进了企业真实工作流，而不是停留在聊天演示层。</p>
+      <a class="source" href="https://finance.sina.com.cn/tech/digi/2026-06-23/doc-iniekvas2043433.shtml" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#ALIBABA #CLOUD #GLOBALIZATION</span>
+      <h2>阿里一边扩海外云节点，一边应对外部法律与舆论压力</h2>
+      <p><strong>新闻原文摘要：</strong>公开报道显示，阿里云在 6 月 VivaTech 期间宣布巴黎、柔佛开服，并扩建东京与墨西哥数据中心，全球布局扩大至 32 个地域、105 个可用区；与此同时，阿里在 6 月下旬也围绕美国相关名单问题发起法律应对。</p>
+      <p><strong>人话翻译：</strong>阿里现在是“两线作战”：业务上要继续把云和 AI 服务往海外铺，外部环境上还得持续处理地缘政治和品牌信任压力。</p>
+      <p><strong>影响分析：</strong>这说明中国大厂的国际化已经不能只看技术和产品，还得看合规、法律和资本市场叙事能力。对阿里来说，海外云节点扩张是增长机会，但外部不确定性也会直接影响客户信心与合作节奏。</p>
+      <a class="source" href="https://news.qq.com/rain/a/20260620A03QC500" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#BAIDU #KUNLUN #IPO</span>
+      <h2>百度推进昆仑芯独立上市：AI 芯片业务开始走向单独融资叙事</h2>
+      <p><strong>新闻原文摘要：</strong>路透相关报道显示，百度旗下 AI 芯片公司昆仑芯已以保密方式向港交所递交上市申请。百度表示，分拆上市将提升昆仑芯运营与财务透明度，并增强其独立进入资本市场的能力。</p>
+      <p><strong>人话翻译：</strong>百度这是在把“搜索公司做 AI”这件事进一步拆开讲：以后昆仑芯不只是百度内部能力，也要作为独立芯片公司去讲市场故事、拿融资、抢客户。</p>
+      <p><strong>影响分析：</strong>如果昆仑芯融资能力增强，百度在模型、算力和云服务上的联动会更强，也会让国产 AI 芯片赛道继续升温。对整个行业来说，这意味着大厂自研芯片正从配套能力，走向更独立的商业化主体。</p>
+      <a class="source" href="https://cn.tradingview.com/news/reuters.com,2026:newsml_L4S3Y302X:0/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#HUAWEI #HARMONYOS #AGENT</span>
+      <h2>华为继续放大 HarmonyOS 7 与 Agent OS 叙事，鸿蒙生态往系统级智能演进</h2>
+      <p><strong>新闻原文摘要：</strong>华为开发者大会 2026 官方站点显示大会聚焦鸿蒙生态；同期公开报道提到，HarmonyOS 7 在 HDC 2026 上发布，鸿蒙生态正式迈入 Agent 时代，重点强调系统级智能体与生态协同。</p>
+      <p><strong>人话翻译：</strong>华为现在讲的不是一个“小艺更聪明了”，而是整个操作系统都想往“能理解意图、能调度任务、能串生态”的方向升级。</p>
+      <p><strong>影响分析：</strong>如果 AI 真的被做成操作系统底层能力，华为的竞争点就不只是手机或单个应用，而是“芯片 + 系统 + 终端 + 开发者生态”的整套闭环。这会进一步加强国产平台型竞争格局。</p>
+      <a class="source" href="https://developer.huawei.com/consumer/cn/hdc/2026" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#XIAOMI #SU7 #MARKET_EXPANSION</span>
+      <h2>小米 SU7 首次进入新能源汽车下乡目录，品牌开始向更广阔市场下沉</h2>
+      <p><strong>新闻原文摘要：</strong>公开报道显示，2026 年新能源汽车下乡目录共 155 款车型，小米 SU7 首次被纳入其中，成为本轮目录里最受关注的新成员之一。</p>
+      <p><strong>人话翻译：</strong>小米汽车不再只是“城市科技爆款”，而是在往更大范围的政策渠道和市场腹地走，开始从热点产品向规模化经营靠近。</p>
+      <p><strong>影响分析：</strong>一旦进入更广泛的县域和下沉市场，小米要面对的就不只是流量和关注度，而是交付、服务网络、售后能力与品牌稳定性。这是从单点爆发走向长期经营的重要拐点。</p>
+      <a class="source" href="https://finance.sina.com.cn/tech/roll/2026-06-18/doc-inicvmmr3300525.shtml" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <h3 class="section-title">国际大厂</h3>
+
+    <div class="news-item">
+      <span class="tag">#GOOGLE #GEMINI #GLOBAL_ROLLOUT</span>
+      <h2>Google 持续推进 Gemini 国际化落地：从模型能力走向区域工程与教育投入</h2>
+      <p><strong>新闻原文摘要：</strong>Google 官方博客 6 月 10 日披露，在 Google for Brazil 2026 活动上，公司展示了 Gemini 等 AI 产品在巴西市场的推进，并强调继续扩大当地工程布局和 AI 培训投入。</p>
+      <p><strong>人话翻译：</strong>Google 现在不只是发布一个个 AI 功能，而是在把 AI 能力真正推到区域市场里，通过工程团队、本地化产品和人才培训去做长期渗透。</p>
+      <p><strong>影响分析：</strong>这说明 Google 的重点之一是把 Gemini 从“全球统一产品”升级成“区域可落地的平台能力”。谁能更快完成本地化和生态培训，谁在海外市场就更容易形成长期黏性。</p>
+      <a class="source" href="https://blog.google/company-news/inside-google/around-the-globe/google-latin-america/google-for-brazil-2026/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#APPLE #SUPPLY_CHAIN #PRICING</span>
+      <h2>Apple 因芯片成本上涨上调部分产品售价，AI 基建压力开始外溢到消费电子</h2>
+      <p><strong>新闻原文摘要：</strong>新华社 6 月 25 日报道，苹果已在多个市场上调部分 Mac 和 iPad 产品售价，理由是内存和存储芯片成本大幅上涨，反映出 AI 数据中心扩张正在挤压相关零部件供给。</p>
+      <p><strong>人话翻译：</strong>AI 现在不只是拉动云厂商烧钱，连普通消费者买电脑和平板的价格都可能被带着往上走。</p>
+      <p><strong>影响分析：</strong>这说明 AI 竞争的成本，已经开始从上游算力基础设施传导到消费端产品。对苹果来说是利润与销量平衡问题；对行业来说，则意味着存储与内存链条会继续是下一个关键瓶颈。</p>
+      <a class="source" href="http://www.xinhuanet.com/world/20260625/11836d6cd7744ca089687168c08972c4/c.html" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#META #ENTERPRISE_AI #AGENT</span>
+      <h2>Meta 推出企业级 AI Business Agent，正式切入日常运营自动化</h2>
+      <p><strong>新闻原文摘要：</strong>路透 6 月 3 日报道，Meta 推出面向企业的 AI business agent，用于帮助企业自动化日常运营流程，显示其 AI 布局正从内容平台进一步延伸到企业工作流。</p>
+      <p><strong>人话翻译：</strong>Meta 不满足于做社交平台上的 AI 助手，也想去分企业自动化这块蛋糕，直接和办公软件、客服系统、运营流程发生关系。</p>
+      <p><strong>影响分析：</strong>这会让 Meta 的 AI 竞争从流量市场扩展到企业服务市场。谁能真正吃下企业自动化预算，谁的 AI 收入结构就会更稳，不再只依赖广告和消费者产品。</p>
+      <a class="source" href="https://www.reuters.com/business/meta-launches-enterprise-focused-ai-business-agent-automate-daily-operations-2026-06-03/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#OPENAI #GPT_5_6 #LIMITED_PREVIEW</span>
+      <h2>OpenAI 启动 GPT-5.6 系列有限预览：更强能力配合更谨慎的放量节奏</h2>
+      <p><strong>新闻原文摘要：</strong>OpenAI 官方新闻页显示，6 月 26 日发布 GPT-5.6 相关内容。官方介绍称，GPT-5.6 系列中的 Sol、Terra、Luna 已开始 limited preview，突出 coding、science、cybersecurity 等能力，并保持小范围预览节奏。</p>
+      <p><strong>人话翻译：</strong>OpenAI 这次不是“上来就全员可用”，而是先给少量用户和伙伴试跑，说明模型虽然更强，但发布节奏明显更保守。</p>
+      <p><strong>影响分析：</strong>这背后既有产品稳定性和安全考虑，也反映出头部前沿模型公司正在重新平衡“抢速度”和“控风险”。对企业客户来说，先拿到预览资格就等于拿到一部分先发优势。</p>
+      <a class="source" href="https://openai.com/index/previewing-gpt-5-6-sol/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="note">
+      <strong>编辑视角：</strong>今天最值得盯的，不是谁又在舞台上喊了一句“AI 改变世界”，而是谁已经开始把 AI 变成真正在业务里跑的系统、邮件地址、芯片供给和企业工作流。国内大厂更像在搭基础设施与生态闭环，国际大厂更像在拼全球化落地和企业付费入口。下一轮真正拉开差距的，不会只是模型参数，而是谁能把 AI 做成长期可运营、可扩张、可控风险的产品体系。
+    </div>
+
+    <div class="footer">⚡ Big Tech Signal · Generated 2026-06-28 19:12 CST · 数据来源：Reuters / Google Blog / OpenAI / 新华社 / 新浪科技 / 华为开发者官网等公开信息</div>
+  </div>
+</body>
+</html>
