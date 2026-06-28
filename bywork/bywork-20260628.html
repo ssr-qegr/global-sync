@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>今日副业探索报告｜AI 短视频切片代运营与程序化 SEO 利基站</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff8ed;
+      --bg-soft: #fff3df;
+      --card: rgba(255,255,255,.88);
+      --text: #352317;
+      --muted: #7a6658;
+      --line: rgba(183, 126, 73, .22);
+      --amber: #d97706;
+      --orange: #f97316;
+      --rose: #fb7185;
+      --green: #16a34a;
+      --shadow: 0 24px 60px rgba(124, 75, 25, .16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(251, 146, 60, .28), transparent 34%),
+        radial-gradient(circle at 86% 12%, rgba(251, 113, 133, .18), transparent 30%),
+        linear-gradient(145deg, #fffaf1 0%, #fff4e5 48%, #fffdf8 100%);
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 42px 0 48px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 34px; padding: clamp(28px, 5vw, 54px); background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,246,231,.82)); box-shadow: var(--shadow); backdrop-filter: blur(18px); }
+    .hero::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px; border-radius: 50%; background: conic-gradient(from 120deg, rgba(249,115,22,.36), rgba(251,113,133,.24), rgba(245,158,11,.28), rgba(249,115,22,.36)); filter: blur(4px); opacity: .75; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border-radius: 999px; background: #fff3df; border: 1px solid var(--line); color: #9a5a13; font-size: 13px; font-weight: 700; }
+    h1 { position: relative; z-index: 1; margin: 20px 0 12px; font-size: clamp(34px, 5.5vw, 62px); line-height: 1.04; letter-spacing: -.045em; }
+    .lead { position: relative; z-index: 1; max-width: 860px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.85; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .metric { padding: 17px; border-radius: 22px; background: rgba(255,255,255,.78); border: 1px solid rgba(183,126,73,.18); }
+    .metric b { display: block; font-size: 23px; color: #8a4b0f; }
+    .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .section { margin-top: 22px; border: 1px solid var(--line); border-radius: 30px; background: var(--card); box-shadow: 0 16px 42px rgba(124,75,25,.11); overflow: hidden; }
+    .section-head { padding: 26px 28px 18px; border-bottom: 1px solid var(--line); background: linear-gradient(90deg, rgba(255,247,237,.9), rgba(255,255,255,.68)); }
+    .section-kicker { color: var(--orange); font-size: 13px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { margin: 8px 0 8px; font-size: clamp(25px, 3vw, 36px); letter-spacing: -.025em; }
+    .section-head p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .content { padding: 26px 28px 30px; }
+    .verdict { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: stretch; }
+    .note, .score-card, .mini-card, .source-card { border: 1px solid rgba(183,126,73,.18); border-radius: 24px; background: #fffdf9; padding: 20px; }
+    .note strong, .source-card strong { color: #92400e; }
+    .note p, .mini-card p, .source-card p { color: var(--muted); line-height: 1.75; margin: 8px 0 0; }
+    .scores { display: grid; gap: 12px; }
+    .bar { display: grid; gap: 7px; }
+    .bar-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+    .track { height: 10px; border-radius: 999px; background: #fde7c8; overflow: hidden; }
+    .fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--amber), var(--rose)); }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { border: 1px solid var(--line); border-radius: 28px; padding: 24px; background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,243,.84)); box-shadow: 0 14px 32px rgba(124,75,25,.09); }
+    .tagline { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .pill { border-radius: 999px; padding: 6px 10px; background: #fff3df; border: 1px solid rgba(183,126,73,.18); color: #9a5a13; font-size: 12px; font-weight: 700; }
+    .project h3 { margin: 0 0 10px; font-size: 25px; letter-spacing: -.02em; }
+    .project p { margin: 0 0 16px; color: var(--muted); line-height: 1.75; }
+    .list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .list li { padding: 12px 13px; border-radius: 16px; background: rgba(255,246,231,.72); color: #574234; line-height: 1.62; }
+    .list b { color: #8a4b0f; }
+    .table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 20px; }
+    .table th, .table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(183,126,73,.16); vertical-align: top; line-height: 1.65; }
+    .table th { background: #fff3df; color: #8a4b0f; font-size: 13px; }
+    .table tr:last-child td { border-bottom: 0; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: step; }
+    .step { position: relative; padding: 20px; border-radius: 22px; border: 1px solid rgba(183,126,73,.18); background: #fffdf9; }
+    .step::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #f97316; color: white; font-weight: 800; margin-bottom: 12px; }
+    .step h4 { margin: 0 0 8px; font-size: 17px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
+    .warn { border-left: 5px solid var(--orange); background: #fff7ed; padding: 16px 18px; border-radius: 18px; color: #614331; line-height: 1.7; }
+    .sources { display: grid; gap: 12px; }
+    .sources a { color: #b45309; text-decoration: none; font-weight: 700; }
+    .sources a:hover { text-decoration: underline; }
+    footer { color: var(--muted); text-align: center; margin-top: 26px; line-height: 1.8; font-size: 14px; }
+    @media (max-width: 860px) { .hero-grid, .projects, .steps, .verdict { grid-template-columns: 1fr; } .wrap { width: min(100% - 24px, 1120px); padding-top: 22px; } .section-head, .content { padding-left: 20px; padding-right: 20px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <span class="eyebrow">☕ style_warm · 今日副业探索</span>
+      <h1>今天更值得试的两条路：<br />AI 短视频切片代运营，与程序化 SEO 利基站</h1>
+      <p class="lead">报告日期：2026-06-28。今天优先挑了两种更符合“AI 自动化可行性强、起步成本低、具备收入放大空间”的方向：一类是先接单、先赚钱的服务型副业——AI 短视频切片代运营；另一类是可沉淀资产、后续更偏被动收入的项目型副业——程序化 SEO 利基站。前者适合快速拿下第一笔试单，后者更适合愿意用 4-8 周搭建内容资产的人。</p>
+      <div class="hero-grid">
+        <div class="metric"><b>2 个</b><span>今日推荐方向</span></div>
+        <div class="metric"><b>80%+</b><span>可由 AI / 工作流自动化的环节</span></div>
+        <div class="metric"><b>¥100 内</b><span>最低可起步成本</span></div>
+        <div class="metric"><b>7 天</b><span>建议最小验证周期</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Quick Verdict</span>
+        <h2>先给结论</h2>
+        <p>如果你想尽快拿到现金流，优先做“AI 短视频切片代运营”；如果你更想沉淀长期内容资产，再做“程序化 SEO 利基站”。这两个方向的共同点是：AI 负责大部分重复劳动，你主要负责选题判断、质量把关和结果交付。</p>
+      </div>
+      <div class="content verdict">
+        <div class="note">
+          <strong>今日最推荐：AI 短视频切片代运营。</strong>
+          <p>原因很简单：它更容易在 7 天内完成最小验证。你不需要从 0 做品牌，不需要囤货，也不需要先等流量爬坡。只要找到有长视频、直播回放、课程录屏或播客素材的客户，就可以把“长内容切成多个可发短视频”作为明确交付结果来卖。</p>
+          <p>程序化 SEO 利基站则适合更耐心的打法。它的门槛依旧不算高，但回报通常不是立刻出现，而是先花一段时间搭建关键词库、页面模板和自动发布流程，再等搜索流量与联盟分成慢慢放大。</p>
+        </div>
+        <div class="score-card scores">
+          <div class="bar"><div class="bar-row"><span>启动门槛低</span><b>90/100</b></div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+          <div class="bar"><div class="bar-row"><span>AI 自动化程度</span><b>88/100</b></div><div class="track"><div class="fill" style="width:88%"></div></div></div>
+          <div class="bar"><div class="bar-row"><span>近期变现速度</span><b>86/100</b></div><div class="track"><div class="fill" style="width:86%"></div></div></div>
+          <div class="bar"><div class="bar-row"><span>长期收入天花板</span><b>84/100</b></div><div class="track"><div class="fill" style="width:84%"></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Projects</span>
+        <h2>今日 2 个副业方向</h2>
+        <p>每个方向都按“项目介绍、可行性分析、AI 自动化程度、启动成本、预期收益”拆开，方便今天就开始验证。</p>
+      </div>
+      <div class="content projects">
+        <article class="project">
+          <div class="tagline"><span class="pill">服务型</span><span class="pill">快变现</span><span class="pill">强自动化</span></div>
+          <h3>方向一：AI 短视频切片代运营</h3>
+          <p>面向播客主理人、知识博主、讲师、顾问、本地商家和直播卖货团队，把一段 20-90 分钟的长内容拆成多个适合抖音、视频号、小红书、YouTube Shorts 的短视频片段。交付物可以包括自动找高能片段、字幕、标题、封面文案、发布时间建议，甚至直接排期分发。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>本质上是“帮客户把已经有的内容，再赚一遍”。客户不缺素材，缺的是稳定加工和多平台分发能力。你卖的不是剪辑软件，而是“更省时间的内容复用结果”。</li>
+            <li><b>可行性分析：</b>这类服务极适合副业切入，因为客户素材天然存在，成单解释成本低。你可以先用 1 次试剪证明效果，再升级成每周/每月固定交付。相比从零拍摄，切片服务更容易标准化，也更适合做模板化复用。</li>
+            <li><b>AI 自动化程度：</b>约 90%。AI 工具可自动完成高能片段识别、字幕生成、尺寸适配、标题建议、封面文案、基础排期。人工主要负责素材挑选、客户风格判断、重点片段筛选与最终质检。</li>
+            <li><b>启动成本：</b>约 ¥0-¥120/月。若先用免费额度试水，几乎可以零成本开始；若使用 OpusClip Starter，官方价格为 15 美元/月，适合用来做最初的试单验证。</li>
+            <li><b>预期收益：</b>建议先卖试单包：1 条长视频切 3-5 条短视频，定价 ¥99-¥299；稳定后可做月包：每周 1 次交付、每月 12-20 条短视频，定价 ¥699-¥3000。跑通 3-5 个客户后，月副业收入做到 ¥3000-¥12000 是相对现实的区间。</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="tagline"><span class="pill">资产型</span><span class="pill">长期复利</span><span class="pill">内容自动化</span></div>
+          <h3>方向二：程序化 SEO 利基站 + 联盟分成</h3>
+          <p>围绕一个非常垂直的小领域，搭建大量长尾页面，把“关键词研究 → 页面模板 → AI 初稿 → 批量发布 → 内链优化 → 联盟链接插入”做成半自动流水线。典型例子包括软件对比、工具教程、地区场景页、行业模板页等，最终通过联盟分成、广告或数字产品推荐变现。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>这不是传统“每天手写一篇博客”，而是用模板化页面和长尾需求去覆盖大量搜索意图。核心不是追热门，而是把一个细分场景做深，例如“某类 AI 工具对比”“某行业常用模板合集”“某地区服务查询页”。</li>
+            <li><b>可行性分析：</b>程序化 SEO 的好处是规模化很强，适合 AI 与自动化协作。但它不是“无脑发文就能赚”的项目，真正的关键在于关键词筛选、模板质量、数据完整度和页面是否真的解决问题。做好了，它会慢慢变成可复用的流量资产；做不好，则容易生成大量没人看的页面。</li>
+            <li><b>AI 自动化程度：</b>约 82%。AI 可以帮助做关键词聚类、页面初稿、标题与描述生成、内链建议、批量改写、发布流水线；人工主要负责选 niche、定义模板、补关键数据、校验事实，以及淘汰低质页面。</li>
+            <li><b>启动成本：</b>约 ¥80-¥300/月。最低配置通常只需要域名、基础托管、一个 CMS 或静态站工具，再加上大模型成本即可起步。前期不建议一上来堆太多工具，把钱花在关键词和内容验证上更划算。</li>
+            <li><b>预期收益：</b>这是偏中长期的项目。前 1-2 个月可能几乎没有收入；若选题准确、页面持续迭代，3-6 个月后更容易出现首批联盟分成。保守做法是先把目标设成月入 ¥500-¥3000 的小站，再决定是否复制到第二个站点。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Comparison</span>
+        <h2>横向对比：先做哪个？</h2>
+        <p>如果你的目标是“先赚钱，再放大”，优先短视频切片；如果你的目标是“先搭资产，再吃复利”，优先程序化 SEO 利基站。</p>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead><tr><th>维度</th><th>AI 短视频切片代运营</th><th>程序化 SEO 利基站</th></tr></thead>
+          <tbody>
+            <tr><td>起步速度</td><td>快，通常 3-7 天内就能拿样稿试单</td><td>慢，需要先建关键词库、模板和站点结构</td></tr>
+            <tr><td>现金流模式</td><td>按次收费或月包收费，回款更直接</td><td>靠联盟分成/广告/数字产品，回款更滞后</td></tr>
+            <tr><td>AI 自动化重点</td><td>找片段、字幕、封面、标题、排期</td><td>关键词聚类、页面初稿、内链建议、批量发布</td></tr>
+            <tr><td>核心风险</td><td>交付质量不稳、客户风格偏好变化快</td><td>流量爬坡慢、低质量页面难排名</td></tr>
+            <tr><td>更适合谁</td><td>擅长沟通客户、愿意接单交付的人</td><td>愿意搭系统、接受延迟回报的人</td></tr>
+            <tr><td>放大路径</td><td>做 SOP、招兼职剪辑、升级成代运营包</td><td>复制模板到第二个 niche，站群化运营</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">7-Day Plan</span>
+        <h2>7 天最小验证计划</h2>
+        <p>今天不求把事情做大，只求尽快验证“有没有人愿意付钱”。</p>
+      </div>
+      <div class="content steps">
+        <div class="step"><h4>第 1 天：只选一个方向</h4><p>如果你最近更想快速回款，就选短视频切片；如果你愿意做长期项目，就选程序化 SEO。不要两条线一起开。</p></div>
+        <div class="step"><h4>第 2-3 天：做 3 个样稿</h4><p>切片方向就做“原视频 + 3 条短视频样片”；利基站方向就做“10 个关键词 + 3 个模板页面样例”。先让结果能被看见。</p></div>
+        <div class="step"><h4>第 4-5 天：低价测试</h4><p>切片方向去找 20 个潜在客户私聊试单；利基站方向至少上线一个小专题页，测试收录、点击和停留表现。</p></div>
+        <div class="step"><h4>第 6-7 天：复盘并定标准报价</h4><p>记录哪个环节最费时、哪类客户最容易成交、哪些页面最有点击，再把它们沉淀成你的标准 SOP 和定价单。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Risk Control</span>
+        <h2>执行提醒</h2>
+      </div>
+      <div class="content">
+        <div class="warn">不要把“AI 自动化”理解成“完全不用人”。短视频切片最怕只图速度导致内容节奏差、标题夸张、客户品牌感不统一；程序化 SEO 最怕批量生成了大量页面，却没有真实信息价值。更稳的做法是：AI 负责产能，人负责选题、校对、审美和结果责任。先卖清楚边界，再扩大规模。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Sources</span>
+        <h2>参考信息</h2>
+        <p>以下公开资料主要用于辅助判断工具成本、自动化能力与项目可行性；收益部分为结合副业场景给出的保守测算，并非平台官方承诺。</p>
+      </div>
+      <div class="content sources">
+        <div class="source-card">
+          <strong>1. OpusClip 官方定价</strong>
+          <p>用于验证 AI 短视频切片工具的入门成本与基础能力，Starter 方案公开价为 15 美元/月。</p>
+          <p><a href="https://www.opus.pro/pricing?via=ali" target="_blank" rel="noopener noreferrer">https://www.opus.pro/pricing?via=ali</a></p>
+        </div>
+        <div class="source-card">
+          <strong>2. Ahrefs：Programmatic SEO, Explained for Beginners</strong>
+          <p>用于验证程序化 SEO 的基本方法论与规模化页面思路。</p>
+          <p><a href="https://ahrefs.com/blog/programmatic-seo/" target="_blank" rel="noopener noreferrer">https://ahrefs.com/blog/programmatic-seo/</a></p>
+        </div>
+        <div class="source-card">
+          <strong>3. Ahrefs：Automated SEO</strong>
+          <p>用于验证 SEO 流程中可被自动化的关键词处理、分析与工作流部分。</p>
+          <p><a href="https://ahrefs.com/blog/automated-seo/" target="_blank" rel="noopener noreferrer">https://ahrefs.com/blog/automated-seo/</a></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>副业探索报告 · bywork-20260628.html</div>
+      <div>建议行动：如果只选一条，先跑短视频切片试单；先赚到第一笔，再决定要不要加开利基站项目。</div>
+    </footer>
+  </main>
+</body>
+</html>
