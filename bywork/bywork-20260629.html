@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>今日副业探索报告｜AI 短视频切片代运营与 AI 数字模板店</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff8ef;
+      --bg-soft: #fff3e4;
+      --card: rgba(255,255,255,.9);
+      --text: #352317;
+      --muted: #7b6759;
+      --line: rgba(191, 128, 72, .22);
+      --amber: #d97706;
+      --orange: #f97316;
+      --rose: #fb7185;
+      --green: #16a34a;
+      --shadow: 0 24px 60px rgba(124, 75, 25, .15);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(251, 146, 60, .25), transparent 34%),
+        radial-gradient(circle at 88% 12%, rgba(251, 113, 133, .16), transparent 28%),
+        linear-gradient(145deg, #fffaf4 0%, #fff4e8 52%, #fffdf9 100%);
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 42px 0 48px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 34px; padding: clamp(28px, 5vw, 54px); background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,246,234,.84)); box-shadow: var(--shadow); backdrop-filter: blur(18px); }
+    .hero::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px; border-radius: 50%; background: conic-gradient(from 120deg, rgba(249,115,22,.34), rgba(251,113,133,.22), rgba(245,158,11,.26), rgba(249,115,22,.34)); filter: blur(4px); opacity: .78; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border-radius: 999px; background: #fff3df; border: 1px solid var(--line); color: #9a5a13; font-size: 13px; font-weight: 700; }
+    h1 { position: relative; z-index: 1; margin: 20px 0 12px; font-size: clamp(34px, 5.5vw, 62px); line-height: 1.04; letter-spacing: -.045em; }
+    .lead { position: relative; z-index: 1; max-width: 860px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.85; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .metric { padding: 17px; border-radius: 22px; background: rgba(255,255,255,.8); border: 1px solid rgba(183,126,73,.18); }
+    .metric b { display: block; font-size: 23px; color: #8a4b0f; }
+    .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .section { margin-top: 22px; border: 1px solid var(--line); border-radius: 30px; background: var(--card); box-shadow: 0 16px 42px rgba(124,75,25,.11); overflow: hidden; }
+    .section-head { padding: 26px 28px 18px; border-bottom: 1px solid var(--line); background: linear-gradient(90deg, rgba(255,247,237,.92), rgba(255,255,255,.7)); }
+    .section-kicker { color: var(--orange); font-size: 13px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { margin: 8px 0 8px; font-size: clamp(25px, 3vw, 36px); letter-spacing: -.025em; }
+    .section-head p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .content { padding: 26px 28px 30px; }
+    .verdict { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: stretch; }
+    .note, .score-card, .source-card { border: 1px solid rgba(183,126,73,.18); border-radius: 24px; background: #fffdf9; padding: 20px; }
+    .note strong, .source-card strong { color: #92400e; }
+    .note p, .source-card p { color: var(--muted); line-height: 1.75; margin: 8px 0 0; }
+    .scores { display: grid; gap: 12px; }
+    .bar { display: grid; gap: 7px; }
+    .bar-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+    .track { height: 10px; border-radius: 999px; background: #fde7c8; overflow: hidden; }
+    .fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--amber), var(--rose)); }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { border: 1px solid var(--line); border-radius: 28px; padding: 24px; background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,243,.84)); box-shadow: 0 14px 32px rgba(124,75,25,.09); }
+    .tagline { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .pill { border-radius: 999px; padding: 6px 10px; background: #fff3df; border: 1px solid rgba(183,126,73,.18); color: #9a5a13; font-size: 12px; font-weight: 700; }
+    .project h3 { margin: 0 0 10px; font-size: 25px; letter-spacing: -.02em; }
+    .project p { margin: 0 0 16px; color: var(--muted); line-height: 1.75; }
+    .list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .list li { padding: 12px 13px; border-radius: 16px; background: rgba(255,246,231,.72); color: #574234; line-height: 1.62; }
+    .list b { color: #8a4b0f; }
+    .table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 20px; }
+    .table th, .table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(183,126,73,.16); vertical-align: top; line-height: 1.65; }
+    .table th { background: #fff3df; color: #8a4b0f; font-size: 13px; }
+    .table tr:last-child td { border-bottom: 0; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: step; }
+    .step { position: relative; padding: 20px; border-radius: 22px; border: 1px solid rgba(183,126,73,.18); background: #fffdf9; }
+    .step::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #f97316; color: white; font-weight: 800; margin-bottom: 12px; }
+    .step h4 { margin: 0 0 8px; font-size: 17px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
+    .warn { border-left: 5px solid var(--orange); background: #fff7ed; padding: 16px 18px; border-radius: 18px; color: #614331; line-height: 1.7; }
+    .sources { display: grid; gap: 12px; }
+    .sources a { color: #b45309; text-decoration: none; font-weight: 700; }
+    .sources a:hover { text-decoration: underline; }
+    footer { color: var(--muted); text-align: center; margin-top: 26px; line-height: 1.8; font-size: 14px; }
+    @media (max-width: 860px) {
+      .hero-grid, .projects, .steps, .verdict { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 24px, 1120px); padding-top: 22px; }
+      .section-head, .content { padding-left: 20px; padding-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <span class="eyebrow">☕ style_warm · 今日副业探索</span>
+      <h1>今天值得验证的两条轻资产路线：<br />AI 短视频切片代运营，与 AI 数字模板店</h1>
+      <p class="lead">报告日期：2026-06-29。今天优先筛了两种更符合“AI 自动化可行性强、门槛低、收入潜力好”的副业打法：一类是更快见到现金流的服务型副业——AI 短视频切片代运营；另一类是更适合沉淀可复制产品的数字型副业——AI 数字模板店。前者适合先成交、先回款，后者适合慢慢积累可反复售卖的商品资产。</p>
+      <div class="hero-grid">
+        <div class="metric"><b>2 个</b><span>今日推荐方向</span></div>
+        <div class="metric"><b>85%+</b><span>可由 AI / 自动化完成的环节</span></div>
+        <div class="metric"><b>¥0 起</b><span>最低可启动成本</span></div>
+        <div class="metric"><b>7 天</b><span>建议最小验证周期</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Quick Verdict</span>
+        <h2>先给结论</h2>
+        <p>如果你现在最需要“尽快拿到第一笔钱”，优先做 AI 短视频切片代运营；如果你更想做一个能反复售卖、逐步沉淀口碑与商品池的项目，优先做 AI 数字模板店。</p>
+      </div>
+      <div class="content verdict">
+        <div class="note">
+          <strong>今日最推荐：AI 短视频切片代运营。</strong>
+          <p>原因是它最容易在一周内完成最小验证。客户素材通常已经存在，你只需要把长视频、直播回放、课程录屏或播客内容切成可发的短视频成品，再用样片证明效果，就有机会快速试单。</p>
+          <p>AI 数字模板店则更偏“轻资产小商品”思路。它的优点是可复制、可叠加、可长期卖，但前期需要花一点时间打磨模板、封面和上架页，收益曲线通常比接单型服务更慢一些。</p>
+        </div>
+        <div class="score-card scores">
+          <div class="bar"><div class="bar-row"><span>启动门槛低</span><b>91/100</b></div><div class="track"><div class="fill" style="width:91%"></div></div></div>
+          <div class="bar"><div class="bar-row"><span>AI 自动化程度</span><b>87/100</b></div><div class="track"><div class="fill" style="width:87%"></div></div></div>
+          <div class="bar"><div class="bar-row"><span>近期变现速度</span><b>88/100</b></div><div class="track"><div class="fill" style="width:88%"></div></div></div>
+          <div class="bar"><div class="bar-row"><span>长期收入天花板</span><b>82/100</b></div><div class="track"><div class="fill" style="width:82%"></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Projects</span>
+        <h2>今日 2 个副业方向</h2>
+        <p>每个方向都按“项目介绍、可行性分析、AI 自动化程度、启动成本、预期收益”展开，方便直接判断要不要今天开做。</p>
+      </div>
+      <div class="content projects">
+        <article class="project">
+          <div class="tagline"><span class="pill">服务型</span><span class="pill">快变现</span><span class="pill">高自动化</span></div>
+          <h3>方向一：AI 短视频切片代运营</h3>
+          <p>面向播客主理人、知识博主、讲师、本地商家和直播团队，把 20-90 分钟的长内容拆成多个适合抖音、视频号、小红书、YouTube Shorts 的短视频片段。交付物可以包括自动识别高能片段、字幕、标题、封面文案、发布时间建议，甚至附带多平台分发清单。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>本质上是在卖“内容复用效率”。客户通常不缺素材，缺的是把已有内容快速加工成多平台可发成品的能力。你卖的是结果，而不是剪辑软件。</li>
+            <li><b>可行性分析：</b>这类服务成单逻辑简单：你拿一段客户已有内容，做 3 条样片，客户立刻就能看见价值。相比从零策划拍摄，切片服务更容易标准化，也更容易做成按次收费或月包收费。</li>
+            <li><b>AI 自动化程度：</b>约 90%。AI 负责识别高能片段、字幕生成、画面裁切、节奏提议、封面文案和标题建议。人工主要负责风格判断、重点片段复核、品牌口径统一和最终质检。</li>
+            <li><b>启动成本：</b>约 ¥0-¥120 / 月。先用免费额度试水几乎可以零成本开始；如需稳定交付，OpusClip 官方 Starter 方案公开价为 15 美元 / 月，适合做最初试单验证。</li>
+            <li><b>预期收益：</b>建议先卖试单包：1 条长视频切 3-5 条短视频，定价 ¥99-¥299；稳定后升级月包：每月交付 12-20 条短视频，定价 ¥699-¥3000。跑通 3-5 个客户后，月副业收入做到 ¥3000-¥12000 是相对现实的区间。</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="tagline"><span class="pill">数字商品</span><span class="pill">轻资产</span><span class="pill">可复制</span></div>
+          <h3>方向二：AI 数字模板店</h3>
+          <p>围绕“可反复售卖”的数字模板做小型商品池，例如简历模板、求职包、社媒封面包、内容日历模板、Notion 管理模板、PPT 封面模板等。AI 负责生成初版结构、文案、变体和封面素材，你负责挑选细分需求、打磨成品与包装页面，然后放到 Gumroad、Etsy 或私域进行持续售卖。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>这条路的核心不是做“大而全的设计店”，而是选一个清晰的小场景，比如“应届生求职简历包”“小红书母婴选题日历模板”“独立开发者发布节奏看板”。只要场景足够具体，商品就更容易成交。</li>
+            <li><b>可行性分析：</b>它门槛低在于你不需要囤货、发物流，也不用实时在线服务客户。难点在于商品必须足够聚焦、封面要能打、示例图要让人一眼看懂用途。所以它更像一个“小而美”的数字商品生意。</li>
+            <li><b>AI 自动化程度：</b>约 84%。AI 可以帮你批量出模板框架、不同风格版本、商品详情页文案、封面标题、FAQ 和用户使用说明。人工主要负责审美筛选、场景适配、排版打磨和最终商品组合。</li>
+            <li><b>启动成本：</b>约 ¥0-¥100 / 月。可先用 Canva 免费版做首批产品；若需要更多高级素材和品牌组件，可按需升级 Canva Pro。销售端可先从 Gumroad 起步，官方定价页显示为无月费、按成交收取 10% flat fee，更适合低成本试卖。</li>
+            <li><b>预期收益：</b>适合从低价小单起步。单个模板包可先定价 ¥19-¥69；若打成“主题合集包”或“岗位求职套装”，可以做到 ¥99-¥199。前期目标不必太大，先验证 10-30 单是否成立；一旦跑通，再复制第二个细分主题，月收入做到 ¥1000-¥8000 会更稳。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Comparison</span>
+        <h2>横向对比：先做哪个？</h2>
+        <p>一句话判断：想快回款，就先做切片代运营；想慢慢搭商品资产，就先做数字模板店。</p>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead><tr><th>维度</th><th>AI 短视频切片代运营</th><th>AI 数字模板店</th></tr></thead>
+          <tbody>
+            <tr><td>起步速度</td><td>快，3-7 天内就能做样片试单</td><td>中等，需要先做模板、封面和商品页</td></tr>
+            <tr><td>现金流模式</td><td>按次收费或月包收费，回款直接</td><td>单品售卖或合集售卖，回款更碎片化</td></tr>
+            <tr><td>AI 自动化重点</td><td>找高能片段、字幕、标题、封面、排期</td><td>模板变体、详情页文案、封面、FAQ、上架文案</td></tr>
+            <tr><td>核心风险</td><td>客户风格变化快、交付质量不稳</td><td>商品同质化、封面点击率低、选题不聚焦</td></tr>
+            <tr><td>更适合谁</td><td>愿意沟通客户、追求先赚第一笔的人</td><td>愿意打磨商品、偏爱做可复制产品的人</td></tr>
+            <tr><td>放大路径</td><td>做 SOP、招兼职、升级成完整代运营</td><td>扩充 SKU、做组合包、沉淀私域复购</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">7-Day Plan</span>
+        <h2>7 天最小验证计划</h2>
+        <p>重点不是“准备得多完整”，而是尽快验证是否有人愿意为你的结果付钱。</p>
+      </div>
+      <div class="content steps">
+        <div class="step"><h4>第 1 天：只选一个方向</h4><p>先决定你要做“接单服务”还是“数字商品”。只开一条线，避免今天很兴奋、三天后全部搁置。</p></div>
+        <div class="step"><h4>第 2-3 天：做最小样品</h4><p>切片方向做 3 条样片；模板方向做 3 个模板样张和 1 个商品详情页。先拿得出手，再谈成交。</p></div>
+        <div class="step"><h4>第 4-5 天：低门槛测试</h4><p>切片方向主动私聊 20 个潜在客户发样片；模板方向先挂 1-3 个商品，观察点击、收藏和咨询反馈。</p></div>
+        <div class="step"><h4>第 6-7 天：复盘并调价</h4><p>记录最费时环节、最好卖的卖点、客户最常问的问题，再把它们整理成你的报价单、FAQ 和标准流程。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Risk Control</span>
+        <h2>执行提醒</h2>
+      </div>
+      <div class="content">
+        <div class="warn">不要把“AI 自动化”理解成“完全不需要人工”。切片服务最怕的是为了提速牺牲内容质量，模板商品最怕的是批量生成了一堆看起来很多、但真正没人想买的商品。更稳的打法是：AI 负责产能，人负责选题、审美、校对和成交闭环。先卖清楚边界，再扩大规模。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Sources</span>
+        <h2>参考信息</h2>
+        <p>以下公开资料主要用于辅助判断工具成本与销售门槛；收益部分为结合副业场景给出的保守测算，并非平台官方承诺。</p>
+      </div>
+      <div class="content sources">
+        <div class="source-card">
+          <strong>1. OpusClip 官方定价</strong>
+          <p>用于验证 AI 短视频切片工具的入门成本与 Starter 档位信息。</p>
+          <p><a href="https://www.opus.pro/pricing" target="_blank" rel="noopener noreferrer">https://www.opus.pro/pricing</a></p>
+        </div>
+        <div class="source-card">
+          <strong>2. Canva 官方定价页</strong>
+          <p>用于验证模板制作工具存在免费版与付费升级路径，适合作为数字模板店的低成本生产工具。</p>
+          <p><a href="https://www.canva.com/ff_sn/pricing/" target="_blank" rel="noopener noreferrer">https://www.canva.com/ff_sn/pricing/</a></p>
+        </div>
+        <div class="source-card">
+          <strong>3. Gumroad 官方定价页</strong>
+          <p>用于验证数字商品平台可低门槛起步，官方页面标注为 10% flat fee，无需先承担月费。</p>
+          <p><a href="https://gumroad.com/pricing" target="_blank" rel="noopener noreferrer">https://gumroad.com/pricing</a></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>副业探索报告 · bywork-20260629.html</div>
+      <div>建议行动：如果今天只做一件事，先做 3 条切片样片或 3 个模板样张，用最小作品换来第一轮真实反馈。</div>
+    </footer>
+  </main>
+</body>
+</html>
