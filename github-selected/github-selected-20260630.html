@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub 精选项目报告 | 2026年6月30日</title>
+  <style>
+    :root { --primary:#0052D9; --primary-2:#2F80ED; --primary-soft:#EAF2FF; --bg:#F3F5F8; --card-bg:#FFFFFF; --text-main:#1C1F23; --text-sub:#5C6A82; --border:rgba(0,82,217,.13); --shadow:0 18px 48px rgba(8,32,71,.10); }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:24px; background:linear-gradient(180deg,#EEF4FF 0%,var(--bg) 280px); color:var(--text-main); font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; }
+    .wrap { max-width:980px; margin:0 auto; background:var(--card-bg); border-radius:28px; overflow:hidden; box-shadow:var(--shadow); }
+    .hero { position:relative; padding:44px 44px 36px; color:#fff; background:radial-gradient(circle at 86% 8%,rgba(255,255,255,.92),rgba(255,255,255,.12) 30%,transparent 48%),linear-gradient(135deg,#003EA8 0%,#0052D9 46%,#4FA3FF 100%); }
+    .hero:after { content:""; position:absolute; right:34px; bottom:-46px; width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,.12); filter:blur(1px); }
+    .badge-group { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px; }
+    .badge { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.22); font-size:13px; font-weight:700; }
+    h1 { margin:0 0 14px; font-size:34px; line-height:1.25; letter-spacing:-.02em; }
+    .hero p { margin:0; max-width:780px; color:rgba(255,255,255,.94); font-size:16px; position:relative; z-index:1; }
+    .content { padding:34px 44px 40px; }
+    .section-title { display:flex; align-items:center; gap:10px; margin:0 0 18px; font-size:24px; color:var(--primary); }
+    .lead-card,.project-card,.tips-card,.source-card { background:#fff; border:1px solid var(--border); border-radius:20px; padding:24px; margin-bottom:22px; box-shadow:0 10px 28px rgba(0,82,217,.06); }
+    .lead-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .metric { background:linear-gradient(180deg,#F8FBFF,#FFFFFF); border:1px solid var(--border); border-radius:16px; padding:16px; }
+    .metric .label { display:block; font-size:13px; color:var(--text-sub); margin-bottom:8px; }
+    .metric .value { display:block; font-size:22px; font-weight:800; color:var(--primary); }
+    .project-head { display:flex; justify-content:space-between; gap:18px; align-items:flex-start; margin-bottom:14px; }
+    .project-title { margin:0; font-size:28px; line-height:1.3; }
+    .project-subtitle { margin:8px 0 0; color:var(--text-sub); }
+    .rank { min-width:86px; text-align:center; background:linear-gradient(180deg,#F6FAFF,#EAF2FF); color:var(--primary); border-radius:16px; padding:14px 12px; border:1px solid var(--border); font-weight:800; }
+    .meta-row { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 18px; }
+    .chip { display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border-radius:999px; font-size:13px; color:var(--text-sub); background:#F7FAFE; border:1px solid rgba(92,106,130,.14); }
+    .summary { margin:0 0 18px; font-size:16px; color:var(--text-main); }
+    .grid-2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:12px; }
+    .panel { background:#FAFCFF; border:1px solid var(--border); border-radius:16px; padding:18px; }
+    .panel h3 { margin:0 0 12px; font-size:17px; color:var(--primary); }
+    ul { margin:0; padding-left:20px; }
+    li { margin-bottom:10px; color:var(--text-sub); }
+    li strong { color:var(--text-main); }
+    .cta-row { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+    .link-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; border-radius:12px; padding:10px 16px; font-weight:700; transition:transform .18s ease,box-shadow .18s ease; }
+    .link-btn.primary { background:var(--primary); color:#fff; box-shadow:0 8px 18px rgba(0,82,217,.22); }
+    .link-btn.secondary { background:var(--primary-soft); color:var(--primary); }
+    .link-btn:hover { transform:translateY(-1px); }
+    .tips-card h3,.source-card h3 { margin:0 0 12px; color:var(--primary); }
+    .foot { padding:0 44px 34px; color:var(--text-sub); font-size:13px; }
+    .foot strong { color:var(--text-main); }
+    a { color:var(--primary); }
+    @media (max-width:820px) { body{padding:14px;} .hero,.content,.foot{padding-left:22px;padding-right:22px;} .lead-grid,.grid-2{grid-template-columns:1fr;} .project-head{flex-direction:column;} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="badge-group"><span class="badge">GitHub 精选</span><span class="badge">2026-06-30</span><span class="badge">style_blue</span></div>
+      <h1>今日 GitHub 精选项目报告</h1>
+      <p>今天挑了 2 个非常适合技术成长路线深入研究的 AI 项目：一个面向“Agent 工程化搭建”，适合看清生产级智能体平台该具备什么；一个面向“AI 评测与安全”，适合补齐很多团队最容易忽视的落地短板。前者解决怎么把 Agent 做出来，后者解决怎么把 Agent 做稳、做安全。</p>
+    </section>
+    <main class="content">
+      <section class="lead-card">
+        <h2 class="section-title">📌 今日结论</h2>
+        <p class="summary">如果你正在搭建自己的 AI Agent 产品或内部工具，建议先看 <strong>VoltAgent/voltagent</strong>；如果你已经开始接入大模型、RAG 或 Agent 工作流，建议立刻补看 <strong>promptfoo/promptfoo</strong>。一个帮你搭系统，一个帮你守质量，组合起来非常适合做成完整的学习路径。</p>
+        <div class="lead-grid"><div class="metric"><span class="label">今日精选数量</span><span class="value">2 个</span></div><div class="metric"><span class="label">核心主题</span><span class="value">Agent 平台 × AI 评测</span></div><div class="metric"><span class="label">推荐阅读顺序</span><span class="value">先搭建 → 再评测</span></div></div>
+      </section>
+
+      <section class="project-card">
+        <div class="project-head"><div><h2 class="project-title">1. VoltAgent/voltagent</h2><p class="project-subtitle">面向生产环境的 TypeScript AI Agent Engineering Platform，覆盖框架、工作流、可观测性与部署运营</p></div><div class="rank">TOP 1</div></div>
+        <div class="meta-row"><span class="chip">⭐ 9,859 Stars</span><span class="chip">🍴 1,024 Forks</span><span class="chip">💻 TypeScript</span><span class="chip">🪪 MIT</span><span class="chip">🧠 Memory / RAG / MCP / Guardrails / Voice</span></div>
+        <p class="summary"><strong>项目详细介绍：</strong>VoltAgent 把自己定义为 “AI Agent Engineering Platform”，不只是一个简单的 Agent SDK，而是把“从开发到上线”这一整条链路尽量补齐。它的开源部分提供 TypeScript Agent Framework，核心能力包括 Memory、RAG、Guardrails、Tools、MCP、Voice、Workflow 等；同时还有 VoltOps Console 用于可观测性、自动化、部署、评测与提示词管理。对工程团队来说，这类项目的价值在于：它不只教你如何创建一个 demo agent，而是把生产环境里真正会遇到的上下文记忆、工作流编排、可观测性和多 Agent 协作都提前纳进了设计里。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>能力覆盖完整：</strong>从 Agent Runtime 到 Workflow Engine，再到 Memory、RAG、Guardrails 与 Evals，适合系统性学习“生产级 Agent 平台”的能力版图。</li><li><strong>多 Agent 架构清晰：</strong>README 明确支持 Supervisors &amp; Sub-Agents，适合研究 supervisor 如何调度多个专职 agent 协作完成复杂任务。</li><li><strong>MCP 集成友好：</strong>支持连接 MCP Server，便于把外部工具、文档和服务接入到 Agent 工作流中，贴近当前 AI 工程生态趋势。</li><li><strong>TypeScript 生态适配度高：</strong>对于 Node.js / 前后端一体团队非常友好，学习成本低，也更容易直接落到业务项目中。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>企业内部 Agent 平台原型：</strong>快速验证客服助手、知识问答、运营 Copilot、自动化审批助手等业务场景。</li><li><strong>多智能体协作实验：</strong>用 supervisor + sub-agents 设计任务拆解、路由与执行链路，适合做复杂任务编排。</li><li><strong>技术选型参考：</strong>如果团队准备自研 Agent Framework，可把 VoltAgent 当作能力清单和架构样板。</li><li><strong>教学和自学：</strong>它的概念组织比较完整，适合把 Agent 工程化知识从“碎片体验”整理成系统认知。</li></ul></div></div>
+        <div class="panel" style="margin-top:16px;"><h3>为什么今天推荐它</h3><ul><li>它特别适合“从会调用模型 API，进阶到会搭 Agent 系统”的技术成长阶段。</li><li>相比只展示单点能力的项目，VoltAgent 更像一张生产级 Agent 平台的全景图。</li><li>如果你计划做内部 AI 平台、Agent 中台或多工具编排系统，这个项目很值得拆开细看。</li></ul></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/VoltAgent/voltagent" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库</a><a class="link-btn secondary" href="https://voltagent.dev" target="_blank" rel="noopener noreferrer">查看项目主页</a></div>
+      </section>
+
+      <section class="project-card">
+        <div class="project-head"><div><h2 class="project-title">2. promptfoo/promptfoo</h2><p class="project-subtitle">聚焦 LLM 评测、红队测试与安全扫描的开发者工具，把“上线前验证”做成标准化流程</p></div><div class="rank">TOP 2</div></div>
+        <div class="meta-row"><span class="chip">⭐ 22,748 Stars</span><span class="chip">🍴 2,021 Forks</span><span class="chip">💻 TypeScript</span><span class="chip">🪪 MIT</span><span class="chip">🛡️ Eval / Red Team / CI-CD / Code Scanning</span></div>
+        <p class="summary"><strong>项目详细介绍：</strong>Promptfoo 的定位非常直接：它是一个用于评测和红队测试 LLM 应用的 CLI 与库。项目主页强调要停止“拍脑袋试 prompt、靠感觉上生产”的工作方式，而是通过自动化评测、对比实验、漏洞扫描和 CI/CD 集成，让 AI 应用的质量验证变得工程化。它支持对 prompt、Agent、RAG 系统做测试，也支持多模型对比、代码扫描与安全报告生成。对于任何已经开始用大模型做产品的人来说，Promptfoo 的意义不在于“让模型更聪明”，而在于“让系统更可控、更可靠、更敢上线”。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>评测与安全一体化：</strong>不只做 prompt eval，还把 red teaming、漏洞扫描、合规检查放进同一条工具链。</li><li><strong>开发者工作流友好：</strong>CLI + 声明式配置 + CI/CD 集成，适合直接纳入研发流程，而不是只停留在研究演示。</li><li><strong>支持多模型横向比较：</strong>可以把 OpenAI、Anthropic、Gemini、DeepSeek、Ollama 等模型放在同一套评测基准下比较。</li><li><strong>本地运行与隐私友好：</strong>README 强调评测可 100% 本地执行，适合对数据安全和测试隔离有要求的团队。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>AI 应用上线前验收：</strong>在发布前批量验证回答质量、拒答策略、越狱风险和业务约束是否达标。</li><li><strong>模型切换评估：</strong>当团队准备从一个模型切换到另一个模型时，用统一数据集做效果与成本对比。</li><li><strong>RAG 和 Agent 回归测试：</strong>每次改 prompt、知识库或工具调用逻辑后，快速检查系统能力有没有退化。</li><li><strong>安全基线建设：</strong>给团队建立“AI 不是能跑就行，还要能测、能审、能复盘”的工程习惯。</li></ul></div></div>
+        <div class="panel" style="margin-top:16px;"><h3>为什么今天推荐它</h3><ul><li>很多团队已经在做 Agent 和 RAG，但往往缺少系统化评测方法，Promptfoo 正好补这个关键短板。</li><li>它非常适合帮助技术人成长出“AI 工程质量意识”，这是比单纯会调 API 更重要的一步。</li><li>如果你想让 AI 项目真正走向稳定交付，Promptfoo 值得长期放进工具箱。</li></ul></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/promptfoo/promptfoo" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库</a><a class="link-btn secondary" href="https://promptfoo.dev" target="_blank" rel="noopener noreferrer">查看项目主页</a></div>
+      </section>
+
+      <section class="tips-card"><h3>🧭 今日阅读建议</h3><ul><li><strong>先看 VoltAgent：</strong>重点看它如何把 Memory、Workflow、MCP、Guardrails、Evals 组织成完整平台能力。</li><li><strong>再看 Promptfoo：</strong>重点看它如何把 AI 评测、红队测试、代码扫描和 CI/CD 整合成工程流程。</li><li><strong>最后做迁移思考：</strong>前者适合回答“怎么搭”，后者适合回答“怎么验”，两者结合起来就是一条很完整的 AI 工程成长路径。</li></ul></section>
+      <section class="source-card"><h3>🔎 信息来源</h3><ul><li>VoltAgent/voltagent GitHub 仓库 README、voltagent.dev 官方站点、GitHub 仓库公开元数据</li><li>promptfoo/promptfoo GitHub 仓库 README、promptfoo.dev 官方文档站点、GitHub 仓库公开元数据</li><li>内容生成时间：2026-06-30 CST</li></ul></section>
+    </main>
+    <div class="foot"><strong>输出文件：</strong>github-selected-20260630.html<br /><strong>生成说明：</strong>采用 style_blue 风格扩展生成，适配 GitHub Pages 发布。</div>
+  </div>
+</body>
+</html>
