@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>今日副业探索报告｜AI 简历优化工作室与 AI 可打印模板店</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff8ef;
+      --bg-soft: #fff3e4;
+      --card: rgba(255,255,255,.92);
+      --text: #352317;
+      --muted: #7b6759;
+      --line: rgba(191, 128, 72, .22);
+      --amber: #d97706;
+      --orange: #f97316;
+      --rose: #fb7185;
+      --green: #16a34a;
+      --shadow: 0 24px 60px rgba(124, 75, 25, .15);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(251, 146, 60, .25), transparent 34%),
+        radial-gradient(circle at 88% 12%, rgba(251, 113, 133, .16), transparent 28%),
+        linear-gradient(145deg, #fffaf4 0%, #fff4e8 52%, #fffdf9 100%);
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 42px 0 48px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 34px; padding: clamp(28px, 5vw, 54px); background: linear-gradient(135deg, rgba(255,255,255,.94), rgba(255,246,234,.86)); box-shadow: var(--shadow); backdrop-filter: blur(18px); }
+    .hero::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px; border-radius: 50%; background: conic-gradient(from 120deg, rgba(249,115,22,.34), rgba(251,113,133,.22), rgba(245,158,11,.26), rgba(249,115,22,.34)); filter: blur(4px); opacity: .78; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border-radius: 999px; background: #fff3df; border: 1px solid var(--line); color: #9a5a13; font-size: 13px; font-weight: 700; }
+    h1 { position: relative; z-index: 1; margin: 20px 0 12px; font-size: clamp(34px, 5.5vw, 62px); line-height: 1.05; letter-spacing: -.045em; }
+    .lead { position: relative; z-index: 1; max-width: 860px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.85; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .metric { padding: 17px; border-radius: 22px; background: rgba(255,255,255,.82); border: 1px solid rgba(183,126,73,.18); }
+    .metric b { display: block; font-size: 23px; color: #8a4b0f; }
+    .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .section { margin-top: 22px; border: 1px solid var(--line); border-radius: 30px; background: var(--card); box-shadow: 0 16px 42px rgba(124,75,25,.11); overflow: hidden; }
+    .section-head { padding: 26px 28px 18px; border-bottom: 1px solid var(--line); background: linear-gradient(90deg, rgba(255,247,237,.92), rgba(255,255,255,.7)); }
+    .section-kicker { color: var(--orange); font-size: 13px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { margin: 8px 0 8px; font-size: clamp(25px, 3vw, 36px); letter-spacing: -.025em; }
+    .section-head p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .content { padding: 26px 28px 30px; }
+    .verdict { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: stretch; }
+    .note, .score-card, .source-card { border: 1px solid rgba(183,126,73,.18); border-radius: 24px; background: #fffdf9; padding: 20px; }
+    .note strong, .source-card strong { color: #92400e; }
+    .note p, .source-card p { color: var(--muted); line-height: 1.75; margin: 8px 0 0; }
+    .scores { display: grid; gap: 12px; }
+    .bar { display: grid; gap: 7px; }
+    .bar-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+    .track { height: 10px; border-radius: 999px; background: #fde7c8; overflow: hidden; }
+    .fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--amber), var(--rose)); }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { border: 1px solid var(--line); border-radius: 28px; padding: 24px; background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,243,.84)); box-shadow: 0 14px 32px rgba(124,75,25,.09); }
+    .tagline { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .pill { border-radius: 999px; padding: 6px 10px; background: #fff3df; border: 1px solid rgba(183,126,73,.18); color: #9a5a13; font-size: 12px; font-weight: 700; }
+    .project h3 { margin: 0 0 10px; font-size: 25px; letter-spacing: -.02em; }
+    .project p { margin: 0 0 16px; color: var(--muted); line-height: 1.75; }
+    .list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .list li { padding: 12px 13px; border-radius: 16px; background: rgba(255,246,231,.72); color: #574234; line-height: 1.62; }
+    .list b { color: #8a4b0f; }
+    .table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 20px; }
+    .table th, .table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(183,126,73,.16); vertical-align: top; line-height: 1.65; }
+    .table th { background: #fff3df; color: #8a4b0f; font-size: 13px; }
+    .table tr:last-child td { border-bottom: 0; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: step; }
+    .step { position: relative; padding: 20px; border-radius: 22px; border: 1px solid rgba(183,126,73,.18); background: #fffdf9; }
+    .step::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #f97316; color: white; font-weight: 800; margin-bottom: 12px; }
+    .step h4 { margin: 0 0 8px; font-size: 17px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
+    .warn { border-left: 5px solid var(--orange); background: #fff7ed; padding: 16px 18px; border-radius: 18px; color: #614331; line-height: 1.7; }
+    .sources { display: grid; gap: 12px; }
+    .sources a { color: #b45309; text-decoration: none; font-weight: 700; word-break: break-all; }
+    .sources a:hover { text-decoration: underline; }
+    footer { color: var(--muted); text-align: center; margin-top: 26px; line-height: 1.8; font-size: 14px; }
+    @media (max-width: 860px) {
+      .hero-grid, .projects, .steps, .verdict { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 24px, 1120px); padding-top: 22px; }
+      .section-head, .content { padding-left: 20px; padding-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <span class="eyebrow">☕ style_warm · 今日副业探索</span>
+      <h1>今天值得验证的两条轻资产路线：<br />AI 简历优化工作室，与 AI 可打印模板店</h1>
+      <p class="lead">报告日期：2026-06-30。今天优先筛了两种更符合“AI 自动化可行性强、门槛低、收入潜力好”的副业打法：一类是更快拿到现金流的服务型副业——AI ATS 简历 / LinkedIn 优化工作室；另一类是更适合沉淀可复制商品资产的数字型副业——AI 可打印模板 / 工作纸数字店铺。前者更适合先成交、先回款，后者更适合慢慢铺 SKU、做长期复利。</p>
+      <div class="hero-grid">
+        <div class="metric"><b>2 个</b><span>今日推荐方向</span></div>
+        <div class="metric"><b>85%+</b><span>可由 AI / 自动化完成的环节</span></div>
+        <div class="metric"><b>¥0 起</b><span>最低可启动成本</span></div>
+        <div class="metric"><b>7 天</b><span>建议最小验证周期</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Quick Verdict</span>
+        <h2>先给结论</h2>
+        <p>如果你现在最需要“尽快拿到第一笔钱”，优先做 AI ATS 简历 / LinkedIn 优化工作室；如果你更想做一个能反复售卖、逐步沉淀商品池的项目，优先做 AI 可打印模板店。</p>
+      </div>
+      <div class="content verdict">
+        <div class="note">
+          <strong>今日最推荐：AI ATS 简历 / LinkedIn 优化工作室。</strong>
+          <p>原因是它最容易在一周内完成最小验证。你不需要囤货，也不需要开发产品，只要通过问卷采集信息、拆解目标岗位 JD、生成优化稿，再拿 1-2 个样例去试单，就有机会快速成交。</p>
+          <p>AI 可打印模板店则更偏“做一次卖很多次”的数字商品路线。它的优点是能积累商品资产、可复制、可持续扩张；缺点是前期需要花一点时间打磨版式、封面和上架页，收益曲线通常比服务型副业慢一些。</p>
+        </div>
+        <div class="score-card scores">
+          <div class="bar"><div class="bar-row"><span>启动门槛低</span><b>92/100</b></div><div class="track"><div class="fill" style="width:92%"></div></div></div>
+          <div class="bar"><div class="bar-row"><span>AI 自动化程度</span><b>89/100</b></div><div class="track"><div class="fill" style="width:89%"></div></div></div>
+          <div class="bar"><div class="bar-row"><span>近期变现速度</span><b>90/100</b></div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+          <div class="bar"><div class="bar-row"><span>长期收入天花板</span><b>81/100</b></div><div class="track"><div class="fill" style="width:81%"></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Projects</span>
+        <h2>今日 2 个副业方向</h2>
+        <p>每个方向都按“项目介绍、可行性分析、AI 自动化程度、启动成本、预期收益”展开，方便直接判断要不要今天开做。</p>
+      </div>
+      <div class="content projects">
+        <article class="project">
+          <div class="tagline"><span class="pill">服务型</span><span class="pill">快变现</span><span class="pill">高自动化</span></div>
+          <h3>方向一：AI ATS 简历 / LinkedIn 优化工作室</h3>
+          <p>面向校招、转岗、社招人群，交付 ATS 简历优化、岗位定制版简历、LinkedIn 标题与摘要优化、Cover Letter 初稿、模拟面试问答包。核心不是“帮人写一份简历”，而是帮客户更快通过初筛，并把求职材料做成更像样的整套包。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>本质上是在卖“求职表达效率”。客户通常已经有原始经历，但不会提炼亮点、不会贴 JD、不会写 LinkedIn，也不懂 ATS 关键词筛选逻辑，你卖的是“更容易被看见”的结果。</li>
+            <li><b>可行性分析：</b>Jobscan 的 2025 求职报告提到，其基于超过 100 万次扫描和 384 名招聘者调研的数据观察到 ATS 优化依然关键；其相关文章还提到 99.7% 的招聘者会在 ATS 中使用关键词过滤，这意味着求职材料优化有稳定需求。Fiverr 上同类服务常见起步价约 40-90 美元，也存在更高端档位，说明这条路既能低价试单，也有客单升级空间。</li>
+            <li><b>AI 自动化程度：</b>约 88%。AI 负责 JD 拆解、关键词提取、简历重写初稿、项目经历量化建议、LinkedIn headline/summary 草稿、模拟面试问答；人工主要负责事实核验、语气润色、岗位适配和最终质检。</li>
+            <li><b>启动成本：</b>约 ¥0-¥150 / 月。先用免费工具就能起步；如需稳定交付，ChatGPT Plus 官方公开价为 20 美元 / 月。排版端可以先用 Canva 免费版，后续再按需升级。</li>
+            <li><b>预期收益：</b>建议先卖轻量试单：简历诊断 / 单份优化定价 ¥99-¥299；标准包（简历 + 求职信）可做 ¥299-¥699；进阶包（再加 LinkedIn 或面试问答）可做到 ¥699-¥1499。若月内稳定拿到 8-15 单，月副业收入做到 ¥3000-¥12000 是相对现实的区间。</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="tagline"><span class="pill">数字商品</span><span class="pill">轻资产</span><span class="pill">可复制</span></div>
+          <h3>方向二：AI 可打印模板 / 工作纸数字店铺</h3>
+          <p>围绕“可反复售卖”的数字商品做小型 SKU 池，例如儿童工作纸、打卡表、阅读记录页、家庭任务清单、英语练习页、求职进度表、学习计划页等。AI 负责批量生成主题、文案、变体和封面结构，你负责把它们打磨成真正能卖的 PDF 或可编辑模板，然后上架到 Gumroad / Etsy 等平台。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>这条路的核心不是做“大而全的模板站”，而是选一个具体使用场景，比如“幼儿园英文描红工作纸”“家长用奖励打卡表”“求职 30 天跟进模板包”。只要场景够具体，转化会比泛模板更容易。</li>
+            <li><b>可行性分析：</b>Etsy 官方帮助中心明确列出 listing fee、transaction fee、payment processing fee，说明数字商品店可以低固定成本运行；Etsy 的 printable templates / planners 市场页也能看到大量 Digital Download 商品，价格带从低价引流款到十几美元都有，适合用小商品思路做测试和扩充。</li>
+            <li><b>AI 自动化程度：</b>约 88%。AI 可以帮你批量出主题清单、版式文案、不同年龄层/人群版本、商品标题、FAQ 与详情页初稿。人工主要负责审美筛选、格式统一、打印友好性检查和最终商品组合。</li>
+            <li><b>启动成本：</b>约 ¥0-¥120 / 月。制作端可先用 Canva 免费版起步；销售端若先用 Gumroad，官方定价页写明无月费、10% flat fee。若扩展到 Etsy，则还需要承担 listing / selling 相关费用。</li>
+            <li><b>预期收益：</b>单个模板包可先定价 ¥9.9-¥39；主题合集包可以做到 ¥49-¥129。前期重点不是抬高客单，而是尽快做出 20-50 个可测试 SKU。若跑出 2-3 个稳定款，月收入做到 ¥1000-¥8000 会更稳，后续还可以继续扩类目。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Comparison</span>
+        <h2>横向对比：先做哪个？</h2>
+        <p>一句话判断：想快回款，就先做简历优化工作室；想慢慢搭商品资产，就先做可打印模板店。</p>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead><tr><th>维度</th><th>AI ATS 简历 / LinkedIn 优化</th><th>AI 可打印模板 / 工作纸店</th></tr></thead>
+          <tbody>
+            <tr><td>起步速度</td><td>快，3-7 天内可完成样例并试单</td><td>中等，需要先做模板、封面与商品页</td></tr>
+            <tr><td>现金流模式</td><td>按次收费或套餐收费，回款直接</td><td>单品售卖或合集售卖，回款更碎片化</td></tr>
+            <tr><td>AI 自动化重点</td><td>JD 拆解、关键词提取、初稿改写、模拟问答</td><td>主题拓展、版式变体、详情文案、FAQ、封面标题</td></tr>
+            <tr><td>核心风险</td><td>客户经历信息不完整、过度承诺结果、修改轮次失控</td><td>商品同质化、封面点击率低、选题不聚焦</td></tr>
+            <tr><td>更适合谁</td><td>愿意沟通客户、想尽快赚到第一笔钱的人</td><td>愿意打磨商品、偏好做可复制数字资产的人</td></tr>
+            <tr><td>放大路径</td><td>做 SOP、拆出问卷模板、升级到求职陪跑包</td><td>扩充 SKU、做主题系列、沉淀复购与私域用户</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">7-Day Plan</span>
+        <h2>7 天最小验证计划</h2>
+        <p>重点不是“准备得多完整”，而是尽快验证是否有人愿意为你的结果付钱。</p>
+      </div>
+      <div class="content steps">
+        <div class="step"><h4>第 1 天：只选一个方向</h4><p>先决定你要做“求职材料服务”还是“数字模板商品”。只开一条线，避免来回切换造成拖延。</p></div>
+        <div class="step"><h4>第 2-3 天：做最小样品</h4><p>简历方向做 1 份优化前后对比样例；模板方向做 3-5 个样张和 1 个商品封面页。先拿得出手，再谈成交。</p></div>
+        <div class="step"><h4>第 4-5 天：低门槛测试</h4><p>简历方向去触达求职社群、朋友转介绍或闲鱼挂单；模板方向先上架 3-10 个 SKU，观察浏览、收藏和咨询反馈。</p></div>
+        <div class="step"><h4>第 6-7 天：复盘并调价</h4><p>记录最费时环节、最好卖的卖点、客户最常问的问题，再把它们整理成你的报价单、FAQ 和标准流程。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Risk Control</span>
+        <h2>执行提醒</h2>
+      </div>
+      <div class="content">
+        <div class="warn">不要把“AI 自动化”理解成“完全不需要人工”。简历服务最怕的是 AI 胡编经历或夸大成果，模板商品最怕的是批量生产一堆没人愿意买的同质化内容。更稳的打法是：AI 负责提速，你负责事实校验、审美筛选、交付边界和成交闭环。尤其是简历服务，必须让客户确认所有经历与数字，不能替客户虚构。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Sources</span>
+        <h2>参考信息</h2>
+        <p>以下公开资料主要用于辅助判断工具成本、平台门槛与市场价格；收益部分为结合副业场景给出的保守测算，并非平台官方承诺。</p>
+      </div>
+      <div class="content sources">
+        <div class="source-card">
+          <strong>1. Jobscan 2025 求职报告 / ATS 文章</strong>
+          <p>用于辅助判断 ATS 优化需求仍然存在、关键词筛选在招聘流程中依然重要。</p>
+          <p><a href="https://www.jobscan.co/state-of-the-job-search" target="_blank" rel="noopener noreferrer">https://www.jobscan.co/state-of-the-job-search</a></p>
+          <p><a href="https://www.jobscan.co/blog/ats-resume/" target="_blank" rel="noopener noreferrer">https://www.jobscan.co/blog/ats-resume/</a></p>
+        </div>
+        <div class="source-card">
+          <strong>2. Fiverr 同类服务报价</strong>
+          <p>用于观察 ATS 简历 / 求职信 / LinkedIn 优化服务的公开起步价区间。</p>
+          <p><a href="https://www.fiverr.com/pro_writers5/write-and-upgrade-your-resume-cv-cover-letter-linkedin" target="_blank" rel="noopener noreferrer">https://www.fiverr.com/pro_writers5/write-and-upgrade-your-resume-cv-cover-letter-linkedin</a></p>
+          <p><a href="https://www.fiverr.com/juliaworks12/write-your-cv-resume-cover-letter-and-optimize-linkedin" target="_blank" rel="noopener noreferrer">https://www.fiverr.com/juliaworks12/write-your-cv-resume-cover-letter-and-optimize-linkedin</a></p>
+        </div>
+        <div class="source-card">
+          <strong>3. OpenAI / Canva 官方定价</strong>
+          <p>用于验证交付该类副业时常用工具的起步成本与免费/付费路径。</p>
+          <p><a href="https://help.openai.com/zh-hans-cn/articles/6950777-chatgpt-plus-.eps" target="_blank" rel="noopener noreferrer">https://help.openai.com/zh-hans-cn/articles/6950777-chatgpt-plus-.eps</a></p>
+          <p><a href="https://www.canva.com/pricing/" target="_blank" rel="noopener noreferrer">https://www.canva.com/pricing/</a></p>
+        </div>
+        <div class="source-card">
+          <strong>4. Gumroad / Etsy 平台与市场页</strong>
+          <p>用于验证数字模板店可低成本起步，以及 printable / planner 类商品的公开价格带。</p>
+          <p><a href="https://gumroad.com/pricing" target="_blank" rel="noopener noreferrer">https://gumroad.com/pricing</a></p>
+          <p><a href="https://help.etsy.com/hc/en-us/articles/360035902374-Etsy-Fee-Basics" target="_blank" rel="noopener noreferrer">https://help.etsy.com/hc/en-us/articles/360035902374-Etsy-Fee-Basics</a></p>
+          <p><a href="https://www.etsy.com/market/printable_templates_and_planners" target="_blank" rel="noopener noreferrer">https://www.etsy.com/market/printable_templates_and_planners</a></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>副业探索报告 · bywork-20260630.html</div>
+      <div>建议行动：如果今天只做一件事，先做 1 份简历优化样例或 3 个模板样张，用最小作品换来第一轮真实反馈。</div>
+    </footer>
+  </main>
+</body>
+</html>
