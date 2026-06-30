@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大厂新闻 · 2026-06-30</title>
+<style>
+  :root { --primary: #B388FF; --bg: #0D0D0D; --card-bg: #1A1A1A; --text-main: #E0E0E0; --text-sub: #9E9E9E; --accent: #00E5FF; --hot:#FF5C8A; --ok:#48F2A6; --warn:#FFD166; }
+  * { box-sizing: border-box; }
+  body { font-family: "Inter", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: radial-gradient(circle at top left, rgba(179,136,255,.18), transparent 34%), radial-gradient(circle at 85% 8%, rgba(0,229,255,.14), transparent 32%), radial-gradient(circle at 20% 95%, rgba(255,92,138,.10), transparent 30%), var(--bg); color: var(--text-main); margin: 0; padding: 22px; }
+  .container { max-width: 980px; margin: 0 auto; background: linear-gradient(180deg, rgba(26,26,26,.96), rgba(14,14,16,.98)); padding: 38px; border-radius: 22px; border: 1px solid #333; box-shadow: 0 22px 70px rgba(0,0,0,.58); }
+  .header { text-align: center; margin-bottom: 34px; padding: 30px 18px; border: 1px solid rgba(179,136,255,.22); border-radius: 18px; background: rgba(255,255,255,.025); }
+  .header h1 { color: var(--primary); margin: 0 0 12px 0; font-size: clamp(30px, 5vw, 46px); letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 24px rgba(179,136,255,0.35); }
+  .date { color: var(--text-sub); font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .lead { margin: 18px auto 0; max-width: 840px; color: #c9c9d1; line-height: 1.82; font-size: 15px; }
+  .signal { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:22px 0 4px; }
+  .signal div { border:1px solid #333; background:rgba(255,255,255,.03); border-radius:14px; padding:14px; color:#cfcfd6; font-size:13px; line-height:1.6; }
+  .signal b { display:block; color:var(--accent); margin-bottom:4px; }
+  .section-title { margin: 34px 0 16px; display:flex; align-items:center; gap:10px; color:#fff; font-size:22px; }
+  .section-title::before { content:""; width:10px; height:10px; border-radius:50%; background: var(--accent); box-shadow: 0 0 18px var(--accent); }
+  .news-item { background: rgba(36,36,36,.92); padding: 24px; margin-bottom: 18px; border-radius: 16px; border: 1px solid #333; transition: all 0.3s ease; position: relative; overflow: hidden; }
+  .news-item::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(to bottom, var(--primary), var(--accent)); opacity: .9; }
+  .news-item:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(179,136,255,0.16); border-color: rgba(179,136,255,.35); }
+  .news-item h2 { margin: 2px 0 14px 0; font-size: 20px; color: #FFF; font-weight: 650; line-height:1.35; }
+  .news-item p { margin: 0 0 12px 0; font-size: 15px; color: var(--text-sub); line-height: 1.75; }
+  .news-item strong { color:#f5f5f7; }
+  .tag { display: inline-block; background: rgba(179,136,255,0.1); color: var(--primary); border: 1px solid rgba(179,136,255,0.3); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-bottom: 14px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .source { display:inline-flex; margin-top:6px; color: var(--accent); text-decoration: none; font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; letter-spacing: .6px; }
+  .source:hover { text-shadow: 0 0 8px rgba(0,229,255,0.6); }
+  .note { margin: 26px 0 0; padding: 16px 18px; border:1px dashed #3a3a3a; border-radius:14px; color:#aaa; line-height:1.7; background:rgba(255,255,255,.025); }
+  .footer { text-align: center; margin-top: 36px; padding-top: 20px; border-top: 1px dashed #333; color: #666; font-size: 12px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  @media (max-width: 680px) { body { padding: 14px; } .container { padding: 22px; } .news-item { padding: 20px; } .signal { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>⚡ Big Tech Signal</h1>
+      <div class="date">SYS.DATE: 2026-06-30 // CHANNEL: DACHANG-NEWS // STATUS: ONLINE</div>
+      <p class="lead">今天的大厂动态很集中地指向三个方向：第一，国内大厂继续把 AI 往组织管理、应用入口和基础设施里压；第二，国际大厂开始把 AI 能力嵌进高频办公与开发流程；第三，竞争逻辑已经从“谁模型更强”进一步走向“谁更能稳定交付、快速商业化、形成平台控制力”。说明：本文观察窗口截至 2026-06-30 19:20，若个别公司当天缺少新增公开公告，则补入近 24-48 小时内影响较大的更新。</p>
+      <div class="signal">
+        <div><b>国内关键词</b>字节组织升级、腾讯微信 AI、阿里云开发者入口、百度 Robotaxi、华为开源模型、小米 NAS</div>
+        <div><b>国际关键词</b>Google Meet 记笔记、Apple 安全更新、Meta 限制第三方 AI 工具、OpenAI GPT-5.6 预览</div>
+        <div><b>影响判断</b>AI 竞争已进入“产品嵌入业务流程 + 基础设施供给 + 组织执行力”三线并打阶段</div>
+      </div>
+    </div>
+
+    <h3 class="section-title">国内大厂</h3>
+
+    <div class="news-item">
+      <span class="tag">#BYTEDANCE #AI_CULTURE #LEADERSHIP</span>
+      <h2>字节跳动 CEO 梁汝波再发全员信：AI 时代先改文化和管理动作</h2>
+      <p><strong>新闻原文摘要：</strong>6 月 29 日晚，字节跳动 CEO 梁汝波时隔四年再次发出全员邮件，更新公司文化内容与十项领导力原则，重点强调管理者要主动突破、深入一线、减少空转和形式化管理。</p>
+      <p><strong>人话翻译：</strong>字节这次不是简单喊口号，而是在说：AI 时代变化太快，先把组织跑法改掉，管理层得更贴业务、更看结果，不能继续靠层层汇报和流程堆出来。</p>
+      <p><strong>影响分析：</strong>这说明字节已经把 AI 竞争理解成组织级战争，不只是模型团队的事。谁能先把组织决策链路缩短、把管理动作压实，谁就更容易抢到新机会窗口。</p>
+      <a class="source" href="https://finance.sina.com.cn/tech/2026-06-30/doc-inifeaah3468907.shtml" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#TENCENT #WECHAT #AI_ASSISTANT</span>
+      <h2>腾讯微信原生 AI 助手“小微”继续发酵：社交入口开始长出执行型 Agent</h2>
+      <p><strong>新闻原文摘要：</strong>6 月底，微信原生 AI 助手“小微”进入小范围灰度测试，公开体验信息显示，它已能总结朋友圈和公众号内容，并尝试打通发消息、发红包、打车、点外卖等部分执行场景。</p>
+      <p><strong>人话翻译：</strong>腾讯不是只想让 AI 在微信里陪你聊天，而是想把微信这个超级入口直接升级成“会办事”的操作界面。</p>
+      <p><strong>影响分析：</strong>一旦 AI 真能嵌进微信日常动作链路，腾讯手里最大的优势就不再只是流量，而是“社交关系 + 支付 + 服务生态”的一体化调度能力，这会显著抬高后来者门槛。</p>
+      <a class="source" href="http://m.toutiao.com/group/7657028213902475828/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#ALIBABA #ALIBABA_CLOUD #QWEN</span>
+      <h2>阿里云继续补开发者入口：Qwen Code 与 OpenAI 兼容接口文档持续更新</h2>
+      <p><strong>新闻原文摘要：</strong>阿里云 Model Studio 文档中心在 6 月 25 日至 30 日连续更新，新增 Qwen Code 终端 AI 编码接入说明，并强化 OpenAI 兼容接口与模型调用文档，继续推进开发者从其他生态迁移到阿里云 Qwen 体系。</p>
+      <p><strong>人话翻译：</strong>阿里最近的重点很直接：先把开发者“接进来”，让大家更低成本地用上千问模型、把原有代码和工具链迁过去。</p>
+      <p><strong>影响分析：</strong>对大模型厂商来说，谁先把开发者工作流绑定住，谁就更容易拿到后续 API 调用、平台粘性和企业付费。阿里这一步本质上是在抢开发者入口，而不只是抢模型榜单。</p>
+      <a class="source" href="https://www.alibabacloud.com/help/en/model-studio/qwen-code" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#BAIDU #ROBOTAXI #AUTONOMOUS_DRIVING</span>
+      <h2>百度萝卜快跑受益自动驾驶法规推进：Robotaxi 商业化预期再被抬高</h2>
+      <p><strong>新闻原文摘要：</strong>6 月 30 日，多家行业资讯提到由中国、欧盟等多方牵头制定的自动驾驶系统全球技术法规获批发布，市场随之把焦点重新拉回百度萝卜快跑等头部 Robotaxi 平台，商业化扩张预期升温。</p>
+      <p><strong>人话翻译：</strong>自动驾驶最怕的不是技术，而是没有规则可落地。现在法规边界更清楚了，百度这类已经在跑运营的平台会更容易往前推进。</p>
+      <p><strong>影响分析：</strong>这对百度的意义不只是股价情绪，而是给萝卜快跑后续拿城市、拿牌照、跑规模化商业模型提供了更好的外部环境。Robotaxi 比拼会逐渐从“秀技术”转向“拼落地速度”。</p>
+      <a class="source" href="http://m.toutiao.com/group/7657085103868232219/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#HUAWEI #OPENPANGU #OPEN_SOURCE</span>
+      <h2>华为 openPangu 2.0 组件 6 月 30 日起陆续开源：继续把大模型能力往生态外放</h2>
+      <p><strong>新闻原文摘要：</strong>6 月 30 日，华为中国公开信息显示，openPangu-2.0-Flash 模型权重、基础推理代码与训推算子当日正式上线开源平台，更多组件将在 7 月及下半年继续开放。</p>
+      <p><strong>人话翻译：</strong>华为现在不只是自己做模型，而是想让更多开发者和伙伴基于它的体系继续搭东西，把生态一起带起来。</p>
+      <p><strong>影响分析：</strong>开源的核心意义不是“免费”，而是降低生态采用门槛、扩大技术外溢半径。对华为来说，这有助于增强昇腾、鸿蒙、行业解决方案之间的联动，继续做大平台势能。</p>
+      <a class="source" href="https://m.weibo.cn/detail/5315517967765333" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#XIAOMI #NAS #SMART_STORAGE</span>
+      <h2>小米首款 NAS“智能存储”上架前夜热度冲高：从手机生态延伸到家庭数据中枢</h2>
+      <p><strong>新闻原文摘要：</strong>6 月 30 日，多家科技媒体披露小米首款 NAS 产品“小米智能存储”将于 7 月 1 日开启众筹，众筹价 2299 元起，支持双盘位、2.5G 网口与家庭多端协同。</p>
+      <p><strong>人话翻译：</strong>小米这不是单纯出个新硬件，而是在往“家里的数据中心”伸手，希望把照片、视频、备份、局域网共享这些需求都圈回自家生态。</p>
+      <p><strong>影响分析：</strong>如果 NAS 跑通，小米会进一步从“设备品牌”升级成“家庭数字基础设施平台”。这会强化手机、平板、电视、路由器和云服务之间的协同黏性。</p>
+      <a class="source" href="https://finance.sina.com.cn/tech/roll/2026-06-30/doc-inifenru1564232.shtml" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <h3 class="section-title">国际大厂</h3>
+
+    <div class="news-item">
+      <span class="tag">#GOOGLE #GEMINI #GOOGLE_MEET</span>
+      <h2>Google 把 Gemini 进一步塞进 Meet：付费用户开会可直接自动记笔记</h2>
+      <p><strong>新闻原文摘要：</strong>Google 官方博客确认，Gemini 现已支持为 Google AI Pro 和 Ultra 订阅用户在 Google Meet 中自动记录会议笔记，相关能力在 6 月 29 日至 30 日被广泛关注。</p>
+      <p><strong>人话翻译：</strong>Google 的打法越来越务实：不只是告诉你 Gemini 很强，而是把它直接塞进每周都会用的会议流程里，让用户立刻感受到省时间。</p>
+      <p><strong>影响分析：</strong>会议纪要是高频、明确、可付费的企业场景。Google 把 AI 做进 Meet，意味着它在继续强化 Workspace 的订阅价值，也是在和微软、OpenAI 抢企业办公入口。</p>
+      <a class="source" href="https://blog.google/products-and-platforms/products/workspace/take-notes-for-me/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#APPLE #SECURITY #IOS</span>
+      <h2>Apple 发布新一轮安全更新：继续用系统修补来稳住生态基本盘</h2>
+      <p><strong>新闻原文摘要：</strong>Apple Support 在 6 月 29 日更新安全发布页面，披露新一轮系统安全修复，涵盖多个平台与组件漏洞说明，是苹果近 24 小时最明确的官方公开动作之一。</p>
+      <p><strong>人话翻译：</strong>苹果最近没有大张旗鼓发新硬件，但它依然在用最擅长的方式守住护城河——持续修补系统、稳住安全和用户信任。</p>
+      <p><strong>影响分析：</strong>对苹果来说，安全更新虽然不够“热搜体质”，但它直接关系到设备口碑、企业采购信心和生态稳定度。越是在 AI 功能快速扩张阶段，底层安全越重要。</p>
+      <a class="source" href="https://support.apple.com/en-us/100100" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#META #AI_CODETOOLS #INTERNAL_POLICY</span>
+      <h2>Meta 被曝限制员工使用 Claude Code 与 Codex：一边控风险，一边逼自研提速</h2>
+      <p><strong>新闻原文摘要：</strong>6 月 29 日，多家外媒援引内部文件称，Meta 已限制 AI 工程部门部分员工使用 Anthropic 的 Claude Code 和 OpenAI 的 Codex，理由更多与数据安全、自研替代和内部治理有关。</p>
+      <p><strong>人话翻译：</strong>Meta 的态度很明确：外部工具再强，也不能让关键研发流程过度依赖别人，尤其是涉及代码、数据和核心知识资产时。</p>
+      <p><strong>影响分析：</strong>这说明国际大厂已经把 AI 工具竞争看成“生产力工具战 + 数据边界战”。未来企业选 AI 工具时，安全可控和可替代性会越来越重要，不会只看能力演示。</p>
+      <a class="source" href="https://tech.ifeng.com/c/8uMUP8jMbub" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#OPENAI #GPT_5_6 #PREVIEW</span>
+      <h2>OpenAI 的 GPT-5.6 预览持续发酵：更强模型，也更谨慎放量</h2>
+      <p><strong>新闻原文摘要：</strong>OpenAI 近期在官方发布页与帮助中心持续更新 GPT-5.6 Sol / Terra / Luna 的预览信息，并同步披露 ChatGPT 记忆系统、Codex Remote 等新进展，6 月底仍是全球开发者关注焦点。</p>
+      <p><strong>人话翻译：</strong>OpenAI 现在给市场传递的信号是：模型继续往前推，但不会再像早期那样“先全量开放再慢慢补问题”，而是更强调分层试放、逐步验证。</p>
+      <p><strong>影响分析：</strong>这意味着前沿模型竞争已经进入精细运营阶段。企业用户未来拿到的优势，不只取决于模型本身，还取决于谁能更早接入预览、谁能承受更高阶产品的接入门槛。</p>
+      <a class="source" href="https://openai.com/zh-Hans-CN/news/product-releases/?display=list" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="note">
+      <strong>编辑视角：</strong>今天最值得记住的一句话是：AI 竞争越来越像“基础设施 + 组织执行 + 场景入口”的组合拳。国内大厂明显在抢组织效率和生态闭环，国际大厂则更强调把 AI 塞进高频办公、开发和企业流程里。接下来真正能拉开差距的，不会只是某次发布会，而是谁能把这些能力更稳地嵌进真实世界的长期工作流。
+    </div>
+
+    <div class="footer">⚡ Big Tech Signal · Generated 2026-06-30 19:23 CST · 整理：孙纾荣 · 数据来源：公开新闻、官方博客与公开产品文档</div>
+  </div>
+</body>
+</html>
