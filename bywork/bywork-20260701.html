@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>今日副业探索报告｜代码模板/微型 SaaS 与技术知识产品</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff8ef;
+      --bg-soft: #fff3e4;
+      --card: rgba(255,255,255,.92);
+      --text: #352317;
+      --muted: #7b6759;
+      --line: rgba(191, 128, 72, .22);
+      --amber: #d97706;
+      --orange: #f97316;
+      --rose: #fb7185;
+      --green: #16a34a;
+      --shadow: 0 24px 60px rgba(124, 75, 25, .15);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(251, 146, 60, .25), transparent 34%),
+        radial-gradient(circle at 88% 12%, rgba(251, 113, 133, .16), transparent 28%),
+        linear-gradient(145deg, #fffaf4 0%, #fff4e8 52%, #fffdf9 100%);
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 42px 0 48px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 34px; padding: clamp(28px, 5vw, 54px); background: linear-gradient(135deg, rgba(255,255,255,.94), rgba(255,246,234,.86)); box-shadow: var(--shadow); backdrop-filter: blur(18px); }
+    .hero::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px; border-radius: 50%; background: conic-gradient(from 120deg, rgba(249,115,22,.34), rgba(251,113,133,.22), rgba(245,158,11,.26), rgba(249,115,22,.34)); filter: blur(4px); opacity: .78; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border-radius: 999px; background: #fff3df; border: 1px solid var(--line); color: #9a5a13; font-size: 13px; font-weight: 700; }
+    h1 { position: relative; z-index: 1; margin: 20px 0 12px; font-size: clamp(34px, 5.5vw, 62px); line-height: 1.05; letter-spacing: -.045em; }
+    .lead { position: relative; z-index: 1; max-width: 860px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.85; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .metric { padding: 17px; border-radius: 22px; background: rgba(255,255,255,.82); border: 1px solid rgba(183,126,73,.18); }
+    .metric b { display: block; font-size: 23px; color: #8a4b0f; }
+    .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .section { margin-top: 22px; border: 1px solid var(--line); border-radius: 30px; background: var(--card); box-shadow: 0 16px 42px rgba(124,75,25,.11); overflow: hidden; }
+    .section-head { padding: 26px 28px 18px; border-bottom: 1px solid var(--line); background: linear-gradient(90deg, rgba(255,247,237,.92), rgba(255,255,255,.7)); }
+    .section-kicker { color: var(--orange); font-size: 13px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { margin: 8px 0 8px; font-size: clamp(25px, 3vw, 36px); letter-spacing: -.025em; }
+    .section-head p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .content { padding: 26px 28px 30px; }
+    .verdict { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: stretch; }
+    .note, .score-card, .source-card { border: 1px solid rgba(183,126,73,.18); border-radius: 24px; background: #fffdf9; padding: 20px; }
+    .note strong, .source-card strong { color: #92400e; }
+    .note p, .source-card p { color: var(--muted); line-height: 1.75; margin: 8px 0 0; }
+    .scores { display: grid; gap: 12px; }
+    .bar { display: grid; gap: 7px; }
+    .bar-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+    .track { height: 10px; border-radius: 999px; background: #fde7c8; overflow: hidden; }
+    .fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--amber), var(--rose)); }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { border: 1px solid var(--line); border-radius: 28px; padding: 24px; background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,243,.84)); box-shadow: 0 14px 32px rgba(124,75,25,.09); }
+    .tagline { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .pill { border-radius: 999px; padding: 6px 10px; background: #fff3df; border: 1px solid rgba(183,126,73,.18); color: #9a5a13; font-size: 12px; font-weight: 700; }
+    .project h3 { margin: 0 0 10px; font-size: 25px; letter-spacing: -.02em; }
+    .project p { margin: 0 0 16px; color: var(--muted); line-height: 1.75; }
+    .list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .list li { padding: 12px 13px; border-radius: 16px; background: rgba(255,246,231,.72); color: #574234; line-height: 1.62; }
+    .list b { color: #8a4b0f; }
+    .table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 20px; }
+    .table th, .table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(183,126,73,.16); vertical-align: top; line-height: 1.65; }
+    .table th { background: #fff3df; color: #8a4b0f; font-size: 13px; }
+    .table tr:last-child td { border-bottom: 0; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: step; }
+    .step { position: relative; padding: 20px; border-radius: 22px; border: 1px solid rgba(183,126,73,.18); background: #fffdf9; }
+    .step::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #f97316; color: white; font-weight: 800; margin-bottom: 12px; }
+    .step h4 { margin: 0 0 8px; font-size: 17px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
+    .warn { border-left: 5px solid var(--orange); background: #fff7ed; padding: 16px 18px; border-radius: 18px; color: #614331; line-height: 1.7; }
+    .sources { display: grid; gap: 12px; }
+    .sources a { color: #b45309; text-decoration: none; font-weight: 700; word-break: break-all; }
+    .sources a:hover { text-decoration: underline; }
+    footer { color: var(--muted); text-align: center; margin-top: 26px; line-height: 1.8; font-size: 14px; }
+    @media (max-width: 860px) {
+      .hero-grid, .projects, .steps, .verdict { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 24px, 1120px); padding-top: 22px; }
+      .section-head, .content { padding-left: 20px; padding-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <span class="eyebrow">☕ style_warm · 今日副业探索</span>
+      <h1>今天值得验证的两条技术人路线：<br />代码模板 / 微型 SaaS，与技术知识产品</h1>
+      <p class="lead">报告日期：2026-07-01。今天不讲泛泛的“做副业”，而是只挑两条更适合程序员和技术背景人士的路线：一条是把你已经会做的工程能力打包出售，比如模板、脚手架、微型 SaaS、开发者工具；另一条是把你已经踩过的坑和方法论做成知识产品，比如技术专栏、小课、咨询包和训练营资料。前者更偏“卖技术资产”，后者更偏“卖技术认知”。</p>
+      <div class="hero-grid">
+        <div class="metric"><b>2 个</b><span>今日推荐方向</span></div>
+        <div class="metric"><b>80%+</b><span>可被 AI 加速的环节</span></div>
+        <div class="metric"><b>¥0 起</b><span>最低可启动成本</span></div>
+        <div class="metric"><b>14 天</b><span>建议最小验证周期</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Quick Verdict</span>
+        <h2>先给结论</h2>
+        <p>如果你代码能力强、动手快、愿意持续维护，优先做“代码模板 / 微型 SaaS”；如果你表达和总结能力更强、想做更轻的人力投入模型，优先做“技术知识产品”。</p>
+      </div>
+      <div class="content verdict">
+        <div class="note">
+          <strong>今日最推荐：代码模板 / 微型 SaaS / 开发者工具包。</strong>
+          <p>原因很直接：这条路线更贴近程序员的天然优势。你白天已经在写接口、做后台、接三方、写脚手架、踩性能坑，晚上真正要做的不是“另学一种副业”，而是把已有能力重新包装成别人愿意付钱买的成品。</p>
+          <p>技术知识产品也值得做，但它对表达、选题、持续输出和信任积累要求更高，通常起量会比工具型商品慢一点。更稳的做法是：先卖小工具或模板赚钱，再把沉淀下来的做法反向整理成专栏、课程或咨询包，形成双轮驱动。</p>
+        </div>
+        <div class="score-card scores">
+          <div class="bar"><div class="bar-row"><span>贴合程序员主业能力</span><b>94/100</b></div><div class="track"><div class="fill" style="width:94%"></div></div></div>
+          <div class="bar"><div class="bar-row"><span>AI 加速空间</span><b>86/100</b></div><div class="track"><div class="fill" style="width:86%"></div></div></div>
+          <div class="bar"><div class="bar-row"><span>近期变现速度</span><b>83/100</b></div><div class="track"><div class="fill" style="width:83%"></div></div></div>
+          <div class="bar"><div class="bar-row"><span>长期复利空间</span><b>90/100</b></div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Projects</span>
+        <h2>今日 2 个副业方向</h2>
+        <p>每个方向都按“方向介绍、操作路径、收益预估 / 案例参考”展开，尽量写成今天就能开干的版本。</p>
+      </div>
+      <div class="content projects">
+        <article class="project">
+          <div class="tagline"><span class="pill">技术资产</span><span class="pill">轻交付</span><span class="pill">可复制</span></div>
+          <h3>方向一：代码模板 / 微型 SaaS / 开发者工具包</h3>
+          <p>适合已经有工程经验的人，把通用能力封装成可售卖资产。比如：管理后台模板、鉴权 + 支付脚手架、AI SaaS starter、浏览器插件、小型 API 工具、自动化脚本包，或者某个垂直场景的小产品。卖点不是“代码本身”，而是帮别人少走 2 到 4 周弯路。</p>
+          <ul class="list">
+            <li><b>方向介绍：</b>本质是在卖“开发加速度”。你的客户不一定买一个完整产品，更可能是在买一套现成的起步框架、最佳实践和节省下来的时间。对于技术人来说，这比从零做内容账号更顺手。</li>
+            <li><b>操作路径：</b>先只选一个具体场景，比如“AI 表单收集 + 登录支付模板”“Chrome 插件 starter”“Go 后台管理台 + 权限模板”。先做一个能跑通的最小版本，再配 README、演示页、部署说明和 1 段 2-3 分钟演示视频，然后上架到 Gumroad、独立站或仓库赞助入口。推广时不要泛讲“我做了个工具”，而要写成“帮独立开发者省掉哪些重复劳动”。</li>
+            <li><b>收益预估：</b>首版模板建议定价 ¥99-¥499；若是更完整的 starter 或带部署文档的工具包，可做 ¥499-¥1999。保守一点看，月卖 10-30 份，月副业收入落在 ¥1000-¥15000 是可想象区间；如果叠加企业授权、定制支持和升级版，天花板会更高。</li>
+            <li><b>案例参考：</b>公开案例里，Supastarter 被报道为在副业阶段发展到月入 1 万美元；另一位独立开发者 Fox 在 2025 年总结中提到，自己的样板代码产品 MkSaaS 贡献了较高收入，全年总收入约 11.79 万美元，其中单月一度突破 2 万美元。这里都属于公开个案，适合作为方向参考，不应当直接照搬为个人预期。</li>
+            <li><b>适合你如果：</b>你已经有稳定的编码习惯，知道什么代码最容易被重复复用，也愿意后续做一点售后和迭代，而不是只想“一次写完永不维护”。</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="tagline"><span class="pill">知识变现</span><span class="pill">个人品牌</span><span class="pill">高信任</span></div>
+          <h3>方向二：技术专栏 / 小课 / 咨询包 / 陪跑资料</h3>
+          <p>适合有一技之长、又愿意讲清楚的人。你可以把工作里反复出现的问题做成一套产品：比如 Go 服务治理、性能优化排障、AI Agent 工程化、简历面试包、技术管理入门、从 0 到 1 的项目模板课。它的核心不是“做一门大课”，而是从一个痛点主题切入，先卖可验证的小产品。</p>
+          <ul class="list">
+            <li><b>方向介绍：</b>本质是在卖“认知压缩”。很多技术人不是不会学习，而是没时间把坑一个个踩完。你把自己踩过的坑、配套代码、检查清单和案例整成结构化内容，本身就是产品。</li>
+            <li><b>操作路径：</b>不要一上来录 20 小时课程。更稳的做法是先用 3 篇系列文章或 1 份公开样章验证选题，再打成 9.9 元体验包、99 元专题小课、299-999 元咨询包或陪跑资料包。内容形态可以是专栏、直播回放、录播、代码仓库、FAQ 文档和作业点评。程序员做这类副业，最好选“离工作最近、结果最明确”的主题，而不是过大过泛的技术百科。</li>
+            <li><b>收益预估：</b>小课 / 资料包适合先做 ¥49-¥199；进阶专题课可到 ¥199-¥699；1 对 1 咨询或简历 / 项目诊断可以到 ¥299-¥999 / 次。若每月卖出 20-50 份轻产品，或拿到 5-10 次咨询，月副业收入做到 ¥3000-¥20000 具备可行性，但前提是选题够窄、信任够强、交付足够具体。</li>
+            <li><b>案例参考：</b>公开分享中，一位南京的 Java 后端开发者提到，他把 Spring Boot 实战内容做成课程，定价 199 元，首年卖出约 800 份，收入约 9.6 万元，后续年收入一度提升到 18 万元。这类案例说明技术知识产品并非没有市场，但通常建立在长期积累、持续更新和稳定口碑之上。</li>
+            <li><b>适合你如果：</b>你愿意写、愿意讲、愿意持续打磨表达，也愿意花时间回复问题、沉淀 FAQ，并把零散经验变成一套可复用的方法论。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Comparison</span>
+        <h2>横向对比：先做哪个？</h2>
+        <p>一句话判断：想先卖你“会做的东西”，就做模板 / 工具；想先卖你“会讲清楚的东西”，就做知识产品。</p>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead><tr><th>维度</th><th>代码模板 / 微型 SaaS / 工具包</th><th>技术知识产品</th></tr></thead>
+          <tbody>
+            <tr><td>启动方式</td><td>先做可运行最小成品，再上架测试</td><td>先做样章 / 样课 / 体验包验证需求</td></tr>
+            <tr><td>更依赖什么</td><td>工程能力、产品感、持续维护</td><td>表达能力、选题能力、信任积累</td></tr>
+            <tr><td>AI 最能帮什么</td><td>文档、前端壳子、营销页、客服 FAQ、测试用例</td><td>提纲、脚本、课件、作业点评模板、FAQ</td></tr>
+            <tr><td>现金流节奏</td><td>更偏单品售卖 + 升级授权</td><td>更偏内容销售 + 咨询服务 + 复购</td></tr>
+            <tr><td>主要风险</td><td>功能泛化、同质化严重、后续维护负担</td><td>选题太大、表达不成体系、更新断档</td></tr>
+            <tr><td>更适合谁</td><td>下班后还愿意继续写代码的人</td><td>愿意总结复盘、输出内容的人</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">14-Day Plan</span>
+        <h2>14 天最小验证计划</h2>
+        <p>这类副业最怕的是“准备特别久，但始终没有真正上架或开卖”。所以先跑最小闭环。</p>
+      </div>
+      <div class="content steps">
+        <div class="step"><h4>第 1-3 天：只选一个窄主题</h4><p>不要写“做个技术副业”。要写成“做 Go 后台模板”或“做性能排障小课”，主题越窄，越容易卖。</p></div>
+        <div class="step"><h4>第 4-7 天：做最小样品</h4><p>工具方向做一个能跑通的 demo；知识方向做一篇样章或一节试看片段。先让人看得见价值。</p></div>
+        <div class="step"><h4>第 8-10 天：做包装页</h4><p>补上说明文档、价格、适合人群、FAQ、交付边界和演示截图。技术人常见问题不是不会做，而是不会卖。</p></div>
+        <div class="step"><h4>第 11-14 天：真实发布并收反馈</h4><p>去 GitHub、掘金、即刻、朋友圈、社群或私域发首轮内容。目标不是爆量，而是拿到第一批真实点击、咨询和付款。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Risk Control</span>
+        <h2>执行提醒</h2>
+      </div>
+      <div class="content">
+        <div class="warn">最容易失败的，不是能力不够，而是题目选得太大。程序员做副业常见误区有三个：第一，想一上来做平台级产品，结果半年没上线；第二，只顾打磨功能，不写销售页和演示；第三，看到别人的收入案例就按那个数字倒推自己的预期。更稳的打法是：先做一个能在两周内卖出去的“小而具体”产品，再决定是否扩张。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Sources</span>
+        <h2>参考信息</h2>
+        <p>以下公开资料主要用于辅助判断平台门槛、工具成本与案例方向。案例收入多为公开个案，适合做方向参考，不构成收益承诺。</p>
+      </div>
+      <div class="content sources">
+        <div class="source-card">
+          <strong>1. Gumroad 官方定价</strong>
+          <p>用于验证数字商品、模板、代码包这类副业可以低成本上架，官方页面显示无月费、按销售抽成。</p>
+          <p><a href="https://gumroad.com/pricing" target="_blank" rel="noopener noreferrer">https://gumroad.com/pricing</a></p>
+        </div>
+        <div class="source-card">
+          <strong>2. GitHub Sponsors 官方入口</strong>
+          <p>用于验证开源项目、开发者工具可以结合赞助模式变现，适合做“免费开源 + 付费支持 / 增强版”组合。</p>
+          <p><a href="https://github.com/sponsors" target="_blank" rel="noopener noreferrer">https://github.com/sponsors</a></p>
+        </div>
+        <div class="source-card">
+          <strong>3. 公开案例：Supastarter / MkSaaS</strong>
+          <p>用于辅助观察“卖样板代码 / 模板资产”这条路线的收入想象空间，均属于公开个案报道。</p>
+          <p><a href="https://91wink.com/%E5%B0%86%E5%89%AF%E4%B8%9A%E5%8F%91%E5%B1%95%E6%88%90%E6%9C%88%E5%85%A51%E4%B8%87%E7%BE%8E%E5%85%83%E7%9A%84saas%E6%A0%B7%E6%9D%BF%E4%B8%9A%E5%8A%A1/" target="_blank" rel="noopener noreferrer">https://91wink.com/将副业发展成月入1万美元的saas样板业务/</a></p>
+          <p><a href="https://builder.design/blog/mksaas-mkdirs-fox-2025-retrospective" target="_blank" rel="noopener noreferrer">https://builder.design/blog/mksaas-mkdirs-fox-2025-retrospective</a></p>
+        </div>
+        <div class="source-card">
+          <strong>4. 公开案例：程序员课程化变现经验</strong>
+          <p>用于辅助观察技术知识产品的现实路径，属于个人公开复盘案例，适合作为可行性参考。</p>
+          <p><a href="https://juejin.cn/post/7579215538271338506" target="_blank" rel="noopener noreferrer">https://juejin.cn/post/7579215538271338506</a></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>副业探索报告 · bywork-20260701.html</div>
+      <div>建议行动：如果今天只做一件事，就把你最熟的一段可复用能力，包装成一个能被看见、能被购买的最小产品。</div>
+    </footer>
+  </main>
+</body>
+</html>
