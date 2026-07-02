@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日副业探索报告 · 2026-07-02 · AI 自动化方向</title>
+<style>
+  :root { --primary: #E8892E; --accent: #F4B860; --bg: #FFF7E8; --card-bg: #FFFCF5; --text-main: #4A3426; --text-sub: #8A6A55; --line: #F3D6A8; --green:#2E8B57; --amber:#B95F16; --rose:#C0392B; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans GB", "PingFang SC", "Yu Gothic", "Microsoft YaHei", sans-serif; background: radial-gradient(circle at top left, #FFE8B8 0, transparent 32%), linear-gradient(180deg, #FFF7E8 0%, #FBEEDB 100%); color: var(--text-main); margin: 0; padding: 24px; line-height: 1.75; }
+  .container { max-width: 880px; margin: 0 auto; background: rgba(255,252,245,0.96); padding: 40px; border-radius: 28px; border: 1px solid rgba(243,214,168,0.75); box-shadow: 0 18px 45px rgba(187,111,42,0.13); }
+  .header { padding: 28px; margin-bottom: 28px; border-radius: 22px; background: linear-gradient(135deg, #FFF2D8 0%, #FFE2AF 100%); border: 1px solid var(--line); position: relative; overflow: hidden; }
+  .header::after { content: ""; position: absolute; right: -30px; top: -30px; width: 130px; height: 130px; background: rgba(255,255,255,0.45); border-radius: 50%; }
+  .header h1 { color: var(--primary); margin: 0 0 10px; font-size: 30px; font-weight: 800; letter-spacing: 0.04em; position: relative; z-index: 1; }
+  .date { color: var(--text-sub); font-size: 14px; font-weight: 600; position: relative; z-index: 1; }
+  .lead { margin: 14px 0 0; color: var(--text-sub); font-size: 15px; line-height: 1.85; position: relative; z-index: 1; max-width: 620px; }
+  .summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 28px; }
+  .metric { background: #FFFFFF; border: 1px solid #F5DEBA; border-radius: 16px; padding: 14px; text-align: center; box-shadow: 0 6px 16px rgba(188,116,48,0.06); }
+  .metric b { display: block; font-size: 22px; color: var(--primary); font-weight: 800; }
+  .metric span { font-size: 12px; color: var(--text-sub); }
+  .news-item { background: #FFFFFF; padding: 26px; margin-bottom: 24px; border-radius: 20px; border: 1px solid #F5DEBA; box-shadow: 0 8px 22px rgba(188,116,48,0.08); position: relative; }
+  .news-item::before { content: ""; position: absolute; left: 22px; top: 0; width: 46px; height: 4px; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 0 0 999px 999px; }
+  .news-item h2 { margin: 0 0 12px; font-size: 22px; line-height: 1.45; color: #3D281C; font-weight: 750; }
+  .tagrow { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .tag { display: inline-block; background: #FFF0D6; color: #B95F16; padding: 5px 13px; border-radius: 999px; font-size: 12px; font-weight: 700; border: 1px solid #F5D8A7; }
+  .tag.green { background:#E7F6EC; color:var(--green); border-color:#B7E1C4; }
+  .tag.rose { background:#FDEDEC; color:var(--rose); border-color:#F5C6C1; }
+  .desc { margin: 0 0 16px; font-size: 15px; color: var(--text-main); }
+  h3 { margin: 18px 0 8px; font-size: 15px; color: var(--amber); letter-spacing: .02em; }
+  ul { margin: 0 0 8px; padding-left: 20px; color: var(--text-main); }
+  ul li { margin-bottom: 6px; font-size: 14.5px; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 4px; font-size: 14px; }
+  table th, table td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #F3E1C0; }
+  table th { background: #FFF3DC; color: var(--amber); font-weight: 700; font-size: 13px; }
+  .scores { display: grid; gap: 10px; margin-top: 10px; }
+  .bar-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-sub); margin-bottom: 4px; }
+  .track { height: 9px; border-radius: 999px; background: #FDE7C8; overflow: hidden; }
+  .fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--primary), var(--accent)); }
+  .callout { margin-top: 14px; padding: 14px 16px; border-left: 4px solid var(--primary); background: #FFF6E4; border-radius: 10px; color: var(--text-main); font-size: 14px; }
+  .footer { text-align: center; margin-top: 34px; padding-top: 20px; border-top: 1px dashed var(--line); color: #A9876A; font-size: 13px; }
+  .disclaimer { margin-top: 10px; font-size: 12px; color: #B99878; }
+  @media (max-width: 640px) { body { padding: 12px; } .container { padding: 22px; border-radius: 22px; } .summary { grid-template-columns: repeat(2, 1fr); } .header h1 { font-size: 24px; } }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>☀️ 今日副业探索报告</h1>
+      <div class="date">2026 年 7 月 2 日 · 木曜日 · 聚焦 AI 自动化方向</div>
+      <p class="lead">今日精选 2 个门槛低、AI 自动化可行性强、收入潜力可持续的副业方向：<b>AI 定制 GPTs / Agent 上架变现</b> 与 <b>AI 短视频历史故事频道</b>。每个方向从项目介绍、可行性、AI 自动化程度、启动成本、预期收益五个维度做了拆解。</p>
+    </div>
+
+    <div class="summary">
+      <div class="metric"><b>2</b><span>今日方向</span></div>
+      <div class="metric"><b>低</b><span>启动门槛</span></div>
+      <div class="metric"><b>80%+</b><span>AI 自动化程度</span></div>
+      <div class="metric"><b>3-6 月</b><span>回本周期</span></div>
+    </div>
+
+    <!-- 方向 1 -->
+    <div class="news-item">
+      <div class="tagrow">
+        <span class="tag">🚀 方向 01</span>
+        <span class="tag green">门槛低</span>
+        <span class="tag">AI 自动化 ★★★★★</span>
+      </div>
+      <h2>定制 GPTs / Agent 商店上架 —— 卖"垂直场景的 AI 小工具"</h2>
+      <p class="desc">在 OpenAI GPT Store、扣子 (Coze)、字节豆包智能体广场、Poe 等平台，围绕一个具体职业场景（如"跨境电商 Listing 优化师""小红书爆款标题生成器""SQL 转自然语言助手"）打造 GPT/Agent，通过订阅分成、引流到付费模板/知识库、或作为 SaaS 前端获取长期被动收入。</p>
+
+      <h3>📌 项目介绍</h3>
+      <ul>
+        <li>核心产物：一个针对特定人群（跨境卖家 / HR / 独立开发者 / 律师助理…）的"提示词 + 知识库 + 工具调用"组合体。</li>
+        <li>变现路径：① 平台官方分成（GPT Store 已有分润机制）；② 免费 Agent 引流至付费社群 / Notion 模板 / Prompt Pack；③ 对接自己的 API/网页版，做轻量 SaaS。</li>
+        <li>护城河来源于 <b>垂直行业理解</b> 与 <b>私有知识库</b>，而非模型本身。</li>
+      </ul>
+
+      <h3>✅ 可行性分析</h3>
+      <ul>
+        <li>需求真实：HR、法律、跨境电商、教培等长尾场景的从业者愿意为"节省 1-2 小时/天"的小工具付费。</li>
+        <li>竞品验证：GPT Store Top 榜单上有大量个人开发者作品月分成过千美金，说明"个人可跑通"。</li>
+        <li>风险点：平台规则变动、模型更换导致效果漂移；解决方式是同时部署到 2-3 个平台，避免依赖单一渠道。</li>
+      </ul>
+
+      <h3>🤖 AI 自动化程度</h3>
+      <table>
+        <tr><th>环节</th><th>AI 承担</th><th>人工工作</th></tr>
+        <tr><td>需求调研</td><td>AI 抓取评论/搜索词，聚类痛点</td><td>选定细分人群</td></tr>
+        <tr><td>提示词与知识库</td><td>AI 生成初稿、扩写、翻译</td><td>校对与去幻觉</td></tr>
+        <tr><td>产品迭代</td><td>AI 分析用户对话日志，输出改进建议</td><td>做取舍</td></tr>
+        <tr><td>营销素材</td><td>AI 生成小红书/推特/知乎种草文</td><td>发布与回复</td></tr>
+      </table>
+      <div class="scores">
+        <div><div class="bar-row"><span>整体自动化程度</span><span>90%</span></div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+        <div><div class="bar-row"><span>可复制到多平台程度</span><span>85%</span></div><div class="track"><div class="fill" style="width:85%"></div></div></div>
+      </div>
+
+      <h3>💰 启动成本</h3>
+      <ul>
+        <li>ChatGPT Plus / 豆包 / Coze 订阅：¥150 – ¥300 / 月</li>
+        <li>域名 + 简单落地页（Vercel / Cloudflare Pages 免费）：¥60 / 年</li>
+        <li>可选：Notion / Feishu 模板搭建、Substack 邮件订阅：0 元起</li>
+        <li>时间投入：首个 Agent 从 0 到上架约 1–2 个周末。</li>
+      </ul>
+
+      <h3>📈 预期收益</h3>
+      <ul>
+        <li>冷启 30 天：¥0 – ¥800 / 月（看第一个 Agent 是否命中细分需求）。</li>
+        <li>成熟阶段（3–6 个月，5–10 个 Agent）：¥3,000 – ¥15,000 / 月。</li>
+        <li>头部案例：单个爆款 GPT 分成 $1,000+/月，非孤例，但需持续迭代与投放。</li>
+      </ul>
+
+      <div class="callout">💡 <b>今日行动建议：</b>先花 1 小时选定一个你已有 3 年以上经验的行业，用它做第一个 Agent，比追热门方向更稳。</div>
+    </div>
+
+    <!-- 方向 2 -->
+    <div class="news-item">
+      <div class="tagrow">
+        <span class="tag">🎬 方向 02</span>
+        <span class="tag green">门槛低</span>
+        <span class="tag">AI 自动化 ★★★★☆</span>
+      </div>
+      <h2>AI 短视频"历史 / 冷知识"频道 —— 内容生产全流程 AI 化</h2>
+      <p class="desc">在抖音 / 视频号 / YouTube Shorts / TikTok 上运营一个垂类频道（如"三分钟中国古代冷知识""世界名人的失败瞬间""科技史上的今天"），文案 → 配音 → 分镜 → 剪辑几乎全部由 AI 完成，主打稳定日更 + 平台流量分成 + 后期接品牌广告。</p>
+
+      <h3>📌 项目介绍</h3>
+      <ul>
+        <li>内容形态：60–90 秒短视频，文案信息密度高、画面用 AI 生成图 + 存量素材拼接。</li>
+        <li>技术栈：ChatGPT / Claude 写文案 → ElevenLabs / 豆包语音合成 → Midjourney / 即梦生成分镜 → 剪映 AI 一键成片。</li>
+        <li>变现：平台创作者分成、商单植入、后续导流到知识付费专栏或电商小店。</li>
+      </ul>
+
+      <h3>✅ 可行性分析</h3>
+      <ul>
+        <li>题材永不过时：历史、冷知识、悬疑故事类账号在国内外都是长青赛道。</li>
+        <li>已有大量个人博主验证：单人矩阵账号 3–6 个月做到百万粉的案例每月都在出现。</li>
+        <li>风险点：平台对 AI 生成内容的标注和限流政策收紧；解决方式是保留 <b>真人口播 5–10 秒</b> + 加强史料准确性，避开纯合成账号的降权区。</li>
+      </ul>
+
+      <h3>🤖 AI 自动化程度</h3>
+      <table>
+        <tr><th>环节</th><th>AI 承担</th><th>人工工作</th></tr>
+        <tr><td>选题</td><td>AI 抓取热搜 + 历史事件库聚合</td><td>做真伪校对</td></tr>
+        <tr><td>文案</td><td>AI 一次生成 5 版 + 二次润色</td><td>选稿 & 微调</td></tr>
+        <tr><td>配音</td><td>AI 语音合成，可克隆音色</td><td>听 1 遍确认</td></tr>
+        <tr><td>剪辑</td><td>剪映 AI 一键成片、自动配字幕</td><td>换封面、调节奏</td></tr>
+        <tr><td>发布 & 回复</td><td>AI 生成标题/评论区互动模板</td><td>手动发送与置顶</td></tr>
+      </table>
+      <div class="scores">
+        <div><div class="bar-row"><span>整体自动化程度</span><span>80%</span></div><div class="track"><div class="fill" style="width:80%"></div></div></div>
+        <div><div class="bar-row"><span>可矩阵化程度</span><span>90%</span></div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+      </div>
+
+      <h3>💰 启动成本</h3>
+      <ul>
+        <li>剪映专业版 / CapCut Pro：¥30 – ¥80 / 月</li>
+        <li>ChatGPT / Claude / 豆包订阅：¥150 / 月</li>
+        <li>ElevenLabs 或国内音色克隆：¥100 – ¥200 / 月（可用免费额度起步）</li>
+        <li>图片生成（即梦 / MJ）：¥80 – ¥300 / 月</li>
+        <li>合计：单账号约 <b>¥400 / 月</b>，做 3 账号矩阵约 <b>¥600 / 月</b>（多数工具可共享）。</li>
+      </ul>
+
+      <h3>📈 预期收益</h3>
+      <ul>
+        <li>0–1 个月：主要在积累粉丝，收入 <b>¥0 – ¥500</b>。</li>
+        <li>1–3 个月：单账号进入平台流量池，中视频/创作者分成 <b>¥1,000 – ¥5,000 / 月</b>。</li>
+        <li>3–6 个月：加上商单 + 矩阵（3 号），综合收益 <b>¥8,000 – ¥25,000 / 月</b> 有跑通样本。</li>
+        <li>头部案例：AI 讲历史类账号一年内起号做到百万粉，年收入六位数以上。</li>
+      </ul>
+
+      <div class="callout">💡 <b>今日行动建议：</b>先做一个 3 集"最小可发布内容"（脚本 → 配音 → 成片），把整套流水线跑通，再决定要不要放大投入。</div>
+    </div>
+
+    <!-- 综合建议 -->
+    <div class="news-item">
+      <div class="tagrow"><span class="tag rose">🎯 综合对比</span></div>
+      <h2>今日两个方向怎么选？</h2>
+      <table>
+        <tr><th>维度</th><th>GPTs / Agent 上架</th><th>AI 短视频频道</th></tr>
+        <tr><td>启动门槛</td><td>会写清晰提示词即可</td><td>需要一点内容感 & 审美</td></tr>
+        <tr><td>AI 自动化程度</td><td>★★★★★</td><td>★★★★☆</td></tr>
+        <tr><td>启动成本</td><td>¥150–300 / 月</td><td>¥400–600 / 月</td></tr>
+        <tr><td>回本周期</td><td>2–4 个月</td><td>3–6 个月</td></tr>
+        <tr><td>收入天花板</td><td>中等偏上（长尾多、单点小）</td><td>高（头部账号年入百万）</td></tr>
+        <tr><td>适合人群</td><td>技术 / 咨询 / 行业专家</td><td>爱看内容、有表达欲的人</td></tr>
+      </table>
+      <div class="callout">✨ <b>建议组合：</b>如果你时间有限，先做 <b>方向 1</b> —— 单次投入低、自动化更彻底、收入更稳；有内容感、能坚持日更再叠加 <b>方向 2</b>，用 Agent 沉淀知识、用视频获取流量，形成"内容—工具"闭环。</div>
+    </div>
+
+    <div class="footer">
+      副业探索报告 · 2026-07-02 · style_warm
+      <div class="disclaimer">本报告基于公开信息与行业观察，收益预期仅供参考；实际结果取决于个人执行、平台政策与市场变化。</div>
+    </div>
+  </div>
+</body>
+</html>
