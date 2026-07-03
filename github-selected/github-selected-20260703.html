@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub 精选项目报告 | 2026年7月3日</title>
+  <style>
+    :root { --primary:#0052D9; --primary-2:#2F80ED; --primary-soft:#EAF2FF; --bg:#F3F5F8; --card-bg:#FFFFFF; --text-main:#1C1F23; --text-sub:#5C6A82; --border:rgba(0,82,217,.13); --shadow:0 18px 48px rgba(8,32,71,.10); }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:24px; background:linear-gradient(180deg,#EEF4FF 0%,var(--bg) 280px); color:var(--text-main); font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; }
+    .wrap { max-width:980px; margin:0 auto; background:var(--card-bg); border-radius:28px; overflow:hidden; box-shadow:var(--shadow); }
+    .hero { position:relative; padding:44px 44px 36px; color:#fff; background:radial-gradient(circle at 86% 8%,rgba(255,255,255,.92),rgba(255,255,255,.12) 30%,transparent 48%),linear-gradient(135deg,#003EA8 0%,#0052D9 46%,#4FA3FF 100%); }
+    .hero:after { content:""; position:absolute; right:34px; bottom:-46px; width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,.12); filter:blur(1px); }
+    .badge-group { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px; }
+    .badge { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.22); font-size:13px; font-weight:700; }
+    h1 { margin:0 0 14px; font-size:34px; line-height:1.25; letter-spacing:-.02em; }
+    .hero p { margin:0; max-width:780px; color:rgba(255,255,255,.94); font-size:16px; position:relative; z-index:1; }
+    .content { padding:34px 44px 40px; }
+    .section-title { display:flex; align-items:center; gap:10px; margin:0 0 18px; font-size:24px; color:var(--primary); }
+    .lead-card,.project-card,.tips-card,.source-card { background:#fff; border:1px solid var(--border); border-radius:20px; padding:24px; margin-bottom:22px; box-shadow:0 10px 28px rgba(0,82,217,.06); }
+    .lead-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .metric { background:linear-gradient(180deg,#F8FBFF,#FFFFFF); border:1px solid var(--border); border-radius:16px; padding:16px; }
+    .metric .label { display:block; font-size:13px; color:var(--text-sub); margin-bottom:8px; }
+    .metric .value { display:block; font-size:22px; font-weight:800; color:var(--primary); }
+    .project-head { display:flex; justify-content:space-between; gap:18px; align-items:flex-start; margin-bottom:14px; }
+    .project-title { margin:0; font-size:28px; line-height:1.3; }
+    .project-subtitle { margin:8px 0 0; color:var(--text-sub); }
+    .rank { min-width:86px; text-align:center; background:linear-gradient(180deg,#F6FAFF,#EAF2FF); color:var(--primary); border-radius:16px; padding:14px 12px; border:1px solid var(--border); font-weight:800; }
+    .meta-row { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 18px; }
+    .chip { display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border-radius:999px; font-size:13px; color:var(--text-sub); background:#F7FAFE; border:1px solid rgba(92,106,130,.14); }
+    .summary { margin:0 0 18px; font-size:16px; color:var(--text-main); }
+    .grid-2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:12px; }
+    .panel { background:#FAFCFF; border:1px solid var(--border); border-radius:16px; padding:18px; }
+    .panel h3 { margin:0 0 12px; font-size:17px; color:var(--primary); }
+    ul { margin:0; padding-left:20px; }
+    li { margin-bottom:10px; color:var(--text-sub); }
+    li strong { color:var(--text-main); }
+    .cta-row { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+    .link-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; border-radius:12px; padding:10px 16px; font-weight:700; transition:transform .18s ease,box-shadow .18s ease; }
+    .link-btn.primary { background:var(--primary); color:#fff; box-shadow:0 8px 18px rgba(0,82,217,.22); }
+    .link-btn.secondary { background:var(--primary-soft); color:var(--primary); }
+    .link-btn:hover { transform:translateY(-1px); }
+    .tips-card h3,.source-card h3 { margin:0 0 12px; color:var(--primary); }
+    .foot { padding:0 44px 34px; color:var(--text-sub); font-size:13px; }
+    .foot strong { color:var(--text-main); }
+    a { color:var(--primary); }
+    @media (max-width:820px) { body{padding:14px;} .hero,.content,.foot{padding-left:22px;padding-right:22px;} .lead-grid,.grid-2{grid-template-columns:1fr;} .project-head{flex-direction:column;} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="badge-group"><span class="badge">GitHub 精选</span><span class="badge">2026-07-03</span><span class="badge">style_blue</span></div>
+      <h1>今日 GitHub 精选项目报告</h1>
+      <p>今天挑的两个项目，一个是"个人 AI 助理的开源终局形态"，一个是"字节把 SuperAgent 从内部工具真正开出来"。前者关心你怎么把 AI 装进日常聊天工具，后者关心 AI Agent 到底能不能替你干几个小时的复杂活。两条路径，代表了 2026 年"能落地的 AI"最主流的两个方向。</p>
+    </section>
+    <main class="content">
+      <section class="lead-card">
+        <h2 class="section-title">📌 今日结论</h2>
+        <p class="summary">如果你想在自己的设备上拥有一个跨全平台聊天工具的私人 AI，<strong>openclaw/openclaw</strong> 已经把这件事做到了几乎"开箱即用"——一句 <code>openclaw onboard</code> 就把 20+ 聊天渠道 + 语音 + Canvas 全打通；如果你更关心"AI Agent 能不能真正替我干活"，字节跳动新开源的 <strong>bytedance/deer-flow 2.0</strong> 是目前最完整的开源 SuperAgent 框架之一，它把子 Agent、记忆、沙盒、技能体系整合成一套可以跑几十分钟到几小时的长链路研究/编码/创作流水线。</p>
+        <div class="lead-grid"><div class="metric"><span class="label">今日精选数量</span><span class="value">2 个</span></div><div class="metric"><span class="label">核心主题</span><span class="value">个人助理 × 长时程 Agent</span></div><div class="metric"><span class="label">推荐阅读顺序</span><span class="value">先助理 → 再 Agent 框架</span></div></div>
+      </section>
+
+      <section class="project-card">
+        <div class="project-head"><div><h2 class="project-title">1. openclaw/openclaw</h2><p class="project-subtitle">运行在你自己设备上、贯穿 20+ 聊天平台的开源个人 AI 助理，"The lobster way"</p></div><div class="rank">TOP 1</div></div>
+        <div class="meta-row"><span class="chip">⭐ 381,521 Stars</span><span class="chip">🍴 79,970 Forks</span><span class="chip">💻 TypeScript</span><span class="chip">🪪 MIT-like</span><span class="chip">🦞 Personal AI Assistant</span></div>
+        <p class="summary"><strong>项目详细介绍：</strong>OpenClaw 是一款完全跑在你自己设备上的开源个人 AI 助理。它的产品哲学非常明确：<em>助理才是产品，Gateway 只是控制面</em>——也就是说它并不追求做一个大而全的"Agent 平台"，而是把"一个真正属于你的 AI"塞进你已经在用的所有聊天工具里。目前它已经原生接入了包括 WhatsApp、Telegram、Slack、Discord、Google Chat、Signal、iMessage、IRC、Microsoft Teams、Matrix、飞书、LINE、Mattermost、Nextcloud Talk、Nostr、微信、QQ、WebChat 等 20+ 个渠道；在 macOS/iOS/Android 上支持语音收发，并且提供一个可以由 AI 直接控制的 Canvas 交互层。安装方式非常极简：Node 24 环境下 <code>npx openclaw onboard</code>（或 pnpm/bun），CLI 会一步步引导你完成 gateway、workspace、渠道和 skills 的配置；Windows 用户还能直接装原生 Windows Hub 桌面应用，包含托盘状态、聊天、node 模式与本地 MCP 模式。它由 OpenAI、GitHub、NVIDIA、Vercel 等厂商共同赞助，是过去一年里 GitHub 上增长最快的 AI 项目之一，Stars 已经飙到 38 万+。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>单用户 · 本地优先：</strong>Gateway 跑在你自己的机器/服务器上，模型 API Key 由你掌握，不上传数据到闭源云端。</li><li><strong>多渠道统一网关：</strong>用同一份 skill 与记忆体系覆盖 20+ 聊天平台，聊到哪里都是同一个"人"。</li><li><strong>语音 + Canvas 多模态：</strong>macOS/iOS/Android 上支持语音输入输出，并可渲染由 AI 控制的 Live Canvas，超越纯文本对话。</li><li><strong>MCP 原生集成：</strong>Windows Hub 内置本地 MCP 模式，可以把本机工具、文件系统能力直接暴露给助理调用。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>私人生产力助理：</strong>在飞书、Slack、Telegram 里同时使用同一个助理，安排日程、总结会议、写周报。</li><li><strong>家庭/个人知识管家：</strong>把家庭 IM（微信/iMessage/WhatsApp）接进来，随时问家庭清单、收纳位置、账单。</li><li><strong>开发者工作流：</strong>结合 MCP，把 Git、Docker、shell 命令交给助理，用聊天驱动本机操作。</li><li><strong>无障碍与无键盘工作流：</strong>手机端语音直接指挥，减少切换 App 的成本。</li></ul></div></div>
+        <div class="panel" style="margin-top:16px;"><h3>为什么今天推荐它</h3><ul><li>它把"个人 AI 助理"这个概念从"某某 App 里的一个聊天框"真正做成了跨渠道、跨设备、由你自己拥有的实体。</li><li>MIT 类协议 + 一句命令上手，非常适合作为周末动手项目搭一个属于自己的 Jarvis。</li><li>Star 数据+赞助商结构说明它已经度过了"新玩具"阶段，社区和生态都值得押注。</li></ul></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库</a><a class="link-btn secondary" href="https://openclaw.ai" target="_blank" rel="noopener noreferrer">查看项目主页</a></div>
+      </section>
+
+      <section class="project-card">
+        <div class="project-head"><div><h2 class="project-title">2. bytedance/deer-flow</h2><p class="project-subtitle">字节跳动开源的长时程 SuperAgent 框架 2.0，可跑数分钟到数小时的复杂任务</p></div><div class="rank">TOP 2</div></div>
+        <div class="meta-row"><span class="chip">⭐ 75,955 Stars</span><span class="chip">🍴 10,268 Forks</span><span class="chip">💻 Python</span><span class="chip">🪪 MIT</span><span class="chip">🦌 SuperAgent Harness</span></div>
+        <p class="summary"><strong>项目详细介绍：</strong>DeerFlow（Deep Exploration and Efficient Research Flow）是字节跳动开源的一套 SuperAgent Harness，2026-02-28 v2.0 发布当天就登顶 GitHub Trending。与"给 LLM 套一层聊天"的常见 Agent 项目不同，DeerFlow 2.0 是从零重写的框架，它把长时程 Agent 需要的所有基础设施打包成一整套：<em>子 Agent 编排、长期记忆、沙盒 & 文件系统、可扩展 Skills、消息 Gateway、上下文工程</em>。它内置了 Claude Code 集成、Session Goals（把"任务目标"当作一等公民管理）、Sub-Agents（父 Agent 派发子任务）、Sandbox（安全执行代码/命令）、长期记忆等能力，能真正处理"跑几十分钟到几小时"的研究、编码和创作任务。部署方式支持 Docker 一键起，也支持本地开发；接入 IM 渠道后可以像 ChatOps 一样在群里驱动 Agent 干活；还内置了 LangSmith / Langfuse Tracing、MCP Server、TUI 终端工作台。字节推荐它搭配 Doubao-Seed-2.0-Code、DeepSeek v3.2、Kimi 2.5 使用，同时集成了 BytePlus 自研的 InfoQuest 智能搜索/爬取工具集。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>SuperAgent Harness 完整栈：</strong>Sub-Agents + Memory + Sandbox + Skills + Gateway，是目前开源生态里最"齐全"的 Agent 底座之一。</li><li><strong>长时程任务优先：</strong>专为"跑几十分钟到几小时"的研究/编码/创作任务设计，不再是一次性问答。</li><li><strong>Skills 可扩展：</strong>把领域能力抽象成 Skill，Agent 可以按任务拉取，与 Claude Code / Cursor 等外部编码 Agent 协同。</li><li><strong>可观测 + 可部署：</strong>原生集成 LangSmith / Langfuse Tracing、Docker、MCP Server、TUI，从原型到生产链路完整。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>深度研究报告：</strong>输入一个主题，让 SuperAgent 自主检索、比对、写作，产出多章节调研报告。</li><li><strong>长任务编码代理：</strong>接入 Claude Code / Codex，作为长时程编码代理跑重构、迁移、升级依赖等大型任务。</li><li><strong>企业内部 ChatOps：</strong>接入 IM 渠道后，把 Agent 变成"群里的项目经理"，长任务后台跑，结果推送回群。</li><li><strong>Agent 研发实验床：</strong>研究 Sub-Agent 编排、长期记忆、上下文工程、Sandbox 安全的最佳工程实践参考。</li></ul></div></div>
+        <div class="panel" style="margin-top:16px;"><h3>为什么今天推荐它</h3><ul><li>2026 年 Agent 生态的关键词是"长时程"，DeerFlow 2.0 是这类项目里工程完成度最高、生态最完整的开源代表。</li><li>MIT 协议 + Docker 一键部署 + 完整 Tracing，从"看看"到"用起来"到"改起来"路径很短。</li><li>对国内团队特别友好：文档中英日法俄五语齐全，还给出了 Doubao / DeepSeek / Kimi 的推荐搭配。</li></ul></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/bytedance/deer-flow" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库</a><a class="link-btn secondary" href="https://deerflow.tech" target="_blank" rel="noopener noreferrer">查看项目主页</a></div>
+      </section>
+
+      <section class="tips-card"><h3>🧭 今日阅读建议</h3><ul><li><strong>先看 OpenClaw：</strong>把 <code>openclaw onboard</code> 跑起来，在你最常用的一个 IM（比如飞书）里挂上助理，感受"个人 AI"从概念变成日常工具的落差。</li><li><strong>再看 DeerFlow：</strong>沿着 README 的 Sub-Agents / Sandbox / Long-Term Memory 三节读，理解一个真正长时程的 Agent 系统需要哪些底座。</li><li><strong>组合思考：</strong>OpenClaw 关心"AI 陪着你"，DeerFlow 关心"AI 替你去干"。当这两条路径打通时，就是 personal super agent 的真正起点。</li></ul></section>
+      <section class="source-card"><h3>🔎 信息来源</h3><ul><li>openclaw/openclaw GitHub 仓库 README、openclaw.ai 官方主页、GitHub 仓库公开元数据</li><li>bytedance/deer-flow GitHub 仓库 README、deerflow.tech 官方主页、GitHub 仓库公开元数据</li><li>GitHub Search API（stars:&gt;1000, topic:ai, sort=stars）</li><li>内容生成时间：2026-07-03 CST</li></ul></section>
+    </main>
+    <div class="foot"><strong>输出文件：</strong>github-selected-20260703.html<br /><strong>生成说明：</strong>采用 style_blue 风格扩展生成，适配 GitHub Pages 发布。</div>
+  </div>
+</body>
+</html>
