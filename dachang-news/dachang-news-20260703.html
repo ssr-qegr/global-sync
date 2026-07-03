@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大厂新闻 · 2026-07-03</title>
+<style>
+  :root { --primary: #B388FF; --bg: #0D0D0D; --card-bg: #1A1A1A; --text-main: #E0E0E0; --text-sub: #9E9E9E; --accent: #00E5FF; --hot:#FF5C8A; --ok:#48F2A6; --warn:#FFD166; }
+  * { box-sizing: border-box; }
+  body { font-family: "Inter", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: radial-gradient(circle at top left, rgba(179,136,255,.18), transparent 34%), radial-gradient(circle at 85% 8%, rgba(0,229,255,.14), transparent 32%), radial-gradient(circle at 20% 95%, rgba(255,92,138,.10), transparent 30%), var(--bg); color: var(--text-main); margin: 0; padding: 22px; }
+  .container { max-width: 980px; margin: 0 auto; background: linear-gradient(180deg, rgba(26,26,26,.96), rgba(14,14,16,.98)); padding: 38px; border-radius: 22px; border: 1px solid #333; box-shadow: 0 22px 70px rgba(0,0,0,.58); }
+  .header { text-align: center; margin-bottom: 34px; padding: 30px 18px; border: 1px solid rgba(179,136,255,.22); border-radius: 18px; background: rgba(255,255,255,.025); }
+  .header h1 { color: var(--primary); margin: 0 0 12px 0; font-size: clamp(30px, 5vw, 46px); letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 24px rgba(179,136,255,0.35); }
+  .date { color: var(--text-sub); font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .lead { margin: 18px auto 0; max-width: 840px; color: #c9c9d1; line-height: 1.82; font-size: 15px; }
+  .signal { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:22px 0 4px; }
+  .signal div { border:1px solid #333; background:rgba(255,255,255,.03); border-radius:14px; padding:14px; color:#cfcfd6; font-size:13px; line-height:1.6; }
+  .signal b { display:block; color:var(--accent); margin-bottom:4px; }
+  .section-title { margin: 34px 0 16px; display:flex; align-items:center; gap:10px; color:#fff; font-size:22px; }
+  .section-title::before { content:""; width:10px; height:10px; border-radius:50%; background: var(--accent); box-shadow: 0 0 18px var(--accent); }
+  .news-item { background: rgba(36,36,36,.92); padding: 24px; margin-bottom: 18px; border-radius: 16px; border: 1px solid #333; transition: all 0.3s ease; position: relative; overflow: hidden; }
+  .news-item::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(to bottom, var(--primary), var(--accent)); opacity: .9; }
+  .news-item:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(179,136,255,0.16); border-color: rgba(179,136,255,.35); }
+  .news-item h2 { margin: 2px 0 14px 0; font-size: 20px; color: #FFF; font-weight: 650; line-height:1.35; }
+  .news-item p { margin: 0 0 12px 0; font-size: 15px; color: var(--text-sub); line-height: 1.75; }
+  .news-item strong { color:#f5f5f7; }
+  .tag { display: inline-block; background: rgba(179,136,255,0.1); color: var(--primary); border: 1px solid rgba(179,136,255,0.3); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-bottom: 14px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .source { display:inline-flex; margin-top:6px; color: var(--accent); text-decoration: none; font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; letter-spacing: .6px; }
+  .source:hover { text-shadow: 0 0 8px rgba(0,229,255,0.6); }
+  .note { margin: 26px 0 0; padding: 16px 18px; border:1px dashed #3a3a3a; border-radius:14px; color:#aaa; line-height:1.7; background:rgba(255,255,255,.025); }
+  .footer { text-align: center; margin-top: 36px; padding-top: 20px; border-top: 1px dashed #333; color: #666; font-size: 12px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  @media (max-width: 680px) { body { padding: 14px; } .container { padding: 22px; } .news-item { padding: 20px; } .signal { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>⚡ Big Tech Signal</h1>
+      <div class="date">SYS.DATE: 2026-07-03 // CHANNEL: DACHANG-NEWS // STATUS: ONLINE</div>
+      <p class="lead">今天的大厂动态很集中地暴露出一个趋势：国内大厂在补人、整组织、锁算力，核心是把 AI 真正变成可交付、可放大的生产系统；国际大厂则开始更在意投入回收、供应链安全和监管关系，核心是把 AI 从“烧钱竞赛”推进到“经营竞赛”。一句话概括：AI 竞争已经从拼发布，进入拼长期运营能力。</p>
+      <div class="signal">
+        <div><b>国内关键词</b>扩招 AI 岗位、阿里禁用 Claude、百度换将、小米百亿算力、可灵融资</div>
+        <div><b>国际关键词</b>Meta 卖算力、Google 调整 TPU 封装、Apple 打最高法院官司、OpenAI 经营监管关系</div>
+        <div><b>影响判断</b>国内在抢执行密度和资源锁定，国际在拼资本回收、供应链韧性和制度安全边界</div>
+      </div>
+    </div>
+
+    <h3 class="section-title">国内大厂</h3>
+
+    <div class="news-item">
+      <span class="tag">#BYTEDANCE #TENCENT #HIRING #AI</span>
+      <h2>腾讯与字节继续大规模扩招 AI 岗位，头部公司仍在加速补组织</h2>
+      <p><strong>新闻原文摘要：</strong>人社部互联网企业云端招聘月公开信息显示，腾讯发布 8000 余个岗位，覆盖 AI 算法、大模型、高性能计算、基础架构等方向；字节跳动提供约 7000 个岗位，覆盖大模型应用、AI 搜索、视觉智能及综合运营管理岗位。</p>
+      <p><strong>人话翻译：</strong>这说明两家公司并没有因为 AI 投入大、成本高就踩刹车，反而还在继续补人。岗位开得越多，越说明相关业务还在往前冲，而不是进入“先观察一下”的保守期。</p>
+      <p><strong>影响分析：</strong>对行业来说，这是一种很强的前瞻信号：头部公司仍然把 AI 当成未来几年最核心的增长方向。后面无论是模型能力、产品更新，还是平台工具链建设，节奏都大概率会继续拉快。</p>
+      <a class="source" href="http://m.toutiao.com/group/7658225759777047075/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#ALIBABA #CLAUDE #SECURITY</span>
+      <h2>阿里内部全面禁用 Claude，全员被要求在 7 月 10 日前卸载</h2>
+      <p><strong>新闻原文摘要：</strong>7 月 3 日多家媒体报道称，阿里内部已通知全面禁用 Anthropic 旗下 Claude 全系产品，包括 Claude Code，禁令将于 7 月 10 日正式生效。相关报道将起因指向安全风险与供应链可控性评估。</p>
+      <p><strong>人话翻译：</strong>阿里这次不是简单“少用一点”，而是直接把外部热门 AI 工具整体拉黑，意思很明确：在核心研发和办公环境里，安全性、可控性和自有替代方案优先级更高。</p>
+      <p><strong>影响分析：</strong>这会让国内大厂在 AI 工具选型上更倾向“能自研就自研，能内控就内控”。对外部模型厂商来说，进入大企业内部系统的门槛会越来越高；对阿里自己来说，也是在逼内部产品加快补位。</p>
+      <a class="source" href="https://36kr.com/p/3879721635361032" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#BAIDU #MODEL #ORG_CHANGE</span>
+      <h2>百度引入孙天祥担任基础模型研发部负责人，进一步押注年轻核心人才</h2>
+      <p><strong>新闻原文摘要：</strong>公开报道显示，1997 年出生的孙天祥已正式加入百度，出任基础模型研发部（BMU）负责人，并进入百度模型委员会（BMC）。其背景包括 MOSS 核心开发者等经历。</p>
+      <p><strong>人话翻译：</strong>百度这次调整，核心不是“换个人坐位置”，而是想把基础模型的节奏交给更懂前沿路线、动作更快的人来带。说白了，就是想让模型研发线跑得更像创业团队，而不是传统大公司。</p>
+      <p><strong>影响分析：</strong>这意味着百度仍在持续重塑自己的 AI 组织结构。后续如果 BMU 和模型委员会协同更顺，百度在基础模型、训练框架和应用协同上的推进速度，可能会明显提速。</p>
+      <a class="source" href="http://m.toutiao.com/group/7657924291895296521/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#XIAOMI #GPU #AI_INFRA</span>
+      <h2>小米被曝把 AI 算力预算抬到百亿元以上，提前锁定 GPU 资源</h2>
+      <p><strong>新闻原文摘要：</strong>7 月 3 日多家报道援引界面新闻消息称，金山云下半年将加速 GPU 算力集群建设，其中小米对金山云的 GPU 需求已从万卡集群升级为超大规模集群，项目投入预算由近 40 亿元增至百亿元以上。</p>
+      <p><strong>人话翻译：</strong>小米已经不满足于“有 AI 能力就行”，而是在用真金白银抢未来几年的算力船票。现在先把资源锁住，后面无论做手机、汽车还是智能硬件上的 AI，都不会被卡脖子。</p>
+      <p><strong>影响分析：</strong>这说明小米正在从产品公司向“产品 + 基础设施”公司扩张。谁先锁住稳定算力，谁后面在端侧 AI、云侧训练和多设备协同上就更有主动权。</p>
+      <a class="source" href="https://tech.ifeng.com/c/8uSg2vRBta5" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#KUAISHOU #KLING #BAT</span>
+      <h2>可灵 AI 融资落地，阿里、腾讯、百度一起下注视频生成赛道</h2>
+      <p><strong>新闻原文摘要：</strong>7 月 3 日公开报道显示，快手旗下可灵 AI 完成大额融资安排，已确定融资规模为 190.48 亿元，上限为 204.471 亿元，对应投后估值约 180 亿美元，阿里、腾讯、百度均参与其中。</p>
+      <p><strong>人话翻译：</strong>这件事最值得看的，不只是可灵融资有多大，而是 BAT 罕见地在同一个视频大模型项目上集体下注。说明大家都觉得 AI 视频已经不是“可看可不看”的边缘赛道了。</p>
+      <p><strong>影响分析：</strong>国内 AI 视频赛道正在从产品试水进入资本和平台资源同步加码阶段。后续竞争会更像“模型能力 + 内容生态 + 商业落地 + 出海速度”的综合战，而不是单纯拼 demo 效果。</p>
+      <a class="source" href="https://finance.sina.com.cn/tech/roll/2026-07-03/doc-inifntfe2385521.shtml" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <h3 class="section-title">国际大厂</h3>
+
+    <div class="news-item">
+      <span class="tag">#META #AI_COMPUTE #CLOUD</span>
+      <h2>Meta 计划对外出售富余 AI 算力，开始把重投入转成收入故事</h2>
+      <p><strong>新闻原文摘要：</strong>Reuters 报道显示，Meta 正筹划通过云业务向外部客户出售富余 AI 计算能力，以提高算力利用率并开辟新增收入来源。</p>
+      <p><strong>人话翻译：</strong>Meta 在 AI 上已经砸了太多钱，现在开始认真考虑“这些 GPU 不能只自己用，最好还能顺手赚钱”。这意味着大厂的 AI 竞争，开始从拼投入走向拼回报。</p>
+      <p><strong>影响分析：</strong>如果 Meta 真把算力外卖模式做起来，国际云市场就会多一个重量级变量。对 AWS、Azure、Google Cloud 来说，这不是一个边角竞争者，而可能是新一轮 AI 云定价和资源分配博弈的起点。</p>
+      <a class="source" href="https://eu.36kr.com/zh/p/3879311047309959" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#META #MODEL #OPENAI</span>
+      <h2>Meta 内部称下一代模型“Watermelon”已逼近 OpenAI 旗舰水平</h2>
+      <p><strong>新闻原文摘要：</strong>7 月 3 日多家媒体援引 Business Insider 消息称，Meta 超级智能实验室负责人在内部会议上表示，代号“Watermelon”的下一代模型在内部基准上已接近 OpenAI GPT-5.5 水平，同时所用训练算力较上一代显著增加。</p>
+      <p><strong>人话翻译：</strong>Meta 想传递的信息很直接：我前面虽然有过波折，但模型这条线没有掉队，而且会继续靠更猛的算力投入追上甚至反超对手。</p>
+      <p><strong>影响分析：</strong>这会进一步推高国际前沿模型竞争的军备化程度。越往后，头部厂商的比拼不仅是算法和产品，更是谁能长期支撑这种高成本、高不确定性的前沿研发节奏。</p>
+      <a class="source" href="https://m.stnn.cc/c/2026-07-03/4120936.shtml" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#GOOGLE #TPU #INTEL</span>
+      <h2>Google 下一代 TPU 被曝转向英特尔 EMIB-T 封装，供应链思路出现变化</h2>
+      <p><strong>新闻原文摘要：</strong>7 月 3 日，多家科技媒体援引 SemiAnalysis 报告称，Google 下一代 TPU 将放弃台积电 CoWoS，转向英特尔 EMIB-T 封装技术，背后原因被解读为先进封装产能紧张与成本效率考量。</p>
+      <p><strong>人话翻译：</strong>Google 这一步，本质上是在说：AI 芯片竞争不只是设计芯片本身，还包括封装产能、供应链弹性和交付节奏。谁能把整条链路安排稳，谁才跑得更久。</p>
+      <p><strong>影响分析：</strong>如果这一调整属实，Google 会在 AI 芯片供应链上更主动地分散风险。对英特尔来说，这是先进封装能力的一次重要背书；对整个行业来说，也意味着 AI 芯片竞争已经深入到更底层的制造环节。</p>
+      <a class="source" href="https://m.mydrivers.com/newsview/1133861.html" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#APPLE #APPSTORE #REGULATION</span>
+      <h2>Apple 与 Epic 的 App Store 诉讼继续升级，案件将进入美国最高法院</h2>
+      <p><strong>新闻原文摘要：</strong>多家媒体援引 Reuters 报道称，美国最高法院同意审理 Apple 针对 App Store 外链规则相关藐视法庭裁定发起的上诉，Apple 方面也公开表示欢迎法院受理。</p>
+      <p><strong>人话翻译：</strong>这件事虽然不是 AI 发布会新闻，但它关系到苹果生态最核心的收费和分发规则。苹果现在是在为自己未来几年平台控制权打一场硬仗。</p>
+      <p><strong>影响分析：</strong>一旦最终规则发生变化，开发者分发路径、平台抽成逻辑以及苹果后续在应用生态上的治理空间都可能被重新定义。对整个移动互联网生态来说，这不是小修小补，而是规则级变化。</p>
+      <a class="source" href="https://www.macrumors.com/2026/07/02/apple-responds-to-youtuber-ai-lawsuit/" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">#OPENAI #POLICY #CAPITAL</span>
+      <h2>OpenAI 被曝讨论向美国政府提供 5% 股份方案，监管关系进入更深水区</h2>
+      <p><strong>新闻原文摘要：</strong>CNBC 等媒体援引英国《金融时报》消息称，OpenAI 曾提出由美国政府持有其 5% 股份的设想，希望缓解政治层面的反弹，并强化与政府的关系；该方案是否会落地仍未确定。</p>
+      <p><strong>人话翻译：</strong>OpenAI 现在考虑的不只是技术领先，还包括怎么和政策、资本、国家利益结构建立更稳的关系。说白了，越往上走，AI 公司越像“准基础设施公司”，就越绕不开政治层面的协商。</p>
+      <p><strong>影响分析：</strong>这说明国际 AI 竞争已经进入“技术、资本、监管三线并行”的阶段。未来头部公司之间的差距，可能不仅体现在模型表现，还体现在谁更能处理复杂的制度关系。</p>
+      <a class="source" href="https://www.cnbc.com/2026/07/02/openai-proposes-us-government-own-5percent-stake-to-address-political-blowback.html" target="_blank" rel="noopener">Read Source ↗</a>
+    </div>
+
+    <div class="note">
+      <strong>编辑视角：</strong>如果今天只记一个判断，我会记住“AI 竞争已经开始拼长期经营能力”。国内大厂更强调组织与资源前置，谁能先补齐人才和算力，谁就更容易把产品推成业务；国际大厂则在逼自己回答更现实的问题：怎么让高投入变现、怎么稳住供应链、怎么处理监管关系。接下来决定胜负的，未必是单次发布，而是谁更能把这套系统稳定跑下去。
+    </div>
+
+    <div class="footer">⚡ Big Tech Signal · Generated 2026-07-03 19:05 CST · 整理：孙纾荣 · 数据来源：公开新闻、公开报道与官方信息</div>
+  </div>
+</body>
+</html>
