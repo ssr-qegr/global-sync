@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>今日副业探索报告｜AI 播客工厂 & AI 跨境电商选品铺货</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff8ed;
+      --bg-soft: #fff3df;
+      --card: rgba(255,255,255,.86);
+      --text: #352317;
+      --muted: #7a6658;
+      --line: rgba(183, 126, 73, .22);
+      --amber: #d97706;
+      --orange: #f97316;
+      --rose: #fb7185;
+      --green: #16a34a;
+      --shadow: 0 24px 60px rgba(124, 75, 25, .16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(251, 146, 60, .28), transparent 34%),
+        radial-gradient(circle at 86% 12%, rgba(251, 113, 133, .18), transparent 30%),
+        linear-gradient(145deg, #fffaf1 0%, #fff4e5 48%, #fffdf8 100%);
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 42px 0 48px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 34px; padding: clamp(28px, 5vw, 54px); background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,246,231,.82)); box-shadow: var(--shadow); backdrop-filter: blur(18px); }
+    .hero::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px; border-radius: 50%; background: conic-gradient(from 120deg, rgba(249,115,22,.36), rgba(251,113,133,.24), rgba(245,158,11,.28), rgba(249,115,22,.36)); filter: blur(4px); opacity: .75; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border-radius: 999px; background: #fff3df; border: 1px solid var(--line); color: #9a5a13; font-size: 13px; font-weight: 700; }
+    h1 { position: relative; z-index: 1; margin: 20px 0 12px; font-size: clamp(34px, 5.5vw, 62px); line-height: 1.04; letter-spacing: -.045em; }
+    .lead { position: relative; z-index: 1; max-width: 820px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.85; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .metric { padding: 17px; border-radius: 22px; background: rgba(255,255,255,.78); border: 1px solid rgba(183,126,73,.18); }
+    .metric b { display: block; font-size: 23px; color: #8a4b0f; }
+    .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .section { margin-top: 22px; border: 1px solid var(--line); border-radius: 30px; background: var(--card); box-shadow: 0 16px 42px rgba(124,75,25,.11); overflow: hidden; }
+    .section-head { padding: 26px 28px 18px; border-bottom: 1px solid var(--line); background: linear-gradient(90deg, rgba(255,247,237,.9), rgba(255,255,255,.68)); }
+    .section-kicker { color: var(--orange); font-size: 13px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { margin: 8px 0 8px; font-size: clamp(25px, 3vw, 36px); letter-spacing: -.025em; }
+    .section-head p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .content { padding: 26px 28px 30px; }
+    .verdict { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: stretch; }
+    .note, .score-card, .mini-card { border: 1px solid rgba(183,126,73,.18); border-radius: 24px; background: #fffdf9; padding: 20px; }
+    .note strong { color: #92400e; }
+    .note p, .mini-card p { color: var(--muted); line-height: 1.75; margin: 8px 0 0; }
+    .scores { display: grid; gap: 12px; }
+    .bar { display: grid; gap: 7px; }
+    .bar-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+    .track { height: 10px; border-radius: 999px; background: #fde7c8; overflow: hidden; }
+    .fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--amber), var(--rose)); }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { border: 1px solid var(--line); border-radius: 28px; padding: 24px; background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,243,.84)); box-shadow: 0 14px 32px rgba(124,75,25,.09); }
+    .tagline { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .pill { border-radius: 999px; padding: 6px 10px; background: #fff3df; border: 1px solid rgba(183,126,73,.18); color: #9a5a13; font-size: 12px; font-weight: 700; }
+    .project h3 { margin: 0 0 10px; font-size: 25px; letter-spacing: -.02em; }
+    .project p { margin: 0 0 16px; color: var(--muted); line-height: 1.75; }
+    .list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .list li { padding: 12px 13px; border-radius: 16px; background: rgba(255,246,231,.72); color: #574234; line-height: 1.62; }
+    .list b { color: #8a4b0f; }
+    .table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 20px; }
+    .table th, .table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(183,126,73,.16); vertical-align: top; line-height: 1.65; }
+    .table th { background: #fff3df; color: #8a4b0f; font-size: 13px; }
+    .table tr:last-child td { border-bottom: 0; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: step; }
+    .step { position: relative; padding: 20px; border-radius: 22px; border: 1px solid rgba(183,126,73,.18); background: #fffdf9; }
+    .step::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #f97316; color: white; font-weight: 800; margin-bottom: 12px; }
+    .step h4 { margin: 0 0 8px; font-size: 17px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
+    .warn { border-left: 5px solid var(--orange); background: #fff7ed; padding: 16px 18px; border-radius: 18px; color: #614331; line-height: 1.7; }
+    footer { color: var(--muted); text-align: center; margin-top: 26px; line-height: 1.8; font-size: 14px; }
+    @media (max-width: 860px) { .hero-grid, .projects, .steps, .verdict { grid-template-columns: 1fr; } .wrap { width: min(100% - 24px, 1120px); padding-top: 22px; } .section-head, .content { padding-left: 20px; padding-right: 20px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <span class="eyebrow">☕ style_warm · 今日副业探索</span>
+      <h1>让 AI 帮你开一档"耳朵生意"和一个"跨境铺货工厂"</h1>
+      <p class="lead">报告日期：2026-07-05。今天挑 2 个 AI 自动化程度高、门槛低、能长期滚雪球的方向：AI 播客工厂（一个人做一档持续更新的知识/情感/职场播客，靠平台分成 + 广告 + 知识付费变现）；AI 跨境电商选品与铺货（用 AI 批量做选品、翻译、产品图、详情页，无货源在 Shopify / TikTok Shop / 亚马逊 铺货挣汇差）。前者是长期资产，后者是短期现金流。</p>
+      <div class="hero-grid">
+        <div class="metric"><b>2 个</b><span>今日推荐方向</span></div>
+        <div class="metric"><b>90%+</b><span>可被 AI 自动化的环节</span></div>
+        <div class="metric"><b>¥0 起</b><span>可零成本验证</span></div>
+        <div class="metric"><b>21 天</b><span>建议最小验证周期</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Quick Verdict</span>
+        <h2>先给结论</h2>
+        <p>今天更推荐先做"AI 播客工厂"：几乎零成本、复利效应强、每一期都是可积累的内容资产。"AI 跨境电商铺货"上限更高、现金流更直接，但要愿意研究选品、投流与售后，适合更能扛压、爱数据分析的人。</p>
+      </div>
+      <div class="content verdict">
+        <div class="note">
+          <strong>今日最推荐：AI 播客工厂。</strong>
+          <p>播客的信息密度高、通勤/家务/健身场景强、竞争远低于短视频；一档持续更新的播客本身就是长期资产，粉丝黏性远超短视频账号。用 AI 写稿 + AI 配音 + 一键剪辑，一个人可以一周稳更 3-5 期。</p>
+          <p>AI 跨境电商铺货适合能做数据决策的人：AI 帮你选品、生成多语言 Listing、跑产品图和短视频，你负责挑爆款、盯投流和售后，一件代发无库存压力，正跑通一个 SKU 每月就能贡献 ¥3k-¥1w+ 净利。</p>
+        </div>
+        <div class="score-card scores">
+          <div class="bar"><div class="bar-row"><span>启动门槛低</span><b>92/100</b></div><div class="track"><div class="fill" style="width:92%"></div></div></div>
+          <div class="bar"><div class="bar-row"><span>AI 自动化程度</span><b>90/100</b></div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+          <div class="bar"><div class="bar-row"><span>收入潜力</span><b>85/100</b></div><div class="track"><div class="fill" style="width:85%"></div></div></div>
+          <div class="bar"><div class="bar-row"><span>可复制性</span><b>88/100</b></div><div class="track"><div class="fill" style="width:88%"></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Projects</span>
+        <h2>今日 2 个副业方向</h2>
+        <p>每个方向都按"项目介绍、可行性、AI 自动化、启动成本、预期收益"拆解。</p>
+      </div>
+      <div class="content projects">
+        <article class="project">
+          <div class="tagline"><span class="pill">C端长期</span><span class="pill">复利资产</span><span class="pill">零库存</span></div>
+          <h3>方向一：AI 播客工厂（一个人做一档知识播客）</h3>
+          <p>定一个垂直主题（职场/情感/AI 前沿/理财/育儿/心理学等），用 AI 做选题、写稿、配音、剪辑、封面、简介，稳定每周更新 2-3 期，分发到小宇宙、喜马拉雅、苹果播客、Spotify 与视频号。靠平台激励、品牌口播广告、导流私域卖知识产品变现。</p>
+          <ul class="list">
+            <li><b>可行性分析：</b>播客用户付费意识强、粉丝黏性高，中文播客市场正在快速扩张，头部空缺赛道多（如 AI 陪跑、宝妈成长、跨境职场、副业实操）；相比短视频，播客是"慢内容 + 长复利"，不吃颜值不吃剪辑技术。</li>
+            <li><b>AI 自动化程度：</b>约 92%。AI 帮你找选题（Reddit/知乎/热榜爬取 + 大模型总结）、写稿（DeepSeek/豆包/Claude）、配音（ElevenLabs、豆包语音、剪映数字人音色）、剪辑（Descript、Adobe Podcast、剪映 AI）、生成封面（即梦/Midjourney）、写简介与 Show Notes。你只做终审。</li>
+            <li><b>启动成本：</b>¥0-¥200。前期完全可用免费额度起步；如追求商用音质，AI 语音订阅 ¥50-¥200/月足够；不需要买麦克风、不需要出镜。</li>
+            <li><b>预期收益：</b>3-6 个月稳更后：小宇宙激励 + 品牌广告口播 ¥2k-¥1w/月；导流私域卖 199-999 的知识付费/陪跑，月入 ¥5k-¥3w+；单档节目本身就是可以卖广告位的"数字地产"。</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="tagline"><span class="pill">B端现金流</span><span class="pill">跨境汇差</span><span class="pill">无货源</span></div>
+          <h3>方向二：AI 跨境电商选品与铺货（TikTok Shop / Shopify / 亚马逊）</h3>
+          <p>用 AI 做选品调研（爆款雷达、抖店/1688/亚马逊 BSR 交叉分析）、批量生成多语言 Listing、AI 图生图做产品主图/细节图、AI 短视频做 TikTok 素材，走一件代发或半托管模式，赚跨境汇差与流量红利。</p>
+          <ul class="list">
+            <li><b>可行性分析：</b>TikTok Shop 美区/东南亚仍在流量红利期，Shopify + 独立站扶持完善；一件代发（1688/义乌购/Yiwu Agent）无需囤货，AI 大幅压缩铺货工作量，让"个人小卖家"也能规模化。</li>
+            <li><b>AI 自动化程度：</b>约 88%。AI 处理选品打分、竞品分析、多语言标题/关键词/描述、产品图去水印换背景、5-15 秒短视频素材、评价关键词洞察。人工只做爆款判断、投流预算与售后兜底。</li>
+            <li><b>启动成本：</b>¥1000-¥3000。主要是 Shopify/店铺押金、AI 工具订阅（选品插件 + 图/视频生成 + 翻译）、少量 TikTok 投流预算；不需要囤货。</li>
+            <li><b>预期收益：</b>单 SKU 跑通后月净利 ¥3k-¥1w，跑通 3-5 个 SKU 月入 ¥1w-¥5w+；成熟卖家可搭"AI 铺货矩阵"复制到多国站点，实现"一套素材，多国变现"。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Comparison</span>
+        <h2>横向对比：先做哪个？</h2>
+        <p>想稳、想做长期资产、想积累影响力 → 优先做 AI 播客；想尽快看到订单、能扛数据波动 → 优先做 AI 跨境铺货。</p>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead><tr><th>维度</th><th>AI 播客工厂</th><th>AI 跨境电商铺货</th></tr></thead>
+          <tbody>
+            <tr><td>最适合人群</td><td>爱表达/有专业积累/长期主义者、内容创作者</td><td>数据敏感、擅长选品、扛得住投流波动的操盘手</td></tr>
+            <tr><td>获客方式</td><td>小宇宙搜索/推荐、视频号切片、公众号导流私域</td><td>TikTok 短视频、平台自然流量、少量付费投流</td></tr>
+            <tr><td>交付/上架周期</td><td>单集从选题到发布 2-4 小时，每周 2-3 期</td><td>一个 SKU 从选品到上架 1-3 天，可批量铺</td></tr>
+            <tr><td>核心风险</td><td>初期 3 个月冷启动没听众、变现周期长</td><td>选品失败/物流纠纷/账号封禁、需要投流试错</td></tr>
+            <tr><td>放大路径</td><td>矩阵账号 + 会员专属 + 线下工作坊/训练营</td><td>爆款复购 + 品牌店铺 + 独立站沉淀私域</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">21-Day Plan</span>
+        <h2>21 天最小验证计划</h2>
+        <p>先跑一个真实闭环（播客拿到第一批订阅 / 电商跑出第一个爆款 SKU），再决定是否规模化。</p>
+      </div>
+      <div class="content steps">
+        <div class="step"><h4>第 1-4 天：定位</h4><p>播客方向锁定一个垂直主题 + 目标听众画像；电商方向锁定 1-2 个类目（如宠物、家居小物、美容工具）。</p></div>
+        <div class="step"><h4>第 5-10 天：搭产线</h4><p>播客：跑通"选题→AI 写稿→AI 配音→剪辑→上架"SOP，出 3 期样片；电商：跑通"AI 选品→Listing→主图→短视频→上架"SOP，铺 10-20 个 SKU。</p></div>
+        <div class="step"><h4>第 11-17 天：投放测试</h4><p>播客：跨平台上架，配合视频号切片 + 小红书发布；电商：小额投流测品，跑 3-5 天数据，砍掉不动销的 SKU。</p></div>
+        <div class="step"><h4>第 18-21 天：复盘迭代</h4><p>看哪期播客留存高、哪个 SKU 出单最稳；把 SOP 标准化，决定下阶段"矩阵化"还是"单点做深"。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Risk Control</span>
+        <h2>执行提醒</h2>
+      </div>
+      <div class="content">
+        <div class="warn">播客不要幻想"上线就爆"，前 20 期做产品，20 期后做增长，不要在第 5 期还没听众时就气馁；同时保证 AI 配音自然、内容有独到观点，纯搬运会被平台限流。跨境铺货务必做好合规：图片/视频要有商用授权，Listing 不能盗用竞品素材，涉及的品牌词/成分词要过一遍禁用清单；一件代发要提前和上游确认发货时效，避免出现纠纷影响店铺健康分。AI 是杠杆，不是免死金牌。</div>
+      </div>
+    </section>
+
+    <footer>
+      <div>副业探索报告 · bywork-20260705.html</div>
+      <div>建议行动：选一个方向死磕 21 天，别脚踏两条船，跑通再复制。</div>
+    </footer>
+  </main>
+</body>
+</html>
