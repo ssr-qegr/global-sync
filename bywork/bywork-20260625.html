@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>今日副业探索报告｜AI 课程切片代剪与 Prompt 模板包销售</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff8ed;
+      --bg-soft: #fff3df;
+      --card: rgba(255,255,255,.86);
+      --text: #352317;
+      --muted: #7a6658;
+      --line: rgba(183, 126, 73, .22);
+      --amber: #d97706;
+      --orange: #f97316;
+      --rose: #fb7185;
+      --green: #16a34a;
+      --shadow: 0 24px 60px rgba(124, 75, 25, .16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(251, 146, 60, .28), transparent 34%),
+        radial-gradient(circle at 86% 12%, rgba(251, 113, 133, .18), transparent 30%),
+        linear-gradient(145deg, #fffaf1 0%, #fff4e5 48%, #fffdf8 100%);
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 42px 0 48px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 34px; padding: clamp(28px, 5vw, 54px); background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,246,231,.82)); box-shadow: var(--shadow); backdrop-filter: blur(18px); }
+    .hero::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px; border-radius: 50%; background: conic-gradient(from 120deg, rgba(249,115,22,.36), rgba(251,113,133,.24), rgba(245,158,11,.28), rgba(249,115,22,.36)); filter: blur(4px); opacity: .75; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border-radius: 999px; background: #fff3df; border: 1px solid var(--line); color: #9a5a13; font-size: 13px; font-weight: 700; }
+    h1 { position: relative; z-index: 1; margin: 20px 0 12px; font-size: clamp(34px, 5.5vw, 62px); line-height: 1.04; letter-spacing: -.045em; }
+    .lead { position: relative; z-index: 1; max-width: 820px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.85; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .metric { padding: 17px; border-radius: 22px; background: rgba(255,255,255,.78); border: 1px solid rgba(183,126,73,.18); }
+    .metric b { display: block; font-size: 23px; color: #8a4b0f; }
+    .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .section { margin-top: 22px; border: 1px solid var(--line); border-radius: 30px; background: var(--card); box-shadow: 0 16px 42px rgba(124,75,25,.11); overflow: hidden; }
+    .section-head { padding: 26px 28px 18px; border-bottom: 1px solid var(--line); background: linear-gradient(90deg, rgba(255,247,237,.9), rgba(255,255,255,.68)); }
+    .section-kicker { color: var(--orange); font-size: 13px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { margin: 8px 0 8px; font-size: clamp(25px, 3vw, 36px); letter-spacing: -.025em; }
+    .section-head p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .content { padding: 26px 28px 30px; }
+    .verdict { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: stretch; }
+    .note, .score-card, .mini-card { border: 1px solid rgba(183,126,73,.18); border-radius: 24px; background: #fffdf9; padding: 20px; }
+    .note strong { color: #92400e; }
+    .note p, .mini-card p { color: var(--muted); line-height: 1.75; margin: 8px 0 0; }
+    .scores { display: grid; gap: 12px; }
+    .bar { display: grid; gap: 7px; }
+    .bar-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+    .track { height: 10px; border-radius: 999px; background: #fde7c8; overflow: hidden; }
+    .fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--amber), var(--rose)); }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { border: 1px solid var(--line); border-radius: 28px; padding: 24px; background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,243,.84)); box-shadow: 0 14px 32px rgba(124,75,25,.09); }
+    .tagline { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .pill { border-radius: 999px; padding: 6px 10px; background: #fff3df; border: 1px solid rgba(183,126,73,.18); color: #9a5a13; font-size: 12px; font-weight: 700; }
+    .project h3 { margin: 0 0 10px; font-size: 25px; letter-spacing: -.02em; }
+    .project p { margin: 0 0 16px; color: var(--muted); line-height: 1.75; }
+    .list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .list li { padding: 12px 13px; border-radius: 16px; background: rgba(255,246,231,.72); color: #574234; line-height: 1.62; }
+    .list b { color: #8a4b0f; }
+    .table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 20px; }
+    .table th, .table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(183,126,73,.16); vertical-align: top; line-height: 1.65; }
+    .table th { background: #fff3df; color: #8a4b0f; font-size: 13px; }
+    .table tr:last-child td { border-bottom: 0; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: step; }
+    .step { position: relative; padding: 20px; border-radius: 22px; border: 1px solid rgba(183,126,73,.18); background: #fffdf9; }
+    .step::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #f97316; color: white; font-weight: 800; margin-bottom: 12px; }
+    .step h4 { margin: 0 0 8px; font-size: 17px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
+    .warn { border-left: 5px solid var(--orange); background: #fff7ed; padding: 16px 18px; border-radius: 18px; color: #614331; line-height: 1.7; }
+    footer { color: var(--muted); text-align: center; margin-top: 26px; line-height: 1.8; font-size: 14px; }
+    @media (max-width: 860px) { .hero-grid, .projects, .steps, .verdict { grid-template-columns: 1fr; } .wrap { width: min(100% - 24px, 1120px); padding-top: 22px; } .section-head, .content { padding-left: 20px; padding-right: 20px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <span class="eyebrow">☕ style_warm · 今日副业探索</span>
+      <h1>把长视频切成爆款，把好提示词卖成商品</h1>
+      <p class="lead">报告日期：2026-06-25。今天精选 2 个 AI 自动化程度高、个人单兵就能起步的方向：面向知识博主和讲师的 AI 课程/直播切片代剪服务（按件收费、回款快），以及面向职场人和创作者的 AI Prompt 提示词模板包销售（一次打包，长期被动收入）。一个偏服务现金流，一个偏数字商品复利，组合起来很适合作为副业起点。</p>
+      <div class="hero-grid">
+        <div class="metric"><b>2 个</b><span>今日推荐方向</span></div>
+        <div class="metric"><b>85%+</b><span>可被 AI/脚本自动化的环节</span></div>
+        <div class="metric"><b>¥19 起</b><span>最低可验证首单价格</span></div>
+        <div class="metric"><b>14 天</b><span>建议最小验证周期</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Quick Verdict</span>
+        <h2>先给结论</h2>
+        <p>如果想尽快有现金流，先做“AI 课程切片代剪”，按件收费，B 端付费意愿明确；如果想做长期被动收入，再叠加“Prompt 模板包销售”，一次打包多次卖。两者底层都靠 AI 替你完成 80% 以上的执行工作。</p>
+      </div>
+      <div class="content verdict">
+        <div class="note">
+          <strong>今日最推荐：AI 课程切片代剪服务。</strong>
+          <p>知识博主、讲师、培训机构每周都在直播、录课、做讲座，但绝大多数人没时间也不擅长把长视频剪成短视频爆款。用 AI 转写 + 自动找高光 + 模板化字幕剪辑，单人一晚能交付十几条短视频，按条或按月计费回款都很快。</p>
+          <p>Prompt 模板包更像“做一次卖很多次”的数字产品，前期写一套高质量行业 Prompt（求职、电商文案、运营周报、跨境客服等），上架 1-2 个销售平台或自有小红书/公众号渠道，靠日积月累的小额订单滚出被动收入。</p>
+        </div>
+        <div class="score-card scores">
+          <div class="bar"><div class="bar-row"><span>启动门槛低</span><b>88/100</b></div><div class="track"><div class="fill" style="width:88%"></div></div></div>
+          <div class="bar"><div class="bar-row"><span>AI 自动化程度</span><b>90/100</b></div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+          <div class="bar"><div class="bar-row"><span>收入潜力</span><b>78/100</b></div><div class="track"><div class="fill" style="width:78%"></div></div></div>
+          <div class="bar"><div class="bar-row"><span>可复制性</span><b>86/100</b></div><div class="track"><div class="fill" style="width:86%"></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Projects</span>
+        <h2>今日 2 个副业方向</h2>
+        <p>分别按“项目介绍、可行性、AI 自动化、启动成本、预期收益”拆解。</p>
+      </div>
+      <div class="content projects">
+        <article class="project">
+          <div class="tagline"><span class="pill">B端刚需</span><span class="pill">按件计价</span><span class="pill">回款快</span></div>
+          <h3>方向一：AI 课程/直播切片代剪服务</h3>
+          <p>面向知识博主、讲师、培训机构和企业 IP，提供“长视频转写 → 高光片段识别 → 短视频剪辑 → 标题封面 → 多平台分发”的端到端切片代剪服务，按条或按月套餐收费。</p>
+          <ul class="list">
+            <li><b>可行性分析：</b>知识类长视频是巨大的内容富矿，但讲师没精力剪，专业剪辑团队又贵又慢。短视频平台对“爆款切片”需求长期高位，按条 ¥50-¥200 是验证过的市场价位，付费意愿明确。</li>
+            <li><b>AI 自动化程度：</b>约 90%。AI 负责语音转写、章节切分、爆点检测、口播文案、标题与封面草稿、自动加字幕和模板化剪辑；人工只做最终高光把关、节奏微调和封面审美定稿。</li>
+            <li><b>启动成本：</b>¥100-¥500/月。主要是 AI 转写工具、剪辑软件（剪映/CapCut 专业版）、AI 字幕和发布工具组合，无需采购任何硬件。</li>
+            <li><b>预期收益：</b>单条 ¥50-¥200；账号月度切片套餐 ¥1500-¥5000/号；接到 2-3 个稳定讲师或 MCN，就能形成稳定月收入，后续靠模板化和小团队接单放大。</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="tagline"><span class="pill">数字商品</span><span class="pill">一次打包</span><span class="pill">被动收入</span></div>
+          <h3>方向二：AI Prompt 提示词模板包销售</h3>
+          <p>把高质量、可直接用的 Prompt 整理成行业模板包（如求职、跨境客服、电商文案、运营周报、教师备课、家长辅导等），通过知识星球、闲鱼、小报童、Gumroad 或自有公众号/小红书私域上架销售。</p>
+          <ul class="list">
+            <li><b>可行性分析：</b>大量普通用户开始用 ChatGPT/豆包/Kimi，但不会写 Prompt，愿意为“开箱即用、立刻见效”的模板付费。垂直行业越细，付费意愿越高，竞争反而越小，特别适合个人单兵做长尾。</li>
+            <li><b>AI 自动化程度：</b>约 85%。AI 负责生成 Prompt 草稿、行业案例、效果对比、营销文案和封面图；人工主要做行业筛选、效果实测、版本迭代和评论区维护。</li>
+            <li><b>启动成本：</b>¥0-¥200。可几乎零成本起步，依赖一个销售平台账号 + AI 写作工具即可，无需囤货、无需物流、无需团队。</li>
+            <li><b>预期收益：</b>单包定价 ¥19-¥199；行业旗舰包可定到 ¥299-¥599；稳定后单个模板包月销 30-200 单很常见，多个模板包叠加，是典型的小额长尾被动收入。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Comparison</span>
+        <h2>横向对比：先做哪个？</h2>
+        <p>预算紧、想尽快验证现金流，先做切片代剪；时间不够、追求长期被动收入，先做 Prompt 模板包；两者也可以前后接力组合。</p>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead><tr><th>维度</th><th>AI 课程/直播切片代剪</th><th>AI Prompt 提示词模板包销售</th></tr></thead>
+          <tbody>
+            <tr><td>最适合人群</td><td>有审美和节奏感、愿意每天处理素材、能稳定交付的人</td><td>对某个行业熟悉、文字结构能力强、有耐心积累内容的人</td></tr>
+            <tr><td>获客方式</td><td>知识博主私信、MCN 合作、剪辑服务市场、案例号引流</td><td>知识星球、小红书、闲鱼、小报童、Gumroad、私域公众号</td></tr>
+            <tr><td>交付周期</td><td>当天即可交付首批 3-5 条切片样片</td><td>一次打包上架，后续按订单自动发货</td></tr>
+            <tr><td>核心风险</td><td>客户对“爆款率”有过高预期，需要先约定 KPI 和样片标准</td><td>同类模板竞争激烈，需要垂直细分；要避免侵权、避免“一卖了之”</td></tr>
+            <tr><td>放大路径</td><td>沉淀行业切片模板与 SOP，转月度套餐或小团队接单</td><td>按行业拓展模板包矩阵，叠加付费社群、训练营和定制服务</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">14-Day Plan</span>
+        <h2>14 天最小验证计划</h2>
+        <p>用两周时间真实验证“是否有人愿意付费”，再决定是否产品化和放大。</p>
+      </div>
+      <div class="content steps">
+        <div class="step"><h4>第 1-3 天：选垂直赛道</h4><p>切片代剪：锁定一个细分（如财经、英语、家庭教育、口才表达）；Prompt 包：锁定一个职业或场景（如求职、跨境客服、教师备课）。</p></div>
+        <div class="step"><h4>第 4-7 天：做样品</h4><p>切片：产出 3-5 条高质量短视频样片；Prompt 包：完成 30-50 个 Prompt + 使用说明 + 案例截图，包装成可上架的电子文档。</p></div>
+        <div class="step"><h4>第 8-11 天：触达测试</h4><p>切片：私信触达 30 位讲师/博主，提供 1 条免费样片；Prompt：上架 1-2 个平台 + 写 3 篇真实有用的种草内容，记录浏览、收藏、付费转化。</p></div>
+        <div class="step"><h4>第 12-14 天：复盘迭代</h4><p>有人付费即跑通，明确报价、修改次数、交付边界、售后规则；若无人付费，调整赛道或文案再来一次。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-kicker">Risk Control</span>
+        <h2>执行提醒</h2>
+      </div>
+      <div class="content">
+        <div class="warn">切片代剪要事先写清交付内容、修改次数、爆款不承诺的边界，避免客户用流量结果倒推服务质量；Prompt 模板包要警惕版权风险，不要直接搬运他人收费内容，最好结合自己的行业经验做二次重写并提供更新承诺。涉及肖像、品牌、客户隐私等内容，使用前务必获得授权。AI 永远是助手，最终质量与口碑还是靠你自己把关。</div>
+      </div>
+    </section>
+
+    <footer>
+      <div>副业探索报告 · bywork-20260625.html</div>
+      <div>建议行动：先用 14 天跑通一个真实付费闭环，再决定是否产品化放大。</div>
+    </footer>
+  </main>
+</body>
+</html>

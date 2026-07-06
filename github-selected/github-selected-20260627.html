@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub 精选项目报告 - 2026-06-27</title>
+  <style>
+    :root {
+      --primary: #0052D9;
+      --bg: #F3F5F8;
+      --card-bg: #FFFFFF;
+      --text-main: #1C1F23;
+      --text-sub: #5C6A82;
+      --line: #DCE6F2;
+      --soft: #F8FAFC;
+      --shadow: 0 10px 30px rgba(0, 82, 217, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #EEF4FF 0%, var(--bg) 100%);
+      color: var(--text-main);
+      margin: 0;
+      padding: 24px;
+    }
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .hero {
+      padding: 36px 40px 28px;
+      background: linear-gradient(135deg, #0052D9 0%, #0B78FF 100%);
+      color: #fff;
+    }
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+    .hero h1 { margin: 0; font-size: 32px; line-height: 1.2; font-weight: 700; }
+    .hero p { margin: 12px 0 0; font-size: 15px; line-height: 1.85; color: rgba(255,255,255,0.92); }
+    .date-badge {
+      white-space: nowrap;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.24);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+    .summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+    .summary-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .summary-card .label { font-size: 12px; opacity: 0.85; margin-bottom: 6px; }
+    .summary-card .value { font-size: 22px; font-weight: 700; }
+    .section { padding: 30px 40px; border-bottom: 1px solid #EEF2F7; }
+    .section:last-child { border-bottom: none; }
+    .section-title { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; font-size: 22px; color: var(--primary); }
+    .pick-card {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+    .pick-card:last-child { margin-bottom: 0; }
+    .pick-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+    .pick-head h3 { margin: 0 0 8px; font-size: 26px; line-height: 1.3; }
+    .repo-name { color: var(--text-sub); font-size: 14px; margin-bottom: 10px; }
+    .tag-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag {
+      display: inline-block;
+      background: #E0EBF5;
+      color: var(--primary);
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .rank-badge {
+      background: #EAF2FF;
+      color: var(--primary);
+      border: 1px solid #C9DCFF;
+      border-radius: 12px;
+      padding: 10px 12px;
+      min-width: 132px;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 14px 0 18px; }
+    .metric { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; }
+    .metric .k { font-size: 12px; color: var(--text-sub); margin-bottom: 6px; }
+    .metric .v { font-size: 18px; font-weight: 700; color: var(--text-main); }
+    .content-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; }
+    .panel { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+    .panel h4 { margin: 0 0 12px; font-size: 16px; color: var(--text-main); }
+    .panel p { margin: 0; font-size: 14px; color: var(--text-sub); line-height: 1.9; }
+    .panel ul { margin: 0; padding-left: 18px; color: var(--text-sub); }
+    .panel li { margin-bottom: 8px; line-height: 1.8; font-size: 14px; }
+    .reason-list { display: grid; gap: 12px; }
+    .reason-item {
+      background: #F7FAFF;
+      border-left: 4px solid var(--primary);
+      border-radius: 0 12px 12px 0;
+      padding: 14px 16px;
+      color: var(--text-sub);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+    .source-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .source-item {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.8;
+    }
+    .link-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+    .link {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid #CFE0FF;
+      background: #fff;
+    }
+    .footer {
+      padding: 24px 40px 36px;
+      color: var(--text-sub);
+      font-size: 13px;
+      line-height: 1.8;
+      background: #FBFCFE;
+    }
+    .footer strong { color: var(--text-main); }
+    code { background: #F2F6FC; padding: 2px 6px; border-radius: 6px; }
+    @media (max-width: 768px) {
+      body { padding: 12px; }
+      .hero, .section, .footer { padding-left: 20px; padding-right: 20px; }
+      .hero-top, .pick-head { flex-direction: column; }
+      .summary, .metrics, .content-grid { grid-template-columns: 1fr; }
+      .rank-badge { min-width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-top">
+        <div>
+          <h1>🚀 今日 GitHub 精选项目报告</h1>
+          <p>今天我选了 2 个很适合开发者关注的方向：一个偏“内容生产自动化”，把 AI 直接推到视频制作流水线里；一个偏“云上 Agent 基建”，帮智能编码助手真正接入 AWS 能力。前者足够有趣，后者足够实用，放在一起看既能拓宽视野，也能补齐工程落地认知。</p>
+        </div>
+        <div class="date-badge">2026年6月27日</div>
+      </div>
+      <div class="summary">
+        <div class="summary-card"><div class="label">今日精选项目</div><div class="value">2 个</div></div>
+        <div class="summary-card"><div class="label">主题焦点</div><div class="value">Agent × 内容生产 / 云工程</div></div>
+        <div class="summary-card"><div class="label">推荐人群</div><div class="value">AI 开发者 / 工程实践者</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">📌 本日精选结论</h2>
+      <div class="reason-list">
+        <div class="reason-item"><strong>如果你想看 AI 能不能真的替代一部分创意制作流程：</strong><strong>OpenMontage</strong> 很值得看。它不只是“文生视频”壳子，而是把研究、脚本、素材、剪辑、字幕、合成串成了一条 agent 化生产线。</div>
+        <div class="reason-item"><strong>如果你在意 AI 工具如何真正走进团队工程体系：</strong><strong>Agent Toolkit for AWS</strong> 很有代表性。它把 MCP server、skills、plugins 和 AWS 服务接入整理成一个官方工具包，解决的是“模型会写代码以后，怎么安全地用云”。</div>
+        <div class="reason-item"><strong>组合价值：</strong>一个更偏“让 Agent 做出内容”，一个更偏“让 Agent 接入基础设施”。一个适合打开想象力，一个适合建立工程能力，都是 2026 年 AI 开发者非常值得跟进的方向。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">🏆 精选项目详情</h2>
+
+      <article class="pick-card">
+        <div class="pick-head">
+          <div>
+            <div class="repo-name">calesthio / OpenMontage</div>
+            <h3>#1 OpenMontage</h3>
+            <div class="tag-row">
+              <span class="tag">Agentic Video</span><span class="tag">AI 内容生产</span><span class="tag">Python</span><span class="tag">FFmpeg</span><span class="tag">Remotion</span>
+            </div>
+          </div>
+          <div class="rank-badge"><div><strong>入选理由</strong></div><div>足够有趣，且很能代表 Agent 新形态</div></div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><div class="k">Stars</div><div class="v">23.9k</div></div>
+          <div class="metric"><div class="k">Forks</div><div class="v">2.6k+</div></div>
+          <div class="metric"><div class="k">主要语言</div><div class="v">Python</div></div>
+          <div class="metric"><div class="k">许可证</div><div class="v">AGPL-3.0</div></div>
+        </div>
+        <div class="content-grid">
+          <div class="panel"><h4>项目详细介绍</h4><p>OpenMontage 把自己定义成“开源的 agentic video production system”。它不是单一模型，也不是单一步骤工具，而是一整套可被 AI 编码助手驱动的视频生产系统：你只要描述目标，系统就会去做选题研究、写脚本、找素材、生成图片或视频片段、做旁白与字幕、最后完成合成输出。README 里明确强调它既能走生成式视频路线，也能走真实免费视频素材拼接路线，因此更像一个“可执行的视频工作室”。</p></div>
+          <div class="panel"><h4>技术亮点</h4><ul><li>强调 pipeline 驱动，README 直接给出 12 条 production pipelines、52 个 tools 和 500+ agent skills 的定位，说明它不是 demo，而是面向流程编排设计。</li><li>底层把 FFmpeg、Remotion、TTS、字幕、素材检索等能力编进统一工作流，适合复杂内容生产而不是单点生成。</li><li>支持从参考视频出发做风格分析，再反推出节奏、结构、成本和执行方案，这一点很适合创意复刻或品牌视频改编。</li><li>支持 Claude Code、Cursor、Copilot、Codex 等 AI coding assistant，说明它天然面向“Agent 驱动”的工作方式。</li><li>README 中给出多个成本示例，体现出它不仅追求效果，也在意可复现与成本透明。</li></ul></div>
+          <div class="panel"><h4>使用场景</h4><ul><li>做产品宣传片、短视频 demo、AI 创意实验内容。</li><li>把脚本、配音、字幕、素材、合成打通，快速验证一条视频生产流水线。</li><li>给内容团队或独立开发者搭建低成本“AI 视频工作室”。</li><li>研究 Agent 在多步骤媒体任务中的编排、评审与质量校验机制。</li></ul></div>
+          <div class="panel"><h4>为什么值得关注</h4><ul><li>它很能代表 2026 年一个明显趋势：Agent 不再只停留在聊天或写代码，而是开始接管更长链路、更强执行性的创作任务。</li><li>项目完成度高，且展示方式直观，读 README 就能很快理解它到底解决了什么问题。</li><li>如果你在做 AI 工作流、内容自动化或多工具编排，这个仓库会给你很多产品与工程层面的灵感。</li><li>就算你不做视频，它也很适合用来研究“复杂 Agent 系统该如何组织工具、技能、评审和成本控制”。</li></ul></div>
+        </div>
+        <div class="link-row"><a class="link" href="https://github.com/calesthio/OpenMontage" target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a><a class="link" href="https://raw.githubusercontent.com/calesthio/OpenMontage/main/README.md" target="_blank" rel="noopener noreferrer">README ↗</a><a class="link" href="https://www.youtube.com/@OpenMontage" target="_blank" rel="noopener noreferrer">项目频道 ↗</a></div>
+      </article>
+
+      <article class="pick-card">
+        <div class="pick-head">
+          <div>
+            <div class="repo-name">aws / agent-toolkit-for-aws</div>
+            <h3>#2 Agent Toolkit for AWS</h3>
+            <div class="tag-row">
+              <span class="tag">AWS 官方</span><span class="tag">MCP</span><span class="tag">Agent Skills</span><span class="tag">Python</span><span class="tag">Cloud Engineering</span>
+            </div>
+          </div>
+          <div class="rank-badge"><div><strong>入选理由</strong></div><div>技术成长与落地价值都很强</div></div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><div class="k">Stars</div><div class="v">1.4k</div></div>
+          <div class="metric"><div class="k">状态</div><div class="v">GA</div></div>
+          <div class="metric"><div class="k">主要语言</div><div class="v">Python</div></div>
+          <div class="metric"><div class="k">定位</div><div class="v">官方 AWS Agent 工具包</div></div>
+        </div>
+        <div class="content-grid">
+          <div class="panel"><h4>项目详细介绍</h4><p>Agent Toolkit for AWS 是 AWS 官方支持的一个 Agent 工具包，目标非常明确：让 AI coding agents 能更稳、更懂规则地在 AWS 上构建、部署和管理应用。仓库不是单一 SDK，而是把 MCP server、插件、技能包和操作规则整合到一起，并且直接给出了 Claude Code、Codex、Cursor、Kiro 等常见智能编码工具的接入方式。它解决的核心问题不是“模型能不能写云代码”，而是“模型怎么以工程上可控的方式使用 AWS”。</p></div>
+          <div class="panel"><h4>技术亮点</h4><ul><li>官方定位很清晰：提供 tools、knowledge、guardrails，让 AI agent 不只是会调用接口，而是能按 AWS 最佳实践做事。</li><li>按场景拆成 <code>aws-core</code>、<code>aws-agents</code>、<code>aws-data-analytics</code>、<code>aws-agents-for-devsecops</code> 等插件，结构非常适合团队按需接入。</li><li>兼容 Claude Code、Codex、Cursor、Kiro 等主流智能编码环境，说明其设计目标是成为跨 Agent 的基础设施层。</li><li>README 里把 AWS MCP Server 作为核心能力之一，体现出“让模型通过统一协议接入云服务”的方向已经越来越成熟。</li><li>同时覆盖服务选型、CDK/CloudFormation、serverless、containers、observability、billing 等真实工程主题，不是玩具级示例。</li></ul></div>
+          <div class="panel"><h4>使用场景</h4><ul><li>给 AI coding assistant 增加 AWS 认知与操作能力，辅助云上开发、部署与排障。</li><li>做企业内部云工程助手，让模型更安全地调用 MCP server 与技能包。</li><li>让开发者在 Claude Code / Cursor 等环境中快速接入 AWS workflows。</li><li>研究“Agent + 云基础设施”这类高价值、强约束场景的工程模式。</li></ul></div>
+          <div class="panel"><h4>为什么值得关注</h4><ul><li>当越来越多开发者开始让 AI 直接参与工程流程时，真正难的往往不是生成代码，而是把它接进真实基础设施并控制风险。</li><li>AWS 官方亲自下场做工具包，说明 Agent 工程已经从实验期走向平台化、规范化。</li><li>对想做企业级 AI 工具、智能运维、云开发助手的人来说，它很有学习价值。</li><li>如果你想把 AI 从“写几个脚本”推进到“参与真实云工程”，这个仓库非常值得跟。</li></ul></div>
+        </div>
+        <div class="link-row"><a class="link" href="https://github.com/aws/agent-toolkit-for-aws" target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a><a class="link" href="https://raw.githubusercontent.com/aws/agent-toolkit-for-aws/main/README.md" target="_blank" rel="noopener noreferrer">README ↗</a><a class="link" href="https://docs.aws.amazon.com/agent-toolkit/latest/userguide/" target="_blank" rel="noopener noreferrer">AWS 用户指南 ↗</a></div>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">🧭 怎么使用这份精选</h2>
+      <div class="reason-list">
+        <div class="reason-item"><strong>想看前沿形态：</strong>先读 OpenMontage，重点关注它怎么把多步骤任务拆成 pipelines、skills 和 tools，再思考这种结构能不能迁移到你自己的业务流。</div>
+        <div class="reason-item"><strong>想做工程落地：</strong>再看 Agent Toolkit for AWS，重点理解官方是怎么组织 guardrails、插件层和 MCP 接入方式的。</div>
+        <div class="reason-item"><strong>想形成完整成长路径：</strong>OpenMontage 帮你理解 Agent 在复杂任务中的编排能力，AWS 工具包帮你理解 Agent 进入真实工程系统时需要哪些约束与基础设施。一个偏想象力，一个偏工程力，组合起来很有价值。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">🔎 参考来源</h2>
+      <div class="source-list">
+        <div class="source-item"><strong>官方仓库：</strong>https://github.com/calesthio/OpenMontage 、https://github.com/aws/agent-toolkit-for-aws</div>
+        <div class="source-item"><strong>官方 README：</strong>OpenMontage README、Agent Toolkit for AWS README</div>
+        <div class="source-item"><strong>补充来源：</strong>OpenMontage YouTube 频道、AWS Agent Toolkit 用户指南</div>
+        <div class="source-item"><strong>实时指标：</strong>页面中的 star / fork / 许可证 / GA 状态等信息基于 2026-06-27 采集到的 GitHub 页面与仓库元数据整理。</div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <strong>Generated for 孙纾荣</strong><br />
+      style_blue 风格 HTML 页面，已发布到 <code>github-selected/</code> 目录。内容重点覆盖：项目是什么、为什么值得看、技术亮点、适用场景，以及这两个项目分别代表的 Agent 新机会。
+    </div>
+  </div>
+</body>
+</html>
