@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>今日副业探索报告｜AI 简历优化工作室 & AI 电商商品卡模板店</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff8ed;
+      --bg-soft: #fff3df;
+      --card: rgba(255,255,255,.88);
+      --text: #352317;
+      --muted: #7a6658;
+      --line: rgba(183, 126, 73, .22);
+      --amber: #d97706;
+      --orange: #f97316;
+      --rose: #fb7185;
+      --green: #16a34a;
+      --shadow: 0 24px 60px rgba(124, 75, 25, .16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(251, 146, 60, .30), transparent 34%),
+        radial-gradient(circle at 86% 12%, rgba(251, 113, 133, .18), transparent 30%),
+        radial-gradient(circle at 50% 92%, rgba(245, 158, 11, .16), transparent 32%),
+        linear-gradient(145deg, #fffaf1 0%, #fff4e5 48%, #fffdf8 100%);
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 42px 0 48px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 34px; padding: clamp(28px, 5vw, 54px); background: linear-gradient(135deg, rgba(255,255,255,.94), rgba(255,246,231,.84)); box-shadow: var(--shadow); backdrop-filter: blur(18px); }
+    .hero::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px; border-radius: 50%; background: conic-gradient(from 120deg, rgba(249,115,22,.36), rgba(251,113,133,.24), rgba(245,158,11,.28), rgba(249,115,22,.36)); filter: blur(4px); opacity: .75; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border-radius: 999px; background: #fff3df; border: 1px solid var(--line); color: #9a5a13; font-size: 13px; font-weight: 700; }
+    h1 { position: relative; z-index: 1; margin: 20px 0 12px; font-size: clamp(34px, 5.5vw, 62px); line-height: 1.04; letter-spacing: -.045em; }
+    .lead { position: relative; z-index: 1; max-width: 850px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.85; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .metric { padding: 17px; border-radius: 22px; background: rgba(255,255,255,.78); border: 1px solid rgba(183,126,73,.18); }
+    .metric b { display: block; font-size: 23px; color: #8a4b0f; }
+    .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .section { margin-top: 22px; border: 1px solid var(--line); border-radius: 30px; background: var(--card); box-shadow: 0 16px 42px rgba(124,75,25,.11); overflow: hidden; }
+    .section-head { padding: 26px 28px 18px; border-bottom: 1px solid var(--line); background: linear-gradient(90deg, rgba(255,247,237,.92), rgba(255,255,255,.70)); }
+    .section-kicker { color: var(--orange); font-size: 13px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { margin: 8px 0 8px; font-size: clamp(25px, 3vw, 36px); letter-spacing: -.025em; }
+    .section-head p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .content { padding: 26px 28px 30px; }
+    .verdict { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: stretch; }
+    .note, .score-card { border: 1px solid rgba(183,126,73,.18); border-radius: 24px; background: #fffdf9; padding: 20px; }
+    .note strong { color: #92400e; }
+    .note p { color: var(--muted); line-height: 1.75; margin: 8px 0 0; }
+    .scores { display: grid; gap: 12px; }
+    .bar { display: grid; gap: 7px; }
+    .bar-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+    .track { height: 10px; border-radius: 999px; background: #fde7c8; overflow: hidden; }
+    .fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--amber), var(--rose)); }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { border: 1px solid var(--line); border-radius: 28px; padding: 24px; background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,243,.84)); box-shadow: 0 14px 32px rgba(124,75,25,.09); }
+    .tagline { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .pill { border-radius: 999px; padding: 6px 10px; background: #fff3df; border: 1px solid rgba(183,126,73,.18); color: #9a5a13; font-size: 12px; font-weight: 700; }
+    .project h3 { margin: 0 0 10px; font-size: 25px; letter-spacing: -.02em; }
+    .project p { margin: 0 0 16px; color: var(--muted); line-height: 1.75; }
+    .list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .list li { padding: 12px 13px; border-radius: 16px; background: rgba(255,246,231,.72); color: #574234; line-height: 1.62; }
+    .list b { color: #8a4b0f; }
+    .table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 20px; }
+    .table th, .table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(183,126,73,.16); vertical-align: top; line-height: 1.65; }
+    .table th { background: #fff3df; color: #8a4b0f; font-size: 13px; }
+    .table tr:last-child td { border-bottom: 0; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: step; }
+    .step { position: relative; padding: 20px; border-radius: 22px; border: 1px solid rgba(183,126,73,.18); background: #fffdf9; }
+    .step::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #f97316; color: white; font-weight: 800; margin-bottom: 12px; }
+    .step h4 { margin: 0 0 8px; font-size: 17px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
+    .warn { border-left: 5px solid var(--orange); background: #fff7ed; padding: 16px 18px; border-radius: 18px; color: #614331; line-height: 1.7; }
+    footer { color: var(--muted); text-align: center; margin-top: 26px; line-height: 1.8; font-size: 14px; }
+    @media (max-width: 860px) { .hero-grid, .projects, .steps, .verdict { grid-template-columns: 1fr; } .wrap { width: min(100% - 24px, 1120px); padding-top: 22px; } .section-head, .content { padding-left: 20px; padding-right: 20px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">☕ style_warm · 2026-07-07 · 今日副业探索</div>
+      <h1>先赚“刚需的钱”，再做可复制资产：AI 简历优化工作室 + AI 电商商品卡模板店</h1>
+      <p class="lead">今天选的两个方向，一边解决求职和转岗的强需求，一边切入电商商家反复会买的视觉模板需求。共同特点是：门槛不高、可以用 AI 明显压缩交付时间，而且都能从单次订单逐步沉淀成模板库与半自动流水线。</p>
+      <div class="hero-grid">
+        <div class="metric"><b>2 个</b><span>今日推荐项目</span></div>
+        <div class="metric"><b>¥200+</b><span>最低可启动预算</span></div>
+        <div class="metric"><b>75%-90%</b><span>可自动化环节占比</span></div>
+        <div class="metric"><b>3-7 天</b><span>可完成首个 MVP</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Overall Verdict</div>
+        <h2>今日结论：先做高需求、低解释成本的服务单，再把高频交付沉淀成模板商品</h2>
+        <p>如果希望更快拿到第一笔收入，优先做“AI 简历优化与求职资料工作室”；如果希望慢慢积累半被动收入，则同步打磨“AI 电商商品卡模板店”。前者适合验证需求，后者适合做规模化复制。</p>
+      </div>
+      <div class="content verdict">
+        <div class="note">
+          <strong>推荐启动路径：</strong>
+          <p>先把自己包装成“求职资料提效助手”，上线 3 档套餐：简历优化、项目经历包装、面试问答包。服务 5-10 个真实用户后，把常见岗位话术、页面结构、卖点表达整理成标准模板，再延伸到商品卡、详情页卖点图、促销海报等数字化模板销售。</p>
+        </div>
+        <div class="score-card">
+          <div class="scores">
+            <div class="bar"><div class="bar-row"><span>AI 自动化程度</span><b>88%</b></div><div class="track"><div class="fill" style="width:88%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>启动难度</span><b>低</b></div><div class="track"><div class="fill" style="width:30%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>回款速度</span><b>快</b></div><div class="track"><div class="fill" style="width:82%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>长期复利</span><b>高</b></div><div class="track"><div class="fill" style="width:79%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Projects</div>
+        <h2>今日 2 个副业方向</h2>
+        <p>一个偏服务成交，一个偏模板型数字商品，适合用相同的 AI 工具链共用产能。</p>
+      </div>
+      <div class="content projects">
+        <article class="project">
+          <div class="tagline"><span class="pill">求职服务</span><span class="pill">刚需明确</span><span class="pill">高转介绍</span></div>
+          <h3>01｜AI 简历优化与求职资料工作室</h3>
+          <p>面向应届生、转岗人群和被裁求职者，提供简历重写、项目经历包装、岗位 JD 匹配分析、面试问答包和求职投递策略建议。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>不是传统“代写简历”那种纯人工慢交付，而是把 JD 解析、亮点提炼、STAR 框架整理、关键词匹配和排版标准化为一条 AI 辅助流水线。</li>
+            <li><b>可行性分析：</b>求职需求常年存在，且用户愿意为“更快拿到面试机会”付费。尤其在校招、社招旺季，简历优化的决策链短，用户更容易当场下单。</li>
+            <li><b>AI 自动化程度：</b>AI 可完成岗位关键词提取、经历重写、亮点归纳、面试问题预测、邮件话术生成等大部分重复劳动，人工重点放在真实性校验与最终润色，自动化约 85%-90%。</li>
+            <li><b>启动成本：</b>AI 模型、文档排版工具、海报封面与接单页面合计约 ¥100-250/月；如果在闲鱼、小红书、Boss 社区获客，额外成本几乎可以忽略。</li>
+            <li><b>预期收益：</b>单份简历优化 ¥69-199，组合套餐 ¥199-499；如果月完成 40-80 单，月收入可达 ¥4000-20000，旺季更高。</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="tagline"><span class="pill">电商模板</span><span class="pill">数字商品</span><span class="pill">可复制</span></div>
+          <h3>02｜AI 电商商品卡模板与卖点图素材店</h3>
+          <p>为淘宝、拼多多、抖音小店、视频号商家提供可直接套用的商品主图文案、卖点卡模板、促销海报、规格对比图和详情页模块素材。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>核心不是做完整设计外包，而是做“商家拿来就能改字换图”的半成品模板包。可以按行业卖，如零食、美妆、家清、小家电、母婴等。</li>
+            <li><b>可行性分析：</b>中小商家更新活动频繁，但不愿为每次活动都找设计师。标准化模板可降低他们的设计成本和等待时间，复购逻辑成立。</li>
+            <li><b>AI 自动化程度：</b>AI 可批量生成标题、利益点、图中文字、场景图描述与版本变体；再用 Canva/Figma/即梦等工具快速替换，自动化约 75%-85%。</li>
+            <li><b>启动成本：</b>设计工具与 AI 图文工具约 ¥100-300/月；主要成本是前期 3-5 天打磨 20-30 套高通用模板，并建立商品分类与交付说明。</li>
+            <li><b>预期收益：</b>单套模板 ¥29-199，行业合集包 ¥199-599；如果月售 80-200 单，可形成 ¥3000-30000 的轻交付收入，也能反向带来定制单。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Comparison</div>
+        <h2>投入产出对比</h2>
+        <p>两个方向的共通点是都可以从“标准模板 + AI 生成 + 少量人工校对”开始，把时间用在成交和复购上。</p>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead><tr><th>维度</th><th>AI 简历优化工作室</th><th>AI 电商商品卡模板店</th></tr></thead>
+          <tbody>
+            <tr><td>客户来源</td><td>小红书、闲鱼、求职群、校友群、招聘社区</td><td>淘宝/拼多多商家群、抖店卖家社群、小红书、电商自媒体评论区</td></tr>
+            <tr><td>交付形式</td><td>简历 PDF / Word、岗位匹配分析、面试问答包、投递建议</td><td>模板源文件、可编辑海报、卖点图文案库、使用说明与替换指南</td></tr>
+            <tr><td>关键能力</td><td>岗位理解、表达提炼、信任感建立、交付速度</td><td>行业拆解、版式复用、商品包装、用户教育</td></tr>
+            <tr><td>主要风险</td><td>用户经历不真实、过度承诺面试效果、旺季排期爆单</td><td>模板同质化、素材侵权意识弱、用户不会使用导致售后增加</td></tr>
+            <tr><td>最小验证</td><td>先做 3 份免费样例，换真实反馈和评价截图</td><td>先上线 10 套细分行业模板，测试收藏率、咨询率和成交率</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">7-Day Action Plan</div>
+        <h2>7 天启动计划</h2>
+        <p>关键不是一次准备完全部内容，而是尽快做出能成交的最小样品，再围绕成交反馈补模板。</p>
+      </div>
+      <div class="content steps">
+        <div class="step"><h4>第 1 天：确定赛道</h4><p>二选一先开做：求职服务或电商模板。不要同时铺太大面，先挑最容易找到潜在客户的圈层。</p></div>
+        <div class="step"><h4>第 2-3 天：做样品</h4><p>准备 3 个前后对比案例、1 张价格表、1 段服务说明，让别人能一眼看懂你卖什么。</p></div>
+        <div class="step"><h4>第 4-5 天：发布获客</h4><p>去小红书、闲鱼、社群和朋友圈发 5-10 条内容，重点展示“节省时间”和“更容易出结果”。</p></div>
+        <div class="step"><h4>第 6-7 天：沉淀模板</h4><p>把高频问题、常见修改意见和通用素材整理成 SOP，后续每来一单都能更快交付。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Risk Notes</div>
+        <h2>避坑提醒</h2>
+      </div>
+      <div class="content">
+        <div class="warn">无论做求职服务还是电商模板，都不要承诺“保 offer”“保爆单”。更好的卖点是：缩短准备时间、提升表达质量、降低试错成本。所有交付都要明确边界，例如修改次数、交付时长、是否包含一对一沟通与售后答疑。</div>
+      </div>
+    </section>
+
+    <footer>
+      生成日期：2026-07-07｜GitHub Pages：global-sync/bywork/bywork-20260707.html<br />
+      本报告用于副业方向探索与 MVP 验证，不构成收益承诺。
+    </footer>
+  </main>
+</body>
+</html>
