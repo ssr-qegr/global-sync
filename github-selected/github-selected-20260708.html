@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub 精选项目报告 | 2026年7月8日</title>
+  <style>
+    :root { --primary:#0052D9; --primary-2:#2F80ED; --primary-soft:#EAF2FF; --bg:#F3F5F8; --card-bg:#FFFFFF; --text-main:#1C1F23; --text-sub:#5C6A82; --border:rgba(0,82,217,.13); --shadow:0 18px 48px rgba(8,32,71,.10); }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:24px; background:linear-gradient(180deg,#EEF4FF 0%,var(--bg) 280px); color:var(--text-main); font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; }
+    .wrap { max-width:980px; margin:0 auto; background:var(--card-bg); border-radius:28px; overflow:hidden; box-shadow:var(--shadow); }
+    .hero { position:relative; padding:44px 44px 36px; color:#fff; background:radial-gradient(circle at 86% 8%,rgba(255,255,255,.92),rgba(255,255,255,.12) 30%,transparent 48%),linear-gradient(135deg,#003EA8 0%,#0052D9 46%,#4FA3FF 100%); }
+    .hero:after { content:""; position:absolute; right:34px; bottom:-46px; width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,.12); filter:blur(1px); }
+    .badge-group { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px; }
+    .badge { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.22); font-size:13px; font-weight:700; }
+    h1 { margin:0 0 14px; font-size:34px; line-height:1.25; letter-spacing:-.02em; }
+    .hero p { margin:0; max-width:780px; color:rgba(255,255,255,.94); font-size:16px; position:relative; z-index:1; }
+    .content { padding:34px 44px 40px; }
+    .section-title { display:flex; align-items:center; gap:10px; margin:0 0 18px; font-size:24px; color:var(--primary); }
+    .lead-card,.project-card,.tips-card,.source-card { background:#fff; border:1px solid var(--border); border-radius:20px; padding:24px; margin-bottom:22px; box-shadow:0 10px 28px rgba(0,82,217,.06); }
+    .lead-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .metric { background:linear-gradient(180deg,#F8FBFF,#FFFFFF); border:1px solid var(--border); border-radius:16px; padding:16px; }
+    .metric .label { display:block; font-size:13px; color:var(--text-sub); margin-bottom:8px; }
+    .metric .value { display:block; font-size:22px; font-weight:800; color:var(--primary); }
+    .project-head { display:flex; justify-content:space-between; gap:18px; align-items:flex-start; margin-bottom:14px; }
+    .project-title { margin:0; font-size:28px; line-height:1.3; }
+    .project-subtitle { margin:8px 0 0; color:var(--text-sub); }
+    .rank { min-width:86px; text-align:center; background:linear-gradient(180deg,#F6FAFF,#EAF2FF); color:var(--primary); border-radius:16px; padding:14px 12px; border:1px solid var(--border); font-weight:800; }
+    .meta-row { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 18px; }
+    .chip { display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border-radius:999px; font-size:13px; color:var(--text-sub); background:#F7FAFE; border:1px solid rgba(92,106,130,.14); }
+    .summary { margin:0 0 18px; font-size:16px; color:var(--text-main); }
+    .grid-2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:12px; }
+    .panel { background:#FAFCFF; border:1px solid var(--border); border-radius:16px; padding:18px; }
+    .panel h3 { margin:0 0 12px; font-size:17px; color:var(--primary); }
+    ul { margin:0; padding-left:20px; }
+    li { margin-bottom:10px; color:var(--text-sub); }
+    li strong { color:var(--text-main); }
+    .cta-row { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+    .link-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; border-radius:12px; padding:10px 16px; font-weight:700; transition:transform .18s ease,box-shadow .18s ease; }
+    .link-btn.primary { background:var(--primary); color:#fff; box-shadow:0 8px 18px rgba(0,82,217,.22); }
+    .link-btn.secondary { background:var(--primary-soft); color:var(--primary); }
+    .link-btn:hover { transform:translateY(-1px); }
+    .tips-card h3,.source-card h3 { margin:0 0 12px; color:var(--primary); }
+    .foot { padding:0 44px 34px; color:var(--text-sub); font-size:13px; }
+    .foot strong { color:var(--text-main); }
+    a { color:var(--primary); }
+    @media (max-width:820px) { body{padding:14px;} .hero,.content,.foot{padding-left:22px;padding-right:22px;} .lead-grid,.grid-2{grid-template-columns:1fr;} .project-head{flex-direction:column;} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="badge-group"><span class="badge">GitHub 精选</span><span class="badge">2026-07-08</span><span class="badge">style_blue</span></div>
+      <h1>今日 GitHub 精选项目报告</h1>
+      <p>今天精选两个更偏“AI 工程基础设施”的项目：<strong>headroomlabs-ai/headroom</strong> 解决 Agent 上下文越来越贵、越来越长的问题；<strong>generalaction/emdash</strong> 则把多路编码 Agent、Git worktree、远程机器和任务系统整合到一个桌面工作台里。一个优化上下文，一个优化执行编排，适合放在一起观察 AI Coding 的下一阶段。</p>
+    </section>
+    <main class="content">
+      <section class="lead-card">
+        <h2 class="section-title">📌 今日结论</h2>
+        <p class="summary">如果你已经在高频使用 Claude Code、Codex、Cursor、OpenCode 或 Gemini CLI，今天这两个项目值得重点看：Headroom 关注“给模型看的内容如何更短、更准、更可控”，Emdash 关注“多个 Agent 如何并行做事、隔离改动并进入真实工程流程”。它们背后的共同趋势是：AI 编程正在从单次聊天走向工程化系统，核心竞争点不再只是模型能力，而是上下文工程、任务编排、隔离执行、差异评审和团队工作流。</p>
+        <div class="lead-grid"><div class="metric"><span class="label">今日精选数量</span><span class="value">2 个</span></div><div class="metric"><span class="label">核心主题</span><span class="value">Context × Agent Ops</span></div><div class="metric"><span class="label">推荐实践方向</span><span class="value">先压缩上下文 → 再并行执行</span></div></div>
+      </section>
+
+      <section class="project-card">
+        <div class="project-head"><div><h2 class="project-title">1. headroomlabs-ai/headroom</h2><p class="project-subtitle">面向 AI Agent 的上下文压缩层：让工具输出、日志、文件和 RAG 片段更适合进入 LLM</p></div><div class="rank">TOP 1</div></div>
+        <div class="meta-row"><span class="chip">🧠 Context Engineering</span><span class="chip">🤖 AI Agent</span><span class="chip">🔌 MCP Server</span><span class="chip">🐍 Python</span><span class="chip">📄 Apache-2.0</span></div>
+        <p class="summary"><strong>项目详细介绍：</strong>Headroom 是一个“AI Agent 上下文压缩层”，官方描述是可在工具输出、日志、文件内容和 RAG chunks 进入模型前进行压缩。它不是简单做文本截断，而是提供 library、proxy、MCP server 等多种接入形态，并强调 local-first、可逆和内容感知压缩。仓库 README 中给出的定位很清晰：当 Agent 需要读取大量 JSON、日志、代码片段或检索结果时，直接把原文塞进上下文会浪费 token，也会让模型更难抓住重点；Headroom 的目标就是在不破坏答案质量的前提下，给模型“留出头部空间”。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>多接入形态：</strong>同时提供 library、proxy 和 MCP server，既能嵌入自有应用，也能挂到 Agent 工具链里。</li><li><strong>内容感知压缩：</strong>面向 JSON、日志、文件、RAG chunks 等不同输入类型做压缩，比粗暴截断更适合工程场景。</li><li><strong>Agent 友好：</strong>项目 topics 覆盖 Claude Code、Cursor、OpenAI、LangChain、RAG、MCP 和 token optimization，说明它定位在真实 Agent 工作流中。</li><li><strong>本地优先与可逆：</strong>适合处理代码、日志、内部文档等不希望随意外发的上下文，同时便于调试压缩前后的差异。</li><li><strong>成本与稳定性收益：</strong>减少无效 token 能降低调用成本，也能降低长上下文里“噪声淹没信号”的概率。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>AI 排障助手：</strong>把海量日志、trace、错误栈先压缩，再交给模型定位关键异常。</li><li><strong>RAG 系统优化：</strong>在检索结果进入 LLM 前做二次压缩，减少重复、模板和低价值片段。</li><li><strong>代码库问答：</strong>压缩文件片段、工具输出和依赖扫描结果，让 Agent 更聚焦问题上下文。</li><li><strong>MCP 工具链增强：</strong>作为 MCP server 接在现有 AI IDE 或命令行 Agent 旁边，优化工具返回内容。</li></ul></div></div>
+        <div class="panel" style="margin-top:16px;"><h3>为什么今天推荐它</h3><ul><li>AI Coding 的瓶颈经常不是“模型不知道”，而是“给模型看的东西太多、太散、太噪”。</li><li>Headroom 把 token 优化从 prompt 技巧提升为可复用基础设施，对做 Agent、RAG、可观测性助手的人都有参考价值。</li><li>从技术成长角度看，它提醒开发者关注 context engineering：未来的 AI 工程能力，很大一部分来自如何组织、裁剪和传递上下文。</li></ul></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/headroomlabs-ai/headroom" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库</a><a class="link-btn secondary" href="https://headroom-docs.vercel.app/docs" target="_blank" rel="noopener noreferrer">打开项目文档</a></div>
+      </section>
+
+      <section class="project-card">
+        <div class="project-head"><div><h2 class="project-title">2. generalaction/emdash</h2><p class="project-subtitle">开源 Agentic Development Environment：在独立 Git worktree 中并行运行多个编码 Agent</p></div><div class="rank">TOP 2</div></div>
+        <div class="meta-row"><span class="chip">⚙️ Agentic Development</span><span class="chip">🌳 Git Worktree</span><span class="chip">🖥️ Desktop App</span><span class="chip">🔗 Issue / PR Workflow</span><span class="chip">📄 Apache-2.0</span></div>
+        <p class="summary"><strong>项目详细介绍：</strong>Emdash 是一个开源桌面应用，README 中将其定义为用于并行运行 AI coding agents 的 Agentic Development Environment。它会让每个任务运行在独立的 Git worktree 中，因此你可以同时探索多个修复或功能实现，查看各自 diff，并只合并真正可用的方案。它支持本地项目，也支持通过 SSH 连接远程机器；同时强调可接入 Claude Code、Codex、OpenCode、Gemini、Amp 等现有 CLI Agent，而不是强迫用户换一套模型或工具。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>并行 Agent 执行：</strong>把多个编码 Agent 的任务同时跑起来，减少串行等待，适合探索多种解法。</li><li><strong>Git worktree 隔离：</strong>每个 Agent 在独立 worktree 和分支中工作，避免互相污染，也方便保留、比较和回滚。</li><li><strong>复用已有 CLI Agent：</strong>支持 Claude Code、Codex、OpenCode、Gemini、Amp 等工具，降低迁移成本。</li><li><strong>工程闭环：</strong>README 提到可以 review diff、create pull requests、inspect CI checks 和 merge，把 Agent 产物接入真实代码协作流程。</li><li><strong>任务入口丰富：</strong>支持把 Linear、GitHub、Jira、GitLab、Asana、Featurebase、Monday.com 等系统中的任务送进 Agent。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>多方案并行探索：</strong>同一个 bug 交给多个 Agent 尝试不同路径，最后人工挑选最稳的 diff。</li><li><strong>需求批处理：</strong>把 issue、工单或小功能拆给多个 Agent，让它们在独立分支中并发推进。</li><li><strong>远程开发环境：</strong>通过 SSH/SFTP 使用远程机器跑 Agent，适合本地资源不足或需要特定构建环境的项目。</li><li><strong>AI 代码评审前置：</strong>先在一个界面里检查 diff、CI 和 PR，再决定是否进入团队主流程。</li></ul></div></div>
+        <div class="panel" style="margin-top:16px;"><h3>为什么今天推荐它</h3><ul><li>当一个开发者可以同时调用多个 AI Coding Agent，真正需要的是调度、隔离、审查和合并，而不是更多聊天窗口。</li><li>Emdash 用 Git worktree 作为隔离边界，非常贴近工程实践，也降低了 Agent 并发改代码带来的风险。</li><li>对技术成长而言，它适合作为研究“Agentic Development Environment”形态的样板：AI 不只是写代码，还要被纳入任务、分支、diff、CI 和 PR 流程。</li></ul></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/generalaction/emdash" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库</a><a class="link-btn secondary" href="https://emdash.sh" target="_blank" rel="noopener noreferrer">打开项目站点</a></div>
+      </section>
+
+      <section class="tips-card"><h3>🧭 今日阅读建议</h3><ul><li><strong>先看 Headroom：</strong>重点理解它如何把日志、工具输出、RAG 片段压缩成更适合模型消费的上下文。</li><li><strong>再看 Emdash：</strong>观察它如何用 Git worktree、任务系统和 diff review 把多个编码 Agent 组织成工程工作流。</li><li><strong>组合实践：</strong>可以尝试为自己的 AI Coding 流程加一层“上下文压缩 + 分支隔离”机制：先减少噪声，再让 Agent 并行探索，最后只合并经过审查的结果。</li></ul></section>
+      <section class="source-card"><h3>🔎 信息来源</h3><ul><li>headroomlabs-ai/headroom GitHub 仓库、README 与项目文档：用于确认项目定位、接入形态、topics、语言、许可证与近期活跃度。</li><li>generalaction/emdash GitHub 仓库、README 与项目站点：用于确认并行 Agent、Git worktree、远程机器、任务入口和工程闭环能力。</li><li>GitHub Search API 与公开 GitHub Trending / OSSInsight AI 趋势页用于辅助筛选今日项目方向。</li><li>内容生成时间：2026-07-08 CST</li></ul></section>
+    </main>
+    <div class="foot"><strong>输出文件：</strong>github-selected-20260708.html<br /><strong>生成说明：</strong>采用 style_blue 风格扩展生成，适配 GitHub Pages 发布。</div>
+  </div>
+</body>
+</html>
