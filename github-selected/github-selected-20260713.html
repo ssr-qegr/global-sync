@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 精选项目报告 - 2026年7月13日</title>
+<style>
+  :root { --primary: #0052D9; --bg: #F3F5F8; --card-bg: #FFFFFF; --text-main: #1C1F23; --text-sub: #5C6A82; --line: #D9E6F7; --soft: #F8FAFC; --accent: #13C2C2; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: linear-gradient(180deg, #EEF4FF 0%, var(--bg) 58%, #FFFFFF 100%); color: var(--text-main); margin: 0; padding: 20px; }
+  .container { max-width: 860px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 16px; box-shadow: 0 10px 34px rgba(0,82,217,0.08); }
+  .header { border-bottom: 2px solid var(--primary); padding-bottom: 18px; margin-bottom: 26px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
+  .header h1 { color: var(--primary); margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.3px; }
+  .date { color: var(--text-sub); font-size: 14px; white-space: nowrap; }
+  .intro { background: linear-gradient(135deg, #F4F8FF 0%, #F8FEFF 100%); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin-bottom: 24px; color: var(--text-sub); line-height: 1.75; font-size: 15px; }
+  .news-item { border-left: 3px solid var(--primary); padding: 20px 22px; margin-bottom: 22px; background: var(--soft); border-radius: 0 12px 12px 0; transition: all 0.3s ease; }
+  .news-item:hover { transform: translateX(4px); box-shadow: 0 6px 18px rgba(0,82,217,0.10); }
+  .topline { display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+  .tag { display: inline-block; background: #E0EBF5; color: var(--primary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+  .score { display: inline-block; background: #E8FFFB; color: #087E8B; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+  .news-item h2 { margin: 8px 0 12px 0; font-size: 21px; color: var(--text-main); }
+  .news-item p { margin: 0 0 12px 0; font-size: 15px; color: var(--text-sub); line-height: 1.75; }
+  .section-title { margin: 18px 0 8px; font-size: 15px; color: var(--primary); font-weight: 700; }
+  ul { margin: 0 0 12px 0; padding-left: 19px; }
+  li { color: var(--text-sub); line-height: 1.75; margin-bottom: 6px; font-size: 15px; }
+  .link { color: var(--primary); text-decoration: none; font-size: 14px; font-weight: 600; }
+  .link:hover { text-decoration: underline; }
+  .meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0; }
+  .meta-card { background: #FFFFFF; border: 1px solid #E8EEF7; border-radius: 10px; padding: 10px 12px; }
+  .meta-card b { display: block; color: var(--text-main); font-size: 13px; margin-bottom: 4px; }
+  .meta-card span { color: var(--text-sub); font-size: 13px; }
+  .footer { text-align: center; margin-top: 32px; padding-top: 20px; border-top: 1px solid #EEF2F7; color: var(--text-sub); font-size: 12px; line-height: 1.7; }
+  @media (max-width: 700px) { .container { padding: 22px; } .header { flex-direction: column; align-items: flex-start; } .meta { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>💎 GitHub 精选项目报告</h1>
+      <div class="date">2026年7月13日</div>
+    </div>
+
+    <div class="intro">
+      今日优先选择两个兼具有趣性、AI 相关性和技术成长价值的项目：一个偏“离线 AI + 自主知识系统”，一个偏“极简 AI 编程 Agent”。它们都不是只适合收藏的玩具，而是能拆解出工程架构、Agent 运行模型、工具链设计等实践价值的项目。
+    </div>
+
+    <div class="news-item">
+      <div class="topline">
+        <span class="tag">离线 AI / 生存知识系统</span>
+        <span class="score">推荐指数：9.0/10</span>
+      </div>
+      <h2>1. Crosstalk-Solutions/project-nomad：把电脑变成离线 AI 知识堡垒</h2>
+      <p>Project N.O.M.A.D 是一个自包含的离线生存计算机项目，目标是在没有互联网的情况下，仍然提供关键工具、知识库和 AI 能力。项目定位很独特：它不是单纯的本地模型 Demo，而是试图把离线 AI、百科资料、医疗参考、教育内容和实用工具组合成一个可部署的“应急知识节点”。</p>
+      <div class="meta">
+        <div class="meta-card"><b>项目地址</b><span>Crosstalk-Solutions/project-nomad</span></div>
+        <div class="meta-card"><b>核心形态</b><span>离线知识与 AI 工具集合</span></div>
+        <div class="meta-card"><b>适合人群</b><span>AI 应用、Docker、自托管爱好者</span></div>
+      </div>
+      <div class="section-title">项目详细介绍</div>
+      <p>这个项目的核心价值在于“断网后仍可用”。它适合部署在较强性能的本地设备上，通过本地化服务承载知识检索、AI 问答、资料浏览和应急参考。相比普通离线资料包，它更强调系统化编排：用户可以把它理解为一个面向极端环境、户外场景、灾害应急和远程地区的个人知识服务器。</p>
+      <div class="section-title">技术亮点</div>
+      <ul>
+        <li>强调完全离线运行，能帮助开发者理解“本地优先”架构在 AI 应用里的落地方式。</li>
+        <li>通过容器化思路组织多个服务，适合学习 Docker Compose、服务编排、离线依赖管理和数据镜像策略。</li>
+        <li>把 AI 能力与结构化知识源结合，提供了一个 RAG/离线知识系统的实际参考样板。</li>
+        <li>选题足够硬核，能训练工程师从“模型能力”转向“可用系统”的产品化思维。</li>
+      </ul>
+      <div class="section-title">使用场景</div>
+      <p>它适合用在家庭离线知识库、露营或远程办公应急设备、灾害场景的信息查询节点，也适合作为技术学习项目：拆解其容器编排、资源离线化、AI 服务接入和资料组织方式，可以帮助开发者理解一个 AI 应用从单点能力走向完整系统的过程。</p>
+      <a href="https://github.com/Crosstalk-Solutions/project-nomad" class="link">查看 GitHub 仓库 ↗</a>
+    </div>
+
+    <div class="news-item">
+      <div class="topline">
+        <span class="tag">AI Coding Agent / 软件工程自动化</span>
+        <span class="score">推荐指数：9.3/10</span>
+      </div>
+      <h2>2. SWE-agent/mini-swe-agent：约 100 行代码看懂 AI 编程 Agent 的本质</h2>
+      <p>mini-swe-agent 是 SWE-agent 团队推出的极简 AI 软件工程 Agent。它主打“少配置、少抽象、少工程负担”，用非常小的代码规模展示一个 Agent 如何读取任务、调用工具、执行命令并迭代解决 GitHub Issue 或命令行任务。官方介绍中提到它是一个约 100 行的 AI Agent，并能在 SWE-bench verified 上取得较高分数。</p>
+      <div class="meta">
+        <div class="meta-card"><b>项目地址</b><span>SWE-agent/mini-swe-agent</span></div>
+        <div class="meta-card"><b>主要语言</b><span>Python</span></div>
+        <div class="meta-card"><b>适合人群</b><span>想理解 Agent 内核的后端/工具链开发者</span></div>
+      </div>
+      <div class="section-title">项目详细介绍</div>
+      <p>很多 AI Agent 框架的问题是“还没看懂业务，就先被框架复杂度劝退”。mini-swe-agent 的价值正好相反：它把软件工程 Agent 的关键闭环压缩到最小，让开发者可以直接观察 Agent 如何围绕目标进行规划、执行 shell 命令、读取反馈、修复错误，并不断迭代。对想做 AI Coding、DevOps Agent、自动化修复工具的人来说，这是一个很好的源码阅读入口。</p>
+      <div class="section-title">技术亮点</div>
+      <ul>
+        <li>极简实现降低理解门槛，适合快速掌握 Agent loop、工具调用、环境反馈和错误恢复机制。</li>
+        <li>面向真实 GitHub Issue 和命令行任务，比纯聊天 Agent 更贴近软件工程落地场景。</li>
+        <li>项目和 SWE-agent 生态关联紧密，可以从极简版本继续延伸到更完整的 Agent 评测和执行框架。</li>
+        <li>适合做二次实验：例如替换模型、限制命令权限、增加日志审计、接入测试执行和代码评审步骤。</li>
+      </ul>
+      <div class="section-title">使用场景</div>
+      <p>它适合用来学习 AI 编程助手的最小实现，构建团队内部自动修复脚本、Issue 初筛工具、命令行辅助 Agent，也适合作为 Code Review 前的实验平台。对 Go 后端开发者来说，可以重点借鉴其 Agent 运行循环和工具隔离思路，再迁移到自己的工程环境里。</p>
+      <a href="https://github.com/SWE-agent/mini-swe-agent" class="link">查看 GitHub 仓库 ↗</a>
+    </div>
+
+    <div class="footer">
+      资料来源：GitHub Trending、项目 README 与公开项目主页。<br>
+      Generated by global-sync · style_blue 商务极简蓝排版
+    </div>
+  </div>
+</body>
+</html>
