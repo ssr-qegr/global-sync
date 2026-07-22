@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日大厂新闻｜2026-07-22</title>
+  <style>
+    :root { --primary: #B388FF; --bg: #0D0D0D; --card-bg: #1A1A1A; --text-main: #E0E0E0; --text-sub: #9E9E9E; --accent: #00E5FF; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: radial-gradient(circle at top left, rgba(179,136,255,0.18), transparent 32%), radial-gradient(circle at top right, rgba(0,229,255,0.12), transparent 36%), var(--bg); color: var(--text-main); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 32px 18px 56px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid rgba(179,136,255,0.28); border-radius: 28px; padding: 40px; background: linear-gradient(135deg, rgba(179,136,255,0.18), rgba(0,229,255,0.06)), rgba(26,26,26,0.88); box-shadow: 0 24px 80px rgba(0,0,0,0.42); }
+    .hero::after { content: ""; position: absolute; width: 260px; height: 260px; right: -80px; top: -100px; background: radial-gradient(circle, rgba(0,229,255,0.26), transparent 68%); filter: blur(2px); }
+    .tag { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(0,229,255,0.1); color: var(--accent); font-size: 13px; border: 1px solid rgba(0,229,255,0.22); }
+    h1 { margin: 18px 0 12px; font-size: clamp(34px, 5vw, 58px); line-height: 1.05; letter-spacing: -1.5px; }
+    .lead { max-width: 920px; color: var(--text-sub); line-height: 1.9; font-size: 16px; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .stat { padding: 18px; border-radius: 20px; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08); }
+    .stat strong { display: block; font-size: 28px; color: var(--primary); }
+    .stat span { color: var(--text-sub); font-size: 13px; }
+    .section-title { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 34px 0 16px; }
+    .section-title h2 { margin: 0; font-size: 24px; }
+    .section-title p { margin: 0; color: var(--text-sub); font-size: 14px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025)), var(--card-bg); border: 1px solid rgba(255,255,255,0.09); border-radius: 24px; padding: 22px; box-shadow: 0 16px 50px rgba(0,0,0,0.28); transition: transform .22s ease, border-color .22s ease; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(179,136,255,0.38); }
+    .company { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .company .name { font-size: 19px; font-weight: 800; color: #fff; }
+    .company .type { font-size: 12px; color: var(--accent); border: 1px solid rgba(0,229,255,0.25); background: rgba(0,229,255,0.08); border-radius: 999px; padding: 6px 10px; white-space: nowrap; }
+    .headline { margin: 0 0 14px; color: var(--primary); font-size: 17px; line-height: 1.55; }
+    .block { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .block h3 { margin: 0 0 8px; font-size: 14px; color: #fff; display: flex; align-items: center; gap: 8px; }
+    .block p { margin: 0; color: var(--text-sub); line-height: 1.8; font-size: 14px; }
+    .source { margin-top: 14px; color: #777; font-size: 12px; }
+    .source a { color: #8eefff; }
+    .note { margin-top: 28px; padding: 18px 20px; border: 1px solid rgba(179,136,255,0.22); border-radius: 20px; background: rgba(179,136,255,0.07); color: var(--text-sub); line-height: 1.8; }
+    .footer { margin-top: 34px; text-align: center; color: #777; font-size: 13px; }
+    @media (max-width: 860px) { .hero { padding: 28px; } .stats, .grid { grid-template-columns: 1fr; } .section-title { display: block; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="tag">🏢 今日大厂新闻 · 2026-07-22 · style_dark</div>
+      <h1>今天的大厂主线很明确：国内在抢 AI 办公与模型落地，海外在抢基础设施、分发模式与安全治理</h1>
+      <p class="lead">7 月 22 日这轮大厂动态，比前几天更像“从讲故事走向拼执行”。国内厂商里，腾讯继续整合 AI 办公产品线，阿里把图像模型往实用生产力方向推进，小米则直接上调全年手机出货目标，说明它对下半年的消费电子节奏更乐观。国际巨头这边，OpenAI 开始提前和监管层沟通下一代模型，Apple 试图把硬件销售订阅化，Microsoft 加码欧洲本地 AI 基础设施，Google 把安全模型单独拆出来，Meta 的网页索引动作引发内容生态担忧，AWS 继续把企业级 Agent 平台做深。整体看下来，今天的焦点已经不是“谁又发了一个更大的模型”，而是谁更快把模型变成产品、基础设施和组织能力。</p>
+      <div class="stats">
+        <div class="stat"><strong>9</strong><span>条重点动态</span></div>
+        <div class="stat"><strong>3</strong><span>国内大厂</span></div>
+        <div class="stat"><strong>6</strong><span>国际巨头</span></div>
+        <div class="stat"><strong>3</strong><span>核心主题：Agent、基础设施、商业模式</span></div>
+      </div>
+    </section>
+
+    <div class="section-title">
+      <h2>国内大厂与科技生态</h2>
+      <p>覆盖腾讯、阿里、小米等 7 月 22 日前后最值得关注的动作</p>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="company"><span class="name">腾讯</span><span class="type">AI 办公 / 组织整合</span></div>
+        <p class="headline">腾讯把 QClaw 与 WorkBuddy 收进同一体系，AI 办公开始从“多线试错”走向“统一作战”。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 22 日多家媒体提到，腾讯对 AI 办公相关组织做了调整：QClaw 产品中心相关业务和部分团队调整至云产品六部，与 WorkBuddy 并入同一管理体系，QClaw 产品本身继续独立运营。报道同时提到，WorkBuddy 在办公智能体访问量榜单中位居前列。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>腾讯已经不满足于内部同时跑好几个 AI 办公项目了，而是开始收拢兵力，集中做一个真正能打的入口。说白了，就是不再只是“各自做 Demo”，而是准备把产品、团队和商业化动作捏到一起。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这对腾讯很关键。AI 办公产品最后拼的不只是模型能力，还拼集成度、销售效率和用户留存。组织整合意味着腾讯接下来可能会更快推出统一工作台、统一账号体系和更清晰的 ToB 交付路径。</p></div>
+        <div class="source">来源：<a href="https://news.pedaily.cn/202607/566676.shtml">投资界</a> · <a href="https://36kr.com/p/3906553920165253">36氪</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">阿里巴巴</span><span class="type">Qwen-Image-3.0 / 图像生成</span></div>
+        <p class="headline">阿里发布 Qwen-Image-3.0，把图像生成重点从“好看”继续往“复杂图文生产可用”上推。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>阿里云社区 7 月 22 日发布 Qwen-Image-3.0，称其为 Qwen-Image 系列第三代基础模型，强调 Rich Content、Authentic Details 与 Deep Knowledge。相关报道还提到，该模型支持超长文本输入，已在阿里云百炼和千问 AI 平台开放 API 邀测。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>阿里想做的已经不只是“帮你画一张图”，而是让模型更懂复杂排版、长指令和真实生产需求。对企业来说，这意味着图像模型不只适合玩创意，还可能开始能接海报、内容排版、营销物料这些更实际的工作。</p></div>
+        <div class="block"><h3>影响分析</h3><p>如果阿里能把图像模型和百炼、千问应用平台绑定起来，它的优势就不只是一个模型，而是“模型 + API + 生产工具”的闭环。这样更容易把图像 AI 做成企业可付费的服务，而不是一次性的热点。</p></div>
+        <div class="source">来源：<a href="https://www.alibabacloud.com/blog/qwen-image-3-0-rich-content-authentic-details-deep-knowledge_603385">Alibaba Cloud Community</a> · <a href="http://m.toutiao.com/group/7665011906108752419/">智迅文化</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">小米</span><span class="type">手机出货 / 市场预期</span></div>
+        <p class="headline">小米被曝把 2026 年手机出货目标上调到 1.1 亿部，释放出对下半年市场回暖的积极判断。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 22 日多家媒体援引供应链消息称，小米已将 2026 年全年智能手机出货目标从约 9000 万部上调至 1.1 亿部，增量主要来自低端机型。报道还提到，小米内部认为当前存储行情有望出现反转。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>这相当于小米在告诉供应链：“我准备更积极地备货了。”它判断下半年手机市场没有之前想得那么差，尤其是在成本和库存压力缓下来后，可以再多冲一波量。</p></div>
+        <div class="block"><h3>影响分析</h3><p>如果这个目标真的执行，小米下半年会更看重规模和渠道效率，而不只是单机利润。对产业链来说，这也会带来更强的备货信号；对竞争对手来说，小米会在中低端和性价比市场重新加大攻势。</p></div>
+        <div class="source">来源：<a href="https://www.eet-china.com/news/202607225756.html">电子工程专辑</a> · <a href="https://www.digitimes.com/news/a20260721PD245/xiaomi-smartphone-market-demand-2026.html">DigiTimes</a></div>
+      </article>
+    </section>
+
+    <div class="section-title">
+      <h2>国际科技公司</h2>
+      <p>覆盖 OpenAI、Apple、Microsoft、Google、Meta、Amazon/AWS</p>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="company"><span class="name">OpenAI</span><span class="type">下一代模型 / 监管沟通</span></div>
+        <p class="headline">OpenAI 提前向美国政府沟通下一代模型，说明它已经把“产品发布”和“监管预热”当成同一件事来做。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 22 日报道显示，Sam Altman 计划下周向特朗普政府和美国议员介绍 OpenAI 即将推出的下一代 AI 模型。OpenAI 全球公共事务负责人 Chris Lehane 表示，这一新模型家族将在“工作”和“规模化工作”方面带来很有意思的能力；相关沟通也发生在美国准备建立前沿 AI 安全审查流程的背景下。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>OpenAI 现在很清楚，越强的模型越不是“直接发就完了”。它得先和监管层打招呼，让外界知道新模型会带来什么能力、也可能带来什么风险，避免产品发布后被动挨监管。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这意味着头部模型公司的竞争，已经从产品层面扩展到政策协调层面。谁更早适应监管流程，谁就更可能在企业市场和政府合作里占到先手。</p></div>
+        <div class="source">来源：<a href="https://finance.sina.com.cn/roll/2026-07-22/doc-iniirwqh8860796.shtml">新浪财经 / 商业周刊转引</a> · <a href="https://k.sina.com.cn/article_7857201856_1d45362c001908cf46.html?from=tech">新浪 AI 热点</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Apple</span><span class="type">Apple Upgrade / 硬件订阅</span></div>
+        <p class="headline">Apple 被曝将推出 Apple Upgrade，尝试把硬件购买改造成更接近订阅制的月付体验。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 22 日多家媒体援引 Bloomberg 报道称，苹果最早下周推出名为 Apple Upgrade 的设备租赁或分期项目，由 Klarna 提供资金支持，覆盖多数 iPhone、Mac、iPad 和 Apple Watch 机型。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>苹果想做的事情其实很直白：别让用户每次换设备都像做一笔大额消费，而是尽量变成“每个月付一点”的长期关系。这样不只更容易卖机器，也更方便把用户锁进自己的生态里持续升级。</p></div>
+        <div class="block"><h3>影响分析</h3><p>如果这个计划顺利落地，苹果的收入结构会更偏向长期化、订阅化。对行业来说，这可能会进一步推动高端硬件从一次性买断，转向更像服务的销售模式。</p></div>
+        <div class="source">来源：<a href="https://www.siliconrepublic.com/business/apple-reportedly-set-to-debut-device-leasing-programme">Silicon Republic</a> · <a href="https://www.businesstoday.in/technology/news/story/apple-to-launch-apple-upgrade-program-for-iphones-macs-and-ipads-what-it-means-544347-2026-07-22">Business Today</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Microsoft</span><span class="type">欧洲 AI 基础设施 / Mistral</span></div>
+        <p class="headline">微软与 Mistral 加码欧洲本地算力和数据中心，想把“合规 AI 基础设施”做成 Azure 新卖点。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 22 日消息显示，微软将投入数十亿美元，与欧洲 AI 公司 Mistral 共建 GPU 算力和数据中心能力；相关能力会服务欧洲企业客户，并进一步接入 Azure 与 Copilot 体系。报道强调，该合作面向本地数据治理要求较高的行业与客户。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>微软不是单纯投一家模型公司，而是在欧洲市场补一块非常关键的短板：让客户觉得“我用最强 AI，也不用把数据全交给美国系统处理”。这对政府、金融和大型企业特别有吸引力。</p></div>
+        <div class="block"><h3>影响分析</h3><p>欧洲本地化 AI 基础设施会变成微软和 AWS、Google Cloud 下一轮竞争的重要变量。谁能兼顾模型能力、算力交付和数据主权，谁就更容易拿下高价值客户。</p></div>
+        <div class="source">来源：<a href="https://finance.sina.com.cn/stock/usstock/c/2026-07-22/doc-iniiqzks9049502.shtml">新浪财经</a> · <a href="https://www.chosun.com/english/world-en/2026/07/22/2ORWPRFKGVFYZANJ46WDO53N4U/">The Chosun Daily</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Google</span><span class="type">Gemini 3.5 Flash Cyber / 安全模型</span></div>
+        <p class="headline">Google 把网络安全能力单独做成 Gemini 3.5 Flash Cyber，明显是在把“模型能力”往专业 Agent 场景里切。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 22 日 Google DeepMind 推出 Gemini 3.6 Flash、3.5 Flash-Lite 与 3.5 Flash Cyber。相关报道指出，Flash Cyber 专门面向漏洞发现、验证和修复，先通过 CodeMender 向政府和可信合作伙伴开放试点。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>谷歌已经不满足于做一个“什么都会一点”的通用模型了，而是开始把模型拆成更适合特定工作流的专业工具。安全是最典型的高价值场景之一，因为企业愿意为“更快发现和修复漏洞”真掏钱。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这一步会让谷歌在企业级 AI 安全市场更有竞争力，也说明 AI 竞争在加速从通用助手转向垂直 Agent。未来模型厂商拼的不只是综合分数，还要拼行业场景里的可替代性。</p></div>
+        <div class="source">来源：<a href="https://36kr.com/p/3906321496872065">36氪</a> · <a href="https://www.helpnetsecurity.com/2026/07/22/google-gemini-3-5-flash-cyber-model/">Help Net Security</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Meta</span><span class="type">AI 爬虫 / 网页索引</span></div>
+        <p class="headline">Meta 的 AI 抓取和网页索引动作明显加大，内容网站对“只抓不回流”的担忧正在升温。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 22 日行业报道提到，Meta 的 AI 机器人请求量增长超过 163%，其中 Meta-WebIndexer 单季度请求量约 90 亿次，看起来正在建立类似搜索引擎的网页索引体系。相关讨论还指出，这类抓取并没有给内容网站带来可观引荐流量。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>Meta 现在像是在做一件更底层的事：先把互联网上能吃到的内容尽量抓进来，再考虑怎么喂给自己的 AI 产品。但内容方的感受会是：你拿走了我的内容，却没把用户带回来。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这会加剧 AI 平台和内容平台之间的博弈。未来不只是 Meta，几乎所有大模型平台都会面临同一个问题：如果内容方开始大规模限制抓取，训练、检索和 Agent 的质量成本都会被重新改写。</p></div>
+        <div class="source">来源：<a href="https://anicca.co.uk/blog/weekly-update-search-marketing-22-07-2026/">Anicca</a> · <a href="https://tech.ifeng.com/c/8uwIsXpkDjX">凤凰网</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Amazon / AWS</span><span class="type">Bedrock AgentCore / 企业 Agent</span></div>
+        <p class="headline">AWS 继续给 Bedrock AgentCore 叠能力，目标已经不只是“能做 Agent”，而是“让 Agent 长期稳定工作”。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>AWS Blogs 在 7 月 22 日首页列出 Bedrock AgentCore 新进展，强调 build agents with broader knowledge and continuous learning，说明 AWS 正持续补强企业级智能体平台能力。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>AWS 的思路很像它当年做云：不是只做一个亮眼产品，而是把企业真正上线要用到的底层能力一层层补齐。广知识、持续学习、长期运行，这些才是企业 Agent 真正会卡住的地方。</p></div>
+        <div class="block"><h3>影响分析</h3><p>只要企业客户更看重稳定性、权限控制和长期运营，AWS 这种基础设施导向的打法就很有竞争力。它未必每次最抢眼，但很可能最容易进入真实生产环境。</p></div>
+        <div class="source">来源：<a href="https://aws.amazon.com/blogs/?nc1=f_cc&sc_region=GCR">AWS Blogs</a></div>
+      </article>
+    </section>
+
+    <section class="note">
+      <strong>今日观察：</strong>7 月 22 日这一轮大厂新闻最值得注意的是，AI 竞争正在从“谁的模型更强”继续转向“谁的体系更完整”。国内厂商开始拼组织整合、AI 办公入口和落地节奏；海外巨头则更强调监管协同、基础设施本地化、专业安全模型和新的商业化方式。换句话说，今天真正有价值的，不只是模型本身，而是模型能不能被装进产品、卖进企业、放进系统，并长期稳定地跑起来。
+    </section>
+
+    <div class="footer">Generated for global-sync · dachang-news · 2026-07-22</div>
+  </main>
+</body>
+</html>
