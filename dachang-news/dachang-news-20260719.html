@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日大厂新闻｜2026-07-19</title>
+  <style>
+    :root { --primary: #B388FF; --bg: #0D0D0D; --card-bg: #1A1A1A; --text-main: #E0E0E0; --text-sub: #9E9E9E; --accent: #00E5FF; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: radial-gradient(circle at top left, rgba(179,136,255,0.18), transparent 32%), radial-gradient(circle at top right, rgba(0,229,255,0.12), transparent 36%), var(--bg); color: var(--text-main); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 32px 18px 56px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid rgba(179,136,255,0.28); border-radius: 28px; padding: 40px; background: linear-gradient(135deg, rgba(179,136,255,0.18), rgba(0,229,255,0.06)), rgba(26,26,26,0.88); box-shadow: 0 24px 80px rgba(0,0,0,0.42); }
+    .hero::after { content: ""; position: absolute; width: 260px; height: 260px; right: -80px; top: -100px; background: radial-gradient(circle, rgba(0,229,255,0.26), transparent 68%); filter: blur(2px); }
+    .tag { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(0,229,255,0.1); color: var(--accent); font-size: 13px; border: 1px solid rgba(0,229,255,0.22); }
+    h1 { margin: 18px 0 12px; font-size: clamp(34px, 5vw, 58px); line-height: 1.05; letter-spacing: -1.5px; }
+    .lead { max-width: 900px; color: var(--text-sub); line-height: 1.9; font-size: 16px; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .stat { padding: 18px; border-radius: 20px; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08); }
+    .stat strong { display: block; font-size: 28px; color: var(--primary); }
+    .stat span { color: var(--text-sub); font-size: 13px; }
+    .section-title { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 34px 0 16px; }
+    .section-title h2 { margin: 0; font-size: 24px; }
+    .section-title p { margin: 0; color: var(--text-sub); font-size: 14px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025)), var(--card-bg); border: 1px solid rgba(255,255,255,0.09); border-radius: 24px; padding: 22px; box-shadow: 0 16px 50px rgba(0,0,0,0.28); transition: transform .22s ease, border-color .22s ease; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(179,136,255,0.38); }
+    .company { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .company .name { font-size: 19px; font-weight: 800; color: #fff; }
+    .company .type { font-size: 12px; color: var(--accent); border: 1px solid rgba(0,229,255,0.25); background: rgba(0,229,255,0.08); border-radius: 999px; padding: 6px 10px; white-space: nowrap; }
+    .headline { margin: 0 0 14px; color: var(--primary); font-size: 17px; line-height: 1.55; }
+    .block { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .block h3 { margin: 0 0 8px; font-size: 14px; color: #fff; display: flex; align-items: center; gap: 8px; }
+    .block p { margin: 0; color: var(--text-sub); line-height: 1.8; font-size: 14px; }
+    .source { margin-top: 14px; color: #777; font-size: 12px; }
+    .source a { color: #8eefff; }
+    .note { margin-top: 28px; padding: 18px 20px; border: 1px solid rgba(179,136,255,0.22); border-radius: 20px; background: rgba(179,136,255,0.07); color: var(--text-sub); line-height: 1.8; }
+    .footer { margin-top: 34px; text-align: center; color: #777; font-size: 13px; }
+    @media (max-width: 860px) { .hero { padding: 28px; } .stats, .grid { grid-template-columns: 1fr; } .section-title { display: block; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="tag">🏢 今日大厂新闻 · 2026-07-19 · style_dark</div>
+      <h1>今天的大厂焦点已经很明确：AI 不再只拼模型更大，而是在争系统入口、企业落地与合规控制权</h1>
+      <p class="lead">7 月 19 日的大厂动态呈现出两个非常清晰的方向。国内公司在 WAIC 语境下继续把 AI 往手机、办公、云基础设施和终端认证里推进，字节跳动、腾讯、阿里、百度、华为、小米都在抢“谁能把 AI 变成真正可调用、可部署、可规模化”的位置；国际公司则更多围绕品牌整合、监管治理和产品安全展开，Google、Apple、Meta、OpenAI 分别在统一产品入口、硬件法律战、平台责任和青少年保护上释放强信号。今天的关键词可以概括为：落地、入口、治理。</p>
+      <div class="stats">
+        <div class="stat"><strong>10</strong><span>条重点动态</span></div>
+        <div class="stat"><strong>6</strong><span>国内公司</span></div>
+        <div class="stat"><strong>4</strong><span>国际科技巨头</span></div>
+        <div class="stat"><strong>3</strong><span>核心主题：入口、交付、治理</span></div>
+      </div>
+    </section>
+
+    <div class="section-title">
+      <h2>国内大厂与科技生态</h2>
+      <p>覆盖字节跳动、腾讯、阿里、百度、华为、小米等 7 月 19 日最新动态</p>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="company"><span class="name">字节跳动</span><span class="type">豆包手机 / 生态协同</span></div>
+        <p class="headline">字节的新一代豆包手机继续调整路线，重点从“AI 代点 App”转向“让超级 App 开标准接口协同”。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 18 日至 19 日，多家媒体跟进字节豆包手机二代动态：新一代方案不再主打读取屏幕并模拟点击的 GUI 路线，而是要求微信、支付宝、美团等高频应用通过标准化协议和接口向手机助手开放数据与控制权限，同时与努比亚合作的 NaviX Ultra 继续承接豆包手机方向的落地展示。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>字节已经意识到，光靠 AI 假装“像人一样点手机”很难长期稳定，所以现在更想把豆包手机做成一个能和主流 App 正式对接的系统入口。说白了，它要从“模拟操作”升级成“正规协作”。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这说明 AI 手机的竞争重心，已经从单点功能体验转到了生态控制力。谁能拉到更多超级 App 愿意开放接口，谁才更可能真正占住手机时代的 AI 入口。</p></div>
+        <div class="source">来源：<a href="http://m.toutiao.com/group/7663668580554179113/">TechWeb</a> · <a href="https://www.163.com/dy/article/L25948KH051180F7.html">网易</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">腾讯</span><span class="type">WorkBuddy / 具身智能</span></div>
+        <p class="headline">腾讯在 WAIC 继续加码全栈 AI 方案，把 WorkBuddy、企业智能体平台和具身智能放到同一条线上讲。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 19 日的多篇报道显示，腾讯在 WAIC 2026 上发布了覆盖云、模型、平台、应用与硬件的全栈升级方案，既包括具身智能基座模型与开发框架，也包括面向个人用户的 WorkBuddy 独立 App，以及企业侧的智能体平台海外版。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>腾讯现在不想只做一个聊天机器人，而是想同时占住“个人办公助手”“企业提效平台”和“机器人智能底座”这三个位子，让 AI 能从办公室一路延伸到现实世界。</p></div>
+        <div class="block"><h3>影响分析</h3><p>如果这条链路真能打通，腾讯的优势就不只是流量和产品矩阵，而是会变成“有场景、有入口、还能交付”的体系化能力，这对后续商业化会更有利。</p></div>
+        <div class="source">来源：<a href="http://m.toutiao.com/group/7664164626623365659/">钱江晚报</a> · <a href="http://m.toutiao.com/group/7663917729799324202/">文汇</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">阿里巴巴</span><span class="type">秒悟团队版 / 企业创作平台</span></div>
+        <p class="headline">阿里在 WAIC 推出秒悟团队版，把 AI 应用创作从个人工具继续推向团队协作和企业管理场景。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 19 日，新浪科技、中国日报等报道提到，阿里发布企业级 AI 应用创作平台秒悟团队版，主打统一身份管理、统一采购与额度控制、权限管理和团队资产共享，已经用于电商、内容创作等业务场景。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>阿里这次不是只想让个人玩 AI，而是要把企业里最麻烦的采购、权限、协作和资产归属问题一并解决，让团队可以真的把 AI 工具接进日常工作流。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这意味着阿里在企业 AI 方向上，正从“提供模型能力”转向“提供可管理、可协作、可结算的平台能力”。一旦企业愿意长期用，它的商业化粘性会更强。</p></div>
+        <div class="source">来源：<a href="https://finance.sina.com.cn/hy/hyjz/2026-07-19/doc-iniihzcp0424766.shtml">新浪科技</a> · <a href="http://m.toutiao.com/group/7664082736444948992/">中国日报</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">百度</span><span class="type">秒哒 3.5 / 无代码交付</span></div>
+        <p class="headline">百度把秒哒升级到 3.5 版本，继续强化无代码到可交付应用之间的衔接能力。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 19 日，新浪港股资讯与多家转载消息提到，百度在 WAIC 2026 发布秒哒 3.5，新版强调“更简单、更全能”，新增 iOS App 一键打包、多应用共享后端等能力，目标是把 AI 应用从创意生成继续推进到实际交付。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>百度不只是想让你把想法做成 Demo，而是想让你直接做成能发出去、能跑起来的产品。也就是说，它在补 AI 时代“最后一公里”的交付问题。</p></div>
+        <div class="block"><h3>影响分析</h3><p>如果无代码平台真的能跨过原型阶段，进入正式分发和部署，百度在企业开发效率市场里的位置会更稳，尤其适合需要快速试错和低门槛上线的场景。</p></div>
+        <div class="source">来源：<a href="http://stock.finance.sina.com.cn/hkstock/go.php/CompanyNews/page/1/code/09888/.phtml">新浪港股资讯</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">华为</span><span class="type">昇腾超节点 / 企业智能体</span></div>
+        <p class="headline">华为一边展示昇腾 950 超节点，一边在企业智能体论坛上继续讲规模化落地。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 19 日，多篇 WAIC 现场报道显示，华为公开展示昇腾 950 超节点真机，继续强化其在国产 AI 算力底座上的存在感；与此同时，华为云也围绕企业智能体平台、开源生态和行业应用落地方法进行系统阐述。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>华为今天释放的是一整套信号：上面有算力底盘，下面有企业用得上的智能体方案。它想证明自己不是只会卖芯片或者只会讲概念，而是能把整套链路都搭起来。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这会继续强化华为“软硬一体”的竞争壁垒。对很多政企客户来说，真正有吸引力的不是某个单独模型，而是从底层算力到交付平台都可控、都能落地。</p></div>
+        <div class="source">来源：<a href="http://m.toutiao.com/group/7664047854385775142/">南方都市报</a> · <a href="http://m.toutiao.com/group/7663908148461208114/">智东西</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">小米</span><span class="type">AI 终端 L3 认证</span></div>
+        <p class="headline">小米拿到首批人工智能终端智能化分级 L3 评级证书，继续把 AI 能力往终端标准化层面推进。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 19 日，IT 之家与新浪港股资讯显示，小米手机官方宣布获得首批《人工智能终端智能化分级》系列国家标准 L3 评级证书，小米 17 Max 等产品成为该批次认证的重要代表。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>小米今天强调的不是“我有多少新功能”，而是“我的 AI 终端能力已经开始进入标准认证体系”。这比单纯喊口号更容易建立市场信任。</p></div>
+        <div class="block"><h3>影响分析</h3><p>一旦 AI 终端进入可量化、可认证的标准阶段，头部厂商之间的竞争就会从营销战转向规范战。对小米来说，这有助于它在手机、IoT 和车端生态里同步放大可信度。</p></div>
+        <div class="source">来源：<a href="http://m.toutiao.com/group/7664007338836820495/">IT之家</a> · <a href="http://stock.finance.sina.com.cn/hkstock/news/01810.html?theme=dark">新浪港股资讯</a></div>
+      </article>
+    </section>
+
+    <div class="section-title">
+      <h2>国际科技公司</h2>
+      <p>覆盖 Google、Apple、Meta、OpenAI 等国际大厂</p>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="company"><span class="name">Google</span><span class="type">Gemini Notebook / 品牌统一</span></div>
+        <p class="headline">Google 正式把 NotebookLM 更名为 Gemini Notebook，并加入代码执行能力，继续把 AI 产品心智集中到 Gemini 主品牌。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>Google 官方博客和 Workspace 更新博客在 7 月中旬确认，NotebookLM 已更名为 Gemini Notebook，支持在笔记本中直接运行代码，并逐步与 Gemini App、Google Search 等能力打通。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>Google 现在不想再让外界记住一堆分散的 AI 名字，而是想让所有能力最后都沉淀到 Gemini 这个统一入口上。这样用户认知会更集中，产品整合也更顺。</p></div>
+        <div class="block"><h3>影响分析</h3><p>品牌统一背后其实是战略收口。Google 如果能把研究、搜索、代码、办公这些能力都挂到同一套产品体系下，后面的用户迁移和商业化就会更有连贯性。</p></div>
+        <div class="source">来源：<a href="https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/">Google 官方博客</a> · <a href="https://workspaceupdates.googleblog.com/2026/07/notebooklm-now-gemini-notebook.html?m=1">Google Workspace Updates</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Apple</span><span class="type">硬件法律战 / OpenAI</span></div>
+        <p class="headline">苹果与 OpenAI 围绕硬件商业秘密的法律冲突继续升级，争夺点已从合作关系走向人才与供应链边界。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 19 日，多家媒体继续跟进苹果起诉 OpenAI 的硬件商业秘密争议，报道提到苹果不仅推进诉讼，还向部分前员工发出法律保全通知，希望锁定与硬件项目相关的文档和沟通记录。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>苹果现在担心的已经不只是产品竞争，而是 OpenAI 会不会借着挖人和硬件推进，把自己多年积累的设计和制造经验也一并带走。所以这场冲突已经非常像一场“人才 + 机密”的防守战。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这会直接影响 OpenAI 的硬件推进节奏，也提醒整个行业：AI 竞争正在外溢到供应链、工业设计和组织机密层面，法律战会越来越多。</p></div>
+        <div class="source">来源：<a href="https://www.benzinga.com/markets/tech/26/07/60542630/trade-secrets-fight-with-openai-chinas-regulatory-nod-and-more-this-week-in-appleverse">Benzinga</a> · <a href="https://www.hngn.com/articles/272009/20260718/apple-sues-openai-over-alleged-trade-secret-theft-tied-secretive-hardware-device.htm">HNGN</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Meta</span><span class="type">DSA / 平台治理</span></div>
+        <p class="headline">Meta 继续承受欧洲监管压力，Instagram 和 Facebook 的“成瘾式设计”问题成为核心焦点。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>欧盟委员会此前已发布初步结论，认为 Meta 旗下 Facebook 和 Instagram 的无限滚动、自动播放和高强度推荐等设计可能违反《数字服务法》；7 月 19 日，相关讨论仍在持续发酵，外界普遍把这视为平台治理的重要风向。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>简单说，监管机构认为 Meta 的产品太擅长让人停不下来，尤其可能伤害青少年。问题已经不是“功能好不好用”，而是“这种产品机制该不该存在”。</p></div>
+        <div class="block"><h3>影响分析</h3><p>如果 Meta 最终被迫调整推荐逻辑和交互设计，它最核心的增长和广告模型都可能受到牵动。平台公司以后不仅要拼留存，还要拼合规能力。</p></div>
+        <div class="source">来源：<a href="https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-addictive-design-instagram-and-facebook-breach-digital-services-act">European Commission</a> · <a href="https://36kr.com/p/3902166239200896">36Kr</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">OpenAI</span><span class="type">青少年安全 / ChatGPT</span></div>
+        <p class="headline">OpenAI 继续把青少年保护机制摆到更重要位置，强调要让 ChatGPT 成为“可安全使用”的长期基础设施。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>OpenAI 在 7 月 16 日发布《Why teens deserve access to safe AI》，强调针对未成年人启用年龄适配保护、家长控制与学习型设计；到 7 月 19 日，这套思路仍在被持续引用和解读，成为 OpenAI 近期产品治理方向的重要信号。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>OpenAI 已经不只想着模型更强，而是开始认真处理“很多青少年正在用 ChatGPT”这件事。也就是说，它在把安全边界正式做成产品能力，而不是临时补丁。</p></div>
+        <div class="block"><h3>影响分析</h3><p>随着 ChatGPT 越来越像通用基础设施，治理能力本身就会变成竞争力。谁能更早把青少年、家庭、教育这些高信任场景的安全规则做好，谁就更容易进入更大的使用场景。</p></div>
+        <div class="source">来源：<a href="https://openai.com/index/why-teens-deserve-access-safe-ai/">OpenAI 官方文章</a> · <a href="https://openai.com/news/">OpenAI News</a></div>
+      </article>
+    </section>
+
+    <section class="note">
+      <strong>今日观察：</strong>把今天这些新闻连起来看，会发现一条很明显的主线：国内大厂在争“谁能先把 AI 变成真实可调用的系统入口”，国际巨头在争“谁能把 AI 放进更可控的治理框架里”。前者比的是生态协同、企业交付和终端标准化，后者比的是品牌统一、法律边界和平台责任。接下来真正决定行业格局的，可能不只是模型能力，而是谁能同时把入口拿住、把场景跑通、把风险管住。
+    </section>
+
+    <div class="footer">Generated for global-sync · dachang-news · 2026-07-19</div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 精选项目报告 - 2026年7月14日</title>
+<style>
+  :root { --primary: #0052D9; --bg: #F3F5F8; --card-bg: #FFFFFF; --text-main: #1C1F23; --text-sub: #5C6A82; --line: #D9E6F7; --soft: #F8FAFC; --accent: #13C2C2; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: linear-gradient(180deg, #EEF4FF 0%, var(--bg) 58%, #FFFFFF 100%); color: var(--text-main); margin: 0; padding: 20px; }
+  .container { max-width: 860px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 16px; box-shadow: 0 10px 34px rgba(0,82,217,0.08); }
+  .header { border-bottom: 2px solid var(--primary); padding-bottom: 18px; margin-bottom: 26px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
+  .header h1 { color: var(--primary); margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.3px; }
+  .date { color: var(--text-sub); font-size: 14px; white-space: nowrap; }
+  .intro { background: linear-gradient(135deg, #F4F8FF 0%, #F8FEFF 100%); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin-bottom: 24px; color: var(--text-sub); line-height: 1.75; font-size: 15px; }
+  .news-item { border-left: 3px solid var(--primary); padding: 20px 22px; margin-bottom: 22px; background: var(--soft); border-radius: 0 12px 12px 0; transition: all 0.3s ease; }
+  .news-item:hover { transform: translateX(4px); box-shadow: 0 6px 18px rgba(0,82,217,0.10); }
+  .topline { display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+  .tag { display: inline-block; background: #E0EBF5; color: var(--primary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+  .score { display: inline-block; background: #E8FFFB; color: #087E8B; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+  .news-item h2 { margin: 8px 0 12px 0; font-size: 21px; color: var(--text-main); }
+  .news-item p { margin: 0 0 12px 0; font-size: 15px; color: var(--text-sub); line-height: 1.75; }
+  .section-title { margin: 18px 0 8px; font-size: 15px; color: var(--primary); font-weight: 700; }
+  ul { margin: 0 0 12px 0; padding-left: 19px; }
+  li { color: var(--text-sub); line-height: 1.75; margin-bottom: 6px; font-size: 15px; }
+  .link { color: var(--primary); text-decoration: none; font-size: 14px; font-weight: 600; }
+  .link:hover { text-decoration: underline; }
+  .meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0; }
+  .meta-card { background: #FFFFFF; border: 1px solid #E8EEF7; border-radius: 10px; padding: 10px 12px; }
+  .meta-card b { display: block; color: var(--text-main); font-size: 13px; margin-bottom: 4px; }
+  .meta-card span { color: var(--text-sub); font-size: 13px; }
+  .footer { text-align: center; margin-top: 32px; padding-top: 20px; border-top: 1px solid #EEF2F7; color: var(--text-sub); font-size: 12px; line-height: 1.7; }
+  @media (max-width: 700px) { .container { padding: 22px; } .header { flex-direction: column; align-items: flex-start; } .meta { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>💎 GitHub 精选项目报告</h1>
+      <div class="date">2026年7月14日</div>
+    </div>
+
+    <div class="intro">
+      今日挑选两个更适合“技术成长型阅读”的项目：一个偏代码库知识沉淀与 Agent 文档维护，一个偏高质量规划与低成本执行的 Agent 协作方式。它们都不是单纯的模型壳，而是能直接启发工程团队如何把 AI 真正接入日常研发流程。
+    </div>
+
+    <div class="news-item">
+      <div class="topline">
+        <span class="tag">代码库文档 / Agent 记忆系统</span>
+        <span class="score">推荐指数：9.2/10</span>
+      </div>
+      <h2>1. langchain-ai/openwiki：让代码库自己长出“可维护的 Agent Wiki”</h2>
+      <p>OpenWiki 是一个面向代码库和个人知识系统的 CLI 工具。它的核心思路不是只做一次性文档生成，而是持续把仓库、知识源、连接器数据和 Agent 使用习惯沉淀成可更新的本地 Wiki，让 AI 在后续理解代码和上下文时不再“每次重新失忆”。</p>
+      <div class="meta">
+        <div class="meta-card"><b>项目地址</b><span>langchain-ai/openwiki</span></div>
+        <div class="meta-card"><b>核心形态</b><span>CLI + 本地 Wiki + 连接器</span></div>
+        <div class="meta-card"><b>适合人群</b><span>AI 工具链、代码库治理、知识工程开发者</span></div>
+      </div>
+      <div class="section-title">项目详细介绍</div>
+      <p>从官方 README 看，OpenWiki 同时支持 code mode 和 personal mode：前者面向当前代码库生成文档，后者面向个人知识源构建本地脑图式 Wiki。它可以接入本地仓库、Notion、Gmail、Web Search、Hacker News 等来源，再把这些信息汇总到一个持续更新的知识层里。更值得注意的是，它会在仓库根目录维护 AGENTS.md 和 CLAUDE.md 的引导块，把“先看 Wiki 再行动”的工作方式嵌入到 Agent 使用链路中。</p>
+      <div class="section-title">技术亮点</div>
+      <ul>
+        <li>把“文档生成”升级成“文档持续维护”，更接近真实研发环境里的知识治理需求。</li>
+        <li>同时覆盖代码库知识和个人知识，说明它不是单一场景工具，而是想解决 Agent 上下文长期记忆的问题。</li>
+        <li>内置连接器和本地存储设计，适合学习知识摄取、原始数据落盘、再合成 Wiki 的分层架构。</li>
+        <li>支持 CI 自动更新文档，能直接启发团队做仓库文档巡检、架构说明同步和入门资料自动刷新。</li>
+      </ul>
+      <div class="section-title">使用场景</div>
+      <p>适合用在中大型代码库文档补全、AI Coding Agent 的上下文预热、团队新人入门资料自动化维护，以及个人多来源知识沉淀场景。如果你正在做内部 AI 助手、研发知识库或代码理解工具，OpenWiki 很值得拆源码学习：它展示了“连接器采集 → 本地知识组织 → Agent 消费”的完整闭环。</p>
+      <a href="https://github.com/langchain-ai/openwiki" class="link">查看 GitHub 仓库 ↗</a>
+    </div>
+
+    <div class="news-item">
+      <div class="topline">
+        <span class="tag">AI 代码审计 / Agent 协作方法</span>
+        <span class="score">推荐指数：9.0/10</span>
+      </div>
+      <h2>2. shadcn/improve：把最贵的模型用在“看懂问题”，把实现交给更便宜的 Agent</h2>
+      <p>improve 不是传统意义上的代码生成器，而是一种很有启发性的 Agent Skill：先用能力最强的模型完成代码库审计、问题判断和实施计划编写，再把这些结构化计划交给成本更低的执行 Agent 去落地。它强调“计划本身就是产品”，这对团队级 AI 协作非常有价值。</p>
+      <div class="meta">
+        <div class="meta-card"><b>项目地址</b><span>shadcn/improve</span></div>
+        <div class="meta-card"><b>核心形态</b><span>Agent Skill / 规划驱动执行</span></div>
+        <div class="meta-card"><b>适合人群</b><span>工程效率、代码审计、AI 协作流程设计者</span></div>
+      </div>
+      <div class="section-title">项目详细介绍</div>
+      <p>它主张把高成本模型用在最能放大价值的步骤：理解代码库、判断哪些问题值得做、产出自包含的实施方案。后续真正修改代码、跑测试、提交结果，可以交给更便宜的执行模型。README 里对这件事讲得很清楚：它会先做 repo recon，再从正确性、安全、性能、测试覆盖率、技术债、依赖迁移、文档和方向建议等多个维度做审计，最后产出 plans 目录下的执行计划。</p>
+      <div class="section-title">技术亮点</div>
+      <ul>
+        <li>把“审计”和“实现”明确拆层，是非常实用的 AI 成本优化思路。</li>
+        <li>计划文件强调自包含、验证门槛和 STOP 条件，天然适合给弱模型或新同学执行。</li>
+        <li>覆盖 repo recon、问题筛选、优先级排序、执行复核、backlog reconcile，流程意识很完整。</li>
+        <li>对真实团队非常有借鉴意义：比起盲目让 Agent 直接改代码，这种模式更稳、更可控，也更方便 Code Review。</li>
+      </ul>
+      <div class="section-title">使用场景</div>
+      <p>适合团队做遗留代码治理、PR 前审计、技术债清单生成、AI 任务拆解与执行分发，也适合个人学习“如何把 Agent 从单兵作战升级成分工协作系统”。如果你平时会写技术方案、拆需求、做 code review，这个项目会给你很多关于“让 Agent 按计划做事”的具体灵感。</p>
+      <a href="https://github.com/shadcn/improve" class="link">查看 GitHub 仓库 ↗</a>
+    </div>
+
+    <div class="footer">
+      资料来源：GitHub 公开仓库 README 与项目主页。<br>
+      Generated by global-sync · style_blue 商务极简蓝排版
+    </div>
+  </div>
+</body>
+</html>

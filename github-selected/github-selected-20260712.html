@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 精选项目 - 2026年7月12日</title>
+<style>
+  :root { --primary: #0052D9; --bg: #F3F5F8; --card-bg: #FFFFFF; --text-main: #1C1F23; --text-sub: #5C6A82; --line: #DCE6F2; --soft: #F8FAFC; --accent: #0B78FF; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: linear-gradient(180deg, #EEF4FF 0%, var(--bg) 100%); color: var(--text-main); margin: 0; padding: 20px; }
+  .container { max-width: 760px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+  .header { border-bottom: 2px solid var(--primary); padding-bottom: 18px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
+  .header h1 { color: var(--primary); margin: 0; font-size: 28px; font-weight: 650; letter-spacing: -0.02em; }
+  .date { color: var(--text-sub); font-size: 14px; white-space: nowrap; }
+  .intro { margin: 0 0 24px; color: var(--text-sub); line-height: 1.8; font-size: 15px; }
+  .news-item { border-left: 3px solid var(--primary); padding: 18px 20px; margin-bottom: 22px; background: var(--soft); border-radius: 0 10px 10px 0; transition: all 0.3s ease; }
+  .news-item:hover { transform: translateX(4px); box-shadow: 0 2px 10px rgba(0,82,217,0.1); }
+  .tag { display: inline-block; background: #E0EBF5; color: var(--primary); padding: 4px 10px; border-radius: 4px; font-size: 12px; margin-bottom: 12px; font-weight: 600; }
+  .news-item h2 { margin: 0 0 10px 0; font-size: 20px; color: var(--text-main); }
+  .repo { color: var(--primary); font-size: 13px; font-weight: 600; margin-bottom: 14px; word-break: break-all; }
+  .section-title { margin: 18px 0 8px; color: var(--text-main); font-size: 15px; font-weight: 650; }
+  .news-item p { margin: 0 0 12px 0; font-size: 15px; color: var(--text-sub); line-height: 1.75; }
+  ul { margin: 0 0 12px; padding-left: 18px; }
+  li { color: var(--text-sub); line-height: 1.8; font-size: 15px; margin-bottom: 4px; }
+  .link { color: var(--primary); text-decoration: none; font-size: 14px; font-weight: 600; }
+  .link:hover { text-decoration: underline; }
+  .summary { margin: 26px 0 0; padding: 18px 20px; border: 1px solid var(--line); border-radius: 10px; background: #FFFFFF; }
+  .summary h3 { margin: 0 0 10px; font-size: 17px; color: var(--primary); }
+  .footer { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: var(--text-sub); font-size: 12px; }
+  @media (max-width: 600px) { body { padding: 12px; } .container { padding: 22px; } .header { flex-direction: column; align-items: flex-start; } .date { white-space: normal; } }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>💎 GitHub 精选项目</h1>
+      <div class="date">2026年7月12日</div>
+    </div>
+
+    <p class="intro">今天精选 2 个偏 AI 与技术成长方向的开源项目：一个关注“把 AI 编程助手变成视频生产团队”，另一个关注“把网页本身改造成可被自然语言操控的 GUI Agent”。它们共同反映了一个趋势：AI 工具正在从“回答问题”走向“接管具体生产流程”。</p>
+
+    <div class="news-item">
+      <span class="tag">AI 视频生产 · Agent Workflow</span>
+      <h2>OpenMontage：让 AI 编程助手成为视频制作工作室</h2>
+      <div class="repo">calesthio/OpenMontage</div>
+      <p>OpenMontage 是一个开源的 agentic video production system，目标不是再造一个传统视频生成器，而是把 Claude Code、Cursor、Copilot、Codex、Windsurf 等 AI 编程助手变成视频制作流程的“总导演”。项目以 pipeline manifest、stage director skill、Python 工具、reviewer skill 和 JSON checkpoint 串起从任务拆解、素材处理到质量自检的端到端流程。</p>
+
+      <div class="section-title">技术亮点</div>
+      <ul>
+        <li>Agent-first 架构：没有传统中心化调度器，AI 编程助手本身就是流程编排者。</li>
+        <li>Pipeline + Skill 组合：用 YAML 描述阶段、工具、验收标准，用 Markdown 描述每个阶段的执行方法。</li>
+        <li>可恢复执行：通过 JSON checkpoint 保存状态，适合长链路视频任务中断后继续推进。</li>
+        <li>质量门禁：让 Agent 根据 reviewer skill 做 schema 校验、playbook 合规检查和质量复盘。</li>
+      </ul>
+
+      <div class="section-title">使用场景</div>
+      <p>适合技术团队做产品 Demo、教程视频、架构讲解、开源项目宣传片，也适合个人创作者把“脚本—素材—旁白—剪辑—字幕”的复杂链路拆成可审计、可复用的 Agent 工作流。对工程师而言，它的价值不只是做视频，更在于学习如何把复杂创意任务工程化。</p>
+      <a href="https://github.com/calesthio/OpenMontage" class="link">查看项目 ↗</a>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">Web Agent · 前端智能化</span>
+      <h2>PageAgent.js：把网页变成自然语言可控的 AI 原生应用</h2>
+      <div class="repo">alibaba/page-agent</div>
+      <p>PageAgent.js 是 Alibaba 开源的 JavaScript in-page GUI agent。它的核心思路是把 Agent 直接放进网页里，让用户用自然语言控制界面，而不是依赖脆弱的 XPath、选择器脚本或外部自动化服务。官方定位覆盖 SaaS AI Copilot、智能表单填写、无障碍访问，以及通过浏览器扩展支持多页面控制。</p>
+
+      <div class="section-title">技术亮点</div>
+      <ul>
+        <li>纯前端接入：更像在现有 Web App 中嵌入一个 AI 操作层，而不是另起一套后端自动化系统。</li>
+        <li>面向业务界面：强调表单填写、后台系统、ERP/CRM 等多步骤点击流程的自然语言化。</li>
+        <li>可访问性增强：语音命令、屏幕阅读器与自然语言交互能降低复杂 Web 系统使用门槛。</li>
+        <li>可扩展到多页面：基础能力不依赖浏览器扩展，扩展只作为跨标签页、多页面控制的增强项。</li>
+      </ul>
+
+      <div class="section-title">使用场景</div>
+      <p>适合给内部运营后台、SaaS 产品、管理系统加“AI Copilot”入口，让用户说一句“帮我把这批客户按华北区筛出来并导出”，系统自动完成多步操作。对前端工程师来说，它是理解 GUI Agent、产品内 Copilot 和自然语言交互设计的好样本。</p>
+      <a href="https://github.com/alibaba/page-agent" class="link">查看项目 ↗</a>
+    </div>
+
+    <div class="summary">
+      <h3>今日观察</h3>
+      <p>这两个项目都不是单点模型能力展示，而是把 AI 放进真实工作流：OpenMontage 处理长链路内容生产，PageAgent.js 处理真实 Web 产品交互。对技术成长更有启发的是，它们都在尝试把“自然语言意图”转成“可执行、可校验、可恢复”的工程流程。</p>
+    </div>
+
+    <div class="footer">
+      Sources: GitHub 官方仓库与项目主页 · style_blue 商务极简蓝排版
+    </div>
+  </div>
+</body>
+</html>
