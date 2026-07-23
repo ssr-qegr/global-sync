@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日大厂新闻｜2026-07-23</title>
+  <style>
+    :root { --primary: #B388FF; --bg: #0D0D0D; --card-bg: #1A1A1A; --text-main: #E0E0E0; --text-sub: #9E9E9E; --accent: #00E5FF; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: radial-gradient(circle at top left, rgba(179,136,255,0.18), transparent 32%), radial-gradient(circle at top right, rgba(0,229,255,0.12), transparent 36%), var(--bg); color: var(--text-main); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 32px 18px 56px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid rgba(179,136,255,0.28); border-radius: 28px; padding: 40px; background: linear-gradient(135deg, rgba(179,136,255,0.18), rgba(0,229,255,0.06)), rgba(26,26,26,0.88); box-shadow: 0 24px 80px rgba(0,0,0,0.42); }
+    .hero::after { content: ""; position: absolute; width: 260px; height: 260px; right: -80px; top: -100px; background: radial-gradient(circle, rgba(0,229,255,0.26), transparent 68%); filter: blur(2px); }
+    .tag { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(0,229,255,0.1); color: var(--accent); font-size: 13px; border: 1px solid rgba(0,229,255,0.22); }
+    h1 { margin: 18px 0 12px; font-size: clamp(34px, 5vw, 58px); line-height: 1.05; letter-spacing: -1.5px; }
+    .lead { max-width: 920px; color: var(--text-sub); line-height: 1.9; font-size: 16px; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .stat { padding: 18px; border-radius: 20px; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08); }
+    .stat strong { display: block; font-size: 28px; color: var(--primary); }
+    .stat span { color: var(--text-sub); font-size: 13px; }
+    .section-title { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 34px 0 16px; }
+    .section-title h2 { margin: 0; font-size: 24px; }
+    .section-title p { margin: 0; color: var(--text-sub); font-size: 14px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025)), var(--card-bg); border: 1px solid rgba(255,255,255,0.09); border-radius: 24px; padding: 22px; box-shadow: 0 16px 50px rgba(0,0,0,0.28); transition: transform .22s ease, border-color .22s ease; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(179,136,255,0.38); }
+    .company { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .company .name { font-size: 19px; font-weight: 800; color: #fff; }
+    .company .type { font-size: 12px; color: var(--accent); border: 1px solid rgba(0,229,255,0.25); background: rgba(0,229,255,0.08); border-radius: 999px; padding: 6px 10px; white-space: nowrap; }
+    .headline { margin: 0 0 14px; color: var(--primary); font-size: 17px; line-height: 1.55; }
+    .block { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .block h3 { margin: 0 0 8px; font-size: 14px; color: #fff; display: flex; align-items: center; gap: 8px; }
+    .block p { margin: 0; color: var(--text-sub); line-height: 1.8; font-size: 14px; }
+    .source { margin-top: 14px; color: #777; font-size: 12px; }
+    .source a { color: #8eefff; }
+    .note { margin-top: 28px; padding: 18px 20px; border: 1px solid rgba(179,136,255,0.22); border-radius: 20px; background: rgba(179,136,255,0.07); color: var(--text-sub); line-height: 1.8; }
+    .footer { margin-top: 34px; text-align: center; color: #777; font-size: 13px; }
+    @media (max-width: 860px) { .hero { padding: 28px; } .stats, .grid { grid-template-columns: 1fr; } .section-title { display: block; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="tag">🏢 今日大厂新闻 · 2026-07-23 · style_dark</div>
+      <h1>今天的大厂节奏更像“真刀真枪上生产”：国内抢 Agent 入口与国产算力，海外继续豪赌基础设施与行业落地</h1>
+      <p class="lead">7 月 23 日的大厂动态，已经能明显看出一个共同趋势：AI 不再只是展示能力，而是在往真正的产品、组织和基础设施里塞。国内这边，字节开始把 AI 科研合作做成长线计划，腾讯继续把 AI 办公往真实协同场景推进，阿里与华为都在强调超节点和大模型的规模化落地，小米则把端侧智能体能力往标准化认证上抬。海外方面，Google 用亮眼财报证明 AI 投入开始拉动云业务，但也让资本开支压力更刺眼；OpenAI 与 Microsoft 把 AI 直接接进国家级科研项目，Apple 继续围绕 AI 重整硬件与零售体验，AWS 则把企业 Agent 平台往持续学习和长期运行能力上补全。整体看下来，今天真正的分水岭不再是谁“最会讲 AI 故事”，而是谁能把 AI 变成持续运转的系统能力。</p>
+      <div class="stats">
+        <div class="stat"><strong>9</strong><span>条重点动态</span></div>
+        <div class="stat"><strong>5</strong><span>国内大厂</span></div>
+        <div class="stat"><strong>4</strong><span>国际巨头</span></div>
+        <div class="stat"><strong>3</strong><span>核心主题：Agent、超节点、AI 基建</span></div>
+      </div>
+    </section>
+
+    <div class="section-title">
+      <h2>国内大厂与科技生态</h2>
+      <p>覆盖字节跳动、腾讯、阿里、华为、小米等 7 月 23 日最值得关注的动作</p>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="company"><span class="name">字节跳动</span><span class="type">Seed STEM / AI for Science</span></div>
+        <p class="headline">字节启动 Seed STEM 科学家计划，说明它已经不满足于把 AI 只做成消费工具，而是开始往科研基础能力上长期下注。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 23 日消息显示，字节跳动 Seed Edge 团队发布 Seed STEM 科学家计划，拟邀请 100 位前沿科学领域学者，围绕真实科研问题展开合作，由豆包大模型团队内部的长期研究计划提供支持，首期计划持续约 6 个月。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>字节这次不是再推一个面向大众的新功能，而是在给 AI 找更硬核的应用场景：让模型去帮科学家做研究、提效率、跑实验。说白了，它在试图把“AI 很聪明”变成“AI 能加速科研产出”。</p></div>
+        <div class="block"><h3>影响分析</h3><p>如果这类计划跑通，字节在外部的品牌形象会从内容和应用公司，进一步延展到基础研究参与者。长期看，这也有助于它吸引更强的科研人才，并把模型能力沉淀到生命科学、材料、数学等高壁垒场景。</p></div>
+        <div class="source">来源：<a href="http://m.toutiao.com/group/7665662669164233257/">智迅文化</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">腾讯</span><span class="type">AI 办公 / 协同产品</span></div>
+        <p class="headline">腾讯继续把 AI 从“会生成内容”往“能跟人一起协作干活”推进，办公产品线的实用化意味更浓了。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 23 日相关报道提到，腾讯在 AI 办公方向继续强化 WorkBuddy 与文档协同能力，市场关注点开始从模型参数转向真实办公场景中的搜索、生成、操作电脑、代码辅助和流程协同等能力落地。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>腾讯现在想做的，不只是让 AI 帮你写几段文字，而是让它像“半个同事”一样，能看文档、接流程、做表格、帮你推进工作。也就是说，AI 办公开始从演示效果走向日常可用。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这条路线一旦跑顺，对腾讯最有价值的不是单个爆款功能，而是把文档、协同、代码、企业服务这些能力重新串成入口。它后面拼的会是使用频率、组织渗透率和企业付费深度，而不是单点模型成绩。</p></div>
+        <div class="source">来源：<a href="https://finance.sina.com.cn/tech/roll/2026-07-23/doc-iniiusma7761778.shtml">新浪科技</a> · <a href="https://www.36kr.com/p/3906666005518216">36氪</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">阿里巴巴</span><span class="type">Qwen3.8 / 国产超节点</span></div>
+        <p class="headline">阿里把 Qwen3.8 跑上自家超节点并接入百炼，重点已经不是“模型能不能发”，而是“能不能大规模稳定供给”。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 23 日消息称，阿里真武 M890 × 磐久 AI128 超节点已成功适配 Qwen3.8，并上线阿里云百炼平台提供推理服务。报道将其描述为国内首个成功运行超 2 万亿参数大模型的超节点方案。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>阿里这波重点不在“我又有一个更强模型”，而在“我已经把超大模型放到自己的算力底座上，用户真的能调用”。这意味着它正在把模型、芯片、服务器和平台服务拼成一个完整交付链路。</p></div>
+        <div class="block"><h3>影响分析</h3><p>对阿里云来说，这会强化它在企业 AI 基础设施市场的话语权。因为客户真正关心的不是模型参数本身，而是能不能稳定跑、多久能上线、成本能不能控住。超节点一旦成熟，阿里就更有机会把大模型服务做成长期企业基础设施。</p></div>
+        <div class="source">来源：<a href="https://finance.sina.com.cn/tech/roll/2026-07-23/doc-iniiusme9522399.shtml">新浪科技</a> · <a href="http://m.toutiao.com/group/7665653044557660718/">封面新闻</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">华为</span><span class="type">昇腾 950 / 超节点真机</span></div>
+        <p class="headline">华为把 1024 卡超节点真机摆到台前，本质是在证明国产 AI 集群已经不只停留在概念图和实验室里。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 23 日多家报道提到，华为在 WAIC 现场首次公开展出业界最大规模的 1024 卡超节点真机，具备 1 EFLOPS FP8 算力、256TB 全局单一虚拟地址空间和 3 微秒级 RTT 时延，并披露昇腾 384 超节点已商用落地 750 多套。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>这件事可以简单理解成：华为不是在告诉外界“我也能做 AI 芯片”，而是在说“我已经能把很多卡、很多节点、很多系统真正拼成可商用的大机器”。这比单卡性能更接近客户真正采购的东西。</p></div>
+        <div class="block"><h3>影响分析</h3><p>如果华为的超节点路线继续成熟，它在国产算力体系里的位置会越来越像“基础底座提供方”。这对政企和高强度训练推理场景尤其重要，因为这些客户更在意的是交付能力、规模化运维和生态兼容。</p></div>
+        <div class="source">来源：<a href="http://m.toutiao.com/group/7665492055950377482/">南方都市报</a> · <a href="http://m.toutiao.com/group/7665543825233822246/">蜗牛转转</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">小米</span><span class="type">AI 手机国标 / 端侧智能体</span></div>
+        <p class="headline">小米拿到 AI 手机 L3 评级证书，说明它正在把“系统智能体”从营销概念往行业标准能力推进。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 23 日行业消息提到，AI 手机国标首批 L3 评级结果公布，小米获得手机品类 L3 评级证书。报道称，其核心能力来自自研移动端 AI 智能体，能够调度系统底层权限，完成跨应用连贯任务。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>这相当于小米在告诉市场：我的 AI 不是只会聊天或者修图，而是已经能在手机里真正帮你串应用、跑流程、做复杂动作。比起单个功能，这更像把 AI 变成了系统层的“操作员”。</p></div>
+        <div class="block"><h3>影响分析</h3><p>一旦行业开始按分级标准看 AI 手机能力，小米这种强调端侧执行和系统调度的路线会更容易被用户和渠道理解。对它来说，这也有助于把 HyperOS 的 AI 能力从“体验亮点”升级成“硬指标”。</p></div>
+        <div class="source">来源：<a href="http://m.toutiao.com/group/7665556236955501102/">机研局</a></div>
+      </article>
+    </section>
+
+    <div class="section-title">
+      <h2>国际科技公司</h2>
+      <p>覆盖 Google、OpenAI、Microsoft、Apple、Amazon / AWS</p>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="company"><span class="name">Google / Alphabet</span><span class="type">Q2 财报 / AI 基建</span></div>
+        <p class="headline">谷歌这季财报说明 AI 投入已经开始带动云增长，但资本开支也把市场对回报周期的担忧彻底放大了。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 23 日多家媒体跟进 Alphabet 二季度财报，提到 Google Cloud 收入同比大增约 82%，公司同时把 2026 年全年资本开支指引上调至 1950 亿至 2050 亿美元区间，单季资本开支达到约 449 亿美元。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>谷歌的意思很明确：AI 花的钱很夸张，但它也确实开始把云业务往上拉了。问题在于，市场现在不只看你增长快不快，更盯着你要砸多少钱、多久才能把这些投入真正赚回来。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这会让 Google 接下来的 AI 叙事从“我也在全力投入”变成“我必须证明这些钱花得值”。如果云增长能持续吃到 Gemini 和企业 AI 红利，谷歌会更稳；如果资本开支继续失控，外界对其模型竞争力和变现效率的审视会更严。</p></div>
+        <div class="source">来源：<a href="https://www.thestar.com.my/tech/tech-news/2026/07/23/google-increases-capex-forecast-again-after-cloud-driven-earnings-beat">The Star / Reuters</a> · <a href="https://www.cnbc.com/2026/07/23/tesla-tsla-alphabet-googl-stock-today.html">CNBC</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">OpenAI</span><span class="type">Genesis Mission / 科研基础设施</span></div>
+        <p class="headline">OpenAI 进入美国国家科研基础设施项目，说明它正在把模型能力从商业产品进一步嵌入国家级科学研究系统。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 23 日报道显示，OpenAI 宣布支持美国科研项目 Genesis Mission，为该项目提供总额约 700 万美元的使用支持，面向能源部主导的科学研究体系，重点服务高性能科研探索与国家级发现任务。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>这不是普通的品牌合作，而是 OpenAI 在争取一个更高位置：让自己的模型成为美国科研系统里的基础工具。也就是说，它想让 AI 不只服务企业办公和开发者，而是直接参与国家级科学发现。</p></div>
+        <div class="block"><h3>影响分析</h3><p>一旦模型公司能进入这类项目，它的价值就不只是卖 API，而是成为科研基础设施的一部分。对 OpenAI 来说，这会增强其在公共部门和高端研究场景里的影响力，也会提升外界对其技术战略地位的认知。</p></div>
+        <div class="source">来源：<a href="https://gigazine.net/gsc_news/en/20260723-genesis-mission-openai-microsoft/">Gigazine</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Microsoft</span><span class="type">科研算力 / 国家项目</span></div>
+        <p class="headline">微软为 Genesis Mission 提供更大规模资源支持，继续把 Azure 和科学研究深度绑定成下一阶段 AI 云基础设施样板。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>同日披露的信息显示，Microsoft 也加入 Genesis Mission，并给出约 6000 万美元级别的资源投入，用于支撑美国下一代国家科学研究计划。相关介绍强调其云与 AI 能力将服务更大规模科研探索。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>微软这步棋很好理解：把国家科研这种高规格、高持续性的需求，和 Azure 的算力、平台、工具链绑得更紧。这样做既能拿项目，也能强化“微软云适合跑关键任务”的心智。</p></div>
+        <div class="block"><h3>影响分析</h3><p>对微软来说，科研项目不只是形象工程，而是云竞争中的长期资产。只要这种合作持续增加，Azure 在高可信、高复杂、高算力场景的护城河就会更深，和 OpenAI 的联盟也会更加制度化。</p></div>
+        <div class="source">来源：<a href="https://gigazine.net/gsc_news/en/20260723-genesis-mission-openai-microsoft/">Gigazine</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Apple</span><span class="type">Mac 产品线 / AI 需求</span></div>
+        <p class="headline">苹果被曝准备重整 Mac 产品线，明显是在试图借 AI 浪潮重新推高高性能硬件需求。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 23 日多家媒体援引 Mark Gurman 消息称，苹果计划在未来一段时间内对 Mac 产品线做更大规模更新，希望抓住 AI 需求带来的高性能笔记本和台式机换机机会，相关节奏将覆盖新款 MacBook Pro、iMac 等设备。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>苹果在赌一件事：随着越来越多 AI 工作流需要本地算力和更强芯片，用户会更愿意为更高性能的 Mac 买单。它不是单纯更新电脑，而是在用 AI 给硬件换代找一个新的增长理由。</p></div>
+        <div class="block"><h3>影响分析</h3><p>如果苹果能把端侧 AI、芯片性能和设备体验讲成一个完整故事，Mac 业务会更容易从传统办公设备，升级成 AI 时代的创作和生产平台。但这也意味着苹果必须更快把 Apple Intelligence 真正做成用户可感知的价值，而不是只停在宣传层。</p></div>
+        <div class="source">来源：<a href="https://www.gadgets360.com/laptops/news/apple-macbook-pro-imac-neo-air-launch-timeline-series-overhaul-report-11809812">Gadgets360</a> · <a href="https://m.weibo.cn/detail/5323789564905432">九派财经微博</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Amazon / AWS</span><span class="type">Bedrock AgentCore / 企业 Agent</span></div>
+        <p class="headline">AWS 继续补强 Bedrock AgentCore，目标已经不只是“能搭 Agent”，而是让 Agent 能长期稳定学、长期稳定跑。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 23 日 AWS Blogs 首页继续展示 Bedrock AgentCore 新能力，强调让智能体具备更广知识覆盖与持续学习能力，同时在 Summit New York 的发布节奏中，把企业 Agent 构建、运维和安全能力一起往前推进。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>AWS 的思路还是典型基础设施打法：它不急着只靠一个最火模型抢眼球，而是把企业真正在意的东西一点点补齐，比如长期运行、持续学习、权限边界和生产稳定性。这样更像是在修路，而不是放烟花。</p></div>
+        <div class="block"><h3>影响分析</h3><p>只要企业用户对 Agent 的真实要求越来越偏向稳定、可管控、可审计，AWS 这种平台型优势就会越来越明显。它不一定最会制造热点，但很可能最容易进入大规模生产环境。</p></div>
+        <div class="source">来源：<a href="https://aws.amazon.com/fr/blogs/">AWS Blogs</a></div>
+      </article>
+    </section>
+
+    <section class="note">
+      <strong>今日观察：</strong>7 月 23 日这一轮大厂新闻最值得注意的，是 AI 竞争已经全面进入“系统战”。国内厂商开始把模型往科研合作、办公协同、国产超节点和端侧智能体这些更可落地的方向推进；国际巨头则继续把资本、云平台、国家级科研和硬件升级绑在一起。换句话说，真正决定下一阶段格局的，不是谁再多发一个模型，而是谁能把 AI 接进组织、接进基础设施、接进长期运行的业务系统。
+    </section>
+
+    <div class="footer">Generated for global-sync · dachang-news · 2026-07-23</div>
+  </main>
+</body>
+</html>
