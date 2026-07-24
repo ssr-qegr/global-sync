@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub 精选项目报告 | 2026年7月24日</title>
+  <style>
+    :root { --primary:#0052D9; --primary-2:#2F80ED; --primary-soft:#EAF2FF; --bg:#F3F5F8; --card-bg:#FFFFFF; --text-main:#1C1F23; --text-sub:#5C6A82; --border:rgba(0,82,217,.13); --shadow:0 18px 48px rgba(8,32,71,.10); }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:24px; background:linear-gradient(180deg,#EEF4FF 0%,var(--bg) 280px); color:var(--text-main); font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; }
+    .wrap { max-width:980px; margin:0 auto; background:var(--card-bg); border-radius:28px; overflow:hidden; box-shadow:var(--shadow); }
+    .hero { position:relative; padding:44px 44px 36px; color:#fff; background:radial-gradient(circle at 86% 8%,rgba(255,255,255,.92),rgba(255,255,255,.12) 30%,transparent 48%),linear-gradient(135deg,#003EA8 0%,#0052D9 46%,#4FA3FF 100%); }
+    .hero:after { content:""; position:absolute; right:34px; bottom:-46px; width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,.12); filter:blur(1px); }
+    .badge-group { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px; }
+    .badge { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.22); font-size:13px; font-weight:700; }
+    h1 { margin:0 0 14px; font-size:34px; line-height:1.25; letter-spacing:-.02em; }
+    .hero p { margin:0; max-width:780px; color:rgba(255,255,255,.94); font-size:16px; position:relative; z-index:1; }
+    .content { padding:34px 44px 40px; }
+    .section-title { display:flex; align-items:center; gap:10px; margin:0 0 18px; font-size:24px; color:var(--primary); }
+    .lead-card,.project-card,.tips-card,.source-card { background:#fff; border:1px solid var(--border); border-radius:20px; padding:24px; margin-bottom:22px; box-shadow:0 10px 28px rgba(0,82,217,.06); }
+    .lead-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .metric { background:linear-gradient(180deg,#F8FBFF,#FFFFFF); border:1px solid var(--border); border-radius:16px; padding:16px; }
+    .metric .label { display:block; font-size:13px; color:var(--text-sub); margin-bottom:8px; }
+    .metric .value { display:block; font-size:22px; font-weight:800; color:var(--primary); }
+    .project-head { display:flex; justify-content:space-between; gap:18px; align-items:flex-start; margin-bottom:14px; }
+    .project-title { margin:0; font-size:28px; line-height:1.3; }
+    .project-subtitle { margin:8px 0 0; color:var(--text-sub); }
+    .rank { min-width:86px; text-align:center; background:linear-gradient(180deg,#F6FAFF,#EAF2FF); color:var(--primary); border-radius:16px; padding:14px 12px; border:1px solid var(--border); font-weight:800; }
+    .meta-row { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 18px; }
+    .chip { display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border-radius:999px; font-size:13px; color:var(--text-sub); background:#F7FAFE; border:1px solid rgba(92,106,130,.14); }
+    .summary { margin:0 0 18px; font-size:16px; color:var(--text-main); }
+    .grid-2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:12px; }
+    .panel { background:#FAFCFF; border:1px solid var(--border); border-radius:16px; padding:18px; }
+    .panel h3 { margin:0 0 12px; font-size:17px; color:var(--primary); }
+    ul { margin:0; padding-left:20px; }
+    li { margin-bottom:10px; color:var(--text-sub); }
+    li strong { color:var(--text-main); }
+    .cta-row { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+    .link-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; border-radius:12px; padding:10px 16px; font-weight:700; transition:transform .18s ease,box-shadow .18s ease; }
+    .link-btn.primary { background:var(--primary); color:#fff; box-shadow:0 8px 18px rgba(0,82,217,.22); }
+    .link-btn.secondary { background:var(--primary-soft); color:var(--primary); }
+    .link-btn:hover { transform:translateY(-1px); }
+    .tips-card h3,.source-card h3 { margin:0 0 12px; color:var(--primary); }
+    .foot { padding:0 44px 34px; color:var(--text-sub); font-size:13px; }
+    .foot strong { color:var(--text-main); }
+    a { color:var(--primary); }
+    @media (max-width:820px) { body{padding:14px;} .hero,.content,.foot{padding-left:22px;padding-right:22px;} .lead-grid,.grid-2{grid-template-columns:1fr;} .project-head{flex-direction:column;} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="badge-group"><span class="badge">GitHub 精选</span><span class="badge">2026-07-24</span><span class="badge">style_blue</span></div>
+      <h1>今日 GitHub 精选项目报告</h1>
+      <p>今天挑的两个项目，一个偏<strong>技术成长</strong>，一个偏<strong>工程落地</strong>。<strong>microsoft/mcp-for-beginners</strong> 适合系统补齐 MCP 知识，把“会用工具”升级成“理解协议与实现”；<strong>DeusData/codebase-memory-mcp</strong> 则代表 AI Coding Agent 的下一步基础设施，把代码库理解从“临时读文件”推进到“可持久查询的结构化知识图谱”。这两个项目放在一起看，很适合构建 2026 年开发者的 AI 工具视野。</p>
+    </section>
+    <main class="content">
+      <section class="lead-card">
+        <h2 class="section-title">📌 今日结论</h2>
+        <p class="summary">如果你最近在关注“AI 编程工具为什么越来越依赖 MCP 和代码理解基础设施”，今天这两个项目非常值得看。前者解决的是<strong>如何系统学会协议、客户端、服务端与安全实践</strong>，后者解决的是<strong>如何让 Agent 对大型代码库建立持久、低成本、可追问的结构化认知</strong>。一个偏学习曲线，一个偏生产力上限，组合起来很适合技术成长。</p>
+        <div class="lead-grid"><div class="metric"><span class="label">今日精选数量</span><span class="value">2 个</span></div><div class="metric"><span class="label">核心主题</span><span class="value">MCP 学习 × 代码智能</span></div><div class="metric"><span class="label">推荐关注点</span><span class="value">协议理解 / Agent 工具基础设施</span></div></div>
+      </section>
+
+      <section class="project-card">
+        <div class="project-head"><div><h2 class="project-title">1. microsoft/mcp-for-beginners</h2><p class="project-subtitle">微软开源的 MCP 入门课程：从核心概念、安全、客户端 / 服务端实现到调试部署，做成一套可直接上手的多语言实践路径</p></div><div class="rank">TOP 1</div></div>
+        <div class="meta-row"><span class="chip">📘 MCP Curriculum</span><span class="chip">🧠 AI Workflow</span><span class="chip">🔐 Security</span><span class="chip">🌐 Cross-language</span><span class="chip">C# / Java / JS / TS / Python / Rust</span></div>
+        <p class="summary"><strong>项目详细介绍：</strong>mcp-for-beginners 不是一篇 README 式的轻量教程，而是一套完整的开源课程。官方介绍强调，它通过 C#、Java、TypeScript、JavaScript、Rust 和 Python 的真实示例，系统讲解 MCP 的基础概念，并把重点放在模块化、可扩展、可安全落地的 AI 工作流实践上。微软官方博文进一步说明，这套课程按“基础认知 → 上手实现 → 实战应用 → 高级主题”递进设计，覆盖首个 MCP Server / Client、VS Code 集成、认证、调试、测试、部署与多种传输方式，适合开发者从只会配置工具，升级到真正理解协议和实现细节。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>不是零散教程，而是课程体系：</strong>从 Core Concepts、Security 到 Practical Implementation 和 Advanced Topics，知识路径比较完整。</li><li><strong>多语言对照学习：</strong>同一类 MCP 能力给出多语言实现，对后端、全栈和工具开发者都友好。</li><li><strong>覆盖工程化细节：</strong>不仅讲“怎么写一个服务”，还涉及测试、调试、认证、部署、Inspector、主机集成等真实开发问题。</li><li><strong>官方背书强：</strong>仓库 README 与微软官方社区文章都把重点放在可扩展、安全、模块化的 AI 工作流，而不是单次 Demo。</li><li><strong>适合建立协议思维：</strong>学完之后更容易理解为什么 Cursor、Claude Code、IDE 插件和业务系统会越来越多地接入 MCP。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>想系统学习 MCP：</strong>适合从零补课，不再停留在“会填配置文件”的层面。</li><li><strong>要自己写 MCP 服务：</strong>如果你想把内部工具、数据库、文档系统暴露给 Agent，这套课程是很好的起点。</li><li><strong>团队培训：</strong>对平台团队、AI 工具团队来说，可以作为统一的培训材料和概念底座。</li><li><strong>技术调研：</strong>如果你正在评估 MCP 是否值得引入业务研发流程，这个项目能帮你快速搭出完整认知框架。</li></ul></div></div>
+        <div class="panel" style="margin-top:16px;"><h3>为什么今天推荐它</h3><ul><li>MCP 已经从“新概念”逐渐变成 AI 工具接入的共同语言，越早补齐这块基础，越容易看懂后面的工具演进。</li><li>它特别适合技术成长，因为你学到的不只是某个工具的用法，而是协议、架构和安全边界。</li><li>如果你平时做后端、平台、研发效能或 Agent 工具，这个项目的学习回报很高。</li></ul></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/microsoft/mcp-for-beginners" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库</a><a class="link-btn secondary" href="https://techcommunity.microsoft.com/blog/azuredevcommunityblog/mcp-for-beginners-why-every-ai-engineer-and-developer-should-learn-the-model-con/4530623" target="_blank" rel="noopener noreferrer">查看官方介绍</a></div>
+      </section>
+
+      <section class="project-card">
+        <div class="project-head"><div><h2 class="project-title">2. DeusData/codebase-memory-mcp</h2><p class="project-subtitle">面向 AI Coding Agent 的代码智能 MCP Server：把代码库索引成持久化知识图谱，让结构问题从“重扫仓库”变成“低成本查询”</p></div><div class="rank">TOP 2</div></div>
+        <div class="meta-row"><span class="chip">🧩 MCP Server</span><span class="chip">🕸️ Knowledge Graph</span><span class="chip">⚡ Sub-ms Query</span><span class="chip">🧠 Hybrid LSP</span><span class="chip">C / Tree-sitter / LSP</span></div>
+        <p class="summary"><strong>项目详细介绍：</strong>codebase-memory-mcp 的核心思路很有代表性：它不直接做一个“会回答问题的 Agent”，而是先把代码库索引成<strong>持久化知识图谱</strong>，再通过 MCP 提供结构化查询能力，让 Claude Code 这类客户端可以更低成本地理解函数、类、调用链、HTTP 路由和跨服务链接。官方仓库页面强调它支持 158 种语言，查询延迟可做到亚毫秒级，安装形态是 macOS、Linux、Windows 通用的单个静态二进制；项目主页还强调它能把结构问题的 token 成本压到约 120 倍更低的量级。对经常在大仓库里做检索、追调用链、理解系统结构的开发者来说，这种“先结构化，再问答”的路线非常值得关注。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>代码理解持久化：</strong>不是每次提问都重新遍历仓库，而是预先构建知识图谱，让后续查询更稳定。</li><li><strong>Tree-sitter + Hybrid LSP：</strong>官方说明在 158 种语言的 AST 解析之上，还对 Python、TypeScript、Go、Rust、Java 等语言补了 Hybrid LSP 语义类型解析。</li><li><strong>面向 Agent 的接口设计：</strong>通过 MCP 暴露 15 个工具，更适合被 Claude Code 或其他 MCP 客户端程序化调用。</li><li><strong>部署与接入成本低：</strong>官方 README 强调是单个静态二进制，零依赖，适合个人和团队快速接入。</li><li><strong>适合大仓库场景：</strong>当代码规模上来后，这种“结构索引层”比单纯全文搜索更适合追问复杂关系。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>大型代码库理解：</strong>追踪某个函数被谁调用、某条链路经过哪些模块、某个路由对应到哪段实现。</li><li><strong>AI Coding Agent 增强：</strong>给 Claude Code、Cursor 类工具补一个更稳定的代码结构认知层。</li><li><strong>代码审查与重构前分析：</strong>先快速摸清调用关系和影响面，再进入修改阶段。</li><li><strong>多语言仓库协作：</strong>对前后端混合、多服务、多语言项目尤其有帮助。</li></ul></div></div>
+        <div class="panel" style="margin-top:16px;"><h3>为什么今天推荐它</h3><ul><li>它很能代表 AI 编程工具的下一步：不是只比模型强弱，而是比谁更懂代码库结构。</li><li>如果你想提升自己对“Agent 基础设施”的理解，这类项目比单纯的聊天式工具更有学习价值。</li><li>对日常开发也很实用，尤其适合复杂项目里的定位、追链路和理解陌生模块。</li></ul></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/DeusData/codebase-memory-mcp" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库</a><a class="link-btn secondary" href="https://deusdata.github.io/codebase-memory-mcp/" target="_blank" rel="noopener noreferrer">查看项目主页</a></div>
+      </section>
+
+      <section class="tips-card"><h3>🧭 今日阅读建议</h3><ul><li><strong>先看 mcp-for-beginners：</strong>重点理解 MCP 的客户端 / 服务端边界、认证、安全与调试链路。</li><li><strong>再看 codebase-memory-mcp：</strong>重点观察它如何把“代码检索”升级成“结构化知识图谱查询”。</li><li><strong>结合思考：</strong>如果以后你要做自己的 Agent 工具栈，前者更像协议和能力底座，后者更像代码理解层。</li></ul></section>
+      <section class="source-card"><h3>🔎 信息来源</h3><ul><li>microsoft/mcp-for-beginners GitHub 仓库 README：用于确认课程定位、多语言覆盖与工程化实践范围。</li><li>Microsoft Tech Community 官方文章《MCP for Beginners: Why Every AI Engineer and Developer Should Learn the Model Context Protocol》：用于确认课程结构与学习路线。</li><li>DeusData/codebase-memory-mcp GitHub 仓库 README 与项目主页：用于确认知识图谱、158 语言支持、Hybrid LSP、单静态二进制与查询能力定位。</li><li>内容生成时间：2026-07-24 CST</li></ul></section>
+    </main>
+    <div class="foot"><strong>输出文件：</strong>github-selected-20260724.html<br /><strong>生成说明：</strong>采用 style_blue 风格扩展生成，适配 GitHub Pages 发布。</div>
+  </div>
+</body>
+</html>
