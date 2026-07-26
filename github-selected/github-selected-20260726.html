@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub 精选项目报告 | 2026年7月26日</title>
+  <style>
+    :root { --primary:#0052D9; --primary-2:#2F80ED; --primary-soft:#EAF2FF; --bg:#F3F5F8; --card-bg:#FFFFFF; --text-main:#1C1F23; --text-sub:#5C6A82; --border:rgba(0,82,217,.13); --shadow:0 18px 48px rgba(8,32,71,.10); }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:24px; background:linear-gradient(180deg,#EEF4FF 0%,var(--bg) 280px); color:var(--text-main); font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; }
+    .wrap { max-width:980px; margin:0 auto; background:var(--card-bg); border-radius:28px; overflow:hidden; box-shadow:var(--shadow); }
+    .hero { position:relative; padding:44px 44px 36px; color:#fff; background:radial-gradient(circle at 86% 8%,rgba(255,255,255,.92),rgba(255,255,255,.12) 30%,transparent 48%),linear-gradient(135deg,#003EA8 0%,#0052D9 46%,#4FA3FF 100%); }
+    .hero:after { content:""; position:absolute; right:34px; bottom:-46px; width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,.12); filter:blur(1px); }
+    .badge-group { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px; }
+    .badge { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.22); font-size:13px; font-weight:700; }
+    h1 { margin:0 0 14px; font-size:34px; line-height:1.25; letter-spacing:-.02em; }
+    .hero p { margin:0; max-width:780px; color:rgba(255,255,255,.94); font-size:16px; position:relative; z-index:1; }
+    .content { padding:34px 44px 40px; }
+    .section-title { display:flex; align-items:center; gap:10px; margin:0 0 18px; font-size:24px; color:var(--primary); }
+    .lead-card,.project-card,.tips-card,.source-card { background:#fff; border:1px solid var(--border); border-radius:20px; padding:24px; margin-bottom:22px; box-shadow:0 10px 28px rgba(0,82,217,.06); }
+    .lead-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .metric { background:linear-gradient(180deg,#F8FBFF,#FFFFFF); border:1px solid var(--border); border-radius:16px; padding:16px; }
+    .metric .label { display:block; font-size:13px; color:var(--text-sub); margin-bottom:8px; }
+    .metric .value { display:block; font-size:22px; font-weight:800; color:var(--primary); }
+    .project-head { display:flex; justify-content:space-between; gap:18px; align-items:flex-start; margin-bottom:14px; }
+    .project-title { margin:0; font-size:28px; line-height:1.3; }
+    .project-subtitle { margin:8px 0 0; color:var(--text-sub); }
+    .rank { min-width:86px; text-align:center; background:linear-gradient(180deg,#F6FAFF,#EAF2FF); color:var(--primary); border-radius:16px; padding:14px 12px; border:1px solid var(--border); font-weight:800; }
+    .meta-row { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 18px; }
+    .chip { display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border-radius:999px; font-size:13px; color:var(--text-sub); background:#F7FAFE; border:1px solid rgba(92,106,130,.14); }
+    .summary { margin:0 0 18px; font-size:16px; color:var(--text-main); }
+    .grid-2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:12px; }
+    .panel { background:#FAFCFF; border:1px solid var(--border); border-radius:16px; padding:18px; }
+    .panel h3 { margin:0 0 12px; font-size:17px; color:var(--primary); }
+    ul { margin:0; padding-left:20px; }
+    li { margin-bottom:10px; color:var(--text-sub); }
+    li strong { color:var(--text-main); }
+    .cta-row { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+    .link-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; border-radius:12px; padding:10px 16px; font-weight:700; transition:transform .18s ease,box-shadow .18s ease; }
+    .link-btn.primary { background:var(--primary); color:#fff; box-shadow:0 8px 18px rgba(0,82,217,.22); }
+    .link-btn.secondary { background:var(--primary-soft); color:var(--primary); }
+    .link-btn:hover { transform:translateY(-1px); }
+    .tips-card h3,.source-card h3 { margin:0 0 12px; color:var(--primary); }
+    .foot { padding:0 44px 34px; color:var(--text-sub); font-size:13px; }
+    .foot strong { color:var(--text-main); }
+    a { color:var(--primary); }
+    @media (max-width:820px) { body{padding:14px;} .hero,.content,.foot{padding-left:22px;padding-right:22px;} .lead-grid,.grid-2{grid-template-columns:1fr;} .project-head{flex-direction:column;} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="badge-group"><span class="badge">GitHub 精选</span><span class="badge">2026-07-26</span><span class="badge">style_blue</span></div>
+      <h1>今日 GitHub 精选项目报告</h1>
+      <p>今天挑的两个项目，一个代表 <strong>终端里的 AI 编程代理</strong>，一个代表 <strong>Agent 接入 GitHub 能力的标准化接口</strong>。<strong>openai/codex</strong> 适合关注日常编码、脚本自动化和本地工作流增强的开发者；<strong>github/github-mcp-server</strong> 则更值得做平台、工程效能和 Agent 工具链的人重点研究。一个偏“怎么把 AI 真正放进开发现场”，一个偏“怎么把 GitHub 变成 Agent 可操作的能力层”，组合起来很有代表性。</p>
+    </section>
+    <main class="content">
+      <section class="lead-card">
+        <h2 class="section-title">📌 今日结论</h2>
+        <p class="summary">如果你最近在关注 AI Coding、MCP 和研发自动化，这两个仓库都很值得读。<strong>Codex CLI</strong> 的价值在于把本地终端、代码库、脚本执行和模型能力串到一起，形成可直接落地的个人生产力入口；<strong>GitHub MCP Server</strong> 的价值在于把仓库、Issue、PR、工作流、Actions、代码分析等 GitHub 能力标准化暴露给 Agent，使“AI 读懂并操作工程系统”这件事真正可复用、可扩展。前者偏个人工作台，后者偏团队基础设施。</p>
+        <div class="lead-grid"><div class="metric"><span class="label">今日精选数量</span><span class="value">2 个</span></div><div class="metric"><span class="label">核心主题</span><span class="value">终端 Agent × GitHub MCP</span></div><div class="metric"><span class="label">推荐关注点</span><span class="value">本地执行 / 自然语言操作 / 工程自动化</span></div></div>
+      </section>
+
+      <section class="project-card">
+        <div class="project-head"><div><h2 class="project-title">1. openai/codex</h2><p class="project-subtitle">OpenAI 开源的本地终端编码代理：把代码理解、命令执行与开发者日常工作流真正接到一条命令里</p></div><div class="rank">TOP 1</div></div>
+        <div class="meta-row"><span class="chip">💻 Terminal Agent</span><span class="chip">🧠 OpenAI Codex CLI</span><span class="chip">🗂️ 本地运行</span><span class="chip">🔌 IDE 可扩展</span><span class="chip">CLI / npm / Homebrew</span></div>
+        <p class="summary"><strong>项目详细介绍：</strong>openai/codex 的定位很直接，它不是一个仅用于演示的聊天壳，而是一个<strong>运行在本机上的 coding agent</strong>。官方 README 开头就明确说明 Codex CLI 是 OpenAI 提供的本地编码代理，同时还把形态区分得很清楚：既可以作为终端工具独立使用，也可以安装到 VS Code、Cursor、Windsurf 等 IDE 里，还能切到桌面 App 或 Web 入口。对开发者来说，它最有价值的地方在于：你不再只是“问模型一个问题”，而是在自己的代码库、Shell 和实际开发环境里，直接让 Agent 参与理解、执行和推进工作。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>本地优先：</strong>官方强调它运行在你的电脑上，这意味着它天然适合与本地代码库、Shell 命令和开发环境结合，而不是停留在纯网页对话层。</li><li><strong>安装链路很完整：</strong>支持官方安装脚本、npm、Homebrew 和 GitHub Release 二进制，门槛低，适合快速试用和团队内传播。</li><li><strong>形态统一：</strong>同一套能力既能在 CLI 用，也能接到 IDE，还能扩展到桌面与 Web 体验，说明它不是一次性工具，而是完整产品矩阵的一部分。</li><li><strong>认证方式灵活：</strong>既可直接走 ChatGPT 账号登录，也支持 API Key，兼顾个人开发者和更工程化的接入方式。</li><li><strong>适合自动化：</strong>作为命令行代理，它天然适合进入脚本、终端日常流程和研发自动化场景，而不仅仅是临时问答。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>本地代码理解与修改：</strong>在仓库中快速询问实现逻辑、生成脚本、辅助重构或定位问题。</li><li><strong>终端增强：</strong>把常见的命令行操作与 AI 辅助结合，让脚本编写、命令生成和排障更顺手。</li><li><strong>IDE 协作开发：</strong>如果你本来就在 VS Code 或 Cursor 里写代码，Codex 的 IDE 形态更容易嵌进现有工作流。</li><li><strong>个人研发效率提升：</strong>适合需要频繁切换阅读代码、执行命令、写脚本和验证思路的开发者。</li></ul></div></div>
+        <div class="panel" style="margin-top:16px;"><h3>为什么今天推荐它</h3><ul><li>它代表了一个非常现实的趋势：<strong>AI Coding 正在从“聊天建议”走向“终端里的可执行代理”</strong>。</li><li>如果你想判断一类工具是不是能真正提升生产力，看它是否能进入本地工作流，比看 Demo 更有意义。</li><li>对技术成长来说，研究这类项目能帮助你更早理解未来开发工具会如何重构命令行和 IDE 协作边界。</li></ul></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库</a><a class="link-btn secondary" href="https://developers.openai.com/codex" target="_blank" rel="noopener noreferrer">查看官方文档</a></div>
+      </section>
+
+      <section class="project-card">
+        <div class="project-head"><div><h2 class="project-title">2. github/github-mcp-server</h2><p class="project-subtitle">GitHub 官方 MCP Server：把仓库、Issue、PR、工作流和代码分析能力标准化开放给 AI 工具</p></div><div class="rank">TOP 2</div></div>
+        <div class="meta-row"><span class="chip">🔌 MCP Server</span><span class="chip">🐙 GitHub Official</span><span class="chip">📦 Repo / PR / Issue</span><span class="chip">⚙️ Actions / CI</span><span class="chip">Go / Remote + Local</span></div>
+        <p class="summary"><strong>项目详细介绍：</strong>github/github-mcp-server 是 GitHub 官方推出的 MCP Server，目标非常明确：把 GitHub 平台本身变成 AI 工具可以直接连接和操作的能力层。官方 README 对场景描述得很完整，包括读取代码仓库、管理 Issue 和 PR、分析代码、查看工作流、跟踪构建失败、检查安全告警和辅助团队协作等。它最有价值的地方不只是“能让 Agent 访问 GitHub”，而是把这些能力按 MCP 标准组织起来，让不同的 Agent、IDE 和终端工具，都能用一种更统一的方式接入 GitHub 上下文与操作能力。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>官方能力面很完整：</strong>覆盖仓库管理、Issue/PR 自动化、CI/CD 工作流洞察、代码分析和团队协作，不是单点工具而是平台型接口。</li><li><strong>同时支持 Remote 和 Local：</strong>既可以直接使用 GitHub 托管的远程 MCP Server，也可以在本地自建，适配不同宿主环境和企业治理要求。</li><li><strong>接入面广：</strong>官方文档直接列出 VS Code、Claude、Cursor、Codex、Windsurf、Zed 等多种宿主，说明生态兼容性已经被认真考虑。</li><li><strong>自然语言驱动工程操作：</strong>它把“读仓库、查 PR、看 Actions、分析安全问题”这些原本分散的 GitHub 操作统一成 Agent 可调用的能力。</li><li><strong>适合团队级落地：</strong>除了个人使用，它还明显面向工程团队和平台治理场景，适合继续往内部研发助手方向延伸。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>研发助手接 GitHub：</strong>给内部 Agent 或 IDE 助手补上仓库、Issue、PR、Actions 等 GitHub 能力。</li><li><strong>自动化代码协作：</strong>让 AI 辅助做 PR 分析、Issue 分流、构建失败排查和工程巡检。</li><li><strong>平台工具建设：</strong>如果你在做研发效能平台、DevEx 平台或企业智能助手，这个仓库很值得当样板研究。</li><li><strong>多工具统一接入：</strong>适合希望让不同宿主共享一套 GitHub 能力层的团队，降低重复集成成本。</li></ul></div></div>
+        <div class="panel" style="margin-top:16px;"><h3>为什么今天推荐它</h3><ul><li>它代表了 MCP 真正开始进入工程系统核心能力层，而不只是玩具级插件集合。</li><li>如果你以后想做自己的研发 Agent，GitHub 往往是最关键的外部系统之一，这个仓库几乎是必看样本。</li><li>相比只关注模型和提示词，这类基础设施项目更能决定 Agent 在企业研发场景里能不能真正落地。</li></ul></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/github/github-mcp-server" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库</a><a class="link-btn secondary" href="https://docs.github.com" target="_blank" rel="noopener noreferrer">查看 GitHub Docs</a></div>
+      </section>
+
+      <section class="tips-card"><h3>🧭 今日阅读建议</h3><ul><li><strong>先看 Codex：</strong>重点观察它为什么强调本地运行，以及 CLI、IDE、桌面和 Web 四种形态是如何协同的。</li><li><strong>再看 GitHub MCP Server：</strong>重点关注它暴露了哪些 GitHub 能力，以及这些能力为什么适合做成 MCP 标准接口。</li><li><strong>结合思考：</strong>如果未来要做自己的研发 Agent，Codex 更像交互入口，GitHub MCP Server 更像工程系统连接层。</li></ul></section>
+      <section class="source-card"><h3>🔎 信息来源</h3><ul><li>openai/codex GitHub 仓库 README：用于确认 Codex CLI 的定位、安装方式、认证方式与产品形态。</li><li>OpenAI Codex 官方文档：用于确认产品文档入口和官方使用说明。</li><li>github/github-mcp-server GitHub 仓库 README：用于确认 MCP Server 的能力边界、典型场景、Remote/Local 形态与兼容宿主。</li><li>内容生成时间：2026-07-26 CST</li></ul></section>
+    </main>
+    <div class="foot"><strong>输出文件：</strong>github-selected-20260726.html<br /><strong>生成说明：</strong>采用 style_blue 风格扩展生成，适配 GitHub Pages 发布。</div>
+  </div>
+</body>
+</html>
