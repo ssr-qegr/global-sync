@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>今日精选晨报 - 2026年7月29日</title>
+  <style>
+    :root {
+      --primary: #00B26B;
+      --accent: #0AAE9E;
+      --bg: #F2FBF6;
+      --card-bg: rgba(255,255,255,0.96);
+      --text-main: #173B2E;
+      --text-sub: #58706A;
+      --line: rgba(10,174,158,0.18);
+      --soft: #F7FFFB;
+      --up: #D64B4B;
+      --down: #0F8F79;
+      --flat: #6C7A76;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: "Nunito", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at top left, rgba(0,178,107,0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(10,174,158,0.12), transparent 26%),
+        var(--bg);
+      line-height: 1.75;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 42px;
+      box-shadow: 0 24px 64px rgba(15,143,121,0.10);
+    }
+    .header {
+      text-align: center;
+      padding-bottom: 22px;
+      margin-bottom: 30px;
+      border-bottom: 2px dashed rgba(10,174,158,0.24);
+    }
+    .header h1 {
+      margin: 0 0 10px;
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+    }
+    .date {
+      font-size: 15px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+    .brief {
+      margin-top: 14px;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .section-title {
+      margin: 34px 0 16px;
+      padding-bottom: 8px;
+      font-size: 23px;
+      font-weight: 900;
+      color: var(--accent);
+      border-bottom: 2px dashed rgba(10,174,158,0.22);
+    }
+    .news-item {
+      position: relative;
+      margin-bottom: 24px;
+      padding: 24px 24px 24px 46px;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--soft) 100%);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .news-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(15,143,121,0.10);
+      border-color: rgba(10,174,158,0.38);
+    }
+    .news-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 12px;
+      border-radius: 22px 0 0 22px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+    }
+    .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(10,174,158,0.16);
+      background: rgba(0,178,107,0.10);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .news-item h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      font-weight: 850;
+      color: var(--text-main);
+    }
+    .news-item h3 {
+      margin: 14px 0 6px;
+      font-size: 16px;
+      font-weight: 850;
+      color: var(--accent);
+    }
+    .news-item p {
+      margin: 0 0 10px;
+      font-size: 15px;
+      color: var(--text-sub);
+    }
+    .stock-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 14px;
+      margin: 12px 0;
+      font-size: 14px;
+    }
+    .stock-table th {
+      padding: 10px 12px;
+      text-align: left;
+      color: var(--accent);
+      background: rgba(0,178,107,0.10);
+      font-weight: 850;
+    }
+    .stock-table td {
+      padding: 10px 12px;
+      color: var(--text-sub);
+      border-bottom: 1px solid rgba(10,174,158,0.10);
+    }
+    .up { color: var(--up); font-weight: 800; }
+    .down { color: var(--down); font-weight: 800; }
+    .flat { color: var(--flat); font-weight: 800; }
+    .source {
+      margin-top: 10px;
+      color: rgba(88,112,106,0.92);
+      font-size: 13px;
+    }
+    .source a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .source a:hover { text-decoration: underline; }
+    .footer {
+      margin-top: 32px;
+      padding-top: 18px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(88,112,106,0.92);
+      border-top: 1px dashed rgba(10,174,158,0.24);
+      font-weight: 700;
+    }
+    @media (max-width: 600px) {
+      body { padding: 12px; }
+      .container { padding: 24px; border-radius: 20px; }
+      .header h1 { font-size: 28px; }
+      .news-item { padding: 20px 20px 20px 32px; }
+      .stock-table { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🌅 今日精选晨报</h1>
+      <div class="date">✨ 2026年7月29日 星期三 ✨</div>
+      <div class="brief">今天重点看全球主要指数最新收盘分化、国内社会治理新部署、财政金融协同扩内需的最新成效，以及 AI 从大会展示到资本绑定同步升温的新变化。</div>
+    </div>
+
+    <div class="section-title">📈 ① 股市总览</div>
+    <div class="news-item">
+      <span class="tag">🌐 主要指数收盘表现（2026-07-28）</span>
+      <table class="stock-table">
+        <tr><th>市场</th><th>指数</th><th>收盘点位</th><th>涨跌幅</th><th>解读</th></tr>
+        <tr><td>A股</td><td>上证指数</td><td>3813.31</td><td class="flat">-0.02%</td><td>大盘基本横盘，权重方向偏稳</td></tr>
+        <tr><td>A股</td><td>深证成指</td><td>13509.68</td><td class="down">-1.92%</td><td>成长板块承压更明显，情绪偏谨慎</td></tr>
+        <tr><td>港股</td><td>恒生指数</td><td>25310.85</td><td class="up">+0.41%</td><td>港股延续修复，风险偏好略有回暖</td></tr>
+        <tr><td>美股</td><td>纳斯达克</td><td>24876.91</td><td class="flat">-0.22%</td><td>科技股高位震荡，资金开始做筛选</td></tr>
+        <tr><td>美股</td><td>道琼斯指数</td><td>52747.32</td><td class="up">+1.03%</td><td>传统蓝筹更强，防御与顺周期获买盘</td></tr>
+        <tr><td>美股</td><td>标普500</td><td>7428.78</td><td class="up">+0.21%</td><td>大盘维持强势，但结构分化加大</td></tr>
+      </table>
+      <h3>📰 新闻原文摘要</h3>
+      <p>7月28日收盘后，A股内部出现明显分化，上证指数基本持平、深证成指回落较多；港股小幅走强；美股则呈现“纳指调整、道指走强、标普续稳”的结构。整体来看，全球风险偏好并未全面转弱，而是在从追逐高弹性题材，转向更看重盈利兑现和宏观韧性的方向。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>简单说就是：钱还在市场里，但已经不是“什么都买”了。A股偏谨慎，港股稍微回暖，美股里科技股有点歇脚，传统权重和更稳的资产反而更受欢迎。</p>
+      <h3>💡 意义解读</h3>
+      <p>这种盘面意味着接下来市场会更挑剔：只有真正有业绩、有政策支持或者有明确事件催化的方向，才更容易继续走强。对短线交易来说，节奏比方向更重要；对中期观察来说，全球资金仍在寻找“确定性增长”资产。</p>
+      <div class="source">来源：Yahoo Finance 指数数据（000001.SS、399001.SZ、^HSI、^IXIC、^DJI、^GSPC）</div>
+    </div>
+
+    <div class="section-title">🏛️ ② 时事政治</div>
+    <div class="news-item">
+      <span class="tag">🇨🇳 国内</span>
+      <h2>中共中央、国务院印发《关于加强新时代社会工作的意见》</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>新华社7月23日电显示，中共中央、国务院近日印发《关于加强新时代社会工作的意见》，要求健全党领导社会工作的体制机制，抓好新经济组织、新社会组织、新就业群体党建，推进基层治理、信访法治化、智慧社区和数字乡村建设等重点任务。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>这份文件的核心不是讲一个单点政策，而是在给未来基层治理和社会协同定总方向：平台经济、新就业群体、社区治理、数字化服务这些过去比较分散的事情，后面会被更系统地放到一张大图里推进。</p>
+      <h3>💡 意义解读</h3>
+      <p>这说明社会治理正在从“发现问题再处理”，向“前置治理、数字协同、基层承接”升级。对地方治理、公共服务、社区数字化和平台规则建设来说，后续大概率会看到更具体的制度配套和落地动作。</p>
+      <div class="source">来源：<a href="http://jjckb.xinhuanet.com/20260724/4d455f9e2f8a42f8bbd685b5603607d5/c.html">新华社/经济参考网</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌍 国际</span>
+      <h2>阿曼向伊朗提出霍尔木兹海峡管理方案，试图为贸易通道降温</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>多家媒体援引路透7月28日报道称，阿曼已向伊朗提出一项由海湾国家支持的霍尔木兹海峡管理方案，内容包括对过航船只收取“自愿费用”，并将其作为恢复海峡贸易秩序、缓解地区紧张局势的谈判基础。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>翻成人话就是：各方现在不是直接把矛盾彻底解决了，而是先想办法让最关键的海上通道恢复可运行状态，避免局势继续拖累油运、航运和全球供应链。</p>
+      <h3>💡 意义解读</h3>
+      <p>霍尔木兹海峡是全球能源运输要道，只要这里出现新的管理安排或摩擦降温信号，油价、航运费率和全球风险资产都会第一时间响应。哪怕这是一个过渡方案，也意味着中东风险正在从军事层面对抗，转向更强的谈判博弈阶段。</p>
+      <div class="source">来源：<a href="https://www.channelnewsasia.com/world/oman-proposal-iran-hormuz-us-paused-strikes-6284111">Channel News Asia（援引 Reuters）</a></div>
+    </div>
+
+    <div class="section-title">💰 ③ 金融财经</div>
+    <div class="news-item">
+      <span class="tag">🏦 国内财经</span>
+      <h2>财政部强调“财政+金融”协同促内需，上半年相关贷款超17万亿元</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>财政部7月23日刊文称，今年创新设立财政金融协同促内需政策工具，中央财政安排1000亿元，推出6项政策统筹推进促消费、扩投资。文章披露，上半年相关领域4项贷款合计超17万亿元，同比增长4.6%；两项促消费政策惠及居民消费约1.31万亿元，约9900万人次享受到贴息红利。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>意思很明确：这轮政策不只是财政出钱，而是想用财政资金撬动更多银行信贷和社会资本，让消费和投资一起被带动起来，放大政策效果。</p>
+      <h3>💡 意义解读</h3>
+      <p>这说明宏观政策正在从“单一刺激”走向“组合杠杆”。后续值得重点关注的，不只是总量是不是继续加码，更是谁能真正承接住这波信用扩张，比如设备更新、服务消费、民间投资和新兴产业升级链条。</p>
+      <div class="source">来源：<a href="https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/202607/t20260723_3994034.htm">中华人民共和国财政部</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌍 国际财经</span>
+      <h2>路透调查：全球高通胀风险更顽固，经济学家普遍下修增长预期</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>根据路透7月28日发布的调查，近500名经济学家大多上调了通胀预测、下调了增长预期。调查背景是中东冲突进入更长期拉扯阶段，能源与运输成本的不确定性上升，全球经济面临“高成本、低确定性”并存压力。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>说白了就是：大家越来越担心，通胀不会那么快下去，但经济又很难更强。企业成本高、居民支出谨慎、央行也更难轻松放松政策。</p>
+      <h3>💡 意义解读</h3>
+      <p>如果“高通胀但低增长”成为更长时间的现实，全球市场的定价逻辑就会继续偏保守：一边担心利率降不下来，一边担心盈利修复不够快。这会让大宗商品、债券、股票之间的博弈更频繁，宏观波动率也容易抬高。</p>
+      <div class="source">来源：<a href="https://live.euronext.com/en/financial-news/persistently-high-inflation-nag-global-economy-say-economists-reuters-poll">Euronext（转载 Reuters）</a></div>
+    </div>
+
+    <div class="section-title">🚀 ④ 技术领域</div>
+    <div class="news-item">
+      <span class="tag">🤖 国内技术</span>
+      <h2>WAIC 2026 折射行业新方向：AI 开始从“会说”走向“真干活”</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>新华社/经济参考报对 WAIC 2026 的总结提到，本届大会有千余家企业、3000余项前沿成果集中亮相，超300款新品首发。大会呈现出三条主线：具身智能加速迈向物理世界、AI 深度赋能产业落地，以及安全可靠可控的治理框架同步强化。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>过去大家看 AI，更多是在比“谁回答得更聪明”；现在大家更关心“谁能真的去执行任务、进入工厂、进到业务流程里”。能不能干活，开始比会不会聊天更重要。</p>
+      <h3>💡 意义解读</h3>
+      <p>这意味着国内 AI 竞争正从模型单点能力，转向终端、机器人、行业系统和治理能力的整体比拼。后面更容易跑出来的，不只是模型强的公司，而是能把产品、场景、工程交付和生态协同一起做起来的平台型玩家。</p>
+      <div class="source">来源：<a href="http://www.xinhuanet.com/fortune/20260720/aebc6e7080b34f66a22190bebf472534/c.html">新华社/经济参考报</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌐 国际技术</span>
+      <h2>英伟达拟向 Safe Superintelligence 投资50亿美元，继续加码头部 AI 阵营</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>多家媒体援引路透7月27日报道称，英伟达将向 OpenAI 前首席科学家 Ilya Sutskever 联合创办的 Safe Superintelligence 投资50亿美元，作为双方战略合作的一部分。合作方同时表示，这笔交易将进一步增强 SSI 的可用算力资源。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>这件事很好理解：AI 竞争已经不只是比模型效果，而是要提前把芯片、算力、资金和合作关系一起锁住。谁掌握底层资源，谁就更有资格参加下一阶段比赛。</p>
+      <h3>💡 意义解读</h3>
+      <p>头部 AI 公司的竞争门槛还在继续升高。英伟达不再只是卖芯片，也在通过资本和生态绑定更深地介入模型公司成长路径。这会进一步强化“芯片商—算力平台—模型公司”之间的联盟关系，让行业集中度持续抬升。</p>
+      <div class="source">来源：<a href="https://www.channelnewsasia.com/business/nvidia-invest-5-billion-in-ilya-sutskevers-ai-startup-source-says-6281401">Channel News Asia（援引 Reuters）</a></div>
+    </div>
+
+    <div class="footer">
+      🌿 今天的关键词：指数分化、社会治理、霍尔木兹、财金协同、顽固通胀、AI 真落地。
+    </div>
+  </div>
+</body>
+</html>
