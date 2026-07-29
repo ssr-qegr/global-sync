@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>今日副业探索报告｜AI 询盘报价自动化代搭 & AI 长内容商品化工作室</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff8ed;
+      --bg-soft: #fff3df;
+      --card: rgba(255,255,255,.88);
+      --text: #352317;
+      --muted: #7a6658;
+      --line: rgba(183, 126, 73, .22);
+      --amber: #d97706;
+      --orange: #f97316;
+      --rose: #fb7185;
+      --green: #16a34a;
+      --shadow: 0 24px 60px rgba(124, 75, 25, .16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(251, 146, 60, .30), transparent 34%),
+        radial-gradient(circle at 86% 12%, rgba(251, 113, 133, .18), transparent 30%),
+        radial-gradient(circle at 50% 92%, rgba(245, 158, 11, .16), transparent 32%),
+        linear-gradient(145deg, #fffaf1 0%, #fff4e5 48%, #fffdf8 100%);
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 42px 0 48px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 34px; padding: clamp(28px, 5vw, 54px); background: linear-gradient(135deg, rgba(255,255,255,.94), rgba(255,246,231,.84)); box-shadow: var(--shadow); backdrop-filter: blur(18px); }
+    .hero::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px; border-radius: 50%; background: conic-gradient(from 120deg, rgba(249,115,22,.36), rgba(251,113,133,.24), rgba(245,158,11,.28), rgba(249,115,22,.36)); filter: blur(4px); opacity: .75; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border-radius: 999px; background: #fff3df; border: 1px solid var(--line); color: #9a5a13; font-size: 13px; font-weight: 700; }
+    h1 { position: relative; z-index: 1; margin: 20px 0 12px; font-size: clamp(34px, 5.5vw, 62px); line-height: 1.04; letter-spacing: -.045em; }
+    .lead { position: relative; z-index: 1; max-width: 880px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.85; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .metric { padding: 17px; border-radius: 22px; background: rgba(255,255,255,.78); border: 1px solid rgba(183,126,73,.18); }
+    .metric b { display: block; font-size: 23px; color: #8a4b0f; }
+    .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .section { margin-top: 22px; border: 1px solid var(--line); border-radius: 30px; background: var(--card); box-shadow: 0 16px 42px rgba(124,75,25,.11); overflow: hidden; }
+    .section-head { padding: 26px 28px 18px; border-bottom: 1px solid var(--line); background: linear-gradient(90deg, rgba(255,247,237,.92), rgba(255,255,255,.70)); }
+    .section-kicker { color: var(--orange); font-size: 13px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { margin: 8px 0 8px; font-size: clamp(25px, 3vw, 36px); letter-spacing: -.025em; }
+    .section-head p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .content { padding: 26px 28px 30px; }
+    .verdict { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: stretch; }
+    .note, .score-card { border: 1px solid rgba(183,126,73,.18); border-radius: 24px; background: #fffdf9; padding: 20px; }
+    .note strong { color: #92400e; }
+    .note p { color: var(--muted); line-height: 1.75; margin: 8px 0 0; }
+    .scores { display: grid; gap: 12px; }
+    .bar { display: grid; gap: 7px; }
+    .bar-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+    .track { height: 10px; border-radius: 999px; background: #fde7c8; overflow: hidden; }
+    .fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--amber), var(--rose)); }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { border: 1px solid var(--line); border-radius: 28px; padding: 24px; background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,243,.84)); box-shadow: 0 14px 32px rgba(124,75,25,.09); }
+    .tagline { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .pill { border-radius: 999px; padding: 6px 10px; background: #fff3df; border: 1px solid rgba(183,126,73,.18); color: #9a5a13; font-size: 12px; font-weight: 700; }
+    .project h3 { margin: 0 0 10px; font-size: 25px; letter-spacing: -.02em; }
+    .project p { margin: 0 0 16px; color: var(--muted); line-height: 1.75; }
+    .list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .list li { padding: 12px 13px; border-radius: 16px; background: rgba(255,246,231,.72); color: #574234; line-height: 1.62; }
+    .list b { color: #8a4b0f; }
+    .table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 20px; }
+    .table th, .table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(183,126,73,.16); vertical-align: top; line-height: 1.65; }
+    .table th { background: #fff3df; color: #8a4b0f; font-size: 13px; }
+    .table tr:last-child td { border-bottom: 0; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: step; }
+    .step { position: relative; padding: 20px; border-radius: 22px; border: 1px solid rgba(183,126,73,.18); background: #fffdf9; }
+    .step::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #f97316; color: white; font-weight: 800; margin-bottom: 12px; }
+    .step h4 { margin: 0 0 8px; font-size: 17px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
+    .warn { border-left: 5px solid var(--orange); background: #fff7ed; padding: 16px 18px; border-radius: 18px; color: #614331; line-height: 1.7; }
+    .sources { display: grid; gap: 9px; color: var(--muted); line-height: 1.65; font-size: 13px; }
+    .sources a { color: #9a5a13; font-weight: 700; }
+    footer { color: var(--muted); text-align: center; margin-top: 26px; line-height: 1.8; font-size: 14px; }
+    @media (max-width: 860px) { .hero-grid, .projects, .steps, .verdict { grid-template-columns: 1fr; } .wrap { width: min(100% - 24px, 1120px); padding-top: 22px; } .section-head, .content { padding-left: 20px; padding-right: 20px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">☕ style_warm · 2026-07-29 · 今日副业探索</div>
+      <h1>今天更值得验证的两条线：AI 询盘报价自动化代搭 + AI 长内容商品化工作室</h1>
+      <p class="lead">今天这两个方向都更偏“卖结果而不是卖技术”。第一条线面向本地服务商、小型 agency、顾问和工作室，帮他们把询盘收集、需求整理、报价草案、proposal 输出与后续提醒连成一条轻自动化链路；第二条线面向有直播、课程、播客、访谈或社群分享库存的人，把已有长内容整理成电子书、清单、训练营资料包与付费下载页。一个适合快成交的服务型收入，一个适合沉淀复卖资产。</p>
+      <div class="hero-grid">
+        <div class="metric"><b>2 个</b><span>今日推荐方向</span></div>
+        <div class="metric"><b>Free 起步</b><span>两条线都能先做样板</span></div>
+        <div class="metric"><b>高自动化</b><span>重复整理与输出环节占比高</span></div>
+        <div class="metric"><b>双收益模式</b><span>可同时做服务费与复购/复卖</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Overall Verdict</div>
+        <h2>今日结论：先用“AI 询盘报价自动化代搭”拿下更容易理解的订单，再把客户或创作者已有内容延伸成“AI 长内容商品化工作室”做长期资产</h2>
+        <p>公开资料更支持一条朴素判断：个人做 AI 副业，最好优先切入客户已经能感知价值的流程，再逐步把同样的方法打包成可复用资产。先把询盘、报价、跟进这类离钱更近的环节梳顺，更容易拿到第一笔订单；有了客户素材与场景，再继续做内容商品化，收益结构会更稳。</p>
+      </div>
+      <div class="content verdict">
+        <div class="note">
+          <strong>推荐启动顺序：</strong>
+          <p>先做 AI 询盘报价自动化代搭，因为客户最容易为“少漏单、回得更快、报价更专业”买单；等你积累了几个熟悉的行业模板后，再把客户已有直播、课程、播客或访谈内容整理成电子书、清单、资料包和下载页。这样你既不是从零找第二种客户，也不是重新学习一套完全不同的交付逻辑，而是在同一个场景里把一次成交扩成两层收入。</p>
+        </div>
+        <div class="score-card">
+          <div class="scores">
+            <div class="bar"><div class="bar-row"><span>AI 自动化程度</span><b>高</b></div><div class="track"><div class="fill" style="width:89%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>启动门槛</span><b>低-中</b></div><div class="track"><div class="fill" style="width:32%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>回款节奏</span><b>服务更快</b></div><div class="track"><div class="fill" style="width:84%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>长期复利</span><b>内容资产更强</b></div><div class="track"><div class="fill" style="width:88%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Projects</div>
+        <h2>今日 2 个副业方向</h2>
+        <p>一个卖“让客户更快发出专业报价”的结果，一个卖“把已有内容变成长期可售资产”的复利，二者都适合个人用现成工具组合完成交付。</p>
+      </div>
+      <div class="content projects">
+        <article class="project">
+          <div class="tagline"><span class="pill">离钱近</span><span class="pill">快成交</span><span class="pill">流程型服务</span></div>
+          <h3>01｜AI 询盘到报价单自动化代搭</h3>
+          <p>面向本地服务商、小型 agency、设计工作室、顾问、培训团队和自由职业者，帮他们把“客户填需求 → 自动归纳重点 → 生成报价草案 → 输出 proposal/quote → 自动提醒跟进”串成一条轻量流程。你卖的不是单个表单或文档工具，而是一套更快拿单、更少来回确认的成交流程。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>典型交付包括：需求收集表单、自动整理字段映射、报价模板、常见套餐说明、proposal 页面、签署或确认入口，以及一次基础跟进提醒流程。客户最直观的感受是：不再用微信聊天记录和手工 Word 文档拼报价。</li>
+            <li><b>可行性分析：</b>Tally 官方首页与价格页都明确支持免费创建表单并提供 unlimited forms / submissions；PandaDoc 官方页面则直接把 quoting software、pricing tables 和 automated systems 作为核心能力。这意味着个人完全可以不自研系统，先把工具拼成客户能看懂的流程，再按行业沉淀模板。</li>
+            <li><b>AI 自动化程度：</b>需求摘要、报价草案、常见条款说明、proposal 文案、跟进提醒文本和周报复盘都适合交给 AI 生成；人工主要负责校准套餐边界、避免过度承诺，并把行业经验写进模板。整体属于高自动化、低重复劳动的服务线。</li>
+            <li><b>启动成本：</b>前期可直接用免费表单和轻量模板做样板，等客户稳定后再按实际需要升级到更完整的 proposal / agreement workflow。现金门槛不高，真正的成本主要在于你是否能把客户的报价逻辑梳理清楚。</li>
+            <li><b>预期收益：</b>更适合按“搭建费 + 模板改版费 + 月维护费”收费。只要客户的询盘稳定，这类服务容易升级为长期合作，因为每次报价更新、套餐调整、活动促销都需要你继续维护模板与流程。</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="tagline"><span class="pill">可复卖</span><span class="pill">内容资产</span><span class="pill">边际更低</span></div>
+          <h3>02｜AI 长内容转电子书 / 付费资料包工作室</h3>
+          <p>把客户或创作者已经拥有的长内容，比如直播回放、课程录屏、播客访谈、社群分享、线上 workshop 和长视频脚本，整理成电子书、步骤清单、复盘手册、训练营资料包、术语卡或下载型产品，再上架到 Gumroad 等平台售卖，或作为私域引流赠品使用。相比从零构思新产品，这条线更容易起步，因为素材已经存在。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>最小交付可以是：拿一场直播或一段播客，先做转录与内容提炼，再整理成电子书、清单、模板包和下载页文案。你卖的是“把已有表达整理成更好卖、更好存档的商品”，不是单纯排版服务。</li>
+            <li><b>可行性分析：</b>Descript 官方帮助中心把 Repurpose 定义为将长内容转成 clips、posts 和 highlight reel，价格页也明确支持 free to start；Gumroad 官方则采用无月费、按交易抽成的模式，并支持 one-time、recurring 等付款方式。说明“内容提炼 + 商品上架”这条路径对个人非常友好，前期并不需要自己搭商城。</li>
+            <li><b>AI 自动化程度：</b>转录、摘要、章节整理、标题草稿、清单抽取、FAQ 整理、封面文案、商品详情页草稿和邮件预热文案都适合交给 AI；人工主要负责判断内容是否值得付费、补足结构层次、做最后的人味表达和定价策略。整体自动化程度高，且随着模板积累会越来越顺手。</li>
+            <li><b>启动成本：</b>可以先用免费或轻量版工具把首个样板做出来，再决定要不要升级编辑与分发能力。因为平台本身支持低门槛起步，前期最重要的不是砸钱买工具，而是挑对有价值的素材和适合付费的人群。</li>
+            <li><b>预期收益：</b>既可以收“内容商品化代做费”，也可以和客户谈“下载页代运营 / 活动转化包 / 持续资料更新包”。如果你自己也开始做模板、术语卡、复盘手册之类的数字产品，后续还能叠加长期复卖收入。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Comparison</div>
+        <h2>投入产出对比</h2>
+        <p>AI 询盘报价自动化代搭更适合先拿服务单，AI 长内容商品化工作室更适合做出可复卖资产。最顺的路径通常是先卖流程结果，再卖内容资产化。</p>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead><tr><th>维度</th><th>AI 询盘到报价单自动化代搭</th><th>AI 长内容转电子书 / 资料包工作室</th></tr></thead>
+          <tbody>
+            <tr><td>适合人群</td><td>愿意沟通需求、会梳理套餐边界、对成交链路敏感的人</td><td>愿意做内容提炼、会整理结构、能把知识包装成商品的人</td></tr>
+            <tr><td>核心交付</td><td>表单收集、需求摘要、报价模板、proposal/quote、跟进提醒</td><td>转录整理、电子书/清单/资料包、下载页文案、上架页面</td></tr>
+            <tr><td>成交方式</td><td>给目标客户演示“询盘到报价”的样板流程，最容易打动</td><td>先拿客户一场直播或一段课程做样品，再售卖商品化方案</td></tr>
+            <tr><td>优势</td><td>价值感知强、离成交更近、容易按月维护</td><td>复利强、可复卖、越做越容易沉淀模板资产</td></tr>
+            <tr><td>主要风险</td><td>若客户本身询盘很少，再好的自动化也放大不了太多结果</td><td>若原始内容本身没信息密度，整理出的资料包也难有付费意愿</td></tr>
+            <tr><td>最小验证</td><td>先做一份可填写的需求表单 + 一套自动报价样板</td><td>先拿一条直播或播客内容做出 1 份可下载样品</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">5-Day Action Plan</div>
+        <h2>5 天启动计划</h2>
+        <p>这两个方向都不适合空想太久，最重要的是做出一个别人能马上感知价值的样板。</p>
+      </div>
+      <div class="content steps">
+        <div class="step"><h4>第 1 天：只选一个细分场景</h4><p>报价线先选一种客户，例如设计工作室、顾问、家装/摄影/培训服务；内容商品化线先选一种素材来源，例如直播、播客或课程。</p></div>
+        <div class="step"><h4>第 2 天：做出最小样板</h4><p>报价线至少跑通“需求表单 + 报价模板”；内容线至少完成“转录整理 + 一页下载样品”。让别人能看见而不是只听你描述。</p></div>
+        <div class="step"><h4>第 3 天：找 5-10 个潜在客户验证</h4><p>优先熟人、前同事、同城商家、独立顾问、知识型创作者。先换反馈和试单，不急着做复杂套餐。</p></div>
+        <div class="step"><h4>第 4 天：明确收费边界</h4><p>写清楚你交付什么、不包含什么、几轮修改、多久交付、是否含上架和后续维护。边界清楚，成交更容易也更少返工。</p></div>
+        <div class="step"><h4>第 5 天：沉淀模板资产</h4><p>把表单字段、报价说明、条款模版、转录清洗提示词、资料包框架、商品页文案模板都整理起来。后面每接一单，都在放大已有资产。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Risk Notes</div>
+        <h2>避坑提醒</h2>
+      </div>
+      <div class="content">
+        <div class="warn">不要把“用了 AI”本身当卖点。报价自动化真正卖的是少漏单、少扯皮、报价更快；内容商品化真正卖的是把已有知识变成能下载、能转化、能复卖的交付物。无论做哪条线，都要把结果讲具体：你到底交付哪几个页面、哪几类文档、哪种下载品、哪一步由人工接管，范围越清楚，越容易变成复购。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Sources</div>
+        <h2>参考线索</h2>
+        <p>以下资料主要用于判断 2026 年 AI 副业中“询盘到报价单自动化代搭”和“长内容商品化工作室”两条线的可行性，以及前期能否低成本起步。</p>
+      </div>
+      <div class="content sources">
+        <div>• 综合方向参考：<a href="https://www.shopify.com/blog/ai-side-hustles">Shopify - Best AI Side Hustles</a>。</div>
+        <div>• AI 询盘报价自动化代搭：<a href="https://tally.so/">Tally 官方首页</a>、<a href="https://tally.so/pricing">Tally Pricing</a>、<a href="https://www.pandadoc.com/quoting-software/">PandaDoc Quoting Software</a>、<a href="https://www.pandadoc.com/pricing/">PandaDoc Pricing</a>。</div>
+        <div>• AI 长内容商品化工作室：<a href="https://help.descript.com/hc/en-us/articles/21908859003277-Repurpose-with-AI-Tools">Descript - Repurpose with AI Tools</a>、<a href="https://www.descript.com/pricing">Descript Pricing</a>、<a href="https://gumroad.com/pricing">Gumroad Pricing</a>、<a href="https://www.gumroad.co/">Gumroad 官方首页</a>。</div>
+      </div>
+    </section>
+
+    <footer>
+      生成日期：2026-07-29｜GitHub Pages：global-sync/bywork/bywork-20260729.html<br />
+      本报告用于副业方向探索与 MVP 验证，不构成收益承诺。
+    </footer>
+  </main>
+</body>
+</html>
