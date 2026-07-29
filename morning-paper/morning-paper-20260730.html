@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>今日精选晨报 - 2026年7月30日</title>
+  <style>
+    :root {
+      --primary: #00B26B;
+      --accent: #0AAE9E;
+      --bg: #F2FBF6;
+      --card-bg: rgba(255,255,255,0.96);
+      --text-main: #173B2E;
+      --text-sub: #58706A;
+      --line: rgba(10,174,158,0.18);
+      --soft: #F7FFFB;
+      --up: #D64B4B;
+      --down: #0F8F79;
+      --flat: #6C7A76;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: "Nunito", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at top left, rgba(0,178,107,0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(10,174,158,0.12), transparent 26%),
+        var(--bg);
+      line-height: 1.75;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 42px;
+      box-shadow: 0 24px 64px rgba(15,143,121,0.10);
+    }
+    .header {
+      text-align: center;
+      padding-bottom: 22px;
+      margin-bottom: 30px;
+      border-bottom: 2px dashed rgba(10,174,158,0.24);
+    }
+    .header h1 {
+      margin: 0 0 10px;
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+    }
+    .date {
+      font-size: 15px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+    .brief {
+      margin-top: 14px;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .section-title {
+      margin: 34px 0 16px;
+      padding-bottom: 8px;
+      font-size: 23px;
+      font-weight: 900;
+      color: var(--accent);
+      border-bottom: 2px dashed rgba(10,174,158,0.22);
+    }
+    .news-item {
+      position: relative;
+      margin-bottom: 24px;
+      padding: 24px 24px 24px 46px;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--soft) 100%);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .news-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(15,143,121,0.10);
+      border-color: rgba(10,174,158,0.38);
+    }
+    .news-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 12px;
+      border-radius: 22px 0 0 22px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+    }
+    .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(10,174,158,0.16);
+      background: rgba(0,178,107,0.10);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .news-item h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      font-weight: 850;
+      color: var(--text-main);
+    }
+    .news-item h3 {
+      margin: 14px 0 6px;
+      font-size: 16px;
+      font-weight: 850;
+      color: var(--accent);
+    }
+    .news-item p {
+      margin: 0 0 10px;
+      font-size: 15px;
+      color: var(--text-sub);
+    }
+    .stock-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 14px;
+      margin: 12px 0;
+      font-size: 14px;
+    }
+    .stock-table th {
+      padding: 10px 12px;
+      text-align: left;
+      color: var(--accent);
+      background: rgba(0,178,107,0.10);
+      font-weight: 850;
+    }
+    .stock-table td {
+      padding: 10px 12px;
+      color: var(--text-sub);
+      border-bottom: 1px solid rgba(10,174,158,0.10);
+    }
+    .up { color: var(--up); font-weight: 800; }
+    .down { color: var(--down); font-weight: 800; }
+    .flat { color: var(--flat); font-weight: 800; }
+    .source {
+      margin-top: 10px;
+      color: rgba(88,112,106,0.92);
+      font-size: 13px;
+    }
+    .source a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .source a:hover { text-decoration: underline; }
+    .footer {
+      margin-top: 32px;
+      padding-top: 18px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(88,112,106,0.92);
+      border-top: 1px dashed rgba(10,174,158,0.24);
+      font-weight: 700;
+    }
+    @media (max-width: 600px) {
+      body { padding: 12px; }
+      .container { padding: 24px; border-radius: 20px; }
+      .header h1 { font-size: 28px; }
+      .news-item { padding: 20px 20px 20px 32px; }
+      .stock-table { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🌅 今日精选晨报</h1>
+      <div class="date">✨ 2026年7月30日 星期四 ✨</div>
+      <div class="brief">今天重点看 A 股与港股延续反弹、美股在美联储最新表态后显著回撤；政治上关注全国侨务工作会议与海湾局势降温信号；财经上看财政资金如何继续撬动内需，以及美联储维持高利率后的市场含义；技术上看中国 AI 专利储备继续抬升，微软则用最新财报证明云与 AI 仍在兑现收入。</div>
+    </div>
+
+    <div class="section-title">📈 ① 股市总览</div>
+    <div class="news-item">
+      <span class="tag">🌐 主要指数收盘表现（2026-07-29）</span>
+      <table class="stock-table">
+        <tr><th>市场</th><th>指数</th><th>收盘点位</th><th>涨跌幅</th><th>解读</th></tr>
+        <tr><td>A股</td><td>上证指数</td><td>3828.47</td><td class="up">+0.40%</td><td>权重回稳，市场情绪明显修复</td></tr>
+        <tr><td>A股</td><td>深证成指</td><td>13658.44</td><td class="up">+1.10%</td><td>成长板块反弹更强，风险偏好回升</td></tr>
+        <tr><td>港股</td><td>恒生指数</td><td>25807.92</td><td class="up">+1.96%</td><td>科网与汽车带动港股继续走强</td></tr>
+        <tr><td>美股</td><td>纳斯达克</td><td>24442.94</td><td class="down">-1.74%</td><td>科技股承压，AI 交易明显降温</td></tr>
+        <tr><td>美股</td><td>道琼斯指数</td><td>51594.14</td><td class="down">-2.19%</td><td>高利率担忧压制蓝筹风险偏好</td></tr>
+        <tr><td>美股</td><td>标普500</td><td>7316.15</td><td class="down">-1.52%</td><td>美联储按兵不动后市场整体回撤</td></tr>
+      </table>
+      <h3>📰 新闻原文摘要</h3>
+      <p>7月29日，A股和港股延续回暖节奏，上证指数、深证成指和恒生指数分别上涨 0.40%、1.10% 和 1.96%；但美联储维持利率区间不变后，美股三大指数集体下挫，道指、标普500 和纳斯达克分别下跌 2.19%、1.52% 和 1.74%。亚洲市场体现的是政策与成长预期修复，美股则更多在消化“高利率停得更久”的风险。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>简单说就是：亚洲这边资金情绪在变好，敢重新去买科技和成长；美国那边则开始担心，利率短期下不来，估值太高的资产就先被砍一刀。</p>
+      <h3>💡 意义解读</h3>
+      <p>这类“亚洲回暖、美股承压”的错位行情说明，市场已经不再只看同一个宏观叙事，而是在分别交易各自的政策环境和盈利预期。短期里，A/H 股更看政策和产业催化，美股更看利率与估值的匹配度。</p>
+      <div class="source">来源：<a href="http://www.china.org.cn/china/Off_the_Wire/2026-07/29/content_118623984.shtml">新华社（A股收盘）</a>、<a href="http://www.china.org.cn/china/Off_the_Wire/2026-07/29/content_118624162.shtml">新华社（港股收盘）</a>、<a href="https://m.thepaper.cn/newsDetail_forward_33683957">澎湃新闻（美股收盘）</a></div>
+    </div>
+
+    <div class="section-title">🏛️ ② 时事政治</div>
+    <div class="news-item">
+      <span class="tag">🇨🇳 国内</span>
+      <h2>全国侨务工作会议召开，强调更好凝聚侨心侨力</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>7月29日，新华社消息显示，全国侨务工作会议在京召开，王沪宁出席并讲话，强调要更好凝聚侨心侨力，促进海内外中华儿女团结奋斗，更好服务中国式现代化建设。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>这件事的重点，不只是“做侨务工作”本身，而是继续把海外华侨华人、留学群体、商界和专业人才资源更系统地连接起来，让他们在资金、技术、产业和民间交流上发挥更大作用。</p>
+      <h3>💡 意义解读</h3>
+      <p>这释放出的信号是，对外联系资源的统筹会更受重视。后续无论是民间交流、人才引进、跨境产业合作，还是地方与海外资源的对接，预计都会更强调体系化和长期性。</p>
+      <div class="source">来源：<a href="https://www.tj.gov.cn/sy/jrgz/202607/t20260729_7343285.html">天津政务网（转新华社）</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌍 国际</span>
+      <h2>中方在联合国呼吁恢复谈判，为海湾紧张局势降温</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>新华社7月29日报道，中国常驻联合国代表团临时代办孙磊在联合国表示，中方对海湾地区紧张局势再次升级深感担忧，呼吁尽快恢复谈判，通过政治和外交手段推动局势降温。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>翻成人话就是：各方都意识到，海湾局势如果继续升级，不只是地区安全问题，还会很快传导到油运、能源价格和全球供应链，所以现在更需要把冲突重新拉回谈判桌。</p>
+      <h3>💡 意义解读</h3>
+      <p>海湾局势的任何缓和信号，都会直接影响油价、航运成本和全球风险资产情绪。哪怕目前还只是“先把谈判恢复起来”，也意味着外界开始尝试从军事对抗转向可控博弈。</p>
+      <div class="source">来源：<a href="https://english.news.cn/20260729/60b69d8275c14a0191c30c19c6c81f67/c.html">Xinhua</a></div>
+    </div>
+
+    <div class="section-title">💰 ③ 金融财经</div>
+    <div class="news-item">
+      <span class="tag">🏦 国内财经</span>
+      <h2>财政部披露：以旧换新补贴已下达 1250 亿元，带动相关销售约 1.1 万亿元</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>财政部在7月22日举行的上半年财政收支情况新闻发布会上表示，今年持续推进扩投资、促消费，并创新实施财政金融协同促内需一揽子政策。发布会披露，相关消费品以旧换新补贴资金已下达 1250 亿元，带动汽车、家电、数码产品等销售额约 1.1 万亿元。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>意思很直接：这轮政策不是只给补贴“做样子”，而是已经把真金白银打到市场里，目的就是把大家换车、换家电、换数码产品的消费意愿真正撬出来。</p>
+      <h3>💡 意义解读</h3>
+      <p>这说明政策层面对“扩大内需”的抓手正在变得更具体、也更可量化。后面值得关注的，不只是补贴规模会不会再加码，更是谁能真正吃到这波订单，比如汽车、家电、消费电子和配套供应链。</p>
+      <div class="source">来源：<a href="http://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/202607/t20260722_3994019.htm">中华人民共和国财政部</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌍 国际财经</span>
+      <h2>美联储维持利率在 3.5%-3.75%，强调在不确定性下继续观察通胀</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>美联储7月29日发布 FOMC 声明，决定将联邦基金利率目标区间维持在 3.5% 至 3.75% 不变。声明同时指出，尽管经济活动仍以稳健速度扩张，但中东冲突带来的不确定性仍然偏高，委员会将继续观察通胀与就业变化。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>说白了就是：美联储现在还不愿意太快松口降息。经济没差到必须救、通胀也没低到可以放心，所以它宁愿再等等，先看局势和数据怎么走。</p>
+      <h3>💡 意义解读</h3>
+      <p>这意味着全球市场短期还得适应“高利率更久一点”的现实。对股票来说，估值会更容易受压；对美元资产和全球资金流向来说，也意味着波动率可能继续维持在偏高水平。</p>
+      <div class="source">来源：<a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm">Federal Reserve</a></div>
+    </div>
+
+    <div class="section-title">🚀 ④ 技术领域</div>
+    <div class="news-item">
+      <span class="tag">🤖 国内技术</span>
+      <h2>中国新一代信息技术发明专利占比升至 16.5%，AI 与云计算专利储备继续加厚</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>新华社7月29日报道，国家知识产权主管部门披露，截至今年6月底，人工智能、互联网、云计算和大数据等新一代信息技术相关发明专利，占中国有效发明专利总量的 16.5%。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>这说明国内科技投入已经不只是“概念热”，而是开始沉淀成真正可拿来保护、转化和交易的技术资产。AI、云和数据基础设施，正在变成越来越厚的家底。</p>
+      <h3>💡 意义解读</h3>
+      <p>专利占比抬升，意味着中国在新一代信息技术上的技术储备和产业布局都在继续前移。对后续产业化来说，这不仅关系到创新活跃度，也关系到企业护城河、技术转让和国际竞争力。</p>
+      <div class="source">来源：<a href="https://english.news.cn/20260729/d1249406d809456aba48a644330d9c04/c.html">Xinhua</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌐 国际技术</span>
+      <h2>微软第四财季营收达 900 亿美元，云与 AI 继续成为增长主引擎</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>微软7月29日发布 2026 财年第四财季业绩，营收 900 亿美元，同比增长 18%；营业利润 406 亿美元，同比增长 18%；净利润 358 亿美元，同比增长 31%。微软将本季表现概括为“Cloud and AI strength”，显示云与 AI 相关业务仍是业绩增长核心驱动力。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>意思就是：虽然市场最近一直担心 AI 投入太大、回报不够快，但从微软这份财报看，大客户该花的钱还在花，云和 AI 业务已经开始越来越像“能赚钱的生意”，不只是讲故事。</p>
+      <h3>💡 意义解读</h3>
+      <p>这对整个全球科技板块都很关键。因为微软这种头部平台公司的财报，往往会被市场拿来判断 AI 基础设施投入到底有没有商业回报。只要大厂的收入和利润还能持续兑现，AI 产业链的长期逻辑就还站得住。</p>
+      <div class="source">来源：<a href="https://news.microsoft.com/source/2026/07/29/microsoft-cloud-and-ai-strength-fuels-fourth-quarter-results-4/">Microsoft</a></div>
+    </div>
+
+    <div class="footer">
+      🌿 今天的关键词：亚太回暖、侨务会议、海湾降温、以旧换新、高利率维持、AI 专利储备。
+    </div>
+  </div>
+</body>
+</html>
