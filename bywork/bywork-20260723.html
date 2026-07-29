@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>今日副业探索报告｜AI 本地商家素材工厂 & AI 线索跟进代搭服务</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff8ed;
+      --bg-soft: #fff3df;
+      --card: rgba(255,255,255,.88);
+      --text: #352317;
+      --muted: #7a6658;
+      --line: rgba(183, 126, 73, .22);
+      --amber: #d97706;
+      --orange: #f97316;
+      --rose: #fb7185;
+      --green: #16a34a;
+      --shadow: 0 24px 60px rgba(124, 75, 25, .16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(251, 146, 60, .30), transparent 34%),
+        radial-gradient(circle at 86% 12%, rgba(251, 113, 133, .18), transparent 30%),
+        radial-gradient(circle at 50% 92%, rgba(245, 158, 11, .16), transparent 32%),
+        linear-gradient(145deg, #fffaf1 0%, #fff4e5 48%, #fffdf8 100%);
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 42px 0 48px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 34px; padding: clamp(28px, 5vw, 54px); background: linear-gradient(135deg, rgba(255,255,255,.94), rgba(255,246,231,.84)); box-shadow: var(--shadow); backdrop-filter: blur(18px); }
+    .hero::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px; border-radius: 50%; background: conic-gradient(from 120deg, rgba(249,115,22,.36), rgba(251,113,133,.24), rgba(245,158,11,.28), rgba(249,115,22,.36)); filter: blur(4px); opacity: .75; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border-radius: 999px; background: #fff3df; border: 1px solid var(--line); color: #9a5a13; font-size: 13px; font-weight: 700; }
+    h1 { position: relative; z-index: 1; margin: 20px 0 12px; font-size: clamp(34px, 5.5vw, 62px); line-height: 1.04; letter-spacing: -.045em; }
+    .lead { position: relative; z-index: 1; max-width: 860px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.85; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .metric { padding: 17px; border-radius: 22px; background: rgba(255,255,255,.78); border: 1px solid rgba(183,126,73,.18); }
+    .metric b { display: block; font-size: 23px; color: #8a4b0f; }
+    .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .section { margin-top: 22px; border: 1px solid var(--line); border-radius: 30px; background: var(--card); box-shadow: 0 16px 42px rgba(124,75,25,.11); overflow: hidden; }
+    .section-head { padding: 26px 28px 18px; border-bottom: 1px solid var(--line); background: linear-gradient(90deg, rgba(255,247,237,.92), rgba(255,255,255,.70)); }
+    .section-kicker { color: var(--orange); font-size: 13px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { margin: 8px 0 8px; font-size: clamp(25px, 3vw, 36px); letter-spacing: -.025em; }
+    .section-head p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .content { padding: 26px 28px 30px; }
+    .verdict { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: stretch; }
+    .note, .score-card { border: 1px solid rgba(183,126,73,.18); border-radius: 24px; background: #fffdf9; padding: 20px; }
+    .note strong { color: #92400e; }
+    .note p { color: var(--muted); line-height: 1.75; margin: 8px 0 0; }
+    .scores { display: grid; gap: 12px; }
+    .bar { display: grid; gap: 7px; }
+    .bar-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+    .track { height: 10px; border-radius: 999px; background: #fde7c8; overflow: hidden; }
+    .fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--amber), var(--rose)); }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { border: 1px solid var(--line); border-radius: 28px; padding: 24px; background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,243,.84)); box-shadow: 0 14px 32px rgba(124,75,25,.09); }
+    .tagline { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .pill { border-radius: 999px; padding: 6px 10px; background: #fff3df; border: 1px solid rgba(183,126,73,.18); color: #9a5a13; font-size: 12px; font-weight: 700; }
+    .project h3 { margin: 0 0 10px; font-size: 25px; letter-spacing: -.02em; }
+    .project p { margin: 0 0 16px; color: var(--muted); line-height: 1.75; }
+    .list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .list li { padding: 12px 13px; border-radius: 16px; background: rgba(255,246,231,.72); color: #574234; line-height: 1.62; }
+    .list b { color: #8a4b0f; }
+    .table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 20px; }
+    .table th, .table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(183,126,73,.16); vertical-align: top; line-height: 1.65; }
+    .table th { background: #fff3df; color: #8a4b0f; font-size: 13px; }
+    .table tr:last-child td { border-bottom: 0; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: step; }
+    .step { position: relative; padding: 20px; border-radius: 22px; border: 1px solid rgba(183,126,73,.18); background: #fffdf9; }
+    .step::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #f97316; color: white; font-weight: 800; margin-bottom: 12px; }
+    .step h4 { margin: 0 0 8px; font-size: 17px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
+    .warn { border-left: 5px solid var(--orange); background: #fff7ed; padding: 16px 18px; border-radius: 18px; color: #614331; line-height: 1.7; }
+    .sources { display: grid; gap: 9px; color: var(--muted); line-height: 1.65; font-size: 13px; }
+    .sources a { color: #9a5a13; font-weight: 700; }
+    footer { color: var(--muted); text-align: center; margin-top: 26px; line-height: 1.8; font-size: 14px; }
+    @media (max-width: 860px) { .hero-grid, .projects, .steps, .verdict { grid-template-columns: 1fr; } .wrap { width: min(100% - 24px, 1120px); padding-top: 22px; } .section-head, .content { padding-left: 20px; padding-right: 20px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">☕ style_warm · 2026-07-23 · 今日副业探索</div>
+      <h1>优先做“离钱更近”的重复需求：AI 本地商家素材工厂 + AI 线索跟进代搭服务</h1>
+      <p class="lead">今天挑的两个方向都偏实操型：一个帮本地商家批量产出短视频脚本、团购文案和海报素材，另一个把咨询、表单、报价、跟进提醒串成自动流程。共同特点是需求真实、启动轻、容易用 1 个样板就拿到第一单，而且大部分重复劳动都能交给 AI 和无代码工具。</p>
+      <div class="hero-grid">
+        <div class="metric"><b>2 个</b><span>今日推荐项目</span></div>
+        <div class="metric"><b>¥300+</b><span>最低可启动预算</span></div>
+        <div class="metric"><b>80%-93%</b><span>可自动化环节占比</span></div>
+        <div class="metric"><b>2-5 天</b><span>做出首个样板周期</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Overall Verdict</div>
+        <h2>今日结论：先切“重复出现、客户愿意立刻付费”的小场景，再把交付流程产品化</h2>
+        <p>公开资料里反复出现的高可行方向主要分两类：一类是 AI 辅助的数字产品和模板资产，另一类是面向小商家的 AI setup / automation service。相比内容博主型副业，这两类更容易先做样板、先接单，再沉淀成标准套餐。</p>
+      </div>
+      <div class="content verdict">
+        <div class="note">
+          <strong>推荐启动路径：</strong>
+          <p>如果你想更快出单，建议先做“AI 本地商家素材工厂”，因为演示门槛最低，只要拿奶茶店、口腔诊所、健身房、家政门店等场景做一组前后对比样板，就能直接去私聊成交；等有了客户案例，再追加“AI 线索跟进代搭服务”，把一次性交付升级为 setup 费 + 月维护费。</p>
+        </div>
+        <div class="score-card">
+          <div class="scores">
+            <div class="bar"><div class="bar-row"><span>AI 自动化程度</span><b>90%</b></div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>启动难度</span><b>低</b></div><div class="track"><div class="fill" style="width:28%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>回款速度</span><b>快</b></div><div class="track"><div class="fill" style="width:82%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>长期复利</span><b>中高</b></div><div class="track"><div class="fill" style="width:84%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Projects</div>
+        <h2>今日 2 个副业方向</h2>
+        <p>一个偏“可快速展示价值”的轻交付，一个偏“可形成维护费”的自动化服务，适合个人从样板单起步。</p>
+      </div>
+      <div class="content projects">
+        <article class="project">
+          <div class="tagline"><span class="pill">本地服务</span><span class="pill">快出样板</span><span class="pill">高自动化</span></div>
+          <h3>01｜AI 本地商家素材工厂</h3>
+          <p>面向餐饮、口腔、健身、教育培训、美业、家政等本地商家，按周或按月交付一整套可直接发布的营销素材：短视频脚本、团购文案、海报标题、朋友圈文案、节日活动方案、评论区回复话术。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>客户真正缺的往往不是“会不会用 AI”，而是没人持续把素材整理出来。你卖的不是单篇文案，而是一套可直接上线的内容包，强调省老板时间、省外包沟通成本。</li>
+            <li><b>可行性分析：</b>公开资料显示，2026 年更容易跑通的 AI 副业集中在“小商家 AI setup”与“面向具体人群的数字产品/模板服务”两类；本地商家素材代产同时踩中这两个点，需求频繁、决策简单、容易通过样板成交。</li>
+            <li><b>AI 自动化程度：</b>AI 可完成行业选题、脚本初稿、团购卖点提炼、多平台改写、封面标题与评论回复草稿；人工主要负责采集门店信息、校准语气与做最后审核，整体自动化约 80%-88%。</li>
+            <li><b>启动成本：</b>主要是模型订阅、Canva/可画等设计工具和少量投流试水，通常约 ¥300-600/月；如果先用飞书文档 + 模板图库交付，前期甚至可以极低成本启动。</li>
+            <li><b>预期收益：</b>单店单月内容包可报价 ¥399-1999；如果叠加“到店活动策划 + 素材打包 + 月度迭代”，维护 8-12 家小客户，月收入有机会来到 ¥5000-18000。</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="tagline"><span class="pill">轻自动化服务</span><span class="pill">客单价更高</span><span class="pill">可收维护费</span></div>
+          <h3>02｜AI 线索跟进代搭服务</h3>
+          <p>为个人工作室、小 B 商家、销售团队或咨询顾问搭建“留资到成交”的轻量自动流程，把表单、企业微信/飞书、表格、报价单、提醒通知和日报串起来，减少漏单和人工追踪。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>典型交付包括：客户留资自动进表、AI 生成首轮沟通摘要、意向标签分类、自动生成报价单草稿、48 小时未跟进提醒、每周线索复盘报表等。</li>
+            <li><b>可行性分析：</b>搜索结果反复提到，service-based AI hustles 和 automation consulting 更适合在 2026 年拿到更高客单价；因为小团队并不缺工具清单，缺的是有人把流程真正配好并跑起来。</li>
+            <li><b>AI 自动化程度：</b>AI 适合做摘要、线索分类、回复建议、报价说明和周报总结；Make、Zapier、n8n、飞书自动化负责触发和同步，人工主要做访谈、字段设计与异常兜底，整体自动化约 88%-93%。</li>
+            <li><b>启动成本：</b>前期可用免费版或基础套餐试单，预算约 ¥300-900/月；如果使用 API 或更复杂工作流，成本会增加，但仍属于几乎无库存的轻资产模式。</li>
+            <li><b>预期收益：</b>单次代搭可报价 ¥899-3999，后续月维护费可做 ¥299-1299；如果稳定维护 6-10 个客户，月收入有机会达到 ¥8000-25000。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Comparison</div>
+        <h2>投入产出对比</h2>
+        <p>素材工厂更适合快速出样板和拿第一单，线索跟进代搭更适合提升客单价与复购。最佳组合是先卖素材，再升级成交后端流程。</p>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead><tr><th>维度</th><th>AI 本地商家素材工厂</th><th>AI 线索跟进代搭服务</th></tr></thead>
+          <tbody>
+            <tr><td>适合人群</td><td>擅长整理内容、愿意做样板的人</td><td>愿意沟通需求、会用无代码工具的人</td></tr>
+            <tr><td>核心交付</td><td>脚本包、活动文案、海报标题、朋友圈/社媒素材</td><td>表单流转、自动提醒、线索分层、报价与复盘流程</td></tr>
+            <tr><td>成交方式</td><td>发样板、到店演示、朋友圈案例、商家社群私聊</td><td>先做诊断，再展示流程图和 Demo，适合熟人转介绍</td></tr>
+            <tr><td>优势</td><td>上手快、容易标准化、适合批量复制</td><td>客单价高、续费空间大、更容易形成长期关系</td></tr>
+            <tr><td>主要风险</td><td>容易卷低价，需要选更细的行业切口</td><td>需求边界容易失控，必须提前写清交付范围</td></tr>
+            <tr><td>最小验证</td><td>先做 1 家门店的 7 天内容包样板，拿真实反馈</td><td>先给 1 个客户搭最小闭环：留资、提醒、周报三件套</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">5-Day Action Plan</div>
+        <h2>5 天启动计划</h2>
+        <p>今天就能开工，重点不是先做品牌，而是快速做出“客户一眼能看懂价值”的成交样板。</p>
+      </div>
+      <div class="content steps">
+        <div class="step"><h4>第 1 天：选行业与场景</h4><p>从你身边最容易触达的垂直行业开始，比如奶茶店、口腔诊所、健身房、教培或家政，先锁定一个高频场景。</p></div>
+        <div class="step"><h4>第 2 天：做样板包</h4><p>产出 1 份可视化 Demo，例如 7 条短视频脚本 + 3 张海报标题，或 1 条完整的线索跟进流程图。</p></div>
+        <div class="step"><h4>第 3-4 天：低价验证</h4><p>先用体验价或首单价拿下第一个真实客户，要求客户提供基础信息，快速交付并收集结果反馈。</p></div>
+        <div class="step"><h4>第 5 天：固化套餐</h4><p>把交付物、修改次数、交付周期、月维护内容和标准报价写成固定方案，准备复制到第二个客户。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Risk Notes</div>
+        <h2>避坑提醒</h2>
+      </div>
+      <div class="content">
+        <div class="warn">不要用“万能 AI 赋能”这种空话去卖服务，客户只关心三件事：能不能更快出内容、会不会少漏单、是否值得这笔钱。一定要把交付边界写清楚，比如是否含发布、是否含投流、是否含持续调试、每月改几次，避免后期无限返工。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Sources</div>
+        <h2>参考线索</h2>
+        <p>以下资料主要用于判断 2026 年 AI 副业中“数字产品 / 模板化交付”与“automation service / small-business AI setup”两条线的可行性，具体收入仍取决于你的获客、行业选择与交付质量。</p>
+      </div>
+      <div class="content sources">
+        <div>• 综合方向参考：<a href="https://www.mercor.com/resources/experts/best-ai-side-hustles/">Mercor - Best AI Side Hustles to Start in 2026</a>、<a href="https://sidehustleschool.com/guides/ai-side-hustles/">Side Hustle School - AI Side Hustles</a>。</div>
+        <div>• 模板/数字产品方向参考：<a href="https://crevio.co/blog/ai-side-hustles">Crevio - AI Side Hustles That Actually Work in 2026</a>、<a href="https://coursiv.io/blog/ai-side-hustles-2026">Coursiv - Best AI Side Hustles 2026</a>。</div>
+        <div>• 小商家自动化方向参考：<a href="https://thecrunch.io/ai-automation-for-small-business/">TheCrunch - AI Automation for Small Business</a>、<a href="https://zerotoautomate.com/ai-automation-side-hustle-beginners/">Zero to Automate - AI Automation Side Hustle for Beginners</a>。</div>
+      </div>
+    </section>
+
+    <footer>
+      生成日期：2026-07-23｜GitHub Pages：global-sync/bywork/bywork-20260723.html<br />
+      本报告用于副业方向探索与 MVP 验证，不构成收益承诺。
+    </footer>
+  </main>
+</body>
+</html>

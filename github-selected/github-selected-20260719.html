@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub 精选项目报告 - 2026年7月19日</title>
+  <style>
+    :root { --primary: #0052D9; --bg: #F3F5F8; --card-bg: #FFFFFF; --text-main: #1C1F23; --text-sub: #5C6A82; --line: #D9E6F7; --soft: #F8FAFC; --accent: #13C2C2; }
+    * { box-sizing: border-box; }
+    body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: linear-gradient(180deg, #EEF4FF 0%, var(--bg) 58%, #FFFFFF 100%); color: var(--text-main); margin: 0; padding: 20px; }
+    .container { max-width: 900px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 16px; box-shadow: 0 10px 34px rgba(0,82,217,0.08); }
+    .header { border-bottom: 2px solid var(--primary); padding-bottom: 18px; margin-bottom: 26px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
+    .header h1 { color: var(--primary); margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.3px; }
+    .date { color: var(--text-sub); font-size: 14px; white-space: nowrap; }
+    .intro { background: linear-gradient(135deg, #F4F8FF 0%, #F8FEFF 100%); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin-bottom: 24px; color: var(--text-sub); line-height: 1.75; font-size: 15px; }
+    .news-item { border-left: 3px solid var(--primary); padding: 20px 22px; margin-bottom: 22px; background: var(--soft); border-radius: 0 12px 12px 0; transition: all 0.3s ease; }
+    .news-item:hover { transform: translateX(4px); box-shadow: 0 6px 18px rgba(0,82,217,0.10); }
+    .topline { display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+    .tag { display: inline-block; background: #E0EBF5; color: var(--primary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+    .score { display: inline-block; background: #E8FFFB; color: #087E8B; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+    .news-item h2 { margin: 8px 0 12px 0; font-size: 21px; color: var(--text-main); }
+    .news-item p { margin: 0 0 12px 0; font-size: 15px; color: var(--text-sub); line-height: 1.75; }
+    .section-title { margin: 18px 0 8px; font-size: 15px; color: var(--primary); font-weight: 700; }
+    ul { margin: 0 0 12px 0; padding-left: 19px; }
+    li { color: var(--text-sub); line-height: 1.75; margin-bottom: 6px; font-size: 15px; }
+    .link-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+    .link { color: var(--primary); text-decoration: none; font-size: 14px; font-weight: 600; }
+    .link:hover { text-decoration: underline; }
+    .meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0; }
+    .meta-card { background: #FFFFFF; border: 1px solid #E8EEF7; border-radius: 10px; padding: 10px 12px; }
+    .meta-card b { display: block; color: var(--text-main); font-size: 13px; margin-bottom: 4px; }
+    .meta-card span { color: var(--text-sub); font-size: 13px; }
+    .why { background: #FFFFFF; border: 1px dashed #BFD7FF; border-radius: 10px; padding: 12px 14px; margin: 12px 0; color: var(--text-sub); line-height: 1.75; font-size: 14px; }
+    .footer { text-align: center; margin-top: 32px; padding-top: 20px; border-top: 1px solid #EEF2F7; color: var(--text-sub); font-size: 12px; line-height: 1.7; }
+    @media (max-width: 700px) { .container { padding: 22px; } .header { flex-direction: column; align-items: flex-start; } .meta { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>💎 GitHub 精选项目报告</h1>
+      <div class="date">2026年7月19日</div>
+    </div>
+
+    <div class="intro">
+      今天这 2 个项目都非常适合正在关注 <strong>AI Agent 工程化</strong> 的开发者：一个解决“Agent 怎么编排、怎么落地、怎么进生产”的问题，另一个解决“Agent 如何跨会话持续记住上下文”的问题。前者偏 <strong>工作流与运行时</strong>，后者偏 <strong>记忆层与上下文层</strong>。如果你最近在思考 MCP、智能体协作、长期记忆、工程化可观测性，这两个仓库都值得认真看一遍。
+    </div>
+
+    <div class="news-item">
+      <div class="topline">
+        <span class="tag">MCP / Workflow / Agent Runtime</span>
+        <span class="score">推荐指数：9.4/10</span>
+      </div>
+      <h2>1. lastmile-ai/mcp-agent：把 MCP 协议、Agent 编排和生产级工作流真正串起来</h2>
+      <p>mcp-agent 的定位非常清晰：它不是单纯再造一个“聊天式 Agent 框架”，而是围绕 <strong>Model Context Protocol</strong> 来构建一套更实用的智能体开发底座。项目核心价值在于把 MCP server 接入、LLM 调用、常见 Agent 工作流模式、持久化执行、人机协同和可观测能力整合到一个统一编程模型里，让你不必在多个框架间自己缝合。</p>
+      <div class="meta">
+        <div class="meta-card"><b>项目地址</b><span>lastmile-ai/mcp-agent</span></div>
+        <div class="meta-card"><b>核心形态</b><span>Python Agent SDK / MCP Runtime</span></div>
+        <div class="meta-card"><b>当前热度</b><span>8.4k⭐ / 859 Fork（2026-07-19）</span></div>
+      </div>
+      <div class="why">为什么今天选它：很多人已经在“会调模型”这一步毕业了，但真正卡住的是怎么把工具、协议、工作流、状态和生产治理串成一套系统。mcp-agent 正好命中这个痛点。</div>
+      <div class="section-title">项目详细介绍</div>
+      <p>从官方 README 来看，mcp-agent 把 Anthropic 提出的 Building Effective Agents 模式做成了可组合的工程实现。你可以基于统一的 MCPApp 和 AgentSpec 描述 Agent，再把并行 Map-Reduce、Router、Intent Classifier、Orchestrator-Workers、Deep Research、Evaluator-Optimizer、Swarm 等模式按需拼装起来。它的价值不只是“模式齐全”，而是这些模式最终都能回到同一套应用骨架里，便于调试、扩展和维护。</p>
+      <div class="section-title">技术亮点</div>
+      <ul>
+        <li>围绕 MCP 做一等公民设计，既能直连现有 MCP servers，也能把自己的应用反向暴露成 MCP server 给 Claude Desktop、Cursor 等客户端使用。</li>
+        <li>内建常见智能体编排模式，包括并行、路由、计划-执行、深度研究、评估-优化和 Swarm handoff，适合做从简单助手到复杂协同系统的渐进式演进。</li>
+        <li>支持基于 Temporal 的 Durable Execution，能实现暂停、恢复、重试、人工输入和长生命周期工作流，而且无需推翻业务代码重写。</li>
+        <li>提供结构化日志、OpenTelemetry、TokenCounter、Cloud Deployment 等配套能力，说明它关注的不是 Demo，而是可上线、可观测、可治理的 Agent 系统。</li>
+      </ul>
+      <div class="section-title">使用场景</div>
+      <p>适合做企业内部智能助手、跨 MCP server 的工具编排、带审批节点的工作流 Agent、多角色协作的研究系统，以及希望将 AI 能力真正服务化、可运维化的团队。对技术成长来说，这个项目很适合用来补齐“Agent 应用如何从玩具走向工程系统”的认知：协议层、执行层、工作流层、观测层都要一起设计。</p>
+      <div class="link-row">
+        <a href="https://github.com/lastmile-ai/mcp-agent" class="link">查看 GitHub 仓库 ↗</a>
+        <a href="https://docs.mcp-agent.com" class="link">查看官方文档 ↗</a>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="topline">
+        <span class="tag">Memory / Context Engineering / MCP Tools</span>
+        <span class="score">推荐指数：9.5/10</span>
+      </div>
+      <h2>2. rohitg00/agentmemory：给 AI Coding Agent 补上一层真正能复用的长期记忆</h2>
+      <p>agentmemory 是一个非常有代表性的“上下文基础设施”项目。它要解决的问题很实际：Agent 在新会话里总要重新理解架构、重讲约定、重踩旧坑，而内置记忆文件往往容量有限且容易过期。这个项目通过持续记录观察、自动压缩、混合检索和上下文注入，把这些碎片沉淀成长期可召回的记忆层，让不同 Agent 能围绕同一份工作记忆协同工作。</p>
+      <div class="meta">
+        <div class="meta-card"><b>项目地址</b><span>rohitg00/agentmemory</span></div>
+        <div class="meta-card"><b>核心形态</b><span>Memory Engine / TypeScript</span></div>
+        <div class="meta-card"><b>当前热度</b><span>25.3k⭐ / 2.1k Fork（2026-07-19）</span></div>
+      </div>
+      <div class="why">为什么今天选它：2026 年做 Agent，很多问题已经不再是“会不会调模型”，而是“会不会持续积累上下文资产”。agentmemory 把这件事做成了工程化产品，学习价值很高。</div>
+      <div class="section-title">项目详细介绍</div>
+      <p>从 README 展示的能力边界来看，agentmemory 不只是一个“记事本”。它兼容 Claude Code、GitHub Copilot CLI、Cursor、Gemini CLI、Codex CLI 等多类 Agent 或 MCP 客户端；可以把观察、偏好、决策、会话历史压缩成可检索记忆，并通过 hybrid search、knowledge graph、viewer、REST API、MCP server 等形态把这些记忆重新提供给 Agent 使用。它更像一层独立于具体模型和宿主工具之外的“上下文中间件”。</p>
+      <div class="section-title">技术亮点</div>
+      <ul>
+        <li>支持 MCP 与 REST 双接口，既能当插件用，也能当服务用，还能被多种 Agent 宿主共享同一套记忆后端。</li>
+        <li>README 明确给出了 53 个 MCP tools、15 个 skills、1,423+ tests，以及实时 viewer、session replay、API、export/import 等完整配套能力，产品化完成度很高。</li>
+        <li>不仅做向量召回，还强调 hybrid search、knowledge graph、memory slots、多 Agent 作用域隔离等机制，更接近真实团队协作场景里的记忆系统。</li>
+        <li>提供本地 embeddings、成本敏感的模型建议和多 Agent memory scope 设计，说明它既考虑开发体验，也考虑实际运行成本与治理边界。</li>
+      </ul>
+      <div class="section-title">使用场景</div>
+      <p>适合做 Coding Agent 的跨会话记忆、团队共享知识沉淀、项目上下文注入、研发助手历史决策复用，以及多 Agent 协作系统中的长期状态层。对技术成长来说，agentmemory 很值得学习，因为它会逼你重新思考一个问题：真正好用的 Agent，靠的不只是推理能力，还靠“如何管理上下文生命周期”。</p>
+      <div class="link-row">
+        <a href="https://github.com/rohitg00/agentmemory" class="link">查看 GitHub 仓库 ↗</a>
+        <a href="https://agent-memory.dev" class="link">查看项目主页 ↗</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      资料来源：GitHub 公开仓库 README、项目主页与公开仓库元数据。<br>
+      Generated by global-sync · style_blue 商务极简蓝排版
+    </div>
+  </div>
+</body>
+</html>

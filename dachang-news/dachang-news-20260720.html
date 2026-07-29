@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日大厂新闻｜2026-07-20</title>
+  <style>
+    :root { --primary: #B388FF; --bg: #0D0D0D; --card-bg: #1A1A1A; --text-main: #E0E0E0; --text-sub: #9E9E9E; --accent: #00E5FF; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: radial-gradient(circle at top left, rgba(179,136,255,0.18), transparent 32%), radial-gradient(circle at top right, rgba(0,229,255,0.12), transparent 36%), var(--bg); color: var(--text-main); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 32px 18px 56px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid rgba(179,136,255,0.28); border-radius: 28px; padding: 40px; background: linear-gradient(135deg, rgba(179,136,255,0.18), rgba(0,229,255,0.06)), rgba(26,26,26,0.88); box-shadow: 0 24px 80px rgba(0,0,0,0.42); }
+    .hero::after { content: ""; position: absolute; width: 260px; height: 260px; right: -80px; top: -100px; background: radial-gradient(circle, rgba(0,229,255,0.26), transparent 68%); filter: blur(2px); }
+    .tag { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(0,229,255,0.1); color: var(--accent); font-size: 13px; border: 1px solid rgba(0,229,255,0.22); }
+    h1 { margin: 18px 0 12px; font-size: clamp(34px, 5vw, 58px); line-height: 1.05; letter-spacing: -1.5px; }
+    .lead { max-width: 900px; color: var(--text-sub); line-height: 1.9; font-size: 16px; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .stat { padding: 18px; border-radius: 20px; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08); }
+    .stat strong { display: block; font-size: 28px; color: var(--primary); }
+    .stat span { color: var(--text-sub); font-size: 13px; }
+    .section-title { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 34px 0 16px; }
+    .section-title h2 { margin: 0; font-size: 24px; }
+    .section-title p { margin: 0; color: var(--text-sub); font-size: 14px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025)), var(--card-bg); border: 1px solid rgba(255,255,255,0.09); border-radius: 24px; padding: 22px; box-shadow: 0 16px 50px rgba(0,0,0,0.28); transition: transform .22s ease, border-color .22s ease; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(179,136,255,0.38); }
+    .company { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .company .name { font-size: 19px; font-weight: 800; color: #fff; }
+    .company .type { font-size: 12px; color: var(--accent); border: 1px solid rgba(0,229,255,0.25); background: rgba(0,229,255,0.08); border-radius: 999px; padding: 6px 10px; white-space: nowrap; }
+    .headline { margin: 0 0 14px; color: var(--primary); font-size: 17px; line-height: 1.55; }
+    .block { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .block h3 { margin: 0 0 8px; font-size: 14px; color: #fff; display: flex; align-items: center; gap: 8px; }
+    .block p { margin: 0; color: var(--text-sub); line-height: 1.8; font-size: 14px; }
+    .source { margin-top: 14px; color: #777; font-size: 12px; }
+    .source a { color: #8eefff; }
+    .note { margin-top: 28px; padding: 18px 20px; border: 1px solid rgba(179,136,255,0.22); border-radius: 20px; background: rgba(179,136,255,0.07); color: var(--text-sub); line-height: 1.8; }
+    .footer { margin-top: 34px; text-align: center; color: #777; font-size: 13px; }
+    @media (max-width: 860px) { .hero { padding: 28px; } .stats, .grid { grid-template-columns: 1fr; } .section-title { display: block; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="tag">🏢 今日大厂新闻 · 2026-07-20 · style_dark</div>
+      <h1>从 WAIC 收官战看大厂定力：不再盲目卷参数规模，而是全线押注“AI 终端、开源生态与具身智能”</h1>
+      <p class="lead">7 月 20 日，2026 世界人工智能大会（WAIC）进入最后冲刺阶段，大厂动态呈现出极其务实的“三级跳”：国内厂商集体完成从模型到终端、从闭源到开源、从软件到硬件（具身/芯片）的战略变道。字节跳动、腾讯、阿里、百度、华为、小米悉数亮出“杀手锏”，旨在证明 AI 已具备进入物理世界执行任务的能力。国际巨头则在处理股价波动与发布延迟的间隙，继续通过法律与安全边界锚定长期话语权。今天的关键词是：真机亮相、万亿开源、对标替代。</p>
+      <div class="stats">
+        <div class="stat"><strong>10</strong><span>条重点动态</span></div>
+        <div class="stat"><strong>6</strong><span>国内大厂</span></div>
+        <div class="stat"><strong>4</strong><span>国际巨头</span></div>
+        <div class="stat"><strong>3</strong><span>核心锚点：终端、开源、算力</span></div>
+      </div>
+    </section>
+
+    <div class="section-title">
+      <h2>国内大厂与科技生态</h2>
+      <p>覆盖字节跳动、腾讯、阿里、百度、华为、小米等 7 月 20 日最新动态</p>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="company"><span class="name">字节跳动</span><span class="type">NaviX Ultra / AI 终端</span></div>
+        <p class="headline">字节跳动联合努比亚打造的全球首款量产 AI 智能体手机 NaviX Ultra 在 WAIC 正式公开亮相。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 20 日，字节跳动与中兴努比亚联合研发的第二代豆包 AI 手机 NaviX Ultra 在 WAIC 2026 进行全球首秀。该机深度整合豆包手机助手，强调从“人操作手机”向“手机主动办事”跨越，并一举斩获大会 SAIL 卓越人工智能大奖。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>字节的 AI 手机终于从“样机测试”走到了“大规模量产”阶段。它不再只是一个装了 App 的手机，而是把豆包大模型直接埋进系统底层，让手机能像个小秘书一样，帮你跨 App 自动解决问题。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这意味着字节正式跳过 App 层的混战，直接去抢操作系统的 AI 入口。首批 20 万台的备货量显示了字节在硬件生态上的野心，也预示着“AI 智能体手机”将成为手机行业下一个标准配置。</p></div>
+        <div class="source">来源：<a href="http://m.toutiao.com/group/7664377058692186670/">稷下过客</a> · <a href="http://m.toutiao.com/group/7664435242828136996/">一束字界风</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">腾讯</span><span class="type">混元 Hy3 / 具身智能</span></div>
+        <p class="headline">混元 Hy3 登顶 OpenRouter 榜单后在 WAIC 首秀，腾讯同步发布基于混元的具身智能全栈方案。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 20 日腾讯宣布，新一代大模型混元 Hy3 发布一周后总调用量增长超 68 倍，登顶全球 API 聚合平台 OpenRouter 总榜。腾讯同步在 WAIC 展示了基于混元的具身智能“大脑”RxBrain 及“右脑”VLM 模型，推动 AI 走进车间与实验室。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>腾讯的新大脑不仅在软件端（WorkBuddy/元宝）用得火热，现在还要给机器人装上这个脑子，让它们不仅能听懂话，还能看懂环境、规划动作，真正解决具身落地难题。</p></div>
+        <div class="block"><h3>影响分析</h3><p>Hy3 的爆发式增长证明了其高性价比策略的成功。通过将基座能力输出给机器人和企业平台（ADP），腾讯正在构建一个“大模型+具身智能”的闭环，试图在工业 AI 领域占据高地。</p></div>
+        <div class="source">来源：<a href="http://m.toutiao.com/group/7664516320674710059/">IT时报</a> · <a href="http://m.toutiao.com/group/7664506133293416975/">金融界</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">阿里巴巴</span><span class="type">Qwen3.8 / 2.4T 开源</span></div>
+        <p class="headline">阿里在 WAIC 甩出“开源核弹”Qwen3.8，以 2.4 万亿参数规模挑战全球顶尖闭源模型。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 20 日，阿里通义团队官宣 Qwen3.8 即将正式开源。该模型拥有 2.4 万亿参数，采用 MoE 架构，官方称性能紧咬全球标杆 Fable 5。目前预览版已上线百炼平台，计费仅为标准定价的 10%，旨在加速开发者回流开源生态。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>阿里这波操作非常狠：用开源的方式，提供和国外最贵模型（如 Fable 5）差不多的能力，但价格只有对方的十分之一。这就是要用规模优势和开源策略，把开发者和企业都留在阿里的云生态里。</p></div>
+        <div class="block"><h3>影响分析</h3><p>Qwen3.8 是千问系列首个迈入万亿参数的开源模型。此举将极大地改变大模型竞赛的格局，迫使其他厂商重新审视闭源收费路线，同时也进一步确立了阿里在国产开源大模型领域的霸主地位。</p></div>
+        <div class="source">来源：<a href="http://m.toutiao.com/group/7664441319401603584/">智能个体</a> · <a href="http://finance.sina.cn/tech/2026-07-20/detail-iniimuyh8277375.d.html">新浪科技</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">百度</span><span class="type">昆仑芯 M100 / 对标 H20</span></div>
+        <p class="headline">百度旗下昆仑芯第四代 AI 芯片 M100 实物在 WAIC 首次展出，核心对标 NVIDIA 特供产品 H20。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 20 日，百度昆仑芯 M100 推理专用芯片实物正式亮相央视新闻及 WAIC 展台。M100 基于全国产供应链打造，主打大模型推理的高性价比与高能效比，定位为国产算力替代的重要补充，直接竞争对手指向 NVIDIA H20。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>百度这颗新芯片不仅是 PPT 里的数据，现在已经拿出了真家伙。它不求绝对性能世界第一，但求在大家最常用的“大模型推理”这活儿上，能做得比英伟达的中国特供版更省钱、更好用。</p></div>
+        <div class="block"><h3>影响分析</h3><p>国产算力正在从“可用”转向“好用”。昆仑芯 M100 的实物展出，配合百度自研的 XPU 理念，将助力更多企业在算力受限的环境下，实现大模型应用的低成本部署。</p></div>
+        <div class="source">来源：<a href="https://ai.zol.com.cn/1218/12189202.html">中关村在线</a> · <a href="https://www.ithome.com/0/978/920.htm">IT之家</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">华为</span><span class="type">Atlas 950 / 鸿蒙 7.0</span></div>
+        <p class="headline">华为昇腾 950 超节点斩获 WAIC 最高奖，鸿蒙 7.0 完成 AI 化改造并彻底剥离安卓兼容层。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 20 日，华为昇腾 950 超节点（1024 卡真机）斩获 WAIC 2026 SAIL 最高奖，标志着国产万卡算力集群架构获行业公认。同时，鸿蒙 7.0 被确认为首个完成 AI 化改造的操作系统，内核直接嵌入盘古模型，实现 AI 任务本地化高速运行。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>华为今天展现了“天上一张网（算力超节点），地下一套系统（纯血鸿蒙）”的恐怖协同。算力上拿了最高奖，手机系统上则彻底和安卓分手，把 AI 变成了系统呼吸一样的基础能力。</p></div>
+        <div class="block"><h3>影响分析</h3><p>Atlas 950 的获奖将吸引更多大模型厂商采用国产算力底座；而鸿蒙 7.0 的“纯血化”与“AI 化”则是国产基础软件的一次里程碑，将极大地释放麒麟芯片与昇腾算力的软硬协同潜力。</p></div>
+        <div class="source">来源：<a href="http://m.toutiao.com/group/7664298189517439498/">央视新闻</a> · <a href="http://m.toutiao.com/group/7664457167266300435/">玩机小技巧</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">小米</span><span class="type">澎湃 OS 4 / 玻璃质感 UI</span></div>
+        <p class="headline">小米澎湃 OS 4 界面设计遭曝光，引入“液态玻璃”视觉语言，旨在彻底清理 MIUI 历史冗余。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 20 日消息，小米下一代系统 HyperOS 4 的多张内测截图流出。新版系统将采用全新的视觉设计与底座重构，包括“液态玻璃”质感 UI；同时，小米澎程增程 SUV 系列与系统底层的 HyperAI 架构已完成三端原生互通准备。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>小米正在给系统做一场“大手术”，把用了十几年的老代码清理干净，换上更漂亮、更轻快的玻璃质感皮肤。更重要的是，这套新系统能让手机、汽车（澎程）和家电共用一个 AI 大脑。</p></div>
+        <div class="block"><h3>影响分析</h3><p>视觉焕新只是表象，底层重构才是小米在 2026 年的关键一跳。随着 8 月发布会的临近，小米试图通过自研 OS+自研芯片（玄戒）+自研 AI 的“大会师”，在全生态体验上正面硬刚华为和苹果。</p></div>
+        <div class="source">来源：<a href="https://m.weibo.cn/detail/5322756610589122">CNMO科技</a> · <a href="http://m.toutiao.com/group/7664294998170632754/">数码拾遗馆</a></div>
+      </article>
+    </section>
+
+    <div class="section-title">
+      <h2>国际科技公司</h2>
+      <p>覆盖 Google、Apple、Meta、OpenAI 等国际大厂</p>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="company"><span class="name">Google</span><span class="type">Gemini 3.5 延迟 / 股价承压</span></div>
+        <p class="headline">谷歌旗舰模型 Gemini 3.5 Pro 被曝因训练数据更新后效果未达预期而被迫推迟发布。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 16 日至 20 日持续发酵，据 Bloomberg 等报道，Alphabet 旗舰 AI 模型 Gemini 3.5 Pro 的发布时间已较计划推迟数月。此消息导致 Alphabet 股价重挫，引发市场对谷歌在 AI 竞赛中落后于 OpenAI 与 Anthropic 的担忧。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>谷歌原本想发个大招回击对手，结果临时发现新训练的模型性能没过关，只能撤回去重修。这件事直接吓坏了投资人，让谷歌的 AI 领先地位再次被打上问号。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这次发布延迟给 Google 带来了巨大的市场信任危机。在 OpenAI GPT-5.6 已全面落地的压力下，Google 必须尽快通过 Gemini Notebook 等产品整合来稳住基本盘，否则用户流失风险将加剧。</p></div>
+        <div class="source">来源：<a href="https://m.weibo.cn/detail/5321720779244764">CNMO科技</a> · <a href="https://www.bloomberg.com/news/articles/2026-07-16/google-gemini-launch-delayed-as-tech-falls-short-of-internal-goals">Bloomberg</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Apple</span><span class="type">Siri AI / 法律战</span></div>
+        <p class="headline">苹果推进 iOS 27 测试的同时，继续通过法律手段锁定 OpenAI 侵犯硬件商业机密的证据。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月中下旬，苹果持续推进对 OpenAI 的法律诉讼，指控其招募苹果前员工并非法获取硬件商业秘密。与此同时，iOS 27 公测版在海外上线，Siri AI 的深度响应能力获得开发者好评，但部分功能在中国市场仍处于待定状态。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>苹果现在是“两条腿走路”：产品上，把 Siri 彻底重造成真正的 AI 助手；法律上，则死磕 OpenAI，不准它借着挖人把苹果的硬件“内功”给偷学了去。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这场硬件秘密之战会极大增加 OpenAI 进军硬件领域的成本和风险。而 Siri AI 的评价走高，说明苹果在端侧 AI 体验上依然拥有极强的护城河，只要中国区的落地问题解决，苹果的 AI 势能仍是顶级的。</p></div>
+        <div class="source">来源：<a href="https://meteoraweb.com/en/news/apple-releases-ios-27-public-betas-and-sues-openai-over-trade-secrets-theft">MeteoraWeb</a> · <a href="https://www.theinformation.com/articles">The Information</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Meta</span><span class="type">AI 眼镜 / 隐私惩罚</span></div>
+        <p class="headline">Meta 对其 AI 眼镜推出史上最严隐私更新，任何损毁或遮挡 LED 指示灯的行为都将导致摄像头永久锁定。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>Meta 官方博客及 36Kr 7 月 19 日报道提到，一旦检测到用户试图通过胶带遮盖、物理涂抹或拆除摄像头旁的隐私 LED 指示灯，Meta AI 眼镜将通过底层系统锁定拍照功能，无法恢复。此举旨在回应欧洲监管机构对可穿戴设备偷拍风险的严厉批评。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>Meta 真的被罚怕了。现在你要是想遮住眼镜上的拍照指示灯去搞“偷拍”，眼鏡会自动“自废武功”，直接变砖。Meta 想以此证明：AI 眼镜可以很酷，但必须守规矩。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这种“硬核合规”虽然牺牲了部分用户自由，但却是 AI 可穿戴设备大规模进入公共场所的先决条件。Meta 的这一标准，很可能会被其他跟随厂商效仿，成为行业标配。</p></div>
+        <div class="source">来源：<a href="https://eu.36kr.com/en/p/3902166239200896">36Kr</a> · <a href="https://about.fb.com/news/2026/07/metas-ai-glasses-your-questions-answered/">Meta 官方博客</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">OpenAI</span><span class="type">GPT-5.6 Sol / Copilot 融合</span></div>
+        <p class="headline">GPT-5.6 Sol 正式成为 Microsoft 365 Copilot 首选模型，OpenAI 全力推动“Agentic 办公”普及。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>OpenAI 确认，自 7 月 9 日发布的旗舰模型 GPT-5.6 Sol 已完成对微软全线办公产品的深度适配。7 月 20 日最新消息显示，ChatGPT Work 的企业订阅量在上线一周内突破百万，用户平均 Token 消耗效率提升 54%，标志着 AI 办公进入“指令即交付”时代。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>OpenAI 现在和微软绑得更紧了。GPT-5.6 不再是让你聊天用的，而是变成了 Excel、Word 里的隐形助手，它能更聪明地理解你的业务逻辑，帮你把复杂的活儿一次性干完，而不只是生成几段文字。</p></div>
+        <div class="block"><h3>影响分析</h3><p>GPT-5.6 及其配套的 Sol、Terra、Luna 三档定价策略，正迅速挤压其他闭源模型的市场空间。OpenAI 正在通过“更好的模型+更低的成本+更深的生态集成”，构建一个对手难以逾越的竞争厚度。</p></div>
+        <div class="source">来源：<a href="https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/">OpenAI Newsroom</a> · <a href="https://blog.csdn.net/debug_fan/article/details/162914605">CSDN 转引</a></div>
+      </article>
+    </section>
+
+    <section class="note">
+      <strong>今日观察：</strong>在 2026 年 7 月 20 日这个节点，WAIC 不再是一个纯粹的研讨会，而成为了大厂展示“肌肉”与“交付力”的收官考场。国内厂商通过真机亮相（字节/努比亚手机）、万亿参数开源（阿里千问）和芯片实物展出（百度昆仑芯），正在迅速完成从追赶者到定义者的角色转换。国际巨头虽有局部波折，但其在合规治理（Meta）与法律堡垒（苹果）上的动作，同样在为 AI 下半场的博弈设立新的门槛。
+    </section>
+
+    <div class="footer">Generated for global-sync · dachang-news · 2026-07-20</div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub 精选项目报告 - 2026年7月20日</title>
+  <style>
+    :root { --primary: #0052D9; --bg: #F3F5F8; --card-bg: #FFFFFF; --text-main: #1C1F23; --text-sub: #5C6A82; --line: #D9E6F7; --soft: #F8FAFC; --accent: #13C2C2; }
+    * { box-sizing: border-box; }
+    body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: linear-gradient(180deg, #EEF4FF 0%, var(--bg) 58%, #FFFFFF 100%); color: var(--text-main); margin: 0; padding: 20px; }
+    .container { max-width: 920px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 16px; box-shadow: 0 10px 34px rgba(0,82,217,0.08); }
+    .header { border-bottom: 2px solid var(--primary); padding-bottom: 18px; margin-bottom: 26px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
+    .header h1 { color: var(--primary); margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.3px; }
+    .date { color: var(--text-sub); font-size: 14px; white-space: nowrap; }
+    .intro { background: linear-gradient(135deg, #F4F8FF 0%, #F8FEFF 100%); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin-bottom: 24px; color: var(--text-sub); line-height: 1.75; font-size: 15px; }
+    .news-item { border-left: 3px solid var(--primary); padding: 20px 22px; margin-bottom: 22px; background: var(--soft); border-radius: 0 12px 12px 0; transition: all 0.3s ease; }
+    .news-item:hover { transform: translateX(4px); box-shadow: 0 6px 18px rgba(0,82,217,0.10); }
+    .topline { display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+    .tag { display: inline-block; background: #E0EBF5; color: var(--primary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+    .score { display: inline-block; background: #E8FFFB; color: #087E8B; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+    .news-item h2 { margin: 8px 0 12px 0; font-size: 21px; color: var(--text-main); }
+    .news-item p { margin: 0 0 12px 0; font-size: 15px; color: var(--text-sub); line-height: 1.75; }
+    .section-title { margin: 18px 0 8px; font-size: 15px; color: var(--primary); font-weight: 700; }
+    ul { margin: 0 0 12px 0; padding-left: 19px; }
+    li { color: var(--text-sub); line-height: 1.75; margin-bottom: 6px; font-size: 15px; }
+    .link-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+    .link { color: var(--primary); text-decoration: none; font-size: 14px; font-weight: 600; }
+    .link:hover { text-decoration: underline; }
+    .meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0; }
+    .meta-card { background: #FFFFFF; border: 1px solid #E8EEF7; border-radius: 10px; padding: 10px 12px; }
+    .meta-card b { display: block; color: var(--text-main); font-size: 13px; margin-bottom: 4px; }
+    .meta-card span { color: var(--text-sub); font-size: 13px; }
+    .why { background: #FFFFFF; border: 1px dashed #BFD7FF; border-radius: 10px; padding: 12px 14px; margin: 12px 0; color: var(--text-sub); line-height: 1.75; font-size: 14px; }
+    .footer { text-align: center; margin-top: 32px; padding-top: 20px; border-top: 1px solid #EEF2F7; color: var(--text-sub); font-size: 12px; line-height: 1.7; }
+    @media (max-width: 700px) { .container { padding: 22px; } .header { flex-direction: column; align-items: flex-start; } .meta { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>💎 GitHub 精选项目报告</h1>
+      <div class="date">2026年7月20日</div>
+    </div>
+
+    <div class="intro">
+      今天这 2 个项目都很适合关注 <strong>AI 与开发工作流融合</strong> 的工程师：一个让网页原生拥有“会操作页面的 AI 员工”，适合产品侧快速落地 Agent 交互；另一个则给 Coding Agent 补上真正可持续复用的 <strong>代码知识图谱</strong>，解决大仓代码理解慢、重复扫描重的问题。前者偏 <strong>AI 交互落地</strong>，后者偏 <strong>Agent 基础设施</strong>，都很有技术成长价值。
+    </div>
+
+    <div class="news-item">
+      <div class="topline">
+        <span class="tag">Browser Agent / Web Automation / MCP</span>
+        <span class="score">推荐指数：9.4/10</span>
+      </div>
+      <h2>1. alibaba/page-agent：给网页直接装上一个会“听话做事”的 GUI Agent</h2>
+      <p>page-agent 的核心思路非常直接：不是在浏览器外部再套一个自动化壳子，而是把 Agent 能力直接注入到网页本身，让页面自己理解自然语言指令、识别 DOM 结构，并完成点击、填写、跳转等操作。对做 SaaS、后台系统和表单流程的团队来说，这种“页面内嵌式 AI 操作员”比传统浏览器自动化更轻，也更容易嵌进现有产品。</p>
+      <div class="meta">
+        <div class="meta-card"><b>项目地址</b><span>alibaba/page-agent</span></div>
+        <div class="meta-card"><b>核心形态</b><span>TypeScript / In-page GUI Agent</span></div>
+        <div class="meta-card"><b>当前热度</b><span>27.2k⭐ / 2.3k Fork</span></div>
+      </div>
+      <div class="why">为什么今天选它：它代表了一条很实用的 Agent 落地方向——不是只会聊天，而是真正接管页面交互流程，能直接提升现有 Web 产品的操作效率与可访问性。</div>
+      <div class="section-title">项目详细介绍</div>
+      <p>从官方 README 看，page-agent 主打“one script gives any web page its own AI agent”。它不依赖浏览器扩展、Python 环境或 headless browser，而是通过页面内 JavaScript 直接完成 DOM 理解与操作。项目还支持自带模型能力，既能接主流大模型，也支持本地模型；如果需要跨页面任务，还可以叠加 Chrome Extension 和 MCP Server，把单页能力延展成更完整的浏览器级助手。</p>
+      <div class="section-title">技术亮点</div>
+      <ul>
+        <li>采用文本化 DOM 操作而非截图流，不依赖多模态模型和图像识别链路，延迟和成本都更可控。</li>
+        <li>集成方式极轻，只需在页面中引入脚本即可开始验证，特别适合已有 Web 系统做 AI Copilot 增强。</li>
+        <li>支持自定义 LLM 与本地模型，不会把能力锁死在单一供应商上，工程可控性更强。</li>
+        <li>同时提供 Chrome 扩展与 MCP Server（Beta），可以从“单页面执行”升级到“多页面协同”和外部 Agent 控制浏览器。</li>
+      </ul>
+      <div class="section-title">使用场景</div>
+      <p>非常适合做企业后台 Copilot、自然语言表单填写、流程系统自动化、网页无障碍辅助，以及面向客服、运营、销售的轻量级网页助手。如果你在做 AI 产品化，这个项目值得学习的点不只是“怎么操作页面”，而是“怎么把 Agent 能力以极低接入成本嵌进现有前端产品”。</p>
+      <div class="link-row">
+        <a href="https://github.com/alibaba/page-agent" class="link">查看 GitHub 仓库 ↗</a>
+        <a href="https://alibaba.github.io/page-agent/" class="link">查看项目主页 ↗</a>
+        <a href="https://alibaba.github.io/page-agent/docs/introduction/overview" class="link">查看官方文档 ↗</a>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="topline">
+        <span class="tag">Code Intelligence / Knowledge Graph / MCP Server</span>
+        <span class="score">推荐指数：9.5/10</span>
+      </div>
+      <h2>2. DeusData/codebase-memory-mcp：让 Coding Agent 真正“读懂大仓库”的代码知识图谱底座</h2>
+      <p>codebase-memory-mcp 解决的是另一个很痛的现实问题：Agent 写代码并不难，难的是在中大型仓库里快速建立结构认知。这个项目把代码仓索引为持久化知识图谱，围绕函数、类、调用链、HTTP 路由和跨服务关系提供结构化查询能力，让 Agent 不用一遍遍 file-by-file 地扫仓库，而是直接基于图谱做精确探索。</p>
+      <div class="meta">
+        <div class="meta-card"><b>项目地址</b><span>DeusData/codebase-memory-mcp</span></div>
+        <div class="meta-card"><b>核心形态</b><span>C / MCP Server / Code Graph Engine</span></div>
+        <div class="meta-card"><b>当前热度</b><span>33.0k⭐ / 2.5k Fork</span></div>
+      </div>
+      <div class="why">为什么今天选它：如果说 2025 年大家在追“会不会写代码”，那 2026 年更关键的是“能不能高效理解复杂代码库”。这个项目就是为后者而生。</div>
+      <div class="section-title">项目详细介绍</div>
+      <p>官方 README 将它定义为“the fastest and most efficient code intelligence engine for AI coding agents”。它基于 tree-sitter 做多语言 AST 分析，并通过 Hybrid LSP 进一步增强语义解析，把代码索引成一个可持续复用的知识图谱。项目强调单静态二进制、零依赖、本地运行和多平台支持，说明它目标很明确：尽可能低门槛地成为各类 Coding Agent 的基础设施层，而不是又一个重型平台。</p>
+      <div class="section-title">技术亮点</div>
+      <ul>
+        <li>支持 158 种语言解析，并对 Python、TypeScript、Go、Java、Rust 等主流语言提供更强的 Hybrid LSP 语义解析。</li>
+        <li>把仓库探索从“逐文件搜索 + 人工拼上下文”切换为图查询、调用链追踪、影响面分析和架构级理解。</li>
+        <li>提供 15 个 MCP 工具，可覆盖搜索、trace、架构分析、死代码检查、HTTP 链路关联等典型研发问题。</li>
+        <li>强调本地处理与零依赖部署，适合对代码隐私、性能和稳定性敏感的研发团队使用。</li>
+      </ul>
+      <div class="section-title">使用场景</div>
+      <p>适合做大仓代码导航、Agent 辅助 Code Review、影响面评估、跨服务调用链分析、项目架构梳理，以及为 Claude Code、Codex、Cursor 一类工具提供长期代码记忆。对技术成长来说，这个项目很值得学习，因为它体现了一个趋势：未来好用的 Coding Agent，不只是模型强，而是背后有没有结构化、可复用、低成本的代码理解层。</p>
+      <div class="link-row">
+        <a href="https://github.com/DeusData/codebase-memory-mcp" class="link">查看 GitHub 仓库 ↗</a>
+        <a href="https://deusdata.github.io/codebase-memory-mcp/" class="link">查看项目主页 ↗</a>
+        <a href="https://arxiv.org/abs/2603.27277" class="link">查看相关论文 ↗</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      资料来源：GitHub 公开仓库 README、GitHub 仓库公开元数据与项目主页。<br>
+      Generated by global-sync · style_blue 商务极简蓝排版
+    </div>
+  </div>
+</body>
+</html>

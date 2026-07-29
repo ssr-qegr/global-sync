@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日晨报 - 2026年7月18日</title>
+<style>
+  :root {
+    --primary: #00C853;
+    --primary-dark: #009624;
+    --bg: #F1F8E9;
+    --card-bg: rgba(255,255,255,0.96);
+    --text-main: #1F2937;
+    --text-sub: #4B5563;
+    --line: #D1FAE5;
+    --soft: #F8FAFC;
+    --accent: #0EA5A4;
+    --warn: #F59E0B;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 20px;
+    font-family: "PingFang SC", "Microsoft YaHei", "Nunito", sans-serif;
+    color: var(--text-main);
+    background: radial-gradient(circle at top, rgba(0,200,83,0.16), transparent 32%), var(--bg);
+    line-height: 1.75;
+  }
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 28px;
+    padding: 40px;
+    border: 1px solid rgba(0,150,36,0.12);
+    box-shadow: 0 20px 60px rgba(0,150,36,0.12);
+  }
+  .header {
+    text-align: center;
+    padding-bottom: 24px;
+    border-bottom: 2px dashed #A7F3D0;
+    margin-bottom: 28px;
+  }
+  .header h1 {
+    margin: 0;
+    font-size: 34px;
+    color: var(--primary-dark);
+    letter-spacing: 1px;
+  }
+  .header .date {
+    margin-top: 10px;
+    color: #059669;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .lead {
+    margin: 18px 0 0;
+    color: var(--text-sub);
+    font-size: 15px;
+  }
+  .section {
+    margin-top: 30px;
+    padding: 24px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, rgba(236,253,245,0.9), rgba(255,255,255,0.98));
+    border: 1px solid var(--line);
+  }
+  .section h2 {
+    margin: 0 0 18px;
+    font-size: 24px;
+    color: #065F46;
+  }
+  .section-intro {
+    margin: 0 0 18px;
+    color: var(--text-sub);
+    font-size: 14px;
+  }
+  .market-card {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    border: 1px solid #DCFCE7;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 640px;
+  }
+  th, td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #E5E7EB;
+    font-size: 14px;
+  }
+  th {
+    color: #065F46;
+    background: #F0FDF4;
+  }
+  .down { color: #DC2626; font-weight: 700; }
+  .up { color: #059669; font-weight: 700; }
+  .flat { color: #6B7280; font-weight: 700; }
+  .market-note {
+    margin-top: 14px;
+    color: var(--text-sub);
+    font-size: 14px;
+  }
+  .news-item {
+    position: relative;
+    margin-top: 18px;
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 20px;
+    padding: 22px 22px 18px 30px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+  }
+  .news-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    border-radius: 20px 0 0 20px;
+    background: linear-gradient(180deg, var(--primary), var(--accent));
+  }
+  .tag {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #047857;
+    background: #D1FAE5;
+  }
+  .news-item h3 {
+    margin: 0 0 12px;
+    font-size: 20px;
+    color: #111827;
+  }
+  .point {
+    margin: 10px 0;
+    color: var(--text-sub);
+    font-size: 15px;
+  }
+  .point strong {
+    color: #111827;
+  }
+  .link {
+    display: inline-block;
+    margin-top: 8px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, var(--primary), #10B981);
+    padding: 9px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .footer {
+    margin-top: 34px;
+    text-align: center;
+    color: #6B7280;
+    font-size: 13px;
+  }
+  @media (max-width: 640px) {
+    .container { padding: 22px; }
+    .section { padding: 18px; }
+    .news-item { padding: 20px 18px 16px 24px; }
+    .header h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>🌿 2026-07-18 今日晨报</h1>
+      <div class="date">星期六 · style_green 绿色主题 · 发布于 GitHub Pages</div>
+      <p class="lead">今天的晨报按固定顺序整理为股市总览、时事政治、金融财经、技术领域四个栏目。每条内容都拆成原文摘要、人话翻译和意义解读，方便你在几分钟内快速进入状态。</p>
+    </header>
+
+    <section class="section">
+      <h2>① 股市总览</h2>
+      <p class="section-intro">以下行情基于今日早晨可获取的最新有效交易数据整理。A 股与港股尚未拿到 7 月 18 日盘中/开盘数据时，使用最近一个有效收盘价并明确标注；美股使用 7 月 17 日最新收盘数据。</p>
+      <div class="market-card">
+        <table>
+          <thead>
+            <tr>
+              <th>市场</th>
+              <th>指数</th>
+              <th>最新点位</th>
+              <th>上一交易日</th>
+              <th>涨跌额</th>
+              <th>涨跌幅</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A股</td>
+              <td>上证指数</td>
+              <td>3882.41</td>
+              <td>3955.58</td>
+              <td class="down">-73.17</td>
+              <td class="down">-1.85%</td>
+              <td>最新可得收盘价（7/16）</td>
+            </tr>
+            <tr>
+              <td>港股</td>
+              <td>恒生指数</td>
+              <td>25008.60</td>
+              <td>24681.10</td>
+              <td class="up">+327.50</td>
+              <td class="up">+1.33%</td>
+              <td>最新可得收盘价（7/16）</td>
+            </tr>
+            <tr>
+              <td>美股</td>
+              <td>纳斯达克</td>
+              <td>25520.24</td>
+              <td>25881.95</td>
+              <td class="down">-361.71</td>
+              <td class="down">-1.40%</td>
+              <td>7/17 收盘</td>
+            </tr>
+            <tr>
+              <td>美股</td>
+              <td>道琼斯</td>
+              <td>52146.42</td>
+              <td>52552.97</td>
+              <td class="down">-406.55</td>
+              <td class="down">-0.77%</td>
+              <td>7/17 收盘</td>
+            </tr>
+            <tr>
+              <td>美股</td>
+              <td>标普500</td>
+              <td>7457.69</td>
+              <td>7533.77</td>
+              <td class="down">-76.08</td>
+              <td class="down">-1.01%</td>
+              <td>7/17 收盘</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="market-note">晨间一句话：亚太市场最近呈现“内地偏谨慎、港股偏修复”的分化格局，而美股昨夜则明显被科技股和地缘风险压制。简单说，今天全球风险偏好整体不强，做交易更像是在防守中找局部机会。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>② 时事政治</h2>
+      <p class="section-intro">本栏保持国内与国际均衡，各选一条今天最值得盯住的政治动态。</p>
+
+      <article class="news-item">
+        <span class="tag">国内时政</span>
+        <h3>上海 AI 大会发布主席声明，中国继续把人工智能治理推到全球议程前排</h3>
+        <p class="point"><strong>新闻原文摘要：</strong>人民网 7 月 18 日刊发的大会主席声明显示，2026 世界人工智能大会暨人工智能全球治理高级别会议于 7 月 17 日至 20 日在上海举行，习近平出席开幕式并发表主旨讲话。声明提到，来自 100 多个国家和国际组织的官方代表、产学研界嘉宾参加会议，各方围绕“智能伙伴 共创未来”讨论如何推动人工智能向善普惠发展，并高度关注全球治理协作机制建设。</p>
+        <p class="point"><strong>人话翻译：</strong>这不是单纯办一个科技展会，而是在把“人工智能怎么发展、谁来定规则、怎么避免失控”这套议题，主动拉到国际桌面上来谈。</p>
+        <p class="point"><strong>意义解读：</strong>这说明中国在 AI 领域不只是想做技术追赶者，也在争取成为规则讨论的组织者。后续无论是跨国合作、国际标准，还是发展中国家的 AI 能力建设，这类会议都会越来越像政策风向标。</p>
+        <a class="link" href="http://politics.people.com.cn/n1/2026/0718/c461001-40763055.html" target="_blank" rel="noopener noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">国际局势</span>
+        <h3>联合国秘书长对美伊持续升级表示担忧，霍尔木兹海峡再成全球焦点</h3>
+        <p class="point"><strong>新闻原文摘要：</strong>7 月 18 日公开消息显示，联合国秘书长古特雷斯通过发言人表示，对美国与伊朗持续升级的冲突深感担忧，尤其关注伊朗及周边地区民用基础设施持续遭到袭击，并再次强调这场冲突没有军事解决方案，必须加大外交努力，同时恢复霍尔木兹海峡及周边海域的国际航行权与自由。</p>
+        <p class="point"><strong>人话翻译：</strong>联合国已经把话说得很直：再这么打下去，不只是中东不稳，全球最关键的能源运输通道也会一起出问题。</p>
+        <p class="point"><strong>意义解读：</strong>这条消息的分量在于，它把地区冲突正式抬升成“全球供应链和航运安全问题”。只要霍尔木兹的风险不解除，后续油价、避险情绪、美元资产和新兴市场都会继续被牵着走。</p>
+        <a class="link" href="http://www.china.org.cn/world/Off_the_Wire/2026-07/18/content_118605523.shtml" target="_blank" rel="noopener noreferrer">查看原文</a>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>③ 金融财经</h2>
+      <p class="section-intro">本栏同样保持国内与国际均衡，重点看今天政策面和市场面分别释放了什么信号。</p>
+
+      <article class="news-item">
+        <span class="tag">国内财经</span>
+        <h3>央行开展 3705 亿元 7 天期逆回购，继续把短端流动性稳在手里</h3>
+        <p class="point"><strong>新闻原文摘要：</strong>7 月 18 日公开市场信息显示，人民银行当日开展 3705 亿元 7 天期逆回购操作，中标利率 1.40%，与此前持平。操作量不小、利率不变，说明当前货币政策依旧以“稳资金面、稳预期”为主。</p>
+        <p class="point"><strong>人话翻译：</strong>央行今天传递的信息很直接：钱不会突然拧紧，短期资金价格也不想让市场感到意外，先把流动性情绪稳住再说。</p>
+        <p class="point"><strong>意义解读：</strong>这类操作虽然不算重磅刺激，但对债市、银行间资金面和权益市场情绪都很关键。它意味着政策层面仍然更在意“别让融资环境突然变脸”，对稳增长和稳信用是一个偏积极信号。</p>
+        <a class="link" href="https://gmteight.com/flash/detail/1435703" target="_blank" rel="noopener noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">国际财经</span>
+        <h3>美伊冲突推高国际油价，WTI 单日大涨 4.48%</h3>
+        <p class="point"><strong>新闻原文摘要：</strong>财联社 7 月 18 日早间市场消息显示，随着美国与伊朗之间的冲突风险继续升级，国际油价升至一个多月以来高位。WTI 原油期货结算价报 82.49 美元/桶，单日上涨 3.54 美元、涨幅 4.48%；布伦特原油报 88.10 美元/桶，涨幅 4.59%。市场担忧能源基础设施受损与航道风险扩散，是本轮油价上冲的主要驱动。</p>
+        <p class="point"><strong>人话翻译：</strong>这轮油价上涨不是普通供需波动，而是市场在给“地缘冲突升级”重新定价，大家担心的是后面会不会更乱。</p>
+        <p class="point"><strong>意义解读：</strong>油价一旦持续高位，最直接的连锁反应就是全球通胀预期重新抬头，美联储降息节奏、企业成本、航运价格和风险资产估值都会被重新审视。也就是说，中东局势已经开始改写全球财经市场的短期剧本。</p>
+        <a class="link" href="http://m.toutiao.com/group/7663634679651779118/" target="_blank" rel="noopener noreferrer">查看原文</a>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>④ 技术领域</h2>
+      <p class="section-intro">技术栏目继续保持国内与国际均衡，一条看中国 AI 生态升级，一条看全球芯片链条怎么为 AI 扩产。</p>
+
+      <article class="news-item">
+        <span class="tag">国内科技</span>
+        <h3>WAIC 学术板块正式亮相，中国开始把 AI 顶会也做成“本土主场”</h3>
+        <p class="point"><strong>新闻原文摘要：</strong>36 氪报道显示，依托世界人工智能大会积累，首届 WAIC Academic 于 7 月 18 日至 20 日在上海正式亮相，定位为中国自主发起、面向全球的顶级人工智能学术会议。相关介绍强调，会议将围绕前沿研究、学术交流与产学研协同展开，试图形成从技术讨论到生态建设的一体化平台。</p>
+        <p class="point"><strong>人话翻译：</strong>这件事的重点不只是又多了一个会，而是中国想把 AI 学术影响力、产业生态和国际交流放到同一个主场里做联动。</p>
+        <p class="point"><strong>意义解读：</strong>如果这类会议持续做起来，中国在 AI 领域的话语权就不只体现在模型和应用层面，也会延伸到学术议程设置与人才集聚。对企业和研究机构来说，后面围绕上海形成的创新密度值得继续关注。</p>
+        <a class="link" href="https://36kr.com/p/3897977781946249" target="_blank" rel="noopener noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">国际科技</span>
+        <h3>ASML 再度上调全年预期并计划扩产，全球 AI 芯片军备竞赛继续升温</h3>
+        <p class="point"><strong>新闻原文摘要：</strong>Reuters 7 月 15 日报道及 CNBC 同日报道显示，ASML 受 AI 芯片需求推动，再次上调 2026 年销售指引，并计划在未来两年把旗舰 EUV 以及相关 DUV 产能分别提高约 30%。市场普遍将此视为半导体设备端对 AI 需求长期化的直接回应。</p>
+        <p class="point"><strong>人话翻译：</strong>说白了，就是上游设备龙头已经不再把 AI 热潮当短期故事，而是开始真刀真枪扩产，提前给整个芯片链条“备粮”。</p>
+        <p class="point"><strong>意义解读：</strong>这意味着 AI 竞争正在从模型、应用继续向更深层的制造能力延伸。谁能先抢到高端设备和产能，谁在未来算力竞赛里就更占先手；这也会让全球半导体供应链的景气度与地缘敏感度同时上升。</p>
+        <a class="link" href="https://www.reuters.com/business/asml-tops-q2-estimates-ai-chip-demand-2026-07-15/" target="_blank" rel="noopener noreferrer">查看原文</a>
+      </article>
+    </section>
+
+    <div class="footer">
+      数据来源包含 Yahoo Finance、人民网、联合国相关公开表述转引、公开市场快讯、财联社、Reuters、CNBC、36氪等公开信息源。愿你今天开工清醒、推进顺手 🌱
+    </div>
+  </div>
+</body>
+</html>

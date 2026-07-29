@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 精选项目报告 - 2026年7月15日</title>
+<style>
+  :root { --primary: #0052D9; --bg: #F3F5F8; --card-bg: #FFFFFF; --text-main: #1C1F23; --text-sub: #5C6A82; --line: #D9E6F7; --soft: #F8FAFC; --accent: #13C2C2; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: linear-gradient(180deg, #EEF4FF 0%, var(--bg) 58%, #FFFFFF 100%); color: var(--text-main); margin: 0; padding: 20px; }
+  .container { max-width: 900px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 16px; box-shadow: 0 10px 34px rgba(0,82,217,0.08); }
+  .header { border-bottom: 2px solid var(--primary); padding-bottom: 18px; margin-bottom: 26px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
+  .header h1 { color: var(--primary); margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.3px; }
+  .date { color: var(--text-sub); font-size: 14px; white-space: nowrap; }
+  .intro { background: linear-gradient(135deg, #F4F8FF 0%, #F8FEFF 100%); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin-bottom: 24px; color: var(--text-sub); line-height: 1.75; font-size: 15px; }
+  .news-item { border-left: 3px solid var(--primary); padding: 20px 22px; margin-bottom: 22px; background: var(--soft); border-radius: 0 12px 12px 0; transition: all 0.3s ease; }
+  .news-item:hover { transform: translateX(4px); box-shadow: 0 6px 18px rgba(0,82,217,0.10); }
+  .topline { display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+  .tag { display: inline-block; background: #E0EBF5; color: var(--primary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+  .score { display: inline-block; background: #E8FFFB; color: #087E8B; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+  .news-item h2 { margin: 8px 0 12px 0; font-size: 21px; color: var(--text-main); }
+  .news-item p { margin: 0 0 12px 0; font-size: 15px; color: var(--text-sub); line-height: 1.75; }
+  .section-title { margin: 18px 0 8px; font-size: 15px; color: var(--primary); font-weight: 700; }
+  ul { margin: 0 0 12px 0; padding-left: 19px; }
+  li { color: var(--text-sub); line-height: 1.75; margin-bottom: 6px; font-size: 15px; }
+  .link { color: var(--primary); text-decoration: none; font-size: 14px; font-weight: 600; }
+  .link:hover { text-decoration: underline; }
+  .meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0; }
+  .meta-card { background: #FFFFFF; border: 1px solid #E8EEF7; border-radius: 10px; padding: 10px 12px; }
+  .meta-card b { display: block; color: var(--text-main); font-size: 13px; margin-bottom: 4px; }
+  .meta-card span { color: var(--text-sub); font-size: 13px; }
+  .why { background: #FFFFFF; border: 1px dashed #BFD7FF; border-radius: 10px; padding: 12px 14px; margin: 12px 0; color: var(--text-sub); line-height: 1.75; font-size: 14px; }
+  .footer { text-align: center; margin-top: 32px; padding-top: 20px; border-top: 1px solid #EEF2F7; color: var(--text-sub); font-size: 12px; line-height: 1.7; }
+  @media (max-width: 700px) { .container { padding: 22px; } .header { flex-direction: column; align-items: flex-start; } .meta { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>💎 GitHub 精选项目报告</h1>
+      <div class="date">2026年7月15日</div>
+    </div>
+
+    <div class="intro">
+      今日精选两个偏“AI 工程实践”的项目：一个是可直接上手的开源终端 Coding Agent，一个是把 Agent 能力封装成可复用技能包的官方样板。前者适合提升日常编码效率，后者适合学习如何把复杂工作流标准化、产品化，组合起来看，正好覆盖“让 Agent 干活”和“让 Agent 可持续进化”两条主线。
+    </div>
+
+    <div class="news-item">
+      <div class="topline">
+        <span class="tag">AI 编程助手 / 终端工具</span>
+        <span class="score">推荐指数：9.3/10</span>
+      </div>
+      <h2>1. anomalyco/opencode：面向终端的开源 AI Coding Agent</h2>
+      <p>opencode 是一个开源 AI 编程代理，定位很清晰：把 Claude Code、Cursor 这类 AI Coding 能力带回终端工作流。它支持通过 curl、npm、brew、scoop、pacman、nix 等方式安装，说明项目希望覆盖 macOS、Linux、Windows 和多种开发者环境。对习惯在 shell、vim、tmux、远程开发机里工作的工程师来说，这类 TUI-first 的工具比纯 IDE 插件更贴近日常操作路径。</p>
+      <div class="meta">
+        <div class="meta-card"><b>项目地址</b><span>anomalyco/opencode</span></div>
+        <div class="meta-card"><b>核心形态</b><span>Terminal Coding Agent</span></div>
+        <div class="meta-card"><b>适合人群</b><span>后端、CLI 重度用户、AI 编程工具开发者</span></div>
+      </div>
+      <div class="why">为什么今天选它：AI Coding Agent 正在从“IDE 里的聊天框”向“可接管真实开发工作流的执行器”演进。opencode 的价值不只是能写代码，而是把文件搜索、命令执行、代码修改、会话协作等动作放回开发者最熟悉的终端环境里。</div>
+      <div class="section-title">项目详细介绍</div>
+      <p>从公开 README 信息看，opencode 强调 open source、terminal-first 和多模型/多环境接入。它适合用来完成代码理解、局部重构、脚本编写、测试修复、命令行探索等任务。相比只能在 IDE 内使用的工具，终端代理更容易嵌入 CI、远程容器、SSH 开发机和个人 dotfiles 工作流，也更适合工程师观察 Agent 每一步执行了什么。</p>
+      <div class="section-title">技术亮点</div>
+      <ul>
+        <li>终端优先：TUI 交互天然贴合命令行开发者，尤其适合 Go、Rust、后端服务、基础设施类项目。</li>
+        <li>安装路径丰富：支持 npm、brew、scoop、pacman、nix 等生态，降低跨平台试用门槛。</li>
+        <li>开源可研究：适合拆解 AI Coding Agent 的工具调用、会话管理、文件修改和执行确认机制。</li>
+        <li>工程集成潜力高：可以和本地脚本、仓库规范、测试命令、CI 前置检查组合成团队级研发助手。</li>
+      </ul>
+      <div class="section-title">使用场景</div>
+      <p>适合在日常开发中处理小型需求实现、单测补齐、报错排查、代码迁移、批量修改和脚本生成；也适合技术成长场景，用来观察一个 Coding Agent 如何组织上下文、选择工具、执行命令并迭代代码。如果你想研究“AI 代理如何真正参与开发闭环”，opencode 是很好的入口。</p>
+      <a href="https://github.com/anomalyco/opencode" class="link">查看 GitHub 仓库 ↗</a>
+    </div>
+
+    <div class="news-item">
+      <div class="topline">
+        <span class="tag">Agent Skills / 工作流封装</span>
+        <span class="score">推荐指数：9.1/10</span>
+      </div>
+      <h2>2. anthropics/skills：把 Agent 能力沉淀成可复用的 Skills</h2>
+      <p>anthropics/skills 是 Anthropic 公开的 Agent Skills 仓库，用来展示如何通过标准化的技能目录、说明文件和资源组织方式，把 AI 助手执行某类任务的经验封装起来。它不是一个单纯的提示词集合，而是更接近“Agent 插件工程模板”：将任务触发条件、执行规则、脚本资源、参考文档和边界约束放在同一个可维护单元里。</p>
+      <div class="meta">
+        <div class="meta-card"><b>项目地址</b><span>anthropics/skills</span></div>
+        <div class="meta-card"><b>核心形态</b><span>Agent Skill Repository</span></div>
+        <div class="meta-card"><b>适合人群</b><span>AI 平台、工程效率、知识库和自动化开发者</span></div>
+      </div>
+      <div class="why">为什么今天选它：当团队开始大量使用 Agent 后，真正的瓶颈会从“模型会不会做”变成“经验能不能复用、流程能不能约束、产物能不能稳定”。Skills 的思路正好回答了这个问题。</div>
+      <div class="section-title">项目详细介绍</div>
+      <p>官方仓库说明中提到，开发者可以使用 Anthropic 预置 skills，也可以通过 Claude API 上传自定义 skills。仓库里的示例展示了如何组织 SKILL.md、辅助脚本、参考资源和任务描述，让 Agent 在特定场景下自动加载更合适的知识和工具。对企业内部 AI 助手来说，这种结构可以把“某个资深同学的操作经验”转化成稳定可复用的执行规范。</p>
+      <div class="section-title">技术亮点</div>
+      <ul>
+        <li>标准化封装：把提示词、流程、资源和脚本放进同一个 skill 包，减少口口相传式经验依赖。</li>
+        <li>动态加载：Agent 只在相关任务中加载对应 skill，兼顾上下文效率和专业能力。</li>
+        <li>适合企业落地：可以封装 Code Review、日志分析、发版检查、文档生成、数据处理等内部 SOP。</li>
+        <li>工程治理价值高：skill 本身可以版本化、评审、测试和迭代，逐步形成团队级 AI 能力资产。</li>
+      </ul>
+      <div class="section-title">使用场景</div>
+      <p>适合用于团队内部研发助手建设，例如把常见排障流程、仓库规范、测试命令、上线检查清单、业务术语解释封装成 skills；也适合个人知识管理，把经常重复的工作流沉淀成可迁移的 AI 执行单元。对技术成长来说，它能帮助你从“会用 AI”进一步升级到“会设计 AI 工作流”。</p>
+      <a href="https://github.com/anthropics/skills" class="link">查看 GitHub 仓库 ↗</a>
+    </div>
+
+    <div class="footer">
+      资料来源：GitHub 公开仓库 README、项目主页与公开搜索结果。<br>
+      Generated by global-sync · style_blue 商务极简蓝排版
+    </div>
+  </div>
+</body>
+</html>

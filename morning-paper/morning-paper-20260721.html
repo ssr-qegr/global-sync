@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日晨报 - 2026年7月21日</title>
+<style>
+  :root {
+    --primary: #00C853;
+    --primary-dark: #009624;
+    --bg: #F1F8E9;
+    --card-bg: rgba(255,255,255,0.96);
+    --text-main: #1F2937;
+    --text-sub: #4B5563;
+    --line: #D1FAE5;
+    --soft: #F8FAFC;
+    --accent: #0EA5A4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 20px;
+    font-family: "PingFang SC", "Microsoft YaHei", "Nunito", sans-serif;
+    color: var(--text-main);
+    background: radial-gradient(circle at top, rgba(0,200,83,0.16), transparent 32%), var(--bg);
+    line-height: 1.75;
+  }
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 28px;
+    padding: 40px;
+    border: 1px solid rgba(0,150,36,0.12);
+    box-shadow: 0 20px 60px rgba(0,150,36,0.12);
+  }
+  .header {
+    text-align: center;
+    padding-bottom: 24px;
+    border-bottom: 2px dashed #A7F3D0;
+    margin-bottom: 28px;
+  }
+  .header h1 {
+    margin: 0;
+    font-size: 34px;
+    color: var(--primary-dark);
+    letter-spacing: 1px;
+  }
+  .header .date {
+    margin-top: 10px;
+    color: #059669;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .lead {
+    margin: 18px 0 0;
+    color: var(--text-sub);
+    font-size: 15px;
+  }
+  .section {
+    margin-top: 30px;
+    padding: 24px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, rgba(236,253,245,0.9), rgba(255,255,255,0.98));
+    border: 1px solid var(--line);
+  }
+  .section h2 {
+    margin: 0 0 18px;
+    font-size: 24px;
+    color: #065F46;
+  }
+  .section-intro {
+    margin: 0 0 18px;
+    color: var(--text-sub);
+    font-size: 14px;
+  }
+  .market-card {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    border: 1px solid #DCFCE7;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+  }
+  th, td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #E5E7EB;
+    font-size: 14px;
+  }
+  th {
+    color: #065F46;
+    background: #F0FDF4;
+  }
+  .down { color: #DC2626; font-weight: 700; }
+  .up { color: #059669; font-weight: 700; }
+  .flat { color: #6B7280; font-weight: 700; }
+  .market-note {
+    margin-top: 14px;
+    color: var(--text-sub);
+    font-size: 14px;
+  }
+  .news-item {
+    position: relative;
+    margin-top: 18px;
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 20px;
+    padding: 22px 22px 18px 30px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+  }
+  .news-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    border-radius: 20px 0 0 20px;
+    background: linear-gradient(180deg, var(--primary), var(--accent));
+  }
+  .tag {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #047857;
+    background: #D1FAE5;
+  }
+  .news-item h3 {
+    margin: 0 0 6px;
+    font-size: 20px;
+    color: #111827;
+  }
+  .meta-line {
+    margin: 0 0 12px;
+    color: #6B7280;
+    font-size: 13px;
+  }
+  .point {
+    margin: 10px 0;
+    color: var(--text-sub);
+    font-size: 15px;
+  }
+  .point strong {
+    color: #111827;
+  }
+  .link {
+    display: inline-block;
+    margin-top: 8px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, var(--primary), #10B981);
+    padding: 9px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .footer {
+    margin-top: 34px;
+    text-align: center;
+    color: #6B7280;
+    font-size: 13px;
+  }
+  @media (max-width: 640px) {
+    .container { padding: 22px; }
+    .section { padding: 18px; }
+    .news-item { padding: 20px 18px 16px 24px; }
+    .header h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>🌿 2026-07-21 今日晨报</h1>
+      <div class="date">星期二 · style_green 绿色主题 · 发布于 GitHub Pages</div>
+      <p class="lead">今天的晨报继续按固定顺序整理为股市总览、时事政治、金融财经、技术领域四个栏目。重点优先看 7 月 20 日晚到 7 月 21 日晨能够影响市场判断与日常工作的增量信息，每条都拆成原文摘要、人话翻译和意义解读，全部用中文写清楚。</p>
+    </header>
+
+    <section class="section">
+      <h2>① 股市总览</h2>
+      <p class="section-intro">截至北京时间 2026-07-21 07:31，Yahoo Finance 最新可用数据里，美股三大指数已更新到 7 月 20 日收盘；A 股与港股对应指数最新可用收盘仍为 7 月 17 日，因此本表按“各市场当前可取到的最近完整收盘数据”统一展示。</p>
+      <div class="market-card">
+        <table>
+          <thead>
+            <tr>
+              <th>市场</th>
+              <th>指数</th>
+              <th>最新收盘</th>
+              <th>交易日</th>
+              <th>涨跌额</th>
+              <th>涨跌幅</th>
+              <th>一句话解读</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A股</td>
+              <td>上证指数</td>
+              <td>3764.16</td>
+              <td>2026-07-17</td>
+              <td class="down">-118.25</td>
+              <td class="down">-3.05%</td>
+              <td>权重托底不够强，市场对前期热门板块回撤仍然偏谨慎。</td>
+            </tr>
+            <tr>
+              <td>A股</td>
+              <td>深证成指</td>
+              <td>13706.88</td>
+              <td>2026-07-17</td>
+              <td class="down">-781.77</td>
+              <td class="down">-5.40%</td>
+              <td>深市跌幅更大，说明成长风格的风险释放更集中。</td>
+            </tr>
+            <tr>
+              <td>港股</td>
+              <td>恒生指数</td>
+              <td>24562.24</td>
+              <td>2026-07-17</td>
+              <td class="down">-446.36</td>
+              <td class="down">-1.78%</td>
+              <td>港股科技与外部风险情绪共振，资金风险偏好偏保守。</td>
+            </tr>
+            <tr>
+              <td>美股</td>
+              <td>纳斯达克</td>
+              <td>25508.07</td>
+              <td>2026-07-20</td>
+              <td class="down">-12.17</td>
+              <td class="down">-0.05%</td>
+              <td>科技股没有继续大幅杀跌，但资金明显在等财报给新方向。</td>
+            </tr>
+            <tr>
+              <td>美股</td>
+              <td>道琼斯</td>
+              <td>51839.26</td>
+              <td>2026-07-20</td>
+              <td class="down">-307.16</td>
+              <td class="down">-0.59%</td>
+              <td>传统蓝筹受地缘与油价扰动拖累，防御属性没有完全顶住。</td>
+            </tr>
+            <tr>
+              <td>美股</td>
+              <td>标普500</td>
+              <td>7443.28</td>
+              <td>2026-07-20</td>
+              <td class="down">-14.41</td>
+              <td class="down">-0.19%</td>
+              <td>整体风险资产仍偏承压，但跌幅已明显小于前一个交易日。</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="market-note">晨间一句话：当前全球市场的主线很清楚——国内资金在等风险偏好修复，海外资金在盯油价、地缘冲突和科技财报验证。今天如果要看方向，先看市场有没有从“防守交易”重新切回“业绩交易”。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>② 时事政治</h2>
+      <p class="section-intro">本栏继续按国内 2 条、国际 2 条整理，兼顾周边外交、多边议程和全球主要国家政局变化。</p>
+
+      <article class="news-item">
+        <span class="tag">国内时政</span>
+        <h3>中泰发布面向繁荣命运共同体联合声明，周边外交继续往“更深绑定”推进</h3>
+        <p class="meta-line">来源：中国驻美使馆转发联合声明 · 发布时间：2026-07-21</p>
+        <p class="point"><strong>新闻原文摘要：</strong>中国和泰国围绕面向繁荣的命运共同体发布联合声明，内容涵盖战略协作、人文交流、教育合作、职业培训、数字技能与国际教育合作等多个层面，释放出双边合作继续扩面的明确信号。</p>
+        <p class="point"><strong>人话翻译：</strong>这不是一条普通礼节性外交新闻，而是在说中国和周边重要伙伴的合作，正在从“关系友好”走向“制度化、长期化、全面化”。</p>
+        <p class="point"><strong>意义解读：</strong>对国内而言，这类声明通常意味着后续会有更多产业、教育、数字经济和区域合作项目落地，也说明周边外交仍是当前对外战略的重要抓手。</p>
+        <a class="link" href="https://us.china-embassy.gov.cn/eng/zgyw/202607/t20260721_11986896.htm" target="_blank" rel="noopener noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">国内时政</span>
+        <h3>王毅会见下任联合国秘书长候选人，多边主义与一个中国原则再次被放到台前</h3>
+        <p class="meta-line">来源：外交部 · 发布时间：2026-07-20</p>
+        <p class="point"><strong>新闻原文摘要：</strong>外交部披露，王毅 7 月 20 日会见下任联合国秘书长候选人罗德里格斯—伯基特。对方在会见中表示支持联大第2758号决议、恪守一个中国原则，并强调愿推动联合国改革与人工智能等国际合作议题。</p>
+        <p class="point"><strong>人话翻译：</strong>这条消息的重点不只是见面本身，而是候选人在关键议题上公开释放了对华友好和支持多边合作的信号。</p>
+        <p class="point"><strong>意义解读：</strong>如果相关表态后续持续强化，中国在联合国体系中的议题设置空间会更大，尤其是在全球治理、AI 规则与发展中国家合作方面。</p>
+        <a class="link" href="https://www.mfa.gov.cn/wjbzhd/202607/t20260720_11986595.shtml" target="_blank" rel="noopener noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">国际局势</span>
+        <h3>胡塞宣布对沙特实施海上封锁，美伊冲突出现外溢成更大区域风险的迹象</h3>
+        <p class="meta-line">来源：Reuters · 发布时间：2026-07-20</p>
+        <p class="point"><strong>新闻原文摘要：</strong>路透报道，在美伊冲突持续升级背景下，胡塞武装宣布对沙特实施海上封锁，使红海、霍尔木兹等关键航运通道的安全担忧同步升温，中东局势出现向更广区域扩散的新迹象。</p>
+        <p class="point"><strong>人话翻译：</strong>市场现在担心的，已经不是“某两国有没有继续打”，而是这场冲突会不会把周边海运、能源和更多国家都卷进去。</p>
+        <p class="point"><strong>意义解读：</strong>只要航运通道风险继续抬升，国际油价、运价、保险成本和全球市场避险情绪就很难真正降下来。</p>
+        <a class="link" href="https://www.reuters.com/world/middle-east/us-launches-iran-strikes-ninth-day-another-american-confirmed-killed-2026-07-20/" target="_blank" rel="noopener noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">国际局势</span>
+        <h3>Andy Burnham 接任英国首相，欧洲重要经济体政策预期进入重定价阶段</h3>
+        <p class="meta-line">来源：Reuters · 发布时间：2026-07-20</p>
+        <p class="point"><strong>新闻原文摘要：</strong>路透追踪报道显示，Andy Burnham 于 7 月 20 日接任英国首相，并将“带来更稳定政治”作为核心承诺，英国政坛进入新一轮内阁重组与政策窗口期。</p>
+        <p class="point"><strong>人话翻译：</strong>英国换首相，市场首先会看两件事：一是财政和社保怎么调，二是新政府能不能真把政治不确定性压下来。</p>
+        <p class="point"><strong>意义解读：</strong>英国是欧洲重要经济体，这次政局切换会影响英镑、英国国债以及欧洲政策预期，也会牵动外部资金对欧洲资产的配置判断。</p>
+        <a class="link" href="https://www.reuters.com/world/live-andy-burnham-takes-over-britains-prime-minister-vows-stable-politics-2026-07-20/" target="_blank" rel="noopener noreferrer">查看原文</a>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>③ 金融财经</h2>
+      <p class="section-intro">本栏保持国内 2 条、国际 2 条，重点看政策托底、工业基本盘和全球油价与财报交易。</p>
+
+      <article class="news-item">
+        <span class="tag">国内财经</span>
+        <h3>工信部披露上半年工业运行成绩单，工业增加值同比增长 5.4%</h3>
+        <p class="meta-line">来源：工业和信息化部 · 发布时间：2026-07-20</p>
+        <p class="point"><strong>新闻原文摘要：</strong>工信部在国新办发布会上表示，2026 年上半年规模以上工业增加值同比增长 5.4%，工业对经济增长贡献率超过 35%，前 5 个月规模以上工业企业利润总额同比增长 18.8%，工业出口也保持较快增长。</p>
+        <p class="point"><strong>人话翻译：</strong>一句话看，这说明经济并不是全面走弱，真正稳住大盘的仍然是工业和制造业这条主线。</p>
+        <p class="point"><strong>意义解读：</strong>这会增强市场对制造业、设备更新、出口链和新型工业化方向的政策与业绩预期，下半年“稳工业”仍会是重要抓手。</p>
+        <a class="link" href="https://www.miit.gov.cn/xwfb/bldhd/art/2026/art_bc4cf76777cb4fd2896082ca2ff7039d.html" target="_blank" rel="noopener noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">国内财经</span>
+        <h3>多家央企宣布继续增持，政策资金再次向资本市场释放稳定信号</h3>
+        <p class="meta-line">来源：国务院国资委 · 发布时间：2026-07-20</p>
+        <p class="point"><strong>新闻原文摘要：</strong>国资委披露，多家央企宣布通过增持、回购、分红等方式稳定市场。其中中国国新表示，相关主体已使用股票回购增持专项再贷款及配套资金超 500 亿元，并将继续增持中央企业股票。</p>
+        <p class="point"><strong>人话翻译：</strong>这相当于官方用真金白银告诉市场：核心资产不能任由情绪失控，关键时点会有人出来托底。</p>
+        <p class="point"><strong>意义解读：</strong>短期有助于稳定市场情绪，中期则说明“维护资本市场平稳运行”仍是政策明确目标，资金面对优质央国企资产的定价会更有底气。</p>
+        <a class="link" href="http://www.sasac.gov.cn/n2588025/n2588124/c35648449/content.html" target="_blank" rel="noopener noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">国际财经</span>
+        <h3>布伦特油价一度重回 90 美元上方，能源风险再度牵动全球通胀预期</h3>
+        <p class="meta-line">来源：Reuters · 发布时间：2026-07-20</p>
+        <p class="point"><strong>新闻原文摘要：</strong>路透报道，受美伊冲突升级和中东航运风险影响，布伦特原油一度重新站上每桶 90 美元。尽管谈判预期令尾盘涨幅有所收窄，但市场已重新计入供应扰动和地区风险溢价。</p>
+        <p class="point"><strong>人话翻译：</strong>油价现在涨的不只是供需，而是市场在为“万一中东继续升级”提前买保险。</p>
+        <p class="point"><strong>意义解读：</strong>只要油价高位维持，全球央行的降息空间、企业成本和市场估值模型都会受到压制，风险资产就很难彻底轻装上阵。</p>
+        <a class="link" href="https://reuters.com/business/energy/brent-oil-tops-90-us-iran-intensify-attacks-middle-east-2026-07-20" target="_blank" rel="noopener noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">国际财经</span>
+        <h3>本周市场转向财报交易，大型科技与芯片公司要为 AI 高估值“交作业”</h3>
+        <p class="meta-line">来源：Reuters · 发布时间：2026-07-20</p>
+        <p class="point"><strong>新闻原文摘要：</strong>路透指出，本周市场焦点正从宏观情绪切换到 mega-cap 财报和芯片公司盈利表现，投资者将检验 AI 相关资本开支是否足以支撑当前高估值与未来增长想象。</p>
+        <p class="point"><strong>人话翻译：</strong>市场已经不太想继续听故事了，接下来更想看这些大公司到底赚没赚到钱、订单有没有继续变强。</p>
+        <p class="point"><strong>意义解读：</strong>如果财报和指引不够硬，科技主线会继续震荡；反过来，只要龙头业绩站得住，AI 主线很可能很快重新带动风险偏好修复。</p>
+        <a class="link" href="https://reuters.com/markets/europe/chipmakers-head-big-profit-gains-will-it-be-enough-2026-07-20" target="_blank" rel="noopener noreferrer">查看原文</a>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>④ 技术领域</h2>
+      <p class="section-intro">技术栏目继续优先关注 AI、算力、基础设施和产业化落地，兼顾国内外最新进展。</p>
+
+      <article class="news-item">
+        <span class="tag">国内科技</span>
+        <h3>新华社观察 WAIC 2026：AI 竞争正在从“模型能力”转向“创新+可信”双轮驱动</h3>
+        <p class="meta-line">来源：新华社 / 新华网 · 发布时间：2026-07-20</p>
+        <p class="point"><strong>新闻原文摘要：</strong>新华社在 WAIC 2026 观察文章中指出，本届大会一方面继续展示大模型、智能体、具身智能等前沿成果，另一方面把安全、治理、可信和国际合作放到同等重要的位置。</p>
+        <p class="point"><strong>人话翻译：</strong>现在拼 AI 已经不只是看谁模型更强，而是要同时回答“能不能放心用、能不能长期用、能不能在全球合作里用”。</p>
+        <p class="point"><strong>意义解读：</strong>这意味着 AI 竞争正在进入更成熟阶段，后续真正能跑出来的，不只是技术领先者，还会是治理、生态和产业落地做得更扎实的一方。</p>
+        <a class="link" href="http://www.xinhuanet.com/20260720/ae3e51341638440a9837d9c9434fec04/c.html" target="_blank" rel="noopener noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">国内科技</span>
+        <h3>我国智能算力规模达 2185 EFLOPS，算力建设正式进入“规模化供给”阶段</h3>
+        <p class="meta-line">来源：新华社 / 新华网 · 发布时间：2026-07-20</p>
+        <p class="point"><strong>新闻原文摘要：</strong>新华社援引国新办发布会信息称，截至 2026 年 6 月底，我国智能算力规模达到 2185 EFLOPS（FP16），同比增长 177%，全国算力设施整体上架率达 71.4%。</p>
+        <p class="point"><strong>人话翻译：</strong>这说明国内不是只会讲算力故事，而是真的在把机房、设备、集群和应用一起做大做实。</p>
+        <p class="point"><strong>意义解读：</strong>算力供给扩张会继续带动芯片、服务器、液冷、光模块、调度平台和行业 AI 应用链条，相关产业的景气度还有延展空间。</p>
+        <a class="link" href="http://www.xinhuanet.com/20260720/2029268fbb4044c1b8753d4c22b89671/c.html" target="_blank" rel="noopener noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">国际科技</span>
+        <h3>芯片与 mega-cap 财报成 AI 主线新试金石，科技行情进入“业绩验证期”</h3>
+        <p class="meta-line">来源：Reuters · 发布时间：2026-07-20</p>
+        <p class="point"><strong>新闻原文摘要：</strong>路透指出，投资者正在等待芯片公司和大型科技公司财报，判断 AI 高投入能否继续换来高增长。市场关注点已从单纯追逐主题，转向盈利兑现和资本开支回报。</p>
+        <p class="point"><strong>人话翻译：</strong>AI 主线并没有熄火，但玩法在变：以前靠想象力，现在更要靠财报数字说话。</p>
+        <p class="point"><strong>意义解读：</strong>接下来科技股波动可能更大，不过一旦头部公司继续交出强业绩，AI 主线仍有机会重新成为全球市场的主发动机。</p>
+        <a class="link" href="https://reuters.com/markets/europe/chipmakers-head-big-profit-gains-will-it-be-enough-2026-07-20" target="_blank" rel="noopener noreferrer">查看原文</a>
+      </article>
+
+      <article class="news-item">
+        <span class="tag">国际科技</span>
+        <h3>TeraWulf 与 Anthropic 签下 20 年长约，AI 基建竞争从“买卡”升级到“锁园区”</h3>
+        <p class="meta-line">来源：Reuters · 发布时间：2026-07-20</p>
+        <p class="point"><strong>新闻原文摘要：</strong>路透商业频道提到，TeraWulf 与 Anthropic 签署 20 年数据中心基础设施租约，预计可带来约 190 亿美元合同收入，消息推动 TeraWulf 股价在早盘明显上涨。</p>
+        <p class="point"><strong>人话翻译：</strong>头部模型公司现在抢的已经不只是 GPU，而是在提前锁定未来很多年的电力、机房和算力载体。</p>
+        <p class="point"><strong>意义解读：</strong>这说明 AI 竞争正在越来越像基础设施竞争，谁能更早绑定电力、土地、冷却和园区资源，谁就更有机会把模型能力真正做成长期护城河。</p>
+        <a class="link" href="https://www.reuters.com/business/" target="_blank" rel="noopener noreferrer">查看原文</a>
+      </article>
+    </section>
+
+    <div class="footer">
+      数据综合自 Yahoo Finance、外交部、工信部、国资委、新华社、Reuters 等公开来源。愿你今天开工清醒、判断稳定、推进顺手 🌱
+    </div>
+  </div>
+</body>
+</html>

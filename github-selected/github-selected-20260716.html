@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 精选项目报告 - 2026年7月16日</title>
+<style>
+  :root { --primary: #0052D9; --bg: #F3F5F8; --card-bg: #FFFFFF; --text-main: #1C1F23; --text-sub: #5C6A82; --line: #D9E6F7; --soft: #F8FAFC; --accent: #13C2C2; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: linear-gradient(180deg, #EEF4FF 0%, var(--bg) 58%, #FFFFFF 100%); color: var(--text-main); margin: 0; padding: 20px; }
+  .container { max-width: 900px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 16px; box-shadow: 0 10px 34px rgba(0,82,217,0.08); }
+  .header { border-bottom: 2px solid var(--primary); padding-bottom: 18px; margin-bottom: 26px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
+  .header h1 { color: var(--primary); margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.3px; }
+  .date { color: var(--text-sub); font-size: 14px; white-space: nowrap; }
+  .intro { background: linear-gradient(135deg, #F4F8FF 0%, #F8FEFF 100%); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin-bottom: 24px; color: var(--text-sub); line-height: 1.75; font-size: 15px; }
+  .news-item { border-left: 3px solid var(--primary); padding: 20px 22px; margin-bottom: 22px; background: var(--soft); border-radius: 0 12px 12px 0; transition: all 0.3s ease; }
+  .news-item:hover { transform: translateX(4px); box-shadow: 0 6px 18px rgba(0,82,217,0.10); }
+  .topline { display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+  .tag { display: inline-block; background: #E0EBF5; color: var(--primary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+  .score { display: inline-block; background: #E8FFFB; color: #087E8B; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+  .news-item h2 { margin: 8px 0 12px 0; font-size: 21px; color: var(--text-main); }
+  .news-item p { margin: 0 0 12px 0; font-size: 15px; color: var(--text-sub); line-height: 1.75; }
+  .section-title { margin: 18px 0 8px; font-size: 15px; color: var(--primary); font-weight: 700; }
+  ul { margin: 0 0 12px 0; padding-left: 19px; }
+  li { color: var(--text-sub); line-height: 1.75; margin-bottom: 6px; font-size: 15px; }
+  .link { color: var(--primary); text-decoration: none; font-size: 14px; font-weight: 600; }
+  .link:hover { text-decoration: underline; }
+  .meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0; }
+  .meta-card { background: #FFFFFF; border: 1px solid #E8EEF7; border-radius: 10px; padding: 10px 12px; }
+  .meta-card b { display: block; color: var(--text-main); font-size: 13px; margin-bottom: 4px; }
+  .meta-card span { color: var(--text-sub); font-size: 13px; }
+  .why { background: #FFFFFF; border: 1px dashed #BFD7FF; border-radius: 10px; padding: 12px 14px; margin: 12px 0; color: var(--text-sub); line-height: 1.75; font-size: 14px; }
+  .footer { text-align: center; margin-top: 32px; padding-top: 20px; border-top: 1px solid #EEF2F7; color: var(--text-sub); font-size: 12px; line-height: 1.7; }
+  @media (max-width: 700px) { .container { padding: 22px; } .header { flex-direction: column; align-items: flex-start; } .meta { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>💎 GitHub 精选项目报告</h1>
+      <div class="date">2026年7月16日</div>
+    </div>
+
+    <div class="intro">
+      今天挑两个非常适合“AI 工程落地 + 技术成长”的项目：一个把网页直接升级成可对话、可执行的 GUI Agent，适合前端、SaaS 和浏览器自动化方向；另一个专注把复杂文档转换成 LLM 可消费的结构化数据，适合做 RAG、知识库、文档检索和 Agent 工作流。两者分别对应“让 AI 会操作界面”和“让 AI 看懂资料”这两条非常实用的能力线。
+    </div>
+
+    <div class="news-item">
+      <div class="topline">
+        <span class="tag">Web Agent / 浏览器智能交互</span>
+        <span class="score">推荐指数：9.4/10</span>
+      </div>
+      <h2>1. alibaba/page-agent：把网页直接变成可执行的 GUI Agent</h2>
+      <p>page-agent 是阿里开源的页面内嵌式 GUI Agent，核心定位非常清晰：用纯 JavaScript 方式，把自然语言操作能力直接塞进网页本身。它不要求额外的 Python 服务、无头浏览器或复杂后端改造，而是通过文本化 DOM 操作来理解并执行页面交互。这种思路很适合需要快速给 SaaS、管理后台、表单系统和内部平台加“AI 副驾驶”的团队。</p>
+      <div class="meta">
+        <div class="meta-card"><b>项目地址</b><span>alibaba/page-agent</span></div>
+        <div class="meta-card"><b>核心形态</b><span>In-page GUI Agent / TypeScript</span></div>
+        <div class="meta-card"><b>当前热度</b><span>26.7k⭐ / 2.4k Fork（2026-07-16）</span></div>
+      </div>
+      <div class="why">为什么今天选它：很多“AI + 浏览器”的方案仍然依赖截图、多模态或外部自动化框架，而 page-agent 直接把能力嵌进前端页面，工程路径更轻，也更适合产品化。</div>
+      <div class="section-title">项目详细介绍</div>
+      <p>从官方 README 看，page-agent 提供一行脚本接入方式，也支持 npm 安装后以编程方式初始化。它支持自备 LLM，可以接入主流模型，甚至本地部署模型；还提供可选 Chrome 扩展用于跨页面任务，以及 MCP Server（Beta）用于让外部 Agent 客户端获得浏览器控制能力。换句话说，它既能作为单页面 AI Copilot 使用，也可以作为更大 Agent 系统里的“浏览器执行层”。</p>
+      <div class="section-title">技术亮点</div>
+      <ul>
+        <li>纯页面内 JavaScript 集成，无需单独部署浏览器自动化后端，接入门槛低。</li>
+        <li>基于文本的 DOM 操作，而非截图驱动，避免多模态成本和权限复杂度。</li>
+        <li>支持自带模型、Chrome 扩展、多页面任务与 MCP，对接现有 Agent 体系很自然。</li>
+        <li>很适合学习“产品内 AI 操作层”该如何设计，包括动作抽象、交互反馈与执行边界控制。</li>
+      </ul>
+      <div class="section-title">使用场景</div>
+      <p>适合做企业后台智能表单填写、SaaS 产品 AI 助手、无障碍增强、跨标签页网页操作，以及把自然语言指令映射成网页动作的智能前端实验。对技术成长来说，这个项目特别适合前端工程师、全栈工程师和做 Agent 产品的人深入研究：它展示了如何在真实 Web 环境中把“会聊天”升级成“会操作”。</p>
+      <a href="https://github.com/alibaba/page-agent" class="link">查看 GitHub 仓库 ↗</a>
+    </div>
+
+    <div class="news-item">
+      <div class="topline">
+        <span class="tag">文档解析 / RAG 基础设施</span>
+        <span class="score">推荐指数：9.5/10</span>
+      </div>
+      <h2>2. opendatalab/MinerU：把复杂文档转成 LLM 可用的结构化知识</h2>
+      <p>MinerU 是 OpenDataLab 开源的文档解析工具，目标非常明确：把 PDF、图片、DOCX、PPTX、XLSX 等复杂文档，转换成适合下游检索、抽取和 Agent 工作流消费的 Markdown 与 JSON。对于做知识库、RAG、文档问答、企业资料理解的人来说，这种“文档清洗 + 结构还原”能力是非常关键的底层基础设施。</p>
+      <div class="meta">
+        <div class="meta-card"><b>项目地址</b><span>opendatalab/MinerU</span></div>
+        <div class="meta-card"><b>核心形态</b><span>Document Parser / Python</span></div>
+        <div class="meta-card"><b>当前热度</b><span>74.7k⭐ / 6.2k Fork（2026-07-16）</span></div>
+      </div>
+      <div class="why">为什么今天选它：很多团队在做 RAG 时真正的瓶颈并不是向量库，而是上游文档解析质量。MinerU 正好命中这个核心难点，而且能力边界非常完整。</div>
+      <div class="section-title">项目详细介绍</div>
+      <p>官方说明里，MinerU 不只是“抽文本”，而是尽量保留原始文档结构，包括标题、段落、列表、图像、表格、脚注与公式等元素，同时支持 OCR、复杂布局、多语言识别和多种输出格式。它内置 CLI、FastAPI 和 Gradio WebUI，既能单机本地跑，也能扩展到多服务部署；对生产环境来说，这种“可工具化、可服务化”的设计很有价值。</p>
+      <div class="section-title">技术亮点</div>
+      <ul>
+        <li>输入覆盖非常全：支持 PDF、图片、DOCX、PPTX、XLSX 等主流文档格式。</li>
+        <li>输出面向 LLM 工作流：可生成 Markdown、JSON 与更丰富的中间格式，方便 RAG 和数据清洗。</li>
+        <li>兼顾结构与语义：支持复杂版面、表格转 HTML、公式转 LaTeX、扫描件 OCR 与 109 种语言识别。</li>
+        <li>工程落地友好：提供 CLI、REST API、Gradio WebUI，支持 CPU 运行，也支持 GPU / Apple Silicon 加速。</li>
+      </ul>
+      <div class="section-title">使用场景</div>
+      <p>适合做企业知识库预处理、论文与技术文档抽取、财报与报告解析、RAG 数据管道、Agent 文档阅读前处理，以及多模态资料结构化清洗。对技术成长来说，MinerU 很值得做深度学习：它能帮助你理解“高质量文档解析”在 AI 系统里到底有多重要，也能看到从算法能力到 API/CLI/部署形态的完整工程化路径。</p>
+      <a href="https://github.com/opendatalab/MinerU" class="link">查看 GitHub 仓库 ↗</a>
+    </div>
+
+    <div class="footer">
+      资料来源：GitHub 公开仓库 README、项目主页与公开仓库元数据。<br>
+      Generated by global-sync · style_blue 商务极简蓝排版
+    </div>
+  </div>
+</body>
+</html>

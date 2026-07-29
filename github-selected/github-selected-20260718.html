@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub 精选项目报告 - 2026年7月18日</title>
+  <style>
+    :root { --primary: #0052D9; --bg: #F3F5F8; --card-bg: #FFFFFF; --text-main: #1C1F23; --text-sub: #5C6A82; --line: #D9E6F7; --soft: #F8FAFC; --accent: #13C2C2; }
+    * { box-sizing: border-box; }
+    body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: linear-gradient(180deg, #EEF4FF 0%, var(--bg) 58%, #FFFFFF 100%); color: var(--text-main); margin: 0; padding: 20px; }
+    .container { max-width: 900px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 16px; box-shadow: 0 10px 34px rgba(0,82,217,0.08); }
+    .header { border-bottom: 2px solid var(--primary); padding-bottom: 18px; margin-bottom: 26px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
+    .header h1 { color: var(--primary); margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.3px; }
+    .date { color: var(--text-sub); font-size: 14px; white-space: nowrap; }
+    .intro { background: linear-gradient(135deg, #F4F8FF 0%, #F8FEFF 100%); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin-bottom: 24px; color: var(--text-sub); line-height: 1.75; font-size: 15px; }
+    .news-item { border-left: 3px solid var(--primary); padding: 20px 22px; margin-bottom: 22px; background: var(--soft); border-radius: 0 12px 12px 0; transition: all 0.3s ease; }
+    .news-item:hover { transform: translateX(4px); box-shadow: 0 6px 18px rgba(0,82,217,0.10); }
+    .topline { display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+    .tag { display: inline-block; background: #E0EBF5; color: var(--primary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+    .score { display: inline-block; background: #E8FFFB; color: #087E8B; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+    .news-item h2 { margin: 8px 0 12px 0; font-size: 21px; color: var(--text-main); }
+    .news-item p { margin: 0 0 12px 0; font-size: 15px; color: var(--text-sub); line-height: 1.75; }
+    .section-title { margin: 18px 0 8px; font-size: 15px; color: var(--primary); font-weight: 700; }
+    ul { margin: 0 0 12px 0; padding-left: 19px; }
+    li { color: var(--text-sub); line-height: 1.75; margin-bottom: 6px; font-size: 15px; }
+    .link { color: var(--primary); text-decoration: none; font-size: 14px; font-weight: 600; }
+    .link:hover { text-decoration: underline; }
+    .meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0; }
+    .meta-card { background: #FFFFFF; border: 1px solid #E8EEF7; border-radius: 10px; padding: 10px 12px; }
+    .meta-card b { display: block; color: var(--text-main); font-size: 13px; margin-bottom: 4px; }
+    .meta-card span { color: var(--text-sub); font-size: 13px; }
+    .why { background: #FFFFFF; border: 1px dashed #BFD7FF; border-radius: 10px; padding: 12px 14px; margin: 12px 0; color: var(--text-sub); line-height: 1.75; font-size: 14px; }
+    .footer { text-align: center; margin-top: 32px; padding-top: 20px; border-top: 1px solid #EEF2F7; color: var(--text-sub); font-size: 12px; line-height: 1.7; }
+    @media (max-width: 700px) { .container { padding: 22px; } .header { flex-direction: column; align-items: flex-start; } .meta { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>💎 GitHub 精选项目报告</h1>
+      <div class="date">2026年7月18日</div>
+    </div>
+
+    <div class="intro">
+      今天这 2 个项目，一个偏 <strong>Java Agent 工程体系</strong>，一个偏 <strong>文档解析基础设施</strong>。如果你最近在关注企业级 Agent 落地、工作流编排、多智能体协作，<strong>Spring AI Alibaba</strong> 很值得深挖；如果你想补齐 RAG、知识库、票据/研报/论文处理这类场景里的“文档转结构化数据”能力，<strong>MinerU</strong> 会非常实用。前者告诉你 AI 应用该怎么搭，后者告诉你高质量输入数据该怎么来。
+    </div>
+
+    <div class="news-item">
+      <div class="topline">
+        <span class="tag">Agent Framework / Java AI 工程</span>
+        <span class="score">推荐指数：9.5/10</span>
+      </div>
+      <h2>1. alibaba/spring-ai-alibaba：把 Java 团队接入 Agent 时代的一整套工程底座</h2>
+      <p>spring-ai-alibaba 是阿里开源的 Agentic AI 框架，定位非常清晰：让 Java 开发者基于熟悉的 Spring 生态，快速构建 Agent、Workflow 和 Multi-Agent 应用。它不是只做模型调用封装，而是把 Agent Framework、Graph Runtime、可视化 Admin 平台、Studio 调试能力以及 MCP 接入放到同一套体系里，更像一个面向生产场景的 AI 应用平台。</p>
+      <div class="meta">
+        <div class="meta-card"><b>项目地址</b><span>alibaba/spring-ai-alibaba</span></div>
+        <div class="meta-card"><b>核心形态</b><span>Agent Framework / Java</span></div>
+        <div class="meta-card"><b>当前热度</b><span>10.4k⭐ / 2.3k Fork（2026-07-18）</span></div>
+      </div>
+      <div class="why">为什么今天选它：大量真实业务系统仍然跑在 Java 技术栈上，而这个项目提供了一条很清晰的路径——不用推倒重来，也能把 Agent、工作流和治理能力接进现有服务体系。</div>
+      <div class="section-title">项目详细介绍</div>
+      <p>从官方 README 来看，spring-ai-alibaba 的分层设计很完整。上层是 Agent Framework，提供 SequentialAgent、ParallelAgent、RoutingAgent、LoopAgent 等多智能体编排模式；中层是 Graph Runtime，负责有状态、长生命周期工作流的编排、持久化与流式处理；外围再配套 Admin 和 Studio，用于可视化开发、调试、观测、评测以及 MCP 管理。它面向的不是玩具 Demo，而是“需要上线、需要观测、需要治理”的正式 AI 应用。</p>
+      <div class="section-title">技术亮点</div>
+      <ul>
+        <li>内建多智能体编排模式，把串行、并行、路由和循环执行这些常见模式直接做成框架能力。</li>
+        <li>提供 Context Engineering 与 Human in the Loop 机制，包括上下文压缩、上下文编辑、计划、动态工具选择、重试和人工介入。</li>
+        <li>Graph Runtime 支持条件路由、嵌套图、并行执行、状态管理，还能导出 PlantUML 与 Mermaid，方便团队交流与设计复盘。</li>
+        <li>支持语音 Agent、多模态输入、A2A 协作、Nacos 集成，以及对多种模型提供方和 MCP 的统一接入。</li>
+      </ul>
+      <div class="section-title">使用场景</div>
+      <p>适合做企业内部智能助手、业务流程自动化 Agent、带审批或人工兜底的复杂工作流、多服务协同的智能系统，以及希望在现有 Java 微服务架构中平滑引入 AI 能力的团队。对技术成长来说，它特别值得拿来学习“AI 应用工程化”这件事：应用不只是调一个模型 API，而是要把编排、状态、治理、评测和可视化一起考虑进去。</p>
+      <a href="https://github.com/alibaba/spring-ai-alibaba" class="link">查看 GitHub 仓库 ↗</a>
+    </div>
+
+    <div class="news-item">
+      <div class="topline">
+        <span class="tag">文档 AI / RAG 数据预处理</span>
+        <span class="score">推荐指数：9.4/10</span>
+      </div>
+      <h2>2. opendatalab/MinerU：把 PDF、Office 和图片文档变成 LLM 可直接消费的结构化数据</h2>
+      <p>MinerU 是一个非常实用的文档解析项目，核心价值是把 PDF、图片、DOCX、PPTX、XLSX 等复杂文档转换成 Markdown、JSON 等机器可读格式，方便后续做检索、抽取、知识库构建和 Agent 工作流。它不只是“抽个纯文本”，而是尽量保留文档结构、表格、公式、图片和阅读顺序，因此非常适合 RAG、研报解析、论文处理和企业文档数字化场景。</p>
+      <div class="meta">
+        <div class="meta-card"><b>项目地址</b><span>opendatalab/MinerU</span></div>
+        <div class="meta-card"><b>核心形态</b><span>Document Parsing Toolkit / Python</span></div>
+        <div class="meta-card"><b>当前热度</b><span>75.0k⭐ / 6.3k Fork（2026-07-18）</span></div>
+      </div>
+      <div class="why">为什么今天选它：现在很多 AI 系统真正的瓶颈不在模型，而在输入数据质量。MinerU 直接卡在“复杂文档如何稳定变成高质量结构化语料”这个关键节点上，实践价值非常高。</div>
+      <div class="section-title">项目详细介绍</div>
+      <p>官方 README 里给出的边界非常清楚：MinerU 支持 PDF、图片、DOCX、PPTX、XLSX 输入，能移除页眉页脚、脚注和页码，输出符合阅读顺序的文本结构，并抽取图片、表格、表格标题、脚注与公式。它还支持 Markdown、JSON 等多种输出格式，内置 CLI、FastAPI、Gradio WebUI 与多服务部署能力，既可以单机快速使用，也可以作为更大系统中的文档解析底座。</p>
+      <div class="section-title">技术亮点</div>
+      <ul>
+        <li>覆盖 PDF、图片与 Office 文档，适合统一处理企业内常见非结构化资料来源。</li>
+        <li>不仅提取文本，还保留标题、段落、列表、表格、公式和阅读顺序，更适合直接喂给检索与推理系统。</li>
+        <li>支持扫描件 OCR，并宣称可覆盖 109 种语言，对跨语种资料处理比较友好。</li>
+        <li>内置 CLI、API、WebUI 和路由能力，同时支持纯 CPU 环境，也支持 GPU / Apple Silicon 加速，部署弹性较好。</li>
+      </ul>
+      <div class="section-title">使用场景</div>
+      <p>适合做企业知识库入库、RAG 数据清洗、论文与研报解析、票据/合同/制度文档处理、多模态文档抽取，以及给 Agent 提供稳定的文档预处理能力。对技术成长来说，MinerU 很适合拿来补齐“数据入口工程”这一课：真正可用的 AI 系统，往往从高质量文档解析和结构化开始，而不是直接从模型对话框开始。</p>
+      <a href="https://github.com/opendatalab/MinerU" class="link">查看 GitHub 仓库 ↗</a>
+    </div>
+
+    <div class="footer">
+      资料来源：GitHub 公开仓库 README、项目主页与公开仓库元数据。<br>
+      Generated by global-sync · style_blue 商务极简蓝排版
+    </div>
+  </div>
+</body>
+</html>

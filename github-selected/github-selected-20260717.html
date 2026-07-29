@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub 精选项目报告 - 2026年7月17日</title>
+  <style>
+    :root { --primary: #0052D9; --bg: #F3F5F8; --card-bg: #FFFFFF; --text-main: #1C1F23; --text-sub: #5C6A82; --line: #D9E6F7; --soft: #F8FAFC; --accent: #13C2C2; }
+    * { box-sizing: border-box; }
+    body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: linear-gradient(180deg, #EEF4FF 0%, var(--bg) 58%, #FFFFFF 100%); color: var(--text-main); margin: 0; padding: 20px; }
+    .container { max-width: 900px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 16px; box-shadow: 0 10px 34px rgba(0,82,217,0.08); }
+    .header { border-bottom: 2px solid var(--primary); padding-bottom: 18px; margin-bottom: 26px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
+    .header h1 { color: var(--primary); margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.3px; }
+    .date { color: var(--text-sub); font-size: 14px; white-space: nowrap; }
+    .intro { background: linear-gradient(135deg, #F4F8FF 0%, #F8FEFF 100%); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin-bottom: 24px; color: var(--text-sub); line-height: 1.75; font-size: 15px; }
+    .news-item { border-left: 3px solid var(--primary); padding: 20px 22px; margin-bottom: 22px; background: var(--soft); border-radius: 0 12px 12px 0; transition: all 0.3s ease; }
+    .news-item:hover { transform: translateX(4px); box-shadow: 0 6px 18px rgba(0,82,217,0.10); }
+    .topline { display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+    .tag { display: inline-block; background: #E0EBF5; color: var(--primary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+    .score { display: inline-block; background: #E8FFFB; color: #087E8B; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+    .news-item h2 { margin: 8px 0 12px 0; font-size: 21px; color: var(--text-main); }
+    .news-item p { margin: 0 0 12px 0; font-size: 15px; color: var(--text-sub); line-height: 1.75; }
+    .section-title { margin: 18px 0 8px; font-size: 15px; color: var(--primary); font-weight: 700; }
+    ul { margin: 0 0 12px 0; padding-left: 19px; }
+    li { color: var(--text-sub); line-height: 1.75; margin-bottom: 6px; font-size: 15px; }
+    .link { color: var(--primary); text-decoration: none; font-size: 14px; font-weight: 600; }
+    .link:hover { text-decoration: underline; }
+    .meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0; }
+    .meta-card { background: #FFFFFF; border: 1px solid #E8EEF7; border-radius: 10px; padding: 10px 12px; }
+    .meta-card b { display: block; color: var(--text-main); font-size: 13px; margin-bottom: 4px; }
+    .meta-card span { color: var(--text-sub); font-size: 13px; }
+    .why { background: #FFFFFF; border: 1px dashed #BFD7FF; border-radius: 10px; padding: 12px 14px; margin: 12px 0; color: var(--text-sub); line-height: 1.75; font-size: 14px; }
+    .footer { text-align: center; margin-top: 32px; padding-top: 20px; border-top: 1px solid #EEF2F7; color: var(--text-sub); font-size: 12px; line-height: 1.7; }
+    @media (max-width: 700px) { .container { padding: 22px; } .header { flex-direction: column; align-items: flex-start; } .meta { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>💎 GitHub 精选项目报告</h1>
+      <div class="date">2026年7月17日</div>
+    </div>
+
+    <div class="intro">
+      今天这 2 个项目，一个偏“AI 应用工程框架”，一个偏“视觉 AI 数据基础设施”。如果你最近在关注 Agent 落地、工作流编排、多智能体协作，<strong>Spring AI Alibaba</strong> 很值得研究；如果你更想补齐数据集质检、模型评估、可视化调试这些硬核能力，<strong>FiftyOne</strong> 会非常有帮助。前者教你怎么把 AI 系统搭起来，后者教你怎么把 AI 系统喂对、看清、调顺。
+    </div>
+
+    <div class="news-item">
+      <div class="topline">
+        <span class="tag">Agent Framework / Java AI 工程</span>
+        <span class="score">推荐指数：9.4/10</span>
+      </div>
+      <h2>1. alibaba/spring-ai-alibaba：面向 Java 开发者的 Agent 应用全栈框架</h2>
+      <p>spring-ai-alibaba 是阿里开源的 Agentic AI 框架，定位非常明确：帮助 Java 开发者用熟悉的 Spring 生态，快速搭建 Agent、Workflow 和 Multi-Agent 应用。它不只是提供简单的模型调用封装，而是把 Agent 编排、Context Engineering、Human in the Loop、Graph Runtime、MCP 接入以及可视化管理平台一起打包成完整方案，更像一个“AI 原生应用脚手架 + 运行时”。</p>
+      <div class="meta">
+        <div class="meta-card"><b>项目地址</b><span>alibaba/spring-ai-alibaba</span></div>
+        <div class="meta-card"><b>核心形态</b><span>Agent Framework / Java</span></div>
+        <div class="meta-card"><b>当前热度</b><span>10.4k⭐ / 2.3k Fork（2026-07-17）</span></div>
+      </div>
+      <div class="why">为什么今天选它：很多 AI 工程内容都偏 Python 生态，但真实企业系统里仍有大量 Java 服务。这个项目很适合观察“传统企业技术栈如何系统化接住 Agent 浪潮”。</div>
+      <div class="section-title">项目详细介绍</div>
+      <p>从官方 README 看，spring-ai-alibaba 的结构分得很清楚：上层是 Agent Framework，负责多智能体模式与任务组织；中层是 Graph Runtime，处理长生命周期、有状态的工作流；旁边还配套了 Admin / Studio 等可视化能力，支持调试、观测、评测和 MCP 管理。官方内置了 SequentialAgent、ParallelAgent、RoutingAgent、LoopAgent 等编排模式，同时支持语音 Agent、多模态输入、A2A 协作和 Nacos 集成，说明它瞄准的不是 Demo，而是更接近生产落地的复杂场景。</p>
+      <div class="section-title">技术亮点</div>
+      <ul>
+        <li>不是单点工具，而是框架 + Graph Runtime + Admin 平台的一体化设计，适合企业项目演进。</li>
+        <li>内建 Context Engineering 能力，包括上下文压缩、编辑、计划、工具选择、重试和人工介入等实战机制。</li>
+        <li>支持多智能体协作、图工作流、语音 Agent、多模态输入和 A2A，覆盖面很完整。</li>
+        <li>兼容 Spring AI 核心概念，又提供丰富的模型、工具和 MCP 接入，对 Java 团队迁移成本友好。</li>
+      </ul>
+      <div class="section-title">使用场景</div>
+      <p>适合做企业内部智能助手、流程自动化 Agent、客服 / 运营工作流、带审批与人工兜底的业务 Agent、多服务协同的复杂应用，以及希望把 AI 能力接进现有 Java 微服务体系的团队。对技术成长来说，它很值得用来补齐“AI 应用不是调个 API 就结束，而是要有工作流、状态管理、观测与治理”的工程视角。</p>
+      <a href="https://github.com/alibaba/spring-ai-alibaba" class="link">查看 GitHub 仓库 ↗</a>
+    </div>
+
+    <div class="news-item">
+      <div class="topline">
+        <span class="tag">视觉 AI / 数据集质检与评估</span>
+        <span class="score">推荐指数：9.3/10</span>
+      </div>
+      <h2>2. voxel51/fiftyone：把数据集分析、标注质检和模型评估拉到同一个可视化工作台</h2>
+      <p>FiftyOne 是一个非常成熟的视觉 AI 数据工作台，核心价值不是“再造一个训练框架”，而是把图像 / 视频数据集浏览、标签编辑、错误样本排查、embedding 探索、模型评估和数据清洗整合到一个可视化界面里。很多团队做 CV 或多模态系统时，真正的效率瓶颈并不在训练本身，而是在数据质量、样本发现和问题定位上，FiftyOne 正好卡在这个关键位置。</p>
+      <div class="meta">
+        <div class="meta-card"><b>项目地址</b><span>voxel51/fiftyone</span></div>
+        <div class="meta-card"><b>核心形态</b><span>Visual AI Dataset Toolkit / Python</span></div>
+        <div class="meta-card"><b>当前热度</b><span>10.9k⭐ / 797 Fork（2026-07-17）</span></div>
+      </div>
+      <div class="why">为什么今天选它：大家常讲模型、讲推理、讲 RAG，但对“数据到底好不好、模型到底在哪些样本上出错”讲得不够。FiftyOne 属于能显著提升实战能力的工具型项目。</div>
+      <div class="section-title">项目详细介绍</div>
+      <p>官方 README 给出的能力边界很完整：你可以直接加载数据集并启动 FiftyOne App，以可视化方式查看图片、视频和标签；也可以做原生标注与编辑，分析 embedding 空间，评估模型输出，查找异常样本、脏数据和边界 case。它还提供 Dataset Zoo、Model Zoo、插件机制，以及对 PyTorch、Hugging Face、Ultralytics 等常见生态的集成。这意味着它既适合个人研究者，也适合团队作为数据 QA 与模型分析平台使用。</p>
+      <div class="section-title">技术亮点</div>
+      <ul>
+        <li>把“数据浏览、标注、评估、问题定位、可视化”整成一个闭环，避免工具链割裂。</li>
+        <li>对图像、视频、标签和 embedding 都有较强可视化能力，特别适合发现长尾错误与异常样本。</li>
+        <li>开放扩展性不错，支持插件和主流深度学习生态集成，方便接进现有训练流程。</li>
+        <li>非常适合学习 Data-Centric AI：模型效果提升很多时候先来自数据治理，而不是盲目换更大的模型。</li>
+      </ul>
+      <div class="section-title">使用场景</div>
+      <p>适合做目标检测 / 分类 / 分割项目的数据质检，视频理解数据集抽检，模型评估复盘，多模态样本管理，训练前数据清洗，以及给团队建立统一的数据分析界面。对技术成长来说，FiftyOne 能帮你把“会训练模型”进一步升级到“会读懂数据、会定位问题、会做数据闭环优化”。</p>
+      <a href="https://github.com/voxel51/fiftyone" class="link">查看 GitHub 仓库 ↗</a>
+    </div>
+
+    <div class="footer">
+      资料来源：GitHub 公开仓库 README、项目主页与公开仓库元数据。<br>
+      Generated by global-sync · style_blue 商务极简蓝排版
+    </div>
+  </div>
+</body>
+</html>

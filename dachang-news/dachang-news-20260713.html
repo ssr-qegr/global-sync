@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日大厂新闻｜2026-07-13</title>
+  <style>
+    :root { --primary: #B388FF; --bg: #0D0D0D; --card-bg: #1A1A1A; --text-main: #E0E0E0; --text-sub: #9E9E9E; --accent: #00E5FF; --border: rgba(179, 136, 255, 0.24); --shadow: 0 20px 60px rgba(0,0,0,0.35); --tag-bg: rgba(0, 229, 255, 0.12); --domestic: #7C4DFF; --global: #00B8D4; --warning: #FFAB40; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: radial-gradient(circle at top left, rgba(179,136,255,0.14), transparent 34%), radial-gradient(circle at top right, rgba(0,229,255,0.12), transparent 30%), linear-gradient(180deg, #101012 0%, #0D0D0D 100%); color: var(--text-main); line-height: 1.75; }
+    a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 36px 0 80px; }
+    .hero { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(179,136,255,0.16), rgba(0,229,255,0.08)); border: 1px solid var(--border); border-radius: 28px; padding: 36px; box-shadow: var(--shadow); backdrop-filter: blur(10px); }
+    .hero::after { content: ""; position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(0,229,255,0.18), transparent 70%); pointer-events: none; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.06); color: var(--accent); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
+    h1 { margin: 18px 0 10px; font-size: clamp(32px, 4vw, 52px); line-height: 1.1; letter-spacing: -0.02em; }
+    .subtitle { max-width: 860px; color: var(--text-sub); font-size: 16px; margin-bottom: 24px; }
+    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 18px; }
+    .meta-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 18px; padding: 16px 18px; }
+    .meta-label { color: var(--text-sub); font-size: 12px; margin-bottom: 6px; }
+    .meta-value { font-size: 18px; font-weight: 700; }
+    .section { margin-top: 34px; }
+    .section-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+    .section-title { margin: 0; font-size: 26px; }
+    .section-desc { color: var(--text-sub); font-size: 14px; margin: 6px 0 0; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 6px 12px; font-size: 13px; background: var(--tag-bg); color: var(--accent); border: 1px solid rgba(0,229,255,0.18); white-space: nowrap; }
+    .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; }
+    .news-card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 22px; box-shadow: var(--shadow); }
+    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .company { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; box-shadow: 0 0 12px currentColor; }
+    .domestic .dot { color: var(--domestic); background: var(--domestic); } .global .dot { color: var(--global); background: var(--global); }
+    .chip { font-size: 12px; color: var(--text-sub); border: 1px solid rgba(255,255,255,0.08); border-radius: 999px; padding: 4px 10px; }
+    .headline { font-size: 20px; line-height: 1.4; margin: 0 0 14px; }
+    .block { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .block h3 { margin: 0 0 8px; font-size: 14px; letter-spacing: 0.04em; color: var(--primary); }
+    .block p { margin: 0; color: var(--text-main); font-size: 14px; }
+    .sources { margin-top: 18px; padding-top: 14px; border-top: 1px dashed rgba(255,255,255,0.10); font-size: 13px; color: var(--text-sub); }
+    .sources ul { margin: 8px 0 0; padding-left: 18px; } .sources li + li { margin-top: 6px; }
+    .footnote { margin-top: 34px; padding: 20px 22px; border-radius: 20px; background: rgba(255,171,64,0.08); border: 1px solid rgba(255,171,64,0.18); color: #FFD7A0; font-size: 14px; }
+    .footer { margin-top: 30px; color: var(--text-sub); font-size: 13px; text-align: center; }
+    @media (max-width: 720px) { .container { width: min(100% - 24px, 1180px); padding-top: 20px; } .hero { padding: 24px; border-radius: 22px; } .news-card { padding: 18px; border-radius: 20px; } .section-title { font-size: 22px; } .headline { font-size: 18px; } .section-head { flex-direction: column; align-items: flex-start; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="eyebrow">🏢 style_dark · 大厂新闻日报</div>
+      <h1>今日大厂新闻｜2026-07-13</h1>
+      <p class="subtitle">聚焦 2026-07-13 可检索到的国内外科技大厂重要动态，覆盖字节跳动、腾讯、阿里、百度、华为、小米，以及 Google、Apple、Meta、OpenAI。每条新闻均提供“新闻原文摘要 + 人话翻译 + 影响分析”，帮助快速判断产业信号。</p>
+      <div class="meta-grid">
+        <div class="meta-card"><div class="meta-label">覆盖公司</div><div class="meta-value">10 家</div></div>
+        <div class="meta-card"><div class="meta-label">国内 / 国际</div><div class="meta-value">6 / 4</div></div>
+        <div class="meta-card"><div class="meta-label">主题重心</div><div class="meta-value">AI、芯片、组织效率、硬件入口</div></div>
+        <div class="meta-card"><div class="meta-label">生成时间</div><div class="meta-value">2026-07-13</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div><h2 class="section-title">国内大厂动态</h2><p class="section-desc">今日国内科技公司消息集中在自动驾驶传闻澄清、AI Agent 落地、国产算力、手机与汽车生态。</p></div><span class="badge">中国科技公司</span></div>
+      <div class="news-grid">
+        <article class="news-card domestic"><div class="card-top"><div class="company"><span class="dot"></span>字节跳动</div><span class="chip">AI / 自动驾驶传闻</span></div><h3 class="headline">字节否认落地智能驾驶业务：物理 AI 是前沿研究，不等于要做自动驾驶</h3><div class="block"><h3>新闻原文摘要</h3><p>7 月 13 日，多家媒体报道字节跳动被曝探索进入自动驾驶领域，场景可能包括无人物流，并由 Seed 世界模型团队牵头。字节方面回应称，公司在 AI 大模型前沿探索领域，包括物理 AI 领域，有很多早期研究和探索，但并没有做智能驾驶业务的计划。</p></div><div class="block"><h3>人话翻译</h3><p>外界看到字节在研究物理世界、世界模型和汽车相关能力，就联想到自动驾驶业务；但字节官方意思是：我们确实在做前沿 AI 研究，但还没有要下场做车或做自动驾驶商业业务。</p></div><div class="block"><h3>影响分析</h3><p>这说明“世界模型 + 具身智能 + 自动驾驶”正在成为大模型公司共同关注的方向。对字节来说，短期重点仍更可能是基础模型、火山引擎行业能力和 AI 应用，而不是重资产、长周期的整车或自动驾驶业务落地。</p></div><div class="sources">来源<ul><li><a href="https://news.mydrivers.com/tag/zijietiaodong.html" target="_blank" rel="noopener noreferrer">快科技：字节被曝探索自动驾驶领域，官方回应</a></li><li><a href="http://m.toutiao.com/group/7661964849530667555/" target="_blank" rel="noopener noreferrer">券商中国/科创板日报：字节跳动回应没有做智能驾驶业务计划</a></li></ul></div></article>
+
+        <article class="news-card domestic"><div class="card-top"><div class="company"><span class="dot"></span>腾讯</div><span class="chip">大模型 / Agent</span></div><h3 class="headline">混元 Hy3 发布后持续发酵，腾讯生产力 AI 路线走向“模型 + 工具 + 工作流”</h3><div class="block"><h3>新闻原文摘要</h3><p>7 月 13 日，多篇行业文章继续跟进腾讯混元 Hy3 正式版发布后的市场反馈，提到 Hy3 强化 Agent 能力，并通过 WorkBuddy、腾讯文档、企业微信、腾讯会议、ima 等工具承接生产力场景。</p></div><div class="block"><h3>人话翻译</h3><p>腾讯不是只想做一个聊天模型，而是想让 AI 真正进入办公链路：能看文档、写代码、开浏览器、处理本地文件，最后把任务结果交付出来。</p></div><div class="block"><h3>影响分析</h3><p>腾讯的优势在于协作软件和微信生态的入口。Hy3 如果能稳定支撑复杂任务，腾讯 AI 就有机会从“模型追赶”转向“办公场景变现”；但关键仍是模型效果、工具调用稳定性和企业客户付费意愿。</p></div><div class="sources">来源<ul><li><a href="https://finance.sina.com.cn/jjxw/2026-07-12/doc-inihpymz2811855.shtml" target="_blank" rel="noopener noreferrer">新浪财经：AI 应用周度观察提及腾讯混元 Hy3</a></li><li><a href="http://m.toutiao.com/group/7661957146372555264/" target="_blank" rel="noopener noreferrer">钛媒体：Hy3 发布后腾讯生产力 AI 走向收敛</a></li></ul></div></article>
+
+        <article class="news-card domestic"><div class="card-top"><div class="company"><span class="dot"></span>阿里</div><span class="chip">AI 平台 / 千问</span></div><h3 class="headline">阿里千问被曝开放第三方品牌接入，AI 助手从通用问答走向服务入口</h3><div class="block"><h3>新闻原文摘要</h3><p>7 月 13 日，海外 AI 媒体报道称，阿里千问面向第三方商家和品牌开放平台能力，让用户可以在 AI 助手中连接咖啡、出行、旅行等日常服务；中文信息流也出现阿里元境内测“AI 大模型超市”的报道。</p></div><div class="block"><h3>人话翻译</h3><p>阿里不只是让千问回答问题，而是想让它变成一个办事入口：用户说需求，背后连接商家、平台和模型能力，把交易或服务串起来。</p></div><div class="block"><h3>影响分析</h3><p>这与阿里的电商、云和本地生活生态天然契合。真正难点在于开放平台治理、商家供给质量和用户信任；如果做成，千问可能从“模型产品”升级为“AI 服务分发平台”。</p></div><div class="sources">来源<ul><li><a href="https://ai-damn.com/alibaba-s-qwen-opens-up-to-third-party-brands-bringing-ai-assistants-to-your-coffee-and-travel-plans-1780528017080" target="_blank" rel="noopener noreferrer">AI Damn：Alibaba's Qwen opens up to third-party brands</a></li><li><a href="http://m.toutiao.com/group/7661841393265967626/" target="_blank" rel="noopener noreferrer">今朝新闻：阿里元境正在内测 AI 大模型超市</a></li></ul></div></article>
+
+        <article class="news-card domestic"><div class="card-top"><div class="company"><span class="dot"></span>百度</div><span class="chip">AI 芯片 / IPO</span></div><h3 class="headline">昆仑芯赴港 IPO 继续受关注，百度 AI 叙事从模型延伸到国产算力</h3><div class="block"><h3>新闻原文摘要</h3><p>7 月 13 日，围绕百度旗下昆仑芯赴港 IPO 的报道继续发酵。多篇文章提到昆仑芯计划在香港上市、市场关注其估值和客户拓展；同时有消息称腾讯已成为客户之一，字节方面则被引述称目前无意与昆仑芯合作。</p></div><div class="block"><h3>人话翻译</h3><p>百度除了文心大模型和搜索，也在通过昆仑芯讲国产 AI 芯片故事。市场关心的是：昆仑芯能不能真的拿到外部大客户，而不只是服务百度自己。</p></div><div class="block"><h3>影响分析</h3><p>如果昆仑芯上市顺利，百度在 AI 基础设施上的资本弹药会增强，也能提高国产算力链条的关注度。但估值、客户承诺、芯片交付能力和软件生态仍是投资者会反复追问的问题。</p></div><div class="sources">来源<ul><li><a href="https://www.163.com/dy/article/L0J4OGBR0519QIKK.html" target="_blank" rel="noopener noreferrer">网易财经转载：昆仑芯瞄准估值并计划赴港 IPO</a></li><li><a href="https://gmt8press.com/flash/detail/1441869" target="_blank" rel="noopener noreferrer">GMT8：百度昆仑芯项目与腾讯、字节相关回应</a></li></ul></div></article>
+
+        <article class="news-card domestic"><div class="card-top"><div class="company"><span class="dot"></span>华为</div><span class="chip">手机 / 芯片生态</span></div><h3 class="headline">华为 Mate 系列与新麒麟芯片传闻升温，高端手机竞争重新进入“芯片 + 生态”阶段</h3><div class="block"><h3>新闻原文摘要</h3><p>7 月 13 日，多篇数码报道和周报提到华为 Mate 新机可能搭载新一代麒麟平台，并围绕华为自研芯片、鸿蒙生态和高端手机市场份额展开讨论。相关信息仍以爆料和行业观察为主，尚待官方发布确认。</p></div><div class="block"><h3>人话翻译</h3><p>华为手机的看点又回到了自研芯片和生态协同：不只是拍照、屏幕、外观，而是能不能继续把麒麟、鸿蒙、AI 能力和高端品牌心智打穿。</p></div><div class="block"><h3>影响分析</h3><p>如果新麒麟平台和鸿蒙体验进一步稳定，华为会继续挤压国内高端安卓市场，也会影响小米、OPPO、vivo 等厂商的旗舰节奏。需要注意的是，当前具体芯片规格仍属于未确认信息。</p></div><div class="sources">来源<ul><li><a href="https://news.qq.com/rain/a/20260712A07YQA00?id=20260712A07YQA00" target="_blank" rel="noopener noreferrer">腾讯新闻/Tech 星球周报：华为 Mate 系列与新麒麟芯片传闻</a></li><li><a href="http://m.toutiao.com/group/7661903089326113289/" target="_blank" rel="noopener noreferrer">数码体验局：华为 Mate 与鸿蒙生态观察</a></li></ul></div></article>
+
+        <article class="news-card domestic"><div class="card-top"><div class="company"><span class="dot"></span>小米</div><span class="chip">汽车 / 消费电子</span></div><h3 class="headline">小米增程车节奏继续被关注，手机、电视与汽车共同支撑“人车家”生态</h3><div class="block"><h3>新闻原文摘要</h3><p>7 月 13 日，科技资讯继续跟进小米增程车上市节奏相关消息；同时，中文信息流中也有小米电视出货、手机供应链国产替代等报道，显示小米仍在多条消费电子产品线上维持声量。</p></div><div class="block"><h3>人话翻译</h3><p>小米现在不只是手机公司，而是在把手机、家电、电视、汽车连成一个生态。汽车尤其关键，因为它能把品牌价格带和用户生命周期拉长。</p></div><div class="block"><h3>影响分析</h3><p>小米的机会在于供应链效率、渠道和生态联动；风险也很明显：汽车业务对安全、交付和售后要求极高，一旦出现质量或舆情波动，会反向影响小米整体品牌信任。</p></div><div class="sources">来源<ul><li><a href="https://tech.ifeng.com/c/8uaKEsXoT3U" target="_blank" rel="noopener noreferrer">凤凰网科技：小米增程车上市节奏曝光</a></li><li><a href="http://m.toutiao.com/group/7661798490011337259/" target="_blank" rel="noopener noreferrer">爆侃数码圈：小米与华为电视出货观察</a></li></ul></div></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div><h2 class="section-title">国际科技公司动态</h2><p class="section-desc">今日国际科技公司重点是苹果与 OpenAI 的诉讼、Google 投资 AI 基础设施、Meta 数据中心与 OpenAI 硬件不确定性。</p></div><span class="badge">Global Tech</span></div>
+      <div class="news-grid">
+        <article class="news-card global"><div class="card-top"><div class="company"><span class="dot"></span>Google</div><span class="chip">AI 投资 / 云算力</span></div><h3 class="headline">Google 被曝计划加码 Anthropic，云、芯片与模型联盟继续绑定</h3><div class="block"><h3>新闻原文摘要</h3><p>7 月 13 日，海外媒体报道称 Google 计划对 Anthropic 进行大额投资，并延续双方在定制芯片和云计算服务上的合作关系。搜索结果显示该报道仍以媒体转述为主，需以双方官方披露为准。</p></div><div class="block"><h3>人话翻译</h3><p>Google 一边做 Gemini，一边继续扶持 Anthropic。这样既能卖云和 TPU，也能让自己在 OpenAI 之外拥有另一个强 AI 生态盟友。</p></div><div class="block"><h3>影响分析</h3><p>这类投资说明 AI 竞争已经进入“模型公司 + 云厂商 + 芯片”深度捆绑阶段。Google 的优势是全栈能力，风险是投入巨大且回报周期不确定，还要面对监管对大型科技公司投资 AI 初创公司的审查。</p></div><div class="sources">来源<ul><li><a href="https://www.wam.ae/en/article/176tjwp-google-invest-40-billion-rival-anthropic" target="_blank" rel="noopener noreferrer">WAM：Google to invest in AI rival Anthropic</a></li><li><a href="https://www.reuters.com/technology/artificial-intelligence/" target="_blank" rel="noopener noreferrer">Reuters AI News：AI 产业动态入口</a></li></ul></div></article>
+
+        <article class="news-card global"><div class="card-top"><div class="company"><span class="dot"></span>Apple</div><span class="chip">AI 硬件诉讼</span></div><h3 class="headline">苹果起诉 OpenAI 余波升级，AI 硬件人才与商业秘密成为焦点</h3><div class="block"><h3>新闻原文摘要</h3><p>7 月 13 日，Fortune、36氪等继续跟进苹果起诉 OpenAI 的案件。报道称苹果指控 OpenAI 通过前苹果员工获取硬件商业机密，以推进其 AI 硬件设备计划；OpenAI 则否认对其他公司的商业秘密感兴趣。</p></div><div class="block"><h3>人话翻译</h3><p>苹果担心 OpenAI 做 AI 硬件不是从零开始，而是借走了苹果多年积累的硬件经验。这个官司本质上是未来 AI 设备入口之争。</p></div><div class="block"><h3>影响分析</h3><p>无论胜负，诉讼都会让硅谷 AI 硬件团队在招聘、资料隔离和产品设计上更加谨慎。对苹果来说，这是守住硬件护城河；对 OpenAI 来说，可能拖慢其消费级硬件节奏。</p></div><div class="sources">来源<ul><li><a href="https://fortune.com/2026/07/13/apple-extraordinary-openai-allegations/" target="_blank" rel="noopener noreferrer">Fortune：Apple’s extraordinary OpenAI allegations</a></li><li><a href="https://36kr.com/p/3893586949028737" target="_blank" rel="noopener noreferrer">36氪：苹果诉讼可能影响 OpenAI 硬件野心</a></li></ul></div></article>
+
+        <article class="news-card global"><div class="card-top"><div class="company"><span class="dot"></span>Meta</div><span class="chip">数据中心 / AI 基建</span></div><h3 class="headline">Meta 数据中心争议继续发酵，AI 基建扩张的环境成本被推到台前</h3><div class="block"><h3>新闻原文摘要</h3><p>7 月 13 日，Fortune 科技栏目提到 Meta 数据中心相关争议：怀俄明州官员称 Meta 一处大型数据中心与当地水系统出现罕见细菌污染问题有关。相关事件仍需等待进一步调查和责任认定。</p></div><div class="block"><h3>人话翻译</h3><p>AI 需要大量数据中心，而数据中心不只是耗电，也会影响水资源、冷却系统和地方公共设施。Meta 这次被推到风口上，就是 AI 基建外部成本的典型案例。</p></div><div class="block"><h3>影响分析</h3><p>AI 公司未来建数据中心会面临更严格的环保、用水和社区关系审查。对 Meta 来说，算力扩张仍是 AI 追赶的核心，但公共治理成本会越来越高。</p></div><div class="sources">来源<ul><li><a href="https://fortune.com/2026/07/13/apple-extraordinary-openai-allegations/" target="_blank" rel="noopener noreferrer">Fortune Tech：Meta data center drama</a></li><li><a href="https://fortune.com/2026/07/10/apple-openai-lawsuit-trade-secrets-theft-allegations/" target="_blank" rel="noopener noreferrer">Fortune：Meta 数据中心污染争议摘要</a></li></ul></div></article>
+
+        <article class="news-card global"><div class="card-top"><div class="company"><span class="dot"></span>OpenAI</div><span class="chip">硬件 / 法律风险</span></div><h3 class="headline">OpenAI 硬件计划被诉讼笼罩，消费级 AI 设备路线不确定性上升</h3><div class="block"><h3>新闻原文摘要</h3><p>7 月 13 日，多家媒体将苹果诉 OpenAI 与 Jony Ive、io Products 相关硬件计划联系起来讨论。报道称 OpenAI 此前收购 io Products，希望打造新一代 AI 硬件入口；如今诉讼可能迫使其重新审视设计、供应链和团队合规边界。</p></div><div class="block"><h3>人话翻译</h3><p>OpenAI 想从软件和模型走向硬件，但刚起步就碰上苹果的法律阻击。未来它要证明：自己的硬件不是“带着苹果机密做出来的”。</p></div><div class="block"><h3>影响分析</h3><p>这会提高 OpenAI 从 ChatGPT 走向终端设备的难度。模型公司进入硬件市场，不只要会设计产品，还要处理专利、商业秘密、供应链、隐私和安全等一整套传统硬件公司的复杂问题。</p></div><div class="sources">来源<ul><li><a href="https://www.latimes.com/business/story/2026-07-10/apple-accuses-openai-of-stealing-trade-secrets-in-blockbuster-silicon-valley-lawsuit" target="_blank" rel="noopener noreferrer">Los Angeles Times：Apple accuses OpenAI of stealing trade secrets</a></li><li><a href="https://techweez.com/2026/07/13/apple-openai-lawsuit-trade-secrets/" target="_blank" rel="noopener noreferrer">Techweez：Apple drags OpenAI to court over hardware secrets</a></li></ul></div></article>
+      </div>
+    </section>
+
+    <div class="footnote">说明：本页基于 2026-07-13 当日公开可检索信息整理。部分内容来自媒体报道、行业文章或信息流转述，适合用作“今日值得关注的产业信号”；涉及诉讼、投资传闻、未发布产品、估值和客户关系的信息，后续仍需以公司公告、法院文件、监管披露或权威机构正式报告为准。</div>
+    <div class="footer">Generated for 孙纾荣 · global-sync / dachang-news · style_dark</div>
+  </div>
+</body>
+</html>

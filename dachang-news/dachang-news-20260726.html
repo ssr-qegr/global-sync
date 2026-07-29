@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日大厂新闻｜2026-07-26</title>
+  <style>
+    :root { --primary: #B388FF; --bg: #0D0D0D; --card-bg: #1A1A1A; --text-main: #E0E0E0; --text-sub: #9E9E9E; --accent: #00E5FF; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: radial-gradient(circle at top left, rgba(179,136,255,0.18), transparent 32%), radial-gradient(circle at top right, rgba(0,229,255,0.12), transparent 36%), var(--bg); color: var(--text-main); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 32px 18px 56px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid rgba(179,136,255,0.28); border-radius: 28px; padding: 40px; background: linear-gradient(135deg, rgba(179,136,255,0.18), rgba(0,229,255,0.06)), rgba(26,26,26,0.88); box-shadow: 0 24px 80px rgba(0,0,0,0.42); }
+    .hero::after { content: ""; position: absolute; width: 260px; height: 260px; right: -80px; top: -100px; background: radial-gradient(circle, rgba(0,229,255,0.26), transparent 68%); filter: blur(2px); }
+    .tag { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(0,229,255,0.1); color: var(--accent); font-size: 13px; border: 1px solid rgba(0,229,255,0.22); }
+    h1 { margin: 18px 0 12px; font-size: clamp(34px, 5vw, 58px); line-height: 1.05; letter-spacing: -1.5px; }
+    .lead { max-width: 920px; color: var(--text-sub); line-height: 1.9; font-size: 16px; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .stat { padding: 18px; border-radius: 20px; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08); }
+    .stat strong { display: block; font-size: 28px; color: var(--primary); }
+    .stat span { color: var(--text-sub); font-size: 13px; }
+    .section-title { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 34px 0 16px; }
+    .section-title h2 { margin: 0; font-size: 24px; }
+    .section-title p { margin: 0; color: var(--text-sub); font-size: 14px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025)), var(--card-bg); border: 1px solid rgba(255,255,255,0.09); border-radius: 24px; padding: 22px; box-shadow: 0 16px 50px rgba(0,0,0,0.28); transition: transform .22s ease, border-color .22s ease; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(179,136,255,0.38); }
+    .company { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .company .name { font-size: 19px; font-weight: 800; color: #fff; }
+    .company .type { font-size: 12px; color: var(--accent); border: 1px solid rgba(0,229,255,0.25); background: rgba(0,229,255,0.08); border-radius: 999px; padding: 6px 10px; white-space: nowrap; }
+    .headline { margin: 0 0 14px; color: var(--primary); font-size: 17px; line-height: 1.55; }
+    .block { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .block h3 { margin: 0 0 8px; font-size: 14px; color: #fff; display: flex; align-items: center; gap: 8px; }
+    .block p { margin: 0; color: var(--text-sub); line-height: 1.8; font-size: 14px; }
+    .source { margin-top: 14px; color: #777; font-size: 12px; }
+    .source a { color: #8eefff; }
+    .note { margin-top: 28px; padding: 18px 20px; border: 1px solid rgba(179,136,255,0.22); border-radius: 20px; background: rgba(179,136,255,0.07); color: var(--text-sub); line-height: 1.8; }
+    .footer { margin-top: 34px; text-align: center; color: #777; font-size: 13px; }
+    @media (max-width: 860px) { .hero { padding: 28px; } .stats, .grid { grid-template-columns: 1fr; } .section-title { display: block; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="tag">🏢 今日大厂新闻 · 2026-07-26 · style_dark</div>
+      <h1>今天的大厂焦点已经很明确：AI 竞争正在从“谁发布得更猛”转向“谁先把入口、终端和执行能力做成真正可用的产品”</h1>
+      <p class="lead">7 月 26 日的科技大厂动态，整体能看到两个加速方向。国内厂商这边，字节继续把豆包往更自然的语音入口推进，腾讯把混元底座进一步收口，华为和小米则都在顺着端侧 AI 合规落地、系统集成和终端入口去抢下一阶段的手机话语权。海外方面，Google 依旧在“云业务很能打、但 AI 投入太重”之间拉扯，Meta 把 AI 助手往任务执行推进，OpenAI 继续把 ChatGPT 往更多渠道和更自然的语音体验上铺，Amazon 则试图让 Alexa+ 不再只是一个语音指令工具，而是真正能调用服务、处理复杂任务的家庭入口。说到底，大家都在争夺同一件事：谁能先把 AI 变成用户愿意每天打开的默认界面。</p>
+      <div class="stats">
+        <div class="stat"><strong>8</strong><span>条重点动态</span></div>
+        <div class="stat"><strong>4</strong><span>国内大厂</span></div>
+        <div class="stat"><strong>4</strong><span>国际巨头</span></div>
+        <div class="stat"><strong>3</strong><span>核心主题：端侧 AI、任务执行、入口争夺</span></div>
+      </div>
+    </section>
+
+    <div class="section-title">
+      <h2>国内大厂与科技生态</h2>
+      <p>覆盖字节跳动、腾讯、华为、小米今天最值得看的变化</p>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="company"><span class="name">字节跳动</span><span class="type">豆包 / 全双工语音</span></div>
+        <p class="headline">字节今天最值得关注的，不是再堆一个参数更大的模型，而是把豆包语音体验进一步拉向“真人对话感”。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 25 日公开报道显示，豆包 App 已上线更自然的实时语音能力，重点强调“边听边说”、减少机械停顿，以及更强的打断处理和连续对话体验。外部报道普遍将其理解为字节在语音交互入口上的进一步落地推进。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>简单说，字节现在想解决的不是 AI 会不会说，而是它说得像不像真人、接不接得住你临时插话、聊起来顺不顺。因为用户最终记住的不是模型名，而是“这个助手到底好不好聊”。</p></div>
+        <div class="block"><h3>影响分析</h3><p>一旦语音交互足够自然，豆包就不只是一个 App，而更像一个可以进手机、耳机、车载和各种硬件的通用入口。谁先把语音这层体验做顺，谁就更有机会拿到下一波 AI 助手的高频使用场景。</p></div>
+        <div class="source">来源：<a href="https://k.sina.cn/article_7879776594_1d5abd95201901r9ee.html">新浪新闻</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">腾讯</span><span class="type">混元 / 基础模型部</span></div>
+        <p class="headline">腾讯继续把混元研发资源往更统一的底座上收，说明它现在最看重的是协同效率，而不是分散冲刺。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 24 日到 25 日，多家媒体持续跟进腾讯 AI 组织调整。公开信息显示，腾讯已将混元大语言模型部门与多模态模型部门合并，成立“基础模型部”，由腾讯首席 AI 科学家姚顺雨统一管理，目标是提升研发协同效率并探索全模态模型能力上限。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>这件事本质上是在说：腾讯觉得语言模型、多模态模型、Agent 能力再各自跑一摊已经不够快了，必须把最核心的底座团队捏成一股绳，后面产品和业务线接起来才不会反复内耗。</p></div>
+        <div class="block"><h3>影响分析</h3><p>如果整合顺利，腾讯后续在元宝、腾讯云、办公协同、代码助手等场景上的模型迭代节奏会更整齐，研发资源利用率也会更高。对大厂来说，这种组织收口往往意味着 AI 已经从“试验项目”走到“核心战役”。</p></div>
+        <div class="source">来源：<a href="https://finance.sina.com.cn/tech/roll/2026-07-24/doc-iniiwzsf4873850.shtml">新浪科技</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">华为</span><span class="type">端侧 AI / 手机备案</span></div>
+        <p class="headline">华为今天释放的关键信号，不是单一硬件参数，而是系统级 AI 能力正在借监管备案正式进入规模落地阶段。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>围绕 7 月中旬国家网信部门公布的首批手机端侧生成式 AI 备案，7 月 25 日到 26 日仍有多家媒体持续发酵。公开报道提到，华为与多家主流手机厂商一同完成端侧 AI 服务备案，市场解读重点落在“系统级 AI 合规开闸”和后续大规模推送能力上。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>说白了，就是华为不只是做一个手机里的 AI 功能按钮，而是想把 AI 直接做进系统底层。备案通过意味着这类能力后续可以更名正言顺地往真实终端和用户场景里铺。</p></div>
+        <div class="block"><h3>影响分析</h3><p>对华为而言，端侧 AI 一旦和鸿蒙系统、终端设备、云端模型形成闭环，竞争力就不再只是单款手机，而是整套“系统级智能体验”。这也是手机厂商下一阶段比拼用户粘性的关键战场。</p></div>
+        <div class="source">来源：<a href="https://finance.sina.com.cn/tech/roll/2026-07-20/doc-iniimean9871756.shtml">界面新闻 / 新浪科技</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">小米</span><span class="type">新机备案 / 多模型组合</span></div>
+        <p class="headline">小米今天最大的看点，是它想把 AI 手机从“有一个助手”升级成“系统能调多套模型”的组合打法。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 25 日多篇公开报道提到，小米一款新机在备案信息中同时出现多款 AI 大模型，覆盖自研模型与多家第三方主流模型，并与澎湃 OS 4、新机入网等信息一并被市场关注，成为当天手机圈的热门话题。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>这不是“小米又多加了几个 AI 功能”那么简单，而是在试图证明：以后手机里的 AI 可能不是一个大模型包打天下，而是系统根据任务去调不同模型，各自干最擅长的事。</p></div>
+        <div class="block"><h3>影响分析</h3><p>如果小米真把多模型调度、系统能力和硬件体验串起来，它后面卖的就不只是手机参数，而是“这台手机到底会不会主动帮你做事”。这会直接影响 AI 手机能不能成为下一轮换机理由。</p></div>
+        <div class="source">来源：<a href="https://www.163.com/dy/article/L2NAJ0FF0511ADC6.html">网易订阅</a></div>
+      </article>
+    </section>
+
+    <div class="section-title">
+      <h2>国际科技公司</h2>
+      <p>覆盖 Google、Meta、OpenAI、Amazon 的今日重点变化</p>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="company"><span class="name">Google / Alphabet</span><span class="type">云增长 / AI 开支</span></div>
+        <p class="headline">Google 今天最核心的矛盾依然没变：AI 的确拉动了云业务，但资本市场更担心它还要继续烧多少钱。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 23 日至 25 日，围绕 Alphabet 最新业绩与市场反应的报道持续发酵。Reuters 转引的市场讨论指出，Google Cloud 受企业 AI 需求带动增长显著，但 Alphabet 同时继续上调资本开支预期，外界因此把“增长兑现”和“投入压力”放在一起审视。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>可以理解成：谷歌在告诉市场“我砸 AI 是有结果的，云业务真被带起来了”；但市场的回应是“可以，那你继续证明这些钱最后能不能稳定赚回来”。增长和焦虑一起存在。</p></div>
+        <div class="block"><h3>影响分析</h3><p>接下来 Google 的竞争重点不只是模型能力本身，而是如何让 Gemini、云产品和基础设施投入真正形成持续回报。只要商业闭环跑得稳，市场会买账；一旦投入继续上升而回报滞后，质疑声就会更集中。</p></div>
+        <div class="source">来源：<a href="https://www.channelnewsasia.com/business/google-increases-capex-forecast-again-after-cloud-driven-earnings-beat-6271851">Channel NewsAsia / Reuters</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Meta</span><span class="type">Meta AI / 任务自动化</span></div>
+        <p class="headline">Meta 已经不满足于让 AI 陪用户聊天，而是开始把它推向“能替你执行任务”的方向。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 25 日 Reuters 相关报道显示，Meta 正在部分市场为 Meta AI 推出新的任务自动化功能，允许聊天助手在一定范围内自主完成任务。报道提到，新能力会结合用户上下文来执行动作，目标是把 Meta AI 从问答工具推向更实用的个人助理。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>以前 Meta AI 更像“陪你说几句”；现在它想变成“你交代一个事，它能替你跑一段流程”。这说明 Meta 也在抢 Agent 化入口，而不是只做社交应用里的附属聊天框。</p></div>
+        <div class="block"><h3>影响分析</h3><p>Meta 手里最强的是流量入口和社交关系链，一旦 AI 助手有了执行能力，它的价值会远高于普通聊天机器人。真正决定成败的，会是任务执行是否稳定、用户授权是否安心，以及风险控制能不能跟上。</p></div>
+        <div class="source">来源：<a href="https://www.channelnewsasia.com/business/meta-adds-new-task-automation-features-ai-assistant-6276946">Channel NewsAsia / Reuters</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">OpenAI</span><span class="type">ChatGPT / 渠道扩展与语音</span></div>
+        <p class="headline">OpenAI 今天最值得看的，不是又发了什么大模型，而是它正持续把 ChatGPT 塞进更多入口，并把语音交互做得更自然。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>OpenAI 官方更新显示，ChatGPT 已重新在 EEA 地区支持通过 WhatsApp 使用，用户可发送图片、语音消息并直接对话；同时 Enterprise 与 Edu 版本也开始上线更自然的 ChatGPT Voice 体验，支持更实时的语音对话与工作流使用。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>OpenAI 现在越来越务实：一边把 ChatGPT 放进大家本来就常用的聊天渠道里，一边把语音交互做得更顺。它想让 ChatGPT 不只是“打开网页去问”，而是变成随时随地都能碰到的助手。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这说明 OpenAI 的重点已经从单纯刷发布声量，转到做高频入口和真实使用时长。入口越广、语音越自然、工作场景越深入，ChatGPT 的网络效应和企业渗透就越容易继续放大。</p></div>
+        <div class="source">来源：<a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">OpenAI ChatGPT Release Notes</a> · <a href="https://help.openai.com/en/articles/10128477-chatgpt-enterprise-%E8%88%87-edu-%E7%99%BC%E8%A1%8C%E8%AA%AA%E6%98%8E">OpenAI Enterprise &amp; Edu Release Notes</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Amazon</span><span class="type">Alexa+ / 智能家居与服务连接</span></div>
+        <p class="headline">Amazon 继续把 Alexa+ 往“更懂上下文、能连更多服务、能处理更复杂任务”的方向推进。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 25 日，Amazon 围绕 Alexa+ 的最新更新继续被多家媒体报道。官方与外部报道均强调，Alexa+ 正增强自然语言理解、跨设备控制以及第三方服务连接能力，目标是让它在智能家居和日常服务场景里处理更复杂的请求。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>亚马逊现在不想让 Alexa 只停留在“开灯、放歌、问天气”这个层级，而是想把它做成一个真正能记上下文、调服务、替用户省事的家庭助理。</p></div>
+        <div class="block"><h3>影响分析</h3><p>如果 Alexa+ 能把设备生态、自然语言理解和任务执行串起来，Amazon 在家庭场景里的入口价值会重新被放大。这个赛道最后拼的不是谁最会聊天，而是谁最能把服务真正调起来并稳定完成任务。</p></div>
+        <div class="source">来源：<a href="https://www.aboutamazon.com/news/devices/new-alexa-generative-artificial-intelligence">About Amazon</a> · <a href="https://www.forbes.com/sites/paullamkin/2026/07/25/alexa-is-about-to-get-smarter/">Forbes</a></div>
+      </article>
+    </section>
+
+    <section class="note">
+      <strong>今日观察：</strong>7 月 26 日最值得记住的一点，是大厂们的 AI 竞争重点正在快速收敛：国内厂商更看重端侧 AI、系统入口和组织协同，海外巨头则在拼任务执行、语音自然度和真实产品渗透。真正决定下一阶段格局的，已经不是“谁再发一个模型”，而是谁先把 AI 做成用户离不开、能长期使用、并且真的能替人做事的入口。
+    </section>
+
+    <div class="footer">Generated for global-sync · dachang-news · 2026-07-26</div>
+  </main>
+</body>
+</html>

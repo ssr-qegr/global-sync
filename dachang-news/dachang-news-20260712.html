@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日大厂新闻｜2026-07-12</title>
+  <style>
+    :root { --primary: #B388FF; --bg: #0D0D0D; --card-bg: #1A1A1A; --text-main: #E0E0E0; --text-sub: #9E9E9E; --accent: #00E5FF; --border: rgba(179, 136, 255, 0.24); --shadow: 0 20px 60px rgba(0,0,0,0.35); --tag-bg: rgba(0, 229, 255, 0.12); --domestic: #7C4DFF; --global: #00B8D4; --warning: #FFAB40; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: radial-gradient(circle at top left, rgba(179,136,255,0.14), transparent 34%), radial-gradient(circle at top right, rgba(0,229,255,0.12), transparent 30%), linear-gradient(180deg, #101012 0%, #0D0D0D 100%); color: var(--text-main); line-height: 1.75; }
+    a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 36px 0 80px; }
+    .hero { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(179,136,255,0.16), rgba(0,229,255,0.08)); border: 1px solid var(--border); border-radius: 28px; padding: 36px; box-shadow: var(--shadow); backdrop-filter: blur(10px); }
+    .hero::after { content: ""; position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(0,229,255,0.18), transparent 70%); pointer-events: none; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.06); color: var(--accent); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
+    h1 { margin: 18px 0 10px; font-size: clamp(32px, 4vw, 52px); line-height: 1.1; letter-spacing: -0.02em; }
+    .subtitle { max-width: 860px; color: var(--text-sub); font-size: 16px; margin-bottom: 24px; }
+    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 18px; }
+    .meta-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 18px; padding: 16px 18px; }
+    .meta-label { color: var(--text-sub); font-size: 12px; margin-bottom: 6px; }
+    .meta-value { font-size: 18px; font-weight: 700; }
+    .section { margin-top: 34px; }
+    .section-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+    .section-title { margin: 0; font-size: 26px; }
+    .section-desc { color: var(--text-sub); font-size: 14px; margin: 6px 0 0; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 6px 12px; font-size: 13px; background: var(--tag-bg); color: var(--accent); border: 1px solid rgba(0,229,255,0.18); white-space: nowrap; }
+    .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; }
+    .news-card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 22px; box-shadow: var(--shadow); }
+    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .company { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; box-shadow: 0 0 12px currentColor; }
+    .domestic .dot { color: var(--domestic); background: var(--domestic); } .global .dot { color: var(--global); background: var(--global); }
+    .chip { font-size: 12px; color: var(--text-sub); border: 1px solid rgba(255,255,255,0.08); border-radius: 999px; padding: 4px 10px; }
+    .headline { font-size: 20px; line-height: 1.4; margin: 0 0 14px; }
+    .block { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .block h3 { margin: 0 0 8px; font-size: 14px; letter-spacing: 0.04em; color: var(--primary); }
+    .block p { margin: 0; color: var(--text-main); font-size: 14px; }
+    .sources { margin-top: 18px; padding-top: 14px; border-top: 1px dashed rgba(255,255,255,0.10); font-size: 13px; color: var(--text-sub); }
+    .sources ul { margin: 8px 0 0; padding-left: 18px; } .sources li + li { margin-top: 6px; }
+    .footnote { margin-top: 34px; padding: 20px 22px; border-radius: 20px; background: rgba(255,171,64,0.08); border: 1px solid rgba(255,171,64,0.18); color: #FFD7A0; font-size: 14px; }
+    .footer { margin-top: 30px; color: var(--text-sub); font-size: 13px; text-align: center; }
+    @media (max-width: 720px) { .container { width: min(100% - 24px, 1180px); padding-top: 20px; } .hero { padding: 24px; border-radius: 22px; } .news-card { padding: 18px; border-radius: 20px; } .section-title { font-size: 22px; } .headline { font-size: 18px; } .section-head { flex-direction: column; align-items: flex-start; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="eyebrow">🏢 style_dark · 大厂新闻日报</div>
+      <h1>今日大厂新闻｜2026-07-12</h1>
+      <p class="subtitle">聚焦国内外科技大厂的当日重要动态，覆盖字节跳动、腾讯、阿里、百度、华为、小米，以及 Google、Apple、Meta、OpenAI。每条新闻均提供“新闻原文摘要 + 人话翻译 + 影响分析”，方便快速扫一遍当天值得关注的产业变化。</p>
+      <div class="meta-grid">
+        <div class="meta-card"><div class="meta-label">覆盖公司</div><div class="meta-value">10 家</div></div>
+        <div class="meta-card"><div class="meta-label">国内 / 国际</div><div class="meta-value">6 / 4</div></div>
+        <div class="meta-card"><div class="meta-label">主题重心</div><div class="meta-value">AI 应用、组织调整、硬件入口</div></div>
+        <div class="meta-card"><div class="meta-label">生成时间</div><div class="meta-value">2026-07-12</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div><h2 class="section-title">国内大厂动态</h2><p class="section-desc">今日国内科技公司消息集中在 AI 智能体收缩、组织效率、AI 算力与智能硬件/汽车入口。</p></div><span class="badge">中国科技公司</span></div>
+      <div class="news-grid">
+        <article class="news-card domestic"><div class="card-top"><div class="company"><span class="dot"></span>字节跳动</div><span class="chip">AI 产品调整</span></div><h3 class="headline">豆包被曝将下线智能体功能，AI 应用从“人人可建 Bot”转向更可控运营</h3><div class="block"><h3>新闻原文摘要</h3><p>当日 IT 业界报道称，字节跳动豆包与阿里千问先后宣布将于 7 月 15 日下线智能体相关功能；豆包称功能调整后，用户仍可在一段时间内查看并保存智能体信息与历史对话。</p></div><div class="block"><h3>人话翻译</h3><p>之前平台鼓励用户自己搭各种 AI 角色和智能体，现在开始收紧。原因可能不只是产品体验，也包括内容安全、监管要求和平台运营成本。</p></div><div class="block"><h3>影响分析</h3><p>这说明国内 AI 应用正从“快速铺量”进入“可控合规”阶段。对字节来说，豆包未来更可能强化主助手、搜索、办公与内容生产等确定性场景，而不是放任大量长尾智能体自由生长。</p></div><div class="sources">来源<ul><li><a href="http://m.toutiao.com/group/7661525722351010340/" target="_blank" rel="noopener noreferrer">InfoQ/Q资讯：字节跳动和阿里巴巴下线智能体功能</a></li><li><a href="https://www.roborhythms.com/china-ai-companion-ban/" target="_blank" rel="noopener noreferrer">Robo Rhythms：China AI Companion Ban Hits Doubao and Qwen</a></li></ul></div></article>
+
+        <article class="news-card domestic"><div class="card-top"><div class="company"><span class="dot"></span>腾讯</div><span class="chip">AI 投资传闻</span></div><h3 class="headline">腾讯被传考虑入股 Manus，AI Agent 入口争夺继续升温</h3><div class="block"><h3>新闻原文摘要</h3><p>当日 Q资讯早报转述称，市场传出腾讯考虑入股 AI Agent 产品 Manus 的消息；同篇报道还提到国内 AI 应用生成赛道出现分化，腾讯仍在围绕微信生态与 AI 工具推进布局。</p></div><div class="block"><h3>人话翻译</h3><p>腾讯可能不只靠自己做 AI 助手，也在看能不能通过投资把热门 Agent 产品能力接进自己的生态。</p></div><div class="block"><h3>影响分析</h3><p>如果交易最终落地，腾讯的优势会体现在微信、企业微信、小程序和内容生态的分发能力上。短期仍需把它视为投资传闻，但方向上反映出大厂都在抢“AI 帮用户办事”的入口。</p></div><div class="sources">来源<ul><li><a href="http://m.toutiao.com/group/7661525722351010340/" target="_blank" rel="noopener noreferrer">InfoQ/Q资讯：传腾讯考虑入股 Manus</a></li><li><a href="http://m.toutiao.com/group/7661516438296920622/" target="_blank" rel="noopener noreferrer">时代周报：大厂集体向中层“开刀”并提及腾讯 AI 投入</a></li></ul></div></article>
+
+        <article class="news-card domestic"><div class="card-top"><div class="company"><span class="dot"></span>阿里</div><span class="chip">智能体收缩</span></div><h3 class="headline">千问智能体功能同步收缩，阿里 AI 应用进入更重平台治理阶段</h3><div class="block"><h3>新闻原文摘要</h3><p>当日行业报道提到，阿里巴巴千问与字节豆包先后宣布下线智能体相关功能；同时，围绕大厂组织效率与 AI 基建投入的报道仍提及阿里未来多年持续加码 AI 基础设施。</p></div><div class="block"><h3>人话翻译</h3><p>阿里一边继续重投 AI 底座，一边对用户侧智能体功能做减法。也就是说，AI 不是不做，而是从“到处开口子”转向“先把安全和重点场景做好”。</p></div><div class="block"><h3>影响分析</h3><p>对阿里来说，千问、通义、云计算和电商场景之间的协同会更重要。智能体功能收缩可能短期影响开发者和重度用户体验，但有利于降低合规与内容风险。</p></div><div class="sources">来源<ul><li><a href="http://m.toutiao.com/group/7661525722351010340/" target="_blank" rel="noopener noreferrer">InfoQ/Q资讯：阿里巴巴下线智能体功能</a></li><li><a href="http://m.toutiao.com/group/7661516438296920622/" target="_blank" rel="noopener noreferrer">时代周报：报道提及阿里 AI 基建投入规划</a></li></ul></div></article>
+
+        <article class="news-card domestic"><div class="card-top"><div class="company"><span class="dot"></span>百度</div><span class="chip">AI 应用观察</span></div><h3 class="headline">百度 AI 业务继续被机构纳入周度观察，文心、AI 搜索和 Apollo 是关键标签</h3><div class="block"><h3>新闻原文摘要</h3><p>新浪财经 7 月 12 日发布的 AI 应用周度观察，将百度文心一言、文心千帆、AI 搜索、智能驾驶 Apollo 等列为百度 AI 业务关键词，并提到公司核心业务正在围绕 AI 服务、云和智能驾驶展开。</p></div><div class="block"><h3>人话翻译</h3><p>百度的 AI 故事不是单个聊天机器人，而是“搜索 + 大模型平台 + 云服务 + 自动驾驶”一整套组合。</p></div><div class="block"><h3>影响分析</h3><p>百度的机会在于把 AI 深入旧有搜索流量和产业客户场景；挑战在于国内大模型竞争激烈，AI 搜索和企业模型平台都需要持续证明商业化效率。</p></div><div class="sources">来源<ul><li><a href="https://finance.sina.com.cn/jjxw/2026-07-12/doc-inihpymz2811855.shtml" target="_blank" rel="noopener noreferrer">新浪财经：AI 应用周度观察（2026.07.06-2026.07.12）</a></li></ul></div></article>
+
+        <article class="news-card domestic"><div class="card-top"><div class="company"><span class="dot"></span>华为</div><span class="chip">AI 算力生态</span></div><h3 class="headline">国产 AI 算力需求继续升温，华为昇腾生态被放在核心位置讨论</h3><div class="block"><h3>新闻原文摘要</h3><p>7 月 12 日，多篇围绕 AI 算力产业的文章提到国内算力卡需求增长，并把华为昇腾 910B、Atlas 训练与推理设备、MindSpore 生态等作为国产 AI 基础设施的重要代表。</p></div><div class="block"><h3>人话翻译</h3><p>国内大模型不能只靠买海外 GPU，华为昇腾这类国产算力正在被当作关键替代方案和产业底座来讨论。</p></div><div class="block"><h3>影响分析</h3><p>这会继续抬高华为在政企 AI、云服务和国产替代链条中的战略价值。真正的考验不只是芯片参数，而是软件栈、开发者迁移、集群稳定性和成本效率。</p></div><div class="sources">来源<ul><li><a href="https://finance.sina.com.cn/stock/roll/2026-07-12/doc-inihpiqc7929455.shtml" target="_blank" rel="noopener noreferrer">新浪财经：AI 算力消息刷屏</a></li><li><a href="https://www.orientdeck.com/tech-trend/ai-robotics/9778.html" target="_blank" rel="noopener noreferrer">OrientDeck：AI Chip Breakthroughs Powering China's Next Generation</a></li></ul></div></article>
+
+        <article class="news-card domestic"><div class="card-top"><div class="company"><span class="dot"></span>小米</div><span class="chip">智能汽车 / 手机</span></div><h3 class="headline">小米一边扩展汽车产品线，一边在全球手机份额叙事中继续挑战 Apple</h3><div class="block"><h3>新闻原文摘要</h3><p>36氪 7 月 12 日早报提到，小米将发布澎程系列增程 SUV；同日海外科技媒体报道称，Canalys 市场报告显示小米在全球智能手机市场份额上超过 Apple，成为全球第二大智能手机厂商。</p></div><div class="block"><h3>人话翻译</h3><p>小米现在同时讲两个故事：手机业务继续全球化冲高，汽车业务则往增程 SUV、家庭出行和更大空间场景扩展。</p></div><div class="block"><h3>影响分析</h3><p>如果汽车线顺利放量，小米的“人车家全生态”会更完整；但多产品线并进也会带来供应链、交付、售后和品牌定位压力。手机份额相关数据来自单一媒体转述，仍需等机构正式报告确认。</p></div><div class="sources">来源<ul><li><a href="https://36kr.com/p/3887648675133960" target="_blank" rel="noopener noreferrer">36氪：小米将发布澎程系列增程 SUV</a></li><li><a href="https://kommandotech.com/news/smartphones/xiaomi-passes-apple-in-the-global-smartphone-market/" target="_blank" rel="noopener noreferrer">KomandoTech：Xiaomi Passes Apple in the Global Smartphone Market</a></li></ul></div></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div><h2 class="section-title">国际科技公司动态</h2><p class="section-desc">今日国际科技公司重点是苹果与 OpenAI 的诉讼、Meta 的 AI 人才战、Google 的 AI 芯片/搜索入口，以及 OpenAI 面向家庭场景扩张。</p></div><span class="badge">Global Tech</span></div>
+      <div class="news-grid">
+        <article class="news-card global"><div class="card-top"><div class="company"><span class="dot"></span>Apple</div><span class="chip">AI 硬件诉讼</span></div><h3 class="headline">苹果起诉 OpenAI 的消息继续发酵，AI 硬件人才流动进入司法视野</h3><div class="block"><h3>新闻原文摘要</h3><p>7 月 12 日多家媒体继续跟进苹果起诉 OpenAI 的案件。报道称苹果指控 OpenAI 通过挖角员工和获取机密信息推进自有 AI 硬件研发，OpenAI 则否认相关指控。</p></div><div class="block"><h3>人话翻译</h3><p>苹果担心的是：OpenAI 不只是招走了人，还可能带走了苹果做硬件的关键 know-how。这背后其实是未来 AI 设备入口之争。</p></div><div class="block"><h3>影响分析</h3><p>无论最终判决如何，诉讼都会提高大厂 AI 硬件团队挖角、创业合作和商业秘密隔离的合规成本，也会给 OpenAI 与 Jony Ive 相关硬件项目增加不确定性。</p></div><div class="sources">来源<ul><li><a href="https://www.setn.com/news/1871165" target="_blank" rel="noopener noreferrer">三立新闻：OpenAI 陷窃苹果机密官司</a></li><li><a href="https://www.techmeme.com/m/?directory=true&id=74" target="_blank" rel="noopener noreferrer">Techmeme / Bloomberg：Apple's OpenAI lawsuit follows months of tensions</a></li><li><a href="https://en.iz.ru/en/2130984/2026-07-12/apple-sued-openai-what-you-need-know" target="_blank" rel="noopener noreferrer">Izvestia：Apple sued OpenAI. What you need to know</a></li></ul></div></article>
+
+        <article class="news-card global"><div class="card-top"><div class="company"><span class="dot"></span>OpenAI</div><span class="chip">家庭产品</span></div><h3 class="headline">OpenAI 招聘家庭产品经理，ChatGPT 场景可能从个人用户走向家庭用户</h3><div class="block"><h3>新闻原文摘要</h3><p>IT之家 7 月 12 日报道称，OpenAI 正在旧金山招聘专职产品经理，为旗下产品打造面向家庭、护理人员和老年人的体验；职位要求强调家长、家庭用户和高信任消费产品经验。</p></div><div class="block"><h3>人话翻译</h3><p>OpenAI 不满足于让年轻人和企业员工用 ChatGPT，也想进入家庭、亲子、照护和老人陪伴等更日常的场景。</p></div><div class="block"><h3>影响分析</h3><p>家庭场景意味着更高的安全、隐私和责任要求，但也可能打开订阅、硬件和多成员账号的新商业空间。结合苹果诉讼，OpenAI 的消费级硬件和家庭入口会成为后续观察重点。</p></div><div class="sources">来源<ul><li><a href="http://m.toutiao.com/group/7661413375238226473/" target="_blank" rel="noopener noreferrer">IT之家：OpenAI 招聘家庭产品经理，将拓展家庭用户市场</a></li></ul></div></article>
+
+        <article class="news-card global"><div class="card-top"><div class="company"><span class="dot"></span>Meta</div><span class="chip">AI 人才战 / 监管</span></div><h3 class="headline">Meta 继续卷入 AI 人才争夺，同时面临“同意与监管”讨论升温</h3><div class="block"><h3>新闻原文摘要</h3><p>7 月 12 日海外报道继续讨论 Meta 从 OpenAI、DeepMind 等团队吸纳研究人员引发的 AI 人才战；同时，Times of India 文章称 Meta 在 AI 与用户同意问题上正面对更强监管和公众审视。</p></div><div class="block"><h3>人话翻译</h3><p>Meta 一边疯狂补 AI 顶尖人才，一边也要回答一个问题：训练和推荐系统到底有没有真正尊重用户的知情同意。</p></div><div class="block"><h3>影响分析</h3><p>Meta 的 AI 竞争力取决于算力、数据、人才和产品分发，但越深入用户数据和社交平台，越容易触发隐私、未成年人保护和算法治理压力。</p></div><div class="sources">来源<ul><li><a href="https://cnnbc.com/ai-may-be-artificial-but-the-hunger-for-human-intelligence-is-dangerously-real" target="_blank" rel="noopener noreferrer">CNNBC：AI talent battle involving Meta, OpenAI and DeepMind</a></li><li><a href="https://timesofindia.indiatimes.com/technology/tech-news/metas-ai-reality-check-why-consent-is-the-next-battleground/articleshow/132342310.cms" target="_blank" rel="noopener noreferrer">Times of India：Meta’s AI reality check</a></li></ul></div></article>
+
+        <article class="news-card global"><div class="card-top"><div class="company"><span class="dot"></span>Google</div><span class="chip">AI 芯片 / 入口</span></div><h3 class="headline">Google 继续把 AI 模型、芯片设计与搜索入口绑定，强化全栈 AI 叙事</h3><div class="block"><h3>新闻原文摘要</h3><p>7 月 12 日海外科技文章提到，Google 正把 AI 模型用于自家 AI 芯片设计，相关工作由 DeepMind 推进；同时，Google 在 Gemini 与搜索入口上的消费级 AI 布局仍是市场关注重点。</p></div><div class="block"><h3>人话翻译</h3><p>Google 的打法不是只做一个聊天机器人，而是从模型、芯片、搜索、Android 到云服务全部串起来。</p></div><div class="block"><h3>影响分析</h3><p>如果 Google 能用 AI 提升自研芯片效率，再把 Gemini 接进搜索和系统入口，就能在成本和分发两端形成优势。风险在于搜索广告商业模式会被 AI 答案形态重新改造。</p></div><div class="sources">来源<ul><li><a href="https://brusselspost.com/ai-powerhouses-confront-nvidia-s-supremacy-amid-fresh-chip-innovations" target="_blank" rel="noopener noreferrer">Brussels Post：Google using AI models in AI chip design</a></li><li><a href="https://techresider.com/tech-pulse-the-biggest-stories-moving-the-industry-this-july/?amp=1" target="_blank" rel="noopener noreferrer">TechResider：Tech Pulse July industry stories</a></li></ul></div></article>
+      </div>
+    </section>
+
+    <div class="footnote">说明：本页基于 2026-07-12 当日公开可检索信息整理。部分条目来自媒体报道、早报转述或行业文章，适合用作“今日值得关注的产业信号”；涉及诉讼、投资传闻、第三方市场份额和未正式发布产品的信息，后续仍需以公司公告、法院文件、监管披露或权威机构正式报告为准。</div>
+    <div class="footer">Generated for 孙纾荣 · global-sync / dachang-news · style_dark</div>
+  </div>
+</body>
+</html>
