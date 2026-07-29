@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub 精选项目报告 | 2026年7月29日</title>
+  <style>
+    :root { --primary:#0052D9; --primary-2:#2F80ED; --primary-soft:#EAF2FF; --bg:#F3F5F8; --card-bg:#FFFFFF; --text-main:#1C1F23; --text-sub:#5C6A82; --border:rgba(0,82,217,.13); --shadow:0 18px 48px rgba(8,32,71,.10); }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:24px; background:linear-gradient(180deg,#EEF4FF 0%,var(--bg) 280px); color:var(--text-main); font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; }
+    .wrap { max-width:980px; margin:0 auto; background:var(--card-bg); border-radius:28px; overflow:hidden; box-shadow:var(--shadow); }
+    .hero { position:relative; padding:44px 44px 36px; color:#fff; background:radial-gradient(circle at 86% 8%,rgba(255,255,255,.92),rgba(255,255,255,.12) 30%,transparent 48%),linear-gradient(135deg,#003EA8 0%,#0052D9 46%,#4FA3FF 100%); }
+    .hero:after { content:""; position:absolute; right:34px; bottom:-46px; width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,.12); filter:blur(1px); }
+    .badge-group { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px; }
+    .badge { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.22); font-size:13px; font-weight:700; }
+    h1 { margin:0 0 14px; font-size:34px; line-height:1.25; letter-spacing:-.02em; }
+    .hero p { margin:0; max-width:780px; color:rgba(255,255,255,.94); font-size:16px; position:relative; z-index:1; }
+    .content { padding:34px 44px 40px; }
+    .section-title { display:flex; align-items:center; gap:10px; margin:0 0 18px; font-size:24px; color:var(--primary); }
+    .lead-card,.project-card,.tips-card,.source-card { background:#fff; border:1px solid var(--border); border-radius:20px; padding:24px; margin-bottom:22px; box-shadow:0 10px 28px rgba(0,82,217,.06); }
+    .lead-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px; }
+    .metric { background:linear-gradient(180deg,#F8FBFF,#FFFFFF); border:1px solid var(--border); border-radius:16px; padding:16px; }
+    .metric .label { display:block; font-size:13px; color:var(--text-sub); margin-bottom:8px; }
+    .metric .value { display:block; font-size:22px; font-weight:800; color:var(--primary); }
+    .project-head { display:flex; justify-content:space-between; gap:18px; align-items:flex-start; margin-bottom:14px; }
+    .project-title { margin:0; font-size:28px; line-height:1.3; }
+    .project-subtitle { margin:8px 0 0; color:var(--text-sub); }
+    .rank { min-width:86px; text-align:center; background:linear-gradient(180deg,#F6FAFF,#EAF2FF); color:var(--primary); border-radius:16px; padding:14px 12px; border:1px solid var(--border); font-weight:800; }
+    .meta-row { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 18px; }
+    .chip { display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border-radius:999px; font-size:13px; color:var(--text-sub); background:#F7FAFE; border:1px solid rgba(92,106,130,.14); }
+    .summary { margin:0 0 18px; font-size:16px; color:var(--text-main); }
+    .grid-2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:12px; }
+    .panel { background:#FAFCFF; border:1px solid var(--border); border-radius:16px; padding:18px; }
+    .panel h3 { margin:0 0 12px; font-size:17px; color:var(--primary); }
+    ul { margin:0; padding-left:20px; }
+    li { margin-bottom:10px; color:var(--text-sub); }
+    li strong { color:var(--text-main); }
+    .cta-row { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+    .link-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; border-radius:12px; padding:10px 16px; font-weight:700; transition:transform .18s ease,box-shadow .18s ease; }
+    .link-btn.primary { background:var(--primary); color:#fff; box-shadow:0 8px 18px rgba(0,82,217,.22); }
+    .link-btn.secondary { background:var(--primary-soft); color:var(--primary); }
+    .link-btn:hover { transform:translateY(-1px); }
+    .tips-card h3,.source-card h3 { margin:0 0 12px; color:var(--primary); }
+    .foot { padding:0 44px 34px; color:var(--text-sub); font-size:13px; }
+    .foot strong { color:var(--text-main); }
+    a { color:var(--primary); }
+    @media (max-width:820px) { body{padding:14px;} .hero,.content,.foot{padding-left:22px;padding-right:22px;} .lead-grid,.grid-2{grid-template-columns:1fr;} .project-head{flex-direction:column;} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="badge-group"><span class="badge">GitHub 精选</span><span class="badge">2026-07-29</span><span class="badge">style_blue</span></div>
+      <h1>今日 GitHub 精选项目报告</h1>
+      <p>今天精选两个很适合工程师补齐 AI 工具链认知的项目：<strong>IBM/mcp-context-forge</strong> 关注的是 Agent 时代的统一接入、治理与观测；<strong>tirth8205/code-review-graph</strong> 关注的是 AI Coding 时如何只读真正相关的代码。一个解决“工具怎么接进来”，一个解决“上下文怎么读得准”，组合起来非常适合观察 2026 年 AI 工程化的两个关键方向。</p>
+    </section>
+    <main class="content">
+      <section class="lead-card">
+        <h2 class="section-title">📌 今日结论</h2>
+        <p class="summary">如果你已经不满足于单个 Demo Agent，而是开始考虑多工具接入、内部 API 治理、日志追踪、权限边界和大仓代码审查，那么今天这两个项目都值得看。ContextForge 代表 AI Gateway / Agent Infra 方向，强调统一入口、协议兼容与平台化治理；code-review-graph 代表 AI Coding Efficiency 方向，强调用结构化图谱给模型提供精准上下文，避免每次都把整个仓库重新读一遍。对个人成长来说，今天最值得学习的不是某个 prompt，而是两类能力：如何把 AI 工具接入企业环境，以及如何让 AI 在真实代码库里读得更少但看得更准。</p>
+        <div class="lead-grid"><div class="metric"><span class="label">今日精选数量</span><span class="value">2 个</span></div><div class="metric"><span class="label">核心主题</span><span class="value">Gateway × Code Graph</span></div><div class="metric"><span class="label">推荐实践方向</span><span class="value">统一接入 → 精准上下文</span></div></div>
+      </section>
+
+      <section class="project-card">
+        <div class="project-head"><div><h2 class="project-title">1. IBM/mcp-context-forge</h2><p class="project-subtitle">IBM 开源 ContextForge：把 MCP、A2A 和传统 API 统一纳入一个可治理、可观测的 AI Gateway</p></div><div class="rank">TOP 1</div></div>
+        <div class="meta-row"><span class="chip">🧭 AI Gateway</span><span class="chip">🔌 MCP</span><span class="chip">🤝 A2A</span><span class="chip">🌐 REST / gRPC</span><span class="chip">📈 Observability</span><span class="chip">🧩 Plugins</span></div>
+        <p class="summary"><strong>项目详细介绍：</strong>ContextForge 是 IBM 开源的一个统一网关 / 注册中心 / 代理层，目标是把 MCP Server、A2A 服务以及传统 REST/gRPC API 汇总成一个干净的一致入口，提供集中式的发现、治理和可观测能力。它不只是“再包一层代理”，而是把 Agent &amp; Tool calling、协议转译、鉴权、限流、重试、监控以及插件扩展放到同一个控制平面里，适合从单体 AI 工具走向团队化、平台化场景的开发者参考。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>统一入口：</strong>同一个系统里同时面向 MCP、A2A 与传统 REST/gRPC 服务，方便把分散的工具和 API 聚合为一个 AI 可消费的统一端点。</li><li><strong>协议转译能力：</strong>项目内置 REST / gRPC 到 MCP 的适配思路，适合把存量服务“虚拟化”为 MCP 工具，而不必重写后端。</li><li><strong>平台级治理：</strong>内置鉴权、限流、重试、反向代理、用户级 OAuth Token 等能力，关注的是企业接入时最常见的基础设施问题。</li><li><strong>可扩展性强：</strong>官方 README 提到提供 40+ 插件，可扩展额外的传输、协议与集成方式，说明它不是单点脚手架，而是生态型平台组件。</li><li><strong>可观测与运维友好：</strong>支持 OpenTelemetry，并可对接 Phoenix、Jaeger、Zipkin 等后端；同时还有 Admin UI，方便管理配置和实时观察运行状态。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>企业内 AI 工具中台：</strong>团队有多个 MCP Server、内部 API、Agent 服务时，可以用它统一暴露和治理接入方式。</li><li><strong>遗留系统 AI 化：</strong>把已有的 REST 或 gRPC 服务逐步包装成 AI 友好的工具接口，而不用一次性推倒重建。</li><li><strong>多 Agent / 多模型编排：</strong>当你需要 Anthropic、OpenAI 兼容 Agent 或自定义 Agent 共同协作时，它提供了一个更清晰的入口层。</li><li><strong>安全与运维要求较高的场景：</strong>如果你关心鉴权、流量控制、日志追踪、部署扩展和集群化运行，这个项目比单个 Demo Server 更接近真实生产诉求。</li></ul></div></div>
+        <div class="panel" style="margin-top:16px;"><h3>为什么今天推荐它</h3><ul><li>现在很多团队已经不缺单个 MCP Server，真正开始缺的是“怎么统一接、怎么管、怎么观测”的平台层能力。</li><li>ContextForge 非常适合帮助工程师建立 Agent Infra 视角：AI 工具不是越多越好，而是需要稳定的控制平面把它们串起来。</li><li>如果你未来想做内部 AI 平台、智能研发中台或 Agent Gateway，这个项目能提供非常直接的参考样板。</li></ul></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/IBM/mcp-context-forge" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库</a><a class="link-btn secondary" href="https://ibm.github.io/mcp-context-forge/latest/" target="_blank" rel="noopener noreferrer">查看官方文档</a></div>
+      </section>
+
+      <section class="project-card">
+        <div class="project-head"><div><h2 class="project-title">2. tirth8205/code-review-graph</h2><p class="project-subtitle">Local-first 代码智能图谱：让 AI Coding 工具在 Review 时只读取真正相关的代码</p></div><div class="rank">TOP 2</div></div>
+        <div class="meta-row"><span class="chip">🧠 Code Intelligence</span><span class="chip">🌲 Tree-sitter</span><span class="chip">🔗 MCP</span><span class="chip">⌨️ CLI</span><span class="chip">🔍 Blast Radius</span><span class="chip">🏗️ Monorepo</span></div>
+        <p class="summary"><strong>项目详细介绍：</strong>code-review-graph 是一个面向 AI Coding 场景的 local-first 代码智能工具。它通过 Tree-sitter 为代码仓库构建结构化图谱，跟踪函数、类、导入关系、调用链以及测试关联，再在评审或变更分析时把真正相关的文件范围交给 AI 助手。它想解决的核心问题很现实：在大仓库里，AI 代码助手最浪费的不是“不会写”，而是“读太多不相关上下文”。这个项目把“减少无效读取”变成了一个可以长期维护的工程系统。</p>
+        <div class="grid-2"><div class="panel"><h3>技术亮点</h3><ul><li><strong>结构化代码图谱：</strong>用 Tree-sitter 解析代码仓库，形成函数、类、依赖与测试关系的持久化映射，而不是每次都靠模型临时全文扫描。</li><li><strong>精准 blast radius 分析：</strong>当某个文件变化时，它会继续追踪调用方、依赖方和相关测试，帮助 AI 找到真正应该补看的上下文。</li><li><strong>增量更新友好：</strong>官方 README 强调图谱支持增量更新，适合频繁改动和持续评审的开发流程，而不是一次性离线分析。</li><li><strong>面向多平台接入：</strong>安装命令会自动识别多种 AI Coding 平台并生成对应配置，说明它不是孤立工具，而是围绕 MCP / CLI 生态去做整合。</li><li><strong>本地优先：</strong>local-first 对很多真实团队都很重要，尤其是涉及私有代码、内网仓库和上下文成本控制时，这个方向非常实用。</li></ul></div><div class="panel"><h3>使用场景</h3><ul><li><strong>大仓库 / Monorepo 代码评审：</strong>减少 AI 助手盲读整仓的情况，让它先看变更影响范围，再补读相关模块。</li><li><strong>重构影响分析：</strong>在改函数签名、抽模块、替换底层实现时，帮助识别潜在波及面和相关测试。</li><li><strong>AI Coding 成本控制：</strong>对高频使用 Claude Code、Codex、Cursor、Gemini CLI 等工具的开发者来说，精准上下文能直接提升质量与效率。</li><li><strong>团队研发规范建设：</strong>它很适合被纳入 Code Review 或 PR 分析流程，作为“先缩小上下文范围，再让 AI 审查”的工程习惯。</li></ul></div></div>
+        <div class="panel" style="margin-top:16px;"><h3>为什么今天推荐它</h3><ul><li>大家谈 AI Coding 时常盯着模型能力，但在真实代码库里，真正决定体验上限的往往是上下文获取方式。</li><li>这个项目很好地把“代码理解前置为结构化索引”这个思路落到了工具层，对大型仓库尤其有参考价值。</li><li>如果你日常就在复杂项目里用 AI 助手，这类图谱型工具非常值得提前关注，因为它代表了下一阶段的 AI 编码基础设施。</li></ul></div>
+        <div class="cta-row"><a class="link-btn primary" href="https://github.com/tirth8205/code-review-graph" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库</a><a class="link-btn secondary" href="https://github.com/tirth8205/code-review-graph/blob/main/docs/USAGE.md" target="_blank" rel="noopener noreferrer">查看使用文档</a></div>
+      </section>
+
+      <section class="tips-card"><h3>🧭 今日阅读建议</h3><ul><li><strong>先看 ContextForge：</strong>重点理解它为什么要把 MCP、A2A 和传统 API 放到统一控制平面里，以及企业接入真正需要哪些治理能力。</li><li><strong>再看 code-review-graph：</strong>重点理解它如何把“AI 阅读代码”的问题拆成图谱构建、影响分析和精准取上下文三步。</li><li><strong>组合实践：</strong>团队层面可以用 Gateway 思维统一工具接入，个人层面可以用代码图谱思维优化 AI Coding 上下文，两者结合很适合打造更稳的工程闭环。</li></ul></section>
+      <section class="source-card"><h3>🔎 信息来源</h3><ul><li>IBM/mcp-context-forge GitHub 仓库 README 与官方文档站点：用于确认项目定位、协议覆盖范围、插件扩展、可观测性与部署方式。</li><li>tirth8205/code-review-graph GitHub 仓库 README 与官方文档页面：用于确认项目定位、Tree-sitter 图谱思路、增量更新机制与多平台接入方式。</li><li>GitHub 公开搜索结果仅用于辅助筛选今日项目方向，不作为核心事实来源。</li><li>内容生成时间：2026-07-29 CST</li></ul></section>
+    </main>
+    <div class="foot"><strong>输出文件：</strong>github-selected-20260729.html<br /><strong>生成说明：</strong>采用 style_blue 风格扩展生成，适配 GitHub Pages 发布。</div>
+  </div>
+</body>
+</html>
