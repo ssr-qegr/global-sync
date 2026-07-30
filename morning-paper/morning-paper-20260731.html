@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>今日精选晨报 - 2026年7月31日</title>
+  <style>
+    :root {
+      --primary: #00B26B;
+      --accent: #0AAE9E;
+      --bg: #F2FBF6;
+      --card-bg: rgba(255,255,255,0.96);
+      --text-main: #173B2E;
+      --text-sub: #58706A;
+      --line: rgba(10,174,158,0.18);
+      --soft: #F7FFFB;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: "Nunito", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at top left, rgba(0,178,107,0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(10,174,158,0.12), transparent 26%),
+        var(--bg);
+      line-height: 1.75;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 42px;
+      box-shadow: 0 24px 64px rgba(15,143,121,0.10);
+    }
+    .header {
+      text-align: center;
+      padding-bottom: 22px;
+      margin-bottom: 30px;
+      border-bottom: 2px dashed rgba(10,174,158,0.24);
+    }
+    .header h1 {
+      margin: 0 0 10px;
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+    }
+    .date {
+      font-size: 15px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+    .brief {
+      margin-top: 14px;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .section-title {
+      margin: 34px 0 16px;
+      padding-bottom: 8px;
+      font-size: 23px;
+      font-weight: 900;
+      color: var(--accent);
+      border-bottom: 2px dashed rgba(10,174,158,0.22);
+    }
+    .news-item {
+      position: relative;
+      margin-bottom: 24px;
+      padding: 24px 24px 24px 46px;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--soft) 100%);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .news-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(15,143,121,0.10);
+      border-color: rgba(10,174,158,0.38);
+    }
+    .news-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 12px;
+      border-radius: 22px 0 0 22px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+    }
+    .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(10,174,158,0.16);
+      background: rgba(0,178,107,0.10);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .news-item h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      font-weight: 850;
+      color: var(--text-main);
+    }
+    .news-item h3 {
+      margin: 14px 0 6px;
+      font-size: 16px;
+      font-weight: 850;
+      color: var(--accent);
+    }
+    .news-item p {
+      margin: 0 0 10px;
+      font-size: 15px;
+      color: var(--text-sub);
+    }
+    .source {
+      margin-top: 10px;
+      color: rgba(88,112,106,0.92);
+      font-size: 13px;
+    }
+    .source a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .source a:hover { text-decoration: underline; }
+    .footer {
+      margin-top: 32px;
+      padding-top: 18px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(88,112,106,0.92);
+      border-top: 1px dashed rgba(10,174,158,0.24);
+      font-weight: 700;
+    }
+    @media (max-width: 600px) {
+      body { padding: 12px; }
+      .container { padding: 24px; border-radius: 20px; }
+      .header h1 { font-size: 28px; }
+      .news-item { padding: 20px 20px 20px 32px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🌅 今日精选晨报</h1>
+      <div class="date">✨ 2026年7月31日 星期五 ✨</div>
+      <div class="brief">今天重点看三件事：国内政策层面已把下半年经济和产业方向定得更清楚；全球地缘与利率环境仍在左右风险偏好；而科技主线里，中国继续押注关键技术攻关，微软则用最新财报证明云与 AI 商业化仍在加速落地。</div>
+    </div>
+
+    <div class="section-title">🏛️ ① 时事政治</div>
+    <div class="news-item">
+      <span class="tag">🇨🇳 国内</span>
+      <h2>中央政治局会议部署下半年经济工作，二十届五中全会定于10月召开</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>新华社7月30日报道，中共中央政治局召开会议，决定今年10月在北京召开二十届五中全会，并分析研究当前经济形势、部署下半年经济工作。会议提出，要实施更加积极的财政政策和适度宽松的货币政策，加大逆周期调节力度，同时强调扩大内需、推进现代化产业体系建设，并继续实施“人工智能+”行动。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>简单说，就是下半年的政策主线已经更明确了：一边稳增长，一边推产业升级，不只是要把经济托住，还要把新动能继续做大，尤其是消费、科技和未来产业这些方向。</p>
+      <h3>💡 意义解读</h3>
+      <p>这类高层会议最值得看的不是表态本身，而是后续各部委和地方会不会围绕这些关键词继续出细则。对市场和产业来说，内需刺激、财政发力、人工智能与新质生产力，仍会是接下来政策资源重点倾斜的方向。</p>
+      <div class="source">来源：<a href="https://www.news.cn/20260730/13ecbfd4cd9b455281a0649232b98ad0/c.html">新华网</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌍 国际</span>
+      <h2>加沙停火谈判出现“罕见进展”，但解除武装仍是核心卡点</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>7月30日，开罗方面围绕加沙和平方案展开的新一轮沟通出现积极信号。接近谈判的消息人士称，斡旋方与哈马斯之间的讨论“积极并在推进中”，路线图包括扩大人道主义援助、建立平民治理机制、以军撤出以及国际力量维持安全；不过，以色列方面仍认为现有文本无法满足其关于哈马斯彻底解除武装的要求。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>换句话说，大家终于又往前挪了一点，但真正最难谈的那道题还没解开。现在的问题不是“有没有方案”，而是关键各方愿不愿意在最敏感的安全条款上让步。</p>
+      <h3>💡 意义解读</h3>
+      <p>只要中东局势有任何缓和迹象，全球市场都会立刻去重估油价、航运、避险情绪和美元资产定价；但如果解除武装、驻军和治理安排继续卡住，所谓“进展”很可能还是停留在阶段性表态，短期波动不会真正消失。</p>
+      <div class="source">来源：<a href="https://www.channelnewsasia.com/world/gaza-ceasefire-talks-see-rare-progress-sources-say-6289601">CNA / Reuters</a></div>
+    </div>
+
+    <div class="section-title">💰 ② 金融财经</div>
+    <div class="news-item">
+      <span class="tag">🏦 国内财经</span>
+      <h2>上半年规模以上文化企业营收达 72026 亿元，新业态增长更快</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>国家统计局7月30日公布，2026年上半年，全国8.2万家规模以上文化及相关产业企业实现营业收入72026亿元，同比增长4.6%。其中，文化新业态特征较为明显的16个行业小类实现营业收入35239亿元，同比增长9.6%，比整体增速快5.0个百分点；文化服务业营收同比增长8.1%。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>这说明文化消费和数字内容相关生意，还在继续长，而且增长最快的不是传统环节，而是更偏平台化、线上化、内容化的新业态。</p>
+      <h3>💡 意义解读</h3>
+      <p>这组数据的价值，不只是证明消费没有完全熄火，更说明结构性机会在往“内容+科技+服务”方向集中。对投资和产业观察来说，谁能把文化内容、数字发行、平台运营和消费场景结合得更深，谁更可能吃到下一阶段增量。</p>
+      <div class="source">来源：<a href="https://www.stats.gov.cn/sj/zxfbhjd/202607/t20260730_1964244.html">国家统计局</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌍 国际财经</span>
+      <h2>美联储维持利率在 3.5% 至 3.75%，强调冲突与通胀仍带来不确定性</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>美联储7月29日发布 FOMC 声明，决定将联邦基金利率目标区间维持在3.5%至3.75%不变。声明指出，美国经济活动仍在稳健扩张，生产率与资本开支表现较强，就业总体平稳，但受中东冲突等因素影响，不确定性依旧较高，通胀仍高于委员会2%的目标。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>说白了就是：美国经济现在还没弱到必须马上降息，通胀也没回到让美联储彻底安心的程度，所以它宁愿继续按兵不动，再观察一段时间。</p>
+      <h3>💡 意义解读</h3>
+      <p>这对全球市场的含义很直接：高利率环境还要再适应一阵子。股票估值、美元强弱、全球资本流向，都会继续围绕“利率多久才会真正往下走”这件事反复博弈。</p>
+      <div class="source">来源：<a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm">Federal Reserve</a></div>
+    </div>
+
+    <div class="section-title">🚀 ③ 技术领域</div>
+    <div class="news-item">
+      <span class="tag">🤖 国内技术</span>
+      <h2>七部门启动工信领域“揭榜挂帅”，人形机器人与 AI 基础底座成重点</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>工信部等七部门日前启动2026年首批工业和信息化领域创新任务揭榜挂帅工作。本批围绕未来产业、装备制造、信息技术、通信、人工智能、消费品6个方向，系统布局24个专题，其中未来产业涵盖人形机器人与具身智能、类脑智能等前沿方向，人工智能方向则覆盖基础底座技术、赋能应用技术、智能产品装备和共性基础支撑技术。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>这不是普通的行业通知，而是在告诉市场：今年国家想重点推进哪些“卡脖子”和下一代产业方向，已经点名了，企业、科研机构和地方平台都可以围着这些赛道去抢项目、抢资源。</p>
+      <h3>💡 意义解读</h3>
+      <p>对产业来说，这意味着技术攻关正在从泛泛鼓励，转向更明确的专题制和任务制。谁能在机器人、算力、工业软件、AI 底座这些核心专题里率先跑出来，谁就更有机会拿到后续政策、资金和产业协同上的优势。</p>
+      <div class="source">来源：<a href="https://www.ncsti.gov.cn/kjdt/tzgg/202607/t20260730_252167.html">国家科技传播中心</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌐 国际技术</span>
+      <h2>微软财报继续验证 AI 商业化：Azure 年收入破千亿美元，Copilot 付费席位超 3000 万</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>微软在2026财年第四财季财报中披露，Azure全年收入首次突破1000亿美元，Microsoft 365 Copilot付费席位超过3000万；季度 Microsoft Cloud 收入达到593亿美元，同比增长27%，Azure及其他云服务收入同比增长43%。公司将本季表现概括为“Cloud and AI strength”。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>意思就是，市场之前担心 AI 投入太大、赚钱太慢，但微软拿出来的结果是：大客户还在持续买单，而且云和 AI 已经越来越像一门成熟的大生意，不只是故事。</p>
+      <h3>💡 意义解读</h3>
+      <p>头部科技公司的财报，往往是整个 AI 产业链最直接的温度计。只要微软这类平台公司还能持续把算力投入、Copilot 产品化和企业付费转成收入增长，全球市场就会继续相信 AI 基础设施和应用层的长期逻辑还没走完。</p>
+      <div class="source">来源：<a href="https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast">Microsoft Investor Relations</a></div>
+    </div>
+
+    <div class="footer">
+      🌿 今天的关键词：五中全会、加沙谈判、文化新业态、高利率维持、揭榜挂帅、AI 商业化兑现。
+    </div>
+  </div>
+</body>
+</html>
