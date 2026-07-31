@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>今日精选晨报 - 2026年8月1日</title>
+  <style>
+    :root {
+      --primary: #00B26B;
+      --accent: #0AAE9E;
+      --bg: #F2FBF6;
+      --card-bg: rgba(255,255,255,0.96);
+      --text-main: #173B2E;
+      --text-sub: #58706A;
+      --line: rgba(10,174,158,0.18);
+      --soft: #F7FFFB;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: "Nunito", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at top left, rgba(0,178,107,0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(10,174,158,0.12), transparent 26%),
+        var(--bg);
+      line-height: 1.75;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 42px;
+      box-shadow: 0 24px 64px rgba(15,143,121,0.10);
+    }
+    .header {
+      text-align: center;
+      padding-bottom: 22px;
+      margin-bottom: 30px;
+      border-bottom: 2px dashed rgba(10,174,158,0.24);
+    }
+    .header h1 {
+      margin: 0 0 10px;
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+    }
+    .date {
+      font-size: 15px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+    .brief {
+      margin-top: 14px;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .section-title {
+      margin: 34px 0 16px;
+      padding-bottom: 8px;
+      font-size: 23px;
+      font-weight: 900;
+      color: var(--accent);
+      border-bottom: 2px dashed rgba(10,174,158,0.22);
+    }
+    .news-item {
+      position: relative;
+      margin-bottom: 24px;
+      padding: 24px 24px 24px 46px;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--soft) 100%);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .news-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(15,143,121,0.10);
+      border-color: rgba(10,174,158,0.38);
+    }
+    .news-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 12px;
+      border-radius: 22px 0 0 22px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+    }
+    .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(10,174,158,0.16);
+      background: rgba(0,178,107,0.10);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .news-item h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      font-weight: 850;
+      color: var(--text-main);
+    }
+    .news-item h3 {
+      margin: 14px 0 6px;
+      font-size: 16px;
+      font-weight: 850;
+      color: var(--accent);
+    }
+    .news-item p {
+      margin: 0 0 10px;
+      font-size: 15px;
+      color: var(--text-sub);
+    }
+    .stock-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 16px;
+      font-size: 14px;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+    .stock-table th {
+      background: rgba(0,178,107,0.12);
+      color: var(--accent);
+      padding: 9px 12px;
+      text-align: left;
+      font-weight: 800;
+    }
+    .stock-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid rgba(10,174,158,0.12);
+      color: var(--text-sub);
+      vertical-align: top;
+    }
+    .stock-table .up { color: #D32F2F; font-weight: 800; }
+    .stock-table .down { color: #00897B; font-weight: 800; }
+    .stock-table .flat { color: #5E6B73; font-weight: 800; }
+    .source {
+      margin-top: 10px;
+      color: rgba(88,112,106,0.92);
+      font-size: 13px;
+    }
+    .source a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .source a:hover { text-decoration: underline; }
+    .footer {
+      margin-top: 32px;
+      padding-top: 18px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(88,112,106,0.92);
+      border-top: 1px dashed rgba(10,174,158,0.24);
+      font-weight: 700;
+    }
+    @media (max-width: 600px) {
+      body { padding: 12px; }
+      .container { padding: 24px; border-radius: 20px; }
+      .header h1 { font-size: 28px; }
+      .news-item { padding: 20px 20px 20px 32px; }
+      .stock-table { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🌅 今日精选晨报</h1>
+      <div class="date">✨ 2026年8月1日 星期六 ✨</div>
+      <div class="brief">今天先看一眼全球市场的风险偏好有没有继续回暖，再重点关注国内宏观政策与 AI 产业发力、中东局势对航运和能源的外溢影响，以及亚马逊财报再次验证企业级云与 AI 需求仍在加速兑现。</div>
+    </div>
+
+    <div class="section-title">📈 ① 股市总览</div>
+    <div class="news-item">
+      <span class="tag">🌐 最近一个完整交易日收盘概览</span>
+      <table class="stock-table">
+        <tr><th>市场</th><th>指数</th><th>收盘点位</th><th>涨跌幅</th><th>观察</th></tr>
+        <tr><td>A股</td><td>上证指数</td><td>3832.26</td><td class="up">+0.72%</td><td>科技与 AI 链条反弹，情绪明显修复</td></tr>
+        <tr><td>港股</td><td>恒生指数</td><td>25884.43</td><td class="up">+0.10%</td><td>小幅走高，科技股波动但成交活跃</td></tr>
+        <tr><td>美股</td><td>纳斯达克</td><td>25373.85</td><td class="up">+1.00%</td><td>大型科技财报提振成长资产风险偏好</td></tr>
+        <tr><td>美股</td><td>道琼斯指数</td><td>52485.03</td><td class="up">+0.53%</td><td>资金继续回流权重蓝筹</td></tr>
+        <tr><td>美股</td><td>标普500</td><td>7489.72</td><td class="up">+0.70%</td><td>风险资产整体延续偏强</td></tr>
+      </table>
+      <h3>📰 新闻原文摘要</h3>
+      <p>7 月 31 日，A股主要指数整体反弹，上证综指涨 0.72% 至 3832.26 点；港股恒生指数涨 0.10% 至 25884.43 点。隔夜美股也继续走强，纳指、标普 500 和道指分别上涨 1.00%、0.70% 和 0.53%，市场情绪主要受大型科技公司财报和云业务增长带动。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>简单说，就是全球市场这两天的主旋律是“风险偏好回暖”。只要科技龙头还能交出像样的成绩单，资金就愿意继续回到成长和高弹性资产上。</p>
+      <h3>💡 意义解读</h3>
+      <p>这意味着 8 月初市场的关键，不只是宏观政策会不会继续加码，更是科技公司能不能持续证明 AI 投入正在变成真实收入。如果验证继续成立，指数层面的韧性会更强。</p>
+      <div class="source">来源：<a href="http://www.china.org.cn/china/Off_the_Wire/2026-07/31/content_118627971.shtml">Xinhua：中国股市7月31日收高</a>；<a href="http://www.aastocks.com/en/stocks/news/aafn-con/now.1536017/popular-news/aafn">AASTOCKS：恒生指数7月31日收盘</a>；<a href="https://www.cnbc.com/2026/07/30/stock-market-today-live-updates.html">CNBC：7月31日美股收盘</a></div>
+    </div>
+
+    <div class="section-title">🏛️ ② 时事政治</div>
+    <div class="news-item">
+      <span class="tag">🇨🇳 国内</span>
+      <h2>国务院常务会议要求尽快研究推出务实有效的增量储备政策</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>7 月 31 日，国务院常务会议强调，要推动创新驱动、高质量和健康发展，确保“十五五”时期实现良好开局；会议同时提出，要提高宏观政策实施效能，充分用好既有政策，并及时研究推出务实有效的增量储备政策。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>翻成人话就是：政策面现在不是“有没有动作”的问题，而是已经开始为下一阶段增长和产业推进提前备工具箱了。</p>
+      <h3>💡 意义解读</h3>
+      <p>这类会议的信号价值，在于它往往预示后面会有更细的部门举措跟上。对市场和产业端来说，稳增长、抓创新、提前备增量，基本就是下半年政策节奏的核心关键词。</p>
+      <div class="source">来源：<a href="http://www.chinaview.cn/20260731/7ec8e84005284c598ef554b0e6d243d9/c.html">Xinhua：李强主持召开国务院常务会议</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌍 国际</span>
+      <h2>联合国秘书长呼吁中东各条战线停火，并恢复霍尔木兹海峡航行自由</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>8 月 1 日，联合国秘书长古特雷斯表示，中东地区的战事必须在所有战线停止，霍尔木兹海峡和曼德海峡周边的国际航行权利与自由必须全面恢复，并警告海湾地区已持续 6 个月的军事升级正在演变为全球不稳定因素。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>意思很直白：现在中东风险已经不是局部问题，而是在往全球能源、航运和资本市场的神经上直接踩。</p>
+      <h3>💡 意义解读</h3>
+      <p>只要霍尔木兹海峡的安全没有真正稳定下来，油价、航运保费和全球避险情绪就很难彻底回落。后面不管是政策判断还是市场定价，都得继续把中东变量放在显眼位置。</p>
+      <div class="source">来源：<a href="https://english.news.cn/20260801/d41f595ef4304e1f8040c2eaa33195b6/c.html">Xinhua：UN chief calls for end of all fighting in Mideast</a></div>
+    </div>
+
+    <div class="section-title">💰 ③ 金融财经</div>
+    <div class="news-item">
+      <span class="tag">🏦 国内财经</span>
+      <h2>7 月制造业 PMI 回落至 49.2，稳增长预期再度升温</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>7 月中国制造业采购经理指数（PMI）降至 49.2，较 6 月回落 1.1 个百分点，重新回到荣枯线下方。数据反映制造业订单和需求承压，市场对后续逆周期调节和稳增长政策的关注明显升温。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>说白了，经济没有失速，但企业端体感确实又有点偏冷，大家接下来会更关心政策会不会继续托底、托多久、托到什么程度。</p>
+      <h3>💡 意义解读</h3>
+      <p>PMI 再次跌回 50 以下，会让市场更相信后续还有政策加码空间。对股票、利率和大宗商品来说，这类数据不仅是宏观温度计，也会直接影响大家对下半年节奏的判断。</p>
+      <div class="source">来源：<a href="http://www.china.org.cn/china/Off_the_Wire/2026-07/31/content_118627722.shtml">Xinhua：7月制造业 PMI 降至 49.2</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌍 国际财经</span>
+      <h2>日本央行维持利率在 1% 不变，市场重新评估日元与后续加息路径</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>7 月 31 日，日本央行维持政策利率在 1% 不变，同时继续释放如果通胀风险升温仍可能进一步加息的信号。日元走势、日债收益率和跨境资金流向因此再度成为全球市场关注重点。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>就是一句话：日本这边暂时没动，但市场已经开始提前算下一步。谁都知道，一旦日本真的继续收紧，全球资金价格和汇率都会跟着动。</p>
+      <h3>💡 意义解读</h3>
+      <p>过去几年全球市场很习惯“日本长期超低利率”这个背景板，现在这个背景正在慢慢松动。只要日本政策方向出现边际变化，全球套利交易、美元强弱和亚洲资产定价都会受到影响。</p>
+      <div class="source">来源：<a href="https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k260731a.pdf">Bank of Japan：Statement on Monetary Policy</a>；<a href="http://widgets.economictimes.com/markets/us-stocks/news/global-market-boj-keeps-rates-unchanged-signals-readiness-for-further-hikes-as-yen-remains-under-pressure/articleshow/132755708.cms">Reuters 摘要：BOJ keeps rates unchanged, signals readiness for further hikes</a></div>
+    </div>
+
+    <div class="section-title">🚀 ④ 技术领域</div>
+    <div class="news-item">
+      <span class="tag">🤖 国内技术</span>
+      <h2>发改委披露中国 AI 产业高景气：智能算力同比 2.8 倍，开源模型下载破 100 亿次</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>国家发展改革委 7 月 31 日新闻发布会披露，上半年全国智能算力规模达到去年同期的 2.8 倍，国产开源大模型全球总下载量突破 100 亿次，人工智能相关行业保持 30% 以上高增长，并提出将加快人工智能法立法进程。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>这说明国内 AI 现在不只是热闹，而是已经进入“算力、模型、应用、监管”几条线一起往前推的阶段。</p>
+      <h3>💡 意义解读</h3>
+      <p>市场最看重的并不是单点技术突破，而是能不能形成产业闭环。算力扩张、模型扩散和立法推进同时出现，意味着 AI 正在从风口故事，走向更完整的长期产业建设。</p>
+      <div class="source">来源：<a href="https://www.ndrc.gov.cn/xwdt/xwfb/202607/t20260731_1406862_ext.html">国家发展改革委：7月份新闻发布会</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌐 国际技术</span>
+      <h2>亚马逊二季度 AWS 销售额同比增长 37%，企业级云与 AI 需求继续加速兑现</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>亚马逊 7 月 30 日公布二季度业绩，AWS 销售额同比增长 37% 至 422 亿美元，成为近年最快增速之一。财报表现强化了市场对企业级云和 AI 投入正在转化为真实收入的判断。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>意思很明确：大厂砸钱搞 AI 并不只是讲故事，企业客户确实还在继续买单，而且买单速度没有慢下来。</p>
+      <h3>💡 意义解读</h3>
+      <p>亚马逊和微软这类平台公司的财报，其实就是全球 AI 商业化最直接的体温计。只要云厂商还能持续把 AI 投入换成收入增长，市场就会继续相信这一轮基础设施和应用升级还远没结束。</p>
+      <div class="source">来源：<a href="https://www.aboutamazon.com/news/company-news/amazon-earnings-q2-2026-report">Amazon：二季度业绩公告</a></div>
+    </div>
+
+    <div class="footer">
+      🌿 今天的关键词：风险偏好回暖、增量政策储备、中东航运安全、PMI 回落、日本央行、AI 高景气、AWS 加速增长。
+    </div>
+  </div>
+</body>
+</html>
