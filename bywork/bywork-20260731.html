@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>今日副业探索报告｜AI 长视频切片代运营 & AI 模板包 / 微课数字产品店</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff8ed;
+      --bg-soft: #fff3df;
+      --card: rgba(255,255,255,.88);
+      --text: #352317;
+      --muted: #7a6658;
+      --line: rgba(183, 126, 73, .22);
+      --amber: #d97706;
+      --orange: #f97316;
+      --rose: #fb7185;
+      --green: #16a34a;
+      --shadow: 0 24px 60px rgba(124, 75, 25, .16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(251, 146, 60, .30), transparent 34%),
+        radial-gradient(circle at 86% 12%, rgba(251, 113, 133, .18), transparent 30%),
+        radial-gradient(circle at 50% 92%, rgba(245, 158, 11, .16), transparent 32%),
+        linear-gradient(145deg, #fffaf1 0%, #fff4e5 48%, #fffdf8 100%);
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 42px 0 48px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 34px; padding: clamp(28px, 5vw, 54px); background: linear-gradient(135deg, rgba(255,255,255,.94), rgba(255,246,231,.84)); box-shadow: var(--shadow); backdrop-filter: blur(18px); }
+    .hero::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px; border-radius: 50%; background: conic-gradient(from 120deg, rgba(249,115,22,.36), rgba(251,113,133,.24), rgba(245,158,11,.28), rgba(249,115,22,.36)); filter: blur(4px); opacity: .75; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border-radius: 999px; background: #fff3df; border: 1px solid var(--line); color: #9a5a13; font-size: 13px; font-weight: 700; }
+    h1 { position: relative; z-index: 1; margin: 20px 0 12px; font-size: clamp(34px, 5.5vw, 62px); line-height: 1.04; letter-spacing: -.045em; }
+    .lead { position: relative; z-index: 1; max-width: 900px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.85; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .metric { padding: 17px; border-radius: 22px; background: rgba(255,255,255,.78); border: 1px solid rgba(183,126,73,.18); }
+    .metric b { display: block; font-size: 23px; color: #8a4b0f; }
+    .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .section { margin-top: 22px; border: 1px solid var(--line); border-radius: 30px; background: var(--card); box-shadow: 0 16px 42px rgba(124,75,25,.11); overflow: hidden; }
+    .section-head { padding: 26px 28px 18px; border-bottom: 1px solid var(--line); background: linear-gradient(90deg, rgba(255,247,237,.92), rgba(255,255,255,.70)); }
+    .section-kicker { color: var(--orange); font-size: 13px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { margin: 8px 0 8px; font-size: clamp(25px, 3vw, 36px); letter-spacing: -.025em; }
+    .section-head p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .content { padding: 26px 28px 30px; }
+    .verdict { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: stretch; }
+    .note, .score-card { border: 1px solid rgba(183,126,73,.18); border-radius: 24px; background: #fffdf9; padding: 20px; }
+    .note strong { color: #92400e; }
+    .note p { color: var(--muted); line-height: 1.75; margin: 8px 0 0; }
+    .scores { display: grid; gap: 12px; }
+    .bar { display: grid; gap: 7px; }
+    .bar-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+    .track { height: 10px; border-radius: 999px; background: #fde7c8; overflow: hidden; }
+    .fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--amber), var(--rose)); }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { border: 1px solid var(--line); border-radius: 28px; padding: 24px; background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,243,.84)); box-shadow: 0 14px 32px rgba(124,75,25,.09); }
+    .tagline { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .pill { border-radius: 999px; padding: 6px 10px; background: #fff3df; border: 1px solid rgba(183,126,73,.18); color: #9a5a13; font-size: 12px; font-weight: 700; }
+    .project h3 { margin: 0 0 10px; font-size: 25px; letter-spacing: -.02em; }
+    .project p { margin: 0 0 16px; color: var(--muted); line-height: 1.75; }
+    .list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .list li { padding: 12px 13px; border-radius: 16px; background: rgba(255,246,231,.72); color: #574234; line-height: 1.62; }
+    .list b { color: #8a4b0f; }
+    .table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 20px; }
+    .table th, .table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(183,126,73,.16); vertical-align: top; line-height: 1.65; }
+    .table th { background: #fff3df; color: #8a4b0f; font-size: 13px; }
+    .table tr:last-child td { border-bottom: 0; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: step; }
+    .step { position: relative; padding: 20px; border-radius: 22px; border: 1px solid rgba(183,126,73,.18); background: #fffdf9; }
+    .step::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #f97316; color: white; font-weight: 800; margin-bottom: 12px; }
+    .step h4 { margin: 0 0 8px; font-size: 17px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
+    .warn { border-left: 5px solid var(--orange); background: #fff7ed; padding: 16px 18px; border-radius: 18px; color: #614331; line-height: 1.7; }
+    .sources { display: grid; gap: 9px; color: var(--muted); line-height: 1.65; font-size: 13px; }
+    .sources a { color: #9a5a13; font-weight: 700; }
+    footer { color: var(--muted); text-align: center; margin-top: 26px; line-height: 1.8; font-size: 14px; }
+    @media (max-width: 860px) { .hero-grid, .projects, .steps, .verdict { grid-template-columns: 1fr; } .wrap { width: min(100% - 24px, 1120px); padding-top: 22px; } .section-head, .content { padding-left: 20px; padding-right: 20px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">☕ style_warm · 2026-07-31 · 今日副业探索</div>
+      <h1>今天更值得验证的两条线：AI 长视频切片代运营 + AI 模板包 / 微课数字产品店</h1>
+      <p class="lead">今天这两个方向依然围绕三个标准筛选：AI 自动化占比高、个人能快速做出样板、收入模型既能短期回款也能逐步复利。第一条线适合先拿服务单，直接帮教培老师、顾问、播客主理人、知识博主和小商家把长视频拆成短视频并分发出去；第二条线适合把你已经验证过的经验沉淀成模板包、提示词包、SOP 手册或迷你微课，通过数字产品平台持续售卖。</p>
+      <div class="hero-grid">
+        <div class="metric"><b>2 个</b><span>今日推荐方向</span></div>
+        <div class="metric"><b>样片先行</b><span>一周内就能做出最小样板</span></div>
+        <div class="metric"><b>低固定成本</b><span>软件费远低于人工交付价值</span></div>
+        <div class="metric"><b>服务 + 产品</b><span>兼顾现金流和长期复利</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Overall Verdict</div>
+        <h2>今日结论：先用“AI 长视频切片代运营”换现金流，再把交付经验打包成“AI 模板包 / 微课数字产品店”做长期复利</h2>
+        <p>这两条线最适合一起看，而不是二选一。切片代运营更接近客户现成需求，只要客户已经有直播回放、播客、课程录屏、访谈或门店素材，你就能很快交付可见成果；数字产品店则把你在服务过程中沉淀下来的标题模板、脚本结构、剪辑 SOP、选题清单和提示词包重新包装成标准化商品，未来不用每次都靠出卖时间赚钱。</p>
+      </div>
+      <div class="content verdict">
+        <div class="note">
+          <strong>推荐启动顺序：</strong>
+          <p>先做 AI 长视频切片代运营，因为客户最容易理解“把 1 条长视频变成 10 条能发的平台短内容”这件事的价值；等你跑通 2-3 个客户案例后，再把常见的开场钩子模板、字幕规范、标题库、发布 SOP、脚本提纲和复盘表沉淀成数字产品。这样你不是从零做产品，而是把已经卖出去的交付经验再卖第二次。</p>
+        </div>
+        <div class="score-card">
+          <div class="scores">
+            <div class="bar"><div class="bar-row"><span>AI 自动化程度</span><b>很高</b></div><div class="track"><div class="fill" style="width:92%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>启动门槛</span><b>低</b></div><div class="track"><div class="fill" style="width:28%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>短期回款</span><b>切片更快</b></div><div class="track"><div class="fill" style="width:88%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>长期复利</span><b>数字产品更强</b></div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Projects</div>
+        <h2>今日 2 个副业方向</h2>
+        <p>一个偏“服务变现”，一个偏“产品复利”。如果你手上暂时没人脉，就先做样片；如果你已经接触到内容创作者或小商家，就优先卖结果。</p>
+      </div>
+      <div class="content projects">
+        <article class="project">
+          <div class="tagline"><span class="pill">快回款</span><span class="pill">内容代运营</span><span class="pill">AI 剪辑</span></div>
+          <h3>01｜AI 长视频切片代运营</h3>
+          <p>面向教培老师、顾问、播客主理人、ToB 创始人、小商家和知识型博主，把“长视频找高光片段 → 自动加字幕 → 智能重构画面 → 生成标题与简介 → 多平台发布”串成一条标准交付链。你卖的不是剪视频本身，而是更稳定、更高频的内容产出能力。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>典型交付包括：每周 1-2 条长视频拆成 8-20 条短视频，附带字幕、封面文案、标题候选、发布时间建议和平台发布清单。客户最直观看到的结果是：过去一周只能发 1 条，现在能稳定发出一组内容矩阵。</li>
+            <li><b>可行性分析：</b>OpusClip 官方首页把产品定位为 AI video clipping tool，强调可将长视频 1-click 转成短视频，并提供 AI clipping、AI captioning、AI reframe 与多平台发布能力；官方还强调可让用户 create and publish videos 5x faster。对个人副业来说，这意味着只要客户已经有长视频素材，你就能先做出一份高质量样片，再谈按月代运营。</li>
+            <li><b>AI 自动化程度：</b>高光片段筛选、字幕生成、重构横竖屏、标题草案、简介草案、封面文案和基础排期都适合交给 AI；人工主要负责二次审片、把控品牌语气、删除低质量片段和判断哪些内容更适合平台投放。整体属于高自动化、强流程化的服务型副业。</li>
+            <li><b>启动成本：</b>前期主要是剪辑 SaaS 与少量样片制作时间，现金成本不高，完全可以先用最低档套餐或试用能力做 1-2 个样片验证。真正的投入不是软件，而是你能否把“什么样的片段值得发、什么样的标题能引起点击”讲清楚。</li>
+            <li><b>预期收益：</b>更适合按“样片包 + 月度代运营”收费。试水阶段可以先做低门槛样片成交，后续升级成按周交付、按账号管理或按平台分发收费。只要客户本身持续生产长视频，这条线就天然具备复购属性。</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="tagline"><span class="pill">可复利</span><span class="pill">数字产品</span><span class="pill">自动交付</span></div>
+          <h3>02｜AI 模板包 / 微课数字产品店</h3>
+          <p>把自己已经验证过的工作流，做成可复制出售的数字产品，例如 AI 办公提效模板、求职提示词包、短视频脚本框架、行业研究 SOP、Notion 模板、Excel 看板、迷你微课或操作手册。你卖的不是“信息”，而是别人愿意付钱购买的节省时间方案。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>最小交付可以是一份 20-40 页的模板包或 SOP 手册；进阶版可以打包为“模板 + 讲解视频 + 案例演示 + 更新权益”。适合从你熟悉的细分主题切入，比如 AI 办公、求职提效、内容创作、知识管理、B 端销售跟进或小红书选题。</li>
+            <li><b>可行性分析：</b>Gumroad 官方定价页明确面向数字产品、电子书、课程、教程与会员制内容；其帮助中心给出的官网成交费用是 10% + 0.50 美元每单（不含支付通道费用）。这说明个人创作者无需先搭完整独立站，也能用较低固定成本验证一个数字产品是否有人买单。</li>
+            <li><b>AI 自动化程度：</b>AI 很适合承担大纲生成、案例初稿、标题命名、封面文案、详情页描述、FAQ、售后邮件和不同版本商品的快速扩写；人工主要负责筛选真实有用的经验、补充案例、去除废话、统一结构，并保证买家拿到后确实能直接用。自动化比例很高，但信任感来自你的真实实战经验。</li>
+            <li><b>启动成本：</b>这条线最大的优势就是固定成本很轻。你可以先不囤货、不开发系统、不买复杂软件，先用已有知识做一个最小商品，再逐步优化包装和转化页面。平台会抽佣，但前期比自己搭整套支付与交付链路更省心。</li>
+            <li><b>预期收益：</b>更适合做“单品 + 组合包 + 更新版”的阶梯式结构。前期靠低价试销验证方向，中期靠捆绑包拉高客单，后期再叠加会员更新、私教答疑或咨询入口。它的爆发不一定比服务快，但上限通常更高，因为同一个商品可以持续卖很多次。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Comparison</div>
+        <h2>投入产出对比</h2>
+        <p>切片代运营更像“先拿单”，数字产品店更像“先积累资产”。最顺的做法不是站队，而是先用服务找到真实需求，再把高频交付内容产品化。</p>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead><tr><th>维度</th><th>AI 长视频切片代运营</th><th>AI 模板包 / 微课数字产品店</th></tr></thead>
+          <tbody>
+            <tr><td>适合人群</td><td>愿意做交付、沟通客户、复盘数据的人</td><td>愿意沉淀经验、打磨商品、长期优化转化的人</td></tr>
+            <tr><td>核心交付</td><td>短视频成片、标题文案、分发清单、月度复盘</td><td>模板包、手册、微课、更新版与组合包</td></tr>
+            <tr><td>成交方式</td><td>先拿客户现有长视频做 1 组样片最容易成交</td><td>先做最小商品并通过社媒或私域试销验证</td></tr>
+            <tr><td>优势</td><td>价值直观、回款快、容易做成月度维护</td><td>边际成本低、可持续售卖、长期复利更强</td></tr>
+            <tr><td>主要风险</td><td>如果只会机械剪辑，没有内容判断，容易被低价替代</td><td>如果主题太泛、经验不够真实，产品容易没人复购</td></tr>
+            <tr><td>最小验证</td><td>先做 1 条长视频拆 5-10 条短视频样片</td><td>先上线 1 个细分模板包，验证前 10 单真实反馈</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">5-Day Action Plan</div>
+        <h2>5 天启动计划</h2>
+        <p>今天这两条线的关键，不是继续研究，而是尽快做出一个别人能马上看懂价值的样板。</p>
+      </div>
+      <div class="content steps">
+        <div class="step"><h4>第 1 天：只选一个足够窄的细分场景</h4><p>切片线只选一种客户，例如教培老师、播客主理人、餐饮门店；数字产品线只选一个主题，例如 AI 求职、AI 办公或短视频脚本模板。</p></div>
+        <div class="step"><h4>第 2 天：做出最小样板</h4><p>切片线至少拿 1 条公开视频做 5 条样片；数字产品线至少产出 1 份可下载的模板包或 1 节迷你微课，不追求大而全。</p></div>
+        <div class="step"><h4>第 3 天：拿真实反馈</h4><p>把样片发给 5-10 个潜在客户或同行，请他们只回答两个问题：有没有价值、愿不愿意付费。反馈比自我感动重要得多。</p></div>
+        <div class="step"><h4>第 4 天：写清楚收费边界</h4><p>服务线要写明一周交付多少条、含不含发布和复盘；产品线要写明买家能得到什么、是否持续更新、是否提供答疑。</p></div>
+        <div class="step"><h4>第 5 天：沉淀成可复用资产</h4><p>把标题模板、脚本提示词、剪辑规范、详情页文案、FAQ 与售后话术整理成标准包。后面每接一单或每卖一单，都在放大同一套资产。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Risk Notes</div>
+        <h2>避坑提醒</h2>
+      </div>
+      <div class="content">
+        <div class="warn">不要把“用了 AI”本身当成卖点。切片代运营真正卖的是稳定产出和内容节奏，数字产品店真正卖的是可直接拿来用的结果。无论做哪条线，都要先把边界写清楚：你交付什么、不交付什么、多久更新一次、哪些环节需要人工判断。AI 可以放大你的效率，但不会自动替你建立信任。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Sources</div>
+        <h2>参考线索</h2>
+        <p>以下资料主要用于判断 2026 年 AI 副业里“长视频切片代运营”和“数字产品店”两条线的可行性，以及前期是否能低成本起步。</p>
+      </div>
+      <div class="content sources">
+        <div>• 综合方向参考：<a href="https://www.shopify.com/blog/ai-side-hustles">Shopify - Best AI Side Hustles</a>。</div>
+        <div>• AI 长视频切片代运营：<a href="https://www.opus.pro/">OpusClip Official</a>、<a href="https://www.opus.pro/pricing">OpusClip Pricing</a>。</div>
+        <div>• AI 模板包 / 微课数字产品店：<a href="https://gumroad.com/">Gumroad Official</a>、<a href="https://gumroad.com/pricing">Gumroad Pricing</a>、<a href="https://gumroad.com/help/article/66-gumroads-fees">Gumroad's fees</a>。</div>
+      </div>
+    </section>
+
+    <footer>
+      生成日期：2026-07-31｜GitHub Pages：https://ssr-qegr.github.io/global-sync/bywork/bywork-20260731.html<br />
+      本报告用于副业方向探索与 MVP 验证，不构成收益承诺。
+    </footer>
+  </main>
+</body>
+</html>
