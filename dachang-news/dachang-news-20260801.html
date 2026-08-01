@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日大厂新闻｜2026-08-01</title>
+  <style>
+    :root { --primary: #B388FF; --bg: #0D0D0D; --card-bg: #1A1A1A; --text-main: #E0E0E0; --text-sub: #9E9E9E; --accent: #00E5FF; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: radial-gradient(circle at top left, rgba(179,136,255,0.18), transparent 32%), radial-gradient(circle at top right, rgba(0,229,255,0.12), transparent 36%), var(--bg); color: var(--text-main); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 32px 18px 56px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid rgba(179,136,255,0.28); border-radius: 28px; padding: 40px; background: linear-gradient(135deg, rgba(179,136,255,0.18), rgba(0,229,255,0.06)), rgba(26,26,26,0.88); box-shadow: 0 24px 80px rgba(0,0,0,0.42); }
+    .hero::after { content: ""; position: absolute; width: 260px; height: 260px; right: -80px; top: -100px; background: radial-gradient(circle, rgba(0,229,255,0.26), transparent 68%); filter: blur(2px); }
+    .tag { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(0,229,255,0.1); color: var(--accent); font-size: 13px; border: 1px solid rgba(0,229,255,0.22); }
+    h1 { margin: 18px 0 12px; font-size: clamp(34px, 5vw, 58px); line-height: 1.05; letter-spacing: -1.5px; }
+    .lead { max-width: 940px; color: var(--text-sub); line-height: 1.9; font-size: 16px; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .stat { padding: 18px; border-radius: 20px; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08); }
+    .stat strong { display: block; font-size: 28px; color: var(--primary); }
+    .stat span { color: var(--text-sub); font-size: 13px; }
+    .section-title { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 34px 0 16px; }
+    .section-title h2 { margin: 0; font-size: 24px; }
+    .section-title p { margin: 0; color: var(--text-sub); font-size: 14px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025)), var(--card-bg); border: 1px solid rgba(255,255,255,0.09); border-radius: 24px; padding: 22px; box-shadow: 0 16px 50px rgba(0,0,0,0.28); transition: transform .22s ease, border-color .22s ease; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(179,136,255,0.38); }
+    .company { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .company .name { font-size: 19px; font-weight: 800; color: #fff; }
+    .company .type { font-size: 12px; color: var(--accent); border: 1px solid rgba(0,229,255,0.25); background: rgba(0,229,255,0.08); border-radius: 999px; padding: 6px 10px; white-space: nowrap; }
+    .headline { margin: 0 0 14px; color: var(--primary); font-size: 17px; line-height: 1.55; }
+    .block { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .block h3 { margin: 0 0 8px; font-size: 14px; color: #fff; display: flex; align-items: center; gap: 8px; }
+    .block p { margin: 0; color: var(--text-sub); line-height: 1.8; font-size: 14px; }
+    .source { margin-top: 14px; color: #777; font-size: 12px; line-height: 1.8; }
+    .source a { color: #8eefff; }
+    .note { margin-top: 28px; padding: 18px 20px; border: 1px solid rgba(179,136,255,0.22); border-radius: 20px; background: rgba(179,136,255,0.07); color: var(--text-sub); line-height: 1.8; }
+    .footer { margin-top: 34px; text-align: center; color: #777; font-size: 13px; }
+    @media (max-width: 860px) { .hero { padding: 28px; } .stats, .grid { grid-template-columns: 1fr; } .section-title { display: block; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="tag">🏢 今日大厂新闻 · 2026-08-01 · style_dark</div>
+      <h1>今天的大厂主线，已经从“谁的模型更强”继续转向“谁能把 AI 接进真实工作流、终端入口和规则体系”</h1>
+      <p class="lead">8 月 1 日这批动态放在一起看，很容易发现一个共同趋势：国内公司更强调把模型变成具体生产力，围绕视频生成、游戏工业化、办公入口、搜索与终端设备继续推进；海外巨头则把重点放在浏览器代理、业绩兑现、监管透明和科研生态。字节用 Seedance 2.5 把视频生成从“能出片”继续推向“更长、更稳、更可编辑”，腾讯在 ChinaJoy 上把游戏研发所需的 AI 工具链一次性摆上台面，阿里和百度则继续补足多模态视频与深度思考模型能力，华为、小米分别用平板和汽车平台强化端侧产品叙事。海外方面，Google 继续把 Gemini Spark 往浏览器级代理推进，Apple 用强势财报证明设备入口依然有极强兑现力，Meta 开始更主动地占领 AI 监管话语位置，OpenAI 则把高校科研人群进一步拉进自己的产品体系。今天最值得记住的一句话是：AI 竞争越来越像一场“入口位 + 工作流 + 商业落地”的综合战。</p>
+      <div class="stats">
+        <div class="stat"><strong>10</strong><span>条重点动态</span></div>
+        <div class="stat"><strong>6</strong><span>国内焦点卡片</span></div>
+        <div class="stat"><strong>4</strong><span>国际焦点卡片</span></div>
+        <div class="stat"><strong>3</strong><span>核心关键词：入口位、工作流、商业兑现</span></div>
+      </div>
+    </section>
+
+    <div class="section-title">
+      <h2>国内大厂与科技生态</h2>
+      <p>今天更值得看的是模型工具化、游戏工业化、搜索入口和终端平台升级</p>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="company"><span class="name">字节跳动</span><span class="type">Seedance 2.5 / 视频生成</span></div>
+        <p class="headline">字节今天最有代表性的动作，是把视频生成从“能出一段片子”继续推进到“能做更完整、更可控的作品”。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>字节跳动 Seed 团队 7 月 31 日正式发布新一代视频生成模型 Seedance 2.5。官方介绍显示，它支持最长 30 秒长叙事生成、最多 50 个多模态参考素材，并强化了镜头连贯性、角色一致性、绿幕编辑和专业运镜等能力，面向更复杂的视频制作流程。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>这意味着字节不只想让 AI 帮你做一段“看着还行”的视频，而是想把它做成能直接进入广告、品牌内容、短剧和创意生产链路的工具。</p></div>
+        <div class="block"><h3>影响分析</h3><p>当视频模型开始同时追求时长、参考控制、剪辑能力和企业级接入时，竞争焦点就不再只是模型演示效果，而是能不能真正替代一部分内容生产流程。字节如果把这一套能力做稳，视频 AIGC 的平台优势会继续扩大。</p></div>
+        <div class="source">来源：<a href="https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5">ByteDance Seed 官方：Introducing Seedance 2.5</a> · 2026-07-31</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">腾讯</span><span class="type">ChinaJoy 2026 / 游戏 AI 工具链</span></div>
+        <p class="headline">腾讯这条动态的关键，不在于单个 AI 功能有多炫，而在于它开始把游戏研发全链路的 AI 工具一次性摆上台面。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>在 ChinaJoy 2026 期间，腾讯游戏集中展示了 AI 游戏展区和 AI 产品展区，相关报道提到其展示内容包括《代号Craft》、LAP 拉普、MagicDawn、MagicLomix 等工具，覆盖游戏创作、资产生产、渲染体验和高质量 3D 游戏开发流程。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>腾讯不只是想证明“我也有 AI”，而是想让外界看到：从策划、美术、资产管理到渲染和开发验证，AI 已经开始成为游戏工业化体系的一部分。</p></div>
+        <div class="block"><h3>影响分析</h3><p>游戏行业是最容易把 AI 从 Demo 做成生产工具的场景之一。腾讯如果能把这些能力真正嵌进研发流水线，就会把竞争点从单点功能拉到整套内容工业能力，这对大型工作室和平台生态都更有吸引力。</p></div>
+        <div class="source">来源：<a href="https://m.163.com/dy/article/L385RSHN0514A42S.html">腾讯游戏“AI全家桶”亮相 ChinaJoy 2026</a> · 2026-08-01</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">阿里</span><span class="type">Wan2.2-S2V / 多模态视频生成</span></div>
+        <p class="headline">阿里今天补上的，是一条更靠近实际创作门槛的多模态视频链路：把图片和音频直接变成可用的人物动态视频。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>8 月 1 日有媒体报道称，阿里云发布并开源了全新多模态视频生成模型通义万相 Wan2.2-S2V。报道提到，该模型可以基于一张静态图片和一段音频生成人物动态视频，从而进一步降低视频制作门槛。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>简单说，阿里在做的是让“做一个会说话、会动的人物视频”这件事更直接，减少传统视频制作里的人力和剪辑成本。</p></div>
+        <div class="block"><h3>影响分析</h3><p>多模态视频能力一旦足够稳定，就很容易落到数字人、营销视频、知识讲解和电商素材这些高频业务里。阿里如果持续把模型做成开源和平台两头推进，会更容易吸引开发者和企业同时上车。</p></div>
+        <div class="source">来源：<a href="https://soft.china.com/article/2416207.html">媒体报道：阿里 Wan2.2-S2V 正式发布</a> · 2026-08-01</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">百度</span><span class="type">文心大模型 X1.1 / 深度思考</span></div>
+        <p class="headline">百度今天更值得看的，不只是模型又升级了一版，而是它在事实性、指令遵循和智能体能力上继续补齐 B 端竞争力。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>8 月 1 日有媒体报道称，百度在 WAVE SUMMIT 上发布文心大模型 X1.1。报道提到，新版本重点提升了事实性、指令遵循和智能体相关能力，继续朝更稳定的深度思考与任务执行方向演进。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>百度不是只想再刷一版模型成绩，而是想让它在企业真正使用时更少“胡说”、更听指令，也更能完成连续任务。</p></div>
+        <div class="block"><h3>影响分析</h3><p>对企业场景来说，模型是否更会“答题”不是唯一重点，关键是结果能不能更可靠、更可控。百度如果在这三个方向上持续补课，文心系产品在搜索、企业服务和智能体场景里的竞争力会更稳。</p></div>
+        <div class="source">来源：<a href="https://soft.china.com/article/1100949.html">媒体报道：百度文心大模型 X1.1 正式发布</a> · 2026-08-01</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">华为</span><span class="type">MatePad Pro / 鸿蒙生产力</span></div>
+        <p class="headline">华为今天这条消息的重点，不只是预热一块新平板，而是继续把鸿蒙生产力场景往更严肃的办公和创作方向推进。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>围绕 8 月 5 日新品发布会，华为官宣新一代 MatePad Pro 即将亮相。公开报道显示，这款平板将配备 12 英寸 OLED 屏幕、麒麟 T93 系列芯片，并强化北斗短报文、星闪连接以及 WPS Office、剪映等生产力应用生态。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>这不只是换代平板，而是在继续证明：华为想让平板不只是娱乐大屏，而是真能承接轻办公、创作和跨端协同的一块终端入口。</p></div>
+        <div class="block"><h3>影响分析</h3><p>端侧 AI 和系统级协同正在重新变重要。华为如果能把硬件、鸿蒙系统和应用生态三件事拧在一起，高端平板就不只是单品竞争，而会变成其全场景生态里的关键一环。</p></div>
+        <div class="source">来源：<a href="https://finance.sina.com.cn/tech/discovery/2026-07-31/doc-inikpxkp1188253.shtml">华为 MatePad Pro 官宣：大尺寸 OLED 搭配手写笔</a> · 2026-07-31</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">小米</span><span class="type">昆仑技术架构 / 澎程系列</span></div>
+        <p class="headline">小米今天最受关注的，不只是发布两款新车，而是它开始把汽车业务从单一爆款叙事推进到更完整的平台化阶段。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>7 月 31 日，多家媒体跟进报道小米汽车新动作。公开信息显示，小米发布了全新的昆仑技术架构，包含昆仑平台、昆仑超级增程和昆仑全域安全三大核心技术，并同步推出基于该架构打造的澎程系列新车。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>外界现在看的已经不是“小米还能不能再做出一台热门车”，而是它能不能把底层平台、技术架构和多车型路线一起搭起来。</p></div>
+        <div class="block"><h3>影响分析</h3><p>一旦汽车业务从单品走向平台，小米的故事就会从“制造一个现象级车型”转向“建立一个长期扩张的产品体系”。这对估值、供应链议价和后续车型节奏都会有更大意义。</p></div>
+        <div class="source">来源：<a href="https://finance.sina.com.cn/roll/2026-07-31/doc-inikshrr1386282.shtml">小米汽车发布昆仑技术架构、澎程系列新车</a> · 2026-07-31</div>
+      </article>
+    </section>
+
+    <div class="section-title">
+      <h2>国际科技公司</h2>
+      <p>今天的主线是浏览器代理、财报兑现、规则博弈和科研生态</p>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="company"><span class="name">Google</span><span class="type">Gemini Spark / Chrome 集成</span></div>
+        <p class="headline">Google 今天更值得看的，不只是 Gemini 又多了一个功能，而是它开始更明确地把浏览器做成 AI 代理的执行入口。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>Google 官方 7 月 30 日宣布，Gemini Spark 新增与 Chrome 的直接集成。官方表述称，在用户许可下，Spark 可以利用浏览器中的已登录账号和已保存密码，代用户处理更繁琐的网页任务，同时向更多国家和地区开放。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>谷歌现在不只想让 Gemini 回答问题，而是想让它真的帮你在网页里把事情做掉。AI 正从聊天窗口走向浏览器操作层。</p></div>
+        <div class="block"><h3>影响分析</h3><p>浏览器是互联网最核心的高频入口之一。谁能把 AI 稳定嵌进浏览器任务流，谁就更有机会定义下一代默认交互界面。Google 这一步，本质上是在守住自己的入口位。</p></div>
+        <div class="source">来源：<a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-spark-updates-july-2026/">Google 官方：Gemini Spark now integrates with Chrome</a> · 2026-07-30</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Apple</span><span class="type">Q3 财报 / 设备入口兑现</span></div>
+        <p class="headline">苹果今天最有含金量的信号，不是喊了多少 AI 愿景，而是再次用财报证明“设备入口 + 系统生态”依然能稳定兑现业绩。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>Apple 于 7 月 31 日公布 2026 财年第三财季业绩：季度营收 1094 亿美元，同比增长 16%。官方公告还强调，总营收与每股收益创下 6 月季度新高，iPhone、Mac 和 Services 收入也都创下 6 月季度纪录。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>市场会看到，哪怕苹果在生成式 AI 上并不是最吵的那一家，只要设备入口足够强、系统和服务生态足够稳，照样可以把增长和利润做出来。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这会继续强化资本市场对端侧 AI 和系统级入口的偏好。苹果的优势不在于高频发布新模型，而在于能把新能力稳稳装进已有硬件和服务体系，并持续转成收入。</p></div>
+        <div class="source">来源：<a href="https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/">Apple 官方：Apple reports third quarter results</a> · 2026-07-31</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Meta</span><span class="type">EU AI Act / 透明度规范</span></div>
+        <p class="headline">Meta 今天这条动态的重点，不是又发了一个模型，而是它开始更主动地站到 AI 监管规则的讨论中心。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>Meta 官方 7 月 28 日表示，将签署欧盟《AI 法案》实践准则中关于 AI 生成内容透明度的部分。官方强调，随着 AI 生成内容越来越逼真，向公众提供识别工具和透明机制变得更重要。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>简单说，Meta 不只是继续卷模型和产品，也在争取规则层面的主动权：它想在“AI 内容该怎么标识、平台要负什么责任”这件事上提前占位。</p></div>
+        <div class="block"><h3>影响分析</h3><p>AI 竞争已经不只是产品竞争，也越来越是规则竞争。谁能更早适应透明度和合规要求，谁在全球市场扩张时就更从容。Meta 这一步，对平台业务和国际监管沟通都很关键。</p></div>
+        <div class="source">来源：<a href="https://about.fb.com/news/2026/07/meta-is-signing-the-eu-ai-act-code-of-practice-on-transparency-of-ai-generated-content/">Meta 官方：签署 EU AI Act 透明度实践准则</a> · 2026-07-28</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">OpenAI</span><span class="type">Academic Researchers / 科研生态</span></div>
+        <p class="headline">OpenAI 今天更值得注意的，不只是继续做更强模型，而是开始更系统地把高校和科研人群纳入自己的产品体系。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>OpenAI 于 7 月 29 日发布 ChatGPT for Academic Researchers，宣布先向 1 万名研究者提供专用 ChatGPT 工作空间访问，并计划在 2027 年前扩展到 10 万名研究者。该计划面向经验证的高校研究团队，强调高阶模型访问、协作和科研效率提升。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>这说明 OpenAI 盯上的不只是企业预算，也包括学术圈的长期工具习惯。它想让研究者从一开始就把 ChatGPT 当成默认科研助手。</p></div>
+        <div class="block"><h3>影响分析</h3><p>科研场景对品牌心智、口碑和高价值用户沉淀都很关键。一旦研究团队深度依赖某套工具，未来论文协作、代码分析、实验设计甚至研究管理都可能围绕它展开，这对 OpenAI 的长期生态价值很大。</p></div>
+        <div class="source">来源：<a href="https://openai.com/index/chatgpt-for-academic-researchers/">OpenAI 官方：Accelerating scientific discovery with ChatGPT for Academic Researchers</a> · 2026-07-29</div>
+      </article>
+    </section>
+
+    <section class="note">
+      <strong>今日观察：</strong>8 月 1 日最值得记住的，并不是哪一家大厂单独又刷了一次模型存在感，而是所有动作都越来越指向同一个方向：AI 必须接进真实工作流，必须进入浏览器、搜索、文档、设备和汽车这些高频入口，也必须开始面对商业兑现和监管透明这两件更难但更长期的事。接下来决定胜负的，未必是谁喊得最响，而是谁能把模型能力更顺地塞进用户每天都在使用的界面里。
+    </section>
+
+    <div class="footer">Generated for global-sync · dachang-news · 2026-08-01</div>
+  </main>
+</body>
+</html>
