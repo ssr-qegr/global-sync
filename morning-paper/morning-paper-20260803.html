@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>今日精选晨报 - 2026年8月3日</title>
+  <style>
+    :root {
+      --primary: #00B26B;
+      --accent: #0AAE9E;
+      --bg: #F2FBF6;
+      --card-bg: rgba(255,255,255,0.96);
+      --text-main: #173B2E;
+      --text-sub: #58706A;
+      --line: rgba(10,174,158,0.18);
+      --soft: #F7FFFB;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: "Nunito", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at top left, rgba(0,178,107,0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(10,174,158,0.12), transparent 26%),
+        var(--bg);
+      line-height: 1.75;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 42px;
+      box-shadow: 0 24px 64px rgba(15,143,121,0.10);
+    }
+    .header {
+      text-align: center;
+      padding-bottom: 22px;
+      margin-bottom: 30px;
+      border-bottom: 2px dashed rgba(10,174,158,0.24);
+    }
+    .header h1 {
+      margin: 0 0 10px;
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+    }
+    .date {
+      font-size: 15px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+    .brief {
+      margin-top: 14px;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .section-title {
+      margin: 34px 0 16px;
+      padding-bottom: 8px;
+      font-size: 23px;
+      font-weight: 900;
+      color: var(--accent);
+      border-bottom: 2px dashed rgba(10,174,158,0.22);
+    }
+    .news-item {
+      position: relative;
+      margin-bottom: 24px;
+      padding: 24px 24px 24px 46px;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--soft) 100%);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .news-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(15,143,121,0.10);
+      border-color: rgba(10,174,158,0.38);
+    }
+    .news-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 12px;
+      border-radius: 22px 0 0 22px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+    }
+    .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(10,174,158,0.16);
+      background: rgba(0,178,107,0.10);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .news-item h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      font-weight: 850;
+      color: var(--text-main);
+    }
+    .news-item h3 {
+      margin: 14px 0 6px;
+      font-size: 16px;
+      font-weight: 850;
+      color: var(--accent);
+    }
+    .news-item p {
+      margin: 0 0 10px;
+      font-size: 15px;
+      color: var(--text-sub);
+    }
+    .stock-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 16px;
+      font-size: 14px;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+    .stock-table th {
+      background: rgba(0,178,107,0.12);
+      color: var(--accent);
+      padding: 9px 12px;
+      text-align: left;
+      font-weight: 800;
+    }
+    .stock-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid rgba(10,174,158,0.12);
+      color: var(--text-sub);
+      vertical-align: top;
+    }
+    .stock-table .up { color: #D32F2F; font-weight: 800; }
+    .stock-table .down { color: #00897B; font-weight: 800; }
+    .stock-table .flat { color: #5E6B73; font-weight: 800; }
+    .source {
+      margin-top: 10px;
+      color: rgba(88,112,106,0.92);
+      font-size: 13px;
+    }
+    .source a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .source a:hover { text-decoration: underline; }
+    .footer {
+      margin-top: 32px;
+      padding-top: 18px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(88,112,106,0.92);
+      border-top: 1px dashed rgba(10,174,158,0.24);
+      font-weight: 700;
+    }
+    @media (max-width: 600px) {
+      body { padding: 12px; }
+      .container { padding: 24px; border-radius: 20px; }
+      .header h1 { font-size: 28px; }
+      .news-item { padding: 20px 20px 20px 32px; }
+      .stock-table { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🌅 今日精选晨报</h1>
+      <div class="date">✨ 2026年8月3日 星期一 ✨</div>
+      <div class="brief">周一开盘前版晨报，先看最近一个完整交易日里全球主要股指是否仍由科技资产主导，再看国内政策“增量储备”与预算内投资持续前置，海外则盯住中东航运安全和美联储鹰派分歧，最后落脚到国内 AI 产业链继续扩容、国际大模型价格战加速升级。</div>
+    </div>
+
+    <div class="section-title">📈 ① 股市总览</div>
+    <div class="news-item">
+      <span class="tag">🌐 周一开盘前：沿用最近一个完整交易日收盘概览</span>
+      <table class="stock-table">
+        <tr><th>市场</th><th>指数</th><th>收盘点位</th><th>涨跌幅</th><th>观察</th></tr>
+        <tr><td>A股</td><td>上证指数</td><td>3832.26</td><td class="up">+0.72%</td><td>科技与 AI 应用方向活跃，风险偏好继续修复</td></tr>
+        <tr><td>港股</td><td>恒生指数</td><td>25884.43</td><td class="up">+0.10%</td><td>科网股分化，但指数整体维持偏强震荡</td></tr>
+        <tr><td>美股</td><td>纳斯达克</td><td>25373.85</td><td class="up">+1.00%</td><td>大科技继续扛旗，成长板块仍最受追捧</td></tr>
+        <tr><td>美股</td><td>道琼斯指数</td><td>52485.03</td><td class="up">+0.53%</td><td>蓝筹股稳步上行，市场未明显转向避险</td></tr>
+        <tr><td>美股</td><td>标普500</td><td>7489.72</td><td class="up">+0.70%</td><td>指数层面仍体现“科技业绩 + 经济韧性”定价</td></tr>
+      </table>
+      <h3>📰 新闻原文摘要</h3>
+      <p>截至最近一个完整交易日收盘，上证指数报 3832.26 点、恒生指数报 25884.43 点；美股方面，道指、标普 500 和纳斯达克分别收于 52485.03、7489.72 和 25373.85 点，三大指数全线收涨。市场情绪依旧围绕科技龙头业绩兑现、AI 投入回报和宏观政策预期展开。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>简单说，钱还在往“能讲增长、能交业绩”的方向流。只要科技龙头没有掉链子，市场就还愿意给风险资产更高估值。</p>
+      <h3>💡 意义解读</h3>
+      <p>周一早上还没开盘，这组数据已经足够说明当前市场主线没变：A股看政策和产业，港股看科网修复，美股看 AI 盈利兑现。只要这三个逻辑没被打断，短线情绪就不容易突然转冷。</p>
+      <div class="source">来源：<a href="https://quotes.sina.cn/hs/company/quotes/view/sh000001">新浪财经：上证指数</a>；<a href="http://www.aastocks.com/en/mobile/news.aspx?newsid=NOW.1536017&newssource=AAFN">AASTOCKS：恒生指数收盘</a>；<a href="https://finance.sina.com.cn/jjxw/2026-08-01/doc-iniktyyn9122622.shtml">新浪财经：纽约股市三大股指上涨</a></div>
+    </div>
+
+    <div class="section-title">🏛️ ② 时事政治</div>
+    <div class="news-item">
+      <span class="tag">🇨🇳 国内</span>
+      <h2>国务院常务会议强调及时推出务实有效的增量政策</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>7 月 31 日召开的国务院常务会议提出，要提高宏观政策实施效能，用好用足各项存量政策，并及时谋划出台务实管用的增量政策；同时要有效扩大内需，加快“六张网”规划建设和“十五五”重大项目落地，推动经济持续向新向优向好发展。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>这相当于明确告诉市场：现有政策不会停，后手工具也在准备，接下来不是“有没有增量”，而是“什么时候继续出招”。</p>
+      <h3>💡 意义解读</h3>
+      <p>对市场和产业链来说，这类表态最大的价值在于稳定预期。扩内需、重大工程、统一大市场和增量政策同时出现，说明下半年政策节奏大概率仍偏积极，企业对订单和投资的信心也更容易被托住。</p>
+      <div class="source">来源：<a href="http://www.china.org.cn/2026-08/01/content_118628972.shtml">Xinhua / China.org：Chinese premier chairs State Council executive meeting</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌍 国际</span>
+      <h2>联合国秘书长要求中东全面停火并恢复霍尔木兹海峡航行自由</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>联合国秘书长古特雷斯表示，中东地区各条战线的战事都必须停止，霍尔木兹海峡和曼德海峡周边的国际航行权利与自由必须全面恢复，并警告当前冲突已经让能源市场失序、粮食和化肥价格上涨、全球供应链承压。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>意思很直接：这已经不是单纯的地区冲突，而是在影响全球油价、航运成本和通胀预期，谁都很难置身事外。</p>
+      <h3>💡 意义解读</h3>
+      <p>只要霍尔木兹海峡的通航安全没有真正恢复，全球市场就会持续保留一层“外部风险溢价”。对政策制定者来说，这会推高能源和供应链不确定性；对资本市场来说，通胀和避险交易随时可能卷土重来。</p>
+      <div class="source">来源：<a href="https://english.news.cn/20260801/d41f595ef4304e1f8040c2eaa33195b6/c.html">Xinhua：UN chief calls for end of all fighting in Mideast</a></div>
+    </div>
+
+    <div class="section-title">💰 ③ 金融财经</div>
+    <div class="news-item">
+      <span class="tag">🏦 国内财经</span>
+      <h2>7550 亿元中央预算内投资全部下达，稳增长资金继续前置</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>国家发展改革委表示，今年 7550 亿元中央预算内投资已经全部下达，重点投向民生改善、灾后恢复和稳增长领域；同时下半年还将继续提升宏观政策有效性、加强逆周期调节，并及时推出增量措施。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>说白了，就是钱已经先打下去，重点项目和稳增长抓手要尽快变成实物工作量，而不是只停留在会议表态上。</p>
+      <h3>💡 意义解读</h3>
+      <p>在外部不确定性仍高、内需还要继续修复的背景下，预算内投资提前到位，本质上是在给下半年经济托底。这会直接影响基建、材料、设备以及地方项目推进节奏，也会增强市场对政策连续性的信心。</p>
+      <div class="source">来源：<a href="https://english.news.cn/20260731/80c53c64c8064ef8b39ad6b735e14889/c.html">Xinhua：China channels 755-billion-yuan central budget investment to underpin livelihoods, growth</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌍 国际财经</span>
+      <h2>美联储鹰派官员公开主张立即加息，市场重新评估利率上限</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>在本周美联储维持利率不变之后，三位持反对意见的官员公开表示，应尽快上调短端利率，否则通胀可能继续停留在 2% 目标上方。相关表态被市场视为，美联储内部对“按兵不动”并没有形成完全共识。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>换句话说，联储内部有人已经觉得“继续等”不是稳，而是风险，怕通胀拖得越久，后面越难压。</p>
+      <h3>💡 意义解读</h3>
+      <p>一旦“更久更高”的利率预期重新升温，全球资产估值都得重新算账，尤其是科技成长股、新兴市场汇率和跨境资金流向，会最先感到压力。它提醒市场，眼下的宽松幻想还不能开得太满。</p>
+      <div class="source">来源：<a href="https://www.brecorder.com/news/40432834/fed-dissenters-sketch-the-case-for-a-rate-hike">Reuters / Business Recorder：Fed dissenters sketch the case for a rate hike</a>；<a href="https://www.tradingview.com/news/reuters.com,2026:newsml_L6N43X0VQ:0-three-fed-dissenters-say-rate-hike-is-needed-to-curb-inflation/">TradingView Reuters 快讯页</a></div>
+    </div>
+
+    <div class="section-title">🚀 ④ 技术领域</div>
+    <div class="news-item">
+      <span class="tag">🤖 国内技术</span>
+      <h2>发改委披露 AI 全链路突破：智能算力同比 2.8 倍，国产大模型下载破 100 亿次</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>国家发展改革委在 7 月份新闻发布会上表示，上半年我国人工智能自主创新步伐加快，在全产业链多环节实现快速突破。截至 6 月底，全国智能算力规模达到去年同期的 2.8 倍，国产大模型全球总下载量突破 100 亿次，相关行业保持 30% 以上高增长。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>这说明国内 AI 现在不是只有模型热闹，而是算力、芯片、模型、应用和产业化一起往前冲，已经进入“全链条推进”的阶段。</p>
+      <h3>💡 意义解读</h3>
+      <p>真正能支撑长周期行情的，不是单次模型刷屏，而是底层算力、模型扩散、场景落地和政策规范一起完善。官方在这个节点集中释放数据，等于在告诉市场：AI 已经不仅是故事，更是正在扩容的产业能力。</p>
+      <div class="source">来源：<a href="https://www.ndrc.gov.cn/xwdt/xwfb/202607/t20260731_1406862_ext.html">国家发展改革委：7月份新闻发布会</a>；<a href="https://www.chinanews.com.cn/cj/2026/07-31/10669860.shtml">中国新闻网：人工智能、“六张网”……这些产业澎湃中国经济新动能</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌐 国际技术</span>
+      <h2>OpenAI 下调 GPT-5.6 Luna 与 Terra 价格，模型竞争正式进入“卷性价比”阶段</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>OpenAI 宣布自 7 月 30 日起下调 GPT-5.6 系列两款模型 API 价格：Luna 输入/输出价格降至每百万 token 0.20/1.20 美元，Terra 降至 2/12 美元；官方同时表示 Luna 降价 80%，Terra 降价 20%，以推动更多高频 AI 场景落地。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>意思就是，大模型竞争已经不只是“谁最强”，而是开始拼“谁更便宜、谁更适合企业大规模上线”。</p>
+      <h3>💡 意义解读</h3>
+      <p>一旦头部厂商主动降价，企业试错 AI 的门槛会继续降低，应用层上线速度会更快，同时也会倒逼整个行业进入更激烈的成本、效率和商业化比拼。对国内厂商来说，这会把竞争重点进一步拉向价格体系和交付效率。</p>
+      <div class="source">来源：<a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/">OpenAI：Advancing the price-performance frontier with GPT-5.6</a></div>
+    </div>
+
+    <div class="footer">
+      🌿 今天的关键词：周一开盘前、增量政策储备、霍尔木兹航运风险、预算内投资前置、美联储鹰派分歧、AI 全链条扩容、模型价格战。
+    </div>
+  </div>
+</body>
+</html>

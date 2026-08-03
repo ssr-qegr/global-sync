@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>今日副业探索报告｜AI 预约/线索自动化代搭 & AI UGC 广告素材工厂</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff8ed;
+      --bg-soft: #fff3df;
+      --card: rgba(255,255,255,.88);
+      --text: #352317;
+      --muted: #7a6658;
+      --line: rgba(183, 126, 73, .22);
+      --amber: #d97706;
+      --orange: #f97316;
+      --rose: #fb7185;
+      --green: #16a34a;
+      --shadow: 0 24px 60px rgba(124, 75, 25, .16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(251, 146, 60, .30), transparent 34%),
+        radial-gradient(circle at 86% 12%, rgba(251, 113, 133, .18), transparent 30%),
+        radial-gradient(circle at 50% 92%, rgba(245, 158, 11, .16), transparent 32%),
+        linear-gradient(145deg, #fffaf1 0%, #fff4e5 48%, #fffdf8 100%);
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 42px 0 48px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 34px; padding: clamp(28px, 5vw, 54px); background: linear-gradient(135deg, rgba(255,255,255,.94), rgba(255,246,231,.84)); box-shadow: var(--shadow); backdrop-filter: blur(18px); }
+    .hero::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px; border-radius: 50%; background: conic-gradient(from 120deg, rgba(249,115,22,.36), rgba(251,113,133,.24), rgba(245,158,11,.28), rgba(249,115,22,.36)); filter: blur(4px); opacity: .75; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border-radius: 999px; background: #fff3df; border: 1px solid var(--line); color: #9a5a13; font-size: 13px; font-weight: 700; }
+    h1 { position: relative; z-index: 1; margin: 20px 0 12px; font-size: clamp(34px, 5.5vw, 62px); line-height: 1.04; letter-spacing: -.045em; }
+    .lead { position: relative; z-index: 1; max-width: 920px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.85; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .metric { padding: 17px; border-radius: 22px; background: rgba(255,255,255,.78); border: 1px solid rgba(183,126,73,.18); }
+    .metric b { display: block; font-size: 23px; color: #8a4b0f; }
+    .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .section { margin-top: 22px; border: 1px solid var(--line); border-radius: 30px; background: var(--card); box-shadow: 0 16px 42px rgba(124,75,25,.11); overflow: hidden; }
+    .section-head { padding: 26px 28px 18px; border-bottom: 1px solid var(--line); background: linear-gradient(90deg, rgba(255,247,237,.92), rgba(255,255,255,.70)); }
+    .section-kicker { color: var(--orange); font-size: 13px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { margin: 8px 0 8px; font-size: clamp(25px, 3vw, 36px); letter-spacing: -.025em; }
+    .section-head p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .content { padding: 26px 28px 30px; }
+    .verdict { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: stretch; }
+    .note, .score-card { border: 1px solid rgba(183,126,73,.18); border-radius: 24px; background: #fffdf9; padding: 20px; }
+    .note strong { color: #92400e; }
+    .note p { color: var(--muted); line-height: 1.75; margin: 8px 0 0; }
+    .scores { display: grid; gap: 12px; }
+    .bar { display: grid; gap: 7px; }
+    .bar-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+    .track { height: 10px; border-radius: 999px; background: #fde7c8; overflow: hidden; }
+    .fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--amber), var(--rose)); }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { border: 1px solid var(--line); border-radius: 28px; padding: 24px; background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,243,.84)); box-shadow: 0 14px 32px rgba(124,75,25,.09); }
+    .tagline { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .pill { border-radius: 999px; padding: 6px 10px; background: #fff3df; border: 1px solid rgba(183,126,73,.18); color: #9a5a13; font-size: 12px; font-weight: 700; }
+    .project h3 { margin: 0 0 10px; font-size: 25px; letter-spacing: -.02em; }
+    .project p { margin: 0 0 16px; color: var(--muted); line-height: 1.75; }
+    .list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .list li { padding: 12px 13px; border-radius: 16px; background: rgba(255,246,231,.72); color: #574234; line-height: 1.62; }
+    .list b { color: #8a4b0f; }
+    .table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 20px; }
+    .table th, .table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(183,126,73,.16); vertical-align: top; line-height: 1.65; }
+    .table th { background: #fff3df; color: #8a4b0f; font-size: 13px; }
+    .table tr:last-child td { border-bottom: 0; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: step; }
+    .step { position: relative; padding: 20px; border-radius: 22px; border: 1px solid rgba(183,126,73,.18); background: #fffdf9; }
+    .step::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #f97316; color: white; font-weight: 800; margin-bottom: 12px; }
+    .step h4 { margin: 0 0 8px; font-size: 17px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
+    .warn { border-left: 5px solid var(--orange); background: #fff7ed; padding: 16px 18px; border-radius: 18px; color: #614331; line-height: 1.7; }
+    .sources { display: grid; gap: 9px; color: var(--muted); line-height: 1.65; font-size: 13px; }
+    .sources a { color: #9a5a13; font-weight: 700; }
+    footer { color: var(--muted); text-align: center; margin-top: 26px; line-height: 1.8; font-size: 14px; }
+    @media (max-width: 860px) { .hero-grid, .projects, .steps, .verdict { grid-template-columns: 1fr; } .wrap { width: min(100% - 24px, 1120px); padding-top: 22px; } .section-head, .content { padding-left: 20px; padding-right: 20px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">☕ style_warm · 2026-08-01 · 今日副业探索</div>
+      <h1>今天更值得验证的两条线：AI 预约/线索自动化代搭 + AI UGC 广告素材工厂</h1>
+      <p class="lead">今天这两条方向都满足三个标准：客户能快速看懂价值、个人可以低成本先做样板、AI 自动化占比足够高。第一条线偏稳定现金流，帮助教练、顾问、本地门店和小团队把表单获客、预约排期、自动提醒和线索跟进串成一条完整流程；第二条线偏高频交付，帮助电商卖家和小商家把商品链接、卖点文案和基础素材快速变成可投放、可测试的短视频广告素材包。</p>
+      <div class="hero-grid">
+        <div class="metric"><b>2 个</b><span>今日推荐方向</span></div>
+        <div class="metric"><b>低启动成本</b><span>都能先用免费或低价工具做样板</span></div>
+        <div class="metric"><b>高自动化</b><span>重复劳动可由 AI 与自动化流程接管</span></div>
+        <div class="metric"><b>服务费 + 复购</b><span>适合做搭建费、月维护和加价包</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Overall Verdict</div>
+        <h2>今日结论：先用“AI 预约/线索自动化代搭”拿稳服务费，再把“AI UGC 广告素材工厂”做成高频交付和扩单武器</h2>
+        <p>这两条线最适合一起看。线索自动化更靠近客户的成交前链路，ROI 最容易讲清楚；广告素材工厂则更容易做成标准套餐、按量收费和月度复购。一个负责稳定接单，一个负责提高客单与交付频次。</p>
+      </div>
+      <div class="content verdict">
+        <div class="note">
+          <strong>推荐启动顺序：</strong>
+          <p>先做 AI 预约/线索自动化代搭，因为客户能立刻理解“有人留资后自动提醒、自动分配、自动预约、不再漏线索”意味着什么；等你跑通 1-2 个行业模板后，再把 AI UGC 广告素材工厂作为扩单服务卖给同一批客户。这样不需要一开始就押注内容爆款，而是先切进更容易成交的基础运营环节。</p>
+        </div>
+        <div class="score-card">
+          <div class="scores">
+            <div class="bar"><div class="bar-row"><span>AI 自动化程度</span><b>很高</b></div><div class="track"><div class="fill" style="width:91%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>启动门槛</span><b>低</b></div><div class="track"><div class="fill" style="width:26%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>短期回款</span><b>线索自动化更快</b></div><div class="track"><div class="fill" style="width:87%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>可扩展性</span><b>广告素材工厂更强</b></div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Projects</div>
+        <h2>今日 2 个副业方向</h2>
+        <p>一个卖“更少漏线索、更高预约转化”的结果，一个卖“更快出广告素材、更高测试效率”的结果，都非常适合个人以样板切入。</p>
+      </div>
+      <div class="content projects">
+        <article class="project">
+          <div class="tagline"><span class="pill">快回款</span><span class="pill">自动化服务</span><span class="pill">本地商家可卖</span></div>
+          <h3>01｜AI 预约 / 线索自动化代搭</h3>
+          <p>面向健身教练、摄影约拍、牙科/医美咨询、留学顾问、职业教练、本地工作室和小团队，把“表单留资 → 自动分发 → 预约排期 → 提醒通知 → 跟进记录”串成一条轻量成交前工作流。你卖的不是某个工具账号，而是更稳定的获客承接能力。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>最小交付可以包含一个可用的留资表单、一个预约页面、自动提醒消息、基础线索分级规则和一套每周跟进清单。客户最直观看到的变化是：潜在客户不再散落在私信、表格和聊天记录里，而是进入可追踪的流程。</li>
+            <li><b>可行性分析：</b>Tally 官方明确提供 unlimited forms and submissions 的免费方案，Calendly 官方说明 Free plan 适合简单预约场景，可创建 1 个 event type 并安排 unlimited meetings；Zapier 官方则直接把 AI lead follow-up 和 AI lead management 描述为自动捕获、路由和后续跟进的工作流。这意味着个人完全可以先用低成本工具组合做出样板，再卖“线索承接效率提升”这个结果。</li>
+            <li><b>AI 自动化程度：</b>表单收集、字段整理、自动提醒、线索分发、预约确认、基础 FAQ、待跟进清单生成和日报汇总，都适合交给自动化流程；人工主要负责梳理客户业务流程、定义异常兜底、设置优先级和优化转化节点。整体属于高自动化、可模板化复制的服务线。</li>
+            <li><b>启动成本：</b>前期几乎不需要重投入。用免费表单、免费预约页和轻量自动化就能先做演示版，现金成本主要集中在你自己理解行业流程和第一次搭建模板的时间成本，而不是软件采购。</li>
+            <li><b>预期收益：</b>适合按“搭建费 + 月维护费 + 节点优化加价包”收费。基础版可只做留资与预约；进阶版再加自动标签、CRM 同步、客服提醒、周报和节假日活动配置。只要客户持续获客，这类服务就容易形成复购。</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="tagline"><span class="pill">高频交付</span><span class="pill">广告创意</span><span class="pill">可套餐化</span></div>
+          <h3>02｜AI UGC 广告素材工厂</h3>
+          <p>面向电商卖家、小品牌、独立站和本地商家，把“商品链接 / 落地页 → AI 脚本 → 配音字幕 → 多版本短视频素材”打包成标准创意生产服务。你卖的不是单条视频，而是更快的广告测试速度和更稳定的素材供给。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>典型交付包括 7 条或 15 条短视频素材包、不同钩子版本、字幕版与无字幕版、平台尺寸适配、封面文案和简单投放建议。对客户来说，它解决的是“有商品但没有持续产出广告素材的人手”这个问题。</li>
+            <li><b>可行性分析：</b>Creatify 官方定价页显示 Free plan 每月有 10 credits，可生成最多 2 条视频广告或 20 条图片广告；其 URL to video 产品页与官方博客说明支持从商品 URL 自动提取产品信息、快速生成脚本和视频广告。这意味着个人不必先自建拍摄团队，也能先做出可展示、可成交的样片。</li>
+            <li><b>AI 自动化程度：</b>卖点提炼、脚本初稿、字幕、配音、不同广告角度改写、版本批量导出和多平台尺寸适配都适合交给 AI；人工主要负责选品判断、审美把控、删掉低质输出和保证广告口径不过度夸张。属于自动化程度高、但仍保留人工品控溢价的创意型副业。</li>
+            <li><b>启动成本：</b>前期可以先拿客户现有链接、商品图和简单素材做 2-3 条样片，不必重设备投入。真正的门槛是你是否能把“这个商品应该打什么卖点、哪种开头更适合测试”说透，而不是软件本身有多复杂。</li>
+            <li><b>预期收益：</b>更适合按“样片包 + 月度素材包 + 节日活动加急包”收费。基础版卖创意数量，进阶版可加脚本优化、评论区话术、直播预热切条或落地页文案协同。它天然适合与第一条线打包销售，提高客单价。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Comparison</div>
+        <h2>投入产出对比</h2>
+        <p>线索自动化更像“先把钱口子接住”，广告素材工厂更像“把增长动作做快”。最顺的做法通常不是二选一，而是先切入流程，再扩展到创意供给。</p>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead><tr><th>维度</th><th>AI 预约 / 线索自动化代搭</th><th>AI UGC 广告素材工厂</th></tr></thead>
+          <tbody>
+            <tr><td>适合人群</td><td>会梳理业务流程、愿意做客户沟通和规则配置的人</td><td>对内容表达敏感、愿意高频交付和优化素材的人</td></tr>
+            <tr><td>核心交付</td><td>表单、预约页、提醒流程、线索分发、跟进看板</td><td>广告脚本、短视频素材包、多版本钩子、字幕配音</td></tr>
+            <tr><td>成交方式</td><td>先做一个能跑通的预约/留资样板最容易成交</td><td>先做 2-3 条样片，再卖套餐最自然</td></tr>
+            <tr><td>优势</td><td>离成交近、价值容易说清楚、适合做月维护费</td><td>结果直观、可批量生产、适合做高频复购</td></tr>
+            <tr><td>主要风险</td><td>如果边界没写清楚，客户会误以为你负责全部 CRM 或销售工作</td><td>如果只会机械生成素材、不会做卖点判断，很容易被低价替代</td></tr>
+            <tr><td>最小验证</td><td>选 1 个行业做留资 + 预约 + 提醒流程样板</td><td>选 1 个商品做 3 条不同风格广告样片</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">5-Day Action Plan</div>
+        <h2>5 天启动计划</h2>
+        <p>今天这两条线都不适合继续空想，关键是尽快做出一个真实可见的样板，让客户在 30 秒内看懂你能解决什么问题。</p>
+      </div>
+      <div class="content steps">
+        <div class="step"><h4>第 1 天：只选一个足够窄的行业</h4><p>自动化线可以选健身教练、摄影、医美咨询或留学顾问；素材线可以选美妆、零食、家居或本地餐饮。行业越窄，样板越容易打动人。</p></div>
+        <div class="step"><h4>第 2 天：做出最小样板</h4><p>自动化线至少跑通“留资到预约确认”的闭环；素材线至少做出 3 条不同卖点的广告样片。不求完美，但一定要能演示。</p></div>
+        <div class="step"><h4>第 3 天：拿真实反馈</h4><p>把样板发给 5-10 个潜在客户或同行，只问两个问题：有没有价值、愿不愿意试用/试单。不要沉迷自我判断。</p></div>
+        <div class="step"><h4>第 4 天：把收费边界写清楚</h4><p>自动化线要写明你是否包含 CRM、客服、售后；素材线要写明交付数量、修改轮次、是否含脚本和封面。边界清楚才容易成交。</p></div>
+        <div class="step"><h4>第 5 天：沉淀模板资产</h4><p>把行业表单字段、提醒脚本、分配规则、广告钩子模板、字幕规范和报价单整理成资产包。后面每接一单，都是在复用同一套系统。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Risk Notes</div>
+        <h2>避坑提醒</h2>
+      </div>
+      <div class="content">
+        <div class="warn">不要把“用了 AI”本身当卖点。线索自动化真正卖的是更少漏单、更快响应和更清楚的流程；广告素材工厂真正卖的是更快测试、更多素材和更稳定的内容供给。无论做哪条线，都要把交付边界写得很具体：你负责什么、不负责什么、客户需要提供什么、修改到什么程度、多久维护一次。边界不清，副业就会很快变成返工泥潭。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Sources</div>
+        <h2>参考线索</h2>
+        <p>以下资料主要用于判断 2026 年 AI 副业里“线索自动化代搭”和“广告素材工厂”两条线的可行性，以及个人是否能低成本起步。</p>
+      </div>
+      <div class="content sources">
+        <div>• 综合方向参考：<a href="https://www.shopify.com/blog/ai-side-hustles">Shopify - Best AI Side Hustles</a>。</div>
+        <div>• AI 预约 / 线索自动化代搭：<a href="https://tally.so/pricing">Tally Pricing</a>、<a href="https://calendly.com/pricing">Calendly Pricing</a>、<a href="https://calendly.com/help/choose-the-right-calendly-plan-for-your-team">Calendly Free Plan Help</a>、<a href="https://zapier.com/automation/lead-management-automation/ai-lead-follow-up">Zapier AI Lead Follow-Up</a>。</div>
+        <div>• AI UGC 广告素材工厂：<a href="https://creatify.ai/pricing">Creatify Pricing</a>、<a href="https://creatify.design/features/url-to-video">Creatify URL to Video</a>、<a href="https://creatify.ai/blog/product-ads-how-to-turn-product-urls-into-high-converting-video-ads">Creatify Product Ads Guide</a>。</div>
+      </div>
+    </section>
+
+    <footer>
+      生成日期：2026-08-01｜GitHub Pages：https://ssr-qegr.github.io/global-sync/bywork/bywork-20260801.html<br />
+      本报告用于副业方向探索与 MVP 验证，不构成收益承诺。
+    </footer>
+  </main>
+</body>
+</html>
