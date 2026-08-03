@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>今日副业探索报告｜AI 获客表单+自动预约跟进代搭 & AI 垂直 Newsletter / 行业情报小报</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff8ed;
+      --bg-soft: #fff3df;
+      --card: rgba(255,255,255,.9);
+      --text: #352317;
+      --muted: #7a6658;
+      --line: rgba(183, 126, 73, .22);
+      --amber: #d97706;
+      --orange: #f97316;
+      --rose: #fb7185;
+      --green: #16a34a;
+      --shadow: 0 24px 60px rgba(124, 75, 25, .16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(251, 146, 60, .30), transparent 34%),
+        radial-gradient(circle at 86% 12%, rgba(251, 113, 133, .18), transparent 30%),
+        radial-gradient(circle at 50% 92%, rgba(245, 158, 11, .16), transparent 32%),
+        linear-gradient(145deg, #fffaf1 0%, #fff4e5 48%, #fffdf8 100%);
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 42px 0 48px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 34px; padding: clamp(28px, 5vw, 54px); background: linear-gradient(135deg, rgba(255,255,255,.94), rgba(255,246,231,.84)); box-shadow: var(--shadow); backdrop-filter: blur(18px); }
+    .hero::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px; border-radius: 50%; background: conic-gradient(from 120deg, rgba(249,115,22,.36), rgba(251,113,133,.24), rgba(245,158,11,.28), rgba(249,115,22,.36)); filter: blur(4px); opacity: .75; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border-radius: 999px; background: #fff3df; border: 1px solid var(--line); color: #9a5a13; font-size: 13px; font-weight: 700; }
+    h1 { position: relative; z-index: 1; margin: 20px 0 12px; font-size: clamp(34px, 5.5vw, 62px); line-height: 1.04; letter-spacing: -.045em; }
+    .lead { position: relative; z-index: 1; max-width: 920px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.85; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .metric { padding: 17px; border-radius: 22px; background: rgba(255,255,255,.78); border: 1px solid rgba(183,126,73,.18); }
+    .metric b { display: block; font-size: 23px; color: #8a4b0f; }
+    .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .section { margin-top: 22px; border: 1px solid var(--line); border-radius: 30px; background: var(--card); box-shadow: 0 16px 42px rgba(124,75,25,.11); overflow: hidden; }
+    .section-head { padding: 26px 28px 18px; border-bottom: 1px solid var(--line); background: linear-gradient(90deg, rgba(255,247,237,.92), rgba(255,255,255,.70)); }
+    .section-kicker { color: var(--orange); font-size: 13px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { margin: 8px 0 8px; font-size: clamp(25px, 3vw, 36px); letter-spacing: -.025em; }
+    .section-head p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .content { padding: 26px 28px 30px; }
+    .verdict { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: stretch; }
+    .note, .score-card { border: 1px solid rgba(183,126,73,.18); border-radius: 24px; background: #fffdf9; padding: 20px; }
+    .note strong { color: #92400e; }
+    .note p { color: var(--muted); line-height: 1.75; margin: 8px 0 0; }
+    .scores { display: grid; gap: 12px; }
+    .bar { display: grid; gap: 7px; }
+    .bar-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+    .track { height: 10px; border-radius: 999px; background: #fde7c8; overflow: hidden; }
+    .fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--amber), var(--rose)); }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { border: 1px solid var(--line); border-radius: 28px; padding: 24px; background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,243,.84)); box-shadow: 0 14px 32px rgba(124,75,25,.09); }
+    .tagline { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .pill { border-radius: 999px; padding: 6px 10px; background: #fff3df; border: 1px solid rgba(183,126,73,.18); color: #9a5a13; font-size: 12px; font-weight: 700; }
+    .project h3 { margin: 0 0 10px; font-size: 25px; letter-spacing: -.02em; }
+    .project p { margin: 0 0 16px; color: var(--muted); line-height: 1.75; }
+    .list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .list li { padding: 12px 13px; border-radius: 16px; background: rgba(255,246,231,.72); color: #574234; line-height: 1.62; }
+    .list b { color: #8a4b0f; }
+    .table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 20px; }
+    .table th, .table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(183,126,73,.16); vertical-align: top; line-height: 1.65; }
+    .table th { background: #fff3df; color: #8a4b0f; font-size: 13px; }
+    .table tr:last-child td { border-bottom: 0; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: step; }
+    .step { position: relative; padding: 20px; border-radius: 22px; border: 1px solid rgba(183,126,73,.18); background: #fffdf9; }
+    .step::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #f97316; color: white; font-weight: 800; margin-bottom: 12px; }
+    .step h4 { margin: 0 0 8px; font-size: 17px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
+    .warn { border-left: 5px solid var(--orange); background: #fff7ed; padding: 16px 18px; border-radius: 18px; color: #614331; line-height: 1.7; }
+    .sources { display: grid; gap: 9px; color: var(--muted); line-height: 1.65; font-size: 13px; }
+    .sources a { color: #9a5a13; font-weight: 700; }
+    footer { color: var(--muted); text-align: center; margin-top: 26px; line-height: 1.8; font-size: 14px; }
+    @media (max-width: 860px) { .hero-grid, .projects, .steps, .verdict { grid-template-columns: 1fr; } .wrap { width: min(100% - 24px, 1120px); padding-top: 22px; } .section-head, .content { padding-left: 20px; padding-right: 20px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">☕ style_warm · 2026-08-03 · 今日副业探索</div>
+      <h1>今天更值得验证的两条线：AI 获客表单+自动预约跟进代搭 + AI 垂直 Newsletter / 行业情报小报</h1>
+      <p class="lead">今天选的两条方向，一个偏“马上就能卖”的服务单，一个偏“做起来会复利”的内容资产。前者适合面向本地商家、顾问、教培和工作室，帮他们把表单、预约、提醒、跟进串起来；后者适合做成某个垂直行业的小报或情报项目，用 AI 把搜集、起草、排版和发送做成半自动流水线，再逐步叠加赞助、订阅和数字产品。</p>
+      <div class="hero-grid">
+        <div class="metric"><b>2 个</b><span>今日推荐方向</span></div>
+        <div class="metric"><b>一个快回款</b><span>更适合先拿服务单、验证市场</span></div>
+        <div class="metric"><b>一个做资产</b><span>更适合沉淀订阅、赞助与数字产品</span></div>
+        <div class="metric"><b>低前期成本</b><span>都能先用免费或低价工具做 MVP</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Overall Verdict</div>
+        <h2>今日结论：先用“AI 获客表单+自动预约跟进代搭”拿首单，再把“AI 垂直 Newsletter / 行业情报小报”做成复利项目</h2>
+        <p>如果你现在更看重尽快变现，优先做自动预约跟进代搭；如果你愿意长期经营一个细分人群和信息优势，Newsletter 项目更值得慢慢养。最优解通常不是二选一，而是先靠服务线回款，再把实战案例和行业信息沉淀成内容资产。</p>
+      </div>
+      <div class="content verdict">
+        <div class="note">
+          <strong>推荐启动顺序：</strong>
+          <p>第一步先做 AI 获客表单+自动预约跟进代搭，因为客户更容易理解它能直接解决“咨询流失、预约混乱、跟进靠手工”的问题；第二步再围绕你服务过的行业做垂直 Newsletter，把你已经熟悉的需求、案例和信息差打包成长期内容资产。这样既能更快拿到现金流，也更容易把副业从“接单”升级到“有自己的流量与产品”。</p>
+        </div>
+        <div class="score-card">
+          <div class="scores">
+            <div class="bar"><div class="bar-row"><span>AI 自动化程度</span><b>两条线都高</b></div><div class="track"><div class="fill" style="width:88%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>启动门槛</span><b>都不高</b></div><div class="track"><div class="fill" style="width:30%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>短期回款</span><b>预约跟进代搭更快</b></div><div class="track"><div class="fill" style="width:87%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>长期复利</span><b>Newsletter 项目更强</b></div><div class="track"><div class="fill" style="width:92%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Projects</div>
+        <h2>今日 2 个副业方向</h2>
+        <p>一个卖“别再漏线索和漏预约”的效率结果，一个卖“把行业信息做成持续资产”的复利结果，都适合个人低成本起步。</p>
+      </div>
+      <div class="content projects">
+        <article class="project">
+          <div class="tagline"><span class="pill">快回款</span><span class="pill">流程代搭</span><span class="pill">本地商家可卖</span></div>
+          <h3>01｜AI 获客表单 + 自动预约跟进代搭</h3>
+          <p>面向本地服务商家、教培顾问、摄影工作室、独立咨询师、教练和小团队，把“收集线索、判断意向、自动预约、提醒通知、会后跟进”串成一套轻量自动化流程。你卖的不是一个表单或一个日历链接，而是更少的人工反复确认、更低的漏单率和更稳定的首次响应。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>最小交付可以是一个获客表单、一个预约入口、自动写入表格或 CRM、预约提醒、会前问卷和会后跟进消息。客户最容易感知到的结果，是咨询不再散落在微信、短信和表格里，而是能被自动收集、自动提醒、自动推进下一步。</li>
+            <li><b>可行性分析：</b>Tally 官方定价页写明，免费版就支持 unlimited forms 与 unlimited submissions，并且直接支持 Google Sheets、Zapier、Make 和 Webhooks；Calendly 免费版可先跑基础预约，Standard 方案是 $10/seat/mo，支持 Zapier、webhooks、自动提醒和自动 outreach；Zapier 官方的 AI Booking Management 页面明确支持从 emails、forms、chats 捕获预约信息，再自动更新 calendars、CRMs 和 spreadsheets，而免费方案就有 100 tasks/mo，Professional 方案从 $19.99/month 起。这意味着你完全可以先用免费或低价组合做出演示版，再根据客户复杂度升级。</li>
+            <li><b>AI 自动化程度：</b>线索路由、自动分发、预约确认、提醒、基础问答、信息同步和会后跟进都很适合自动化；人工主要负责梳理客户流程、定义字段、优化话术和处理例外情况。整体属于模板化程度很高、非常适合一人多客户并行交付的服务。</li>
+            <li><b>启动成本：</b>很低。MVP 阶段甚至可以用 Tally 免费版 + Calendly 免费版 + Zapier 免费版先做样板；如果客户开始在意品牌露出、自动化复杂度和多步流程，再考虑 Tally Pro、Calendly Standard 和 Zapier Professional 这样的低配付费组合。</li>
+            <li><b>预期收益：</b>更适合按“搭建费 + 月维护费 + 新场景追加收费”模式来做。第一单先卖通一个具体行业的标准流程，后面复制到更多客户时，交付效率会越来越高，返工反而越来越少。</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="tagline"><span class="pill">做资产</span><span class="pill">行业情报</span><span class="pill">复利型项目</span></div>
+          <h3>02｜AI 垂直 Newsletter / 行业情报小报</h3>
+          <p>围绕一个足够垂直的人群做小报，比如“北京本地服务创业者”“独立顾问获客”“跨境店铺运营”“AI 自动化案例拆解”“HR 工具情报”等。你卖的不是新闻搬运，而是帮某一类人更快知道哪些变化值得关注、哪些工具值得试、哪些案例值得抄，以及下一步可以怎么做。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>最小形态可以是每周 1 封行业精选小报：3-5 条重点信息、1 个案例拆解、1 个工具推荐、1 个可执行动作。后续可以自然延伸出赞助位、付费订阅、模板包、咨询入口和行业专题合集，让内容不只是发出去，还能持续变现。</li>
+            <li><b>可行性分析：</b>beehiiv 官方 AI 页面说明，AI-powered editing tools 可以帮助你改写语气、优化清晰度、重写段落并生成配图；beehiiv 定价页显示 Launch 方案免费，支持最多 2,500 subscribers 和 unlimited email sends，Scale 方案为 $43/month（按年付），开始提供 beehiiv AI、email automations、Ad Network、paid subscriptions、digital products 等能力；其 monetization 页面也明确给出广告网络、付费订阅、数字产品和 direct sponsorship 等路径。也就是说，你完全可以先免费验证选题与受众，再在内容跑顺后接入更强的 AI 和变现能力。</li>
+            <li><b>AI 自动化程度：</b>信息搜集、摘要、首稿、标题、改写、封面图、定时发送和部分广告位管理都可以交给 AI 或平台自动化能力；人工主要负责筛选真正重要的信息、形成观点和守住内容可信度。它不是纯机器项目，但非常适合“AI 打底，人来做判断”的轻团队模式。</li>
+            <li><b>启动成本：</b>低。前期完全可以先用免费方案做内容验证；当你需要自动化发送、AI 辅助创作、广告网络或数字产品能力时，再升级到 beehiiv 的付费层。真正的门槛不是工具，而是你能不能持续给一个具体人群提供有用、有筛选、有判断的信息。</li>
+            <li><b>预期收益：</b>这条线回款通常没有服务单那么快，但一旦跑通，会同时拥有赞助、付费订阅、数字产品和咨询线索等多种收入来源。它更像在养一块会复利的内容资产，越往后越不完全依赖单次卖时间。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Comparison</div>
+        <h2>投入产出对比</h2>
+        <p>一条更像“帮客户把流程接起来”，一条更像“把某个人群的信息差做成资产”。如果你现在还没有案例，先做更容易被客户理解的方案会更稳。</p>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead><tr><th>维度</th><th>AI 获客表单 + 自动预约跟进代搭</th><th>AI 垂直 Newsletter / 行业情报小报</th></tr></thead>
+          <tbody>
+            <tr><td>适合人群</td><td>愿意梳理流程、字段和客户旅程的人</td><td>愿意长期研究某个行业、某类职业人群的人</td></tr>
+            <tr><td>核心交付</td><td>表单、预约、提醒、同步、会后跟进自动化</td><td>稳定输出的小报、专题、赞助位与数字产品入口</td></tr>
+            <tr><td>成交方式</td><td>先做一个真实样板最容易卖出第一单</td><td>先做 2-4 期高质量内容验证是否有人持续看</td></tr>
+            <tr><td>优势</td><td>价值容易说明白、回款更快、适合做月维护</td><td>能做复利、可叠加多种变现方式、越做越像资产</td></tr>
+            <tr><td>主要风险</td><td>流程边界没写清，会变成无限定制和无限返工</td><td>如果只会搬运信息、没有筛选和观点，读者留不住</td></tr>
+            <tr><td>最小验证</td><td>选一个行业做出从留资到预约提醒的完整闭环</td><td>选一个细分主题，连续发 3 期并观察打开与回复</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">5-Day Action Plan</div>
+        <h2>5 天启动计划</h2>
+        <p>今天这两条线都不适合继续停留在“我知道这个方向不错”。真正有意义的启动，是在 5 天内做出别人看得懂、愿意给反馈、最好愿意试用或试单的样板。</p>
+      </div>
+      <div class="content steps">
+        <div class="step"><h4>第 1 天：把目标行业缩到足够窄</h4><p>预约代搭线可以选牙科、摄影、留学咨询、教练顾问；Newsletter 线可以选一个职位或行业，比如本地创业者、跨境卖家、独立顾问。越具体，越容易做出样板。</p></div>
+        <div class="step"><h4>第 2 天：做最小可演示成果</h4><p>预约代搭线至少做出一个表单、一个预约入口和一条自动提醒链路；Newsletter 线至少做出 1 期像样的小报，宁可短一点，也要像能发出去的成品。</p></div>
+        <div class="step"><h4>第 3 天：拿真实反馈而不是自我感动</h4><p>把样板发给 5-10 个潜在客户或目标用户，重点问两件事：这有没有价值、你愿不愿意试。只有外部反馈，才能证明方向不是自嗨。</p></div>
+        <div class="step"><h4>第 4 天：把报价或订阅路径写清楚</h4><p>预约代搭线要写清楚搭建范围、维护频率、修改次数；Newsletter 线要写清楚免费内容、付费内容、赞助位或数字产品的下一步入口。</p></div>
+        <div class="step"><h4>第 5 天：沉淀模板资产</h4><p>把表单结构、预约提醒话术、自动化流程图，或者栏目模板、选题框架、摘要 prompt 全部整理成可复用资产。副业真正值钱的部分，是以后能越来越快。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Risk Notes</div>
+        <h2>避坑提醒</h2>
+      </div>
+      <div class="content">
+        <div class="warn">不要把“用了 AI”本身当卖点。预约代搭真正卖的是更少漏单、更少手工确认和更稳定的跟进；Newsletter 项目真正卖的是更高质量的信息筛选和更明确的判断。无论做哪条线，都要把边界写清楚：客户要提供什么、你负责到哪一步、哪些环节是自动化、哪些环节仍要人工审核、结果如何验收。边界写不清，副业很容易从“可复制”变成“无限售后”。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Sources</div>
+        <h2>参考线索</h2>
+        <p>以下资料主要用于判断今天这两条副业方向是否具备“AI 自动化强、门槛低、可先做 MVP 再升级”的现实可行性。</p>
+      </div>
+      <div class="content sources">
+        <div>• 综合方向参考：<a href="https://www.shopify.com/blog/ai-side-hustles">Shopify - Best AI Side Hustles</a>。</div>
+        <div>• AI 获客表单 + 自动预约跟进代搭：<a href="https://tally.so/pricing">Tally Pricing</a>、<a href="https://tally.so/features">Tally Features</a>、<a href="https://calendly.com/pricing/">Calendly Pricing</a>、<a href="https://calendly.com/integration/zapier">Calendly + Zapier</a>、<a href="https://zapier.com/automation/booking-automation/ai-booking-management">Zapier - AI Booking Management</a>、<a href="https://zapier.com/pricing">Zapier Pricing</a>。</div>
+        <div>• AI 垂直 Newsletter / 行业情报小报：<a href="https://www.beehiiv.com/features/artificial-intelligence">beehiiv AI</a>、<a href="https://www.beehiiv.com/pricing">beehiiv Pricing</a>、<a href="https://www.beehiiv.com/features/monetization">beehiiv Monetization</a>。</div>
+      </div>
+    </section>
+
+    <footer>
+      生成日期：2026-08-03｜GitHub Pages：https://ssr-qegr.github.io/global-sync/bywork/bywork-20260803.html<br />
+      本报告用于副业方向探索与 MVP 验证，不构成收益承诺。
+    </footer>
+  </main>
+</body>
+</html>
