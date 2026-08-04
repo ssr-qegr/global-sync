@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>今日副业探索报告｜AI 数字人讲解视频代制作 & AI Notion/表格模板包+自动化工作流包售卖</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff8ed;
+      --bg-soft: #fff3df;
+      --card: rgba(255,255,255,.9);
+      --text: #352317;
+      --muted: #7a6658;
+      --line: rgba(183, 126, 73, .22);
+      --amber: #d97706;
+      --orange: #f97316;
+      --rose: #fb7185;
+      --green: #16a34a;
+      --shadow: 0 24px 60px rgba(124, 75, 25, .16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(251, 146, 60, .30), transparent 34%),
+        radial-gradient(circle at 86% 12%, rgba(251, 113, 133, .18), transparent 30%),
+        radial-gradient(circle at 50% 92%, rgba(245, 158, 11, .16), transparent 32%),
+        linear-gradient(145deg, #fffaf1 0%, #fff4e5 48%, #fffdf8 100%);
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 42px 0 48px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 34px; padding: clamp(28px, 5vw, 54px); background: linear-gradient(135deg, rgba(255,255,255,.94), rgba(255,246,231,.84)); box-shadow: var(--shadow); backdrop-filter: blur(18px); }
+    .hero::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px; border-radius: 50%; background: conic-gradient(from 120deg, rgba(249,115,22,.36), rgba(251,113,133,.24), rgba(245,158,11,.28), rgba(249,115,22,.36)); filter: blur(4px); opacity: .75; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border-radius: 999px; background: #fff3df; border: 1px solid var(--line); color: #9a5a13; font-size: 13px; font-weight: 700; }
+    h1 { position: relative; z-index: 1; margin: 20px 0 12px; font-size: clamp(34px, 5.5vw, 62px); line-height: 1.04; letter-spacing: -.045em; }
+    .lead { position: relative; z-index: 1; max-width: 920px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.85; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .metric { padding: 17px; border-radius: 22px; background: rgba(255,255,255,.78); border: 1px solid rgba(183,126,73,.18); }
+    .metric b { display: block; font-size: 23px; color: #8a4b0f; }
+    .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .section { margin-top: 22px; border: 1px solid var(--line); border-radius: 30px; background: var(--card); box-shadow: 0 16px 42px rgba(124,75,25,.11); overflow: hidden; }
+    .section-head { padding: 26px 28px 18px; border-bottom: 1px solid var(--line); background: linear-gradient(90deg, rgba(255,247,237,.92), rgba(255,255,255,.70)); }
+    .section-kicker { color: var(--orange); font-size: 13px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { margin: 8px 0 8px; font-size: clamp(25px, 3vw, 36px); letter-spacing: -.025em; }
+    .section-head p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .content { padding: 26px 28px 30px; }
+    .verdict { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: stretch; }
+    .note, .score-card { border: 1px solid rgba(183,126,73,.18); border-radius: 24px; background: #fffdf9; padding: 20px; }
+    .note strong { color: #92400e; }
+    .note p { color: var(--muted); line-height: 1.75; margin: 8px 0 0; }
+    .scores { display: grid; gap: 12px; }
+    .bar { display: grid; gap: 7px; }
+    .bar-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+    .track { height: 10px; border-radius: 999px; background: #fde7c8; overflow: hidden; }
+    .fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--amber), var(--rose)); }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { border: 1px solid var(--line); border-radius: 28px; padding: 24px; background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,243,.84)); box-shadow: 0 14px 32px rgba(124,75,25,.09); }
+    .tagline { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .pill { border-radius: 999px; padding: 6px 10px; background: #fff3df; border: 1px solid rgba(183,126,73,.18); color: #9a5a13; font-size: 12px; font-weight: 700; }
+    .project h3 { margin: 0 0 10px; font-size: 25px; letter-spacing: -.02em; }
+    .project p { margin: 0 0 16px; color: var(--muted); line-height: 1.75; }
+    .list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .list li { padding: 12px 13px; border-radius: 16px; background: rgba(255,246,231,.72); color: #574234; line-height: 1.62; }
+    .list b { color: #8a4b0f; }
+    .table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 20px; }
+    .table th, .table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(183,126,73,.16); vertical-align: top; line-height: 1.65; }
+    .table th { background: #fff3df; color: #8a4b0f; font-size: 13px; }
+    .table tr:last-child td { border-bottom: 0; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: step; }
+    .step { position: relative; padding: 20px; border-radius: 22px; border: 1px solid rgba(183,126,73,.18); background: #fffdf9; }
+    .step::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #f97316; color: white; font-weight: 800; margin-bottom: 12px; }
+    .step h4 { margin: 0 0 8px; font-size: 17px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
+    .warn { border-left: 5px solid var(--orange); background: #fff7ed; padding: 16px 18px; border-radius: 18px; color: #614331; line-height: 1.7; }
+    .sources { display: grid; gap: 9px; color: var(--muted); line-height: 1.65; font-size: 13px; }
+    .sources a { color: #9a5a13; font-weight: 700; }
+    footer { color: var(--muted); text-align: center; margin-top: 26px; line-height: 1.8; font-size: 14px; }
+    @media (max-width: 860px) { .hero-grid, .projects, .steps, .verdict { grid-template-columns: 1fr; } .wrap { width: min(100% - 24px, 1120px); padding-top: 22px; } .section-head, .content { padding-left: 20px; padding-right: 20px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">☕ style_warm · 2026-08-04 · 今日副业探索</div>
+      <h1>今天更值得验证的两条线：AI 数字人讲解视频代制作 + AI Notion/表格模板包与自动化工作流包售卖</h1>
+      <p class="lead">今天选的两条方向，一条偏“立刻能卖出去的内容交付服务”，一条偏“做一次、反复卖的轻资产数字产品”。前者适合先赚到真实现金流和案例，后者适合把经验沉淀成模板、SOP 和工作流包，越做越像自己的小型产品库。两条线共同点都很明确：AI 自动化程度高、前期投入不重，而且都能先做很小的 MVP 再逐步扩张。</p>
+      <div class="hero-grid">
+        <div class="metric"><b>2 个</b><span>今日推荐方向</span></div>
+        <div class="metric"><b>一个偏服务</b><span>更适合先拿到可见成果和首单</span></div>
+        <div class="metric"><b>一个偏产品</b><span>更适合长期积累复利和被动成交</span></div>
+        <div class="metric"><b>低前期成本</b><span>都可以先用免费或低成本工具跑起来</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Overall Verdict</div>
+        <h2>今日结论：先用 AI 数字人视频服务换现金流，再把方法论做成模板包继续卖</h2>
+        <p>如果你现在最需要的是尽快验证有人愿意付钱，优先做 AI 数字人讲解视频代制作；如果你更想做一个可以慢慢积累、低维护的轻资产项目，优先做 AI 模板包和自动化工作流包。最顺手的路径，往往不是二选一，而是先用服务拿到需求，再把服务里反复出现的结构沉淀成数字产品。</p>
+      </div>
+      <div class="content verdict">
+        <div class="note">
+          <strong>推荐启动顺序：</strong>
+          <p>先做 AI 数字人讲解视频代制作，因为客户很容易看懂交付结果：脚本、口播、视频、字幕、多语言版本，一眼就知道自己买到了什么。等你在某个细分行业里做出两三个像样案例之后，再把常用脚本模板、镜头结构、封面模板、报价单、需求收集表和交付 SOP 打包成 Notion/表格模板包或自动化工作流包。这样做的好处是，你先用服务理解真实需求，再把真实需求沉淀成可复用产品，效率和成交率都会更高。</p>
+        </div>
+        <div class="score-card">
+          <div class="scores">
+            <div class="bar"><div class="bar-row"><span>AI 自动化程度</span><b>两条线都很高</b></div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>启动门槛</span><b>模板包更低</b></div><div class="track"><div class="fill" style="width:28%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>短期回款</span><b>视频代制作更快</b></div><div class="track"><div class="fill" style="width:86%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>长期复利</span><b>模板包更强</b></div><div class="track"><div class="fill" style="width:93%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Projects</div>
+        <h2>今日 2 个副业方向</h2>
+        <p>一个卖“看得见的内容交付结果”，一个卖“拿回去就能直接复用的工作系统”，都适合个人用 AI 做高杠杆起步。</p>
+      </div>
+      <div class="content projects">
+        <article class="project">
+          <div class="tagline"><span class="pill">快回款</span><span class="pill">内容服务</span><span class="pill">可视化交付</span></div>
+          <h3>01｜AI 数字人讲解视频代制作</h3>
+          <p>面向本地商家、独立顾问、教培讲师、SaaS 小团队、知识博主和出海卖家，帮他们快速做出“像真人出镜但不必真人反复拍摄”的讲解视频、介绍视频、欢迎视频、课程视频或多语言版本短视频。你卖的不是一个 AI 工具账号，而是更稳定的内容产出速度、更省心的拍摄流程和更容易复制的多版本视频交付。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>最小交付可以是脚本梳理、数字人口播视频、字幕、封面、简单 B-roll 和竖版/横版两个版本。对客户来说，最有吸引力的不是“用了 AI”，而是原来要拍半天、改很多次的视频，现在可以更快地做出成品，还能顺手做多个场景版本。</li>
+            <li><b>可行性分析：</b>HeyGen 官方介绍明确支持从 text、scripts 或 uploaded images 生成 lifelike AI video avatars，适合营销、教育和创作者场景；官方定价页也给出了很低的起步门槛：免费方案每月 3 个视频，Creator 方案 $29/月，包含最长 30 分钟视频、1080p 导出、Voice Cloning 和 175+ languages and dialects。这意味着个人完全可以先用免费或低配付费方案做出样板，再根据客户复杂度升级。</li>
+            <li><b>AI 自动化程度：</b>选题辅助、脚本初稿、口播生成、字幕、多语言版本、封面文案、镜头变体都可以大量自动化；人工主要负责审核事实、调整品牌语气、控制节奏和确保视频真正适配客户场景。整体非常适合“AI 打底、人工把关”的交付模式。</li>
+            <li><b>启动成本：</b>低到中低。MVP 阶段完全可以先用免费试用做样片；真正开始稳定接单时，再升级到 HeyGen Creator 之类的个人方案。最早期更大的成本不是软件，而是你愿不愿意花一点时间把一个行业的脚本结构和交付流程打磨顺。</li>
+            <li><b>预期收益：</b>更适合按“单条视频套餐、月度内容包、语言版本加价、批量视频包”来卖。首单重点不是把单价拉到很高，而是先拿到一个能展示结果的案例。只要行业足够聚焦，后面复用速度会越来越快。</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="tagline"><span class="pill">做资产</span><span class="pill">数字产品</span><span class="pill">低维护复利</span></div>
+          <h3>02｜AI Notion/表格模板包 + 自动化工作流包售卖</h3>
+          <p>围绕一个具体场景做模板包，比如求职管理、客户跟进、报价管理、内容排期、独立顾问项目管理、社媒选题库、信息收集 SOP、AI 提示词工作流包等。你卖的不是一个空壳模板，而是“这个模板能帮一个具体人群少走弯路、少搭系统、马上开始干活”。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>最小形态可以是一个主模板加一套使用说明，再附赠示例数据、快捷按钮、提醒规则、提示词模板和一份上手视频。更进一步，可以做成按主题拆分的工作流包，例如“独立顾问客户跟进包”“小红书内容管理包”“求职追踪与简历投递包”。</li>
+            <li><b>可行性分析：</b>Gumroad 官方首页明确强调任何人都可以先从自己会的东西开始卖起，支持 video lessons、subscriptions 等多种形式；其官方定价页写得也很直接：没有月费，面向自己的流量成交时按 10% + $0.50/单收费。Notion 官方模板市场则已经形成成熟生态，模板页展示 30,000+ templates，并明确支持 creator 提交模板、被推荐甚至获得收入。也就是说，模板类数字产品这条路本身已经被平台验证过，不需要从零教育市场。</li>
+            <li><b>AI 自动化程度：</b>模板命名、页面说明、字段示例、教程初稿、营销文案、FAQ、售后回复草稿、模板变体扩写和截图说明都很适合交给 AI 先完成；人工主要负责结构设计、使用体验、真实场景匹配和边界定义。非常适合一个人持续迭代。</li>
+            <li><b>启动成本：</b>很低。你完全可以先做 1 个最懂的模板，用现有 Notion 或表格能力整理成成品，再通过 Gumroad 或相似数字商品平台交付。前期不一定要投广告，先靠社媒内容、案例演示和已有圈层扩散即可。</li>
+            <li><b>预期收益：</b>这条线前期通常没有服务单回款快，但一旦某个模板被验证有效，就可以不断复制、组合、升级成 bundle，甚至继续延伸成咨询、训练营或会员内容。它更像在堆自己的微型产品矩阵。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Comparison</div>
+        <h2>投入产出对比</h2>
+        <p>一条更像“帮客户把视频更快做出来”，一条更像“把自己的方法论做成可反复卖的产品”。如果你现在还没有成交经验，先做更容易被外部理解的交付会更稳。</p>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead><tr><th>维度</th><th>AI 数字人讲解视频代制作</th><th>AI Notion/表格模板包 + 自动化工作流包</th></tr></thead>
+          <tbody>
+            <tr><td>适合人群</td><td>愿意接项目、沟通需求、快速交付可视化内容的人</td><td>愿意沉淀方法论、把经验做成标准化产品的人</td></tr>
+            <tr><td>核心交付</td><td>脚本、视频、字幕、封面、多版本内容</td><td>模板、说明文档、示例数据、工作流 SOP、提示词包</td></tr>
+            <tr><td>成交方式</td><td>拿 1 个具体行业样片最容易敲开第一单</td><td>拿 1 个高频刚需场景做出成品后持续上架和迭代</td></tr>
+            <tr><td>优势</td><td>结果直观、价值容易讲清、短期更容易回款</td><td>交付一次可反复卖、维护成本更低、长期复利更强</td></tr>
+            <tr><td>主要风险</td><td>如果脚本和修改边界没写清，很容易陷入反复返工</td><td>如果模板没有真实使用价值，只靠“好看”很难复购</td></tr>
+            <tr><td>最小验证</td><td>选一个细分行业做出 2 条像样演示视频并拿反馈</td><td>做一个最懂的模板，上架并用 5-10 位目标用户测试可用性</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">5-Day Action Plan</div>
+        <h2>5 天启动计划</h2>
+        <p>今天这两条线都不需要再停留在“看起来不错”。真正有意义的动作，是在 5 天内做出一个别人能看懂、愿意反馈、最好愿意试用或试买的最小成品。</p>
+      </div>
+      <div class="content steps">
+        <div class="step"><h4>第 1 天：把人群缩到足够窄</h4><p>视频线先选一个好理解的行业，比如教培、顾问、SaaS、餐饮或本地店；模板线先选一个高频场景，比如客户跟进、内容排期、求职管理。越具体，越容易出成品。</p></div>
+        <div class="step"><h4>第 2 天：做最小可展示样板</h4><p>视频线至少做出 1 条 30-60 秒样片；模板线至少做出 1 份可直接复制使用的模板，并配上简单说明。目标不是完美，而是“像能卖的东西”。</p></div>
+        <div class="step"><h4>第 3 天：拿真实反馈</h4><p>把样板发给 5-10 个潜在客户或目标用户，重点问三件事：你觉得有没有用、哪里不顺手、你愿不愿意试。越早听到不舒服的反馈，越省后面返工。</p></div>
+        <div class="step"><h4>第 4 天：把边界和报价写清楚</h4><p>视频线要写清修改次数、交付格式和时长；模板线要写清包含哪些页面、适合谁、什么问题不解决。边界越清晰，副业越容易稳定。</p></div>
+        <div class="step"><h4>第 5 天：沉淀成可复用资产</h4><p>把脚本结构、需求收集表、交付清单、模板说明、售前 FAQ 全部整理成自己的标准包。副业真正值钱的，不是今天这单，而是以后越来越快。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Risk Notes</div>
+        <h2>避坑提醒</h2>
+      </div>
+      <div class="content">
+        <div class="warn">不要把“AI 很厉害”当成交理由。视频代制作真正卖的是更快的成片速度、更少的拍摄成本和更稳定的版本扩展；模板包真正卖的是更少的试错、更快的上手和更明确的结构。无论选哪条线，都要把边界写清楚：客户要提供什么、你负责到哪里、哪些部分自动生成、哪些部分需要人工审核、修改次数是多少、最终怎么验收。边界不清楚，副业很容易从“高杠杆”变成“无限售后”。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Sources</div>
+        <h2>参考线索</h2>
+        <p>以下资料主要用于判断今天这两条副业方向是否具备“AI 自动化强、前期成本可控、可以先从小样板做起”的现实可行性。</p>
+      </div>
+      <div class="content sources">
+        <div>• 综合方向参考：<a href="https://www.shopify.com/blog/ai-side-hustles">Shopify - Best AI Side Hustles</a>。</div>
+        <div>• AI 数字人讲解视频代制作：<a href="https://www.heygen.com/avatars/ai-video-avatar">HeyGen - AI Video Avatar</a>、<a href="https://www.heygen.com/pricing">HeyGen Pricing</a>。</div>
+        <div>• AI 模板包 / 自动化工作流包售卖：<a href="https://gumroad.com/">Gumroad Home</a>、<a href="https://gumroad.com/pricing">Gumroad Pricing</a>、<a href="https://www.notion.com/templates">Notion Templates Marketplace</a>。</div>
+      </div>
+    </section>
+
+    <footer>
+      生成日期：2026-08-04｜GitHub Pages：https://ssr-qegr.github.io/global-sync/bywork/bywork-20260804.html<br />
+      本报告用于副业方向探索与 MVP 验证，不构成收益承诺。
+    </footer>
+  </main>
+</body>
+</html>
