@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>今日精选晨报 - 2026年8月5日</title>
+  <style>
+    :root {
+      --primary: #00B26B;
+      --accent: #0AAE9E;
+      --bg: #F2FBF6;
+      --card-bg: rgba(255,255,255,0.96);
+      --text-main: #173B2E;
+      --text-sub: #58706A;
+      --line: rgba(10,174,158,0.18);
+      --soft: #F7FFFB;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: "Nunito", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at top left, rgba(0,178,107,0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(10,174,158,0.12), transparent 26%),
+        var(--bg);
+      line-height: 1.75;
+    }
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 42px;
+      box-shadow: 0 24px 64px rgba(15,143,121,0.10);
+    }
+    .header {
+      text-align: center;
+      padding-bottom: 22px;
+      margin-bottom: 30px;
+      border-bottom: 2px dashed rgba(10,174,158,0.24);
+    }
+    .header h1 {
+      margin: 0 0 10px;
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+    }
+    .date {
+      font-size: 15px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+    .brief {
+      margin: 14px auto 0;
+      max-width: 760px;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .section-title {
+      margin: 34px 0 16px;
+      padding-bottom: 8px;
+      font-size: 23px;
+      font-weight: 900;
+      color: var(--accent);
+      border-bottom: 2px dashed rgba(10,174,158,0.22);
+    }
+    .news-item {
+      position: relative;
+      margin-bottom: 24px;
+      padding: 24px 24px 24px 46px;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--soft) 100%);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .news-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(15,143,121,0.10);
+      border-color: rgba(10,174,158,0.38);
+    }
+    .news-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 12px;
+      border-radius: 22px 0 0 22px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+    }
+    .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(10,174,158,0.16);
+      background: rgba(0,178,107,0.10);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .news-item h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      font-weight: 850;
+      color: var(--text-main);
+    }
+    .news-item h3 {
+      margin: 14px 0 6px;
+      font-size: 16px;
+      font-weight: 850;
+      color: var(--accent);
+    }
+    .news-item p {
+      margin: 0 0 10px;
+      font-size: 15px;
+      color: var(--text-sub);
+    }
+    .stock-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 16px;
+      font-size: 14px;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+    .stock-table th {
+      background: rgba(0,178,107,0.12);
+      color: var(--accent);
+      padding: 9px 12px;
+      text-align: left;
+      font-weight: 800;
+    }
+    .stock-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid rgba(10,174,158,0.12);
+      color: var(--text-sub);
+      vertical-align: top;
+    }
+    .stock-table .up { color: #D32F2F; font-weight: 800; }
+    .stock-table .down { color: #00897B; font-weight: 800; }
+    .source {
+      margin-top: 10px;
+      color: rgba(88,112,106,0.92);
+      font-size: 13px;
+    }
+    .source a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .source a:hover { text-decoration: underline; }
+    .footer {
+      margin-top: 32px;
+      padding-top: 18px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(88,112,106,0.92);
+      border-top: 1px dashed rgba(10,174,158,0.24);
+      font-weight: 700;
+    }
+    @media (max-width: 600px) {
+      body { padding: 12px; }
+      .container { padding: 24px; border-radius: 20px; }
+      .header h1 { font-size: 28px; }
+      .news-item { padding: 20px 20px 20px 32px; }
+      .stock-table { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🌅 今日精选晨报</h1>
+      <div class="date">✨ 2026年8月5日 星期三 ✨</div>
+      <div class="brief">周三早间版晨报：时政看新型电力系统“十五五”规划与加沙停火执行压力；财经看隔夜全球市场风险偏好、油价与金价波动；技术看大模型价格战与国产模型融资、商业化分化。</div>
+    </div>
+
+    <div class="section-title">🏛️ ① 时事政治</div>
+    <div class="news-item">
+      <span class="tag">🇨🇳 国内政策</span>
+      <h2>《新型电力系统建设“十五五”规划》发布，2030 年初步建成新型电力系统</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>国家发展改革委、国家能源局印发《新型电力系统建设“十五五”规划》，提出到 2030 年初步建成新型电力系统。规划目标包括非化石能源发电量占比达到 50%，实现 28 亿千瓦以上新能源高水平消纳，建成可支撑超过 1.1 亿辆电动汽车出行的充电基础设施网络，并部署电力供给、电网协同、调节能力、民生用电、电力与算力协同等重点任务。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>这不是单纯多建风电、光伏，而是要把发电、电网、储能、充电桩、算力中心和交通基础设施一起重做一遍，让电力系统能扛住新能源和电动车快速增长。</p>
+      <h3>💡 意义解读</h3>
+      <p>未来五年，电力会成为新能源车、AI 算力和高端制造共同的底座。对产业链来说，电网设备、储能、充电基础设施、绿色电力消纳和算力能源协同会继续获得政策确定性。</p>
+      <div class="source">来源：<a href="http://www.china.com.cn/txt/2026-08/04/content_118632203.shtml">中国网 / 新华网：《新型电力系统建设“十五五”规划》发布</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌍 国际局势</span>
+      <h2>卡塔尔、埃及和土耳其谴责以色列持续违反加沙停火协议</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>卡塔尔、埃及和土耳其发表联合声明，谴责以色列在加沙地带持续违反停火协议，特别是针对卫生设施和医疗基础设施的袭击造成平民伤亡。三国表示，这些行为破坏了加沙停火协议，并损害落实第二阶段停火协议的努力，呼吁保护平民、医疗设施和人道主义工作人员，保障援助物资畅通。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>调停方的意思很直接：停火不是只写在纸面上，以色列如果继续打击医疗和民用目标，第二阶段谈判就很难推进。</p>
+      <h3>💡 意义解读</h3>
+      <p>加沙问题仍是中东风险的核心变量。停火执行越不稳，中东外交协调、能源运输安全和国际人道援助都会持续承压，也会影响市场对地缘风险的定价。</p>
+      <div class="source">来源：<a href="https://news.hndaily.cn/h5/html5/2026-08/05/content_58471_19762244.htm">新华社：卡塔尔、埃及和土耳其谴责以色列持续违反停火协议</a></div>
+    </div>
+
+    <div class="section-title">💰 ② 财经新闻</div>
+    <div class="news-item">
+      <span class="tag">📈 市场总览</span>
+      <h2>美股三大指数齐涨，油价受霍尔木兹重开预期影响大跌</h2>
+      <table class="stock-table">
+        <tr><th>市场 / 资产</th><th>最新表现</th><th>观察</th></tr>
+        <tr><td>A股</td><td class="up">沪指 +0.33%，深成指 +3.25%，创业板指 +5.64%</td><td>CPO、算力租赁、CRO、PCB 等板块活跃，成交额放量至 2.21 万亿元。</td></tr>
+        <tr><td>港股</td><td class="down">恒生指数 -0.6%，恒生科技指数 +0.21%</td><td>光通信、医药外包、PCB、存储概念走强，内银与教育板块承压。</td></tr>
+        <tr><td>美股</td><td class="up">道指 +1.7%，标普500 +1.73%，纳指 +2.59%</td><td>半导体和科技股领涨，道指与标普500创历史新高。</td></tr>
+        <tr><td>大宗商品</td><td class="down">WTI -5.51%，布伦特 -5.55%；现货黄金 +0.55%</td><td>霍尔木兹海峡重开预期压低油价，黄金盘中一度突破 4100 美元后回落。</td></tr>
+      </table>
+      <h3>📰 新闻原文摘要</h3>
+      <p>隔夜全球市场风险偏好升温。金十数据显示，美股三大指数全线上涨，道指和标普 500 创历史新高；A 股三大指数集体收涨且创业板涨幅明显；港股恒指回落但恒生科技指数小幅上涨。大宗商品方面，受霍尔木兹海峡重开预期影响，WTI 与布伦特原油均跌超 5%，黄金则维持高位震荡。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>市场今天的关键词是“风险偏好回来了”：股票尤其是科技和算力链条明显走强；油价因为地缘运输风险可能缓和而跳水；黄金还在高位，说明避险资金并没有完全撤退。</p>
+      <h3>💡 意义解读</h3>
+      <p>如果油价继续回落，会减轻通胀和货币政策压力，对权益资产是短期利好。但黄金仍强，说明投资者并没有完全相信地缘风险已经解除，市场可能继续在“科技乐观”和“地缘谨慎”之间拉扯。</p>
+      <div class="source">来源：<a href="https://xnews.jin10.com/details/226526">金十数据全球财经早餐：2026 年 8 月 5 日</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🏦 国内财经</span>
+      <h2>国内要闻关注央行流动性操作、自动驾驶安全标准与卫星互联网发射</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>金十财经早餐梳理显示，央行 8 月 5 日将开展 5000 亿元买断式逆回购操作，期限为 3 个月；《智能网联汽车自动驾驶系统安全要求》强制性国家标准正式发布；我国在海南商业航天发射场使用长征八号甲运载火箭，成功将卫星互联网低轨 23 组卫星发射升空。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>国内财经今天不是单一主线：一边是央行继续给市场提供中期流动性，另一边是自动驾驶和卫星互联网这类新兴产业继续补规则、补基础设施。</p>
+      <h3>💡 意义解读</h3>
+      <p>流动性操作有助于稳定资金面预期；自动驾驶强制标准会推动行业从“能跑”转向“安全可监管”；卫星互联网发射则说明商业航天仍在加速进入规模化建设阶段。</p>
+      <div class="source">来源：<a href="https://xnews.jin10.com/details/226526">金十数据全球财经早餐：国内要闻</a></div>
+    </div>
+
+    <div class="section-title">🚀 ③ 技术领域</div>
+    <div class="news-item">
+      <span class="tag">🤖 AI 价格战</span>
+      <h2>中美大模型竞争加剧，OpenAI 等海外厂商下调入门级模型价格</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>凤凰网科技援引 IT之家报道称，为应对 Kimi、DeepSeek 等中国模型带来的竞争，海外主要 AI 企业正在降低部分产品价格并提升入门级模型能力。报道提到，OpenAI 将基础前沿模型 ChatGPT 5.6 Luna 的价格降低 80%，并将中端模型 5.6 Terra 的价格下调 20%；谷歌此前也推出了更低价的 Gemini 3.6 Flash 和 3.5 Flash-Lite。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>以前大模型比的是“谁更强”，现在开始明显比“谁更便宜、谁更能大规模用”。中国模型用成本效率把海外厂商逼进了价格战。</p>
+      <h3>💡 意义解读</h3>
+      <p>对开发者和企业用户是好事，API 成本下降会让更多 AI 应用算得过账；但对模型厂商是压力，算力投入巨大、价格又下降，谁能把推理成本、产品留存和商业化闭环做好，谁才可能穿越价格战。</p>
+      <div class="source">来源：<a href="https://tech.ifeng.com/c/8vJFjfR0aWu">凤凰网科技 / IT之家：中美 AI 大模型竞争加剧</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">📊 国产大模型</span>
+      <h2>国产大模型融资和商业化分化加剧，资金继续向头部集中</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>36 氪文章梳理称，月之暗面 Kimi 近期完成新一轮约 20 亿美元融资，投后估值突破 200 亿美元；同时市场消息称 DeepSeek 也在被投资方争抢入股。文章指出，国内大模型赛道进入烧钱和商业化并行阶段，头部公司融资规模快速扩大，但估值、收入与商业化能力之间的差距也在拉大。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>国产 AI 不是“大家一起热闹”了，而是进入头部淘汰赛：钱、算力、人才和用户都在往少数公司集中。</p>
+      <h3>💡 意义解读</h3>
+      <p>接下来大模型公司的竞争会从参数和榜单，转向更现实的三件事：有没有稳定收入、推理成本能不能打下来、有没有能持续吸引开发者和企业的生态。融资多只是入场券，商业化才是长期门票。</p>
+      <div class="source">来源：<a href="https://36kr.com/p/3799097625926917">36 氪：估值暴涨，国产大模型加速融资</a></div>
+    </div>
+
+    <div class="footer">
+      (๑•̀ㅂ•́)و✧ style_green 晨报已生成：信息密度拉满，但保持清爽好读。
+    </div>
+  </div>
+</body>
+</html>
