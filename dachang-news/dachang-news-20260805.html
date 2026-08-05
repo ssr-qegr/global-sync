@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日大厂新闻｜2026-08-05</title>
+  <style>
+    :root { --primary: #B388FF; --bg: #0D0D0D; --card-bg: #1A1A1A; --text-main: #E0E0E0; --text-sub: #9E9E9E; --accent: #00E5FF; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: radial-gradient(circle at top left, rgba(179,136,255,0.18), transparent 32%), radial-gradient(circle at top right, rgba(0,229,255,0.12), transparent 36%), var(--bg); color: var(--text-main); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1220px; margin: 0 auto; padding: 32px 18px 56px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid rgba(179,136,255,0.28); border-radius: 28px; padding: 40px; background: linear-gradient(135deg, rgba(179,136,255,0.18), rgba(0,229,255,0.06)), rgba(26,26,26,0.88); box-shadow: 0 24px 80px rgba(0,0,0,0.42); }
+    .hero::after { content: ""; position: absolute; width: 260px; height: 260px; right: -80px; top: -100px; background: radial-gradient(circle, rgba(0,229,255,0.26), transparent 68%); filter: blur(2px); }
+    .tag { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(0,229,255,0.1); color: var(--accent); font-size: 13px; border: 1px solid rgba(0,229,255,0.22); }
+    h1 { margin: 18px 0 12px; font-size: clamp(34px, 5vw, 58px); line-height: 1.05; letter-spacing: -1.5px; }
+    .lead { max-width: 980px; color: var(--text-sub); line-height: 1.9; font-size: 16px; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .stat { padding: 18px; border-radius: 20px; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08); }
+    .stat strong { display: block; font-size: 28px; color: var(--primary); }
+    .stat span { color: var(--text-sub); font-size: 13px; }
+    .section-title { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 34px 0 16px; }
+    .section-title h2 { margin: 0; font-size: 24px; }
+    .section-title p { margin: 0; color: var(--text-sub); font-size: 14px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025)), var(--card-bg); border: 1px solid rgba(255,255,255,0.09); border-radius: 24px; padding: 22px; box-shadow: 0 16px 50px rgba(0,0,0,0.28); transition: transform .22s ease, border-color .22s ease; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(179,136,255,0.38); }
+    .company { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .company .name { font-size: 19px; font-weight: 800; color: #fff; }
+    .company .type { font-size: 12px; color: var(--accent); border: 1px solid rgba(0,229,255,0.25); background: rgba(0,229,255,0.08); border-radius: 999px; padding: 6px 10px; white-space: nowrap; }
+    .headline { margin: 0 0 14px; color: var(--primary); font-size: 17px; line-height: 1.55; }
+    .block { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .block h3 { margin: 0 0 8px; font-size: 14px; color: #fff; display: flex; align-items: center; gap: 8px; }
+    .block p { margin: 0; color: var(--text-sub); line-height: 1.8; font-size: 14px; }
+    .source { margin-top: 14px; color: #777; font-size: 12px; line-height: 1.8; }
+    .source a { color: #8eefff; }
+    .note { margin-top: 28px; padding: 18px 20px; border: 1px solid rgba(179,136,255,0.22); border-radius: 20px; background: rgba(179,136,255,0.07); color: var(--text-sub); line-height: 1.8; }
+    .footer { margin-top: 34px; text-align: center; color: #777; font-size: 13px; }
+    @media (max-width: 860px) { .hero { padding: 28px; } .stats, .grid { grid-template-columns: 1fr; } .section-title { display: block; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="tag">🏢 今日大厂新闻 · 2026-08-05 · style_dark</div>
+      <h1>今天的大厂动态已经不只是“谁发了新模型”，而是“谁在把组织、算力、入口和监管一起重新排布”</h1>
+      <p class="lead">8 月 5 日这批新闻放在一起看，主线比前几天更完整了：国内大厂继续把 AI 办公从内部赛马切到集中作战，字节一边拆飞书、一边砸算力，腾讯用新语音模型补全多模态能力，阿里和百度把分散的 Agent 产品线收成统一入口，华为则在终端和汽车上继续放大鸿蒙生态；海外这边，OpenAI 一边公开反击苹果诉讼，一边和 Google、Meta、微软等被白宫叫去闭门谈 AI 安全评测，监管和商业竞争已经开始深度交织。今天最该记住的一句话是：AI 行业正在从“比谁功能多”进入“比谁体系更完整、规则更稳、落地更硬”的阶段。</p>
+      <div class="stats">
+        <div class="stat"><strong>10</strong><span>条重点动态</span></div>
+        <div class="stat"><strong>6</strong><span>国内焦点卡片</span></div>
+        <div class="stat"><strong>4</strong><span>国际焦点卡片</span></div>
+        <div class="stat"><strong>4</strong><span>核心关键词：AI办公整合、算力、语音模型、AI监管</span></div>
+      </div>
+    </section>
+
+    <div class="section-title">
+      <h2>国内大厂与科技生态</h2>
+      <p>今天的关键词是“收口”和“加码”：办公 Agent 集中作战，算力与终端生态继续重投入</p>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="company"><span class="name">字节跳动</span><span class="type">100 亿算力 / 西北数据中心</span></div>
+        <p class="headline">字节今天最硬的信号，不是再讲一次组织调整，而是开始把“豆包 + 飞书 + 火山引擎”的故事落到真金白银的算力底座上。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>DoNews 8 月 5 日报道，字节跳动正投入约 100 亿元人民币强化人工智能算力基础设施，重点布局西北地区数据中心，覆盖芯片、服务器及电力供应体系。该投入属于其新一轮 AI 战略扩张的核心环节，用于支撑豆包大模型持续迭代、规模化应用以及火山引擎面向企业的 AI 服务。另有公开报道提到，字节 2026 年资本开支已多次上调，重点投向 AI 智算中心、GPU 集群和自研 ASIC。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>字节现在不是只在前台拼产品，而是在后台拼命囤“电力 + 芯片 + 机房”。它很清楚：豆包和企业 AI 要跑得稳，先得有足够大、足够便宜的算力。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这意味着国内 AI 竞争会继续往重资产方向走。谁能拿到更稳定的算力供给，谁就更容易支撑高频调用、企业交付和价格战。对云与芯片产业链来说，头部厂商的资本开支会继续放大上下游需求；对中小模型公司来说，算力成本和资源获取能力会进一步拉大差距。</p></div>
+        <div class="source">来源：<a href="https://www.donews.com/news/detail/4/6659260.html" target="_blank" rel="noreferrer">DoNews《字节跳动斥资百亿加码AI算力，收缩非核心业务聚焦商业化》</a> · 2026-08-05；补充：<a href="https://finance.sina.com.cn/stock/t/2026-08-03/doc-inikzeav2914498.shtml" target="_blank" rel="noreferrer">新浪财经《终于，张一鸣迎来了「豆包办公」时刻》</a></div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">腾讯</span><span class="type">混元 Hy ASR 3.0 preview</span></div>
+        <p class="headline">腾讯今天最值得看的，不是办公 Agent 再合并一次，而是它开始把语音识别从“听清”推进到“听懂”。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>8 月 4 日，腾讯混元正式发布新一代语音识别模型 Hy ASR 3.0 preview。官方介绍称，该模型基于最新一代大语言模型 Hy3 的语言理解能力，融合高精度语音识别与深度语义理解，在通用识别、上下文感知、多场景鲁棒性和方言覆盖上全面提升；开源评测集中，中文普通话 WER 3.34%、英语 WER 2.62%、粤语 WER 约 3.1%，并已上线腾讯云对外提供 API。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>过去的语音转写更像打字员，只负责把声音变成字；现在腾讯想让它变成一个能结合上下文理解你真正意思的助手，比如你改口说“不是周三，是周四”，它知道该保留哪一句。</p></div>
+        <div class="block"><h3>影响分析</h3><p>语音是 AI 进入会议、客服、车载和办公场景的重要入口。ASR 一旦从逐字转写升级为语义理解，上层的会议纪要、智能客服、实时翻译和语音 Agent 都会受益。腾讯把模型快速放到云 API 上，也说明它在抢企业级多模态基础设施的位置。</p></div>
+        <div class="source">来源：<a href="https://finance.sina.com.cn/jjxw/2026-08-04/doc-inimcxxm5288564.shtml" target="_blank" rel="noreferrer">新浪科技《腾讯混元发布最新语音识别模型Hy ASR 3.0 preview》</a>；<a href="http://tech.cnr.cn/techgd/20260805/t20260805_527748144.shtml" target="_blank" rel="noreferrer">央广网</a> · 2026-08-04 / 2026-08-05</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">阿里</span><span class="type">千问办公公测 / 三 Agent 合一</span></div>
+        <p class="headline">阿里今天的核心动作，是把原本分散试错的办公智能体真正收成一个可对外打的企业级入口。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>公开报道显示，阿里已于 8 月 3 日正式开启“千问办公”公测。该产品由 QoderWork、MuleRun 与钉钉孵化的悟空三条 Agent 产品线整合而来，面向企业生产力场景。与此同时，Qwen3.8-Max 也在同周发布，官方强调其在 coding、work、research 与长程任务上的增强，为千问办公提供模型底座。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>阿里不想再让内部团队各自做一个小助手、互相抢资源了，而是把它们合并成一个统一的“AI 办公员工”，再拿最强模型给它撑腰。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这代表国内大厂对 AI 办公的判断已经高度一致：分散试错阶段结束，接下来拼的是统一入口、企业交付和模型能力。阿里有钉钉、云和 Qwen 模型，三件事一旦形成闭环，企业采购路径会更短，也会直接压迫其他办公与协同产品的升级节奏。</p></div>
+        <div class="source">来源：<a href="https://finance.sina.com.cn/roll/2026-08-03/doc-inikzuyc4561469.shtml" target="_blank" rel="noreferrer">新浪财经《阿里旗下三大Agent产品全面整合，“千问办公”开启公测》</a>；<a href="https://qwen.ai/blog?id=qwen3.8" target="_blank" rel="noreferrer">Qwen 官方博客</a> · 2026-08-03</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">百度</span><span class="type">dodo 并入百度搭子</span></div>
+        <p class="headline">百度今天释放的信号很明确：它也不再允许内部办公 Agent 和外部产品继续分两套体系跑。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>8 月 4 日公开报道显示，百度已启动内部办公智能体 dodo 与“百度搭子”的团队整合，相关研发人员与资源将并入统一产品体系，目标是实现内外部办公智能体产品完全统一，并集中推进 AI 办公赛道竞争。读创网等媒体 8 月 5 日跟进报道称，腾讯、字节、阿里、百度四家公司已经在两周内完成了一轮密集的 AI 办公组织调整。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>百度也在做同一件事：把内部已经试用过的 Agent 能力直接变成外部商品，减少重复造轮子，集中资源抢企业办公入口。</p></div>
+        <div class="block"><h3>影响分析</h3><p>当 BAT 加字节都在收编内部 Agent 团队，说明 AI 办公已不再是“实验室项目”，而是要进入真实客户、真实预算和真实组织流程的主战场。接下来行业会更看重交付能力、权限体系和数据闭环，而不是单点 Demo。</p></div>
+        <div class="source">来源：<a href="http://m.toutiao.com/group/7670491103996527140/" target="_blank" rel="noreferrer">读创网《科创001｜腾讯字节阿里百度，决战AI办公》</a>；<a href="http://m.toutiao.com/group/7670111342300348970/" target="_blank" rel="noreferrer">环球网转载《百度 AI 办公提速：dodo 并入百度搭子》</a> · 2026-08-04 / 2026-08-05</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">华为</span><span class="type">全场景新品发布会 / 手机涨价预警</span></div>
+        <p class="headline">华为今天的重点不只是一次性甩出六类新品，而是余承东公开把“硬件成本上涨”摆到了台面上。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>8 月 5 日 14:30，华为举行“尊界 MPV 及华为全场景新品发布会”，覆盖汽车、电脑、平板、手机和手表六大品类，包括尊界 V800 / V680 上市、享界 G9 开启预订，以及新款鸿蒙折叠电脑等终端产品。华为常务董事余承东在会上表示，受内存价格大幅上涨影响，所有手机之后可能都要大规模涨价，否则按原价格销售会亏损。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>华为一边继续铺“车 + PC + 手机 + 平板 + 手表”的鸿蒙全场景，一边提前给市场打预防针：AI 手机和大内存机型越来越吃硬件成本，终端价格可能扛不住了。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这说明 AI 终端竞争不只比系统和模型，也比供应链和成本控制。如果存储、内存价格持续上行，中低端机型会最先承压，头部厂商的备货能力和高端化能力会更重要。华为借此也在强化一个叙事：鸿蒙生态不是单点设备，而是一整套跨终端入口。</p></div>
+        <div class="source">来源：<a href="https://k.sina.com.cn/article_7857201856_1d45362c001908i8js.html?from=tech" target="_blank" rel="noreferrer">新浪互联网热点小时报《2026年08月05日05时》</a>；<a href="http://m.toutiao.com/group/7670499090542756404/" target="_blank" rel="noreferrer">观察者网转载《余承东：所有手机之后可能都要大规模涨价》</a> · 2026-08-05</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">小米</span><span class="type">澎湃 OS 4 / REDMI K100 Pro</span></div>
+        <p class="headline">小米今天没有喊出最激进的 AI 口号，但它在做的事情很实际：继续把系统升级和新机节奏铺满更大盘的用户群。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>8 月 5 日公开信息显示，澎湃 OS 4 升级名单在网上曝光，传闻将分四批推进，多款老机型在列；同时 REDMI K100 Pro 双旗舰被曝将于 8 月 11 日发布。另有媒体盘点 8 月新机阵容时提到，小米将延续 9 月新品周期，后续还会推出更高配机型，AI 能力仍会是系统和终端宣传重点之一。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>小米现在拼的不只是一台高端机，而是让更多旧机型也能升级新系统，再用 REDMI 和数字系列把不同价位段的用户都接住。</p></div>
+        <div class="block"><h3>影响分析</h3><p>对终端厂商来说，AI 体验能否真正形成规模，不只取决于旗舰机参数，还取决于系统覆盖范围和更新节奏。小米如果能把澎湃 OS 升级面铺开，AI 功能的触达量会更大，也更容易形成应用生态和服务收入的基础。</p></div>
+        <div class="source">来源：<a href="https://ent.163.com/keywords/5/0/5c0f7c73/1.html" target="_blank" rel="noreferrer">网易标签页《小米》</a>；<a href="https://www.36kr.com/p/3921825252726664" target="_blank" rel="noreferrer">36氪《谷歌抢跑2nm、荣耀机器人手机开卖，8月新机谁最能打？》</a>；<a href="http://m.toutiao.com/group/7670347827659014706/" target="_blank" rel="noreferrer">今日头条转载《苹果首款折叠iPhone曝光》</a> · 2026-08-05</div>
+      </article>
+    </section>
+
+    <div class="section-title">
+      <h2>国际科技公司</h2>
+      <p>今天的主线是法律战、闭门监管和教育场景扩张，AI 正在同时被推向法庭、白宫和课堂</p>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="company"><span class="name">OpenAI</span><span class="type">回应苹果诉讼 / 教育插件</span></div>
+        <p class="headline">OpenAI 今天最值得关注的，不是又发了一个模型，而是它选择公开反击苹果，并继续把 ChatGPT 往教育场景里推。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>OpenAI 官网新闻页显示，8 月 4 日发布《Apple is getting this wrong》，公开回应苹果提起的诉讼，称相关指控毫无根据，并分享了它所说的能还原事件经过的消息记录；同日还发布教育方向更新，为 ChatGPT Work 和 Codex 推出新的教育插件，帮助 K-12 教师、高校教育者和学生进行学习、教学、研究和开发。The Neuron 报道补充称，苹果要求加快证据开示和证人作证，OpenAI 则称该案毫无依据。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>OpenAI 不想在苹果的诉讼里被动挨打，所以直接把话挑明；同时它也没忘产品扩张，开始把 ChatGPT 和 Codex 包装成老师和学生都能用的学习工具。</p></div>
+        <div class="block"><h3>影响分析</h3><p>一边打官司、一边进课堂，说明 OpenAI 在同时守护自己的商业边界和增长场景。教育市场如果被打开，不仅能带来新增用户，还能强化“AI 是基础工具”的社会认知；但与苹果的冲突也提醒市场，平台关系和法律风险会直接影响 AI 分发入口。</p></div>
+        <div class="source">来源：<a href="https://openai.com/news/" target="_blank" rel="noreferrer">OpenAI News 官方页面</a>；<a href="https://openai.com/zh-Hans-CN/news/?display=list" target="_blank" rel="noreferrer">OpenAI 中文新闻页</a>；<a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-tuesday-august-4-2026/" target="_blank" rel="noreferrer">The Neuron《Everything That Happened in AI Today》</a> · 2026-08-04</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Google</span><span class="type">白宫 AI 闭门会 / AlphaGenome</span></div>
+        <p class="headline">Google 今天的位置很微妙：一边和其他 AI 巨头一起被叫到白宫谈安全评测，一边继续把 AI 能力扩展到搜索之外的科学领域。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>凤凰网等媒体 8 月 5 日报道，当地时间 8 月 4 日，OpenAI、Anthropic、Google、Meta、英伟达、微软等十余家美国 AI 巨头代表前往白宫，与美国国家网络总监办公室（ONCD）举行闭门会晤，审阅一份经过数月磋商的 AI 评估框架；报道同时提到该框架未立即公开。另有 This Week in AI 汇总提到，Google 近期更新了 AlphaGenome，把生成式 AI 继续推向生物学和基因研究。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>谷歌这类公司现在既要在最前沿做 AI，又要坐在监管者的会议室里商量规则；同时它还在把 AI 从文本和代码，延伸到更硬核的生物科研场景。</p></div>
+        <div class="block"><h3>影响分析</h3><p>如果白宫推动的评估框架逐步落地，头部模型公司在发布、安全测试和对外披露上会面对更明确但也更重的合规要求。而 AlphaGenome 这类项目说明，Google 仍在争夺“AI 作为科研基础设施”的长期位置，这种高壁垒领域一旦形成优势，会比普通消费级功能更难被短期追平。</p></div>
+        <div class="source">来源：<a href="https://finance.ifeng.com/c/8vLMVElN9Ue" target="_blank" rel="noreferrer">凤凰网《白宫召集AI巨头闭门会》</a>；<a href="https://germanytimes.com/zzmkrm-this-week-in-ai-meta-s-superintelligence-push-xai-s-ten-billion-dollar-raise-genesis-ai-s-robotics-ambitions-microsoft" target="_blank" rel="noreferrer">Germany Times / This Week in AI</a> · 2026-08-04 / 2026-08-05</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Meta</span><span class="type">超级智能投入 / 白宫闭门会</span></div>
+        <p class="headline">Meta 今天最值得注意的，是它继续被放在“超级智能竞赛”和“AI 监管谈判”两条主线的交点上。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>多份 This Week in AI 汇总在 8 月 4 日至 5 日提到，Meta 正在推进其超级智能方向的投入，相关报道将其与 xAI 融资、Microsoft 重组、Amazon 机器人里程碑等并列为本周 AI 行业大事。与此同时，Meta 也确认参加了 8 月 4 日白宫与 ONCD 的闭门会议，与 OpenAI、Google、Anthropic、微软等共同讨论 AI 安全评测框架。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>Meta 一边在大模型和超级智能上继续加码，一边也必须坐到监管者面前，参与制定未来可能约束自己的规则。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这说明头部 AI 公司的竞争已经不是单纯的技术竞赛，而是“技术投入 + 政策游说 + 安全合规”的复合战。Meta 如果能在超级智能叙事和开源生态上同时保持影响力，就会在未来规则制定中拥有更多话语权；但监管趋严也会抬高研发和发布成本。</p></div>
+        <div class="source">来源：<a href="https://australiatimes.com/zzmken-this-week-in-ai-meta-s-superintelligence-push-xai-s-ten-billion-dollar-raise-genesis-ai-s-robotics-ambitions-microsoft" target="_blank" rel="noreferrer">Australia Times《This Week in AI》</a>；<a href="https://conexaotc.com.br/post/6037" target="_blank" rel="noreferrer">ConexaoTC《Casa Branca convoca Meta, Anthropic, OpenAI e Google...》</a> · 2026-08-04 / 2026-08-05</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Apple</span><span class="type">诉讼加速 / 与 OpenAI 冲突</span></div>
+        <p class="headline">苹果今天最有信号意义的，不是又曝光了哪款硬件，而是它和 OpenAI 的冲突正在从合作关系转向法律对抗。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>The Neuron 8 月 5 日汇总称，苹果在与 OpenAI 的诉讼中要求加快 discovery 和 depositions；OpenAI 则公开称案件毫无根据，并发布消息记录反驳苹果说法。36氪 8 月 5 日报道也提到，为与 OpenAI 切割，苹果已在 2026 年 1 月与 Google 签署多年期协议，每年支付约 10 亿美元，用 Gemini 驱动新版 Siri 和 Apple Intelligence。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>苹果和 OpenAI 已经不是“合作不愉快”那么简单，而是在争夺谁定义 AI 入口、谁掌握用户数据和品牌话语权。苹果也在用切到 Gemini 的方式给自己留后路。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这会影响整个移动端 AI 生态：如果苹果减少对 OpenAI 的依赖，ChatGPT 在苹果设备上的默认入口价值会被削弱；Google 则可能借 Gemini 获得更大的系统级分发机会。对开发者来说，模型供应商和平台方的关系变化，也会影响未来在 iOS / macOS 上接入 AI 的默认选择。</p></div>
+        <div class="source">来源：<a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-tuesday-august-4-2026/" target="_blank" rel="noreferrer">The Neuron AI Daily</a>；<a href="https://36kr.com/p/3925963547268993" target="_blank" rel="noreferrer">36氪《打官司、挖人，苹果和OpenAI的硬件大战才刚开始》</a> · 2026-08-05</div>
+      </article>
+    </section>
+
+    <section class="note">
+      <strong>今日观察：</strong>今天这组新闻连起来看，最明显的趋势是“集中化”。国内大厂在把分散的 AI 办公团队、模型产品和销售体系合并成统一作战单元，同时继续往算力、终端和操作系统上加码；海外大厂则在白宫监管、平台诉讼和新场景扩张之间来回切换。换句话说，AI 行业已经过了“靠一个 demo 就能兴奋”的阶段。未来真正拉开差距的，是谁能同时拥有模型能力、分发入口、算力底座、安全合规和商业交付这一整套体系。
+    </section>
+
+    <div class="footer">Generated for global-sync · dachang-news · 2026-08-05</div>
+  </main>
+</body>
+</html>
