@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 精选 - 商务极简蓝</title>
+<style>
+  :root { --primary: #0052D9; --bg: #F3F5F8; --card-bg: #FFFFFF; --text-main: #1C1F23; --text-sub: #5C6A82; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background-color: var(--bg); color: var(--text-main); margin: 0; padding: 20px; }
+  .container { max-width: 700px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+  .header { border-bottom: 2px solid var(--primary); padding-bottom: 16px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .header h1 { color: var(--primary); margin: 0; font-size: 28px; font-weight: 600; }
+  .date { color: var(--text-sub); font-size: 14px; }
+  .news-item { border-left: 3px solid var(--primary); padding: 16px 20px; margin-bottom: 20px; background: #F8FAFC; border-radius: 0 8px 8px 0; transition: all 0.3s ease; }
+  .news-item:hover { transform: translateX(4px); box-shadow: 0 2px 10px rgba(0,82,217,0.1); }
+  .news-item h2 { margin: 0 0 10px 0; font-size: 18px; color: var(--text-main); }
+  .news-item p { margin: 0 0 12px 0; font-size: 15px; color: var(--text-sub); line-height: 1.6; }
+  .tag { display: inline-block; background: #E0EBF5; color: var(--primary); padding: 4px 10px; border-radius: 4px; font-size: 12px; margin-bottom: 12px; font-weight: 500; }
+  .link { color: var(--primary); text-decoration: none; font-size: 14px; font-weight: 500; }
+  .link:hover { text-decoration: underline; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .footer { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: var(--text-sub); font-size: 12px; }
+  @media (max-width: 600px) { .container { padding: 20px; } .header { flex-direction: column; align-items: flex-start; gap: 8px; } }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>💻 GitHub 精选</h1>
+      <div class="date">2026年8月5日</div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">AI 编程代理 / 自动化</span>
+      <h2>OpenHands Agent Canvas：把“代码代理”变成可控、可切换、可自动化的工程工作台</h2>
+      <p>OpenHands Agent Canvas 是一个<strong>自托管（self-hosted）的开发者控制中心</strong>：你可以在同一个界面里运行 OpenHands、Claude Code、Codex、Gemini 等 ACP 兼容的 coding agent，并把它们接到本地、Docker、远端 VM 或云端后端上，实现“同一套工作流，多个后端随时切换”。</p>
+      <p>技术亮点包括：支持多种 Agent Backend（本地/容器/虚机/企业基础设施）并在 UI 中快速切换；可以编排自动化任务（例如定时生成报告、把 GitHub Issue 自动拆解成任务等）；同时支持“自带模型”或接入第三方 agent，适配不同成本/速度/效果诉求。</p>
+      <p>适用场景：把它当成团队的“AI 工程队”控制台——长驻在一台服务器上持续运行；处理重复性的工程事务（Issue triage、报告、代码 review 辅助、依赖/文档维护）；或者作为个人开发的 agent 实验平台，快速验证不同 agent/模型/工具链组合的效果。</p>
+      <div class="links">
+        <a href="https://github.com/OpenHands/OpenHands" class="link">GitHub Repo ↗</a>
+        <a href="https://docs.openhands.dev/openhands/usage/agent-canvas/backends" class="link">Docs ↗</a>
+        <a href="https://www.openhands.dev/" class="link">Website ↗</a>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">自托管 LLM 平台 / RAG</span>
+      <h2>Open WebUI：离线可跑的“自建 ChatGPT”，支持 Ollama + OpenAI-Compatible API + RAG</h2>
+      <p>Open WebUI 是一个<strong>可扩展、功能丰富、对用户友好的自托管 AI 平台</strong>，设计目标之一就是可以在本地/内网环境里“完全离线”运行；它既能连本地的 Ollama，也能对接任何 OpenAI-compatible API（例如 vLLM、OpenRouter 等），并内置面向 RAG 的能力，适合做团队共享的 AI 入口。</p>
+      <p>技术亮点包括：多模型/多提供方自由组合；细粒度的 RBAC 与用户组；插件体系（Filters/Actions/Pipes/Tools/Skills）用于扩展能力与接入外部服务（含 MCP/OpenAPI 工具服务器）；本地知识库 + 向量检索的 RAG；以及团队协作能力（频道/笔记/持久化记忆等），更接近“可运营的 AI 内部门户”。</p>
+      <p>适用场景：快速搭建一个“公司/团队的 AI 工作台”，统一接入本地模型与云模型；用 RAG 把内部文档/规范/代码知识库接进去，做检索式问答；给非研发同学提供可控的 AI 界面与权限；或者在个人机器上配合 Ollama 做本地隐私友好的 AI 助手。</p>
+      <div class="links">
+        <a href="https://github.com/open-webui/open-webui" class="link">GitHub Repo ↗</a>
+        <a href="https://docs.openwebui.com/" class="link">Docs ↗</a>
+        <a href="https://openwebui.com/" class="link">Website ↗</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      global-sync · style_blue
+    </div>
+  </div>
+</body>
+</html>
