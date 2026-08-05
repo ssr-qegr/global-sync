@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>今日副业探索报告｜本地商家 AI 口碑增长包 & AI 客服线索收集自动化小站</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff8ed;
+      --bg-soft: #fff3df;
+      --card: rgba(255,255,255,.9);
+      --text: #352317;
+      --muted: #7a6658;
+      --line: rgba(183, 126, 73, .22);
+      --amber: #d97706;
+      --orange: #f97316;
+      --rose: #fb7185;
+      --green: #16a34a;
+      --shadow: 0 24px 60px rgba(124, 75, 25, .16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(251, 146, 60, .30), transparent 34%),
+        radial-gradient(circle at 86% 12%, rgba(251, 113, 133, .18), transparent 30%),
+        radial-gradient(circle at 50% 92%, rgba(245, 158, 11, .16), transparent 32%),
+        linear-gradient(145deg, #fffaf1 0%, #fff4e5 48%, #fffdf8 100%);
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 42px 0 48px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 34px; padding: clamp(28px, 5vw, 54px); background: linear-gradient(135deg, rgba(255,255,255,.94), rgba(255,246,231,.84)); box-shadow: var(--shadow); backdrop-filter: blur(18px); }
+    .hero::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px; border-radius: 50%; background: conic-gradient(from 120deg, rgba(249,115,22,.36), rgba(251,113,133,.24), rgba(245,158,11,.28), rgba(249,115,22,.36)); filter: blur(4px); opacity: .75; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border-radius: 999px; background: #fff3df; border: 1px solid var(--line); color: #9a5a13; font-size: 13px; font-weight: 700; }
+    h1 { position: relative; z-index: 1; margin: 20px 0 12px; font-size: clamp(34px, 5.5vw, 62px); line-height: 1.04; letter-spacing: -.045em; }
+    .lead { position: relative; z-index: 1; max-width: 920px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.85; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .metric { padding: 17px; border-radius: 22px; background: rgba(255,255,255,.78); border: 1px solid rgba(183,126,73,.18); }
+    .metric b { display: block; font-size: 23px; color: #8a4b0f; }
+    .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .section { margin-top: 22px; border: 1px solid var(--line); border-radius: 30px; background: var(--card); box-shadow: 0 16px 42px rgba(124,75,25,.11); overflow: hidden; }
+    .section-head { padding: 26px 28px 18px; border-bottom: 1px solid var(--line); background: linear-gradient(90deg, rgba(255,247,237,.92), rgba(255,255,255,.70)); }
+    .section-kicker { color: var(--orange); font-size: 13px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { margin: 8px 0 8px; font-size: clamp(25px, 3vw, 36px); letter-spacing: -.025em; }
+    .section-head p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .content { padding: 26px 28px 30px; }
+    .verdict { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: stretch; }
+    .note, .score-card { border: 1px solid rgba(183,126,73,.18); border-radius: 24px; background: #fffdf9; padding: 20px; }
+    .note strong { color: #92400e; }
+    .note p { color: var(--muted); line-height: 1.75; margin: 8px 0 0; }
+    .scores { display: grid; gap: 12px; }
+    .bar { display: grid; gap: 7px; }
+    .bar-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+    .track { height: 10px; border-radius: 999px; background: #fde7c8; overflow: hidden; }
+    .fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--amber), var(--rose)); }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { border: 1px solid var(--line); border-radius: 28px; padding: 24px; background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,243,.84)); box-shadow: 0 14px 32px rgba(124,75,25,.09); }
+    .tagline { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .pill { border-radius: 999px; padding: 6px 10px; background: #fff3df; border: 1px solid rgba(183,126,73,.18); color: #9a5a13; font-size: 12px; font-weight: 700; }
+    .project h3 { margin: 0 0 10px; font-size: 25px; letter-spacing: -.02em; }
+    .project p { margin: 0 0 16px; color: var(--muted); line-height: 1.75; }
+    .list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .list li { padding: 12px 13px; border-radius: 16px; background: rgba(255,246,231,.72); color: #574234; line-height: 1.62; }
+    .list b { color: #8a4b0f; }
+    .table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 20px; }
+    .table th, .table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(183,126,73,.16); vertical-align: top; line-height: 1.65; }
+    .table th { background: #fff3df; color: #8a4b0f; font-size: 13px; }
+    .table tr:last-child td { border-bottom: 0; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: step; }
+    .step { position: relative; padding: 20px; border-radius: 22px; border: 1px solid rgba(183,126,73,.18); background: #fffdf9; }
+    .step::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #f97316; color: white; font-weight: 800; margin-bottom: 12px; }
+    .step h4 { margin: 0 0 8px; font-size: 17px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
+    .warn { border-left: 5px solid var(--orange); background: #fff7ed; padding: 16px 18px; border-radius: 18px; color: #614331; line-height: 1.7; }
+    .sources { display: grid; gap: 9px; color: var(--muted); line-height: 1.65; font-size: 13px; }
+    .sources a { color: #9a5a13; font-weight: 700; }
+    footer { color: var(--muted); text-align: center; margin-top: 26px; line-height: 1.8; font-size: 14px; }
+    @media (max-width: 860px) { .hero-grid, .projects, .steps, .verdict { grid-template-columns: 1fr; } .wrap { width: min(100% - 24px, 1120px); padding-top: 22px; } .section-head, .content { padding-left: 20px; padding-right: 20px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">☕ style_warm · 2026-08-05 · 今日副业探索</div>
+      <h1>今天更值得验证的两条线：本地商家 AI 口碑增长包 + AI 客服线索收集自动化小站</h1>
+      <p class="lead">今天选的两条方向都偏 B 端刚需，不靠“讲 AI 概念”成交，而是帮小商家和小团队解决每天都会遇到的问题：没人维护门店资料、评价回复慢、客户咨询漏接、线索没有沉淀。它们的共同点是启动门槛低、工具链成熟、可先做很小的样板，而且后续很容易从一次性交付升级为月度维护。</p>
+      <div class="hero-grid">
+        <div class="metric"><b>2 个</b><span>今日推荐方向</span></div>
+        <div class="metric"><b>偏 B 端</b><span>客户更容易理解投入产出</span></div>
+        <div class="metric"><b>强自动化</b><span>内容、回复、报表、线索流转可复用</span></div>
+        <div class="metric"><b>可月费化</b><span>适合从首单延伸到稳定维护</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Overall Verdict</div>
+        <h2>今日结论：先做一个“看得见改善”的小包，再把它标准化成月度服务</h2>
+        <p>本地口碑增长包更适合从餐饮、教培、医美、维修、摄影、宠物等线下门店切入；AI 客服线索自动化小站更适合从顾问、课程、SaaS、家政、装修、招聘等咨询密集型业务切入。前者卖的是“被搜到、被信任、被选择”，后者卖的是“不错过客户、自动留资、自动分发”。</p>
+      </div>
+      <div class="content verdict">
+        <div class="note">
+          <strong>推荐启动顺序：</strong>
+          <p>如果你身边有线下商家资源，优先做本地商家 AI 口碑增长包，因为客户能直接看到门店资料、评价回复、帖子内容和周报结果；如果你更熟悉工具集成和流程自动化，优先做 AI 客服线索收集小站，用一个可演示的页面把“咨询 → 留资 → 分流 → 跟进提醒”跑通。两条线都不要一开始做复杂系统，先把一个行业的最小闭环跑顺。</p>
+        </div>
+        <div class="score-card">
+          <div class="scores">
+            <div class="bar"><div class="bar-row"><span>AI 自动化程度</span><b>自动化小站更高</b></div><div class="track"><div class="fill" style="width:92%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>启动门槛</span><b>口碑增长包更低</b></div><div class="track"><div class="fill" style="width:34%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>客户感知</span><b>两条都很直观</b></div><div class="track"><div class="fill" style="width:88%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>月费潜力</span><b>都适合维护费</b></div><div class="track"><div class="fill" style="width:86%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Projects</div>
+        <h2>今日 2 个副业方向</h2>
+        <p>一个从门店信任和本地搜索切入，一个从客户咨询和线索流转切入，本质都是把零散的人工运营变成标准化小系统。</p>
+      </div>
+      <div class="content projects">
+        <article class="project">
+          <div class="tagline"><span class="pill">本地商家</span><span class="pill">月度服务</span><span class="pill">低门槛</span></div>
+          <h3>01｜本地商家 AI 口碑增长包</h3>
+          <p>面向线下门店和本地服务商，提供“门店资料检查、评价回复、Google/地图帖子、常见问答、图片说明、周报复盘”的轻量维护包。客户买到的不是一堆工具，而是有人持续帮他把线上门面打理得更可信、更完整、更容易被客户选择。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>最小交付可以是一份门店信息体检表、一套评价回复模板、10 条门店帖子/短文案、常见问答优化、评价邀请话术和一页周报。后续可以升级为每周固定更新、差评预警、竞品观察和活动内容排期。</li>
+            <li><b>可行性分析：</b>BrightLocal 的产品结构本身就说明了这类需求存在：它把本地排名、商家信息同步、评价监控、Google Business Profile 帖子排期、评价获取、Citation Builder 等能力拆成可购买模块；官网还显示 Citation Builder 可按需购买，起步从每条 citation 计费，不强制订阅。这说明小商家愿意为“本地可见度、信息一致性、口碑维护”付费，但不一定愿意一上来买复杂代运营。</li>
+            <li><b>AI 自动化程度：</b>评价回复初稿、商家简介改写、问答草稿、帖子内容、活动标题、图片说明、周报摘要、竞品摘要都可以用 AI 生成；人工重点放在真实性审核、语气校准、边界控制和敏感评价处理。整体适合“AI 批量生产 + 人工把关”的服务形态。</li>
+            <li><b>启动成本：</b>很低。前期可以用免费本地 SEO 工具、表格、AI 写作工具和手工检查跑通；如果开始稳定接单，再按客户数量购买 BrightLocal、Citation Builder 或同类工具。早期最大成本不是软件，而是把某个行业的门店信息清单、评价回复边界和周报模板打磨成 SOP。</li>
+            <li><b>预期收益：</b>可以从一次性体检包切入，再转成月度维护包。一个实用的定价思路是：首月低价做基础清理和样板，第二个月开始按“每周内容 + 评价回复 + 周报”收维护费；不要承诺排名或客流，只承诺交付频次、响应时效和可见改进。</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="tagline"><span class="pill">自动化</span><span class="pill">线索收集</span><span class="pill">可演示</span></div>
+          <h3>02｜AI 客服线索收集自动化小站</h3>
+          <p>面向咨询密集的小团队，做一个轻量页面或嵌入式聊天入口：客户先用 AI 助手了解服务、留下需求和联系方式，系统自动写入表格、通知负责人、生成跟进摘要。你卖的是“少漏单、少重复问答、线索更干净”。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>最小交付可以是一个 FAQ 机器人、一个留资表单、一个线索表、一条通知链路和一份跟进话术。适合用在课程咨询、顾问服务、装修报价、招聘线索、SaaS 预约演示、本地服务预约等场景。</li>
+            <li><b>可行性分析：</b>Zapier 官方定价页显示，它的自动化平台免费方案包含 100 tasks/月，Zap workflows、Tables 和 Forms；Chatbots 免费方案可创建 2 个聊天机器人，Pro 方案支持更多机器人、知识源和网站嵌入。这类能力已经足够个人先做一个可演示 MVP：客户输入需求，机器人收集信息，Zap 把线索写入表格并推送给负责人。</li>
+            <li><b>AI 自动化程度：</b>FAQ 回答、需求澄清、线索字段整理、客户分级、跟进摘要、邮件/飞书/Slack 通知、CRM 录入都可以自动化；人工主要负责知识库梳理、敏感问题兜底、销售话术审核和流程异常处理。比单纯做页面更有长期价值，因为它直接接住业务流。</li>
+            <li><b>启动成本：</b>低到中低。MVP 阶段可以先用 Zapier 免费任务额度和 Chatbots 免费方案验证；如果客户需要网站嵌入、更长历史记录或更多知识源，再升级到付费方案。也可以用其他自动化工具替代，但关键是先跑通一个行业样板。</li>
+            <li><b>预期收益：</b>更适合按“搭建费 + 月维护费”收费。搭建费覆盖页面、机器人、表单、表格、通知链路和测试；月维护费覆盖 FAQ 更新、线索字段调整、错误排查和月度优化。收入潜力取决于你能否证明它减少漏接咨询、提高跟进速度，而不是机器人本身多炫。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Comparison</div>
+        <h2>投入产出对比</h2>
+        <p>这两条线都能小步启动，但销售对象、交付边界和风险点不同。越早把服务边界写清楚，越不容易变成无限售后。</p>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead><tr><th>维度</th><th>本地商家 AI 口碑增长包</th><th>AI 客服线索收集自动化小站</th></tr></thead>
+          <tbody>
+            <tr><td>适合人群</td><td>有本地商家资源、愿意做内容维护和客户沟通的人</td><td>懂一点自动化工具、能把业务流程拆成表单和通知链路的人</td></tr>
+            <tr><td>核心交付</td><td>门店资料、评价回复、帖子内容、周报、口碑维护 SOP</td><td>聊天入口、FAQ 知识库、留资表单、线索表、通知自动化</td></tr>
+            <tr><td>首单打法</td><td>免费做 1 份门店体检报告，用真实问题推动基础优化包成交</td><td>先做一个可点击样板，让客户现场看到线索如何自动进入表格</td></tr>
+            <tr><td>优势</td><td>客户容易理解，维护频次稳定，低技术门槛</td><td>自动化感强，交付结果可演示，容易扩展到多个行业</td></tr>
+            <tr><td>主要风险</td><td>不能承诺排名和客流，差评处理需要人工谨慎把关</td><td>客户知识库不完整会影响回答质量，流程异常要有人工兜底</td></tr>
+            <tr><td>最小验证</td><td>选 3 家门店做信息体检，拿到 1 家愿意付费做首月维护</td><td>选 1 个行业做 Demo，让 5-10 个潜在客户试用并反馈</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">5-Day Action Plan</div>
+        <h2>5 天启动计划</h2>
+        <p>今天的重点不是收藏方向，而是在 5 天内做出一个别人能看懂、能试用、能反馈的最小样板。</p>
+      </div>
+      <div class="content steps">
+        <div class="step"><h4>第 1 天：锁定一个细分行业</h4><p>只选一个行业，比如宠物店、教培、摄影、装修、课程顾问或本地维修。越窄越容易写出有效话术和清单。</p></div>
+        <div class="step"><h4>第 2 天：做一份样板交付</h4><p>口碑线做门店体检报告；自动化线做一个可点击的 FAQ + 留资 + 表格 + 通知 Demo。先像能卖，再追求完美。</p></div>
+        <div class="step"><h4>第 3 天：找真实客户看</h4><p>联系 5-10 个目标客户，不急着报价，先问他们哪里觉得有用、哪里不信、愿不愿意让你试跑一周。</p></div>
+        <div class="step"><h4>第 4 天：写清边界和报价</h4><p>明确包含哪些交付、多久一次、客户要提供什么、不承诺什么、修改次数是多少。边界越清楚，越能长期做。</p></div>
+        <div class="step"><h4>第 5 天：沉淀成标准包</h4><p>把清单、提示词、话术、周报、配置步骤和异常处理写成 SOP。真正值钱的是第二个客户能更快交付。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Risk Notes</div>
+        <h2>避坑提醒</h2>
+      </div>
+      <div class="content">
+        <div class="warn">不要把收益承诺写进报价。口碑增长包不能保证排名、曝光或到店人数；自动化小站也不能保证成交率。更稳的表达是：我帮你固定完成哪些动作、把哪些重复工作自动化、每周给你哪些可检查结果。副业早期最怕服务边界模糊，尤其是评价回复、客户咨询和敏感信息处理，一定要保留人工审核和客户确认环节。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Sources</div>
+        <h2>参考线索</h2>
+        <p>以下资料主要用于判断今天这两条副业方向是否具备“工具成熟、前期成本可控、可先从 MVP 做起”的现实可行性。</p>
+      </div>
+      <div class="content sources">
+        <div>• 本地口碑与本地搜索方向：<a href="https://www.brightlocal.com/">BrightLocal Home</a>、<a href="https://www.brightlocal.com/pricing/">BrightLocal Pricing</a>、<a href="https://www.brightlocal.com/free-local-seo-tools/">BrightLocal Free Local SEO Tools</a>。</div>
+        <div>• AI 客服与自动化小站方向：<a href="https://zapier.com/pricing">Zapier Pricing</a>、<a href="https://zapier.com/ai/chatbot">Zapier Chatbots</a>、<a href="https://zapier.com/apps">Zapier App Integrations</a>。</div>
+        <div>• 设计和素材辅助：<a href="https://www.canva.com/pricing/">Canva Pricing</a>、<a href="https://www.canva.com/canva-ai/">Canva AI</a>。</div>
+      </div>
+    </section>
+
+    <footer>
+      生成日期：2026-08-05｜GitHub Pages：https://ssr-qegr.github.io/global-sync/bywork/bywork-20260805.html<br />
+      本报告用于副业方向探索与 MVP 验证，不构成收益承诺。
+    </footer>
+  </main>
+</body>
+</html>
