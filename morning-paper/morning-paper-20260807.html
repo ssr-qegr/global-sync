@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>今日精选晨报 - 2026年8月7日</title>
+  <style>
+    :root {
+      --primary: #00B26B;
+      --accent: #0AAE9E;
+      --bg: #F2FBF6;
+      --card-bg: rgba(255,255,255,0.96);
+      --text-main: #173B2E;
+      --text-sub: #58706A;
+      --line: rgba(10,174,158,0.18);
+      --soft: #F7FFFB;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: "Nunito", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at top left, rgba(0,178,107,0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(10,174,158,0.12), transparent 26%),
+        var(--bg);
+      line-height: 1.75;
+    }
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 42px;
+      box-shadow: 0 24px 64px rgba(15,143,121,0.10);
+    }
+    .header {
+      text-align: center;
+      padding-bottom: 22px;
+      margin-bottom: 30px;
+      border-bottom: 2px dashed rgba(10,174,158,0.24);
+    }
+    .header h1 {
+      margin: 0 0 10px;
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+    }
+    .date {
+      font-size: 15px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+    .brief {
+      margin: 14px auto 0;
+      max-width: 760px;
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+    .section-title {
+      margin: 34px 0 16px;
+      padding-bottom: 8px;
+      font-size: 23px;
+      font-weight: 900;
+      color: var(--accent);
+      border-bottom: 2px dashed rgba(10,174,158,0.22);
+    }
+    .news-item {
+      position: relative;
+      margin-bottom: 24px;
+      padding: 24px 24px 24px 46px;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--soft) 100%);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .news-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(15,143,121,0.10);
+      border-color: rgba(10,174,158,0.38);
+    }
+    .news-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 12px;
+      border-radius: 22px 0 0 22px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+    }
+    .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(10,174,158,0.16);
+      background: rgba(0,178,107,0.10);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .news-item h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      font-weight: 850;
+      color: var(--text-main);
+    }
+    .news-item h3 {
+      margin: 14px 0 6px;
+      font-size: 16px;
+      font-weight: 850;
+      color: var(--accent);
+    }
+    .news-item p {
+      margin: 0 0 10px;
+      font-size: 15px;
+      color: var(--text-sub);
+    }
+    .stock-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 16px;
+      font-size: 14px;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+    .stock-table th {
+      background: rgba(0,178,107,0.12);
+      color: var(--accent);
+      padding: 9px 12px;
+      text-align: left;
+      font-weight: 800;
+    }
+    .stock-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid rgba(10,174,158,0.12);
+      color: var(--text-sub);
+      vertical-align: top;
+    }
+    .stock-table .up { color: #D32F2F; font-weight: 800; }
+    .stock-table .down { color: #00897B; font-weight: 800; }
+    .source {
+      margin-top: 10px;
+      color: rgba(88,112,106,0.92);
+      font-size: 13px;
+    }
+    .source a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .source a:hover { text-decoration: underline; }
+    .footer {
+      margin-top: 32px;
+      padding-top: 18px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(88,112,106,0.92);
+      border-top: 1px dashed rgba(10,174,158,0.24);
+      font-weight: 700;
+    }
+    @media (max-width: 600px) {
+      body { padding: 12px; }
+      .container { padding: 24px; border-radius: 20px; }
+      .header h1 { font-size: 28px; }
+      .news-item { padding: 20px 20px 20px 32px; }
+      .stock-table { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🌅 今日精选晨报</h1>
+      <div class="date">✨ 2026年8月7日 星期五 ✨</div>
+      <div class="brief">周五早间版晨报：市场看 A 股沪指站稳 3900 点、港股回调、美股道指回落 0.85%、黄金盘中突破 4300 美元；时政看国务院一次核准 8 台核电机组、普京组建无人系统部队、伊朗拟禁止美以船只通过霍尔木兹海峡；财经看央行下半年适度宽松定调、证监会"稳市场"放首位、今日公布 7 月外贸数据；技术看字节梁汝波年中会坚持大模型自研、谷歌 DeepMind 大地震 Jeff Dean 离职创业。</div>
+    </div>
+
+    <div class="section-title">📊 ① 股市总览</div>
+    <div class="news-item">
+      <span class="tag">🌏 全球市场</span>
+      <h2>A 股沪指站稳 3900 点，港股回调，美股道指回落 0.85%，黄金盘中破 4300 美元</h2>
+      <table class="stock-table">
+        <tr><th>市场 / 资产</th><th>最新表现</th><th>观察</th></tr>
+        <tr><td>A 股</td><td class="up">沪指 +0.57% 报 3900.35，深成指 -0.24% 报 14110.12，创业板指 -0.55% 报 3515.56</td><td>连续两日低开高走，沪指重新站上 3900 点；成交 2.53 万亿元缩量约 1309 亿；煤炭、氟化工、贵金属领涨，教育、汽车整车下挫。</td></tr>
+        <tr><td>港股</td><td class="down">恒生指数 -1.49%，恒生科技 -2.28%</td><td>科技、汽车股领跌，百度、比亚迪、吉利跌超 4%；MINIMAX-W 涨超 17%（纳入港股通）；南向资金净流出 14.61 亿港元。</td></tr>
+        <tr><td>美股</td><td class="down">道指 -0.85%（-464 点）报 53885.10；标普500 -0.18% 报 7709.96；纳指 -0.06% 报 26348.35</td><td>道指从前日历史新高回落；霍尼韦尔财报不及预期拖累工业板块；能源板块逆势涨 1.59%，布伦特原油涨近 4%。</td></tr>
+        <tr><td>大宗商品</td><td class="up">现货黄金盘中突破 4300 美元/盎司，收报约 4307 美元；近三日累涨超 5%</td><td>布伦特原油涨近 4% 至约 80 美元上方，霍尔木兹海峡紧张局势持续推升能源溢价；白银小幅回调至约 61.8 美元。</td></tr>
+      </table>
+      <h3>📰 新闻原文摘要</h3>
+      <p>8 月 6 日全球市场分化：A 股沪指在大盘蓝筹护盘下连续第二日低开高走，重新站上 3900 点，但深成指和创业板指小幅收跌；港股受科技汽车股拖累明显回调。美股方面，道指从前一交易日创下的历史新高回落 464 点，标普 500 和纳指微跌，能源板块因油价上涨逆势走强。现货黄金延续前一日暴涨势头，盘中突破 4300 美元关口，创 6 月下旬以来新高，近三个交易日累计涨幅超 5%。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>A 股是"权重搭台、题材歇脚"——大盘蓝筹在撑指数，但成长赛道开始分化；港股则是前期涨幅较大的科技汽车股在获利回吐。美股道指昨天刚创新高今天就回落，属于正常的技术性回调；黄金继续冲，说明地缘风险（霍尔木兹海峡）和加息预期降温这两条线还在同时发力。</p>
+      <h3>💡 意义解读</h3>
+      <p>市场主线仍是"地缘博弈 + 货币政策预期 + AI 资本开支可持续性"。沪指站稳 3900 点叠加缩量，说明追高意愿有所减弱但底部支撑仍在；黄金突破 4300 美元反映避险需求未消；今日中国将公布 7 月外贸数据，可能对短期风险偏好产生直接影响。</p>
+      <div class="source">来源：<a href="http://www.xinhuanet.com/20260807/a35f60b8b20a4a8cb543b8f33997eae0/c.html">新华网：纽约股市三大股指 6 日下跌</a>；<a href="https://finance.sina.com.cn/jjxw/2026-08-06/doc-inimkfvc3055708.shtml">新浪财经：沪指震荡反弹涨 0.57%</a>；<a href="https://www.stcn.com/article/detail/4062563.html">证券时报：黄金盘中突破 4300 美元</a></div>
+    </div>
+
+    <div class="section-title">🏛️ ② 时事政治</div>
+    <div class="news-item">
+      <span class="tag">🇨🇳 国内时政</span>
+      <h2>国务院一次核准 8 台核电机组，新能源版图再扩张</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>据俄罗斯卫星通讯社 8 月 7 日报道，2026 年 7 月 31 日国务院常务会议核准了四个核电项目，共计 8 台新机组，分别位于浙江（金七门）、广东（太平岭）、辽宁（庄河）和山东（莱阳）。这是中国在"积极安全有序发展核电"方针下的又一重大举措。此外，国家防总办公室、应急管理部近日向新疆调拨抗旱水泵 40 台、发电机 115 台等中央抗旱物资支持抗旱减灾。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>一次性批 8 台核电机组是很大的力度，覆盖东部沿海四个省份，说明核电在清洁能源转型中的基荷地位进一步确认。核电项目建设周期长、投资大，对上下游产业链（核电设备、材料、运维）有持续拉动。</p>
+      <h3>💡 意义解读</h3>
+      <p>在"双碳"目标和能源安全双重驱动下，中国核电审批保持常态化节奏。8 台机组的核准不仅利好核电设备制造商和建设企业，也反映出在AI算力需求激增、电力消费持续增长的背景下，稳定的基荷电源建设正在加速。</p>
+      <div class="source">来源：<a href="https://sputniknews.cn/20260807/1072670463.html">俄罗斯卫星通讯社：一次核准 8 台新机组，中国核电版图再扩张</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌍 国际局势</span>
+      <h2>普京组建俄军无人系统部队并大幅调整军方高层，伊朗拟禁止美以船只通过霍尔木兹海峡</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>俄罗斯总统普京 8 月 5 日会见俄国防部领导层，宣布系列人事调整：原"中部"集群司令索洛德丘克任国防部副部长分管后勤，原"东部"集群司令伊瓦纳耶夫任"中部"集群司令，并任命利亚明为新组建的"无人系统部队"首任司令。普京称俄国防部正根据特别军事行动经验完善组织架构。同日，伊朗法尔斯通讯社报道，伊朗议会主席团成员萨利米披露霍尔木兹海峡战略管理方案初步文本，拟禁止美国、以色列等国船只通过海峡，违规者最高处以货物价值 20% 罚款。此前伊朗与阿曼已就新航道方案接近敲定，但特朗普明确表示"不允许伊朗收费"。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>普京这轮调整有两个重点：一是专门成立"无人系统部队"这个新兵种，说明无人机在俄乌战场已经从辅助手段升级为决定性作战力量；二是换后勤主官，打的是消耗战后勤保障的算盘。伊朗那边则是一边和阿曼谈航道开放，一边议会放狠话要禁美以船只、罚 20%，谈判桌上的筹码博弈很明显。</p>
+      <h3>💡 意义解读</h3>
+      <p>俄军组建无人系统部队标志着军事组织形态向无人化、智能化转型的加速，对全球军事技术竞争有示范效应。霍尔木兹海峡局势则继续是影响油价和全球通胀预期的核心变量——伊朗议会的强硬提案与伊阿航道谈判形成"边打边谈"格局，任何误判都可能导致能源运输风险溢价急升。</p>
+      <div class="source">来源：<a href="https://finance.sina.com.cn/roll/2026-08-05/doc-inimhpni1278340.shtml">新浪财经引央视新闻：普京宣布俄国防系统人事调整</a>；<a href="http://www.xinhuanet.com/20260807/95a3ac0f1be14dce881e8ea0c9b8f7ca/c.html">新华网：伊朗拟禁止敌对方通行霍尔木兹海峡</a></div>
+    </div>
+
+    <div class="section-title">💰 ③ 金融财经</div>
+    <div class="news-item">
+      <span class="tag">🏦 国内财经</span>
+      <h2>央行定调下半年适度宽松，证监会"稳市场"放首位，今日公布 7 月外贸数据</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>央行 8 月 1 日召开下半年工作会议，明确继续实施适度宽松的货币政策，综合运用逆回购、MLF、国债买卖等工具保持流动性充裕，引导金融机构加大实体经济信贷投放，降准降息工具保留在工具箱内。8 月 5 日央行开展 5000 亿元 3 个月期买断式逆回购操作。证监会公布下半年七大监管重点，"综合施策全力维护市场平稳运行"位列第一。金融监管总局、央行、证监会、财政部四部门联合发布《关于健全金融机构治理的实施意见》，首份覆盖银证保证基全业态的系统性治理文件。今日（8 月 7 日）海关总署将公布 7 月进出口数据，路透调查预计出口增速较 6 月的 27% 有所放缓但仍保持稳健。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>政策面信号很明确：货币不会急转弯，资金面会保持宽裕；监管把"稳市场"排第一，说明不希望股市大起大落；四部门联合出治理文件，是给金融机构的公司治理上紧箍咒。今天的外贸数据是短期关键变量——如果出口依然强劲，对 A 股和人民币都是支撑。</p>
+      <h3>💡 意义解读</h3>
+      <p>"适度宽松 + 稳市场 + 金融治理"三位一体的政策组合，为资本市场提供了底部支撑。AI 相关产品出口高速增长（深圳上半年 AI 产品进出口增速超 50%）是外贸结构升级的亮点。7 月数据若好于预期，可能进一步强化"经济复苏 + 政策友好"的看多逻辑。</p>
+      <div class="source">来源：<a href="https://finance.sina.cn/stock/ywgg/2026-08-06/detail-inimiqxt4019954.d.html">新浪财经：四大证券报头版头条精华（2026.8.6）</a>；<a href="https://reuters.com/world/china/chinas-july-exports-growth-likely-cooled-still-robust-2026-08-06">Reuters: China's July exports growth likely cooled but still robust</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌐 国际财经</span>
+      <h2>美国已退还 1000 亿美元违法关税，印度央行维持利率不变并上调 GDP 预期</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>美国海关与边境保护局 8 月 4 日披露，特朗普政府已向进口商退还约 1000 亿美元此前依据《国际紧急经济权力法》（IEEPA）征收的关税，约占该法项下 1650 亿美元关税总额的 60%。美国国际贸易法院此前已认定该法项下关税及依据《1974 年贸易法》第 122 条征收的 10% 全球进口关税均属违法，特朗普随后签署新的关税行政令。印度央行 8 月 6 日维持基准利率不变，同时将 2027 财年 GDP 增长预期从 6.6% 上调至 6.7%，并下调通胀预期，理由是国内需求韧性、制造业和服务业活动强劲。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>美国关税政策正在经历司法挑战——法院判违法，政府先退钱，但同时又签新行政令换个法律依据继续征，本质是"边打边补"。印度则是新兴市场里少有的"高增长 + 通胀可控"组合，央行按兵不动但上调增长预期，说明对经济基本面有信心。</p>
+      <h3>💡 意义解读</h3>
+      <p>美国关税退款一定程度上缓解了进口商的成本压力，但法律不确定性仍在，新行政令可能再次引发贸易摩擦。印度经济的强劲表现为全球需求提供了增量支撑，也可能吸引更多外资流入新兴市场。对中国而言，需关注美国关税政策的后续演变及其对出口链条的影响。</p>
+      <div class="source">来源：<a href="https://sputniknews.cn/20260806/1072659727.html">俄罗斯卫星通讯社：美国已退还 1000 亿美元违法关税</a>；<a href="https://tmv.in/article/markets-rebound-late-sensex-finishes-higher-as-rbi-stays-put-on-interest-rates-date=2026-08-06">The Market View: RBI stays put on interest rates, raises GDP forecast</a></div>
+    </div>
+
+    <div class="section-title">🚀 ④ 技术领域</div>
+    <div class="news-item">
+      <span class="tag">🤖 大模型</span>
+      <h2>字节跳动年中会：梁汝波称大语言模型坚持自研，接受短期落后</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>字节跳动 8 月 6 日举办 2026 年度年中全员会。CEO 梁汝波总结上半年 AI 业务：豆包在 C 端应用保持竞争力，视频生成模型 Seedance 保持 SOTA（当前最佳），但大语言模型与海外领先模型差距有所拉大。梁汝波表示，字节将坚持大语言模型自研，做好基本功，接受短期落后，坚持优化长期，"最重要的是动作不要变形"。他辟谣称坚持自研并非因为外部压力，而是希望团队延迟满足感、打好技术基础，对长期实现 AGI 至关重要。此前张一鸣在内部会议强调不会使用模型蒸馏技术加速研发。创造力服务平台负责人谭待表示，ToB 领域只有 SOTA 模型才有商业价值。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>字节的态度很坦诚：大语言模型确实被拉开了，但不会走捷径（比如蒸馏开源模型来追评测分数），要从底层基本功做起。这和张一鸣之前的定调一脉相承——宁可短期榜单落后，也要把自研的根基扎牢。ToB 那边则更现实：客户只认最好的模型，第二名没有商业价值。</p>
+      <h3>💡 意义解读</h3>
+      <p>字节的选择反映了国内大模型竞争的深层分化：一派追求快速迭代和评测领先（DeepSeek、Kimi、Qwen 等近两月密集发版），另一派如字节选择"慢工出细活"。不蒸馏、不抄近道意味着更高的研发成本和更长的追赶周期，但也可能在下一代技术拐点上获得后发优势。豆包 C 端的用户基础和火山引擎的企业渠道为字节争取了时间窗口。</p>
+      <div class="source">来源：<a href="https://finance.sina.com.cn/jjxw/2026-08-06/doc-inimkfvp0704798.shtml">新浪财经：字节举行年中全员会 梁汝波称接受短期落后坚持大模型自研</a>；<a href="https://www.cls.cn/detail/2447415">财联社：字节跳动 CEO 称大语言模型会坚持自研</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🌐 科技巨头</span>
+      <h2>谷歌 DeepMind 大地震：哈萨比斯卸任 CEO，27 年老将 Jeff Dean 离职创业</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>Alphabet 于 8 月 5 日宣布重大 AI 人事重组：2024 年诺贝尔化学奖得主、Google DeepMind 创始人兼 CEO 戴米斯·哈萨比斯（Demis Hassabis）不再承担日常管理工作，转任 DeepMind 董事长兼 Alphabet 首席科学家，聚焦 AGI 长期战略和 AI 制药公司 Isomorphic Labs；DeepMind 原 CTO 科拉伊·卡武库奥卢（Koray Kavukcuoglu）升任高级副总裁，直接向 CEO 皮查伊汇报，全面负责 Gemini 研发与应用。同日，效力谷歌 27 年的首席科学家杰夫·迪恩（Jeff Dean）正式离职，联合 Sanjay Ghemawat、Oriol Vinyals、Quoc Le 三位谷歌技术元老创办新公司 Discovery Loop，方向为自动化 AI 科学发现，谷歌将对该公司进行投资。消息公布后 Alphabet 股价盘中下跌逾 5%，市值一度蒸发约 1800 亿美元。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>这是谷歌 AI 部门近年来最大的人事地震。哈萨比斯从"带兵打仗的 CEO"退到"管长期方向的首席科学家"，把 Gemini 的日常交付权交给了更偏产品化的 Kavukcuoglu；Jeff Dean 则直接出走创业，带走了三位顶级科学家。一进一退之间，谷歌 AI 的逻辑从"探索基础科学"转向"加速产品交付"。谷歌投资 Jeff Dean 的新公司，也是"放人不留绊、用云和算力维持联系"的套路。</p>
+      <h3>💡 意义解读</h3>
+      <p>这次重组标志着全球 AI 竞争进入新阶段：当 OpenAI、Anthropic 等对手在产品和商业化上快速推进时，谷歌选择收紧 Gemini 的交付节奏、收拢决策权，而把探索性研究"外溢"到独立公司。对行业而言，Jeff Dean 等顶级人才的流出可能催生新的 AI 科研范式（自动化科学发现），也意味着大公司对 AI 顶尖人才的垄断正在松动。Alphabet 股价的剧烈反应说明投资者对"大脑流失"的担忧真实存在。</p>
+      <div class="source">来源：<a href="https://finance.sina.com.cn/tech/roll/2026-08-06/doc-inimikrr4806921.shtml">新浪科技：Google 人事大地震，Jeff Dean 离职创业</a>；<a href="https://www.huxiu.com/article/4881245.html">虎嗅：谷歌同日失去两位 AI 领军人物</a>；<a href="https://www.infoq.cn/article/VwMgA7ktV9fA4eGowJ1z">InfoQ：哈萨比斯卸任 DeepMind CEO</a></div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">🇨🇳 国产模型</span>
+      <h2>国产大模型矩阵式升级：智谱 GLM-5.3 即将发布，近两月五款重磅模型密集落地</h2>
+      <h3>📰 新闻原文摘要</h3>
+      <p>据多家科技媒体报道，智谱下一代旗舰模型 GLM-5.3 即将发布。此前近两个月内，国产大模型阵营已密集推出阿里 Qwen3.8-Max、月之暗面 Kimi K3、DeepSeek V4 Flash、智谱 GLM-5.2、字节 Seedance 2.5 等五款重磅模型，形成"矩阵式"输出节奏。与此同时，DeepSeek 开放平台提示 API 即将涨价，预计涨幅较大，反映出模型推理成本和商业化压力。开源证券研报指出，2026 年"Token 工厂"正从概念走向规模化落地，商汤大装置日均 Token 服务量已达 2.42 万亿，预计年底攀升至日均 10 万亿。</p>
+      <h3>🗣️ 人话翻译</h3>
+      <p>国产大模型进入"密集发版"阶段，两个月五款旗舰模型，节奏在全球都算罕见。但 DeepSeek API 涨价也说明：烧钱推理不可持续，模型厂商开始认真考虑商业化。Token 工厂的概念正在落地——当 AI 调用量从"亿"涨到"万亿"，算力基础设施和成本控制就成了核心竞争力。</p>
+      <h3>💡 意义解读</h3>
+      <p>国产大模型的快速迭代正在缩小与海外的差距，但竞争焦点正从"模型能力"转向"推理成本 + 商业化落地 + 生态建设"。API 涨价可能是行业从"烧钱抢用户"转向"可持续经营"的信号。Token 工厂规模化意味着 AI 基础设施层（算力、网络、数据中心）的投资机会将沿产业链传导。</p>
+      <div class="source">来源：<a href="https://finance.sina.com.cn/jjxw/2026-08-06/doc-inimkfvc3055708.shtml">新浪财经收评引开源证券研报：Token 工厂规模化落地</a>；<a href="http://m.toutiao.com/group/7670929107336692275/">每日科技热点（2026.08.06）：智谱 GLM-5.3 即将发布</a></div>
+    </div>
+
+    <div class="footer">
+      (๑•̀ㅂ•́)و✧ style_green 晨报已生成：周五早安，信息密度拉满，清爽好读。
+    </div>
+  </div>
+</body>
+</html>
