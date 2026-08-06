@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub 精选 - 商务极简蓝</title>
+  <style>
+    :root { --primary: #0052D9; --bg: #F3F5F8; --card-bg: #FFFFFF; --text-main: #1C1F23; --text-sub: #5C6A82; }
+    body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background-color: var(--bg); color: var(--text-main); margin: 0; padding: 20px; }
+    .container { max-width: 700px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+    .header { border-bottom: 2px solid var(--primary); padding-bottom: 16px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: flex-end; }
+    .header h1 { color: var(--primary); margin: 0; font-size: 28px; font-weight: 600; }
+    .date { color: var(--text-sub); font-size: 14px; }
+    .news-item { border-left: 3px solid var(--primary); padding: 16px 20px; margin-bottom: 20px; background: #F8FAFC; border-radius: 0 8px 8px 0; transition: all 0.3s ease; }
+    .news-item:hover { transform: translateX(4px); box-shadow: 0 2px 10px rgba(0,82,217,0.1); }
+    .news-item h2 { margin: 0 0 10px 0; font-size: 18px; color: var(--text-main); }
+    .news-item p { margin: 0 0 12px 0; font-size: 15px; color: var(--text-sub); line-height: 1.6; }
+    .tag { display: inline-block; background: #E0EBF5; color: var(--primary); padding: 4px 10px; border-radius: 4px; font-size: 12px; margin-bottom: 12px; font-weight: 500; }
+    .link { color: var(--primary); text-decoration: none; font-size: 14px; font-weight: 500; }
+    .link:hover { text-decoration: underline; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .footer { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: var(--text-sub); font-size: 12px; }
+    @media (max-width: 600px) { .container { padding: 20px; } .header { flex-direction: column; align-items: flex-start; gap: 8px; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>💻 GitHub 精选</h1>
+      <div class="date">2026年8月6日</div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">终端 AI 编程代理 / 多协议生态</span>
+      <h2>Qwen Code：不只是在终端里写代码，而是在终端里搭起一整套可扩展的 Agent 工作流</h2>
+      <p>Qwen Code 是 QwenLM 官方开源的 AI 编程代理，核心定位非常清晰：<strong>让一个真正可用的 coding agent 直接住进终端</strong>。它不是只做补全或对话，而是把交互式 TUI、无头模式、IDE 插件、桌面端、SDK、Daemon 与 IM Bot 串成同一套产品形态，既适合个人开发者，也适合做团队级的共享代理入口。</p>
+      <p>技术亮点在于它把很多“高级玩法”做成了开箱即用：Auto-Memory、Auto-Skills、SubAgents、Agent Teams、MCP、多协议模型接入都直接内建；既能接 OpenAI、Anthropic、Gemini、Qwen，也能切到本地模型或第三方兼容提供方。对工程实践来说，这意味着你不必先搭一堆胶水层，就能把“会规划、会调工具、会切换模型”的代理能力真正跑起来。</p>
+      <p>适用场景也很广：个人日常编码时可以直接拿它做终端结对编程；脚本化场景可以用 headless 模式做 CI 批处理、仓库摘要、批量修复；团队协作时还能用 daemon / SDK / IM Bot 把同一套代理能力接到 IDE、服务端或飞书等消息通道，做成统一的 AI 工程入口。</p>
+      <div class="links">
+        <a href="https://github.com/QwenLM/qwen-code" class="link">GitHub Repo ↗</a>
+        <a href="https://qwenlm.github.io/qwen-code-docs/en/users/overview" class="link">Docs ↗</a>
+        <a href="https://github.com/QwenLM/qwen-code/releases/tag/desktop-latest" class="link">Desktop Release ↗</a>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <span class="tag">代码图谱 / MCP / 大仓上下文优化</span>
+      <h2>Gortex：把代码库先“编译”为知识图谱，再喂给 AI 代理，专治大仓上下文浪费</h2>
+      <p>Gortex 的思路很适合今天的 AI 编码现实：与其让代理每次从头读文件，不如先把代码库索引成一个可查询、可复用、跨仓库关联的图谱，再通过 CLI、MCP Server 和 Web UI 暴露给不同工具使用。它本质上是一个<strong>面向 AI 代理和 IDE 的高性能代码情报引擎</strong>，尤其适合代码量大、服务多、上下文关系复杂的工程环境。</p>
+      <p>它的技术亮点很硬核：官方 README 强调可解析 257 种语言/grammar，底层结合 tree-sitter AST、编译器级解析与持久化知识图谱；不仅能做符号、调用链、影响面分析，还支持跨仓 API contract 识别、PR 风险审查、语义搜索、长驻 daemon，以及面向多种 coding agent 的 MCP 接入。换句话说，它做的不是“再包一层聊天”，而是直接把代理读代码这件事变成结构化、高命中率、低 token 浪费的检索过程。</p>
+      <p>适用场景非常明确：如果你经常在多仓项目里做改动影响分析、排查跨服务调用链、给 AI 工具提供精确上下文，或者希望让代码评审与变更验证更少依赖“整文件通读”，Gortex 都很有价值。对技术成长也很友好，因为它让人重新理解一件事：AI 编码的瓶颈往往不在模型本身，而在代码上下文如何被组织和暴露。</p>
+      <div class="links">
+        <a href="https://github.com/zzet/gortex" class="link">GitHub Repo ↗</a>
+        <a href="https://gortex.dev/" class="link">Website ↗</a>
+        <a href="https://github.com/zzet/gortex/blob/main/docs/onboarding.md" class="link">Onboarding Docs ↗</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      global-sync · style_blue
+    </div>
+  </div>
+</body>
+</html>
