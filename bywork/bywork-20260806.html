@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>今日副业探索报告｜AI 工作流小代工 & AI 轻量 POD 选品店</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff8ed;
+      --bg-soft: #fff3df;
+      --card: rgba(255,255,255,.9);
+      --text: #352317;
+      --muted: #7a6658;
+      --line: rgba(183, 126, 73, .22);
+      --amber: #d97706;
+      --orange: #f97316;
+      --rose: #fb7185;
+      --green: #16a34a;
+      --red: #dc2626;
+      --shadow: 0 24px 60px rgba(124, 75, 25, .16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(251, 146, 60, .30), transparent 34%),
+        radial-gradient(circle at 86% 12%, rgba(251, 113, 133, .18), transparent 30%),
+        radial-gradient(circle at 50% 92%, rgba(245, 158, 11, .16), transparent 32%),
+        linear-gradient(145deg, #fffaf1 0%, #fff4e5 48%, #fffdf8 100%);
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 42px 0 48px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 34px; padding: clamp(28px, 5vw, 54px); background: linear-gradient(135deg, rgba(255,255,255,.94), rgba(255,246,231,.84)); box-shadow: var(--shadow); backdrop-filter: blur(18px); }
+    .hero::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px; border-radius: 50%; background: conic-gradient(from 120deg, rgba(249,115,22,.36), rgba(251,113,133,.24), rgba(245,158,11,.28), rgba(249,115,22,.36)); filter: blur(4px); opacity: .75; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border-radius: 999px; background: #fff3df; border: 1px solid var(--line); color: #9a5a13; font-size: 13px; font-weight: 700; }
+    h1 { position: relative; z-index: 1; margin: 20px 0 12px; font-size: clamp(34px, 5.5vw, 62px); line-height: 1.04; letter-spacing: -.045em; }
+    .lead { position: relative; z-index: 1; max-width: 920px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.85; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .metric { padding: 17px; border-radius: 22px; background: rgba(255,255,255,.78); border: 1px solid rgba(183,126,73,.18); }
+    .metric b { display: block; font-size: 23px; color: #8a4b0f; }
+    .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .section { margin-top: 22px; border: 1px solid var(--line); border-radius: 30px; background: var(--card); box-shadow: 0 16px 42px rgba(124,75,25,.11); overflow: hidden; }
+    .section-head { padding: 26px 28px 18px; border-bottom: 1px solid var(--line); background: linear-gradient(90deg, rgba(255,247,237,.92), rgba(255,255,255,.70)); }
+    .section-kicker { color: var(--orange); font-size: 13px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { margin: 8px 0 8px; font-size: clamp(25px, 3vw, 36px); letter-spacing: -.025em; }
+    .section-head p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .content { padding: 26px 28px 30px; }
+    .verdict { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; align-items: stretch; }
+    .note, .score-card { border: 1px solid rgba(183,126,73,.18); border-radius: 24px; background: #fffdf9; padding: 20px; }
+    .note strong { color: #92400e; }
+    .note p { color: var(--muted); line-height: 1.75; margin: 8px 0 0; }
+    .scores { display: grid; gap: 12px; }
+    .bar { display: grid; gap: 7px; }
+    .bar-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+    .track { height: 10px; border-radius: 999px; background: #fde7c8; overflow: hidden; }
+    .fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--amber), var(--rose)); }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { border: 1px solid var(--line); border-radius: 28px; padding: 24px; background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,250,243,.84)); box-shadow: 0 14px 32px rgba(124,75,25,.09); }
+    .tagline { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .pill { border-radius: 999px; padding: 6px 10px; background: #fff3df; border: 1px solid rgba(183,126,73,.18); color: #9a5a13; font-size: 12px; font-weight: 700; }
+    .project h3 { margin: 0 0 10px; font-size: 25px; letter-spacing: -.02em; }
+    .project p { margin: 0 0 16px; color: var(--muted); line-height: 1.75; }
+    .list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .list li { padding: 12px 13px; border-radius: 16px; background: rgba(255,246,231,.72); color: #574234; line-height: 1.62; }
+    .list b { color: #8a4b0f; }
+    .table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 20px; }
+    .table th, .table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(183,126,73,.16); vertical-align: top; line-height: 1.65; }
+    .table th { background: #fff3df; color: #8a4b0f; font-size: 13px; }
+    .table tr:last-child td { border-bottom: 0; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: step; }
+    .step { position: relative; padding: 20px; border-radius: 22px; border: 1px solid rgba(183,126,73,.18); background: #fffdf9; }
+    .step::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #f97316; color: white; font-weight: 800; margin-bottom: 12px; }
+    .step h4 { margin: 0 0 8px; font-size: 16px; color: #8a4b0f; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 14px; }
+    .sources { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .source { padding: 14px 15px; border-radius: 18px; border: 1px solid rgba(183,126,73,.18); background: #fffdf9; color: #6b4b36; text-decoration: none; line-height: 1.5; }
+    .source:hover { border-color: rgba(249,115,22,.45); transform: translateY(-1px); }
+    .footer { margin-top: 24px; text-align: center; color: #9a7a62; font-size: 13px; }
+    @media (max-width: 860px) { .hero-grid, .projects, .verdict, .steps, .sources { grid-template-columns: 1fr; } .wrap { width: min(100% - 22px, 1120px); padding-top: 22px; } .content, .section-head { padding-left: 20px; padding-right: 20px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">💼 副业探索 · 2026-08-06 · 暖色版</div>
+      <h1>把“AI 工具能力”包装成可售卖的小服务</h1>
+      <p class="lead">今天重点看两个低库存、低门槛、适合技术人周末验证的方向：一个偏 B 端服务交付，用 n8n / Zapier / Make 做小商家自动化；一个偏 C 端轻资产卖货，用 AI 设计 + Print-on-Demand 测利基图案。共同点是：先卖“确定结果”，再逐步沉淀成模板、流程和可复用资产。</p>
+      <div class="hero-grid">
+        <div class="metric"><b>2 个</b><span>今日推荐方向</span></div>
+        <div class="metric"><b>¥300 起</b><span>可做首单验证</span></div>
+        <div class="metric"><b>70%+</b><span>流程可被 AI 辅助</span></div>
+        <div class="metric"><b>7 天</b><span>建议验证周期</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Today’s Verdict</div>
+        <h2>今日结论：优先做“AI 工作流小代工”</h2>
+        <p>如果目标是低成本、快回款，B 端自动化服务比纯内容/电商更容易拿到首单；POD 更适合作为长期素材资产池，不建议一开始重投入广告。</p>
+      </div>
+      <div class="content verdict">
+        <div class="note">
+          <strong>推荐打法：</strong>
+          <p>先选一个非常窄的场景，例如“本地店铺顾客咨询 → 自动分流 → 预约提醒 → 好评邀约”，用现成工具搭出半自动流程。交付物不是“AI 系统”，而是“每天少漏 5 个线索、少手动复制 30 分钟”的具体结果。</p>
+          <p>n8n 的计费按完整 workflow execution，而非每一步计费；Zapier 则有 9,000+ app 连接，适合快速接客户已有 SaaS；Make 的可视化场景适合报价较低的流程编排。对副业来说，先用 SaaS 交付，再视订单量迁移自托管，会更稳。</p>
+        </div>
+        <div class="score-card">
+          <div class="scores">
+            <div class="bar"><div class="bar-row"><span>变现速度</span><b>85</b></div><div class="track"><div class="fill" style="width:85%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>AI 自动化程度</span><b>88</b></div><div class="track"><div class="fill" style="width:88%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>启动成本友好度</span><b>82</b></div><div class="track"><div class="fill" style="width:82%"></div></div></div>
+            <div class="bar"><div class="bar-row"><span>长期复利</span><b>76</b></div><div class="track"><div class="fill" style="width:76%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Project Ideas</div>
+        <h2>两个可启动项目</h2>
+        <p>都不建议“先做大平台”。先做 1 个可交付样板、1 个报价页、3 个私域/社群触达脚本。</p>
+      </div>
+      <div class="content projects">
+        <article class="project">
+          <div class="tagline"><span class="pill">B 端服务</span><span class="pill">n8n / Zapier / Make</span><span class="pill">首单友好</span></div>
+          <h3>01｜AI 工作流小代工</h3>
+          <p>面向本地商家、独立咨询师、小型教育机构，提供“线索收集、客户回复、预约提醒、好评邀约、日报汇总”的轻量自动化套餐。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>把客户现有表单、微信/邮件、CRM、飞书/Slack、Notion/表格串起来，再接入 LLM 生成摘要、分类和待办。</li>
+            <li><b>可行性分析：</b>客户痛点明确，流程重复，效果容易用节省时间和少漏线索量化；不需要先开发完整 SaaS。</li>
+            <li><b>AI 自动化程度：</b>高。需求访谈、流程图、节点配置、提示词、异常日报都可用 AI 辅助，人工主要负责确认业务规则。</li>
+            <li><b>启动成本：</b>¥100–¥500/月可验证。n8n Starter 年付 20€/月；Zapier Professional 年付 $19.99/月起；Make 官方页显示有免费层和付费层。</li>
+            <li><b>预期收益：</b>首单可按 ¥300–¥1,500 收搭建费；稳定后按 ¥199–¥999/月收维护费，适合沉淀成行业模板。</li>
+          </ul>
+        </article>
+        <article class="project">
+          <div class="tagline"><span class="pill">轻资产电商</span><span class="pill">AI 设计</span><span class="pill">低库存</span></div>
+          <h3>02｜AI 轻量 POD 选品店</h3>
+          <p>用 AI 做图案草稿、关键词组合和 Listing 文案，借 Printify / Etsy 等渠道测试小众图案商品，例如程序员梗、宠物纪念、城市徒步主题。</p>
+          <ul class="list">
+            <li><b>项目介绍：</b>不压库存，先做 20–50 个图案，挂到 Etsy / Shopify / TikTok Shop 等渠道，通过点击率和收藏率筛选可放大的题材。</li>
+            <li><b>可行性分析：</b>Printify 官方写明无前置库存、2,000+ 产品、90+ 供应商；适合轻量试错，但竞争激烈，不能只靠“AI 出图”。</li>
+            <li><b>AI 自动化程度：</b>中高。AI 可完成灵感、变体、标题、描述、标签、Mockup 初稿；选品判断、版权自查、定价和客服仍需人工。</li>
+            <li><b>启动成本：</b>Etsy 官方费用包含 $0.20 上架费；Printify 可免费开始，Premium 月付 $39 或年付 $24.99/月起；加上 AI 设计工具后，建议首月预算 ¥300–¥800。</li>
+            <li><b>预期收益：</b>冷启动更不稳定，建议以“每周验证 20 个图案、找到 1 个可持续出单利基”为目标；单品成熟后再考虑广告。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Comparison</div>
+        <h2>方向对比</h2>
+        <p>从技术人副业角度看，服务型现金流优先级高于纯流量型店铺。</p>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead><tr><th>维度</th><th>AI 工作流小代工</th><th>AI 轻量 POD 选品店</th></tr></thead>
+          <tbody>
+            <tr><td>适合人群</td><td>会梳理流程、能和客户沟通、有一点 API/自动化基础的人</td><td>有审美/选题耐心，愿意持续做商品测试的人</td></tr>
+            <tr><td>首单路径</td><td>找 3–5 个熟人/本地商家做诊断，卖一个 3 天交付的小流程</td><td>选 1 个细分人群，批量做图案和 Listing，观察数据</td></tr>
+            <tr><td>主要风险</td><td>客户需求蔓延、维护成本被低估、账号权限和数据边界不清</td><td>同质化严重、版权/商标风险、平台规则和流量不稳定</td></tr>
+            <tr><td>更好的商业化方式</td><td>搭建费 + 月维护费 + 模板复用</td><td>商品利润 + 图案资产复用 + 成熟利基扩品</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">7-Day Sprint</div>
+        <h2>7 天启动计划</h2>
+        <p>不要先做复杂产品，先验证“有人愿意为结果付钱”。</p>
+      </div>
+      <div class="content steps">
+        <div class="step"><h4>第 1 天：定场景</h4><p>只选一个垂直场景，例如“培训机构线索跟进”或“宠物店好评邀约”，写出 3 个可量化痛点。</p></div>
+        <div class="step"><h4>第 2–3 天：做 Demo</h4><p>用 n8n / Zapier / Make 搭出表单、LLM 分类、消息通知、日报汇总的最短链路。</p></div>
+        <div class="step"><h4>第 4–5 天：找反馈</h4><p>联系 10 个潜在客户，不卖工具，直接问“这条流程能不能帮你少漏单/省时间”。</p></div>
+        <div class="step"><h4>第 6–7 天：收首单</h4><p>给出低风险报价：¥300 体验搭建，满意后再转月维护；同时记录每个交付步骤，准备模板化。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Sources</div>
+        <h2>参考来源</h2>
+        <p>以下来源用于核对工具能力、费用结构和平台规则；具体价格会随地区和订阅周期变化，启动前应再以官网为准。</p>
+      </div>
+      <div class="content sources">
+        <a class="source" href="https://n8n.io/pricing/" target="_blank" rel="noreferrer">n8n Pricing：按 workflow executions 计费，Starter 20€/月年付，含 AI credits</a>
+        <a class="source" href="https://zapier.com/pricing" target="_blank" rel="noreferrer">Zapier Pricing：9,000+ integrations，Professional $19.99/月年付起</a>
+        <a class="source" href="https://www.make.com/en/pricing" target="_blank" rel="noreferrer">Make Pricing：免费层与付费自动化套餐，按 credits / 场景用量计费</a>
+        <a class="source" href="https://printify.com/pricing/" target="_blank" rel="noreferrer">Printify Pricing：0 库存、2,000+ 产品、90+ 供应商，Premium $39/月或 $24.99/月年付</a>
+        <a class="source" href="https://m.etsy.com/legal/fees/" target="_blank" rel="noreferrer">Etsy Fees & Payments Policy：Listing fee $0.20，另有交易和支付相关费用</a>
+        <a class="source" href="https://printify.com/blog/printify-free-vs-premium/" target="_blank" rel="noreferrer">Printify Free vs Premium：免费层适合起步，Premium 提供产品折扣和扩展支持</a>
+      </div>
+    </section>
+
+    <div class="footer">Generated for sunshurong.qegr · style_warm · GitHub Pages</div>
+  </main>
+</body>
+</html>
