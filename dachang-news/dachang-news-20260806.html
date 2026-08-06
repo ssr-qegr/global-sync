@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>今日大厂新闻｜2026-08-06</title>
+  <style>
+    :root { --primary: #B388FF; --bg: #0D0D0D; --card-bg: #1A1A1A; --text-main: #E0E0E0; --text-sub: #9E9E9E; --accent: #00E5FF; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: radial-gradient(circle at top left, rgba(179,136,255,0.18), transparent 32%), radial-gradient(circle at top right, rgba(0,229,255,0.12), transparent 36%), var(--bg); color: var(--text-main); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1220px; margin: 0 auto; padding: 32px 18px 56px; }
+    .hero { position: relative; overflow: hidden; border: 1px solid rgba(179,136,255,0.28); border-radius: 28px; padding: 40px; background: linear-gradient(135deg, rgba(179,136,255,0.18), rgba(0,229,255,0.06)), rgba(26,26,26,0.88); box-shadow: 0 24px 80px rgba(0,0,0,0.42); }
+    .hero::after { content: ""; position: absolute; width: 260px; height: 260px; right: -80px; top: -100px; background: radial-gradient(circle, rgba(0,229,255,0.26), transparent 68%); filter: blur(2px); }
+    .tag { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(0,229,255,0.1); color: var(--accent); font-size: 13px; border: 1px solid rgba(0,229,255,0.22); }
+    h1 { margin: 18px 0 12px; font-size: clamp(34px, 5vw, 58px); line-height: 1.05; letter-spacing: -1.5px; }
+    .lead { max-width: 980px; color: var(--text-sub); line-height: 1.9; font-size: 16px; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+    .stat { padding: 18px; border-radius: 20px; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08); }
+    .stat strong { display: block; font-size: 28px; color: var(--primary); }
+    .stat span { color: var(--text-sub); font-size: 13px; }
+    .section-title { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 34px 0 16px; }
+    .section-title h2 { margin: 0; font-size: 24px; }
+    .section-title p { margin: 0; color: var(--text-sub); font-size: 14px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025)), var(--card-bg); border: 1px solid rgba(255,255,255,0.09); border-radius: 24px; padding: 22px; box-shadow: 0 16px 50px rgba(0,0,0,0.28); transition: transform .22s ease, border-color .22s ease; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(179,136,255,0.38); }
+    .company { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .company .name { font-size: 19px; font-weight: 800; color: #fff; }
+    .company .type { font-size: 12px; color: var(--accent); border: 1px solid rgba(0,229,255,0.25); background: rgba(0,229,255,0.08); border-radius: 999px; padding: 6px 10px; white-space: nowrap; }
+    .headline { margin: 0 0 14px; color: var(--primary); font-size: 17px; line-height: 1.55; }
+    .block { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .block h3 { margin: 0 0 8px; font-size: 14px; color: #fff; display: flex; align-items: center; gap: 8px; }
+    .block p { margin: 0; color: var(--text-sub); line-height: 1.8; font-size: 14px; }
+    .source { margin-top: 14px; color: #777; font-size: 12px; line-height: 1.8; }
+    .source a { color: #8eefff; }
+    .note { margin-top: 28px; padding: 18px 20px; border: 1px solid rgba(179,136,255,0.22); border-radius: 20px; background: rgba(179,136,255,0.07); color: var(--text-sub); line-height: 1.8; }
+    .footer { margin-top: 34px; text-align: center; color: #777; font-size: 13px; }
+    @media (max-width: 860px) { .hero { padding: 28px; } .stats, .grid { grid-template-columns: 1fr; } .section-title { display: block; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="tag">🏢 今日大厂新闻 · 2026-08-06 · style_dark</div>
+      <h1>今天最关键的信号，是大厂开始公开承认“哪里落后”，然后把组织、模型和入口重新摆位</h1>
+      <p class="lead">8 月 6 日这批新闻放在一起看，主线比昨天更清晰：国内大厂一边开年中会、一边定下半年的 AI 战术，字节 CEO 梁汝波罕见公开承认大语言模型与海外领先模型存在差距，但明确坚持自研；阿里把千问模型继续向淘宝、图像和办公三个方向同时推进；腾讯混元在语音模型和 AI 办公入口上持续加码；百度萝卜快跑则把无人车开向欧洲，与 Waymo 在伦敦正面对线。华为和小米继续用“全场景终端 + 鸿蒙/澎湃 OS”抢 AI 落地入口。海外这边，Google 大重组 AI 领导层、Meta 一边成立超级智能实验室一边发布编程 Agent Muse Code、苹果与 OpenAI 的诉讼进一步升级，AI 行业的竞争已经从“发模型”进入“拼组织、拼入口、拼规则”的深水区。</p>
+      <div class="stats">
+        <div class="stat"><strong>10</strong><span>条重点动态</span></div>
+        <div class="stat"><strong>6</strong><span>国内焦点卡片</span></div>
+        <div class="stat"><strong>4</strong><span>国际焦点卡片</span></div>
+        <div class="stat"><strong>4</strong><span>核心关键词：自研表态、组织重构、Agent 编程、平台诉讼</span></div>
+      </div>
+    </section>
+
+    <div class="section-title">
+      <h2>国内大厂与科技生态</h2>
+      <p>今天的关键词是“坦诚差距”和“重新摆位”：年中会、模型上新、终端发布和出海动作在同一天集中出现</p>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="company"><span class="name">字节跳动</span><span class="type">年中全员会 / 坚持自研 LLM</span></div>
+        <p class="headline">字节今天最值得记的，不是又一次组织调整，而是 CEO 梁汝波公开承认：大语言模型上，字节与海外领先模型的差距正在被拉大。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>8 月 6 日，字节跳动召开 2026 年度年中全员会，CEO 梁汝波与新成立的“创造力服务平台（Creativity Service Platform）”负责人谭待等与全员交流。梁汝波总结上半年 AI 业务：豆包在 C 端保持竞争力，视频生成模型 Seedance 维持 SOTA，但大语言模型与海外领先模型的差距被拉大。他表示，字节会接受短期落后，坚持自研、做好基本功，看长期优化；同时 AI 业务重点将继续向 B 端与企业场景倾斜。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>以前大家都在比“我家模型也很强”，今天字节直接说“这块我们现在确实落后”。但它的态度是：不绕路、不买、不抄，继续自己砸钱做，同时把豆包、飞书、火山引擎拧成一股绳去抢企业客户。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这是一个重要的预期管理信号。对内部，它稳住团队，避免为了短期跑分动作变形；对外部，它让市场重新理解字节的 AI 路线——不押注单一爆款，而是押注“模型 + 飞书办公入口 + 火山云算力”的企业级闭环。对竞争对手来说，这意味着豆包不会退场，但竞争节奏会更偏长期和 B 端。</p></div>
+        <div class="source">来源：<a href="https://finance.sina.com.cn/jjxw/2026-08-06/doc-inimkfvp0704798.shtml" target="_blank" rel="noreferrer">新浪财经《字节举行年中全员会 梁汝波：接受短期落后 坚持大模型自研》</a>；<a href="https://m.ithome.com/html/986555.htm" target="_blank" rel="noreferrer">IT之家《字节跳动 CEO 梁汝波称坚持自研大语言模型、接受短期落后》</a>；<a href="http://m.toutiao.com/group/7670845200604103219/" target="_blank" rel="noreferrer">南方都市报转载《字节CEO：接受大语言模型短期落后，AI业务重点转向B端》</a> · 2026-08-06</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">腾讯</span><span class="type">混元 Hy3 全球开放 / WorkBuddy 整合</span></div>
+        <p class="headline">腾讯今天的动作可以连成一句话：让混元模型从“自家产品用”变成“全球开发者都能调”，再借 WorkBuddy 抢企业 AI 办公入口。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>8 月 5 日，腾讯宣布混元 Hy3 等大模型向全球开放 API；OpenRouter 7 月调用量榜单显示，前六名全部为中国开源模型，腾讯 Hy3 在列。同时，腾讯内部正在将混元研发、文档、网盘、微信支付、QQ 邮箱、腾讯新闻等资源向独立的 AI 办公业务线 WorkBuddy 集中；7 月 30 日 WorkBuddy 与腾讯文档推出“人机双写”协同编辑，Hy3 限免活动也延长至 8 月 5 日。另据公开报道，微信正在把 AI 入口嵌入输入框、朋友圈编辑和扫一扫等高频操作。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>腾讯走的是“两条腿”：一条腿把混元模型卖给全球开发者用，赚 API 和生态的钱；另一条腿把混元塞进微信、文档、网盘这些国民级 App，让你上班聊天时不知不觉就用上了 AI。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这会进一步压缩中小模型公司的生存空间——头部厂商既能用 C 端流量反哺模型，又能把模型 API 推向全球。对企业用户来说，WorkBuddy 一旦与微信、腾讯文档、支付深度打通，可能成为国内最完整的“AI 办公 + 协同 + 业务流”闭环之一；对其他办公 SaaS，则是更直接的降维压力。</p></div>
+        <div class="source">来源：<a href="https://www.zaobao.com.sg/news/china/story20260805-9476292" target="_blank" rel="noreferrer">联合早报《腾讯宣布混元3大模型向全球开放》</a>；<a href="https://m.21jingji.com/article/20260805/herald/e37d6ef40136f7605ea2796e952c8ef5.html" target="_blank" rel="noreferrer">21财经《腾讯字节阿里齐下场：AI办公要大繁荣大发展了？》</a>；<a href="http://m.toutiao.com/group/7670744532471792169/" target="_blank" rel="noreferrer">今日头条转载《QQ、微信之后，腾讯迎来第三款超级应用》</a> · 2026-08-05 / 2026-08-06</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">阿里巴巴</span><span class="type">千问接入淘宝 / Qwen-Image 3.0 上线</span></div>
+        <p class="headline">阿里今天最值得关注的，是千问不再只是“一个聊天机器人”，而是开始同时进入电商购物、图像生成和企业办公三条主航道。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>路透社 8 月 6 日援引知情人士消息称，阿里正准备正式宣布将千问 AI 与淘宝深度整合，用对话式购物取代传统关键词搜索，消费者可在千问应用中与 AI 智能体沟通完成商品发现和下单。8 月 5 日，阿里云宣布 Qwen-Image-3.0 图像生成模型正式上线千问 AI 平台。与此同时，Qwen3.8-Max（总参数 2.4 万亿、单次激活约 95B、1M 上下文）和“千问办公”公测继续推进，后者由原悟空、QoderWork、MuleRun 三条 Agent 产品线整合而来。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>阿里正在把千问改造成一个“多面手”：你想购物，它陪你聊商品；你想做图，它直接帮你生成；你想办公，它和钉钉一起帮你写文档、跑流程。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这是阿里相对其他大厂最独特的资产——电商场景。AI 购物助手一旦在淘宝跑通，会直接重塑搜索、广告和客服三条业务流；图像生成模型则能服务商家素材和广告投放；再叠加千问办公和 Qwen 模型 API，阿里可能是国内唯一同时握有“消费流量 + 企业办公 + 云算力 + 电商交易”的玩家。对其他电商和搜索产品，这是一次入口级压力测试。</p></div>
+        <div class="source">来源：<a href="https://gmteight.com/flash/detail/1356748" target="_blank" rel="noreferrer">GMT8《Insiders: Alibaba will integrate Qianwen AI into Taobao》</a>；<a href="https://www.gmt8press.com/flash/detail/1356749" target="_blank" rel="noreferrer">GMT8 Press《Reuters: Alibaba to integrate Tongyi Qianwen with Taobao》</a>；<a href="https://m.weibo.cn/detail/5328975821802966" target="_blank" rel="noreferrer">投资界微博《qwen-image-3.0 正式上线千问 AI 平台》</a>；<a href="http://m.toutiao.com/group/7670796107399643654/" target="_blank" rel="noreferrer">蓝鲸新闻转载《模型打底、千问办公上桌，阿里再战 AI 局》</a> · 2026-08-05 / 2026-08-06</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">百度</span><span class="type">萝卜快跑欧洲扩张 / 自动驾驶国标</span></div>
+        <p class="headline">百度今天最硬的消息，是它的 Robotaxi 不再只在国内城市跑，而是开始把车开上伦敦街头，与 Waymo 正面对线。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>8 月 4 日，百度官方宣布与 Lyft 达成欧洲深度战略合作；加上此前 7 月 28 日与 Uber 以及 Lyft 旗下 Freenow 宣布在英国伦敦启动公开道路测试，萝卜快跑计划自 2027 年起在伦敦面向市民提供无人驾驶出行服务。4 月 Waymo 已在伦敦启动测试，中美 Robotaxi 双雄将在伦敦正面对垒。与此同时，8 月初《智能网联汽车 自动驾驶系统安全要求》强制性国家标准正式发布，将于 2027 年 7 月 1 日起实施，对 L3/L4 自动驾驶提出统一安全要求。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>百度正在把“无人出租车”这件事从中国故事讲成全球故事：先牵手 Uber，再牵手 Lyft，直接进入 Waymo 的主战场伦敦；而国家强制性标准落地，则意味着自动驾驶在中国开始有了统一的“交规”。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这会让 Robotaxi 竞争从“能不能跑”升级为“谁能在更多城市、更低成本、更合规地跑”。百度借 Uber 和 Lyft 的本地网络，省去大量海外地推和合规成本；对中国自动驾驶产业链来说，这是激光雷达、芯片、算法和出行运营的一次集体出海机会。但也要注意，国标和欧盟当地监管都将抬高准入门槛，长尾安全问题仍会被反复放大检视。</p></div>
+        <div class="source">来源：<a href="https://c.m.163.com/news/a/L3IGR0HG0556DQ0Z.html" target="_blank" rel="noreferrer">网易《重磅落地欧洲！萝卜快跑，终于跑通了！》</a>；<a href="http://m.toutiao.com/group/7670798086020530723/" target="_blank" rel="noreferrer">今日头条转载《Robotaxi 双雄"跑马圈地" 洛杉矶 Waymo 对垒深圳萝卜快跑》</a>；<a href="http://m.toutiao.com/group/7670864754428133923/" target="_blank" rel="noreferrer">今日头条转载《自动驾驶国标落地：技术每进一步，谁在退一步？》</a> · 2026-08-05 / 2026-08-06</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">华为</span><span class="type">三款鸿蒙电脑 / 鸿蒙智行交付 148 万辆</span></div>
+        <p class="headline">华为今天没有再讲 PPT 上的“未来生态”，而是一次性把折叠电脑、防窥屏笔记本和 MPV/SUV 全部摆上货架。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>8 月 5 日的华为全场景新品发布会上，华为正式发布三款鸿蒙电脑：MateBook Fold 非凡大师（搭载全球最大 UTG 超薄玻璃、支持全局手写批注与双屏生态）、MateBook Pro S（全球首款防窥屏笔记本）、MateBook Pro（搭载麒麟 X90 Plus 处理器，40W 性能释放）。鸿蒙智行同步推出尊界 V680/V800 MPV 和享界 G9 豪华硬派 SUV。华为常务董事余承东披露，鸿蒙智行累计交付已达 148 万辆，主动安全累计避免可能碰撞超 475.2 万次。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>华为在做一件很重的事：让鸿蒙不只在手机上跑，而是同时跑在电脑、平板、手表和汽车上，靠“一套系统 + 一堆硬件”把用户牢牢锁在自己的生态里。</p></div>
+        <div class="block"><h3>影响分析</h3><p>鸿蒙电脑的成系列发布，意味着国产操作系统第一次在 PC 端拥有相对完整的硬件矩阵，而不只是单款探索产品。对企业和政企客户，这会创造新的国产化替代选项；对手机厂和传统 PC 厂，则会形成压力。148 万辆的交付数据也表明，鸿蒙智行已经不只是“概念联盟”，而是有规模交付能力的汽车生态入口。</p></div>
+        <div class="source">来源：<a href="https://www.sina.cn/news/detail/5328606822925121.html" target="_blank" rel="noreferrer">新浪新闻《华为发布三款鸿蒙电脑》</a>；<a href="https://auto.ifeng.com/c/8vMy8KSYqX0" target="_blank" rel="noreferrer">凤凰网汽车《华为发布多款鸿蒙生态新品，涵盖笔记本、平板、手机、手表及汽车》</a>；<a href="http://m.toutiao.com/group/7670812312643469874/" target="_blank" rel="noreferrer">今日头条转载《华为多款新品集中亮相 鸿蒙智行已交付 148 万辆》</a> · 2026-08-05 / 2026-08-06</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">小米</span><span class="type">澎湃 OS 4 分批升级 / Redmi 17 5G 开售</span></div>
+        <p class="headline">小米今天没有发布最吸睛的旗舰，但它在做两件最实在的事：让旧机型用上新系统，让入门用户买到便宜大电池手机。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>8 月 6 日，小米正式推出 Redmi 17 5G，定位千元入门大屏长续航，到手价 999 元起，搭载 7500mAh 电池、6.9 英寸高刷屏，预装澎湃 OS 3。同日公开信息显示，澎湃 OS 4 分批升级计划启动，从 2026 年 8 月持续至 2027 年上半年，按机型和内存版本逐步放量，大内存顶配机型通常早一到两周收到更新。REDMI K100 Pro 系列将于 8 月 11 日发布，搭载 2 亿像素五焦段三摄，预装澎湃 OS 3 并可升级至澎湃 OS 4。此外，小米 CarWith 已推送镜像小窗更新，部分车型可在车机屏幕播放视频。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>小米一边用 999 元的 Redmi 守住千元机市场，一边把澎湃 OS 4 推给尽可能多的老用户，再用 K100 Pro 和 CarWith 继续巩固“人车家全生态”的故事。</p></div>
+        <div class="block"><h3>影响分析</h3><p>对终端厂商来说，AI 体验能否真正形成规模，取决于系统覆盖范围而不只是旗舰参数。小米把 OS 升级周期拉长到一年、覆盖更多机型，等于在为后续 AI 功能和服务收入打地基。CarWith 的视频播放能力虽然小，但说明小米在车机入口上不再甘心只做投屏，而是在慢慢补齐生态短板。</p></div>
+        <div class="source">来源：<a href="http://m.toutiao.com/group/7670802360238752283/" target="_blank" rel="noreferrer">泡泡网转载《999 元起 Redmi 17 5G 开售 7500mAh 大电池+6.9 英寸高刷屏》</a>；<a href="http://m.toutiao.com/group/7670802239878857260/" target="_blank" rel="noreferrer">今日头条转载《澎湃 OS4.0 分批升级官宣！快查你的手机排在哪一批》</a>；<a href="http://m.toutiao.com/group/7670414818125464087/" target="_blank" rel="noreferrer">今日头条转载《小米 CarWith 迎来重磅升级，车内自由看视频》</a> · 2026-08-06</div>
+      </article>
+    </section>
+
+    <div class="section-title">
+      <h2>国际科技公司</h2>
+      <p>今天的主线是领导层重组、Agent 编程工具登场，以及苹果与 OpenAI 的诉讼进一步升级</p>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="company"><span class="name">Google</span><span class="type">DeepMind 领导层重组 / Jeff Dean 等离职创业</span></div>
+        <p class="headline">Google 今天最有信号意义的，不是又发了一个模型，而是它把“做前沿研究的人”和“把研究变成产品的人”正式拆开了。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>路透社 8 月 5 日报道，Google 母公司 Alphabet 宣布对 AI 部门进行领导层重组：Demis Hassabis 将卸任 Google DeepMind 的主要管理职务，转任 Google DeepMind 董事长和 Alphabet 首席科学家，专注长期 AGI 战略和 Isomorphic Labs；Koray Kavukcuoglu 将接管 Google 模型、研究和 Gemini 产品团队的日常运营。同时，包括 Jeff Dean 在内的四位资深 AI 研究人员离职，共同创办 AI 初创公司 Discovery Loop。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>Google 这是把“仰望星空”和“低头赶路”分成两个团队：Hassabis 专心思考十年后的 AGI，另一个负责人专心把 Gemini 变成能赚钱的产品。但同时，几位最核心的研究员也出去创业了。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这是大型科技公司在 AI 时代常见的“战略 + 产品”双轨制改造。优势是前沿研究不会被产品 KPI 绑架，产品节奏也不会被研究节奏拖慢；风险是核心人才流失可能削弱内部技术壁垒。Discovery Loop 这类由资深研究员创办的新公司，也会继续吸走顶级人才和风险投资。</p></div>
+        <div class="source">来源：<a href="https://srnnews.com/google-shakes-up-ai-leadership-as-deepmind-chief-shifts-role/" target="_blank" rel="noreferrer">SRN News / Reuters《Google shakes up AI leadership as DeepMind chief shifts role》</a>；<a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-august-5-2026/" target="_blank" rel="noreferrer">The Neuron《Everything That Happened in AI Today, Aug 5 2026》</a> · 2026-08-05 / 2026-08-06</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Meta</span><span class="type">超级智能实验室 / Muse Code 编程 Agent</span></div>
+        <p class="headline">Meta 今天同时打了两枪：一枪瞄准 AGI 未来，一枪直接打进 OpenAI 和 Anthropic 最赚钱的编程工具市场。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>8 月 6 日多家媒体报道，Meta CEO 扎克伯格宣布成立 Meta Superintelligence Labs（MSL），由前 Scale AI CEO Alexander Wang 领导，统一 Meta 内部 AI 团队，目标是推进超级智能研究。前一天（8 月 5 日），Meta 发布终端侧 AI 编程 Agent “Muse Code” 测试版，基于 Muse Spark 1.2 模型，可在大型代码库中完成规划、编写和验证代码等复杂软件工程任务。Meta 自家基准显示，Muse Spark 1.2 在多数编程测试上击败 OpenAI Codex 和 Google Antigravity，但在所有编程基准上仍落后于 Anthropic Claude Opus 5。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>Meta 一边学 OpenAI 成立“超级智能团队”讲长期故事，一边直接做了一个能自己写代码、改代码的工具，去抢开发者和企业客户——这块正是 OpenAI 和 Anthropic 当前最赚钱的场景之一。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这会让 AI 编程市场从“两强争霸”进入“三英战吕布”。Muse Code 若延续 Meta 在 Llama 上的开源策略，可能压低整个编程 Agent 的价格；对企业用户，则多了一个兼顾成本与生态的选项。超级智能实验室的成立也意味着 Meta 会继续加码算力和人才投入，AI 军备竞赛短期内不会降温。</p></div>
+        <div class="source">来源：<a href="https://germanytimes.com/zpnppb-meta-announces-formation-of-ambitious-ai-unit-meta-superintelligence-labs" target="_blank" rel="noreferrer">Germany Times《Meta Announces Formation of Meta Superintelligence Labs》</a>；<a href="https://www.thehindu.com/sci-tech/technology/meta-chases-openai-anthropic-with-new-ai-coding-app/article71311991.ece" target="_blank" rel="noreferrer">The Hindu《Meta chases OpenAI, Anthropic with new AI coding app》</a>；<a href="https://www.cryptopolitan.com/meta-muse-code-beats-codex-trails-opus-5/" target="_blank" rel="noreferrer">Cryptopolitan《Meta's Muse Code beats Codex but trails Claude Opus 5》</a> · 2026-08-05 / 2026-08-06</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">OpenAI</span><span class="type">申请驳回苹果诉讼 / ChatGPT Work 整合</span></div>
+        <p class="headline">OpenAI 今天选择了最硬的反击方式：请求联邦法官直接驳回苹果诉讼，同时继续把 ChatGPT、Codex 等产品打包成统一的“AI 工作台”。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>MacRumors 8 月 6 日报道，OpenAI 已向联邦法官提出申请，要求驳回苹果指控其窃取商业秘密的诉讼，称相关指控“毫无根据（meritless）”；文件还为公司首席硬件官 Tang Yew Tan（曾在苹果工作 24 年，担任 iPhone 与 Apple Vision Pro 产品设计副总裁）进行辩护。ExchangeWire 同日报道，苹果已扩大对 OpenAI 的数据窃取指控，并寻求临时禁令和加速证据开示。与此同时，多份 AI 行业资讯显示，OpenAI 正在把 ChatGPT、Codex、ChatGPT agent、Atlas、OpenClaw 等整合为统一的 ChatGPT Work 产品。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>OpenAI 不想被苹果拖入漫长诉讼，所以直接要求法官判苹果输；同时它没闲着，把手上一堆 AI 工具合并成一个“AI 打工人工作台”，准备继续抢企业用户。</p></div>
+        <div class="block"><h3>影响分析</h3><p>诉讼升级会让 OpenAI 在硬件入口（特别是 iOS / macOS）上的不确定性持续存在；但 ChatGPT Work 的推进说明它不会因为法律战而放慢产品节奏。对开发者来说，未来 ChatGPT 可能不再只是聊天框，而是一个统一的知识工作入口，覆盖写作、编码、浏览和任务执行；对苹果来说，这也意味着它必须在自有 AI 和与 Google Gemini 的合作上加码。</p></div>
+        <div class="source">来源：<a href="https://www.macrumors.com/2026/08/06/openai-asks-judge-dismiss-apple-lawsuit/" target="_blank" rel="noreferrer">MacRumors《OpenAI Asks Judge to Dismiss Apple's Trade Secrets Lawsuit》</a>；<a href="https://www.exchangewire.com/blog/2026/08/06/digest-apple-expands-openai-data-theft-claims-grubhub-40-brands-test-chatgpt-ad-measurement/" target="_blank" rel="noreferrer">ExchangeWire《Digest: Apple Expands OpenAI Data Theft Claims》</a>；<a href="https://podcasts.apple.com/us/podcast/ai-digest-august-5-2026/id1888042569?i=1000780059448" target="_blank" rel="noreferrer">AI Digest 播客《ChatGPT Work as an agent product》</a> · 2026-08-05 / 2026-08-06</div>
+      </article>
+
+      <article class="card">
+        <div class="company"><span class="name">Apple</span><span class="type">扩大 OpenAI 指控 / Google Assistant 9 月关停移动版</span></div>
+        <p class="headline">苹果今天最值得警惕的，不只是与 OpenAI 打官司，而是它正在被一个更大的变化裹挟：旧的语音助手正在被新一代 AI 助手取代。</p>
+        <div class="block"><h3>新闻原文摘要</h3><p>2026 年 8 月 6 日多家媒体跟进报道，苹果已扩大对 OpenAI 的商业秘密诉讼请求范围，并寻求临时禁令，禁止 OpenAI 使用被指控源自苹果的技术开发产品。与此同时，Search Engine Roundtable 8 月 5 日报道，Google 已通过邮件通知用户，Google Assistant 移动端将于 2026 年 9 月 4 日正式关停，由 Gemini 在 WearOS、耳机、Android Auto 等设备上接替。此前已有报道称，苹果已与 Google 签署协议，用 Gemini 驱动新版 Siri 和 Apple Intelligence。</p></div>
+        <div class="block"><h3>人话翻译</h3><p>苹果一边和 OpenAI 打官司，一边在找 Google 当 AI 后路；而 Google 干脆把老版 Assistant 砍掉，让 Gemini 接管所有入口。语音助手这个老赛道，正在被 AI 大模型重写。</p></div>
+        <div class="block"><h3>影响分析</h3><p>这意味着移动端 AI 入口正在进入“换底座”阶段。Google 用 Gemini 替换 Assistant，苹果用 Gemini 部分替换 OpenAI，OpenAI 则试图通过 ChatGPT Work 跳出平台控制。对开发者和品牌方来说，未来的语音和系统级搜索不再是单点优化，而是要面向大模型重新设计交互；对消费者来说，不同手机上的“AI 助手”可能来自完全不同的模型公司。</p></div>
+        <div class="source">来源：<a href="https://www.exchangewire.com/blog/2026/08/06/digest-apple-expands-openai-data-theft-claims-grubhub-40-brands-test-chatgpt-ad-measurement/" target="_blank" rel="noreferrer">ExchangeWire《Digest: Apple Expands OpenAI Data Theft Claims》</a>；<a href="https://www.seroundtable.com/recap-08-05-2026-41820.html" target="_blank" rel="noreferrer">Search Engine Roundtable《Daily Search Forum Recap: August 5, 2026 — Google Assistant Shutting Down on Mobile September 4》</a>；<a href="https://www.macrumors.com/2026/08/06/openai-asks-judge-dismiss-apple-lawsuit/" target="_blank" rel="noreferrer">MacRumors 相关诉讼报道</a> · 2026-08-05 / 2026-08-06</div>
+      </article>
+    </section>
+
+    <section class="note">
+      <strong>今日观察：</strong>今天这批新闻共同指向一个变化——AI 竞争从“比模型分数”进入“比战略坦诚度、组织效率和入口控制力”。字节公开承认大语言模型落后但坚持自研，腾讯把混元向全球开放、向国民 App 内嵌，阿里把千问同时推进淘宝、图像和办公，百度让 Robotaxi 出海，华为和小米继续用全场景终端扩展系统边界。海外，Google 用一次领导层重组长短期，Meta 同时押注超级智能和编程 Agent，苹果和 OpenAI 在法庭上重新划分 AI 入口边界。未来 6 到 12 个月，最关键的不再是谁发了最强模型，而是谁能把模型稳定地塞进办公、电商、手机、汽车和开发者工作流里，并在监管和诉讼之间保持自己的话语权。
+    </section>
+
+    <div class="footer">Generated for global-sync · dachang-news · 2026-08-06</div>
+  </main>
+</body>
+</html>
